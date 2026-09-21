@@ -1,0 +1,24 @@
+# PureBasic build outputs
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.a
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# Temporary and editor files
+*.log
+*.tmp
+*.bak
+*~
+.vscode/
+.idea/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

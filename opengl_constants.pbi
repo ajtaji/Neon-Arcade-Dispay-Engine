@@ -1,0 +1,18195 @@
+; Auto-generated OpenGL Constants
+CompilerIf Not Defined(OPENGL_CONSTANTS, #PB_Constant)
+#OPENGL_CONSTANTS = 1
+
+CompilerIf Not Defined(GL_CURRENT_BIT, #PB_Constant)
+#GL_CURRENT_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_BIT, #PB_Constant)
+#GL_POINT_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_BIT, #PB_Constant)
+#GL_LINE_BIT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_BIT, #PB_Constant)
+#GL_POLYGON_BIT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_STIPPLE_BIT, #PB_Constant)
+#GL_POLYGON_STIPPLE_BIT = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MODE_BIT, #PB_Constant)
+#GL_PIXEL_MODE_BIT = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHTING_BIT, #PB_Constant)
+#GL_LIGHTING_BIT = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_BIT, #PB_Constant)
+#GL_FOG_BIT = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT = $00000100
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_BUFFER_BIT, #PB_Constant)
+#GL_ACCUM_BUFFER_BIT = $00000200
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT = $00000400
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_BIT, #PB_Constant)
+#GL_VIEWPORT_BIT = $00000800
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_BIT, #PB_Constant)
+#GL_TRANSFORM_BIT = $00001000
+CompilerEndIf
+CompilerIf Not Defined(GL_ENABLE_BIT, #PB_Constant)
+#GL_ENABLE_BIT = $00002000
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT, #PB_Constant)
+#GL_COLOR_BUFFER_BIT = $00004000
+CompilerEndIf
+CompilerIf Not Defined(GL_HINT_BIT, #PB_Constant)
+#GL_HINT_BIT = $00008000
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_BIT, #PB_Constant)
+#GL_EVAL_BIT = $00010000
+CompilerEndIf
+CompilerIf Not Defined(GL_LIST_BIT, #PB_Constant)
+#GL_LIST_BIT = $00020000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BIT, #PB_Constant)
+#GL_TEXTURE_BIT = $00040000
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_BIT, #PB_Constant)
+#GL_SCISSOR_BIT = $00080000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BIT, #PB_Constant)
+#GL_MULTISAMPLE_BIT = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BIT_ARB, #PB_Constant)
+#GL_MULTISAMPLE_BIT_ARB = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BIT_EXT, #PB_Constant)
+#GL_MULTISAMPLE_BIT_EXT = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BIT_3DFX, #PB_Constant)
+#GL_MULTISAMPLE_BIT_3DFX = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_ATTRIB_BITS, #PB_Constant)
+#GL_ALL_ATTRIB_BITS = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_STORAGE_BIT, #PB_Constant)
+#GL_DYNAMIC_STORAGE_BIT = $0100
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_STORAGE_BIT_EXT, #PB_Constant)
+#GL_DYNAMIC_STORAGE_BIT_EXT = $0100
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_STORAGE_BIT, #PB_Constant)
+#GL_CLIENT_STORAGE_BIT = $0200
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_STORAGE_BIT_EXT, #PB_Constant)
+#GL_CLIENT_STORAGE_BIT_EXT = $0200
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARSE_STORAGE_BIT_ARB, #PB_Constant)
+#GL_SPARSE_STORAGE_BIT_ARB = $0400
+CompilerEndIf
+CompilerIf Not Defined(GL_LGPU_SEPARATE_STORAGE_BIT_NVX, #PB_Constant)
+#GL_LGPU_SEPARATE_STORAGE_BIT_NVX = $0800
+CompilerEndIf
+CompilerIf Not Defined(GL_PER_GPU_STORAGE_BIT_NV, #PB_Constant)
+#GL_PER_GPU_STORAGE_BIT_NV = $0800
+CompilerEndIf
+CompilerIf Not Defined(GL_EXTERNAL_STORAGE_BIT_NVX, #PB_Constant)
+#GL_EXTERNAL_STORAGE_BIT_NVX = $2000
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_BUFFER_BIT_NV, #PB_Constant)
+#GL_COVERAGE_BUFFER_BIT_NV = $00008000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_PIXEL_STORE_BIT, #PB_Constant)
+#GL_CLIENT_PIXEL_STORE_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_VERTEX_ARRAY_BIT, #PB_Constant)
+#GL_CLIENT_VERTEX_ARRAY_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_ALL_ATTRIB_BITS, #PB_Constant)
+#GL_CLIENT_ALL_ATTRIB_BITS = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT, #PB_Constant)
+#GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_DEBUG_BIT, #PB_Constant)
+#GL_CONTEXT_FLAG_DEBUG_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_DEBUG_BIT_KHR, #PB_Constant)
+#GL_CONTEXT_FLAG_DEBUG_BIT_KHR = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT, #PB_Constant)
+#GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB, #PB_Constant)
+#GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_NO_ERROR_BIT, #PB_Constant)
+#GL_CONTEXT_FLAG_NO_ERROR_BIT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR, #PB_Constant)
+#GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT, #PB_Constant)
+#GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_CORE_PROFILE_BIT, #PB_Constant)
+#GL_CONTEXT_CORE_PROFILE_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_COMPATIBILITY_PROFILE_BIT, #PB_Constant)
+#GL_CONTEXT_COMPATIBILITY_PROFILE_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_READ_BIT, #PB_Constant)
+#GL_MAP_READ_BIT = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_READ_BIT_EXT, #PB_Constant)
+#GL_MAP_READ_BIT_EXT = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_WRITE_BIT, #PB_Constant)
+#GL_MAP_WRITE_BIT = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_WRITE_BIT_EXT, #PB_Constant)
+#GL_MAP_WRITE_BIT_EXT = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_INVALIDATE_RANGE_BIT, #PB_Constant)
+#GL_MAP_INVALIDATE_RANGE_BIT = $0004
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_INVALIDATE_RANGE_BIT_EXT, #PB_Constant)
+#GL_MAP_INVALIDATE_RANGE_BIT_EXT = $0004
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_INVALIDATE_BUFFER_BIT, #PB_Constant)
+#GL_MAP_INVALIDATE_BUFFER_BIT = $0008
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_INVALIDATE_BUFFER_BIT_EXT, #PB_Constant)
+#GL_MAP_INVALIDATE_BUFFER_BIT_EXT = $0008
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_FLUSH_EXPLICIT_BIT, #PB_Constant)
+#GL_MAP_FLUSH_EXPLICIT_BIT = $0010
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_FLUSH_EXPLICIT_BIT_EXT, #PB_Constant)
+#GL_MAP_FLUSH_EXPLICIT_BIT_EXT = $0010
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_UNSYNCHRONIZED_BIT, #PB_Constant)
+#GL_MAP_UNSYNCHRONIZED_BIT = $0020
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_UNSYNCHRONIZED_BIT_EXT, #PB_Constant)
+#GL_MAP_UNSYNCHRONIZED_BIT_EXT = $0020
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_PERSISTENT_BIT, #PB_Constant)
+#GL_MAP_PERSISTENT_BIT = $0040
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_PERSISTENT_BIT_EXT, #PB_Constant)
+#GL_MAP_PERSISTENT_BIT_EXT = $0040
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_COHERENT_BIT, #PB_Constant)
+#GL_MAP_COHERENT_BIT = $0080
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_COHERENT_BIT_EXT, #PB_Constant)
+#GL_MAP_COHERENT_BIT_EXT = $0080
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_CLIENT_POINTER_BIT_MESA, #PB_Constant)
+#GL_MAP_CLIENT_POINTER_BIT_MESA = $4000
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BARRIER_BIT, #PB_Constant)
+#GL_ELEMENT_ARRAY_BARRIER_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BARRIER_BIT_EXT, #PB_Constant)
+#GL_ELEMENT_ARRAY_BARRIER_BIT_EXT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BARRIER_BIT, #PB_Constant)
+#GL_UNIFORM_BARRIER_BIT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BARRIER_BIT_EXT, #PB_Constant)
+#GL_UNIFORM_BARRIER_BIT_EXT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FETCH_BARRIER_BIT, #PB_Constant)
+#GL_TEXTURE_FETCH_BARRIER_BIT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FETCH_BARRIER_BIT_EXT, #PB_Constant)
+#GL_TEXTURE_FETCH_BARRIER_BIT_EXT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV, #PB_Constant)
+#GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_IMAGE_ACCESS_BARRIER_BIT, #PB_Constant)
+#GL_SHADER_IMAGE_ACCESS_BARRIER_BIT = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT, #PB_Constant)
+#GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_COMMAND_BARRIER_BIT, #PB_Constant)
+#GL_COMMAND_BARRIER_BIT = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_COMMAND_BARRIER_BIT_EXT, #PB_Constant)
+#GL_COMMAND_BARRIER_BIT_EXT = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_BUFFER_BARRIER_BIT, #PB_Constant)
+#GL_PIXEL_BUFFER_BARRIER_BIT = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_BUFFER_BARRIER_BIT_EXT, #PB_Constant)
+#GL_PIXEL_BUFFER_BARRIER_BIT_EXT = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_UPDATE_BARRIER_BIT, #PB_Constant)
+#GL_TEXTURE_UPDATE_BARRIER_BIT = $00000100
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_UPDATE_BARRIER_BIT_EXT, #PB_Constant)
+#GL_TEXTURE_UPDATE_BARRIER_BIT_EXT = $00000100
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_UPDATE_BARRIER_BIT, #PB_Constant)
+#GL_BUFFER_UPDATE_BARRIER_BIT = $00000200
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_UPDATE_BARRIER_BIT_EXT, #PB_Constant)
+#GL_BUFFER_UPDATE_BARRIER_BIT_EXT = $00000200
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BARRIER_BIT, #PB_Constant)
+#GL_FRAMEBUFFER_BARRIER_BIT = $00000400
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BARRIER_BIT_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_BARRIER_BIT_EXT = $00000400
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BARRIER_BIT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BARRIER_BIT = $00000800
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT = $00000800
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BARRIER_BIT, #PB_Constant)
+#GL_ATOMIC_COUNTER_BARRIER_BIT = $00001000
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BARRIER_BIT_EXT, #PB_Constant)
+#GL_ATOMIC_COUNTER_BARRIER_BIT_EXT = $00001000
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BARRIER_BIT, #PB_Constant)
+#GL_SHADER_STORAGE_BARRIER_BIT = $00002000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT, #PB_Constant)
+#GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT = $00004000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT, #PB_Constant)
+#GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT = $00004000
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BUFFER_BARRIER_BIT, #PB_Constant)
+#GL_QUERY_BUFFER_BARRIER_BIT = $00008000
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_BARRIER_BITS, #PB_Constant)
+#GL_ALL_BARRIER_BITS = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_BARRIER_BITS_EXT, #PB_Constant)
+#GL_ALL_BARRIER_BITS_EXT = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD, #PB_Constant)
+#GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_DEPTH_FAIL_EVENT_BIT_AMD, #PB_Constant)
+#GL_QUERY_DEPTH_FAIL_EVENT_BIT_AMD = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_STENCIL_FAIL_EVENT_BIT_AMD, #PB_Constant)
+#GL_QUERY_STENCIL_FAIL_EVENT_BIT_AMD = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_DEPTH_BOUNDS_FAIL_EVENT_BIT_AMD, #PB_Constant)
+#GL_QUERY_DEPTH_BOUNDS_FAIL_EVENT_BIT_AMD = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_ALL_EVENT_BITS_AMD, #PB_Constant)
+#GL_QUERY_ALL_EVENT_BITS_AMD = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FLUSH_COMMANDS_BIT, #PB_Constant)
+#GL_SYNC_FLUSH_COMMANDS_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FLUSH_COMMANDS_BIT_APPLE, #PB_Constant)
+#GL_SYNC_FLUSH_COMMANDS_BIT_APPLE = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_BIT, #PB_Constant)
+#GL_VERTEX_SHADER_BIT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_BIT_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_BIT_EXT = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_BIT, #PB_Constant)
+#GL_FRAGMENT_SHADER_BIT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_BIT_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADER_BIT_EXT = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_BIT, #PB_Constant)
+#GL_GEOMETRY_SHADER_BIT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_BIT_EXT, #PB_Constant)
+#GL_GEOMETRY_SHADER_BIT_EXT = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_BIT_OES, #PB_Constant)
+#GL_GEOMETRY_SHADER_BIT_OES = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_BIT, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_BIT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_BIT_EXT, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_BIT_EXT = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_BIT_OES, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_BIT_OES = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_BIT, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_BIT = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_BIT_EXT, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_BIT_EXT = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_BIT_OES, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_BIT_OES = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SHADER_BIT, #PB_Constant)
+#GL_COMPUTE_SHADER_BIT = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SHADER_BIT_NV, #PB_Constant)
+#GL_MESH_SHADER_BIT_NV = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SHADER_BIT_EXT, #PB_Constant)
+#GL_MESH_SHADER_BIT_EXT = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SHADER_BIT_NV, #PB_Constant)
+#GL_TASK_SHADER_BIT_NV = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SHADER_BIT_EXT, #PB_Constant)
+#GL_TASK_SHADER_BIT_EXT = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_SHADER_BITS, #PB_Constant)
+#GL_ALL_SHADER_BITS = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_SHADER_BITS_EXT, #PB_Constant)
+#GL_ALL_SHADER_BITS_EXT = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_BASIC_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_BASIC_BIT_KHR = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_VOTE_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_VOTE_BIT_KHR = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_ARITHMETIC_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_ARITHMETIC_BIT_KHR = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_BALLOT_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_BALLOT_BIT_KHR = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_SHUFFLE_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_SHUFFLE_BIT_KHR = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT_KHR = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_CLUSTERED_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_CLUSTERED_BIT_KHR = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_QUAD_BIT_KHR, #PB_Constant)
+#GL_SUBGROUP_FEATURE_QUAD_BIT_KHR = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV, #PB_Constant)
+#GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV = $00000100
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_STORAGE_SPARSE_BIT_AMD, #PB_Constant)
+#GL_TEXTURE_STORAGE_SPARSE_BIT_AMD = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_BIT_ATI, #PB_Constant)
+#GL_RED_BIT_ATI = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_BIT_ATI, #PB_Constant)
+#GL_GREEN_BIT_ATI = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_BIT_ATI, #PB_Constant)
+#GL_BLUE_BIT_ATI = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_2X_BIT_ATI, #PB_Constant)
+#GL_2X_BIT_ATI = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_4X_BIT_ATI, #PB_Constant)
+#GL_4X_BIT_ATI = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_8X_BIT_ATI, #PB_Constant)
+#GL_8X_BIT_ATI = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_BIT_ATI, #PB_Constant)
+#GL_HALF_BIT_ATI = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_QUARTER_BIT_ATI, #PB_Constant)
+#GL_QUARTER_BIT_ATI = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_EIGHTH_BIT_ATI, #PB_Constant)
+#GL_EIGHTH_BIT_ATI = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_SATURATE_BIT_ATI, #PB_Constant)
+#GL_SATURATE_BIT_ATI = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_COMP_BIT_ATI, #PB_Constant)
+#GL_COMP_BIT_ATI = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATE_BIT_ATI, #PB_Constant)
+#GL_NEGATE_BIT_ATI = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_BIAS_BIT_ATI, #PB_Constant)
+#GL_BIAS_BIT_ATI = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_OPERATIONS_BIT_MESA, #PB_Constant)
+#GL_TRACE_OPERATIONS_BIT_MESA = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_PRIMITIVES_BIT_MESA, #PB_Constant)
+#GL_TRACE_PRIMITIVES_BIT_MESA = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_ARRAYS_BIT_MESA, #PB_Constant)
+#GL_TRACE_ARRAYS_BIT_MESA = $0004
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_TEXTURES_BIT_MESA, #PB_Constant)
+#GL_TRACE_TEXTURES_BIT_MESA = $0008
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_PIXELS_BIT_MESA, #PB_Constant)
+#GL_TRACE_PIXELS_BIT_MESA = $0010
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_ERRORS_BIT_MESA, #PB_Constant)
+#GL_TRACE_ERRORS_BIT_MESA = $0020
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_ALL_BITS_MESA, #PB_Constant)
+#GL_TRACE_ALL_BITS_MESA = $FFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_BOLD_BIT_NV, #PB_Constant)
+#GL_BOLD_BIT_NV = $01
+CompilerEndIf
+CompilerIf Not Defined(GL_ITALIC_BIT_NV, #PB_Constant)
+#GL_ITALIC_BIT_NV = $02
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_WIDTH_BIT_NV, #PB_Constant)
+#GL_GLYPH_WIDTH_BIT_NV = $01
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_HEIGHT_BIT_NV, #PB_Constant)
+#GL_GLYPH_HEIGHT_BIT_NV = $02
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV, #PB_Constant)
+#GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV = $04
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV, #PB_Constant)
+#GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV = $08
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV, #PB_Constant)
+#GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = $10
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_VERTICAL_BEARING_X_BIT_NV, #PB_Constant)
+#GL_GLYPH_VERTICAL_BEARING_X_BIT_NV = $20
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV, #PB_Constant)
+#GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV = $40
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV, #PB_Constant)
+#GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV = $80
+CompilerEndIf
+CompilerIf Not Defined(GL_GLYPH_HAS_KERNING_BIT_NV, #PB_Constant)
+#GL_GLYPH_HAS_KERNING_BIT_NV = $100
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_X_MIN_BOUNDS_BIT_NV, #PB_Constant)
+#GL_FONT_X_MIN_BOUNDS_BIT_NV = $00010000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_Y_MIN_BOUNDS_BIT_NV, #PB_Constant)
+#GL_FONT_Y_MIN_BOUNDS_BIT_NV = $00020000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_X_MAX_BOUNDS_BIT_NV, #PB_Constant)
+#GL_FONT_X_MAX_BOUNDS_BIT_NV = $00040000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_Y_MAX_BOUNDS_BIT_NV, #PB_Constant)
+#GL_FONT_Y_MAX_BOUNDS_BIT_NV = $00080000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_UNITS_PER_EM_BIT_NV, #PB_Constant)
+#GL_FONT_UNITS_PER_EM_BIT_NV = $00100000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_ASCENDER_BIT_NV, #PB_Constant)
+#GL_FONT_ASCENDER_BIT_NV = $00200000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_DESCENDER_BIT_NV, #PB_Constant)
+#GL_FONT_DESCENDER_BIT_NV = $00400000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_HEIGHT_BIT_NV, #PB_Constant)
+#GL_FONT_HEIGHT_BIT_NV = $00800000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV, #PB_Constant)
+#GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV = $01000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV, #PB_Constant)
+#GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV = $02000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_UNDERLINE_POSITION_BIT_NV, #PB_Constant)
+#GL_FONT_UNDERLINE_POSITION_BIT_NV = $04000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_UNDERLINE_THICKNESS_BIT_NV, #PB_Constant)
+#GL_FONT_UNDERLINE_THICKNESS_BIT_NV = $08000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_HAS_KERNING_BIT_NV, #PB_Constant)
+#GL_FONT_HAS_KERNING_BIT_NV = $10000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_NUM_GLYPH_INDICES_BIT_NV, #PB_Constant)
+#GL_FONT_NUM_GLYPH_INDICES_BIT_NV = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_SINGLE_CONTEXT_INTEL, #PB_Constant)
+#GL_PERFQUERY_SINGLE_CONTEXT_INTEL = $00000000
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_GLOBAL_CONTEXT_INTEL, #PB_Constant)
+#GL_PERFQUERY_GLOBAL_CONTEXT_INTEL = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX23_BIT_PGI, #PB_Constant)
+#GL_VERTEX23_BIT_PGI = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX4_BIT_PGI, #PB_Constant)
+#GL_VERTEX4_BIT_PGI = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR3_BIT_PGI, #PB_Constant)
+#GL_COLOR3_BIT_PGI = $00010000
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR4_BIT_PGI, #PB_Constant)
+#GL_COLOR4_BIT_PGI = $00020000
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGEFLAG_BIT_PGI, #PB_Constant)
+#GL_EDGEFLAG_BIT_PGI = $00040000
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_BIT_PGI, #PB_Constant)
+#GL_INDEX_BIT_PGI = $00080000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_AMBIENT_BIT_PGI, #PB_Constant)
+#GL_MAT_AMBIENT_BIT_PGI = $00100000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_AMBIENT_AND_DIFFUSE_BIT_PGI, #PB_Constant)
+#GL_MAT_AMBIENT_AND_DIFFUSE_BIT_PGI = $00200000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_DIFFUSE_BIT_PGI, #PB_Constant)
+#GL_MAT_DIFFUSE_BIT_PGI = $00400000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_EMISSION_BIT_PGI, #PB_Constant)
+#GL_MAT_EMISSION_BIT_PGI = $00800000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_COLOR_INDEXES_BIT_PGI, #PB_Constant)
+#GL_MAT_COLOR_INDEXES_BIT_PGI = $01000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_SHININESS_BIT_PGI, #PB_Constant)
+#GL_MAT_SHININESS_BIT_PGI = $02000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MAT_SPECULAR_BIT_PGI, #PB_Constant)
+#GL_MAT_SPECULAR_BIT_PGI = $04000000
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_BIT_PGI, #PB_Constant)
+#GL_NORMAL_BIT_PGI = $08000000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXCOORD1_BIT_PGI, #PB_Constant)
+#GL_TEXCOORD1_BIT_PGI = $10000000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXCOORD2_BIT_PGI, #PB_Constant)
+#GL_TEXCOORD2_BIT_PGI = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXCOORD3_BIT_PGI, #PB_Constant)
+#GL_TEXCOORD3_BIT_PGI = $40000000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXCOORD4_BIT_PGI, #PB_Constant)
+#GL_TEXCOORD4_BIT_PGI = $80000000
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT0_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT0_QCOM = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT1_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT1_QCOM = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT2_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT2_QCOM = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT3_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT3_QCOM = $00000008
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT4_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT4_QCOM = $00000010
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT5_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT5_QCOM = $00000020
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT6_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT6_QCOM = $00000040
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_BUFFER_BIT7_QCOM, #PB_Constant)
+#GL_COLOR_BUFFER_BIT7_QCOM = $00000080
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT0_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT0_QCOM = $00000100
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT1_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT1_QCOM = $00000200
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT2_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT2_QCOM = $00000400
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT3_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT3_QCOM = $00000800
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT4_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT4_QCOM = $00001000
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT5_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT5_QCOM = $00002000
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT6_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT6_QCOM = $00004000
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_BIT7_QCOM, #PB_Constant)
+#GL_DEPTH_BUFFER_BIT7_QCOM = $00008000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT0_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT0_QCOM = $00010000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT1_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT1_QCOM = $00020000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT2_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT2_QCOM = $00040000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT3_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT3_QCOM = $00080000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT4_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT4_QCOM = $00100000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT5_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT5_QCOM = $00200000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT6_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT6_QCOM = $00400000
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BUFFER_BIT7_QCOM, #PB_Constant)
+#GL_STENCIL_BUFFER_BIT7_QCOM = $00800000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT0_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT0_QCOM = $01000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT1_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT1_QCOM = $02000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT2_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT2_QCOM = $04000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT3_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT3_QCOM = $08000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT4_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT4_QCOM = $10000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT5_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT5_QCOM = $20000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT6_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT6_QCOM = $40000000
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_BUFFER_BIT7_QCOM, #PB_Constant)
+#GL_MULTISAMPLE_BUFFER_BIT7_QCOM = $80000000
+CompilerEndIf
+CompilerIf Not Defined(GL_FOVEATION_ENABLE_BIT_QCOM, #PB_Constant)
+#GL_FOVEATION_ENABLE_BIT_QCOM = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM, #PB_Constant)
+#GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM, #PB_Constant)
+#GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM = $00000004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEFORMATION_BIT_SGIX, #PB_Constant)
+#GL_TEXTURE_DEFORMATION_BIT_SGIX = $00000001
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_DEFORMATION_BIT_SGIX, #PB_Constant)
+#GL_GEOMETRY_DEFORMATION_BIT_SGIX = $00000002
+CompilerEndIf
+CompilerIf Not Defined(GL_TERMINATE_SEQUENCE_COMMAND_NV, #PB_Constant)
+#GL_TERMINATE_SEQUENCE_COMMAND_NV = $0000
+CompilerEndIf
+CompilerIf Not Defined(GL_NOP_COMMAND_NV, #PB_Constant)
+#GL_NOP_COMMAND_NV = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ELEMENTS_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ELEMENTS_COMMAND_NV = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ARRAYS_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ARRAYS_COMMAND_NV = $0003
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ELEMENTS_STRIP_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ELEMENTS_STRIP_COMMAND_NV = $0004
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ARRAYS_STRIP_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ARRAYS_STRIP_COMMAND_NV = $0005
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ELEMENTS_INSTANCED_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ELEMENTS_INSTANCED_COMMAND_NV = $0006
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_ARRAYS_INSTANCED_COMMAND_NV, #PB_Constant)
+#GL_DRAW_ARRAYS_INSTANCED_COMMAND_NV = $0007
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ADDRESS_COMMAND_NV, #PB_Constant)
+#GL_ELEMENT_ADDRESS_COMMAND_NV = $0008
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIBUTE_ADDRESS_COMMAND_NV, #PB_Constant)
+#GL_ATTRIBUTE_ADDRESS_COMMAND_NV = $0009
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_ADDRESS_COMMAND_NV, #PB_Constant)
+#GL_UNIFORM_ADDRESS_COMMAND_NV = $000A
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_COLOR_COMMAND_NV, #PB_Constant)
+#GL_BLEND_COLOR_COMMAND_NV = $000B
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_REF_COMMAND_NV, #PB_Constant)
+#GL_STENCIL_REF_COMMAND_NV = $000C
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_WIDTH_COMMAND_NV, #PB_Constant)
+#GL_LINE_WIDTH_COMMAND_NV = $000D
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_COMMAND_NV, #PB_Constant)
+#GL_POLYGON_OFFSET_COMMAND_NV = $000E
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_REF_COMMAND_NV, #PB_Constant)
+#GL_ALPHA_REF_COMMAND_NV = $000F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_COMMAND_NV, #PB_Constant)
+#GL_VIEWPORT_COMMAND_NV = $0010
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_COMMAND_NV, #PB_Constant)
+#GL_SCISSOR_COMMAND_NV = $0011
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT_FACE_COMMAND_NV, #PB_Constant)
+#GL_FRONT_FACE_COMMAND_NV = $0012
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_DEFAULT_INTEL, #PB_Constant)
+#GL_LAYOUT_DEFAULT_INTEL = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_LINEAR_INTEL, #PB_Constant)
+#GL_LAYOUT_LINEAR_INTEL = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_LINEAR_CPU_CACHED_INTEL, #PB_Constant)
+#GL_LAYOUT_LINEAR_CPU_CACHED_INTEL = 2
+CompilerEndIf
+CompilerIf Not Defined(GL_CLOSE_PATH_NV, #PB_Constant)
+#GL_CLOSE_PATH_NV = $00
+CompilerEndIf
+CompilerIf Not Defined(GL_MOVE_TO_NV, #PB_Constant)
+#GL_MOVE_TO_NV = $02
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_MOVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_MOVE_TO_NV = $03
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_TO_NV, #PB_Constant)
+#GL_LINE_TO_NV = $04
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_LINE_TO_NV, #PB_Constant)
+#GL_RELATIVE_LINE_TO_NV = $05
+CompilerEndIf
+CompilerIf Not Defined(GL_HORIZONTAL_LINE_TO_NV, #PB_Constant)
+#GL_HORIZONTAL_LINE_TO_NV = $06
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_HORIZONTAL_LINE_TO_NV, #PB_Constant)
+#GL_RELATIVE_HORIZONTAL_LINE_TO_NV = $07
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTICAL_LINE_TO_NV, #PB_Constant)
+#GL_VERTICAL_LINE_TO_NV = $08
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_VERTICAL_LINE_TO_NV, #PB_Constant)
+#GL_RELATIVE_VERTICAL_LINE_TO_NV = $09
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADRATIC_CURVE_TO_NV, #PB_Constant)
+#GL_QUADRATIC_CURVE_TO_NV = $0A
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_QUADRATIC_CURVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_QUADRATIC_CURVE_TO_NV = $0B
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_CUBIC_CURVE_TO_NV = $0C
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_CUBIC_CURVE_TO_NV = $0D
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_QUADRATIC_CURVE_TO_NV, #PB_Constant)
+#GL_SMOOTH_QUADRATIC_CURVE_TO_NV = $0E
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV = $0F
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_SMOOTH_CUBIC_CURVE_TO_NV = $10
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV = $11
+CompilerEndIf
+CompilerIf Not Defined(GL_SMALL_CCW_ARC_TO_NV, #PB_Constant)
+#GL_SMALL_CCW_ARC_TO_NV = $12
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_SMALL_CCW_ARC_TO_NV, #PB_Constant)
+#GL_RELATIVE_SMALL_CCW_ARC_TO_NV = $13
+CompilerEndIf
+CompilerIf Not Defined(GL_SMALL_CW_ARC_TO_NV, #PB_Constant)
+#GL_SMALL_CW_ARC_TO_NV = $14
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_SMALL_CW_ARC_TO_NV, #PB_Constant)
+#GL_RELATIVE_SMALL_CW_ARC_TO_NV = $15
+CompilerEndIf
+CompilerIf Not Defined(GL_LARGE_CCW_ARC_TO_NV, #PB_Constant)
+#GL_LARGE_CCW_ARC_TO_NV = $16
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_LARGE_CCW_ARC_TO_NV, #PB_Constant)
+#GL_RELATIVE_LARGE_CCW_ARC_TO_NV = $17
+CompilerEndIf
+CompilerIf Not Defined(GL_LARGE_CW_ARC_TO_NV, #PB_Constant)
+#GL_LARGE_CW_ARC_TO_NV = $18
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_LARGE_CW_ARC_TO_NV, #PB_Constant)
+#GL_RELATIVE_LARGE_CW_ARC_TO_NV = $19
+CompilerEndIf
+CompilerIf Not Defined(GL_CONIC_CURVE_TO_NV, #PB_Constant)
+#GL_CONIC_CURVE_TO_NV = $1A
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_CONIC_CURVE_TO_NV, #PB_Constant)
+#GL_RELATIVE_CONIC_CURVE_TO_NV = $1B
+CompilerEndIf
+CompilerIf Not Defined(GL_SHARED_EDGE_NV, #PB_Constant)
+#GL_SHARED_EDGE_NV = $C0
+CompilerEndIf
+CompilerIf Not Defined(GL_ROUNDED_RECT_NV, #PB_Constant)
+#GL_ROUNDED_RECT_NV = $E8
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_ROUNDED_RECT_NV, #PB_Constant)
+#GL_RELATIVE_ROUNDED_RECT_NV = $E9
+CompilerEndIf
+CompilerIf Not Defined(GL_ROUNDED_RECT2_NV, #PB_Constant)
+#GL_ROUNDED_RECT2_NV = $EA
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_ROUNDED_RECT2_NV, #PB_Constant)
+#GL_RELATIVE_ROUNDED_RECT2_NV = $EB
+CompilerEndIf
+CompilerIf Not Defined(GL_ROUNDED_RECT4_NV, #PB_Constant)
+#GL_ROUNDED_RECT4_NV = $EC
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_ROUNDED_RECT4_NV, #PB_Constant)
+#GL_RELATIVE_ROUNDED_RECT4_NV = $ED
+CompilerEndIf
+CompilerIf Not Defined(GL_ROUNDED_RECT8_NV, #PB_Constant)
+#GL_ROUNDED_RECT8_NV = $EE
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_ROUNDED_RECT8_NV, #PB_Constant)
+#GL_RELATIVE_ROUNDED_RECT8_NV = $EF
+CompilerEndIf
+CompilerIf Not Defined(GL_RESTART_PATH_NV, #PB_Constant)
+#GL_RESTART_PATH_NV = $F0
+CompilerEndIf
+CompilerIf Not Defined(GL_DUP_FIRST_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_DUP_FIRST_CUBIC_CURVE_TO_NV = $F2
+CompilerEndIf
+CompilerIf Not Defined(GL_DUP_LAST_CUBIC_CURVE_TO_NV, #PB_Constant)
+#GL_DUP_LAST_CUBIC_CURVE_TO_NV = $F4
+CompilerEndIf
+CompilerIf Not Defined(GL_RECT_NV, #PB_Constant)
+#GL_RECT_NV = $F6
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_RECT_NV, #PB_Constant)
+#GL_RELATIVE_RECT_NV = $F7
+CompilerEndIf
+CompilerIf Not Defined(GL_CIRCULAR_CCW_ARC_TO_NV, #PB_Constant)
+#GL_CIRCULAR_CCW_ARC_TO_NV = $F8
+CompilerEndIf
+CompilerIf Not Defined(GL_CIRCULAR_CW_ARC_TO_NV, #PB_Constant)
+#GL_CIRCULAR_CW_ARC_TO_NV = $FA
+CompilerEndIf
+CompilerIf Not Defined(GL_CIRCULAR_TANGENT_ARC_TO_NV, #PB_Constant)
+#GL_CIRCULAR_TANGENT_ARC_TO_NV = $FC
+CompilerEndIf
+CompilerIf Not Defined(GL_ARC_TO_NV, #PB_Constant)
+#GL_ARC_TO_NV = $FE
+CompilerEndIf
+CompilerIf Not Defined(GL_RELATIVE_ARC_TO_NV, #PB_Constant)
+#GL_RELATIVE_ARC_TO_NV = $FF
+CompilerEndIf
+CompilerIf Not Defined(GL_NEXT_BUFFER_NV, #PB_Constant)
+#GL_NEXT_BUFFER_NV = -2
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_COMPONENTS4_NV, #PB_Constant)
+#GL_SKIP_COMPONENTS4_NV = -3
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_COMPONENTS3_NV, #PB_Constant)
+#GL_SKIP_COMPONENTS3_NV = -4
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_COMPONENTS2_NV, #PB_Constant)
+#GL_SKIP_COMPONENTS2_NV = -5
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_COMPONENTS1_NV, #PB_Constant)
+#GL_SKIP_COMPONENTS1_NV = -6
+CompilerEndIf
+CompilerIf Not Defined(GL_RESTART_SUN, #PB_Constant)
+#GL_RESTART_SUN = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACE_MIDDLE_SUN, #PB_Constant)
+#GL_REPLACE_MIDDLE_SUN = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACE_OLDEST_SUN, #PB_Constant)
+#GL_REPLACE_OLDEST_SUN = $0003
+CompilerEndIf
+CompilerIf Not Defined(GL_FALSE, #PB_Constant)
+#GL_FALSE = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_NO_ERROR, #PB_Constant)
+#GL_NO_ERROR = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_ZERO, #PB_Constant)
+#GL_ZERO = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_NONE, #PB_Constant)
+#GL_NONE = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_NONE_OES, #PB_Constant)
+#GL_NONE_OES = 0
+CompilerEndIf
+CompilerIf Not Defined(GL_TRUE, #PB_Constant)
+#GL_TRUE = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE, #PB_Constant)
+#GL_ONE = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_INDEX, #PB_Constant)
+#GL_INVALID_INDEX = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_PIXELS_AMD, #PB_Constant)
+#GL_ALL_PIXELS_AMD = $FFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMEOUT_IGNORED, #PB_Constant)
+#GL_TIMEOUT_IGNORED = $FFFFFFFFFFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMEOUT_IGNORED_APPLE, #PB_Constant)
+#GL_TIMEOUT_IGNORED_APPLE = $FFFFFFFFFFFFFFFF
+CompilerEndIf
+CompilerIf Not Defined(GL_VERSION_ES_CL_1_0, #PB_Constant)
+#GL_VERSION_ES_CL_1_0 = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_VERSION_ES_CM_1_1, #PB_Constant)
+#GL_VERSION_ES_CM_1_1 = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_VERSION_ES_CL_1_1, #PB_Constant)
+#GL_VERSION_ES_CL_1_1 = 1
+CompilerEndIf
+CompilerIf Not Defined(GL_UUID_SIZE_EXT, #PB_Constant)
+#GL_UUID_SIZE_EXT = 16
+CompilerEndIf
+CompilerIf Not Defined(GL_LUID_SIZE_EXT, #PB_Constant)
+#GL_LUID_SIZE_EXT = 8
+CompilerEndIf
+CompilerIf Not Defined(GL_POINTS, #PB_Constant)
+#GL_POINTS = $0000
+CompilerEndIf
+CompilerIf Not Defined(GL_LINES, #PB_Constant)
+#GL_LINES = $0001
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_LOOP, #PB_Constant)
+#GL_LINE_LOOP = $0002
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STRIP, #PB_Constant)
+#GL_LINE_STRIP = $0003
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLES, #PB_Constant)
+#GL_TRIANGLES = $0004
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_STRIP, #PB_Constant)
+#GL_TRIANGLE_STRIP = $0005
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_FAN, #PB_Constant)
+#GL_TRIANGLE_FAN = $0006
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADS, #PB_Constant)
+#GL_QUADS = $0007
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADS_EXT, #PB_Constant)
+#GL_QUADS_EXT = $0007
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADS_OES, #PB_Constant)
+#GL_QUADS_OES = $0007
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_STRIP, #PB_Constant)
+#GL_QUAD_STRIP = $0008
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON, #PB_Constant)
+#GL_POLYGON = $0009
+CompilerEndIf
+CompilerIf Not Defined(GL_LINES_ADJACENCY, #PB_Constant)
+#GL_LINES_ADJACENCY = $000A
+CompilerEndIf
+CompilerIf Not Defined(GL_LINES_ADJACENCY_ARB, #PB_Constant)
+#GL_LINES_ADJACENCY_ARB = $000A
+CompilerEndIf
+CompilerIf Not Defined(GL_LINES_ADJACENCY_EXT, #PB_Constant)
+#GL_LINES_ADJACENCY_EXT = $000A
+CompilerEndIf
+CompilerIf Not Defined(GL_LINES_ADJACENCY_OES, #PB_Constant)
+#GL_LINES_ADJACENCY_OES = $000A
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STRIP_ADJACENCY, #PB_Constant)
+#GL_LINE_STRIP_ADJACENCY = $000B
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STRIP_ADJACENCY_ARB, #PB_Constant)
+#GL_LINE_STRIP_ADJACENCY_ARB = $000B
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STRIP_ADJACENCY_EXT, #PB_Constant)
+#GL_LINE_STRIP_ADJACENCY_EXT = $000B
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STRIP_ADJACENCY_OES, #PB_Constant)
+#GL_LINE_STRIP_ADJACENCY_OES = $000B
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLES_ADJACENCY, #PB_Constant)
+#GL_TRIANGLES_ADJACENCY = $000C
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLES_ADJACENCY_ARB, #PB_Constant)
+#GL_TRIANGLES_ADJACENCY_ARB = $000C
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLES_ADJACENCY_EXT, #PB_Constant)
+#GL_TRIANGLES_ADJACENCY_EXT = $000C
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLES_ADJACENCY_OES, #PB_Constant)
+#GL_TRIANGLES_ADJACENCY_OES = $000C
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_STRIP_ADJACENCY, #PB_Constant)
+#GL_TRIANGLE_STRIP_ADJACENCY = $000D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_STRIP_ADJACENCY_ARB, #PB_Constant)
+#GL_TRIANGLE_STRIP_ADJACENCY_ARB = $000D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_STRIP_ADJACENCY_EXT, #PB_Constant)
+#GL_TRIANGLE_STRIP_ADJACENCY_EXT = $000D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_STRIP_ADJACENCY_OES, #PB_Constant)
+#GL_TRIANGLE_STRIP_ADJACENCY_OES = $000D
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCHES, #PB_Constant)
+#GL_PATCHES = $000E
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCHES_EXT, #PB_Constant)
+#GL_PATCHES_EXT = $000E
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCHES_OES, #PB_Constant)
+#GL_PATCHES_OES = $000E
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM, #PB_Constant)
+#GL_ACCUM = $0100
+CompilerEndIf
+CompilerIf Not Defined(GL_LOAD, #PB_Constant)
+#GL_LOAD = $0101
+CompilerEndIf
+CompilerIf Not Defined(GL_RETURN, #PB_Constant)
+#GL_RETURN = $0102
+CompilerEndIf
+CompilerIf Not Defined(GL_MULT, #PB_Constant)
+#GL_MULT = $0103
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD, #PB_Constant)
+#GL_ADD = $0104
+CompilerEndIf
+CompilerIf Not Defined(GL_NEVER, #PB_Constant)
+#GL_NEVER = $0200
+CompilerEndIf
+CompilerIf Not Defined(GL_LESS, #PB_Constant)
+#GL_LESS = $0201
+CompilerEndIf
+CompilerIf Not Defined(GL_EQUAL, #PB_Constant)
+#GL_EQUAL = $0202
+CompilerEndIf
+CompilerIf Not Defined(GL_LEQUAL, #PB_Constant)
+#GL_LEQUAL = $0203
+CompilerEndIf
+CompilerIf Not Defined(GL_GREATER, #PB_Constant)
+#GL_GREATER = $0204
+CompilerEndIf
+CompilerIf Not Defined(GL_NOTEQUAL, #PB_Constant)
+#GL_NOTEQUAL = $0205
+CompilerEndIf
+CompilerIf Not Defined(GL_GEQUAL, #PB_Constant)
+#GL_GEQUAL = $0206
+CompilerEndIf
+CompilerIf Not Defined(GL_ALWAYS, #PB_Constant)
+#GL_ALWAYS = $0207
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_COLOR, #PB_Constant)
+#GL_SRC_COLOR = $0300
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC_COLOR, #PB_Constant)
+#GL_ONE_MINUS_SRC_COLOR = $0301
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_ALPHA, #PB_Constant)
+#GL_SRC_ALPHA = $0302
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC_ALPHA, #PB_Constant)
+#GL_ONE_MINUS_SRC_ALPHA = $0303
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_ALPHA, #PB_Constant)
+#GL_DST_ALPHA = $0304
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_DST_ALPHA, #PB_Constant)
+#GL_ONE_MINUS_DST_ALPHA = $0305
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_COLOR, #PB_Constant)
+#GL_DST_COLOR = $0306
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_DST_COLOR, #PB_Constant)
+#GL_ONE_MINUS_DST_COLOR = $0307
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_ALPHA_SATURATE, #PB_Constant)
+#GL_SRC_ALPHA_SATURATE = $0308
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_ALPHA_SATURATE_EXT, #PB_Constant)
+#GL_SRC_ALPHA_SATURATE_EXT = $0308
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT_LEFT, #PB_Constant)
+#GL_FRONT_LEFT = $0400
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT_RIGHT, #PB_Constant)
+#GL_FRONT_RIGHT = $0401
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK_LEFT, #PB_Constant)
+#GL_BACK_LEFT = $0402
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK_RIGHT, #PB_Constant)
+#GL_BACK_RIGHT = $0403
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT, #PB_Constant)
+#GL_FRONT = $0404
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK, #PB_Constant)
+#GL_BACK = $0405
+CompilerEndIf
+CompilerIf Not Defined(GL_LEFT, #PB_Constant)
+#GL_LEFT = $0406
+CompilerEndIf
+CompilerIf Not Defined(GL_RIGHT, #PB_Constant)
+#GL_RIGHT = $0407
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT_AND_BACK, #PB_Constant)
+#GL_FRONT_AND_BACK = $0408
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX0, #PB_Constant)
+#GL_AUX0 = $0409
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX1, #PB_Constant)
+#GL_AUX1 = $040A
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX2, #PB_Constant)
+#GL_AUX2 = $040B
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX3, #PB_Constant)
+#GL_AUX3 = $040C
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_ENUM, #PB_Constant)
+#GL_INVALID_ENUM = $0500
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_VALUE, #PB_Constant)
+#GL_INVALID_VALUE = $0501
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_OPERATION, #PB_Constant)
+#GL_INVALID_OPERATION = $0502
+CompilerEndIf
+CompilerIf Not Defined(GL_STACK_OVERFLOW, #PB_Constant)
+#GL_STACK_OVERFLOW = $0503
+CompilerEndIf
+CompilerIf Not Defined(GL_STACK_OVERFLOW_KHR, #PB_Constant)
+#GL_STACK_OVERFLOW_KHR = $0503
+CompilerEndIf
+CompilerIf Not Defined(GL_STACK_UNDERFLOW, #PB_Constant)
+#GL_STACK_UNDERFLOW = $0504
+CompilerEndIf
+CompilerIf Not Defined(GL_STACK_UNDERFLOW_KHR, #PB_Constant)
+#GL_STACK_UNDERFLOW_KHR = $0504
+CompilerEndIf
+CompilerIf Not Defined(GL_OUT_OF_MEMORY, #PB_Constant)
+#GL_OUT_OF_MEMORY = $0505
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_FRAMEBUFFER_OPERATION, #PB_Constant)
+#GL_INVALID_FRAMEBUFFER_OPERATION = $0506
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_FRAMEBUFFER_OPERATION_EXT, #PB_Constant)
+#GL_INVALID_FRAMEBUFFER_OPERATION_EXT = $0506
+CompilerEndIf
+CompilerIf Not Defined(GL_INVALID_FRAMEBUFFER_OPERATION_OES, #PB_Constant)
+#GL_INVALID_FRAMEBUFFER_OPERATION_OES = $0506
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_LOST, #PB_Constant)
+#GL_CONTEXT_LOST = $0507
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_LOST_KHR, #PB_Constant)
+#GL_CONTEXT_LOST_KHR = $0507
+CompilerEndIf
+CompilerIf Not Defined(GL_2D, #PB_Constant)
+#GL_2D = $0600
+CompilerEndIf
+CompilerIf Not Defined(GL_3D, #PB_Constant)
+#GL_3D = $0601
+CompilerEndIf
+CompilerIf Not Defined(GL_3D_COLOR, #PB_Constant)
+#GL_3D_COLOR = $0602
+CompilerEndIf
+CompilerIf Not Defined(GL_3D_COLOR_TEXTURE, #PB_Constant)
+#GL_3D_COLOR_TEXTURE = $0603
+CompilerEndIf
+CompilerIf Not Defined(GL_4D_COLOR_TEXTURE, #PB_Constant)
+#GL_4D_COLOR_TEXTURE = $0604
+CompilerEndIf
+CompilerIf Not Defined(GL_PASS_THROUGH_TOKEN, #PB_Constant)
+#GL_PASS_THROUGH_TOKEN = $0700
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_TOKEN, #PB_Constant)
+#GL_POINT_TOKEN = $0701
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_TOKEN, #PB_Constant)
+#GL_LINE_TOKEN = $0702
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_TOKEN, #PB_Constant)
+#GL_POLYGON_TOKEN = $0703
+CompilerEndIf
+CompilerIf Not Defined(GL_BITMAP_TOKEN, #PB_Constant)
+#GL_BITMAP_TOKEN = $0704
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_PIXEL_TOKEN, #PB_Constant)
+#GL_DRAW_PIXEL_TOKEN = $0705
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_PIXEL_TOKEN, #PB_Constant)
+#GL_COPY_PIXEL_TOKEN = $0706
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_RESET_TOKEN, #PB_Constant)
+#GL_LINE_RESET_TOKEN = $0707
+CompilerEndIf
+CompilerIf Not Defined(GL_EXP, #PB_Constant)
+#GL_EXP = $0800
+CompilerEndIf
+CompilerIf Not Defined(GL_EXP2, #PB_Constant)
+#GL_EXP2 = $0801
+CompilerEndIf
+CompilerIf Not Defined(GL_CW, #PB_Constant)
+#GL_CW = $0900
+CompilerEndIf
+CompilerIf Not Defined(GL_CCW, #PB_Constant)
+#GL_CCW = $0901
+CompilerEndIf
+CompilerIf Not Defined(GL_COEFF, #PB_Constant)
+#GL_COEFF = $0A00
+CompilerEndIf
+CompilerIf Not Defined(GL_ORDER, #PB_Constant)
+#GL_ORDER = $0A01
+CompilerEndIf
+CompilerIf Not Defined(GL_DOMAIN, #PB_Constant)
+#GL_DOMAIN = $0A02
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_COLOR, #PB_Constant)
+#GL_CURRENT_COLOR = $0B00
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_INDEX, #PB_Constant)
+#GL_CURRENT_INDEX = $0B01
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_NORMAL, #PB_Constant)
+#GL_CURRENT_NORMAL = $0B02
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_TEXTURE_COORDS, #PB_Constant)
+#GL_CURRENT_TEXTURE_COORDS = $0B03
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_COLOR, #PB_Constant)
+#GL_CURRENT_RASTER_COLOR = $0B04
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_INDEX, #PB_Constant)
+#GL_CURRENT_RASTER_INDEX = $0B05
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_TEXTURE_COORDS, #PB_Constant)
+#GL_CURRENT_RASTER_TEXTURE_COORDS = $0B06
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_POSITION, #PB_Constant)
+#GL_CURRENT_RASTER_POSITION = $0B07
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_POSITION_VALID, #PB_Constant)
+#GL_CURRENT_RASTER_POSITION_VALID = $0B08
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_DISTANCE, #PB_Constant)
+#GL_CURRENT_RASTER_DISTANCE = $0B09
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SMOOTH, #PB_Constant)
+#GL_POINT_SMOOTH = $0B10
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE, #PB_Constant)
+#GL_POINT_SIZE = $0B11
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_RANGE, #PB_Constant)
+#GL_POINT_SIZE_RANGE = $0B12
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_POINT_SIZE_RANGE, #PB_Constant)
+#GL_SMOOTH_POINT_SIZE_RANGE = $0B12
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_GRANULARITY, #PB_Constant)
+#GL_POINT_SIZE_GRANULARITY = $0B13
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_POINT_SIZE_GRANULARITY, #PB_Constant)
+#GL_SMOOTH_POINT_SIZE_GRANULARITY = $0B13
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_SMOOTH, #PB_Constant)
+#GL_LINE_SMOOTH = $0B20
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_WIDTH, #PB_Constant)
+#GL_LINE_WIDTH = $0B21
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_WIDTH_RANGE, #PB_Constant)
+#GL_LINE_WIDTH_RANGE = $0B22
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_LINE_WIDTH_RANGE, #PB_Constant)
+#GL_SMOOTH_LINE_WIDTH_RANGE = $0B22
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_WIDTH_GRANULARITY, #PB_Constant)
+#GL_LINE_WIDTH_GRANULARITY = $0B23
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH_LINE_WIDTH_GRANULARITY, #PB_Constant)
+#GL_SMOOTH_LINE_WIDTH_GRANULARITY = $0B23
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STIPPLE, #PB_Constant)
+#GL_LINE_STIPPLE = $0B24
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STIPPLE_PATTERN, #PB_Constant)
+#GL_LINE_STIPPLE_PATTERN = $0B25
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_STIPPLE_REPEAT, #PB_Constant)
+#GL_LINE_STIPPLE_REPEAT = $0B26
+CompilerEndIf
+CompilerIf Not Defined(GL_LIST_MODE, #PB_Constant)
+#GL_LIST_MODE = $0B30
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LIST_NESTING, #PB_Constant)
+#GL_MAX_LIST_NESTING = $0B31
+CompilerEndIf
+CompilerIf Not Defined(GL_LIST_BASE, #PB_Constant)
+#GL_LIST_BASE = $0B32
+CompilerEndIf
+CompilerIf Not Defined(GL_LIST_INDEX, #PB_Constant)
+#GL_LIST_INDEX = $0B33
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_MODE, #PB_Constant)
+#GL_POLYGON_MODE = $0B40
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_MODE_NV, #PB_Constant)
+#GL_POLYGON_MODE_NV = $0B40
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_SMOOTH, #PB_Constant)
+#GL_POLYGON_SMOOTH = $0B41
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_STIPPLE, #PB_Constant)
+#GL_POLYGON_STIPPLE = $0B42
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG, #PB_Constant)
+#GL_EDGE_FLAG = $0B43
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_FACE, #PB_Constant)
+#GL_CULL_FACE = $0B44
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_FACE_MODE, #PB_Constant)
+#GL_CULL_FACE_MODE = $0B45
+CompilerEndIf
+CompilerIf Not Defined(GL_FRONT_FACE, #PB_Constant)
+#GL_FRONT_FACE = $0B46
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHTING, #PB_Constant)
+#GL_LIGHTING = $0B50
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_LOCAL_VIEWER, #PB_Constant)
+#GL_LIGHT_MODEL_LOCAL_VIEWER = $0B51
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_TWO_SIDE, #PB_Constant)
+#GL_LIGHT_MODEL_TWO_SIDE = $0B52
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_AMBIENT, #PB_Constant)
+#GL_LIGHT_MODEL_AMBIENT = $0B53
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADE_MODEL, #PB_Constant)
+#GL_SHADE_MODEL = $0B54
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATERIAL_FACE, #PB_Constant)
+#GL_COLOR_MATERIAL_FACE = $0B55
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATERIAL_PARAMETER, #PB_Constant)
+#GL_COLOR_MATERIAL_PARAMETER = $0B56
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATERIAL, #PB_Constant)
+#GL_COLOR_MATERIAL = $0B57
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG, #PB_Constant)
+#GL_FOG = $0B60
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_INDEX, #PB_Constant)
+#GL_FOG_INDEX = $0B61
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_DENSITY, #PB_Constant)
+#GL_FOG_DENSITY = $0B62
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_START, #PB_Constant)
+#GL_FOG_START = $0B63
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_END, #PB_Constant)
+#GL_FOG_END = $0B64
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_MODE, #PB_Constant)
+#GL_FOG_MODE = $0B65
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COLOR, #PB_Constant)
+#GL_FOG_COLOR = $0B66
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_RANGE, #PB_Constant)
+#GL_DEPTH_RANGE = $0B70
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_TEST, #PB_Constant)
+#GL_DEPTH_TEST = $0B71
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_WRITEMASK, #PB_Constant)
+#GL_DEPTH_WRITEMASK = $0B72
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLEAR_VALUE, #PB_Constant)
+#GL_DEPTH_CLEAR_VALUE = $0B73
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_FUNC, #PB_Constant)
+#GL_DEPTH_FUNC = $0B74
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_CLEAR_VALUE, #PB_Constant)
+#GL_ACCUM_CLEAR_VALUE = $0B80
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_TEST, #PB_Constant)
+#GL_STENCIL_TEST = $0B90
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_CLEAR_VALUE, #PB_Constant)
+#GL_STENCIL_CLEAR_VALUE = $0B91
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_FUNC, #PB_Constant)
+#GL_STENCIL_FUNC = $0B92
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_VALUE_MASK, #PB_Constant)
+#GL_STENCIL_VALUE_MASK = $0B93
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_FAIL, #PB_Constant)
+#GL_STENCIL_FAIL = $0B94
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_PASS_DEPTH_FAIL, #PB_Constant)
+#GL_STENCIL_PASS_DEPTH_FAIL = $0B95
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_PASS_DEPTH_PASS, #PB_Constant)
+#GL_STENCIL_PASS_DEPTH_PASS = $0B96
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_REF, #PB_Constant)
+#GL_STENCIL_REF = $0B97
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_WRITEMASK, #PB_Constant)
+#GL_STENCIL_WRITEMASK = $0B98
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_MODE, #PB_Constant)
+#GL_MATRIX_MODE = $0BA0
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMALIZE, #PB_Constant)
+#GL_NORMALIZE = $0BA1
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT, #PB_Constant)
+#GL_VIEWPORT = $0BA2
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW_STACK_DEPTH, #PB_Constant)
+#GL_MODELVIEW_STACK_DEPTH = $0BA3
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW0_STACK_DEPTH_EXT, #PB_Constant)
+#GL_MODELVIEW0_STACK_DEPTH_EXT = $0BA3
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MODELVIEW_STACK_DEPTH_NV, #PB_Constant)
+#GL_PATH_MODELVIEW_STACK_DEPTH_NV = $0BA3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROJECTION_STACK_DEPTH, #PB_Constant)
+#GL_PROJECTION_STACK_DEPTH = $0BA4
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_PROJECTION_STACK_DEPTH_NV, #PB_Constant)
+#GL_PATH_PROJECTION_STACK_DEPTH_NV = $0BA4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_STACK_DEPTH, #PB_Constant)
+#GL_TEXTURE_STACK_DEPTH = $0BA5
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW_MATRIX, #PB_Constant)
+#GL_MODELVIEW_MATRIX = $0BA6
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW0_MATRIX_EXT, #PB_Constant)
+#GL_MODELVIEW0_MATRIX_EXT = $0BA6
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MODELVIEW_MATRIX_NV, #PB_Constant)
+#GL_PATH_MODELVIEW_MATRIX_NV = $0BA6
+CompilerEndIf
+CompilerIf Not Defined(GL_PROJECTION_MATRIX, #PB_Constant)
+#GL_PROJECTION_MATRIX = $0BA7
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_PROJECTION_MATRIX_NV, #PB_Constant)
+#GL_PATH_PROJECTION_MATRIX_NV = $0BA7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MATRIX, #PB_Constant)
+#GL_TEXTURE_MATRIX = $0BA8
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIB_STACK_DEPTH, #PB_Constant)
+#GL_ATTRIB_STACK_DEPTH = $0BB0
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_ATTRIB_STACK_DEPTH, #PB_Constant)
+#GL_CLIENT_ATTRIB_STACK_DEPTH = $0BB1
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST, #PB_Constant)
+#GL_ALPHA_TEST = $0BC0
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST_QCOM, #PB_Constant)
+#GL_ALPHA_TEST_QCOM = $0BC0
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST_FUNC, #PB_Constant)
+#GL_ALPHA_TEST_FUNC = $0BC1
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST_FUNC_QCOM, #PB_Constant)
+#GL_ALPHA_TEST_FUNC_QCOM = $0BC1
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST_REF, #PB_Constant)
+#GL_ALPHA_TEST_REF = $0BC2
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TEST_REF_QCOM, #PB_Constant)
+#GL_ALPHA_TEST_REF_QCOM = $0BC2
+CompilerEndIf
+CompilerIf Not Defined(GL_DITHER, #PB_Constant)
+#GL_DITHER = $0BD0
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST, #PB_Constant)
+#GL_BLEND_DST = $0BE0
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC, #PB_Constant)
+#GL_BLEND_SRC = $0BE1
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND, #PB_Constant)
+#GL_BLEND = $0BE2
+CompilerEndIf
+CompilerIf Not Defined(GL_LOGIC_OP_MODE, #PB_Constant)
+#GL_LOGIC_OP_MODE = $0BF0
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_LOGIC_OP, #PB_Constant)
+#GL_INDEX_LOGIC_OP = $0BF1
+CompilerEndIf
+CompilerIf Not Defined(GL_LOGIC_OP, #PB_Constant)
+#GL_LOGIC_OP = $0BF1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_LOGIC_OP, #PB_Constant)
+#GL_COLOR_LOGIC_OP = $0BF2
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX_BUFFERS, #PB_Constant)
+#GL_AUX_BUFFERS = $0C00
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER, #PB_Constant)
+#GL_DRAW_BUFFER = $0C01
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER_EXT, #PB_Constant)
+#GL_DRAW_BUFFER_EXT = $0C01
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_BUFFER, #PB_Constant)
+#GL_READ_BUFFER = $0C02
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_BUFFER_EXT, #PB_Constant)
+#GL_READ_BUFFER_EXT = $0C02
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_BUFFER_NV, #PB_Constant)
+#GL_READ_BUFFER_NV = $0C02
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_BOX, #PB_Constant)
+#GL_SCISSOR_BOX = $0C10
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_TEST, #PB_Constant)
+#GL_SCISSOR_TEST = $0C11
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_CLEAR_VALUE, #PB_Constant)
+#GL_INDEX_CLEAR_VALUE = $0C20
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_WRITEMASK, #PB_Constant)
+#GL_INDEX_WRITEMASK = $0C21
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_CLEAR_VALUE, #PB_Constant)
+#GL_COLOR_CLEAR_VALUE = $0C22
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_WRITEMASK, #PB_Constant)
+#GL_COLOR_WRITEMASK = $0C23
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_MODE, #PB_Constant)
+#GL_INDEX_MODE = $0C30
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_MODE, #PB_Constant)
+#GL_RGBA_MODE = $0C31
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLEBUFFER, #PB_Constant)
+#GL_DOUBLEBUFFER = $0C32
+CompilerEndIf
+CompilerIf Not Defined(GL_STEREO, #PB_Constant)
+#GL_STEREO = $0C33
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDER_MODE, #PB_Constant)
+#GL_RENDER_MODE = $0C40
+CompilerEndIf
+CompilerIf Not Defined(GL_PERSPECTIVE_CORRECTION_HINT, #PB_Constant)
+#GL_PERSPECTIVE_CORRECTION_HINT = $0C50
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SMOOTH_HINT, #PB_Constant)
+#GL_POINT_SMOOTH_HINT = $0C51
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_SMOOTH_HINT, #PB_Constant)
+#GL_LINE_SMOOTH_HINT = $0C52
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_SMOOTH_HINT, #PB_Constant)
+#GL_POLYGON_SMOOTH_HINT = $0C53
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_HINT, #PB_Constant)
+#GL_FOG_HINT = $0C54
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_S, #PB_Constant)
+#GL_TEXTURE_GEN_S = $0C60
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_T, #PB_Constant)
+#GL_TEXTURE_GEN_T = $0C61
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_R, #PB_Constant)
+#GL_TEXTURE_GEN_R = $0C62
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_Q, #PB_Constant)
+#GL_TEXTURE_GEN_Q = $0C63
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_I, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_I = $0C70
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_S_TO_S, #PB_Constant)
+#GL_PIXEL_MAP_S_TO_S = $0C71
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_R, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_R = $0C72
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_G, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_G = $0C73
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_B, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_B = $0C74
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_A, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_A = $0C75
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_R_TO_R, #PB_Constant)
+#GL_PIXEL_MAP_R_TO_R = $0C76
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_G_TO_G, #PB_Constant)
+#GL_PIXEL_MAP_G_TO_G = $0C77
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_B_TO_B, #PB_Constant)
+#GL_PIXEL_MAP_B_TO_B = $0C78
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_A_TO_A, #PB_Constant)
+#GL_PIXEL_MAP_A_TO_A = $0C79
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_I_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_I_SIZE = $0CB0
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_S_TO_S_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_S_TO_S_SIZE = $0CB1
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_R_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_R_SIZE = $0CB2
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_G_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_G_SIZE = $0CB3
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_B_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_B_SIZE = $0CB4
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_I_TO_A_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_I_TO_A_SIZE = $0CB5
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_R_TO_R_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_R_TO_R_SIZE = $0CB6
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_G_TO_G_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_G_TO_G_SIZE = $0CB7
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_B_TO_B_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_B_TO_B_SIZE = $0CB8
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAP_A_TO_A_SIZE, #PB_Constant)
+#GL_PIXEL_MAP_A_TO_A_SIZE = $0CB9
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SWAP_BYTES, #PB_Constant)
+#GL_UNPACK_SWAP_BYTES = $0CF0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_LSB_FIRST, #PB_Constant)
+#GL_UNPACK_LSB_FIRST = $0CF1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_ROW_LENGTH, #PB_Constant)
+#GL_UNPACK_ROW_LENGTH = $0CF2
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_ROW_LENGTH_EXT, #PB_Constant)
+#GL_UNPACK_ROW_LENGTH_EXT = $0CF2
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_ROWS, #PB_Constant)
+#GL_UNPACK_SKIP_ROWS = $0CF3
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_ROWS_EXT, #PB_Constant)
+#GL_UNPACK_SKIP_ROWS_EXT = $0CF3
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_PIXELS, #PB_Constant)
+#GL_UNPACK_SKIP_PIXELS = $0CF4
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_PIXELS_EXT, #PB_Constant)
+#GL_UNPACK_SKIP_PIXELS_EXT = $0CF4
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_ALIGNMENT, #PB_Constant)
+#GL_UNPACK_ALIGNMENT = $0CF5
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SWAP_BYTES, #PB_Constant)
+#GL_PACK_SWAP_BYTES = $0D00
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_LSB_FIRST, #PB_Constant)
+#GL_PACK_LSB_FIRST = $0D01
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_ROW_LENGTH, #PB_Constant)
+#GL_PACK_ROW_LENGTH = $0D02
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_ROW_LENGTH_NV, #PB_Constant)
+#GL_PACK_ROW_LENGTH_NV = $0D02
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_ROWS, #PB_Constant)
+#GL_PACK_SKIP_ROWS = $0D03
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_ROWS_NV, #PB_Constant)
+#GL_PACK_SKIP_ROWS_NV = $0D03
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_PIXELS, #PB_Constant)
+#GL_PACK_SKIP_PIXELS = $0D04
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_PIXELS_NV, #PB_Constant)
+#GL_PACK_SKIP_PIXELS_NV = $0D04
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_ALIGNMENT, #PB_Constant)
+#GL_PACK_ALIGNMENT = $0D05
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_COLOR, #PB_Constant)
+#GL_MAP_COLOR = $0D10
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_STENCIL, #PB_Constant)
+#GL_MAP_STENCIL = $0D11
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_SHIFT, #PB_Constant)
+#GL_INDEX_SHIFT = $0D12
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_OFFSET, #PB_Constant)
+#GL_INDEX_OFFSET = $0D13
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_SCALE, #PB_Constant)
+#GL_RED_SCALE = $0D14
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_BIAS, #PB_Constant)
+#GL_RED_BIAS = $0D15
+CompilerEndIf
+CompilerIf Not Defined(GL_ZOOM_X, #PB_Constant)
+#GL_ZOOM_X = $0D16
+CompilerEndIf
+CompilerIf Not Defined(GL_ZOOM_Y, #PB_Constant)
+#GL_ZOOM_Y = $0D17
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_SCALE, #PB_Constant)
+#GL_GREEN_SCALE = $0D18
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_BIAS, #PB_Constant)
+#GL_GREEN_BIAS = $0D19
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_SCALE, #PB_Constant)
+#GL_BLUE_SCALE = $0D1A
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_BIAS, #PB_Constant)
+#GL_BLUE_BIAS = $0D1B
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_SCALE, #PB_Constant)
+#GL_ALPHA_SCALE = $0D1C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_BIAS, #PB_Constant)
+#GL_ALPHA_BIAS = $0D1D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_SCALE, #PB_Constant)
+#GL_DEPTH_SCALE = $0D1E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BIAS, #PB_Constant)
+#GL_DEPTH_BIAS = $0D1F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_EVAL_ORDER, #PB_Constant)
+#GL_MAX_EVAL_ORDER = $0D30
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LIGHTS, #PB_Constant)
+#GL_MAX_LIGHTS = $0D31
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIP_PLANES, #PB_Constant)
+#GL_MAX_CLIP_PLANES = $0D32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIP_PLANES_IMG, #PB_Constant)
+#GL_MAX_CLIP_PLANES_IMG = $0D32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIP_DISTANCES, #PB_Constant)
+#GL_MAX_CLIP_DISTANCES = $0D32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIP_DISTANCES_EXT, #PB_Constant)
+#GL_MAX_CLIP_DISTANCES_EXT = $0D32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIP_DISTANCES_APPLE, #PB_Constant)
+#GL_MAX_CLIP_DISTANCES_APPLE = $0D32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_SIZE, #PB_Constant)
+#GL_MAX_TEXTURE_SIZE = $0D33
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PIXEL_MAP_TABLE, #PB_Constant)
+#GL_MAX_PIXEL_MAP_TABLE = $0D34
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ATTRIB_STACK_DEPTH, #PB_Constant)
+#GL_MAX_ATTRIB_STACK_DEPTH = $0D35
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MODELVIEW_STACK_DEPTH, #PB_Constant)
+#GL_MAX_MODELVIEW_STACK_DEPTH = $0D36
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MAX_MODELVIEW_STACK_DEPTH_NV, #PB_Constant)
+#GL_PATH_MAX_MODELVIEW_STACK_DEPTH_NV = $0D36
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_NAME_STACK_DEPTH, #PB_Constant)
+#GL_MAX_NAME_STACK_DEPTH = $0D37
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROJECTION_STACK_DEPTH, #PB_Constant)
+#GL_MAX_PROJECTION_STACK_DEPTH = $0D38
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MAX_PROJECTION_STACK_DEPTH_NV, #PB_Constant)
+#GL_PATH_MAX_PROJECTION_STACK_DEPTH_NV = $0D38
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_STACK_DEPTH, #PB_Constant)
+#GL_MAX_TEXTURE_STACK_DEPTH = $0D39
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VIEWPORT_DIMS, #PB_Constant)
+#GL_MAX_VIEWPORT_DIMS = $0D3A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIENT_ATTRIB_STACK_DEPTH, #PB_Constant)
+#GL_MAX_CLIENT_ATTRIB_STACK_DEPTH = $0D3B
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBPIXEL_BITS, #PB_Constant)
+#GL_SUBPIXEL_BITS = $0D50
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_BITS, #PB_Constant)
+#GL_INDEX_BITS = $0D51
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_BITS, #PB_Constant)
+#GL_RED_BITS = $0D52
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_BITS, #PB_Constant)
+#GL_GREEN_BITS = $0D53
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_BITS, #PB_Constant)
+#GL_BLUE_BITS = $0D54
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_BITS, #PB_Constant)
+#GL_ALPHA_BITS = $0D55
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BITS, #PB_Constant)
+#GL_DEPTH_BITS = $0D56
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BITS, #PB_Constant)
+#GL_STENCIL_BITS = $0D57
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_RED_BITS, #PB_Constant)
+#GL_ACCUM_RED_BITS = $0D58
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_GREEN_BITS, #PB_Constant)
+#GL_ACCUM_GREEN_BITS = $0D59
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_BLUE_BITS, #PB_Constant)
+#GL_ACCUM_BLUE_BITS = $0D5A
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_ALPHA_BITS, #PB_Constant)
+#GL_ACCUM_ALPHA_BITS = $0D5B
+CompilerEndIf
+CompilerIf Not Defined(GL_NAME_STACK_DEPTH, #PB_Constant)
+#GL_NAME_STACK_DEPTH = $0D70
+CompilerEndIf
+CompilerIf Not Defined(GL_AUTO_NORMAL, #PB_Constant)
+#GL_AUTO_NORMAL = $0D80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_COLOR_4, #PB_Constant)
+#GL_MAP1_COLOR_4 = $0D90
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_INDEX, #PB_Constant)
+#GL_MAP1_INDEX = $0D91
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_NORMAL, #PB_Constant)
+#GL_MAP1_NORMAL = $0D92
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_TEXTURE_COORD_1, #PB_Constant)
+#GL_MAP1_TEXTURE_COORD_1 = $0D93
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_TEXTURE_COORD_2, #PB_Constant)
+#GL_MAP1_TEXTURE_COORD_2 = $0D94
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_TEXTURE_COORD_3, #PB_Constant)
+#GL_MAP1_TEXTURE_COORD_3 = $0D95
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_TEXTURE_COORD_4, #PB_Constant)
+#GL_MAP1_TEXTURE_COORD_4 = $0D96
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_3, #PB_Constant)
+#GL_MAP1_VERTEX_3 = $0D97
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_4, #PB_Constant)
+#GL_MAP1_VERTEX_4 = $0D98
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_COLOR_4, #PB_Constant)
+#GL_MAP2_COLOR_4 = $0DB0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_INDEX, #PB_Constant)
+#GL_MAP2_INDEX = $0DB1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_NORMAL, #PB_Constant)
+#GL_MAP2_NORMAL = $0DB2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_TEXTURE_COORD_1, #PB_Constant)
+#GL_MAP2_TEXTURE_COORD_1 = $0DB3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_TEXTURE_COORD_2, #PB_Constant)
+#GL_MAP2_TEXTURE_COORD_2 = $0DB4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_TEXTURE_COORD_3, #PB_Constant)
+#GL_MAP2_TEXTURE_COORD_3 = $0DB5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_TEXTURE_COORD_4, #PB_Constant)
+#GL_MAP2_TEXTURE_COORD_4 = $0DB6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_3, #PB_Constant)
+#GL_MAP2_VERTEX_3 = $0DB7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_4, #PB_Constant)
+#GL_MAP2_VERTEX_4 = $0DB8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_GRID_DOMAIN, #PB_Constant)
+#GL_MAP1_GRID_DOMAIN = $0DD0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_GRID_SEGMENTS, #PB_Constant)
+#GL_MAP1_GRID_SEGMENTS = $0DD1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_GRID_DOMAIN, #PB_Constant)
+#GL_MAP2_GRID_DOMAIN = $0DD2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_GRID_SEGMENTS, #PB_Constant)
+#GL_MAP2_GRID_SEGMENTS = $0DD3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D, #PB_Constant)
+#GL_TEXTURE_1D = $0DE0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D, #PB_Constant)
+#GL_TEXTURE_2D = $0DE1
+CompilerEndIf
+CompilerIf Not Defined(GL_FEEDBACK_BUFFER_POINTER, #PB_Constant)
+#GL_FEEDBACK_BUFFER_POINTER = $0DF0
+CompilerEndIf
+CompilerIf Not Defined(GL_FEEDBACK_BUFFER_SIZE, #PB_Constant)
+#GL_FEEDBACK_BUFFER_SIZE = $0DF1
+CompilerEndIf
+CompilerIf Not Defined(GL_FEEDBACK_BUFFER_TYPE, #PB_Constant)
+#GL_FEEDBACK_BUFFER_TYPE = $0DF2
+CompilerEndIf
+CompilerIf Not Defined(GL_SELECTION_BUFFER_POINTER, #PB_Constant)
+#GL_SELECTION_BUFFER_POINTER = $0DF3
+CompilerEndIf
+CompilerIf Not Defined(GL_SELECTION_BUFFER_SIZE, #PB_Constant)
+#GL_SELECTION_BUFFER_SIZE = $0DF4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WIDTH, #PB_Constant)
+#GL_TEXTURE_WIDTH = $1000
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_HEIGHT, #PB_Constant)
+#GL_TEXTURE_HEIGHT = $1001
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTERNAL_FORMAT, #PB_Constant)
+#GL_TEXTURE_INTERNAL_FORMAT = $1003
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPONENTS, #PB_Constant)
+#GL_TEXTURE_COMPONENTS = $1003
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER_COLOR, #PB_Constant)
+#GL_TEXTURE_BORDER_COLOR = $1004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER_COLOR_EXT, #PB_Constant)
+#GL_TEXTURE_BORDER_COLOR_EXT = $1004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER_COLOR_NV, #PB_Constant)
+#GL_TEXTURE_BORDER_COLOR_NV = $1004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER_COLOR_OES, #PB_Constant)
+#GL_TEXTURE_BORDER_COLOR_OES = $1004
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER, #PB_Constant)
+#GL_TEXTURE_BORDER = $1005
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_TARGET, #PB_Constant)
+#GL_TEXTURE_TARGET = $1006
+CompilerEndIf
+CompilerIf Not Defined(GL_DONT_CARE, #PB_Constant)
+#GL_DONT_CARE = $1100
+CompilerEndIf
+CompilerIf Not Defined(GL_FASTEST, #PB_Constant)
+#GL_FASTEST = $1101
+CompilerEndIf
+CompilerIf Not Defined(GL_NICEST, #PB_Constant)
+#GL_NICEST = $1102
+CompilerEndIf
+CompilerIf Not Defined(GL_AMBIENT, #PB_Constant)
+#GL_AMBIENT = $1200
+CompilerEndIf
+CompilerIf Not Defined(GL_DIFFUSE, #PB_Constant)
+#GL_DIFFUSE = $1201
+CompilerEndIf
+CompilerIf Not Defined(GL_SPECULAR, #PB_Constant)
+#GL_SPECULAR = $1202
+CompilerEndIf
+CompilerIf Not Defined(GL_POSITION, #PB_Constant)
+#GL_POSITION = $1203
+CompilerEndIf
+CompilerIf Not Defined(GL_SPOT_DIRECTION, #PB_Constant)
+#GL_SPOT_DIRECTION = $1204
+CompilerEndIf
+CompilerIf Not Defined(GL_SPOT_EXPONENT, #PB_Constant)
+#GL_SPOT_EXPONENT = $1205
+CompilerEndIf
+CompilerIf Not Defined(GL_SPOT_CUTOFF, #PB_Constant)
+#GL_SPOT_CUTOFF = $1206
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_ATTENUATION, #PB_Constant)
+#GL_CONSTANT_ATTENUATION = $1207
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_ATTENUATION, #PB_Constant)
+#GL_LINEAR_ATTENUATION = $1208
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADRATIC_ATTENUATION, #PB_Constant)
+#GL_QUADRATIC_ATTENUATION = $1209
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPILE, #PB_Constant)
+#GL_COMPILE = $1300
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPILE_AND_EXECUTE, #PB_Constant)
+#GL_COMPILE_AND_EXECUTE = $1301
+CompilerEndIf
+CompilerIf Not Defined(GL_BYTE, #PB_Constant)
+#GL_BYTE = $1400
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_BYTE, #PB_Constant)
+#GL_UNSIGNED_BYTE = $1401
+CompilerEndIf
+CompilerIf Not Defined(GL_SHORT, #PB_Constant)
+#GL_SHORT = $1402
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT, #PB_Constant)
+#GL_UNSIGNED_SHORT = $1403
+CompilerEndIf
+CompilerIf Not Defined(GL_INT, #PB_Constant)
+#GL_INT = $1404
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT, #PB_Constant)
+#GL_UNSIGNED_INT = $1405
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT, #PB_Constant)
+#GL_FLOAT = $1406
+CompilerEndIf
+CompilerIf Not Defined(GL_2_BYTES, #PB_Constant)
+#GL_2_BYTES = $1407
+CompilerEndIf
+CompilerIf Not Defined(GL_2_BYTES_NV, #PB_Constant)
+#GL_2_BYTES_NV = $1407
+CompilerEndIf
+CompilerIf Not Defined(GL_3_BYTES, #PB_Constant)
+#GL_3_BYTES = $1408
+CompilerEndIf
+CompilerIf Not Defined(GL_3_BYTES_NV, #PB_Constant)
+#GL_3_BYTES_NV = $1408
+CompilerEndIf
+CompilerIf Not Defined(GL_4_BYTES, #PB_Constant)
+#GL_4_BYTES = $1409
+CompilerEndIf
+CompilerIf Not Defined(GL_4_BYTES_NV, #PB_Constant)
+#GL_4_BYTES_NV = $1409
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE, #PB_Constant)
+#GL_DOUBLE = $140A
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_EXT, #PB_Constant)
+#GL_DOUBLE_EXT = $140A
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_FLOAT, #PB_Constant)
+#GL_HALF_FLOAT = $140B
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_FLOAT_ARB, #PB_Constant)
+#GL_HALF_FLOAT_ARB = $140B
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_FLOAT_NV, #PB_Constant)
+#GL_HALF_FLOAT_NV = $140B
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_APPLE, #PB_Constant)
+#GL_HALF_APPLE = $140B
+CompilerEndIf
+CompilerIf Not Defined(GL_FIXED, #PB_Constant)
+#GL_FIXED = $140C
+CompilerEndIf
+CompilerIf Not Defined(GL_FIXED_OES, #PB_Constant)
+#GL_FIXED_OES = $140C
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_ARB, #PB_Constant)
+#GL_INT64_ARB = $140E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_NV, #PB_Constant)
+#GL_INT64_NV = $140E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_ARB, #PB_Constant)
+#GL_UNSIGNED_INT64_ARB = $140F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_NV, #PB_Constant)
+#GL_UNSIGNED_INT64_NV = $140F
+CompilerEndIf
+CompilerIf Not Defined(GL_CLEAR, #PB_Constant)
+#GL_CLEAR = $1500
+CompilerEndIf
+CompilerIf Not Defined(GL_AND, #PB_Constant)
+#GL_AND = $1501
+CompilerEndIf
+CompilerIf Not Defined(GL_AND_REVERSE, #PB_Constant)
+#GL_AND_REVERSE = $1502
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY, #PB_Constant)
+#GL_COPY = $1503
+CompilerEndIf
+CompilerIf Not Defined(GL_AND_INVERTED, #PB_Constant)
+#GL_AND_INVERTED = $1504
+CompilerEndIf
+CompilerIf Not Defined(GL_NOOP, #PB_Constant)
+#GL_NOOP = $1505
+CompilerEndIf
+CompilerIf Not Defined(GL_XOR, #PB_Constant)
+#GL_XOR = $1506
+CompilerEndIf
+CompilerIf Not Defined(GL_XOR_NV, #PB_Constant)
+#GL_XOR_NV = $1506
+CompilerEndIf
+CompilerIf Not Defined(GL_OR, #PB_Constant)
+#GL_OR = $1507
+CompilerEndIf
+CompilerIf Not Defined(GL_NOR, #PB_Constant)
+#GL_NOR = $1508
+CompilerEndIf
+CompilerIf Not Defined(GL_EQUIV, #PB_Constant)
+#GL_EQUIV = $1509
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERT, #PB_Constant)
+#GL_INVERT = $150A
+CompilerEndIf
+CompilerIf Not Defined(GL_OR_REVERSE, #PB_Constant)
+#GL_OR_REVERSE = $150B
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_INVERTED, #PB_Constant)
+#GL_COPY_INVERTED = $150C
+CompilerEndIf
+CompilerIf Not Defined(GL_OR_INVERTED, #PB_Constant)
+#GL_OR_INVERTED = $150D
+CompilerEndIf
+CompilerIf Not Defined(GL_NAND, #PB_Constant)
+#GL_NAND = $150E
+CompilerEndIf
+CompilerIf Not Defined(GL_SET, #PB_Constant)
+#GL_SET = $150F
+CompilerEndIf
+CompilerIf Not Defined(GL_EMISSION, #PB_Constant)
+#GL_EMISSION = $1600
+CompilerEndIf
+CompilerIf Not Defined(GL_SHININESS, #PB_Constant)
+#GL_SHININESS = $1601
+CompilerEndIf
+CompilerIf Not Defined(GL_AMBIENT_AND_DIFFUSE, #PB_Constant)
+#GL_AMBIENT_AND_DIFFUSE = $1602
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEXES, #PB_Constant)
+#GL_COLOR_INDEXES = $1603
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW, #PB_Constant)
+#GL_MODELVIEW = $1700
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW0_ARB, #PB_Constant)
+#GL_MODELVIEW0_ARB = $1700
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW0_EXT, #PB_Constant)
+#GL_MODELVIEW0_EXT = $1700
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MODELVIEW_NV, #PB_Constant)
+#GL_PATH_MODELVIEW_NV = $1700
+CompilerEndIf
+CompilerIf Not Defined(GL_PROJECTION, #PB_Constant)
+#GL_PROJECTION = $1701
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_PROJECTION_NV, #PB_Constant)
+#GL_PATH_PROJECTION_NV = $1701
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE, #PB_Constant)
+#GL_TEXTURE = $1702
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR, #PB_Constant)
+#GL_COLOR = $1800
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_EXT, #PB_Constant)
+#GL_COLOR_EXT = $1800
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH, #PB_Constant)
+#GL_DEPTH = $1801
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_EXT, #PB_Constant)
+#GL_DEPTH_EXT = $1801
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL, #PB_Constant)
+#GL_STENCIL = $1802
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_EXT, #PB_Constant)
+#GL_STENCIL_EXT = $1802
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX, #PB_Constant)
+#GL_COLOR_INDEX = $1900
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX, #PB_Constant)
+#GL_STENCIL_INDEX = $1901
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX_OES, #PB_Constant)
+#GL_STENCIL_INDEX_OES = $1901
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT, #PB_Constant)
+#GL_DEPTH_COMPONENT = $1902
+CompilerEndIf
+CompilerIf Not Defined(GL_RED, #PB_Constant)
+#GL_RED = $1903
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_EXT, #PB_Constant)
+#GL_RED_EXT = $1903
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_NV, #PB_Constant)
+#GL_RED_NV = $1903
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN, #PB_Constant)
+#GL_GREEN = $1904
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_NV, #PB_Constant)
+#GL_GREEN_NV = $1904
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE, #PB_Constant)
+#GL_BLUE = $1905
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_NV, #PB_Constant)
+#GL_BLUE_NV = $1905
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA, #PB_Constant)
+#GL_ALPHA = $1906
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB, #PB_Constant)
+#GL_RGB = $1907
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA, #PB_Constant)
+#GL_RGBA = $1908
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE, #PB_Constant)
+#GL_LUMINANCE = $1909
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA, #PB_Constant)
+#GL_LUMINANCE_ALPHA = $190A
+CompilerEndIf
+CompilerIf Not Defined(GL_BITMAP, #PB_Constant)
+#GL_BITMAP = $1A00
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT, #PB_Constant)
+#GL_POINT = $1B00
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_NV, #PB_Constant)
+#GL_POINT_NV = $1B00
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE, #PB_Constant)
+#GL_LINE = $1B01
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_NV, #PB_Constant)
+#GL_LINE_NV = $1B01
+CompilerEndIf
+CompilerIf Not Defined(GL_FILL, #PB_Constant)
+#GL_FILL = $1B02
+CompilerEndIf
+CompilerIf Not Defined(GL_FILL_NV, #PB_Constant)
+#GL_FILL_NV = $1B02
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDER, #PB_Constant)
+#GL_RENDER = $1C00
+CompilerEndIf
+CompilerIf Not Defined(GL_FEEDBACK, #PB_Constant)
+#GL_FEEDBACK = $1C01
+CompilerEndIf
+CompilerIf Not Defined(GL_SELECT, #PB_Constant)
+#GL_SELECT = $1C02
+CompilerEndIf
+CompilerIf Not Defined(GL_FLAT, #PB_Constant)
+#GL_FLAT = $1D00
+CompilerEndIf
+CompilerIf Not Defined(GL_SMOOTH, #PB_Constant)
+#GL_SMOOTH = $1D01
+CompilerEndIf
+CompilerIf Not Defined(GL_KEEP, #PB_Constant)
+#GL_KEEP = $1E00
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACE, #PB_Constant)
+#GL_REPLACE = $1E01
+CompilerEndIf
+CompilerIf Not Defined(GL_INCR, #PB_Constant)
+#GL_INCR = $1E02
+CompilerEndIf
+CompilerIf Not Defined(GL_DECR, #PB_Constant)
+#GL_DECR = $1E03
+CompilerEndIf
+CompilerIf Not Defined(GL_VENDOR, #PB_Constant)
+#GL_VENDOR = $1F00
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERER, #PB_Constant)
+#GL_RENDERER = $1F01
+CompilerEndIf
+CompilerIf Not Defined(GL_VERSION, #PB_Constant)
+#GL_VERSION = $1F02
+CompilerEndIf
+CompilerIf Not Defined(GL_EXTENSIONS, #PB_Constant)
+#GL_EXTENSIONS = $1F03
+CompilerEndIf
+CompilerIf Not Defined(GL_S, #PB_Constant)
+#GL_S = $2000
+CompilerEndIf
+CompilerIf Not Defined(GL_T, #PB_Constant)
+#GL_T = $2001
+CompilerEndIf
+CompilerIf Not Defined(GL_R, #PB_Constant)
+#GL_R = $2002
+CompilerEndIf
+CompilerIf Not Defined(GL_Q, #PB_Constant)
+#GL_Q = $2003
+CompilerEndIf
+CompilerIf Not Defined(GL_MODULATE, #PB_Constant)
+#GL_MODULATE = $2100
+CompilerEndIf
+CompilerIf Not Defined(GL_DECAL, #PB_Constant)
+#GL_DECAL = $2101
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ENV_MODE, #PB_Constant)
+#GL_TEXTURE_ENV_MODE = $2200
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ENV_COLOR, #PB_Constant)
+#GL_TEXTURE_ENV_COLOR = $2201
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ENV, #PB_Constant)
+#GL_TEXTURE_ENV = $2300
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_LINEAR, #PB_Constant)
+#GL_EYE_LINEAR = $2400
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_LINEAR_NV, #PB_Constant)
+#GL_EYE_LINEAR_NV = $2400
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_LINEAR, #PB_Constant)
+#GL_OBJECT_LINEAR = $2401
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_LINEAR_NV, #PB_Constant)
+#GL_OBJECT_LINEAR_NV = $2401
+CompilerEndIf
+CompilerIf Not Defined(GL_SPHERE_MAP, #PB_Constant)
+#GL_SPHERE_MAP = $2402
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_MODE, #PB_Constant)
+#GL_TEXTURE_GEN_MODE = $2500
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_MODE_OES, #PB_Constant)
+#GL_TEXTURE_GEN_MODE_OES = $2500
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_PLANE, #PB_Constant)
+#GL_OBJECT_PLANE = $2501
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_PLANE, #PB_Constant)
+#GL_EYE_PLANE = $2502
+CompilerEndIf
+CompilerIf Not Defined(GL_NEAREST, #PB_Constant)
+#GL_NEAREST = $2600
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR, #PB_Constant)
+#GL_LINEAR = $2601
+CompilerEndIf
+CompilerIf Not Defined(GL_NEAREST_MIPMAP_NEAREST, #PB_Constant)
+#GL_NEAREST_MIPMAP_NEAREST = $2700
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_MIPMAP_NEAREST, #PB_Constant)
+#GL_LINEAR_MIPMAP_NEAREST = $2701
+CompilerEndIf
+CompilerIf Not Defined(GL_NEAREST_MIPMAP_LINEAR, #PB_Constant)
+#GL_NEAREST_MIPMAP_LINEAR = $2702
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_MIPMAP_LINEAR, #PB_Constant)
+#GL_LINEAR_MIPMAP_LINEAR = $2703
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAG_FILTER, #PB_Constant)
+#GL_TEXTURE_MAG_FILTER = $2800
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MIN_FILTER, #PB_Constant)
+#GL_TEXTURE_MIN_FILTER = $2801
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_S, #PB_Constant)
+#GL_TEXTURE_WRAP_S = $2802
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_T, #PB_Constant)
+#GL_TEXTURE_WRAP_T = $2803
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP, #PB_Constant)
+#GL_CLAMP = $2900
+CompilerEndIf
+CompilerIf Not Defined(GL_REPEAT, #PB_Constant)
+#GL_REPEAT = $2901
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_UNITS, #PB_Constant)
+#GL_POLYGON_OFFSET_UNITS = $2A00
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_POINT, #PB_Constant)
+#GL_POLYGON_OFFSET_POINT = $2A01
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_POINT_NV, #PB_Constant)
+#GL_POLYGON_OFFSET_POINT_NV = $2A01
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_LINE, #PB_Constant)
+#GL_POLYGON_OFFSET_LINE = $2A02
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_LINE_NV, #PB_Constant)
+#GL_POLYGON_OFFSET_LINE_NV = $2A02
+CompilerEndIf
+CompilerIf Not Defined(GL_R3_G3_B2, #PB_Constant)
+#GL_R3_G3_B2 = $2A10
+CompilerEndIf
+CompilerIf Not Defined(GL_V2F, #PB_Constant)
+#GL_V2F = $2A20
+CompilerEndIf
+CompilerIf Not Defined(GL_V3F, #PB_Constant)
+#GL_V3F = $2A21
+CompilerEndIf
+CompilerIf Not Defined(GL_C4UB_V2F, #PB_Constant)
+#GL_C4UB_V2F = $2A22
+CompilerEndIf
+CompilerIf Not Defined(GL_C4UB_V3F, #PB_Constant)
+#GL_C4UB_V3F = $2A23
+CompilerEndIf
+CompilerIf Not Defined(GL_C3F_V3F, #PB_Constant)
+#GL_C3F_V3F = $2A24
+CompilerEndIf
+CompilerIf Not Defined(GL_N3F_V3F, #PB_Constant)
+#GL_N3F_V3F = $2A25
+CompilerEndIf
+CompilerIf Not Defined(GL_C4F_N3F_V3F, #PB_Constant)
+#GL_C4F_N3F_V3F = $2A26
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_V3F, #PB_Constant)
+#GL_T2F_V3F = $2A27
+CompilerEndIf
+CompilerIf Not Defined(GL_T4F_V4F, #PB_Constant)
+#GL_T4F_V4F = $2A28
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_C4UB_V3F, #PB_Constant)
+#GL_T2F_C4UB_V3F = $2A29
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_C3F_V3F, #PB_Constant)
+#GL_T2F_C3F_V3F = $2A2A
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_N3F_V3F, #PB_Constant)
+#GL_T2F_N3F_V3F = $2A2B
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_C4F_N3F_V3F, #PB_Constant)
+#GL_T2F_C4F_N3F_V3F = $2A2C
+CompilerEndIf
+CompilerIf Not Defined(GL_T4F_C4F_N3F_V4F, #PB_Constant)
+#GL_T4F_C4F_N3F_V4F = $2A2D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE0, #PB_Constant)
+#GL_CLIP_PLANE0 = $3000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE0_IMG, #PB_Constant)
+#GL_CLIP_PLANE0_IMG = $3000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE0, #PB_Constant)
+#GL_CLIP_DISTANCE0 = $3000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE0_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE0_EXT = $3000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE0_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE0_APPLE = $3000
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE1, #PB_Constant)
+#GL_CLIP_PLANE1 = $3001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE1_IMG, #PB_Constant)
+#GL_CLIP_PLANE1_IMG = $3001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE1, #PB_Constant)
+#GL_CLIP_DISTANCE1 = $3001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE1_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE1_EXT = $3001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE1_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE1_APPLE = $3001
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE2, #PB_Constant)
+#GL_CLIP_PLANE2 = $3002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE2_IMG, #PB_Constant)
+#GL_CLIP_PLANE2_IMG = $3002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE2, #PB_Constant)
+#GL_CLIP_DISTANCE2 = $3002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE2_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE2_EXT = $3002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE2_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE2_APPLE = $3002
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE3, #PB_Constant)
+#GL_CLIP_PLANE3 = $3003
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE3_IMG, #PB_Constant)
+#GL_CLIP_PLANE3_IMG = $3003
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE3, #PB_Constant)
+#GL_CLIP_DISTANCE3 = $3003
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE3_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE3_EXT = $3003
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE3_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE3_APPLE = $3003
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE4, #PB_Constant)
+#GL_CLIP_PLANE4 = $3004
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE4_IMG, #PB_Constant)
+#GL_CLIP_PLANE4_IMG = $3004
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE4, #PB_Constant)
+#GL_CLIP_DISTANCE4 = $3004
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE4_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE4_EXT = $3004
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE4_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE4_APPLE = $3004
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE5, #PB_Constant)
+#GL_CLIP_PLANE5 = $3005
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_PLANE5_IMG, #PB_Constant)
+#GL_CLIP_PLANE5_IMG = $3005
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE5, #PB_Constant)
+#GL_CLIP_DISTANCE5 = $3005
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE5_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE5_EXT = $3005
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE5_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE5_APPLE = $3005
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE6, #PB_Constant)
+#GL_CLIP_DISTANCE6 = $3006
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE6_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE6_EXT = $3006
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE6_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE6_APPLE = $3006
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE7, #PB_Constant)
+#GL_CLIP_DISTANCE7 = $3007
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE7_EXT, #PB_Constant)
+#GL_CLIP_DISTANCE7_EXT = $3007
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE7_APPLE, #PB_Constant)
+#GL_CLIP_DISTANCE7_APPLE = $3007
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT0, #PB_Constant)
+#GL_LIGHT0 = $4000
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT1, #PB_Constant)
+#GL_LIGHT1 = $4001
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT2, #PB_Constant)
+#GL_LIGHT2 = $4002
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT3, #PB_Constant)
+#GL_LIGHT3 = $4003
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT4, #PB_Constant)
+#GL_LIGHT4 = $4004
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT5, #PB_Constant)
+#GL_LIGHT5 = $4005
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT6, #PB_Constant)
+#GL_LIGHT6 = $4006
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT7, #PB_Constant)
+#GL_LIGHT7 = $4007
+CompilerEndIf
+CompilerIf Not Defined(GL_ABGR_EXT, #PB_Constant)
+#GL_ABGR_EXT = $8000
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_COLOR, #PB_Constant)
+#GL_CONSTANT_COLOR = $8001
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_COLOR_EXT, #PB_Constant)
+#GL_CONSTANT_COLOR_EXT = $8001
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_CONSTANT_COLOR, #PB_Constant)
+#GL_ONE_MINUS_CONSTANT_COLOR = $8002
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_CONSTANT_COLOR_EXT, #PB_Constant)
+#GL_ONE_MINUS_CONSTANT_COLOR_EXT = $8002
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_ALPHA, #PB_Constant)
+#GL_CONSTANT_ALPHA = $8003
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_ALPHA_EXT, #PB_Constant)
+#GL_CONSTANT_ALPHA_EXT = $8003
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_CONSTANT_ALPHA, #PB_Constant)
+#GL_ONE_MINUS_CONSTANT_ALPHA = $8004
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_CONSTANT_ALPHA_EXT, #PB_Constant)
+#GL_ONE_MINUS_CONSTANT_ALPHA_EXT = $8004
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_COLOR, #PB_Constant)
+#GL_BLEND_COLOR = $8005
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_COLOR_EXT, #PB_Constant)
+#GL_BLEND_COLOR_EXT = $8005
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_ADD, #PB_Constant)
+#GL_FUNC_ADD = $8006
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_ADD_EXT, #PB_Constant)
+#GL_FUNC_ADD_EXT = $8006
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_ADD_OES, #PB_Constant)
+#GL_FUNC_ADD_OES = $8006
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN, #PB_Constant)
+#GL_MIN = $8007
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_EXT, #PB_Constant)
+#GL_MIN_EXT = $8007
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX, #PB_Constant)
+#GL_MAX = $8008
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_EXT, #PB_Constant)
+#GL_MAX_EXT = $8008
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION, #PB_Constant)
+#GL_BLEND_EQUATION = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_EXT, #PB_Constant)
+#GL_BLEND_EQUATION_EXT = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_OES, #PB_Constant)
+#GL_BLEND_EQUATION_OES = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_RGB, #PB_Constant)
+#GL_BLEND_EQUATION_RGB = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_RGB_EXT, #PB_Constant)
+#GL_BLEND_EQUATION_RGB_EXT = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_RGB_OES, #PB_Constant)
+#GL_BLEND_EQUATION_RGB_OES = $8009
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_SUBTRACT, #PB_Constant)
+#GL_FUNC_SUBTRACT = $800A
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_SUBTRACT_EXT, #PB_Constant)
+#GL_FUNC_SUBTRACT_EXT = $800A
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_SUBTRACT_OES, #PB_Constant)
+#GL_FUNC_SUBTRACT_OES = $800A
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_REVERSE_SUBTRACT, #PB_Constant)
+#GL_FUNC_REVERSE_SUBTRACT = $800B
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_REVERSE_SUBTRACT_EXT, #PB_Constant)
+#GL_FUNC_REVERSE_SUBTRACT_EXT = $800B
+CompilerEndIf
+CompilerIf Not Defined(GL_FUNC_REVERSE_SUBTRACT_OES, #PB_Constant)
+#GL_FUNC_REVERSE_SUBTRACT_OES = $800B
+CompilerEndIf
+CompilerIf Not Defined(GL_CMYK_EXT, #PB_Constant)
+#GL_CMYK_EXT = $800C
+CompilerEndIf
+CompilerIf Not Defined(GL_CMYKA_EXT, #PB_Constant)
+#GL_CMYKA_EXT = $800D
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_CMYK_HINT_EXT, #PB_Constant)
+#GL_PACK_CMYK_HINT_EXT = $800E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_CMYK_HINT_EXT, #PB_Constant)
+#GL_UNPACK_CMYK_HINT_EXT = $800F
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_1D, #PB_Constant)
+#GL_CONVOLUTION_1D = $8010
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_1D_EXT, #PB_Constant)
+#GL_CONVOLUTION_1D_EXT = $8010
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_2D, #PB_Constant)
+#GL_CONVOLUTION_2D = $8011
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_2D_EXT, #PB_Constant)
+#GL_CONVOLUTION_2D_EXT = $8011
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARABLE_2D, #PB_Constant)
+#GL_SEPARABLE_2D = $8012
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARABLE_2D_EXT, #PB_Constant)
+#GL_SEPARABLE_2D_EXT = $8012
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_BORDER_MODE, #PB_Constant)
+#GL_CONVOLUTION_BORDER_MODE = $8013
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_BORDER_MODE_EXT, #PB_Constant)
+#GL_CONVOLUTION_BORDER_MODE_EXT = $8013
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FILTER_SCALE, #PB_Constant)
+#GL_CONVOLUTION_FILTER_SCALE = $8014
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FILTER_SCALE_EXT, #PB_Constant)
+#GL_CONVOLUTION_FILTER_SCALE_EXT = $8014
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FILTER_BIAS, #PB_Constant)
+#GL_CONVOLUTION_FILTER_BIAS = $8015
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FILTER_BIAS_EXT, #PB_Constant)
+#GL_CONVOLUTION_FILTER_BIAS_EXT = $8015
+CompilerEndIf
+CompilerIf Not Defined(GL_REDUCE, #PB_Constant)
+#GL_REDUCE = $8016
+CompilerEndIf
+CompilerIf Not Defined(GL_REDUCE_EXT, #PB_Constant)
+#GL_REDUCE_EXT = $8016
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FORMAT, #PB_Constant)
+#GL_CONVOLUTION_FORMAT = $8017
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_FORMAT_EXT, #PB_Constant)
+#GL_CONVOLUTION_FORMAT_EXT = $8017
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_WIDTH, #PB_Constant)
+#GL_CONVOLUTION_WIDTH = $8018
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_WIDTH_EXT, #PB_Constant)
+#GL_CONVOLUTION_WIDTH_EXT = $8018
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_HEIGHT, #PB_Constant)
+#GL_CONVOLUTION_HEIGHT = $8019
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_HEIGHT_EXT, #PB_Constant)
+#GL_CONVOLUTION_HEIGHT_EXT = $8019
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CONVOLUTION_WIDTH, #PB_Constant)
+#GL_MAX_CONVOLUTION_WIDTH = $801A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CONVOLUTION_WIDTH_EXT, #PB_Constant)
+#GL_MAX_CONVOLUTION_WIDTH_EXT = $801A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CONVOLUTION_HEIGHT, #PB_Constant)
+#GL_MAX_CONVOLUTION_HEIGHT = $801B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CONVOLUTION_HEIGHT_EXT, #PB_Constant)
+#GL_MAX_CONVOLUTION_HEIGHT_EXT = $801B
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_RED_SCALE, #PB_Constant)
+#GL_POST_CONVOLUTION_RED_SCALE = $801C
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_RED_SCALE_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_RED_SCALE_EXT = $801C
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_GREEN_SCALE, #PB_Constant)
+#GL_POST_CONVOLUTION_GREEN_SCALE = $801D
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_GREEN_SCALE_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_GREEN_SCALE_EXT = $801D
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_BLUE_SCALE, #PB_Constant)
+#GL_POST_CONVOLUTION_BLUE_SCALE = $801E
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_BLUE_SCALE_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_BLUE_SCALE_EXT = $801E
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_ALPHA_SCALE, #PB_Constant)
+#GL_POST_CONVOLUTION_ALPHA_SCALE = $801F
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_ALPHA_SCALE_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_ALPHA_SCALE_EXT = $801F
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_RED_BIAS, #PB_Constant)
+#GL_POST_CONVOLUTION_RED_BIAS = $8020
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_RED_BIAS_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_RED_BIAS_EXT = $8020
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_GREEN_BIAS, #PB_Constant)
+#GL_POST_CONVOLUTION_GREEN_BIAS = $8021
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_GREEN_BIAS_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_GREEN_BIAS_EXT = $8021
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_BLUE_BIAS, #PB_Constant)
+#GL_POST_CONVOLUTION_BLUE_BIAS = $8022
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_BLUE_BIAS_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_BLUE_BIAS_EXT = $8022
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_ALPHA_BIAS, #PB_Constant)
+#GL_POST_CONVOLUTION_ALPHA_BIAS = $8023
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_ALPHA_BIAS_EXT, #PB_Constant)
+#GL_POST_CONVOLUTION_ALPHA_BIAS_EXT = $8023
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM, #PB_Constant)
+#GL_HISTOGRAM = $8024
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_EXT, #PB_Constant)
+#GL_HISTOGRAM_EXT = $8024
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_HISTOGRAM, #PB_Constant)
+#GL_PROXY_HISTOGRAM = $8025
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_HISTOGRAM_EXT, #PB_Constant)
+#GL_PROXY_HISTOGRAM_EXT = $8025
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_WIDTH, #PB_Constant)
+#GL_HISTOGRAM_WIDTH = $8026
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_WIDTH_EXT, #PB_Constant)
+#GL_HISTOGRAM_WIDTH_EXT = $8026
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_FORMAT, #PB_Constant)
+#GL_HISTOGRAM_FORMAT = $8027
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_FORMAT_EXT, #PB_Constant)
+#GL_HISTOGRAM_FORMAT_EXT = $8027
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_RED_SIZE, #PB_Constant)
+#GL_HISTOGRAM_RED_SIZE = $8028
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_RED_SIZE_EXT, #PB_Constant)
+#GL_HISTOGRAM_RED_SIZE_EXT = $8028
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_GREEN_SIZE, #PB_Constant)
+#GL_HISTOGRAM_GREEN_SIZE = $8029
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_GREEN_SIZE_EXT, #PB_Constant)
+#GL_HISTOGRAM_GREEN_SIZE_EXT = $8029
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_BLUE_SIZE, #PB_Constant)
+#GL_HISTOGRAM_BLUE_SIZE = $802A
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_BLUE_SIZE_EXT, #PB_Constant)
+#GL_HISTOGRAM_BLUE_SIZE_EXT = $802A
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_ALPHA_SIZE, #PB_Constant)
+#GL_HISTOGRAM_ALPHA_SIZE = $802B
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_ALPHA_SIZE_EXT, #PB_Constant)
+#GL_HISTOGRAM_ALPHA_SIZE_EXT = $802B
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_LUMINANCE_SIZE, #PB_Constant)
+#GL_HISTOGRAM_LUMINANCE_SIZE = $802C
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_LUMINANCE_SIZE_EXT, #PB_Constant)
+#GL_HISTOGRAM_LUMINANCE_SIZE_EXT = $802C
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_SINK, #PB_Constant)
+#GL_HISTOGRAM_SINK = $802D
+CompilerEndIf
+CompilerIf Not Defined(GL_HISTOGRAM_SINK_EXT, #PB_Constant)
+#GL_HISTOGRAM_SINK_EXT = $802D
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX, #PB_Constant)
+#GL_MINMAX = $802E
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX_EXT, #PB_Constant)
+#GL_MINMAX_EXT = $802E
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX_FORMAT, #PB_Constant)
+#GL_MINMAX_FORMAT = $802F
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX_FORMAT_EXT, #PB_Constant)
+#GL_MINMAX_FORMAT_EXT = $802F
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX_SINK, #PB_Constant)
+#GL_MINMAX_SINK = $8030
+CompilerEndIf
+CompilerIf Not Defined(GL_MINMAX_SINK_EXT, #PB_Constant)
+#GL_MINMAX_SINK_EXT = $8030
+CompilerEndIf
+CompilerIf Not Defined(GL_TABLE_TOO_LARGE_EXT, #PB_Constant)
+#GL_TABLE_TOO_LARGE_EXT = $8031
+CompilerEndIf
+CompilerIf Not Defined(GL_TABLE_TOO_LARGE, #PB_Constant)
+#GL_TABLE_TOO_LARGE = $8031
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_BYTE_3_3_2, #PB_Constant)
+#GL_UNSIGNED_BYTE_3_3_2 = $8032
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_BYTE_3_3_2_EXT, #PB_Constant)
+#GL_UNSIGNED_BYTE_3_3_2_EXT = $8032
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_4_4_4_4, #PB_Constant)
+#GL_UNSIGNED_SHORT_4_4_4_4 = $8033
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_4_4_4_4_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_4_4_4_4_EXT = $8033
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_5_5_1, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_5_5_1 = $8034
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_5_5_1_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_5_5_1_EXT = $8034
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_8_8_8, #PB_Constant)
+#GL_UNSIGNED_INT_8_8_8_8 = $8035
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_8_8_8_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_8_8_8_8_EXT = $8035
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10_10_10_2, #PB_Constant)
+#GL_UNSIGNED_INT_10_10_10_2 = $8036
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10_10_10_2_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_10_10_10_2_EXT = $8036
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_EXT, #PB_Constant)
+#GL_POLYGON_OFFSET_EXT = $8037
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_FILL, #PB_Constant)
+#GL_POLYGON_OFFSET_FILL = $8037
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_FACTOR, #PB_Constant)
+#GL_POLYGON_OFFSET_FACTOR = $8038
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_FACTOR_EXT, #PB_Constant)
+#GL_POLYGON_OFFSET_FACTOR_EXT = $8038
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_BIAS_EXT, #PB_Constant)
+#GL_POLYGON_OFFSET_BIAS_EXT = $8039
+CompilerEndIf
+CompilerIf Not Defined(GL_RESCALE_NORMAL, #PB_Constant)
+#GL_RESCALE_NORMAL = $803A
+CompilerEndIf
+CompilerIf Not Defined(GL_RESCALE_NORMAL_EXT, #PB_Constant)
+#GL_RESCALE_NORMAL_EXT = $803A
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA4, #PB_Constant)
+#GL_ALPHA4 = $803B
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA4_EXT, #PB_Constant)
+#GL_ALPHA4_EXT = $803B
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8, #PB_Constant)
+#GL_ALPHA8 = $803C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8_EXT, #PB_Constant)
+#GL_ALPHA8_EXT = $803C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8_OES, #PB_Constant)
+#GL_ALPHA8_OES = $803C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA12, #PB_Constant)
+#GL_ALPHA12 = $803D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA12_EXT, #PB_Constant)
+#GL_ALPHA12_EXT = $803D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16, #PB_Constant)
+#GL_ALPHA16 = $803E
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16_EXT, #PB_Constant)
+#GL_ALPHA16_EXT = $803E
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE4, #PB_Constant)
+#GL_LUMINANCE4 = $803F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE4_EXT, #PB_Constant)
+#GL_LUMINANCE4_EXT = $803F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8, #PB_Constant)
+#GL_LUMINANCE8 = $8040
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_EXT, #PB_Constant)
+#GL_LUMINANCE8_EXT = $8040
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_OES, #PB_Constant)
+#GL_LUMINANCE8_OES = $8040
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12, #PB_Constant)
+#GL_LUMINANCE12 = $8041
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12_EXT, #PB_Constant)
+#GL_LUMINANCE12_EXT = $8041
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16, #PB_Constant)
+#GL_LUMINANCE16 = $8042
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16_EXT, #PB_Constant)
+#GL_LUMINANCE16_EXT = $8042
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE4_ALPHA4, #PB_Constant)
+#GL_LUMINANCE4_ALPHA4 = $8043
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE4_ALPHA4_EXT, #PB_Constant)
+#GL_LUMINANCE4_ALPHA4_EXT = $8043
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE4_ALPHA4_OES, #PB_Constant)
+#GL_LUMINANCE4_ALPHA4_OES = $8043
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE6_ALPHA2, #PB_Constant)
+#GL_LUMINANCE6_ALPHA2 = $8044
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE6_ALPHA2_EXT, #PB_Constant)
+#GL_LUMINANCE6_ALPHA2_EXT = $8044
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_ALPHA8, #PB_Constant)
+#GL_LUMINANCE8_ALPHA8 = $8045
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_ALPHA8_EXT, #PB_Constant)
+#GL_LUMINANCE8_ALPHA8_EXT = $8045
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_ALPHA8_OES, #PB_Constant)
+#GL_LUMINANCE8_ALPHA8_OES = $8045
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12_ALPHA4, #PB_Constant)
+#GL_LUMINANCE12_ALPHA4 = $8046
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12_ALPHA4_EXT, #PB_Constant)
+#GL_LUMINANCE12_ALPHA4_EXT = $8046
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12_ALPHA12, #PB_Constant)
+#GL_LUMINANCE12_ALPHA12 = $8047
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE12_ALPHA12_EXT, #PB_Constant)
+#GL_LUMINANCE12_ALPHA12_EXT = $8047
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16_ALPHA16, #PB_Constant)
+#GL_LUMINANCE16_ALPHA16 = $8048
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16_ALPHA16_EXT, #PB_Constant)
+#GL_LUMINANCE16_ALPHA16_EXT = $8048
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY, #PB_Constant)
+#GL_INTENSITY = $8049
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_EXT, #PB_Constant)
+#GL_INTENSITY_EXT = $8049
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY4, #PB_Constant)
+#GL_INTENSITY4 = $804A
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY4_EXT, #PB_Constant)
+#GL_INTENSITY4_EXT = $804A
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY8, #PB_Constant)
+#GL_INTENSITY8 = $804B
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY8_EXT, #PB_Constant)
+#GL_INTENSITY8_EXT = $804B
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY12, #PB_Constant)
+#GL_INTENSITY12 = $804C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY12_EXT, #PB_Constant)
+#GL_INTENSITY12_EXT = $804C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16, #PB_Constant)
+#GL_INTENSITY16 = $804D
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16_EXT, #PB_Constant)
+#GL_INTENSITY16_EXT = $804D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB2_EXT, #PB_Constant)
+#GL_RGB2_EXT = $804E
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB4, #PB_Constant)
+#GL_RGB4 = $804F
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB4_EXT, #PB_Constant)
+#GL_RGB4_EXT = $804F
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB5, #PB_Constant)
+#GL_RGB5 = $8050
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB5_EXT, #PB_Constant)
+#GL_RGB5_EXT = $8050
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8, #PB_Constant)
+#GL_RGB8 = $8051
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8_EXT, #PB_Constant)
+#GL_RGB8_EXT = $8051
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8_OES, #PB_Constant)
+#GL_RGB8_OES = $8051
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB10, #PB_Constant)
+#GL_RGB10 = $8052
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB10_EXT, #PB_Constant)
+#GL_RGB10_EXT = $8052
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB12, #PB_Constant)
+#GL_RGB12 = $8053
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB12_EXT, #PB_Constant)
+#GL_RGB12_EXT = $8053
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16, #PB_Constant)
+#GL_RGB16 = $8054
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16_EXT, #PB_Constant)
+#GL_RGB16_EXT = $8054
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA2, #PB_Constant)
+#GL_RGBA2 = $8055
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA2_EXT, #PB_Constant)
+#GL_RGBA2_EXT = $8055
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA4, #PB_Constant)
+#GL_RGBA4 = $8056
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA4_EXT, #PB_Constant)
+#GL_RGBA4_EXT = $8056
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA4_OES, #PB_Constant)
+#GL_RGBA4_OES = $8056
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB5_A1, #PB_Constant)
+#GL_RGB5_A1 = $8057
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB5_A1_EXT, #PB_Constant)
+#GL_RGB5_A1_EXT = $8057
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB5_A1_OES, #PB_Constant)
+#GL_RGB5_A1_OES = $8057
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8, #PB_Constant)
+#GL_RGBA8 = $8058
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8_EXT, #PB_Constant)
+#GL_RGBA8_EXT = $8058
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8_OES, #PB_Constant)
+#GL_RGBA8_OES = $8058
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB10_A2, #PB_Constant)
+#GL_RGB10_A2 = $8059
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB10_A2_EXT, #PB_Constant)
+#GL_RGB10_A2_EXT = $8059
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA12, #PB_Constant)
+#GL_RGBA12 = $805A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA12_EXT, #PB_Constant)
+#GL_RGBA12_EXT = $805A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16, #PB_Constant)
+#GL_RGBA16 = $805B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16_EXT, #PB_Constant)
+#GL_RGBA16_EXT = $805B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RED_SIZE, #PB_Constant)
+#GL_TEXTURE_RED_SIZE = $805C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RED_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_RED_SIZE_EXT = $805C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GREEN_SIZE, #PB_Constant)
+#GL_TEXTURE_GREEN_SIZE = $805D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GREEN_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_GREEN_SIZE_EXT = $805D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BLUE_SIZE, #PB_Constant)
+#GL_TEXTURE_BLUE_SIZE = $805E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BLUE_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_BLUE_SIZE_EXT = $805E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ALPHA_SIZE, #PB_Constant)
+#GL_TEXTURE_ALPHA_SIZE = $805F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ALPHA_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_ALPHA_SIZE_EXT = $805F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LUMINANCE_SIZE, #PB_Constant)
+#GL_TEXTURE_LUMINANCE_SIZE = $8060
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LUMINANCE_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_LUMINANCE_SIZE_EXT = $8060
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTENSITY_SIZE, #PB_Constant)
+#GL_TEXTURE_INTENSITY_SIZE = $8061
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTENSITY_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_INTENSITY_SIZE_EXT = $8061
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACE_EXT, #PB_Constant)
+#GL_REPLACE_EXT = $8062
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_1D, #PB_Constant)
+#GL_PROXY_TEXTURE_1D = $8063
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_1D_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_1D_EXT = $8063
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D, #PB_Constant)
+#GL_PROXY_TEXTURE_2D = $8064
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_EXT = $8064
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_TOO_LARGE_EXT, #PB_Constant)
+#GL_TEXTURE_TOO_LARGE_EXT = $8065
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_PRIORITY, #PB_Constant)
+#GL_TEXTURE_PRIORITY = $8066
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_PRIORITY_EXT, #PB_Constant)
+#GL_TEXTURE_PRIORITY_EXT = $8066
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RESIDENT, #PB_Constant)
+#GL_TEXTURE_RESIDENT = $8067
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RESIDENT_EXT, #PB_Constant)
+#GL_TEXTURE_RESIDENT_EXT = $8067
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D_BINDING_EXT, #PB_Constant)
+#GL_TEXTURE_1D_BINDING_EXT = $8068
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_1D, #PB_Constant)
+#GL_TEXTURE_BINDING_1D = $8068
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_BINDING_EXT, #PB_Constant)
+#GL_TEXTURE_2D_BINDING_EXT = $8069
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D, #PB_Constant)
+#GL_TEXTURE_BINDING_2D = $8069
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_3D_BINDING_EXT, #PB_Constant)
+#GL_TEXTURE_3D_BINDING_EXT = $806A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_3D_BINDING_OES, #PB_Constant)
+#GL_TEXTURE_3D_BINDING_OES = $806A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_3D, #PB_Constant)
+#GL_TEXTURE_BINDING_3D = $806A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_3D_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_3D_OES = $806A
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_IMAGES, #PB_Constant)
+#GL_PACK_SKIP_IMAGES = $806B
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_IMAGES_EXT, #PB_Constant)
+#GL_PACK_SKIP_IMAGES_EXT = $806B
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_IMAGE_HEIGHT, #PB_Constant)
+#GL_PACK_IMAGE_HEIGHT = $806C
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_IMAGE_HEIGHT_EXT, #PB_Constant)
+#GL_PACK_IMAGE_HEIGHT_EXT = $806C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_IMAGES, #PB_Constant)
+#GL_UNPACK_SKIP_IMAGES = $806D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_IMAGES_EXT, #PB_Constant)
+#GL_UNPACK_SKIP_IMAGES_EXT = $806D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_IMAGE_HEIGHT, #PB_Constant)
+#GL_UNPACK_IMAGE_HEIGHT = $806E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_IMAGE_HEIGHT_EXT, #PB_Constant)
+#GL_UNPACK_IMAGE_HEIGHT_EXT = $806E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_3D, #PB_Constant)
+#GL_TEXTURE_3D = $806F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_3D_EXT, #PB_Constant)
+#GL_TEXTURE_3D_EXT = $806F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_3D_OES, #PB_Constant)
+#GL_TEXTURE_3D_OES = $806F
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_3D, #PB_Constant)
+#GL_PROXY_TEXTURE_3D = $8070
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_3D_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_3D_EXT = $8070
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH, #PB_Constant)
+#GL_TEXTURE_DEPTH = $8071
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_EXT, #PB_Constant)
+#GL_TEXTURE_DEPTH_EXT = $8071
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_R, #PB_Constant)
+#GL_TEXTURE_WRAP_R = $8072
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_R_EXT, #PB_Constant)
+#GL_TEXTURE_WRAP_R_EXT = $8072
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_R_OES, #PB_Constant)
+#GL_TEXTURE_WRAP_R_OES = $8072
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_3D_TEXTURE_SIZE, #PB_Constant)
+#GL_MAX_3D_TEXTURE_SIZE = $8073
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_3D_TEXTURE_SIZE_EXT, #PB_Constant)
+#GL_MAX_3D_TEXTURE_SIZE_EXT = $8073
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_3D_TEXTURE_SIZE_OES, #PB_Constant)
+#GL_MAX_3D_TEXTURE_SIZE_OES = $8073
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY, #PB_Constant)
+#GL_VERTEX_ARRAY = $8074
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_EXT = $8074
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_KHR, #PB_Constant)
+#GL_VERTEX_ARRAY_KHR = $8074
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY, #PB_Constant)
+#GL_NORMAL_ARRAY = $8075
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_EXT, #PB_Constant)
+#GL_NORMAL_ARRAY_EXT = $8075
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY, #PB_Constant)
+#GL_COLOR_ARRAY = $8076
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_EXT = $8076
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY, #PB_Constant)
+#GL_INDEX_ARRAY = $8077
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_EXT, #PB_Constant)
+#GL_INDEX_ARRAY_EXT = $8077
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY = $8078
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_EXT = $8078
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY = $8079
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_EXT, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_EXT = $8079
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_SIZE, #PB_Constant)
+#GL_VERTEX_ARRAY_SIZE = $807A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_SIZE_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_SIZE_EXT = $807A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_TYPE, #PB_Constant)
+#GL_VERTEX_ARRAY_TYPE = $807B
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_TYPE_EXT = $807B
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_STRIDE, #PB_Constant)
+#GL_VERTEX_ARRAY_STRIDE = $807C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_STRIDE_EXT = $807C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_COUNT_EXT = $807D
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_TYPE, #PB_Constant)
+#GL_NORMAL_ARRAY_TYPE = $807E
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_NORMAL_ARRAY_TYPE_EXT = $807E
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_STRIDE, #PB_Constant)
+#GL_NORMAL_ARRAY_STRIDE = $807F
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_NORMAL_ARRAY_STRIDE_EXT = $807F
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_NORMAL_ARRAY_COUNT_EXT = $8080
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_SIZE, #PB_Constant)
+#GL_COLOR_ARRAY_SIZE = $8081
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_SIZE_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_SIZE_EXT = $8081
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_TYPE, #PB_Constant)
+#GL_COLOR_ARRAY_TYPE = $8082
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_TYPE_EXT = $8082
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_STRIDE, #PB_Constant)
+#GL_COLOR_ARRAY_STRIDE = $8083
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_STRIDE_EXT = $8083
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_COUNT_EXT = $8084
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_TYPE, #PB_Constant)
+#GL_INDEX_ARRAY_TYPE = $8085
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_INDEX_ARRAY_TYPE_EXT = $8085
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_STRIDE, #PB_Constant)
+#GL_INDEX_ARRAY_STRIDE = $8086
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_INDEX_ARRAY_STRIDE_EXT = $8086
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_INDEX_ARRAY_COUNT_EXT = $8087
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_SIZE, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_SIZE = $8088
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_SIZE_EXT = $8088
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_TYPE, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_TYPE = $8089
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_TYPE_EXT = $8089
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_STRIDE, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_STRIDE = $808A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_STRIDE_EXT = $808A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_COUNT_EXT = $808B
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_STRIDE, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_STRIDE = $808C
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_STRIDE_EXT = $808C
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_COUNT_EXT, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_COUNT_EXT = $808D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_POINTER, #PB_Constant)
+#GL_VERTEX_ARRAY_POINTER = $808E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_POINTER_EXT = $808E
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_POINTER, #PB_Constant)
+#GL_NORMAL_ARRAY_POINTER = $808F
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_NORMAL_ARRAY_POINTER_EXT = $808F
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_POINTER, #PB_Constant)
+#GL_COLOR_ARRAY_POINTER = $8090
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_COLOR_ARRAY_POINTER_EXT = $8090
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_POINTER, #PB_Constant)
+#GL_INDEX_ARRAY_POINTER = $8091
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_INDEX_ARRAY_POINTER_EXT = $8091
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_POINTER, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_POINTER = $8092
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_POINTER_EXT = $8092
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_POINTER, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_POINTER = $8093
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_POINTER_EXT = $8093
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLACE_SGIX, #PB_Constant)
+#GL_INTERLACE_SGIX = $8094
+CompilerEndIf
+CompilerIf Not Defined(GL_DETAIL_TEXTURE_2D_SGIS, #PB_Constant)
+#GL_DETAIL_TEXTURE_2D_SGIS = $8095
+CompilerEndIf
+CompilerIf Not Defined(GL_DETAIL_TEXTURE_2D_BINDING_SGIS, #PB_Constant)
+#GL_DETAIL_TEXTURE_2D_BINDING_SGIS = $8096
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_DETAIL_SGIS, #PB_Constant)
+#GL_LINEAR_DETAIL_SGIS = $8097
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_DETAIL_ALPHA_SGIS, #PB_Constant)
+#GL_LINEAR_DETAIL_ALPHA_SGIS = $8098
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_DETAIL_COLOR_SGIS, #PB_Constant)
+#GL_LINEAR_DETAIL_COLOR_SGIS = $8099
+CompilerEndIf
+CompilerIf Not Defined(GL_DETAIL_TEXTURE_LEVEL_SGIS, #PB_Constant)
+#GL_DETAIL_TEXTURE_LEVEL_SGIS = $809A
+CompilerEndIf
+CompilerIf Not Defined(GL_DETAIL_TEXTURE_MODE_SGIS, #PB_Constant)
+#GL_DETAIL_TEXTURE_MODE_SGIS = $809B
+CompilerEndIf
+CompilerIf Not Defined(GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS, #PB_Constant)
+#GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS = $809C
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE, #PB_Constant)
+#GL_MULTISAMPLE = $809D
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_ARB, #PB_Constant)
+#GL_MULTISAMPLE_ARB = $809D
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_EXT, #PB_Constant)
+#GL_MULTISAMPLE_EXT = $809D
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_SGIS, #PB_Constant)
+#GL_MULTISAMPLE_SGIS = $809D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_COVERAGE, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_COVERAGE = $809E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_COVERAGE_ARB, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_COVERAGE_ARB = $809E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_MASK_EXT, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_MASK_EXT = $809E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_MASK_SGIS, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_MASK_SGIS = $809E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_ONE, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_ONE = $809F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_ONE_ARB, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_ONE_ARB = $809F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_ONE_EXT, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_ONE_EXT = $809F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_ALPHA_TO_ONE_SGIS, #PB_Constant)
+#GL_SAMPLE_ALPHA_TO_ONE_SGIS = $809F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE, #PB_Constant)
+#GL_SAMPLE_COVERAGE = $80A0
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE_ARB, #PB_Constant)
+#GL_SAMPLE_COVERAGE_ARB = $80A0
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_EXT, #PB_Constant)
+#GL_SAMPLE_MASK_EXT = $80A0
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_SGIS, #PB_Constant)
+#GL_SAMPLE_MASK_SGIS = $80A0
+CompilerEndIf
+CompilerIf Not Defined(GL_1PASS_EXT, #PB_Constant)
+#GL_1PASS_EXT = $80A1
+CompilerEndIf
+CompilerIf Not Defined(GL_1PASS_SGIS, #PB_Constant)
+#GL_1PASS_SGIS = $80A1
+CompilerEndIf
+CompilerIf Not Defined(GL_2PASS_0_EXT, #PB_Constant)
+#GL_2PASS_0_EXT = $80A2
+CompilerEndIf
+CompilerIf Not Defined(GL_2PASS_0_SGIS, #PB_Constant)
+#GL_2PASS_0_SGIS = $80A2
+CompilerEndIf
+CompilerIf Not Defined(GL_2PASS_1_EXT, #PB_Constant)
+#GL_2PASS_1_EXT = $80A3
+CompilerEndIf
+CompilerIf Not Defined(GL_2PASS_1_SGIS, #PB_Constant)
+#GL_2PASS_1_SGIS = $80A3
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_0_EXT, #PB_Constant)
+#GL_4PASS_0_EXT = $80A4
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_0_SGIS, #PB_Constant)
+#GL_4PASS_0_SGIS = $80A4
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_1_EXT, #PB_Constant)
+#GL_4PASS_1_EXT = $80A5
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_1_SGIS, #PB_Constant)
+#GL_4PASS_1_SGIS = $80A5
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_2_EXT, #PB_Constant)
+#GL_4PASS_2_EXT = $80A6
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_2_SGIS, #PB_Constant)
+#GL_4PASS_2_SGIS = $80A6
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_3_EXT, #PB_Constant)
+#GL_4PASS_3_EXT = $80A7
+CompilerEndIf
+CompilerIf Not Defined(GL_4PASS_3_SGIS, #PB_Constant)
+#GL_4PASS_3_SGIS = $80A7
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_BUFFERS, #PB_Constant)
+#GL_SAMPLE_BUFFERS = $80A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_BUFFERS_ARB, #PB_Constant)
+#GL_SAMPLE_BUFFERS_ARB = $80A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_BUFFERS_EXT, #PB_Constant)
+#GL_SAMPLE_BUFFERS_EXT = $80A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_BUFFERS_SGIS, #PB_Constant)
+#GL_SAMPLE_BUFFERS_SGIS = $80A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES, #PB_Constant)
+#GL_SAMPLES = $80A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_ARB, #PB_Constant)
+#GL_SAMPLES_ARB = $80A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_EXT, #PB_Constant)
+#GL_SAMPLES_EXT = $80A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_SGIS, #PB_Constant)
+#GL_SAMPLES_SGIS = $80A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE_VALUE, #PB_Constant)
+#GL_SAMPLE_COVERAGE_VALUE = $80AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE_VALUE_ARB, #PB_Constant)
+#GL_SAMPLE_COVERAGE_VALUE_ARB = $80AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_VALUE_EXT, #PB_Constant)
+#GL_SAMPLE_MASK_VALUE_EXT = $80AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_VALUE_SGIS, #PB_Constant)
+#GL_SAMPLE_MASK_VALUE_SGIS = $80AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE_INVERT, #PB_Constant)
+#GL_SAMPLE_COVERAGE_INVERT = $80AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_COVERAGE_INVERT_ARB, #PB_Constant)
+#GL_SAMPLE_COVERAGE_INVERT_ARB = $80AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_INVERT_EXT, #PB_Constant)
+#GL_SAMPLE_MASK_INVERT_EXT = $80AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_INVERT_SGIS, #PB_Constant)
+#GL_SAMPLE_MASK_INVERT_SGIS = $80AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_PATTERN_EXT, #PB_Constant)
+#GL_SAMPLE_PATTERN_EXT = $80AC
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_PATTERN_SGIS, #PB_Constant)
+#GL_SAMPLE_PATTERN_SGIS = $80AC
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_SHARPEN_SGIS, #PB_Constant)
+#GL_LINEAR_SHARPEN_SGIS = $80AD
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_SHARPEN_ALPHA_SGIS, #PB_Constant)
+#GL_LINEAR_SHARPEN_ALPHA_SGIS = $80AE
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_SHARPEN_COLOR_SGIS, #PB_Constant)
+#GL_LINEAR_SHARPEN_COLOR_SGIS = $80AF
+CompilerEndIf
+CompilerIf Not Defined(GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS, #PB_Constant)
+#GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS = $80B0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATRIX, #PB_Constant)
+#GL_COLOR_MATRIX = $80B1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATRIX_SGI, #PB_Constant)
+#GL_COLOR_MATRIX_SGI = $80B1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATRIX_STACK_DEPTH, #PB_Constant)
+#GL_COLOR_MATRIX_STACK_DEPTH = $80B2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_MATRIX_STACK_DEPTH_SGI, #PB_Constant)
+#GL_COLOR_MATRIX_STACK_DEPTH_SGI = $80B2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_MATRIX_STACK_DEPTH, #PB_Constant)
+#GL_MAX_COLOR_MATRIX_STACK_DEPTH = $80B3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI, #PB_Constant)
+#GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI = $80B3
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_RED_SCALE, #PB_Constant)
+#GL_POST_COLOR_MATRIX_RED_SCALE = $80B4
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_RED_SCALE_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_RED_SCALE_SGI = $80B4
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_GREEN_SCALE, #PB_Constant)
+#GL_POST_COLOR_MATRIX_GREEN_SCALE = $80B5
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI = $80B5
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_BLUE_SCALE, #PB_Constant)
+#GL_POST_COLOR_MATRIX_BLUE_SCALE = $80B6
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI = $80B6
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_ALPHA_SCALE, #PB_Constant)
+#GL_POST_COLOR_MATRIX_ALPHA_SCALE = $80B7
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI = $80B7
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_RED_BIAS, #PB_Constant)
+#GL_POST_COLOR_MATRIX_RED_BIAS = $80B8
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_RED_BIAS_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_RED_BIAS_SGI = $80B8
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_GREEN_BIAS, #PB_Constant)
+#GL_POST_COLOR_MATRIX_GREEN_BIAS = $80B9
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI = $80B9
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_BLUE_BIAS, #PB_Constant)
+#GL_POST_COLOR_MATRIX_BLUE_BIAS = $80BA
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI = $80BA
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_ALPHA_BIAS, #PB_Constant)
+#GL_POST_COLOR_MATRIX_ALPHA_BIAS = $80BB
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI = $80BB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COLOR_TABLE_SGI, #PB_Constant)
+#GL_TEXTURE_COLOR_TABLE_SGI = $80BC
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_COLOR_TABLE_SGI, #PB_Constant)
+#GL_PROXY_TEXTURE_COLOR_TABLE_SGI = $80BD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ENV_BIAS_SGIX, #PB_Constant)
+#GL_TEXTURE_ENV_BIAS_SGIX = $80BE
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADOW_AMBIENT_SGIX, #PB_Constant)
+#GL_SHADOW_AMBIENT_SGIX = $80BF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_FAIL_VALUE_ARB, #PB_Constant)
+#GL_TEXTURE_COMPARE_FAIL_VALUE_ARB = $80BF
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_RGB, #PB_Constant)
+#GL_BLEND_DST_RGB = $80C8
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_RGB_EXT, #PB_Constant)
+#GL_BLEND_DST_RGB_EXT = $80C8
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_RGB_OES, #PB_Constant)
+#GL_BLEND_DST_RGB_OES = $80C8
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_RGB, #PB_Constant)
+#GL_BLEND_SRC_RGB = $80C9
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_RGB_EXT, #PB_Constant)
+#GL_BLEND_SRC_RGB_EXT = $80C9
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_RGB_OES, #PB_Constant)
+#GL_BLEND_SRC_RGB_OES = $80C9
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_ALPHA, #PB_Constant)
+#GL_BLEND_DST_ALPHA = $80CA
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_ALPHA_EXT, #PB_Constant)
+#GL_BLEND_DST_ALPHA_EXT = $80CA
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_DST_ALPHA_OES, #PB_Constant)
+#GL_BLEND_DST_ALPHA_OES = $80CA
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_ALPHA, #PB_Constant)
+#GL_BLEND_SRC_ALPHA = $80CB
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_ALPHA_EXT, #PB_Constant)
+#GL_BLEND_SRC_ALPHA_EXT = $80CB
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_SRC_ALPHA_OES, #PB_Constant)
+#GL_BLEND_SRC_ALPHA_OES = $80CB
+CompilerEndIf
+CompilerIf Not Defined(GL_422_EXT, #PB_Constant)
+#GL_422_EXT = $80CC
+CompilerEndIf
+CompilerIf Not Defined(GL_422_REV_EXT, #PB_Constant)
+#GL_422_REV_EXT = $80CD
+CompilerEndIf
+CompilerIf Not Defined(GL_422_AVERAGE_EXT, #PB_Constant)
+#GL_422_AVERAGE_EXT = $80CE
+CompilerEndIf
+CompilerIf Not Defined(GL_422_REV_AVERAGE_EXT, #PB_Constant)
+#GL_422_REV_AVERAGE_EXT = $80CF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE, #PB_Constant)
+#GL_COLOR_TABLE = $80D0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_SGI = $80D0
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_COLOR_TABLE, #PB_Constant)
+#GL_POST_CONVOLUTION_COLOR_TABLE = $80D1
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_CONVOLUTION_COLOR_TABLE_SGI, #PB_Constant)
+#GL_POST_CONVOLUTION_COLOR_TABLE_SGI = $80D1
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_COLOR_TABLE, #PB_Constant)
+#GL_POST_COLOR_MATRIX_COLOR_TABLE = $80D2
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI, #PB_Constant)
+#GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI = $80D2
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_COLOR_TABLE, #PB_Constant)
+#GL_PROXY_COLOR_TABLE = $80D3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_COLOR_TABLE_SGI, #PB_Constant)
+#GL_PROXY_COLOR_TABLE_SGI = $80D3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_POST_CONVOLUTION_COLOR_TABLE, #PB_Constant)
+#GL_PROXY_POST_CONVOLUTION_COLOR_TABLE = $80D4
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI, #PB_Constant)
+#GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI = $80D4
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE, #PB_Constant)
+#GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE = $80D5
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI, #PB_Constant)
+#GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI = $80D5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_SCALE, #PB_Constant)
+#GL_COLOR_TABLE_SCALE = $80D6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_SCALE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_SCALE_SGI = $80D6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_BIAS, #PB_Constant)
+#GL_COLOR_TABLE_BIAS = $80D7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_BIAS_SGI, #PB_Constant)
+#GL_COLOR_TABLE_BIAS_SGI = $80D7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_FORMAT, #PB_Constant)
+#GL_COLOR_TABLE_FORMAT = $80D8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_FORMAT_SGI, #PB_Constant)
+#GL_COLOR_TABLE_FORMAT_SGI = $80D8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_WIDTH, #PB_Constant)
+#GL_COLOR_TABLE_WIDTH = $80D9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_WIDTH_SGI, #PB_Constant)
+#GL_COLOR_TABLE_WIDTH_SGI = $80D9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_RED_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_RED_SIZE = $80DA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_RED_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_RED_SIZE_SGI = $80DA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_GREEN_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_GREEN_SIZE = $80DB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_GREEN_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_GREEN_SIZE_SGI = $80DB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_BLUE_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_BLUE_SIZE = $80DC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_BLUE_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_BLUE_SIZE_SGI = $80DC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_ALPHA_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_ALPHA_SIZE = $80DD
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_ALPHA_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_ALPHA_SIZE_SGI = $80DD
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_LUMINANCE_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_LUMINANCE_SIZE = $80DE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_LUMINANCE_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_LUMINANCE_SIZE_SGI = $80DE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_INTENSITY_SIZE, #PB_Constant)
+#GL_COLOR_TABLE_INTENSITY_SIZE = $80DF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_TABLE_INTENSITY_SIZE_SGI, #PB_Constant)
+#GL_COLOR_TABLE_INTENSITY_SIZE_SGI = $80DF
+CompilerEndIf
+CompilerIf Not Defined(GL_BGR, #PB_Constant)
+#GL_BGR = $80E0
+CompilerEndIf
+CompilerIf Not Defined(GL_BGR_EXT, #PB_Constant)
+#GL_BGR_EXT = $80E0
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA, #PB_Constant)
+#GL_BGRA = $80E1
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA_EXT, #PB_Constant)
+#GL_BGRA_EXT = $80E1
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA_IMG, #PB_Constant)
+#GL_BGRA_IMG = $80E1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX1_EXT, #PB_Constant)
+#GL_COLOR_INDEX1_EXT = $80E2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX2_EXT, #PB_Constant)
+#GL_COLOR_INDEX2_EXT = $80E3
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX4_EXT, #PB_Constant)
+#GL_COLOR_INDEX4_EXT = $80E4
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX8_EXT, #PB_Constant)
+#GL_COLOR_INDEX8_EXT = $80E5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX12_EXT, #PB_Constant)
+#GL_COLOR_INDEX12_EXT = $80E6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_INDEX16_EXT, #PB_Constant)
+#GL_COLOR_INDEX16_EXT = $80E7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ELEMENTS_VERTICES, #PB_Constant)
+#GL_MAX_ELEMENTS_VERTICES = $80E8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ELEMENTS_VERTICES_EXT, #PB_Constant)
+#GL_MAX_ELEMENTS_VERTICES_EXT = $80E8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ELEMENTS_INDICES, #PB_Constant)
+#GL_MAX_ELEMENTS_INDICES = $80E9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ELEMENTS_INDICES_EXT, #PB_Constant)
+#GL_MAX_ELEMENTS_INDICES_EXT = $80E9
+CompilerEndIf
+CompilerIf Not Defined(GL_PHONG_WIN, #PB_Constant)
+#GL_PHONG_WIN = $80EA
+CompilerEndIf
+CompilerIf Not Defined(GL_PHONG_HINT_WIN, #PB_Constant)
+#GL_PHONG_HINT_WIN = $80EB
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_SPECULAR_TEXTURE_WIN, #PB_Constant)
+#GL_FOG_SPECULAR_TEXTURE_WIN = $80EC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INDEX_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_INDEX_SIZE_EXT = $80ED
+CompilerEndIf
+CompilerIf Not Defined(GL_PARAMETER_BUFFER, #PB_Constant)
+#GL_PARAMETER_BUFFER = $80EE
+CompilerEndIf
+CompilerIf Not Defined(GL_PARAMETER_BUFFER_ARB, #PB_Constant)
+#GL_PARAMETER_BUFFER_ARB = $80EE
+CompilerEndIf
+CompilerIf Not Defined(GL_PARAMETER_BUFFER_BINDING, #PB_Constant)
+#GL_PARAMETER_BUFFER_BINDING = $80EF
+CompilerEndIf
+CompilerIf Not Defined(GL_PARAMETER_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_PARAMETER_BUFFER_BINDING_ARB = $80EF
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_VOLUME_CLIPPING_HINT_EXT, #PB_Constant)
+#GL_CLIP_VOLUME_CLIPPING_HINT_EXT = $80F0
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_ALPHA4_SGIS, #PB_Constant)
+#GL_DUAL_ALPHA4_SGIS = $8110
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_ALPHA8_SGIS, #PB_Constant)
+#GL_DUAL_ALPHA8_SGIS = $8111
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_ALPHA12_SGIS, #PB_Constant)
+#GL_DUAL_ALPHA12_SGIS = $8112
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_ALPHA16_SGIS, #PB_Constant)
+#GL_DUAL_ALPHA16_SGIS = $8113
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE4_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE4_SGIS = $8114
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE8_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE8_SGIS = $8115
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE12_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE12_SGIS = $8116
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE16_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE16_SGIS = $8117
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_INTENSITY4_SGIS, #PB_Constant)
+#GL_DUAL_INTENSITY4_SGIS = $8118
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_INTENSITY8_SGIS, #PB_Constant)
+#GL_DUAL_INTENSITY8_SGIS = $8119
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_INTENSITY12_SGIS, #PB_Constant)
+#GL_DUAL_INTENSITY12_SGIS = $811A
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_INTENSITY16_SGIS, #PB_Constant)
+#GL_DUAL_INTENSITY16_SGIS = $811B
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE_ALPHA4_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE_ALPHA4_SGIS = $811C
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_LUMINANCE_ALPHA8_SGIS, #PB_Constant)
+#GL_DUAL_LUMINANCE_ALPHA8_SGIS = $811D
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_ALPHA4_SGIS, #PB_Constant)
+#GL_QUAD_ALPHA4_SGIS = $811E
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_ALPHA8_SGIS, #PB_Constant)
+#GL_QUAD_ALPHA8_SGIS = $811F
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_LUMINANCE4_SGIS, #PB_Constant)
+#GL_QUAD_LUMINANCE4_SGIS = $8120
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_LUMINANCE8_SGIS, #PB_Constant)
+#GL_QUAD_LUMINANCE8_SGIS = $8121
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_INTENSITY4_SGIS, #PB_Constant)
+#GL_QUAD_INTENSITY4_SGIS = $8122
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_INTENSITY8_SGIS, #PB_Constant)
+#GL_QUAD_INTENSITY8_SGIS = $8123
+CompilerEndIf
+CompilerIf Not Defined(GL_DUAL_TEXTURE_SELECT_SGIS, #PB_Constant)
+#GL_DUAL_TEXTURE_SELECT_SGIS = $8124
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_TEXTURE_SELECT_SGIS, #PB_Constant)
+#GL_QUAD_TEXTURE_SELECT_SGIS = $8125
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MIN, #PB_Constant)
+#GL_POINT_SIZE_MIN = $8126
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MIN_ARB, #PB_Constant)
+#GL_POINT_SIZE_MIN_ARB = $8126
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MIN_EXT, #PB_Constant)
+#GL_POINT_SIZE_MIN_EXT = $8126
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MIN_SGIS, #PB_Constant)
+#GL_POINT_SIZE_MIN_SGIS = $8126
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MAX, #PB_Constant)
+#GL_POINT_SIZE_MAX = $8127
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MAX_ARB, #PB_Constant)
+#GL_POINT_SIZE_MAX_ARB = $8127
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MAX_EXT, #PB_Constant)
+#GL_POINT_SIZE_MAX_EXT = $8127
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_MAX_SGIS, #PB_Constant)
+#GL_POINT_SIZE_MAX_SGIS = $8127
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_FADE_THRESHOLD_SIZE, #PB_Constant)
+#GL_POINT_FADE_THRESHOLD_SIZE = $8128
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_FADE_THRESHOLD_SIZE_ARB, #PB_Constant)
+#GL_POINT_FADE_THRESHOLD_SIZE_ARB = $8128
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_FADE_THRESHOLD_SIZE_EXT, #PB_Constant)
+#GL_POINT_FADE_THRESHOLD_SIZE_EXT = $8128
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_FADE_THRESHOLD_SIZE_SGIS, #PB_Constant)
+#GL_POINT_FADE_THRESHOLD_SIZE_SGIS = $8128
+CompilerEndIf
+CompilerIf Not Defined(GL_DISTANCE_ATTENUATION_EXT, #PB_Constant)
+#GL_DISTANCE_ATTENUATION_EXT = $8129
+CompilerEndIf
+CompilerIf Not Defined(GL_DISTANCE_ATTENUATION_SGIS, #PB_Constant)
+#GL_DISTANCE_ATTENUATION_SGIS = $8129
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_DISTANCE_ATTENUATION, #PB_Constant)
+#GL_POINT_DISTANCE_ATTENUATION = $8129
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_DISTANCE_ATTENUATION_ARB, #PB_Constant)
+#GL_POINT_DISTANCE_ATTENUATION_ARB = $8129
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_FUNC_SGIS, #PB_Constant)
+#GL_FOG_FUNC_SGIS = $812A
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_FUNC_POINTS_SGIS, #PB_Constant)
+#GL_FOG_FUNC_POINTS_SGIS = $812B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FOG_FUNC_POINTS_SGIS, #PB_Constant)
+#GL_MAX_FOG_FUNC_POINTS_SGIS = $812C
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER, #PB_Constant)
+#GL_CLAMP_TO_BORDER = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER_ARB, #PB_Constant)
+#GL_CLAMP_TO_BORDER_ARB = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER_EXT, #PB_Constant)
+#GL_CLAMP_TO_BORDER_EXT = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER_NV, #PB_Constant)
+#GL_CLAMP_TO_BORDER_NV = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER_SGIS, #PB_Constant)
+#GL_CLAMP_TO_BORDER_SGIS = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_BORDER_OES, #PB_Constant)
+#GL_CLAMP_TO_BORDER_OES = $812D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MULTI_BUFFER_HINT_SGIX, #PB_Constant)
+#GL_TEXTURE_MULTI_BUFFER_HINT_SGIX = $812E
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_EDGE, #PB_Constant)
+#GL_CLAMP_TO_EDGE = $812F
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_TO_EDGE_SGIS, #PB_Constant)
+#GL_CLAMP_TO_EDGE_SGIS = $812F
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SKIP_VOLUMES_SGIS, #PB_Constant)
+#GL_PACK_SKIP_VOLUMES_SGIS = $8130
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_IMAGE_DEPTH_SGIS, #PB_Constant)
+#GL_PACK_IMAGE_DEPTH_SGIS = $8131
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SKIP_VOLUMES_SGIS, #PB_Constant)
+#GL_UNPACK_SKIP_VOLUMES_SGIS = $8132
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_IMAGE_DEPTH_SGIS, #PB_Constant)
+#GL_UNPACK_IMAGE_DEPTH_SGIS = $8133
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_4D_SGIS, #PB_Constant)
+#GL_TEXTURE_4D_SGIS = $8134
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_4D_SGIS, #PB_Constant)
+#GL_PROXY_TEXTURE_4D_SGIS = $8135
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_4DSIZE_SGIS, #PB_Constant)
+#GL_TEXTURE_4DSIZE_SGIS = $8136
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WRAP_Q_SGIS, #PB_Constant)
+#GL_TEXTURE_WRAP_Q_SGIS = $8137
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_4D_TEXTURE_SIZE_SGIS, #PB_Constant)
+#GL_MAX_4D_TEXTURE_SIZE_SGIS = $8138
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_SGIX = $8139
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MIN_LOD, #PB_Constant)
+#GL_TEXTURE_MIN_LOD = $813A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MIN_LOD_SGIS, #PB_Constant)
+#GL_TEXTURE_MIN_LOD_SGIS = $813A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_LOD, #PB_Constant)
+#GL_TEXTURE_MAX_LOD = $813B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_LOD_SGIS, #PB_Constant)
+#GL_TEXTURE_MAX_LOD_SGIS = $813B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BASE_LEVEL, #PB_Constant)
+#GL_TEXTURE_BASE_LEVEL = $813C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BASE_LEVEL_SGIS, #PB_Constant)
+#GL_TEXTURE_BASE_LEVEL_SGIS = $813C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_LEVEL, #PB_Constant)
+#GL_TEXTURE_MAX_LEVEL = $813D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_LEVEL_APPLE, #PB_Constant)
+#GL_TEXTURE_MAX_LEVEL_APPLE = $813D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_LEVEL_SGIS, #PB_Constant)
+#GL_TEXTURE_MAX_LEVEL_SGIS = $813D
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX = $813E
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_CACHE_INCREMENT_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_CACHE_INCREMENT_SGIX = $813F
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_WIDTH_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_WIDTH_SGIX = $8140
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_HEIGHT_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_HEIGHT_SGIX = $8141
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_GRID_WIDTH_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_GRID_WIDTH_SGIX = $8142
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_GRID_HEIGHT_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_GRID_HEIGHT_SGIX = $8143
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_GRID_DEPTH_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_GRID_DEPTH_SGIX = $8144
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TILE_CACHE_SIZE_SGIX, #PB_Constant)
+#GL_PIXEL_TILE_CACHE_SIZE_SGIX = $8145
+CompilerEndIf
+CompilerIf Not Defined(GL_FILTER4_SGIS, #PB_Constant)
+#GL_FILTER4_SGIS = $8146
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FILTER4_SIZE_SGIS, #PB_Constant)
+#GL_TEXTURE_FILTER4_SIZE_SGIS = $8147
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_SGIX, #PB_Constant)
+#GL_SPRITE_SGIX = $8148
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_MODE_SGIX, #PB_Constant)
+#GL_SPRITE_MODE_SGIX = $8149
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_AXIS_SGIX, #PB_Constant)
+#GL_SPRITE_AXIS_SGIX = $814A
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_TRANSLATION_SGIX, #PB_Constant)
+#GL_SPRITE_TRANSLATION_SGIX = $814B
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_AXIAL_SGIX, #PB_Constant)
+#GL_SPRITE_AXIAL_SGIX = $814C
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_OBJECT_ALIGNED_SGIX, #PB_Constant)
+#GL_SPRITE_OBJECT_ALIGNED_SGIX = $814D
+CompilerEndIf
+CompilerIf Not Defined(GL_SPRITE_EYE_ALIGNED_SGIX, #PB_Constant)
+#GL_SPRITE_EYE_ALIGNED_SGIX = $814E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_4D_BINDING_SGIS, #PB_Constant)
+#GL_TEXTURE_4D_BINDING_SGIS = $814F
+CompilerEndIf
+CompilerIf Not Defined(GL_IGNORE_BORDER_HP, #PB_Constant)
+#GL_IGNORE_BORDER_HP = $8150
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_BORDER, #PB_Constant)
+#GL_CONSTANT_BORDER = $8151
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_BORDER_HP, #PB_Constant)
+#GL_CONSTANT_BORDER_HP = $8151
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLICATE_BORDER, #PB_Constant)
+#GL_REPLICATE_BORDER = $8153
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLICATE_BORDER_HP, #PB_Constant)
+#GL_REPLICATE_BORDER_HP = $8153
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_BORDER_COLOR, #PB_Constant)
+#GL_CONVOLUTION_BORDER_COLOR = $8154
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_BORDER_COLOR_HP, #PB_Constant)
+#GL_CONVOLUTION_BORDER_COLOR_HP = $8154
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_SCALE_X_HP, #PB_Constant)
+#GL_IMAGE_SCALE_X_HP = $8155
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_SCALE_Y_HP, #PB_Constant)
+#GL_IMAGE_SCALE_Y_HP = $8156
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_TRANSLATE_X_HP, #PB_Constant)
+#GL_IMAGE_TRANSLATE_X_HP = $8157
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_TRANSLATE_Y_HP, #PB_Constant)
+#GL_IMAGE_TRANSLATE_Y_HP = $8158
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_ROTATE_ANGLE_HP, #PB_Constant)
+#GL_IMAGE_ROTATE_ANGLE_HP = $8159
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_ROTATE_ORIGIN_X_HP, #PB_Constant)
+#GL_IMAGE_ROTATE_ORIGIN_X_HP = $815A
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_ROTATE_ORIGIN_Y_HP, #PB_Constant)
+#GL_IMAGE_ROTATE_ORIGIN_Y_HP = $815B
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_MAG_FILTER_HP, #PB_Constant)
+#GL_IMAGE_MAG_FILTER_HP = $815C
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_MIN_FILTER_HP, #PB_Constant)
+#GL_IMAGE_MIN_FILTER_HP = $815D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBIC_WEIGHT_HP, #PB_Constant)
+#GL_IMAGE_CUBIC_WEIGHT_HP = $815E
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_HP, #PB_Constant)
+#GL_CUBIC_HP = $815F
+CompilerEndIf
+CompilerIf Not Defined(GL_AVERAGE_HP, #PB_Constant)
+#GL_AVERAGE_HP = $8160
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_TRANSFORM_2D_HP, #PB_Constant)
+#GL_IMAGE_TRANSFORM_2D_HP = $8161
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP, #PB_Constant)
+#GL_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP = $8162
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP, #PB_Constant)
+#GL_PROXY_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP = $8163
+CompilerEndIf
+CompilerIf Not Defined(GL_OCCLUSION_TEST_HP, #PB_Constant)
+#GL_OCCLUSION_TEST_HP = $8165
+CompilerEndIf
+CompilerIf Not Defined(GL_OCCLUSION_TEST_RESULT_HP, #PB_Constant)
+#GL_OCCLUSION_TEST_RESULT_HP = $8166
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LIGHTING_MODE_HP, #PB_Constant)
+#GL_TEXTURE_LIGHTING_MODE_HP = $8167
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_POST_SPECULAR_HP, #PB_Constant)
+#GL_TEXTURE_POST_SPECULAR_HP = $8168
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_PRE_SPECULAR_HP, #PB_Constant)
+#GL_TEXTURE_PRE_SPECULAR_HP = $8169
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_CLIPMAP_LINEAR_SGIX, #PB_Constant)
+#GL_LINEAR_CLIPMAP_LINEAR_SGIX = $8170
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_CENTER_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_CENTER_SGIX = $8171
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_FRAME_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_FRAME_SGIX = $8172
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_OFFSET_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_OFFSET_SGIX = $8173
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX = $8174
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX = $8175
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CLIPMAP_DEPTH_SGIX, #PB_Constant)
+#GL_TEXTURE_CLIPMAP_DEPTH_SGIX = $8176
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIPMAP_DEPTH_SGIX, #PB_Constant)
+#GL_MAX_CLIPMAP_DEPTH_SGIX = $8177
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIPMAP_VIRTUAL_DEPTH_SGIX, #PB_Constant)
+#GL_MAX_CLIPMAP_VIRTUAL_DEPTH_SGIX = $8178
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_TEXTURE_FILTER_BIAS_SGIX, #PB_Constant)
+#GL_POST_TEXTURE_FILTER_BIAS_SGIX = $8179
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_TEXTURE_FILTER_SCALE_SGIX, #PB_Constant)
+#GL_POST_TEXTURE_FILTER_SCALE_SGIX = $817A
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX, #PB_Constant)
+#GL_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX = $817B
+CompilerEndIf
+CompilerIf Not Defined(GL_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX, #PB_Constant)
+#GL_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX = $817C
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCE_PLANE_SGIX, #PB_Constant)
+#GL_REFERENCE_PLANE_SGIX = $817D
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCE_PLANE_EQUATION_SGIX, #PB_Constant)
+#GL_REFERENCE_PLANE_EQUATION_SGIX = $817E
+CompilerEndIf
+CompilerIf Not Defined(GL_IR_INSTRUMENT1_SGIX, #PB_Constant)
+#GL_IR_INSTRUMENT1_SGIX = $817F
+CompilerEndIf
+CompilerIf Not Defined(GL_INSTRUMENT_BUFFER_POINTER_SGIX, #PB_Constant)
+#GL_INSTRUMENT_BUFFER_POINTER_SGIX = $8180
+CompilerEndIf
+CompilerIf Not Defined(GL_INSTRUMENT_MEASUREMENTS_SGIX, #PB_Constant)
+#GL_INSTRUMENT_MEASUREMENTS_SGIX = $8181
+CompilerEndIf
+CompilerIf Not Defined(GL_LIST_PRIORITY_SGIX, #PB_Constant)
+#GL_LIST_PRIORITY_SGIX = $8182
+CompilerEndIf
+CompilerIf Not Defined(GL_CALLIGRAPHIC_FRAGMENT_SGIX, #PB_Constant)
+#GL_CALLIGRAPHIC_FRAGMENT_SGIX = $8183
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_Q_CEILING_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_Q_CEILING_SGIX = $8184
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_Q_ROUND_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_Q_ROUND_SGIX = $8185
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_Q_FLOOR_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_Q_FLOOR_SGIX = $8186
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_ALPHA_LS_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_ALPHA_LS_SGIX = $8189
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_ALPHA_MS_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_ALPHA_MS_SGIX = $818A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEZOOM_SGIX, #PB_Constant)
+#GL_FRAMEZOOM_SGIX = $818B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEZOOM_FACTOR_SGIX, #PB_Constant)
+#GL_FRAMEZOOM_FACTOR_SGIX = $818C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEZOOM_FACTOR_SGIX, #PB_Constant)
+#GL_MAX_FRAMEZOOM_FACTOR_SGIX = $818D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS_S_SGIX, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS_S_SGIX = $818E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS_T_SGIX, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS_T_SGIX = $818F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS_R_SGIX, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS_R_SGIX = $8190
+CompilerEndIf
+CompilerIf Not Defined(GL_GENERATE_MIPMAP, #PB_Constant)
+#GL_GENERATE_MIPMAP = $8191
+CompilerEndIf
+CompilerIf Not Defined(GL_GENERATE_MIPMAP_SGIS, #PB_Constant)
+#GL_GENERATE_MIPMAP_SGIS = $8191
+CompilerEndIf
+CompilerIf Not Defined(GL_GENERATE_MIPMAP_HINT, #PB_Constant)
+#GL_GENERATE_MIPMAP_HINT = $8192
+CompilerEndIf
+CompilerIf Not Defined(GL_GENERATE_MIPMAP_HINT_SGIS, #PB_Constant)
+#GL_GENERATE_MIPMAP_HINT_SGIS = $8192
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_DEFORMATION_SGIX, #PB_Constant)
+#GL_GEOMETRY_DEFORMATION_SGIX = $8194
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEFORMATION_SGIX, #PB_Constant)
+#GL_TEXTURE_DEFORMATION_SGIX = $8195
+CompilerEndIf
+CompilerIf Not Defined(GL_DEFORMATIONS_MASK_SGIX, #PB_Constant)
+#GL_DEFORMATIONS_MASK_SGIX = $8196
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEFORMATION_ORDER_SGIX, #PB_Constant)
+#GL_MAX_DEFORMATION_ORDER_SGIX = $8197
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_OFFSET_SGIX, #PB_Constant)
+#GL_FOG_OFFSET_SGIX = $8198
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_OFFSET_VALUE_SGIX, #PB_Constant)
+#GL_FOG_OFFSET_VALUE_SGIX = $8199
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_SGIX, #PB_Constant)
+#GL_TEXTURE_COMPARE_SGIX = $819A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_OPERATOR_SGIX, #PB_Constant)
+#GL_TEXTURE_COMPARE_OPERATOR_SGIX = $819B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LEQUAL_R_SGIX, #PB_Constant)
+#GL_TEXTURE_LEQUAL_R_SGIX = $819C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEQUAL_R_SGIX, #PB_Constant)
+#GL_TEXTURE_GEQUAL_R_SGIX = $819D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT16, #PB_Constant)
+#GL_DEPTH_COMPONENT16 = $81A5
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT16_ARB, #PB_Constant)
+#GL_DEPTH_COMPONENT16_ARB = $81A5
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT16_OES, #PB_Constant)
+#GL_DEPTH_COMPONENT16_OES = $81A5
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT16_SGIX, #PB_Constant)
+#GL_DEPTH_COMPONENT16_SGIX = $81A5
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT24, #PB_Constant)
+#GL_DEPTH_COMPONENT24 = $81A6
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT24_ARB, #PB_Constant)
+#GL_DEPTH_COMPONENT24_ARB = $81A6
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT24_OES, #PB_Constant)
+#GL_DEPTH_COMPONENT24_OES = $81A6
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT24_SGIX, #PB_Constant)
+#GL_DEPTH_COMPONENT24_SGIX = $81A6
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32, #PB_Constant)
+#GL_DEPTH_COMPONENT32 = $81A7
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32_ARB, #PB_Constant)
+#GL_DEPTH_COMPONENT32_ARB = $81A7
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32_OES, #PB_Constant)
+#GL_DEPTH_COMPONENT32_OES = $81A7
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32_SGIX, #PB_Constant)
+#GL_DEPTH_COMPONENT32_SGIX = $81A7
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_ELEMENT_LOCK_FIRST_EXT, #PB_Constant)
+#GL_ARRAY_ELEMENT_LOCK_FIRST_EXT = $81A8
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_ELEMENT_LOCK_COUNT_EXT, #PB_Constant)
+#GL_ARRAY_ELEMENT_LOCK_COUNT_EXT = $81A9
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_VERTEX_EXT, #PB_Constant)
+#GL_CULL_VERTEX_EXT = $81AA
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_VERTEX_EYE_POSITION_EXT, #PB_Constant)
+#GL_CULL_VERTEX_EYE_POSITION_EXT = $81AB
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_VERTEX_OBJECT_POSITION_EXT, #PB_Constant)
+#GL_CULL_VERTEX_OBJECT_POSITION_EXT = $81AC
+CompilerEndIf
+CompilerIf Not Defined(GL_IUI_V2F_EXT, #PB_Constant)
+#GL_IUI_V2F_EXT = $81AD
+CompilerEndIf
+CompilerIf Not Defined(GL_IUI_V3F_EXT, #PB_Constant)
+#GL_IUI_V3F_EXT = $81AE
+CompilerEndIf
+CompilerIf Not Defined(GL_IUI_N3F_V2F_EXT, #PB_Constant)
+#GL_IUI_N3F_V2F_EXT = $81AF
+CompilerEndIf
+CompilerIf Not Defined(GL_IUI_N3F_V3F_EXT, #PB_Constant)
+#GL_IUI_N3F_V3F_EXT = $81B0
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_IUI_V2F_EXT, #PB_Constant)
+#GL_T2F_IUI_V2F_EXT = $81B1
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_IUI_V3F_EXT, #PB_Constant)
+#GL_T2F_IUI_V3F_EXT = $81B2
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_IUI_N3F_V2F_EXT, #PB_Constant)
+#GL_T2F_IUI_N3F_V2F_EXT = $81B3
+CompilerEndIf
+CompilerIf Not Defined(GL_T2F_IUI_N3F_V3F_EXT, #PB_Constant)
+#GL_T2F_IUI_N3F_V3F_EXT = $81B4
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_TEST_EXT, #PB_Constant)
+#GL_INDEX_TEST_EXT = $81B5
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_TEST_FUNC_EXT, #PB_Constant)
+#GL_INDEX_TEST_FUNC_EXT = $81B6
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_TEST_REF_EXT, #PB_Constant)
+#GL_INDEX_TEST_REF_EXT = $81B7
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_MATERIAL_EXT, #PB_Constant)
+#GL_INDEX_MATERIAL_EXT = $81B8
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_MATERIAL_PARAMETER_EXT, #PB_Constant)
+#GL_INDEX_MATERIAL_PARAMETER_EXT = $81B9
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_MATERIAL_FACE_EXT, #PB_Constant)
+#GL_INDEX_MATERIAL_FACE_EXT = $81BA
+CompilerEndIf
+CompilerIf Not Defined(GL_YCRCB_422_SGIX, #PB_Constant)
+#GL_YCRCB_422_SGIX = $81BB
+CompilerEndIf
+CompilerIf Not Defined(GL_YCRCB_444_SGIX, #PB_Constant)
+#GL_YCRCB_444_SGIX = $81BC
+CompilerEndIf
+CompilerIf Not Defined(GL_WRAP_BORDER_SUN, #PB_Constant)
+#GL_WRAP_BORDER_SUN = $81D4
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_CONSTANT_DATA_SUNX, #PB_Constant)
+#GL_UNPACK_CONSTANT_DATA_SUNX = $81D5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CONSTANT_DATA_SUNX, #PB_Constant)
+#GL_TEXTURE_CONSTANT_DATA_SUNX = $81D6
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_LIST_SUN, #PB_Constant)
+#GL_TRIANGLE_LIST_SUN = $81D7
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACEMENT_CODE_SUN, #PB_Constant)
+#GL_REPLACEMENT_CODE_SUN = $81D8
+CompilerEndIf
+CompilerIf Not Defined(GL_GLOBAL_ALPHA_SUN, #PB_Constant)
+#GL_GLOBAL_ALPHA_SUN = $81D9
+CompilerEndIf
+CompilerIf Not Defined(GL_GLOBAL_ALPHA_FACTOR_SUN, #PB_Constant)
+#GL_GLOBAL_ALPHA_FACTOR_SUN = $81DA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COLOR_WRITEMASK_SGIS, #PB_Constant)
+#GL_TEXTURE_COLOR_WRITEMASK_SGIS = $81EF
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_DISTANCE_TO_POINT_SGIS, #PB_Constant)
+#GL_EYE_DISTANCE_TO_POINT_SGIS = $81F0
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_DISTANCE_TO_POINT_SGIS, #PB_Constant)
+#GL_OBJECT_DISTANCE_TO_POINT_SGIS = $81F1
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_DISTANCE_TO_LINE_SGIS, #PB_Constant)
+#GL_EYE_DISTANCE_TO_LINE_SGIS = $81F2
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_DISTANCE_TO_LINE_SGIS, #PB_Constant)
+#GL_OBJECT_DISTANCE_TO_LINE_SGIS = $81F3
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_POINT_SGIS, #PB_Constant)
+#GL_EYE_POINT_SGIS = $81F4
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_POINT_SGIS, #PB_Constant)
+#GL_OBJECT_POINT_SGIS = $81F5
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_LINE_SGIS, #PB_Constant)
+#GL_EYE_LINE_SGIS = $81F6
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_LINE_SGIS, #PB_Constant)
+#GL_OBJECT_LINE_SGIS = $81F7
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_COLOR_CONTROL, #PB_Constant)
+#GL_LIGHT_MODEL_COLOR_CONTROL = $81F8
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_COLOR_CONTROL_EXT, #PB_Constant)
+#GL_LIGHT_MODEL_COLOR_CONTROL_EXT = $81F8
+CompilerEndIf
+CompilerIf Not Defined(GL_SINGLE_COLOR, #PB_Constant)
+#GL_SINGLE_COLOR = $81F9
+CompilerEndIf
+CompilerIf Not Defined(GL_SINGLE_COLOR_EXT, #PB_Constant)
+#GL_SINGLE_COLOR_EXT = $81F9
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARATE_SPECULAR_COLOR, #PB_Constant)
+#GL_SEPARATE_SPECULAR_COLOR = $81FA
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARATE_SPECULAR_COLOR_EXT, #PB_Constant)
+#GL_SEPARATE_SPECULAR_COLOR_EXT = $81FA
+CompilerEndIf
+CompilerIf Not Defined(GL_SHARED_TEXTURE_PALETTE_EXT, #PB_Constant)
+#GL_SHARED_TEXTURE_PALETTE_EXT = $81FB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXT_FRAGMENT_SHADER_ATI, #PB_Constant)
+#GL_TEXT_FRAGMENT_SHADER_ATI = $8200
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING = $8210
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT = $8210
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE = $8211
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT = $8211
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_RED_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_RED_SIZE = $8212
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE = $8213
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE = $8214
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE = $8215
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE = $8216
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE = $8217
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT = $8218
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_UNDEFINED, #PB_Constant)
+#GL_FRAMEBUFFER_UNDEFINED = $8219
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_UNDEFINED_OES, #PB_Constant)
+#GL_FRAMEBUFFER_UNDEFINED_OES = $8219
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_ATTACHMENT, #PB_Constant)
+#GL_DEPTH_STENCIL_ATTACHMENT = $821A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAJOR_VERSION, #PB_Constant)
+#GL_MAJOR_VERSION = $821B
+CompilerEndIf
+CompilerIf Not Defined(GL_MINOR_VERSION, #PB_Constant)
+#GL_MINOR_VERSION = $821C
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_EXTENSIONS, #PB_Constant)
+#GL_NUM_EXTENSIONS = $821D
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_FLAGS, #PB_Constant)
+#GL_CONTEXT_FLAGS = $821E
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_IMMUTABLE_STORAGE, #PB_Constant)
+#GL_BUFFER_IMMUTABLE_STORAGE = $821F
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_IMMUTABLE_STORAGE_EXT, #PB_Constant)
+#GL_BUFFER_IMMUTABLE_STORAGE_EXT = $821F
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_STORAGE_FLAGS, #PB_Constant)
+#GL_BUFFER_STORAGE_FLAGS = $8220
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_STORAGE_FLAGS_EXT, #PB_Constant)
+#GL_BUFFER_STORAGE_FLAGS_EXT = $8220
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED, #PB_Constant)
+#GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED = $8221
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES, #PB_Constant)
+#GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES = $8221
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX, #PB_Constant)
+#GL_INDEX = $8222
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RED, #PB_Constant)
+#GL_COMPRESSED_RED = $8225
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RG, #PB_Constant)
+#GL_COMPRESSED_RG = $8226
+CompilerEndIf
+CompilerIf Not Defined(GL_RG, #PB_Constant)
+#GL_RG = $8227
+CompilerEndIf
+CompilerIf Not Defined(GL_RG_EXT, #PB_Constant)
+#GL_RG_EXT = $8227
+CompilerEndIf
+CompilerIf Not Defined(GL_RG_INTEGER, #PB_Constant)
+#GL_RG_INTEGER = $8228
+CompilerEndIf
+CompilerIf Not Defined(GL_R8, #PB_Constant)
+#GL_R8 = $8229
+CompilerEndIf
+CompilerIf Not Defined(GL_R8_EXT, #PB_Constant)
+#GL_R8_EXT = $8229
+CompilerEndIf
+CompilerIf Not Defined(GL_R16, #PB_Constant)
+#GL_R16 = $822A
+CompilerEndIf
+CompilerIf Not Defined(GL_R16_EXT, #PB_Constant)
+#GL_R16_EXT = $822A
+CompilerEndIf
+CompilerIf Not Defined(GL_RG8, #PB_Constant)
+#GL_RG8 = $822B
+CompilerEndIf
+CompilerIf Not Defined(GL_RG8_EXT, #PB_Constant)
+#GL_RG8_EXT = $822B
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16, #PB_Constant)
+#GL_RG16 = $822C
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16_EXT, #PB_Constant)
+#GL_RG16_EXT = $822C
+CompilerEndIf
+CompilerIf Not Defined(GL_R16F, #PB_Constant)
+#GL_R16F = $822D
+CompilerEndIf
+CompilerIf Not Defined(GL_R16F_EXT, #PB_Constant)
+#GL_R16F_EXT = $822D
+CompilerEndIf
+CompilerIf Not Defined(GL_R32F, #PB_Constant)
+#GL_R32F = $822E
+CompilerEndIf
+CompilerIf Not Defined(GL_R32F_EXT, #PB_Constant)
+#GL_R32F_EXT = $822E
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16F, #PB_Constant)
+#GL_RG16F = $822F
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16F_EXT, #PB_Constant)
+#GL_RG16F_EXT = $822F
+CompilerEndIf
+CompilerIf Not Defined(GL_RG32F, #PB_Constant)
+#GL_RG32F = $8230
+CompilerEndIf
+CompilerIf Not Defined(GL_RG32F_EXT, #PB_Constant)
+#GL_RG32F_EXT = $8230
+CompilerEndIf
+CompilerIf Not Defined(GL_R8I, #PB_Constant)
+#GL_R8I = $8231
+CompilerEndIf
+CompilerIf Not Defined(GL_R8UI, #PB_Constant)
+#GL_R8UI = $8232
+CompilerEndIf
+CompilerIf Not Defined(GL_R16I, #PB_Constant)
+#GL_R16I = $8233
+CompilerEndIf
+CompilerIf Not Defined(GL_R16UI, #PB_Constant)
+#GL_R16UI = $8234
+CompilerEndIf
+CompilerIf Not Defined(GL_R32I, #PB_Constant)
+#GL_R32I = $8235
+CompilerEndIf
+CompilerIf Not Defined(GL_R32UI, #PB_Constant)
+#GL_R32UI = $8236
+CompilerEndIf
+CompilerIf Not Defined(GL_RG8I, #PB_Constant)
+#GL_RG8I = $8237
+CompilerEndIf
+CompilerIf Not Defined(GL_RG8UI, #PB_Constant)
+#GL_RG8UI = $8238
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16I, #PB_Constant)
+#GL_RG16I = $8239
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16UI, #PB_Constant)
+#GL_RG16UI = $823A
+CompilerEndIf
+CompilerIf Not Defined(GL_RG32I, #PB_Constant)
+#GL_RG32I = $823B
+CompilerEndIf
+CompilerIf Not Defined(GL_RG32UI, #PB_Constant)
+#GL_RG32UI = $823C
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_CL_EVENT_ARB, #PB_Constant)
+#GL_SYNC_CL_EVENT_ARB = $8240
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_CL_EVENT_COMPLETE_ARB, #PB_Constant)
+#GL_SYNC_CL_EVENT_COMPLETE_ARB = $8241
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OUTPUT_SYNCHRONOUS, #PB_Constant)
+#GL_DEBUG_OUTPUT_SYNCHRONOUS = $8242
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB, #PB_Constant)
+#GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB = $8242
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR, #PB_Constant)
+#GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR = $8242
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH, #PB_Constant)
+#GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH = $8243
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB, #PB_Constant)
+#GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB = $8243
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR, #PB_Constant)
+#GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR = $8243
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_FUNCTION, #PB_Constant)
+#GL_DEBUG_CALLBACK_FUNCTION = $8244
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_FUNCTION_ARB, #PB_Constant)
+#GL_DEBUG_CALLBACK_FUNCTION_ARB = $8244
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_FUNCTION_KHR, #PB_Constant)
+#GL_DEBUG_CALLBACK_FUNCTION_KHR = $8244
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_USER_PARAM, #PB_Constant)
+#GL_DEBUG_CALLBACK_USER_PARAM = $8245
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_USER_PARAM_ARB, #PB_Constant)
+#GL_DEBUG_CALLBACK_USER_PARAM_ARB = $8245
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CALLBACK_USER_PARAM_KHR, #PB_Constant)
+#GL_DEBUG_CALLBACK_USER_PARAM_KHR = $8245
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_API, #PB_Constant)
+#GL_DEBUG_SOURCE_API = $8246
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_API_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_API_ARB = $8246
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_API_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_API_KHR = $8246
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_WINDOW_SYSTEM, #PB_Constant)
+#GL_DEBUG_SOURCE_WINDOW_SYSTEM = $8247
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB = $8247
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR = $8247
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_SHADER_COMPILER, #PB_Constant)
+#GL_DEBUG_SOURCE_SHADER_COMPILER = $8248
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_SHADER_COMPILER_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_SHADER_COMPILER_ARB = $8248
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_SHADER_COMPILER_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_SHADER_COMPILER_KHR = $8248
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_THIRD_PARTY, #PB_Constant)
+#GL_DEBUG_SOURCE_THIRD_PARTY = $8249
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_THIRD_PARTY_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_THIRD_PARTY_ARB = $8249
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_THIRD_PARTY_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_THIRD_PARTY_KHR = $8249
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_APPLICATION, #PB_Constant)
+#GL_DEBUG_SOURCE_APPLICATION = $824A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_APPLICATION_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_APPLICATION_ARB = $824A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_APPLICATION_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_APPLICATION_KHR = $824A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_OTHER, #PB_Constant)
+#GL_DEBUG_SOURCE_OTHER = $824B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_OTHER_ARB, #PB_Constant)
+#GL_DEBUG_SOURCE_OTHER_ARB = $824B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SOURCE_OTHER_KHR, #PB_Constant)
+#GL_DEBUG_SOURCE_OTHER_KHR = $824B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_ERROR, #PB_Constant)
+#GL_DEBUG_TYPE_ERROR = $824C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_ERROR_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_ERROR_ARB = $824C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_ERROR_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_ERROR_KHR = $824C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR, #PB_Constant)
+#GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR = $824D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB = $824D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR = $824D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR, #PB_Constant)
+#GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR = $824E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB = $824E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR = $824E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PORTABILITY, #PB_Constant)
+#GL_DEBUG_TYPE_PORTABILITY = $824F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PORTABILITY_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_PORTABILITY_ARB = $824F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PORTABILITY_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_PORTABILITY_KHR = $824F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PERFORMANCE, #PB_Constant)
+#GL_DEBUG_TYPE_PERFORMANCE = $8250
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PERFORMANCE_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_PERFORMANCE_ARB = $8250
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PERFORMANCE_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_PERFORMANCE_KHR = $8250
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_OTHER, #PB_Constant)
+#GL_DEBUG_TYPE_OTHER = $8251
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_OTHER_ARB, #PB_Constant)
+#GL_DEBUG_TYPE_OTHER_ARB = $8251
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_OTHER_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_OTHER_KHR = $8251
+CompilerEndIf
+CompilerIf Not Defined(GL_LOSE_CONTEXT_ON_RESET, #PB_Constant)
+#GL_LOSE_CONTEXT_ON_RESET = $8252
+CompilerEndIf
+CompilerIf Not Defined(GL_LOSE_CONTEXT_ON_RESET_ARB, #PB_Constant)
+#GL_LOSE_CONTEXT_ON_RESET_ARB = $8252
+CompilerEndIf
+CompilerIf Not Defined(GL_LOSE_CONTEXT_ON_RESET_EXT, #PB_Constant)
+#GL_LOSE_CONTEXT_ON_RESET_EXT = $8252
+CompilerEndIf
+CompilerIf Not Defined(GL_LOSE_CONTEXT_ON_RESET_KHR, #PB_Constant)
+#GL_LOSE_CONTEXT_ON_RESET_KHR = $8252
+CompilerEndIf
+CompilerIf Not Defined(GL_GUILTY_CONTEXT_RESET, #PB_Constant)
+#GL_GUILTY_CONTEXT_RESET = $8253
+CompilerEndIf
+CompilerIf Not Defined(GL_GUILTY_CONTEXT_RESET_ARB, #PB_Constant)
+#GL_GUILTY_CONTEXT_RESET_ARB = $8253
+CompilerEndIf
+CompilerIf Not Defined(GL_GUILTY_CONTEXT_RESET_EXT, #PB_Constant)
+#GL_GUILTY_CONTEXT_RESET_EXT = $8253
+CompilerEndIf
+CompilerIf Not Defined(GL_GUILTY_CONTEXT_RESET_KHR, #PB_Constant)
+#GL_GUILTY_CONTEXT_RESET_KHR = $8253
+CompilerEndIf
+CompilerIf Not Defined(GL_INNOCENT_CONTEXT_RESET, #PB_Constant)
+#GL_INNOCENT_CONTEXT_RESET = $8254
+CompilerEndIf
+CompilerIf Not Defined(GL_INNOCENT_CONTEXT_RESET_ARB, #PB_Constant)
+#GL_INNOCENT_CONTEXT_RESET_ARB = $8254
+CompilerEndIf
+CompilerIf Not Defined(GL_INNOCENT_CONTEXT_RESET_EXT, #PB_Constant)
+#GL_INNOCENT_CONTEXT_RESET_EXT = $8254
+CompilerEndIf
+CompilerIf Not Defined(GL_INNOCENT_CONTEXT_RESET_KHR, #PB_Constant)
+#GL_INNOCENT_CONTEXT_RESET_KHR = $8254
+CompilerEndIf
+CompilerIf Not Defined(GL_UNKNOWN_CONTEXT_RESET, #PB_Constant)
+#GL_UNKNOWN_CONTEXT_RESET = $8255
+CompilerEndIf
+CompilerIf Not Defined(GL_UNKNOWN_CONTEXT_RESET_ARB, #PB_Constant)
+#GL_UNKNOWN_CONTEXT_RESET_ARB = $8255
+CompilerEndIf
+CompilerIf Not Defined(GL_UNKNOWN_CONTEXT_RESET_EXT, #PB_Constant)
+#GL_UNKNOWN_CONTEXT_RESET_EXT = $8255
+CompilerEndIf
+CompilerIf Not Defined(GL_UNKNOWN_CONTEXT_RESET_KHR, #PB_Constant)
+#GL_UNKNOWN_CONTEXT_RESET_KHR = $8255
+CompilerEndIf
+CompilerIf Not Defined(GL_RESET_NOTIFICATION_STRATEGY, #PB_Constant)
+#GL_RESET_NOTIFICATION_STRATEGY = $8256
+CompilerEndIf
+CompilerIf Not Defined(GL_RESET_NOTIFICATION_STRATEGY_ARB, #PB_Constant)
+#GL_RESET_NOTIFICATION_STRATEGY_ARB = $8256
+CompilerEndIf
+CompilerIf Not Defined(GL_RESET_NOTIFICATION_STRATEGY_EXT, #PB_Constant)
+#GL_RESET_NOTIFICATION_STRATEGY_EXT = $8256
+CompilerEndIf
+CompilerIf Not Defined(GL_RESET_NOTIFICATION_STRATEGY_KHR, #PB_Constant)
+#GL_RESET_NOTIFICATION_STRATEGY_KHR = $8256
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_RETRIEVABLE_HINT, #PB_Constant)
+#GL_PROGRAM_BINARY_RETRIEVABLE_HINT = $8257
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_SEPARABLE, #PB_Constant)
+#GL_PROGRAM_SEPARABLE = $8258
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_SEPARABLE_EXT, #PB_Constant)
+#GL_PROGRAM_SEPARABLE_EXT = $8258
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_PROGRAM, #PB_Constant)
+#GL_ACTIVE_PROGRAM = $8259
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_PROGRAM_EXT, #PB_Constant)
+#GL_ACTIVE_PROGRAM_EXT = $8259
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PIPELINE_BINDING, #PB_Constant)
+#GL_PROGRAM_PIPELINE_BINDING = $825A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PIPELINE_BINDING_EXT, #PB_Constant)
+#GL_PROGRAM_PIPELINE_BINDING_EXT = $825A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VIEWPORTS, #PB_Constant)
+#GL_MAX_VIEWPORTS = $825B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VIEWPORTS_NV, #PB_Constant)
+#GL_MAX_VIEWPORTS_NV = $825B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VIEWPORTS_OES, #PB_Constant)
+#GL_MAX_VIEWPORTS_OES = $825B
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SUBPIXEL_BITS, #PB_Constant)
+#GL_VIEWPORT_SUBPIXEL_BITS = $825C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SUBPIXEL_BITS_EXT, #PB_Constant)
+#GL_VIEWPORT_SUBPIXEL_BITS_EXT = $825C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SUBPIXEL_BITS_NV, #PB_Constant)
+#GL_VIEWPORT_SUBPIXEL_BITS_NV = $825C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SUBPIXEL_BITS_OES, #PB_Constant)
+#GL_VIEWPORT_SUBPIXEL_BITS_OES = $825C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_BOUNDS_RANGE, #PB_Constant)
+#GL_VIEWPORT_BOUNDS_RANGE = $825D
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_BOUNDS_RANGE_EXT, #PB_Constant)
+#GL_VIEWPORT_BOUNDS_RANGE_EXT = $825D
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_BOUNDS_RANGE_NV, #PB_Constant)
+#GL_VIEWPORT_BOUNDS_RANGE_NV = $825D
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_BOUNDS_RANGE_OES, #PB_Constant)
+#GL_VIEWPORT_BOUNDS_RANGE_OES = $825D
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYER_PROVOKING_VERTEX, #PB_Constant)
+#GL_LAYER_PROVOKING_VERTEX = $825E
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYER_PROVOKING_VERTEX_EXT, #PB_Constant)
+#GL_LAYER_PROVOKING_VERTEX_EXT = $825E
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYER_PROVOKING_VERTEX_OES, #PB_Constant)
+#GL_LAYER_PROVOKING_VERTEX_OES = $825E
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_INDEX_PROVOKING_VERTEX, #PB_Constant)
+#GL_VIEWPORT_INDEX_PROVOKING_VERTEX = $825F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_INDEX_PROVOKING_VERTEX_EXT, #PB_Constant)
+#GL_VIEWPORT_INDEX_PROVOKING_VERTEX_EXT = $825F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV, #PB_Constant)
+#GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV = $825F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES, #PB_Constant)
+#GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES = $825F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNDEFINED_VERTEX, #PB_Constant)
+#GL_UNDEFINED_VERTEX = $8260
+CompilerEndIf
+CompilerIf Not Defined(GL_UNDEFINED_VERTEX_EXT, #PB_Constant)
+#GL_UNDEFINED_VERTEX_EXT = $8260
+CompilerEndIf
+CompilerIf Not Defined(GL_UNDEFINED_VERTEX_OES, #PB_Constant)
+#GL_UNDEFINED_VERTEX_OES = $8260
+CompilerEndIf
+CompilerIf Not Defined(GL_NO_RESET_NOTIFICATION, #PB_Constant)
+#GL_NO_RESET_NOTIFICATION = $8261
+CompilerEndIf
+CompilerIf Not Defined(GL_NO_RESET_NOTIFICATION_ARB, #PB_Constant)
+#GL_NO_RESET_NOTIFICATION_ARB = $8261
+CompilerEndIf
+CompilerIf Not Defined(GL_NO_RESET_NOTIFICATION_EXT, #PB_Constant)
+#GL_NO_RESET_NOTIFICATION_EXT = $8261
+CompilerEndIf
+CompilerIf Not Defined(GL_NO_RESET_NOTIFICATION_KHR, #PB_Constant)
+#GL_NO_RESET_NOTIFICATION_KHR = $8261
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_SHARED_MEMORY_SIZE, #PB_Constant)
+#GL_MAX_COMPUTE_SHARED_MEMORY_SIZE = $8262
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMPUTE_UNIFORM_COMPONENTS = $8263
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS = $8264
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_COMPUTE_ATOMIC_COUNTERS = $8265
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS = $8266
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_WORK_GROUP_SIZE, #PB_Constant)
+#GL_COMPUTE_WORK_GROUP_SIZE = $8267
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_MARKER, #PB_Constant)
+#GL_DEBUG_TYPE_MARKER = $8268
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_MARKER_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_MARKER_KHR = $8268
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PUSH_GROUP, #PB_Constant)
+#GL_DEBUG_TYPE_PUSH_GROUP = $8269
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_PUSH_GROUP_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_PUSH_GROUP_KHR = $8269
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_POP_GROUP, #PB_Constant)
+#GL_DEBUG_TYPE_POP_GROUP = $826A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_TYPE_POP_GROUP_KHR, #PB_Constant)
+#GL_DEBUG_TYPE_POP_GROUP_KHR = $826A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_NOTIFICATION, #PB_Constant)
+#GL_DEBUG_SEVERITY_NOTIFICATION = $826B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_NOTIFICATION_KHR, #PB_Constant)
+#GL_DEBUG_SEVERITY_NOTIFICATION_KHR = $826B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_GROUP_STACK_DEPTH, #PB_Constant)
+#GL_MAX_DEBUG_GROUP_STACK_DEPTH = $826C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR, #PB_Constant)
+#GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR = $826C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_GROUP_STACK_DEPTH, #PB_Constant)
+#GL_DEBUG_GROUP_STACK_DEPTH = $826D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_GROUP_STACK_DEPTH_KHR, #PB_Constant)
+#GL_DEBUG_GROUP_STACK_DEPTH_KHR = $826D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_UNIFORM_LOCATIONS, #PB_Constant)
+#GL_MAX_UNIFORM_LOCATIONS = $826E
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_SUPPORTED, #PB_Constant)
+#GL_INTERNALFORMAT_SUPPORTED = $826F
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_PREFERRED, #PB_Constant)
+#GL_INTERNALFORMAT_PREFERRED = $8270
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_RED_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_RED_SIZE = $8271
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_GREEN_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_GREEN_SIZE = $8272
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_BLUE_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_BLUE_SIZE = $8273
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_ALPHA_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_ALPHA_SIZE = $8274
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_DEPTH_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_DEPTH_SIZE = $8275
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_STENCIL_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_STENCIL_SIZE = $8276
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_SHARED_SIZE, #PB_Constant)
+#GL_INTERNALFORMAT_SHARED_SIZE = $8277
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_RED_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_RED_TYPE = $8278
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_GREEN_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_GREEN_TYPE = $8279
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_BLUE_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_BLUE_TYPE = $827A
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_ALPHA_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_ALPHA_TYPE = $827B
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_DEPTH_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_DEPTH_TYPE = $827C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERNALFORMAT_STENCIL_TYPE, #PB_Constant)
+#GL_INTERNALFORMAT_STENCIL_TYPE = $827D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_WIDTH, #PB_Constant)
+#GL_MAX_WIDTH = $827E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_HEIGHT, #PB_Constant)
+#GL_MAX_HEIGHT = $827F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEPTH, #PB_Constant)
+#GL_MAX_DEPTH = $8280
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LAYERS, #PB_Constant)
+#GL_MAX_LAYERS = $8281
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_DIMENSIONS, #PB_Constant)
+#GL_MAX_COMBINED_DIMENSIONS = $8282
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_COMPONENTS, #PB_Constant)
+#GL_COLOR_COMPONENTS = $8283
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENTS, #PB_Constant)
+#GL_DEPTH_COMPONENTS = $8284
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_COMPONENTS, #PB_Constant)
+#GL_STENCIL_COMPONENTS = $8285
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_RENDERABLE, #PB_Constant)
+#GL_COLOR_RENDERABLE = $8286
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_RENDERABLE, #PB_Constant)
+#GL_DEPTH_RENDERABLE = $8287
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_RENDERABLE, #PB_Constant)
+#GL_STENCIL_RENDERABLE = $8288
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_RENDERABLE, #PB_Constant)
+#GL_FRAMEBUFFER_RENDERABLE = $8289
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_RENDERABLE_LAYERED, #PB_Constant)
+#GL_FRAMEBUFFER_RENDERABLE_LAYERED = $828A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BLEND, #PB_Constant)
+#GL_FRAMEBUFFER_BLEND = $828B
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXELS, #PB_Constant)
+#GL_READ_PIXELS = $828C
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXELS_FORMAT, #PB_Constant)
+#GL_READ_PIXELS_FORMAT = $828D
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXELS_TYPE, #PB_Constant)
+#GL_READ_PIXELS_TYPE = $828E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMAGE_FORMAT, #PB_Constant)
+#GL_TEXTURE_IMAGE_FORMAT = $828F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMAGE_TYPE, #PB_Constant)
+#GL_TEXTURE_IMAGE_TYPE = $8290
+CompilerEndIf
+CompilerIf Not Defined(GL_GET_TEXTURE_IMAGE_FORMAT, #PB_Constant)
+#GL_GET_TEXTURE_IMAGE_FORMAT = $8291
+CompilerEndIf
+CompilerIf Not Defined(GL_GET_TEXTURE_IMAGE_TYPE, #PB_Constant)
+#GL_GET_TEXTURE_IMAGE_TYPE = $8292
+CompilerEndIf
+CompilerIf Not Defined(GL_MIPMAP, #PB_Constant)
+#GL_MIPMAP = $8293
+CompilerEndIf
+CompilerIf Not Defined(GL_MANUAL_GENERATE_MIPMAP, #PB_Constant)
+#GL_MANUAL_GENERATE_MIPMAP = $8294
+CompilerEndIf
+CompilerIf Not Defined(GL_AUTO_GENERATE_MIPMAP, #PB_Constant)
+#GL_AUTO_GENERATE_MIPMAP = $8295
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ENCODING, #PB_Constant)
+#GL_COLOR_ENCODING = $8296
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_READ, #PB_Constant)
+#GL_SRGB_READ = $8297
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_WRITE, #PB_Constant)
+#GL_SRGB_WRITE = $8298
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_DECODE_ARB, #PB_Constant)
+#GL_SRGB_DECODE_ARB = $8299
+CompilerEndIf
+CompilerIf Not Defined(GL_FILTER, #PB_Constant)
+#GL_FILTER = $829A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_TEXTURE, #PB_Constant)
+#GL_VERTEX_TEXTURE = $829B
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_TEXTURE, #PB_Constant)
+#GL_TESS_CONTROL_TEXTURE = $829C
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_TEXTURE, #PB_Constant)
+#GL_TESS_EVALUATION_TEXTURE = $829D
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_TEXTURE, #PB_Constant)
+#GL_GEOMETRY_TEXTURE = $829E
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_TEXTURE, #PB_Constant)
+#GL_FRAGMENT_TEXTURE = $829F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_TEXTURE, #PB_Constant)
+#GL_COMPUTE_TEXTURE = $82A0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SHADOW, #PB_Constant)
+#GL_TEXTURE_SHADOW = $82A1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GATHER, #PB_Constant)
+#GL_TEXTURE_GATHER = $82A2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GATHER_SHADOW, #PB_Constant)
+#GL_TEXTURE_GATHER_SHADOW = $82A3
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_IMAGE_LOAD, #PB_Constant)
+#GL_SHADER_IMAGE_LOAD = $82A4
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_IMAGE_STORE, #PB_Constant)
+#GL_SHADER_IMAGE_STORE = $82A5
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_IMAGE_ATOMIC, #PB_Constant)
+#GL_SHADER_IMAGE_ATOMIC = $82A6
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_TEXEL_SIZE, #PB_Constant)
+#GL_IMAGE_TEXEL_SIZE = $82A7
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_COMPATIBILITY_CLASS, #PB_Constant)
+#GL_IMAGE_COMPATIBILITY_CLASS = $82A8
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_PIXEL_FORMAT, #PB_Constant)
+#GL_IMAGE_PIXEL_FORMAT = $82A9
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_PIXEL_TYPE, #PB_Constant)
+#GL_IMAGE_PIXEL_TYPE = $82AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST, #PB_Constant)
+#GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST = $82AC
+CompilerEndIf
+CompilerIf Not Defined(GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST, #PB_Constant)
+#GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST = $82AD
+CompilerEndIf
+CompilerIf Not Defined(GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE, #PB_Constant)
+#GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE = $82AE
+CompilerEndIf
+CompilerIf Not Defined(GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE, #PB_Constant)
+#GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE = $82AF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_BLOCK_WIDTH, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_BLOCK_WIDTH = $82B1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT = $82B2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_BLOCK_SIZE, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_BLOCK_SIZE = $82B3
+CompilerEndIf
+CompilerIf Not Defined(GL_CLEAR_BUFFER, #PB_Constant)
+#GL_CLEAR_BUFFER = $82B4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW, #PB_Constant)
+#GL_TEXTURE_VIEW = $82B5
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_COMPATIBILITY_CLASS, #PB_Constant)
+#GL_VIEW_COMPATIBILITY_CLASS = $82B6
+CompilerEndIf
+CompilerIf Not Defined(GL_FULL_SUPPORT, #PB_Constant)
+#GL_FULL_SUPPORT = $82B7
+CompilerEndIf
+CompilerIf Not Defined(GL_CAVEAT_SUPPORT, #PB_Constant)
+#GL_CAVEAT_SUPPORT = $82B8
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_4_X_32, #PB_Constant)
+#GL_IMAGE_CLASS_4_X_32 = $82B9
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_2_X_32, #PB_Constant)
+#GL_IMAGE_CLASS_2_X_32 = $82BA
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_1_X_32, #PB_Constant)
+#GL_IMAGE_CLASS_1_X_32 = $82BB
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_4_X_16, #PB_Constant)
+#GL_IMAGE_CLASS_4_X_16 = $82BC
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_2_X_16, #PB_Constant)
+#GL_IMAGE_CLASS_2_X_16 = $82BD
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_1_X_16, #PB_Constant)
+#GL_IMAGE_CLASS_1_X_16 = $82BE
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_4_X_8, #PB_Constant)
+#GL_IMAGE_CLASS_4_X_8 = $82BF
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_2_X_8, #PB_Constant)
+#GL_IMAGE_CLASS_2_X_8 = $82C0
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_1_X_8, #PB_Constant)
+#GL_IMAGE_CLASS_1_X_8 = $82C1
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_11_11_10, #PB_Constant)
+#GL_IMAGE_CLASS_11_11_10 = $82C2
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CLASS_10_10_10_2, #PB_Constant)
+#GL_IMAGE_CLASS_10_10_10_2 = $82C3
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_128_BITS, #PB_Constant)
+#GL_VIEW_CLASS_128_BITS = $82C4
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_96_BITS, #PB_Constant)
+#GL_VIEW_CLASS_96_BITS = $82C5
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_64_BITS, #PB_Constant)
+#GL_VIEW_CLASS_64_BITS = $82C6
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_48_BITS, #PB_Constant)
+#GL_VIEW_CLASS_48_BITS = $82C7
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_32_BITS, #PB_Constant)
+#GL_VIEW_CLASS_32_BITS = $82C8
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_24_BITS, #PB_Constant)
+#GL_VIEW_CLASS_24_BITS = $82C9
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_16_BITS, #PB_Constant)
+#GL_VIEW_CLASS_16_BITS = $82CA
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_8_BITS, #PB_Constant)
+#GL_VIEW_CLASS_8_BITS = $82CB
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_S3TC_DXT1_RGB, #PB_Constant)
+#GL_VIEW_CLASS_S3TC_DXT1_RGB = $82CC
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_S3TC_DXT1_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_S3TC_DXT1_RGBA = $82CD
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_S3TC_DXT3_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_S3TC_DXT3_RGBA = $82CE
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_S3TC_DXT5_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_S3TC_DXT5_RGBA = $82CF
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_RGTC1_RED, #PB_Constant)
+#GL_VIEW_CLASS_RGTC1_RED = $82D0
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_RGTC2_RG, #PB_Constant)
+#GL_VIEW_CLASS_RGTC2_RG = $82D1
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_BPTC_UNORM, #PB_Constant)
+#GL_VIEW_CLASS_BPTC_UNORM = $82D2
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_BPTC_FLOAT, #PB_Constant)
+#GL_VIEW_CLASS_BPTC_FLOAT = $82D3
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_BINDING, #PB_Constant)
+#GL_VERTEX_ATTRIB_BINDING = $82D4
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_RELATIVE_OFFSET, #PB_Constant)
+#GL_VERTEX_ATTRIB_RELATIVE_OFFSET = $82D5
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_BINDING_DIVISOR, #PB_Constant)
+#GL_VERTEX_BINDING_DIVISOR = $82D6
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_BINDING_OFFSET, #PB_Constant)
+#GL_VERTEX_BINDING_OFFSET = $82D7
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_BINDING_STRIDE, #PB_Constant)
+#GL_VERTEX_BINDING_STRIDE = $82D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET, #PB_Constant)
+#GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET = $82D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATTRIB_BINDINGS, #PB_Constant)
+#GL_MAX_VERTEX_ATTRIB_BINDINGS = $82DA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LEVEL, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LEVEL = $82DB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LEVEL_EXT, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LEVEL_EXT = $82DB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LEVEL_OES, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LEVEL_OES = $82DB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LEVELS, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LEVELS = $82DC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LEVELS_EXT, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LEVELS_EXT = $82DC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LEVELS_OES, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LEVELS_OES = $82DC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LAYER, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LAYER = $82DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LAYER_EXT, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LAYER_EXT = $82DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_MIN_LAYER_OES, #PB_Constant)
+#GL_TEXTURE_VIEW_MIN_LAYER_OES = $82DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LAYERS, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LAYERS = $82DE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LAYERS_EXT, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LAYERS_EXT = $82DE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIEW_NUM_LAYERS_OES, #PB_Constant)
+#GL_TEXTURE_VIEW_NUM_LAYERS_OES = $82DE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMMUTABLE_LEVELS, #PB_Constant)
+#GL_TEXTURE_IMMUTABLE_LEVELS = $82DF
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER, #PB_Constant)
+#GL_BUFFER = $82E0
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_KHR, #PB_Constant)
+#GL_BUFFER_KHR = $82E0
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER, #PB_Constant)
+#GL_SHADER = $82E1
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_KHR, #PB_Constant)
+#GL_SHADER_KHR = $82E1
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM, #PB_Constant)
+#GL_PROGRAM = $82E2
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_KHR, #PB_Constant)
+#GL_PROGRAM_KHR = $82E2
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY, #PB_Constant)
+#GL_QUERY = $82E3
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_KHR, #PB_Constant)
+#GL_QUERY_KHR = $82E3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PIPELINE, #PB_Constant)
+#GL_PROGRAM_PIPELINE = $82E4
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PIPELINE_KHR, #PB_Constant)
+#GL_PROGRAM_PIPELINE_KHR = $82E4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATTRIB_STRIDE, #PB_Constant)
+#GL_MAX_VERTEX_ATTRIB_STRIDE = $82E5
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER, #PB_Constant)
+#GL_SAMPLER = $82E6
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_KHR, #PB_Constant)
+#GL_SAMPLER_KHR = $82E6
+CompilerEndIf
+CompilerIf Not Defined(GL_DISPLAY_LIST, #PB_Constant)
+#GL_DISPLAY_LIST = $82E7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LABEL_LENGTH, #PB_Constant)
+#GL_MAX_LABEL_LENGTH = $82E8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LABEL_LENGTH_KHR, #PB_Constant)
+#GL_MAX_LABEL_LENGTH_KHR = $82E8
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SHADING_LANGUAGE_VERSIONS, #PB_Constant)
+#GL_NUM_SHADING_LANGUAGE_VERSIONS = $82E9
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_TARGET, #PB_Constant)
+#GL_QUERY_TARGET = $82EA
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_OVERFLOW, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_OVERFLOW = $82EC
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_OVERFLOW_ARB, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_OVERFLOW_ARB = $82EC
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW = $82ED
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB = $82ED
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTICES_SUBMITTED, #PB_Constant)
+#GL_VERTICES_SUBMITTED = $82EE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTICES_SUBMITTED_ARB, #PB_Constant)
+#GL_VERTICES_SUBMITTED_ARB = $82EE
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_SUBMITTED, #PB_Constant)
+#GL_PRIMITIVES_SUBMITTED = $82EF
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_SUBMITTED_ARB, #PB_Constant)
+#GL_PRIMITIVES_SUBMITTED_ARB = $82EF
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_INVOCATIONS, #PB_Constant)
+#GL_VERTEX_SHADER_INVOCATIONS = $82F0
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_INVOCATIONS_ARB, #PB_Constant)
+#GL_VERTEX_SHADER_INVOCATIONS_ARB = $82F0
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_PATCHES, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_PATCHES = $82F1
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_PATCHES_ARB, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_PATCHES_ARB = $82F1
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_INVOCATIONS, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_INVOCATIONS = $82F2
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_INVOCATIONS_ARB, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_INVOCATIONS_ARB = $82F2
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED, #PB_Constant)
+#GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED = $82F3
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED_ARB, #PB_Constant)
+#GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED_ARB = $82F3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_INVOCATIONS, #PB_Constant)
+#GL_FRAGMENT_SHADER_INVOCATIONS = $82F4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_INVOCATIONS_ARB, #PB_Constant)
+#GL_FRAGMENT_SHADER_INVOCATIONS_ARB = $82F4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SHADER_INVOCATIONS, #PB_Constant)
+#GL_COMPUTE_SHADER_INVOCATIONS = $82F5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SHADER_INVOCATIONS_ARB, #PB_Constant)
+#GL_COMPUTE_SHADER_INVOCATIONS_ARB = $82F5
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIPPING_INPUT_PRIMITIVES, #PB_Constant)
+#GL_CLIPPING_INPUT_PRIMITIVES = $82F6
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIPPING_INPUT_PRIMITIVES_ARB, #PB_Constant)
+#GL_CLIPPING_INPUT_PRIMITIVES_ARB = $82F6
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIPPING_OUTPUT_PRIMITIVES, #PB_Constant)
+#GL_CLIPPING_OUTPUT_PRIMITIVES = $82F7
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIPPING_OUTPUT_PRIMITIVES_ARB, #PB_Constant)
+#GL_CLIPPING_OUTPUT_PRIMITIVES_ARB = $82F7
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARSE_BUFFER_PAGE_SIZE_ARB, #PB_Constant)
+#GL_SPARSE_BUFFER_PAGE_SIZE_ARB = $82F8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CULL_DISTANCES, #PB_Constant)
+#GL_MAX_CULL_DISTANCES = $82F9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CULL_DISTANCES_EXT, #PB_Constant)
+#GL_MAX_CULL_DISTANCES_EXT = $82F9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES, #PB_Constant)
+#GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES = $82FA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT, #PB_Constant)
+#GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT = $82FA
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_RELEASE_BEHAVIOR, #PB_Constant)
+#GL_CONTEXT_RELEASE_BEHAVIOR = $82FB
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_RELEASE_BEHAVIOR_KHR, #PB_Constant)
+#GL_CONTEXT_RELEASE_BEHAVIOR_KHR = $82FB
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH, #PB_Constant)
+#GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH = $82FC
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR, #PB_Constant)
+#GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR = $82FC
+CompilerEndIf
+CompilerIf Not Defined(GL_ROBUST_GPU_TIMEOUT_MS_KHR, #PB_Constant)
+#GL_ROBUST_GPU_TIMEOUT_MS_KHR = $82FD
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_PASS_INSTRUMENT_SGIX, #PB_Constant)
+#GL_DEPTH_PASS_INSTRUMENT_SGIX = $8310
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_PASS_INSTRUMENT_COUNTERS_SGIX, #PB_Constant)
+#GL_DEPTH_PASS_INSTRUMENT_COUNTERS_SGIX = $8311
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_PASS_INSTRUMENT_MAX_SGIX, #PB_Constant)
+#GL_DEPTH_PASS_INSTRUMENT_MAX_SGIX = $8312
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENTS_INSTRUMENT_SGIX, #PB_Constant)
+#GL_FRAGMENTS_INSTRUMENT_SGIX = $8313
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENTS_INSTRUMENT_COUNTERS_SGIX, #PB_Constant)
+#GL_FRAGMENTS_INSTRUMENT_COUNTERS_SGIX = $8314
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENTS_INSTRUMENT_MAX_SGIX, #PB_Constant)
+#GL_FRAGMENTS_INSTRUMENT_MAX_SGIX = $8315
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVOLUTION_HINT_SGIX, #PB_Constant)
+#GL_CONVOLUTION_HINT_SGIX = $8316
+CompilerEndIf
+CompilerIf Not Defined(GL_YCRCB_SGIX, #PB_Constant)
+#GL_YCRCB_SGIX = $8318
+CompilerEndIf
+CompilerIf Not Defined(GL_YCRCBA_SGIX, #PB_Constant)
+#GL_YCRCBA_SGIX = $8319
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COMPRESSED_SIZE_SGIX, #PB_Constant)
+#GL_UNPACK_COMPRESSED_SIZE_SGIX = $831A
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_MAX_COMPRESSED_SIZE_SGIX, #PB_Constant)
+#GL_PACK_MAX_COMPRESSED_SIZE_SGIX = $831B
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_COMPRESSED_SIZE_SGIX, #PB_Constant)
+#GL_PACK_COMPRESSED_SIZE_SGIX = $831C
+CompilerEndIf
+CompilerIf Not Defined(GL_SLIM8U_SGIX, #PB_Constant)
+#GL_SLIM8U_SGIX = $831D
+CompilerEndIf
+CompilerIf Not Defined(GL_SLIM10U_SGIX, #PB_Constant)
+#GL_SLIM10U_SGIX = $831E
+CompilerEndIf
+CompilerIf Not Defined(GL_SLIM12S_SGIX, #PB_Constant)
+#GL_SLIM12S_SGIX = $831F
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_MIN_SGIX, #PB_Constant)
+#GL_ALPHA_MIN_SGIX = $8320
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_MAX_SGIX, #PB_Constant)
+#GL_ALPHA_MAX_SGIX = $8321
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALEBIAS_HINT_SGIX, #PB_Constant)
+#GL_SCALEBIAS_HINT_SGIX = $8322
+CompilerEndIf
+CompilerIf Not Defined(GL_ASYNC_MARKER_SGIX, #PB_Constant)
+#GL_ASYNC_MARKER_SGIX = $8329
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEX_GEN_MODE_SGIX, #PB_Constant)
+#GL_PIXEL_TEX_GEN_MODE_SGIX = $832B
+CompilerEndIf
+CompilerIf Not Defined(GL_ASYNC_HISTOGRAM_SGIX, #PB_Constant)
+#GL_ASYNC_HISTOGRAM_SGIX = $832C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ASYNC_HISTOGRAM_SGIX, #PB_Constant)
+#GL_MAX_ASYNC_HISTOGRAM_SGIX = $832D
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TRANSFORM_2D_EXT, #PB_Constant)
+#GL_PIXEL_TRANSFORM_2D_EXT = $8330
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MAG_FILTER_EXT, #PB_Constant)
+#GL_PIXEL_MAG_FILTER_EXT = $8331
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_MIN_FILTER_EXT, #PB_Constant)
+#GL_PIXEL_MIN_FILTER_EXT = $8332
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_CUBIC_WEIGHT_EXT, #PB_Constant)
+#GL_PIXEL_CUBIC_WEIGHT_EXT = $8333
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_EXT, #PB_Constant)
+#GL_CUBIC_EXT = $8334
+CompilerEndIf
+CompilerIf Not Defined(GL_AVERAGE_EXT, #PB_Constant)
+#GL_AVERAGE_EXT = $8335
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT, #PB_Constant)
+#GL_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT = $8336
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT, #PB_Constant)
+#GL_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT = $8337
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TRANSFORM_2D_MATRIX_EXT, #PB_Constant)
+#GL_PIXEL_TRANSFORM_2D_MATRIX_EXT = $8338
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_MATERIAL_EXT, #PB_Constant)
+#GL_FRAGMENT_MATERIAL_EXT = $8349
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_NORMAL_EXT, #PB_Constant)
+#GL_FRAGMENT_NORMAL_EXT = $834A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COLOR_EXT, #PB_Constant)
+#GL_FRAGMENT_COLOR_EXT = $834C
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTENUATION_EXT, #PB_Constant)
+#GL_ATTENUATION_EXT = $834D
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADOW_ATTENUATION_EXT, #PB_Constant)
+#GL_SHADOW_ATTENUATION_EXT = $834E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_APPLICATION_MODE_EXT, #PB_Constant)
+#GL_TEXTURE_APPLICATION_MODE_EXT = $834F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LIGHT_EXT, #PB_Constant)
+#GL_TEXTURE_LIGHT_EXT = $8350
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MATERIAL_FACE_EXT, #PB_Constant)
+#GL_TEXTURE_MATERIAL_FACE_EXT = $8351
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MATERIAL_PARAMETER_EXT, #PB_Constant)
+#GL_TEXTURE_MATERIAL_PARAMETER_EXT = $8352
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_TEXTURE_SGIS, #PB_Constant)
+#GL_PIXEL_TEXTURE_SGIS = $8353
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS, #PB_Constant)
+#GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS = $8354
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS, #PB_Constant)
+#GL_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS = $8355
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_GROUP_COLOR_SGIS, #PB_Constant)
+#GL_PIXEL_GROUP_COLOR_SGIS = $8356
+CompilerEndIf
+CompilerIf Not Defined(GL_LINE_QUALITY_HINT_SGIX, #PB_Constant)
+#GL_LINE_QUALITY_HINT_SGIX = $835B
+CompilerEndIf
+CompilerIf Not Defined(GL_ASYNC_TEX_IMAGE_SGIX, #PB_Constant)
+#GL_ASYNC_TEX_IMAGE_SGIX = $835C
+CompilerEndIf
+CompilerIf Not Defined(GL_ASYNC_DRAW_PIXELS_SGIX, #PB_Constant)
+#GL_ASYNC_DRAW_PIXELS_SGIX = $835D
+CompilerEndIf
+CompilerIf Not Defined(GL_ASYNC_READ_PIXELS_SGIX, #PB_Constant)
+#GL_ASYNC_READ_PIXELS_SGIX = $835E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ASYNC_TEX_IMAGE_SGIX, #PB_Constant)
+#GL_MAX_ASYNC_TEX_IMAGE_SGIX = $835F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ASYNC_DRAW_PIXELS_SGIX, #PB_Constant)
+#GL_MAX_ASYNC_DRAW_PIXELS_SGIX = $8360
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ASYNC_READ_PIXELS_SGIX, #PB_Constant)
+#GL_MAX_ASYNC_READ_PIXELS_SGIX = $8361
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_BYTE_2_3_3_REV, #PB_Constant)
+#GL_UNSIGNED_BYTE_2_3_3_REV = $8362
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_BYTE_2_3_3_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_BYTE_2_3_3_REV_EXT = $8362
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_6_5, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_6_5 = $8363
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_6_5_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_6_5_EXT = $8363
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_6_5_REV, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_6_5_REV = $8364
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_5_6_5_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_5_6_5_REV_EXT = $8364
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_4_4_4_4_REV, #PB_Constant)
+#GL_UNSIGNED_SHORT_4_4_4_4_REV = $8365
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT = $8365
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG, #PB_Constant)
+#GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG = $8365
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_1_5_5_5_REV, #PB_Constant)
+#GL_UNSIGNED_SHORT_1_5_5_5_REV = $8366
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT = $8366
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_8_8_8_REV, #PB_Constant)
+#GL_UNSIGNED_INT_8_8_8_8_REV = $8367
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_8_8_8_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_8_8_8_8_REV_EXT = $8367
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_2_10_10_10_REV, #PB_Constant)
+#GL_UNSIGNED_INT_2_10_10_10_REV = $8368
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_2_10_10_10_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_2_10_10_10_REV_EXT = $8368
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_CLAMP_S_SGIX, #PB_Constant)
+#GL_TEXTURE_MAX_CLAMP_S_SGIX = $8369
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_CLAMP_T_SGIX, #PB_Constant)
+#GL_TEXTURE_MAX_CLAMP_T_SGIX = $836A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_CLAMP_R_SGIX, #PB_Constant)
+#GL_TEXTURE_MAX_CLAMP_R_SGIX = $836B
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRRORED_REPEAT, #PB_Constant)
+#GL_MIRRORED_REPEAT = $8370
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRRORED_REPEAT_ARB, #PB_Constant)
+#GL_MIRRORED_REPEAT_ARB = $8370
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRRORED_REPEAT_IBM, #PB_Constant)
+#GL_MIRRORED_REPEAT_IBM = $8370
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRRORED_REPEAT_OES, #PB_Constant)
+#GL_MIRRORED_REPEAT_OES = $8370
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_S3TC, #PB_Constant)
+#GL_RGB_S3TC = $83A0
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB4_S3TC, #PB_Constant)
+#GL_RGB4_S3TC = $83A1
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_S3TC, #PB_Constant)
+#GL_RGBA_S3TC = $83A2
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA4_S3TC, #PB_Constant)
+#GL_RGBA4_S3TC = $83A3
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_DXT5_S3TC, #PB_Constant)
+#GL_RGBA_DXT5_S3TC = $83A4
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA4_DXT5_S3TC, #PB_Constant)
+#GL_RGBA4_DXT5_S3TC = $83A5
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PRECLIP_SGIX, #PB_Constant)
+#GL_VERTEX_PRECLIP_SGIX = $83EE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PRECLIP_HINT_SGIX, #PB_Constant)
+#GL_VERTEX_PRECLIP_HINT_SGIX = $83EF
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT, #PB_Constant)
+#GL_COMPRESSED_RGB_S3TC_DXT1_EXT = $83F0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_S3TC_DXT1_EXT, #PB_Constant)
+#GL_COMPRESSED_RGBA_S3TC_DXT1_EXT = $83F1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE, #PB_Constant)
+#GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE = $83F2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT, #PB_Constant)
+#GL_COMPRESSED_RGBA_S3TC_DXT3_EXT = $83F2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE, #PB_Constant)
+#GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE = $83F3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT, #PB_Constant)
+#GL_COMPRESSED_RGBA_S3TC_DXT5_EXT = $83F3
+CompilerEndIf
+CompilerIf Not Defined(GL_PARALLEL_ARRAYS_INTEL, #PB_Constant)
+#GL_PARALLEL_ARRAYS_INTEL = $83F4
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL, #PB_Constant)
+#GL_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL = $83F5
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL, #PB_Constant)
+#GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL = $83F6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL, #PB_Constant)
+#GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL = $83F7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL = $83F8
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_DONOT_FLUSH_INTEL, #PB_Constant)
+#GL_PERFQUERY_DONOT_FLUSH_INTEL = $83F9
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_FLUSH_INTEL, #PB_Constant)
+#GL_PERFQUERY_FLUSH_INTEL = $83FA
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_WAIT_INTEL, #PB_Constant)
+#GL_PERFQUERY_WAIT_INTEL = $83FB
+CompilerEndIf
+CompilerIf Not Defined(GL_BLACKHOLE_RENDER_INTEL, #PB_Constant)
+#GL_BLACKHOLE_RENDER_INTEL = $83FC
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTERIZATION_INTEL, #PB_Constant)
+#GL_CONSERVATIVE_RASTERIZATION_INTEL = $83FE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MEMORY_LAYOUT_INTEL, #PB_Constant)
+#GL_TEXTURE_MEMORY_LAYOUT_INTEL = $83FF
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHTING_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHTING_SGIX = $8400
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COLOR_MATERIAL_SGIX, #PB_Constant)
+#GL_FRAGMENT_COLOR_MATERIAL_SGIX = $8401
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COLOR_MATERIAL_FACE_SGIX, #PB_Constant)
+#GL_FRAGMENT_COLOR_MATERIAL_FACE_SGIX = $8402
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COLOR_MATERIAL_PARAMETER_SGIX, #PB_Constant)
+#GL_FRAGMENT_COLOR_MATERIAL_PARAMETER_SGIX = $8403
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_LIGHTS_SGIX, #PB_Constant)
+#GL_MAX_FRAGMENT_LIGHTS_SGIX = $8404
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ACTIVE_LIGHTS_SGIX, #PB_Constant)
+#GL_MAX_ACTIVE_LIGHTS_SGIX = $8405
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_NORMAL_SGIX, #PB_Constant)
+#GL_CURRENT_RASTER_NORMAL_SGIX = $8406
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_ENV_MODE_SGIX, #PB_Constant)
+#GL_LIGHT_ENV_MODE_SGIX = $8407
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT_MODEL_LOCAL_VIEWER_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT_MODEL_LOCAL_VIEWER_SGIX = $8408
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT_MODEL_TWO_SIDE_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT_MODEL_TWO_SIDE_SGIX = $8409
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT_MODEL_AMBIENT_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT_MODEL_AMBIENT_SGIX = $840A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT_MODEL_NORMAL_INTERPOLATION_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT_MODEL_NORMAL_INTERPOLATION_SGIX = $840B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT0_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT0_SGIX = $840C
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT1_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT1_SGIX = $840D
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT2_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT2_SGIX = $840E
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT3_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT3_SGIX = $840F
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT4_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT4_SGIX = $8410
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT5_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT5_SGIX = $8411
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT6_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT6_SGIX = $8412
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_LIGHT7_SGIX, #PB_Constant)
+#GL_FRAGMENT_LIGHT7_SGIX = $8413
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_RESAMPLE_SGIX, #PB_Constant)
+#GL_PACK_RESAMPLE_SGIX = $842E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_RESAMPLE_SGIX, #PB_Constant)
+#GL_UNPACK_RESAMPLE_SGIX = $842F
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_DECIMATE_SGIX, #PB_Constant)
+#GL_RESAMPLE_DECIMATE_SGIX = $8430
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_REPLICATE_SGIX, #PB_Constant)
+#GL_RESAMPLE_REPLICATE_SGIX = $8433
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_ZERO_FILL_SGIX, #PB_Constant)
+#GL_RESAMPLE_ZERO_FILL_SGIX = $8434
+CompilerEndIf
+CompilerIf Not Defined(GL_TANGENT_ARRAY_EXT, #PB_Constant)
+#GL_TANGENT_ARRAY_EXT = $8439
+CompilerEndIf
+CompilerIf Not Defined(GL_BINORMAL_ARRAY_EXT, #PB_Constant)
+#GL_BINORMAL_ARRAY_EXT = $843A
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_TANGENT_EXT, #PB_Constant)
+#GL_CURRENT_TANGENT_EXT = $843B
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_BINORMAL_EXT, #PB_Constant)
+#GL_CURRENT_BINORMAL_EXT = $843C
+CompilerEndIf
+CompilerIf Not Defined(GL_TANGENT_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_TANGENT_ARRAY_TYPE_EXT = $843E
+CompilerEndIf
+CompilerIf Not Defined(GL_TANGENT_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_TANGENT_ARRAY_STRIDE_EXT = $843F
+CompilerEndIf
+CompilerIf Not Defined(GL_BINORMAL_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_BINORMAL_ARRAY_TYPE_EXT = $8440
+CompilerEndIf
+CompilerIf Not Defined(GL_BINORMAL_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_BINORMAL_ARRAY_STRIDE_EXT = $8441
+CompilerEndIf
+CompilerIf Not Defined(GL_TANGENT_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_TANGENT_ARRAY_POINTER_EXT = $8442
+CompilerEndIf
+CompilerIf Not Defined(GL_BINORMAL_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_BINORMAL_ARRAY_POINTER_EXT = $8443
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_TANGENT_EXT, #PB_Constant)
+#GL_MAP1_TANGENT_EXT = $8444
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_TANGENT_EXT, #PB_Constant)
+#GL_MAP2_TANGENT_EXT = $8445
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_BINORMAL_EXT, #PB_Constant)
+#GL_MAP1_BINORMAL_EXT = $8446
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_BINORMAL_EXT, #PB_Constant)
+#GL_MAP2_BINORMAL_EXT = $8447
+CompilerEndIf
+CompilerIf Not Defined(GL_NEAREST_CLIPMAP_NEAREST_SGIX, #PB_Constant)
+#GL_NEAREST_CLIPMAP_NEAREST_SGIX = $844D
+CompilerEndIf
+CompilerIf Not Defined(GL_NEAREST_CLIPMAP_LINEAR_SGIX, #PB_Constant)
+#GL_NEAREST_CLIPMAP_LINEAR_SGIX = $844E
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_CLIPMAP_NEAREST_SGIX, #PB_Constant)
+#GL_LINEAR_CLIPMAP_NEAREST_SGIX = $844F
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_SOURCE, #PB_Constant)
+#GL_FOG_COORDINATE_SOURCE = $8450
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_SOURCE_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_SOURCE_EXT = $8450
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_SRC, #PB_Constant)
+#GL_FOG_COORD_SRC = $8450
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE, #PB_Constant)
+#GL_FOG_COORDINATE = $8451
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_EXT = $8451
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD, #PB_Constant)
+#GL_FOG_COORD = $8451
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_DEPTH, #PB_Constant)
+#GL_FRAGMENT_DEPTH = $8452
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_DEPTH_EXT, #PB_Constant)
+#GL_FRAGMENT_DEPTH_EXT = $8452
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_FOG_COORDINATE, #PB_Constant)
+#GL_CURRENT_FOG_COORDINATE = $8453
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_FOG_COORD, #PB_Constant)
+#GL_CURRENT_FOG_COORD = $8453
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_FOG_COORDINATE_EXT, #PB_Constant)
+#GL_CURRENT_FOG_COORDINATE_EXT = $8453
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_TYPE, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_TYPE = $8454
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_TYPE_EXT = $8454
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_TYPE, #PB_Constant)
+#GL_FOG_COORD_ARRAY_TYPE = $8454
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_STRIDE, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_STRIDE = $8455
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_STRIDE_EXT = $8455
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_STRIDE, #PB_Constant)
+#GL_FOG_COORD_ARRAY_STRIDE = $8455
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_POINTER, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_POINTER = $8456
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_POINTER_EXT = $8456
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_POINTER, #PB_Constant)
+#GL_FOG_COORD_ARRAY_POINTER = $8456
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY = $8457
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_EXT, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_EXT = $8457
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY, #PB_Constant)
+#GL_FOG_COORD_ARRAY = $8457
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_SUM, #PB_Constant)
+#GL_COLOR_SUM = $8458
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_SUM_ARB, #PB_Constant)
+#GL_COLOR_SUM_ARB = $8458
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_SUM_EXT, #PB_Constant)
+#GL_COLOR_SUM_EXT = $8458
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_SECONDARY_COLOR, #PB_Constant)
+#GL_CURRENT_SECONDARY_COLOR = $8459
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_SECONDARY_COLOR_EXT, #PB_Constant)
+#GL_CURRENT_SECONDARY_COLOR_EXT = $8459
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_SIZE, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_SIZE = $845A
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_SIZE_EXT, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_SIZE_EXT = $845A
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_TYPE, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_TYPE = $845B
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_TYPE_EXT = $845B
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_STRIDE, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_STRIDE = $845C
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT = $845C
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_POINTER, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_POINTER = $845D
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_POINTER_EXT = $845D
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY = $845E
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_EXT, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_EXT = $845E
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_RASTER_SECONDARY_COLOR, #PB_Constant)
+#GL_CURRENT_RASTER_SECONDARY_COLOR = $845F
+CompilerEndIf
+CompilerIf Not Defined(GL_ALIASED_POINT_SIZE_RANGE, #PB_Constant)
+#GL_ALIASED_POINT_SIZE_RANGE = $846D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALIASED_LINE_WIDTH_RANGE, #PB_Constant)
+#GL_ALIASED_LINE_WIDTH_RANGE = $846E
+CompilerEndIf
+CompilerIf Not Defined(GL_SCREEN_COORDINATES_REND, #PB_Constant)
+#GL_SCREEN_COORDINATES_REND = $8490
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERTED_SCREEN_W_REND, #PB_Constant)
+#GL_INVERTED_SCREEN_W_REND = $8491
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE0, #PB_Constant)
+#GL_TEXTURE0 = $84C0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE0_ARB, #PB_Constant)
+#GL_TEXTURE0_ARB = $84C0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE1, #PB_Constant)
+#GL_TEXTURE1 = $84C1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE1_ARB, #PB_Constant)
+#GL_TEXTURE1_ARB = $84C1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE2, #PB_Constant)
+#GL_TEXTURE2 = $84C2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE2_ARB, #PB_Constant)
+#GL_TEXTURE2_ARB = $84C2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE3, #PB_Constant)
+#GL_TEXTURE3 = $84C3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE3_ARB, #PB_Constant)
+#GL_TEXTURE3_ARB = $84C3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE4, #PB_Constant)
+#GL_TEXTURE4 = $84C4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE4_ARB, #PB_Constant)
+#GL_TEXTURE4_ARB = $84C4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE5, #PB_Constant)
+#GL_TEXTURE5 = $84C5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE5_ARB, #PB_Constant)
+#GL_TEXTURE5_ARB = $84C5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE6, #PB_Constant)
+#GL_TEXTURE6 = $84C6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE6_ARB, #PB_Constant)
+#GL_TEXTURE6_ARB = $84C6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE7, #PB_Constant)
+#GL_TEXTURE7 = $84C7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE7_ARB, #PB_Constant)
+#GL_TEXTURE7_ARB = $84C7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE8, #PB_Constant)
+#GL_TEXTURE8 = $84C8
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE8_ARB, #PB_Constant)
+#GL_TEXTURE8_ARB = $84C8
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE9, #PB_Constant)
+#GL_TEXTURE9 = $84C9
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE9_ARB, #PB_Constant)
+#GL_TEXTURE9_ARB = $84C9
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE10, #PB_Constant)
+#GL_TEXTURE10 = $84CA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE10_ARB, #PB_Constant)
+#GL_TEXTURE10_ARB = $84CA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE11, #PB_Constant)
+#GL_TEXTURE11 = $84CB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE11_ARB, #PB_Constant)
+#GL_TEXTURE11_ARB = $84CB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE12, #PB_Constant)
+#GL_TEXTURE12 = $84CC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE12_ARB, #PB_Constant)
+#GL_TEXTURE12_ARB = $84CC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE13, #PB_Constant)
+#GL_TEXTURE13 = $84CD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE13_ARB, #PB_Constant)
+#GL_TEXTURE13_ARB = $84CD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE14, #PB_Constant)
+#GL_TEXTURE14 = $84CE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE14_ARB, #PB_Constant)
+#GL_TEXTURE14_ARB = $84CE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE15, #PB_Constant)
+#GL_TEXTURE15 = $84CF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE15_ARB, #PB_Constant)
+#GL_TEXTURE15_ARB = $84CF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE16, #PB_Constant)
+#GL_TEXTURE16 = $84D0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE16_ARB, #PB_Constant)
+#GL_TEXTURE16_ARB = $84D0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE17, #PB_Constant)
+#GL_TEXTURE17 = $84D1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE17_ARB, #PB_Constant)
+#GL_TEXTURE17_ARB = $84D1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE18, #PB_Constant)
+#GL_TEXTURE18 = $84D2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE18_ARB, #PB_Constant)
+#GL_TEXTURE18_ARB = $84D2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE19, #PB_Constant)
+#GL_TEXTURE19 = $84D3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE19_ARB, #PB_Constant)
+#GL_TEXTURE19_ARB = $84D3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE20, #PB_Constant)
+#GL_TEXTURE20 = $84D4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE20_ARB, #PB_Constant)
+#GL_TEXTURE20_ARB = $84D4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE21, #PB_Constant)
+#GL_TEXTURE21 = $84D5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE21_ARB, #PB_Constant)
+#GL_TEXTURE21_ARB = $84D5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE22, #PB_Constant)
+#GL_TEXTURE22 = $84D6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE22_ARB, #PB_Constant)
+#GL_TEXTURE22_ARB = $84D6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE23, #PB_Constant)
+#GL_TEXTURE23 = $84D7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE23_ARB, #PB_Constant)
+#GL_TEXTURE23_ARB = $84D7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE24, #PB_Constant)
+#GL_TEXTURE24 = $84D8
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE24_ARB, #PB_Constant)
+#GL_TEXTURE24_ARB = $84D8
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE25, #PB_Constant)
+#GL_TEXTURE25 = $84D9
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE25_ARB, #PB_Constant)
+#GL_TEXTURE25_ARB = $84D9
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE26, #PB_Constant)
+#GL_TEXTURE26 = $84DA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE26_ARB, #PB_Constant)
+#GL_TEXTURE26_ARB = $84DA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE27, #PB_Constant)
+#GL_TEXTURE27 = $84DB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE27_ARB, #PB_Constant)
+#GL_TEXTURE27_ARB = $84DB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE28, #PB_Constant)
+#GL_TEXTURE28 = $84DC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE28_ARB, #PB_Constant)
+#GL_TEXTURE28_ARB = $84DC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE29, #PB_Constant)
+#GL_TEXTURE29 = $84DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE29_ARB, #PB_Constant)
+#GL_TEXTURE29_ARB = $84DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE30, #PB_Constant)
+#GL_TEXTURE30 = $84DE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE30_ARB, #PB_Constant)
+#GL_TEXTURE30_ARB = $84DE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE31, #PB_Constant)
+#GL_TEXTURE31 = $84DF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE31_ARB, #PB_Constant)
+#GL_TEXTURE31_ARB = $84DF
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_TEXTURE, #PB_Constant)
+#GL_ACTIVE_TEXTURE = $84E0
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_TEXTURE_ARB, #PB_Constant)
+#GL_ACTIVE_TEXTURE_ARB = $84E0
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_ACTIVE_TEXTURE, #PB_Constant)
+#GL_CLIENT_ACTIVE_TEXTURE = $84E1
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIENT_ACTIVE_TEXTURE_ARB, #PB_Constant)
+#GL_CLIENT_ACTIVE_TEXTURE_ARB = $84E1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_UNITS, #PB_Constant)
+#GL_MAX_TEXTURE_UNITS = $84E2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_UNITS_ARB, #PB_Constant)
+#GL_MAX_TEXTURE_UNITS_ARB = $84E2
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_MODELVIEW_MATRIX, #PB_Constant)
+#GL_TRANSPOSE_MODELVIEW_MATRIX = $84E3
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_MODELVIEW_MATRIX_ARB, #PB_Constant)
+#GL_TRANSPOSE_MODELVIEW_MATRIX_ARB = $84E3
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_TRANSPOSE_MODELVIEW_MATRIX_NV, #PB_Constant)
+#GL_PATH_TRANSPOSE_MODELVIEW_MATRIX_NV = $84E3
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_PROJECTION_MATRIX, #PB_Constant)
+#GL_TRANSPOSE_PROJECTION_MATRIX = $84E4
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_PROJECTION_MATRIX_ARB, #PB_Constant)
+#GL_TRANSPOSE_PROJECTION_MATRIX_ARB = $84E4
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_TRANSPOSE_PROJECTION_MATRIX_NV, #PB_Constant)
+#GL_PATH_TRANSPOSE_PROJECTION_MATRIX_NV = $84E4
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_TEXTURE_MATRIX, #PB_Constant)
+#GL_TRANSPOSE_TEXTURE_MATRIX = $84E5
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_TEXTURE_MATRIX_ARB, #PB_Constant)
+#GL_TRANSPOSE_TEXTURE_MATRIX_ARB = $84E5
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_COLOR_MATRIX, #PB_Constant)
+#GL_TRANSPOSE_COLOR_MATRIX = $84E6
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_COLOR_MATRIX_ARB, #PB_Constant)
+#GL_TRANSPOSE_COLOR_MATRIX_ARB = $84E6
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBTRACT, #PB_Constant)
+#GL_SUBTRACT = $84E7
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBTRACT_ARB, #PB_Constant)
+#GL_SUBTRACT_ARB = $84E7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RENDERBUFFER_SIZE, #PB_Constant)
+#GL_MAX_RENDERBUFFER_SIZE = $84E8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RENDERBUFFER_SIZE_EXT, #PB_Constant)
+#GL_MAX_RENDERBUFFER_SIZE_EXT = $84E8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RENDERBUFFER_SIZE_OES, #PB_Constant)
+#GL_MAX_RENDERBUFFER_SIZE_OES = $84E8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_ALPHA, #PB_Constant)
+#GL_COMPRESSED_ALPHA = $84E9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_ALPHA_ARB, #PB_Constant)
+#GL_COMPRESSED_ALPHA_ARB = $84E9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE = $84EA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_ARB, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_ARB = $84EA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_ALPHA, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_ALPHA = $84EB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_ALPHA_ARB, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_ALPHA_ARB = $84EB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_INTENSITY, #PB_Constant)
+#GL_COMPRESSED_INTENSITY = $84EC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_INTENSITY_ARB, #PB_Constant)
+#GL_COMPRESSED_INTENSITY_ARB = $84EC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB, #PB_Constant)
+#GL_COMPRESSED_RGB = $84ED
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_ARB, #PB_Constant)
+#GL_COMPRESSED_RGB_ARB = $84ED
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA, #PB_Constant)
+#GL_COMPRESSED_RGBA = $84EE
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ARB, #PB_Constant)
+#GL_COMPRESSED_RGBA_ARB = $84EE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSION_HINT, #PB_Constant)
+#GL_TEXTURE_COMPRESSION_HINT = $84EF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSION_HINT_ARB, #PB_Constant)
+#GL_TEXTURE_COMPRESSION_HINT_ARB = $84EF
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER = $84F0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER = $84F1
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_COMPLETED_NV, #PB_Constant)
+#GL_ALL_COMPLETED_NV = $84F2
+CompilerEndIf
+CompilerIf Not Defined(GL_FENCE_STATUS_NV, #PB_Constant)
+#GL_FENCE_STATUS_NV = $84F3
+CompilerEndIf
+CompilerIf Not Defined(GL_FENCE_CONDITION_NV, #PB_Constant)
+#GL_FENCE_CONDITION_NV = $84F4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RECTANGLE, #PB_Constant)
+#GL_TEXTURE_RECTANGLE = $84F5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RECTANGLE_ARB, #PB_Constant)
+#GL_TEXTURE_RECTANGLE_ARB = $84F5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_TEXTURE_RECTANGLE_NV = $84F5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_RECTANGLE, #PB_Constant)
+#GL_TEXTURE_BINDING_RECTANGLE = $84F6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_RECTANGLE_ARB, #PB_Constant)
+#GL_TEXTURE_BINDING_RECTANGLE_ARB = $84F6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_RECTANGLE_NV, #PB_Constant)
+#GL_TEXTURE_BINDING_RECTANGLE_NV = $84F6
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_RECTANGLE, #PB_Constant)
+#GL_PROXY_TEXTURE_RECTANGLE = $84F7
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_RECTANGLE_ARB, #PB_Constant)
+#GL_PROXY_TEXTURE_RECTANGLE_ARB = $84F7
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_PROXY_TEXTURE_RECTANGLE_NV = $84F7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RECTANGLE_TEXTURE_SIZE, #PB_Constant)
+#GL_MAX_RECTANGLE_TEXTURE_SIZE = $84F8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB, #PB_Constant)
+#GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB = $84F8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RECTANGLE_TEXTURE_SIZE_NV, #PB_Constant)
+#GL_MAX_RECTANGLE_TEXTURE_SIZE_NV = $84F8
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL, #PB_Constant)
+#GL_DEPTH_STENCIL = $84F9
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_EXT, #PB_Constant)
+#GL_DEPTH_STENCIL_EXT = $84F9
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_NV, #PB_Constant)
+#GL_DEPTH_STENCIL_NV = $84F9
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_OES, #PB_Constant)
+#GL_DEPTH_STENCIL_OES = $84F9
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_24_8, #PB_Constant)
+#GL_UNSIGNED_INT_24_8 = $84FA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_24_8_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_24_8_EXT = $84FA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_24_8_NV, #PB_Constant)
+#GL_UNSIGNED_INT_24_8_NV = $84FA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_24_8_OES, #PB_Constant)
+#GL_UNSIGNED_INT_24_8_OES = $84FA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_LOD_BIAS, #PB_Constant)
+#GL_MAX_TEXTURE_LOD_BIAS = $84FD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_LOD_BIAS_EXT, #PB_Constant)
+#GL_MAX_TEXTURE_LOD_BIAS_EXT = $84FD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_ANISOTROPY, #PB_Constant)
+#GL_TEXTURE_MAX_ANISOTROPY = $84FE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAX_ANISOTROPY_EXT, #PB_Constant)
+#GL_TEXTURE_MAX_ANISOTROPY_EXT = $84FE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_MAX_ANISOTROPY, #PB_Constant)
+#GL_MAX_TEXTURE_MAX_ANISOTROPY = $84FF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, #PB_Constant)
+#GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT = $84FF
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FILTER_CONTROL, #PB_Constant)
+#GL_TEXTURE_FILTER_CONTROL = $8500
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FILTER_CONTROL_EXT, #PB_Constant)
+#GL_TEXTURE_FILTER_CONTROL_EXT = $8500
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS = $8501
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS_EXT, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS_EXT = $8501
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW1_STACK_DEPTH_EXT, #PB_Constant)
+#GL_MODELVIEW1_STACK_DEPTH_EXT = $8502
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE4_NV, #PB_Constant)
+#GL_COMBINE4_NV = $8503
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHININESS_NV, #PB_Constant)
+#GL_MAX_SHININESS_NV = $8504
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPOT_EXPONENT_NV, #PB_Constant)
+#GL_MAX_SPOT_EXPONENT_NV = $8505
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW1_MATRIX_EXT, #PB_Constant)
+#GL_MODELVIEW1_MATRIX_EXT = $8506
+CompilerEndIf
+CompilerIf Not Defined(GL_INCR_WRAP, #PB_Constant)
+#GL_INCR_WRAP = $8507
+CompilerEndIf
+CompilerIf Not Defined(GL_INCR_WRAP_EXT, #PB_Constant)
+#GL_INCR_WRAP_EXT = $8507
+CompilerEndIf
+CompilerIf Not Defined(GL_INCR_WRAP_OES, #PB_Constant)
+#GL_INCR_WRAP_OES = $8507
+CompilerEndIf
+CompilerIf Not Defined(GL_DECR_WRAP, #PB_Constant)
+#GL_DECR_WRAP = $8508
+CompilerEndIf
+CompilerIf Not Defined(GL_DECR_WRAP_EXT, #PB_Constant)
+#GL_DECR_WRAP_EXT = $8508
+CompilerEndIf
+CompilerIf Not Defined(GL_DECR_WRAP_OES, #PB_Constant)
+#GL_DECR_WRAP_OES = $8508
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHTING_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHTING_EXT = $8509
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW1_ARB, #PB_Constant)
+#GL_MODELVIEW1_ARB = $850A
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW1_EXT, #PB_Constant)
+#GL_MODELVIEW1_EXT = $850A
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_VERTEX_WEIGHT_EXT, #PB_Constant)
+#GL_CURRENT_VERTEX_WEIGHT_EXT = $850B
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHT_ARRAY_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHT_ARRAY_EXT = $850C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHT_ARRAY_SIZE_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHT_ARRAY_SIZE_EXT = $850D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHT_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHT_ARRAY_TYPE_EXT = $850E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHT_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHT_ARRAY_STRIDE_EXT = $850F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_WEIGHT_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_VERTEX_WEIGHT_ARRAY_POINTER_EXT = $8510
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_MAP, #PB_Constant)
+#GL_NORMAL_MAP = $8511
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_MAP_ARB, #PB_Constant)
+#GL_NORMAL_MAP_ARB = $8511
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_MAP_EXT, #PB_Constant)
+#GL_NORMAL_MAP_EXT = $8511
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_MAP_NV, #PB_Constant)
+#GL_NORMAL_MAP_NV = $8511
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_MAP_OES, #PB_Constant)
+#GL_NORMAL_MAP_OES = $8511
+CompilerEndIf
+CompilerIf Not Defined(GL_REFLECTION_MAP, #PB_Constant)
+#GL_REFLECTION_MAP = $8512
+CompilerEndIf
+CompilerIf Not Defined(GL_REFLECTION_MAP_ARB, #PB_Constant)
+#GL_REFLECTION_MAP_ARB = $8512
+CompilerEndIf
+CompilerIf Not Defined(GL_REFLECTION_MAP_EXT, #PB_Constant)
+#GL_REFLECTION_MAP_EXT = $8512
+CompilerEndIf
+CompilerIf Not Defined(GL_REFLECTION_MAP_NV, #PB_Constant)
+#GL_REFLECTION_MAP_NV = $8512
+CompilerEndIf
+CompilerIf Not Defined(GL_REFLECTION_MAP_OES, #PB_Constant)
+#GL_REFLECTION_MAP_OES = $8512
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP = $8513
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_ARB = $8513
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_EXT = $8513
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_OES = $8513
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP = $8514
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_ARB, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_ARB = $8514
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_EXT, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_EXT = $8514
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_OES = $8514
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_X, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_X = $8515
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_X_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_X_ARB = $8515
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_X_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_X_EXT = $8515
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES = $8515
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_X, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_X = $8516
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_X_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_X_ARB = $8516
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_X_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_X_EXT = $8516
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES = $8516
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Y, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Y = $8517
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Y_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Y_ARB = $8517
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Y_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Y_EXT = $8517
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES = $8517
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Y = $8518
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_ARB = $8518
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_EXT = $8518
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES = $8518
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Z = $8519
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Z_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Z_ARB = $8519
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Z_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Z_EXT = $8519
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES = $8519
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Z = $851A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB = $851A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_EXT = $851A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES = $851A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_CUBE_MAP, #PB_Constant)
+#GL_PROXY_TEXTURE_CUBE_MAP = $851B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_CUBE_MAP_ARB, #PB_Constant)
+#GL_PROXY_TEXTURE_CUBE_MAP_ARB = $851B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_CUBE_MAP_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_CUBE_MAP_EXT = $851B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CUBE_MAP_TEXTURE_SIZE, #PB_Constant)
+#GL_MAX_CUBE_MAP_TEXTURE_SIZE = $851C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB, #PB_Constant)
+#GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB = $851C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CUBE_MAP_TEXTURE_SIZE_EXT, #PB_Constant)
+#GL_MAX_CUBE_MAP_TEXTURE_SIZE_EXT = $851C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES, #PB_Constant)
+#GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES = $851C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_APPLE, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_APPLE = $851D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_NV = $851D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_LENGTH_APPLE, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_LENGTH_APPLE = $851E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_LENGTH_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_LENGTH_NV = $851E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_VALID_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_VALID_NV = $851F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_STORAGE_HINT_APPLE, #PB_Constant)
+#GL_VERTEX_ARRAY_STORAGE_HINT_APPLE = $851F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV, #PB_Constant)
+#GL_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV = $8520
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_POINTER_APPLE, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_POINTER_APPLE = $8521
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_POINTER_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_POINTER_NV = $8521
+CompilerEndIf
+CompilerIf Not Defined(GL_REGISTER_COMBINERS_NV, #PB_Constant)
+#GL_REGISTER_COMBINERS_NV = $8522
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_A_NV, #PB_Constant)
+#GL_VARIABLE_A_NV = $8523
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_B_NV, #PB_Constant)
+#GL_VARIABLE_B_NV = $8524
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_C_NV, #PB_Constant)
+#GL_VARIABLE_C_NV = $8525
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_D_NV, #PB_Constant)
+#GL_VARIABLE_D_NV = $8526
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_E_NV, #PB_Constant)
+#GL_VARIABLE_E_NV = $8527
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_F_NV, #PB_Constant)
+#GL_VARIABLE_F_NV = $8528
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIABLE_G_NV, #PB_Constant)
+#GL_VARIABLE_G_NV = $8529
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_COLOR0_NV, #PB_Constant)
+#GL_CONSTANT_COLOR0_NV = $852A
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_COLOR1_NV, #PB_Constant)
+#GL_CONSTANT_COLOR1_NV = $852B
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMARY_COLOR_NV, #PB_Constant)
+#GL_PRIMARY_COLOR_NV = $852C
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_NV, #PB_Constant)
+#GL_SECONDARY_COLOR_NV = $852D
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARE0_NV, #PB_Constant)
+#GL_SPARE0_NV = $852E
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARE1_NV, #PB_Constant)
+#GL_SPARE1_NV = $852F
+CompilerEndIf
+CompilerIf Not Defined(GL_DISCARD_NV, #PB_Constant)
+#GL_DISCARD_NV = $8530
+CompilerEndIf
+CompilerIf Not Defined(GL_E_TIMES_F_NV, #PB_Constant)
+#GL_E_TIMES_F_NV = $8531
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARE0_PLUS_SECONDARY_COLOR_NV, #PB_Constant)
+#GL_SPARE0_PLUS_SECONDARY_COLOR_NV = $8532
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV = $8533
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_FILTER_HINT_NV, #PB_Constant)
+#GL_MULTISAMPLE_FILTER_HINT_NV = $8534
+CompilerEndIf
+CompilerIf Not Defined(GL_PER_STAGE_CONSTANTS_NV, #PB_Constant)
+#GL_PER_STAGE_CONSTANTS_NV = $8535
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_IDENTITY_NV, #PB_Constant)
+#GL_UNSIGNED_IDENTITY_NV = $8536
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INVERT_NV, #PB_Constant)
+#GL_UNSIGNED_INVERT_NV = $8537
+CompilerEndIf
+CompilerIf Not Defined(GL_EXPAND_NORMAL_NV, #PB_Constant)
+#GL_EXPAND_NORMAL_NV = $8538
+CompilerEndIf
+CompilerIf Not Defined(GL_EXPAND_NEGATE_NV, #PB_Constant)
+#GL_EXPAND_NEGATE_NV = $8539
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_BIAS_NORMAL_NV, #PB_Constant)
+#GL_HALF_BIAS_NORMAL_NV = $853A
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_BIAS_NEGATE_NV, #PB_Constant)
+#GL_HALF_BIAS_NEGATE_NV = $853B
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_IDENTITY_NV, #PB_Constant)
+#GL_SIGNED_IDENTITY_NV = $853C
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_NEGATE_NV, #PB_Constant)
+#GL_SIGNED_NEGATE_NV = $853D
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALE_BY_TWO_NV, #PB_Constant)
+#GL_SCALE_BY_TWO_NV = $853E
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALE_BY_FOUR_NV, #PB_Constant)
+#GL_SCALE_BY_FOUR_NV = $853F
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALE_BY_ONE_HALF_NV, #PB_Constant)
+#GL_SCALE_BY_ONE_HALF_NV = $8540
+CompilerEndIf
+CompilerIf Not Defined(GL_BIAS_BY_NEGATIVE_ONE_HALF_NV, #PB_Constant)
+#GL_BIAS_BY_NEGATIVE_ONE_HALF_NV = $8541
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_INPUT_NV, #PB_Constant)
+#GL_COMBINER_INPUT_NV = $8542
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_MAPPING_NV, #PB_Constant)
+#GL_COMBINER_MAPPING_NV = $8543
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_COMPONENT_USAGE_NV, #PB_Constant)
+#GL_COMBINER_COMPONENT_USAGE_NV = $8544
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_AB_DOT_PRODUCT_NV, #PB_Constant)
+#GL_COMBINER_AB_DOT_PRODUCT_NV = $8545
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_CD_DOT_PRODUCT_NV, #PB_Constant)
+#GL_COMBINER_CD_DOT_PRODUCT_NV = $8546
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_MUX_SUM_NV, #PB_Constant)
+#GL_COMBINER_MUX_SUM_NV = $8547
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_SCALE_NV, #PB_Constant)
+#GL_COMBINER_SCALE_NV = $8548
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_BIAS_NV, #PB_Constant)
+#GL_COMBINER_BIAS_NV = $8549
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_AB_OUTPUT_NV, #PB_Constant)
+#GL_COMBINER_AB_OUTPUT_NV = $854A
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_CD_OUTPUT_NV, #PB_Constant)
+#GL_COMBINER_CD_OUTPUT_NV = $854B
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER_SUM_OUTPUT_NV, #PB_Constant)
+#GL_COMBINER_SUM_OUTPUT_NV = $854C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GENERAL_COMBINERS_NV, #PB_Constant)
+#GL_MAX_GENERAL_COMBINERS_NV = $854D
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_GENERAL_COMBINERS_NV, #PB_Constant)
+#GL_NUM_GENERAL_COMBINERS_NV = $854E
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_SUM_CLAMP_NV, #PB_Constant)
+#GL_COLOR_SUM_CLAMP_NV = $854F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER0_NV, #PB_Constant)
+#GL_COMBINER0_NV = $8550
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER1_NV, #PB_Constant)
+#GL_COMBINER1_NV = $8551
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER2_NV, #PB_Constant)
+#GL_COMBINER2_NV = $8552
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER3_NV, #PB_Constant)
+#GL_COMBINER3_NV = $8553
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER4_NV, #PB_Constant)
+#GL_COMBINER4_NV = $8554
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER5_NV, #PB_Constant)
+#GL_COMBINER5_NV = $8555
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER6_NV, #PB_Constant)
+#GL_COMBINER6_NV = $8556
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINER7_NV, #PB_Constant)
+#GL_COMBINER7_NV = $8557
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_NV, #PB_Constant)
+#GL_PRIMITIVE_RESTART_NV = $8558
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_INDEX_NV, #PB_Constant)
+#GL_PRIMITIVE_RESTART_INDEX_NV = $8559
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_DISTANCE_MODE_NV, #PB_Constant)
+#GL_FOG_DISTANCE_MODE_NV = $855A
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_RADIAL_NV, #PB_Constant)
+#GL_EYE_RADIAL_NV = $855B
+CompilerEndIf
+CompilerIf Not Defined(GL_EYE_PLANE_ABSOLUTE_NV, #PB_Constant)
+#GL_EYE_PLANE_ABSOLUTE_NV = $855C
+CompilerEndIf
+CompilerIf Not Defined(GL_EMBOSS_LIGHT_NV, #PB_Constant)
+#GL_EMBOSS_LIGHT_NV = $855D
+CompilerEndIf
+CompilerIf Not Defined(GL_EMBOSS_CONSTANT_NV, #PB_Constant)
+#GL_EMBOSS_CONSTANT_NV = $855E
+CompilerEndIf
+CompilerIf Not Defined(GL_EMBOSS_MAP_NV, #PB_Constant)
+#GL_EMBOSS_MAP_NV = $855F
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_MIN_CLAMP_INGR, #PB_Constant)
+#GL_RED_MIN_CLAMP_INGR = $8560
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_MIN_CLAMP_INGR, #PB_Constant)
+#GL_GREEN_MIN_CLAMP_INGR = $8561
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_MIN_CLAMP_INGR, #PB_Constant)
+#GL_BLUE_MIN_CLAMP_INGR = $8562
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_MIN_CLAMP_INGR, #PB_Constant)
+#GL_ALPHA_MIN_CLAMP_INGR = $8563
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_MAX_CLAMP_INGR, #PB_Constant)
+#GL_RED_MAX_CLAMP_INGR = $8564
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_MAX_CLAMP_INGR, #PB_Constant)
+#GL_GREEN_MAX_CLAMP_INGR = $8565
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_MAX_CLAMP_INGR, #PB_Constant)
+#GL_BLUE_MAX_CLAMP_INGR = $8566
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_MAX_CLAMP_INGR, #PB_Constant)
+#GL_ALPHA_MAX_CLAMP_INGR = $8567
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLACE_READ_INGR, #PB_Constant)
+#GL_INTERLACE_READ_INGR = $8568
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE, #PB_Constant)
+#GL_COMBINE = $8570
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_ARB, #PB_Constant)
+#GL_COMBINE_ARB = $8570
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_EXT, #PB_Constant)
+#GL_COMBINE_EXT = $8570
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_RGB, #PB_Constant)
+#GL_COMBINE_RGB = $8571
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_RGB_ARB, #PB_Constant)
+#GL_COMBINE_RGB_ARB = $8571
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_RGB_EXT, #PB_Constant)
+#GL_COMBINE_RGB_EXT = $8571
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_ALPHA, #PB_Constant)
+#GL_COMBINE_ALPHA = $8572
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_ALPHA_ARB, #PB_Constant)
+#GL_COMBINE_ALPHA_ARB = $8572
+CompilerEndIf
+CompilerIf Not Defined(GL_COMBINE_ALPHA_EXT, #PB_Constant)
+#GL_COMBINE_ALPHA_EXT = $8572
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_SCALE, #PB_Constant)
+#GL_RGB_SCALE = $8573
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_SCALE_ARB, #PB_Constant)
+#GL_RGB_SCALE_ARB = $8573
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_SCALE_EXT, #PB_Constant)
+#GL_RGB_SCALE_EXT = $8573
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD_SIGNED, #PB_Constant)
+#GL_ADD_SIGNED = $8574
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD_SIGNED_ARB, #PB_Constant)
+#GL_ADD_SIGNED_ARB = $8574
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD_SIGNED_EXT, #PB_Constant)
+#GL_ADD_SIGNED_EXT = $8574
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERPOLATE, #PB_Constant)
+#GL_INTERPOLATE = $8575
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERPOLATE_ARB, #PB_Constant)
+#GL_INTERPOLATE_ARB = $8575
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERPOLATE_EXT, #PB_Constant)
+#GL_INTERPOLATE_EXT = $8575
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT, #PB_Constant)
+#GL_CONSTANT = $8576
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_ARB, #PB_Constant)
+#GL_CONSTANT_ARB = $8576
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_EXT, #PB_Constant)
+#GL_CONSTANT_EXT = $8576
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSTANT_NV, #PB_Constant)
+#GL_CONSTANT_NV = $8576
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMARY_COLOR, #PB_Constant)
+#GL_PRIMARY_COLOR = $8577
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMARY_COLOR_ARB, #PB_Constant)
+#GL_PRIMARY_COLOR_ARB = $8577
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMARY_COLOR_EXT, #PB_Constant)
+#GL_PRIMARY_COLOR_EXT = $8577
+CompilerEndIf
+CompilerIf Not Defined(GL_PREVIOUS, #PB_Constant)
+#GL_PREVIOUS = $8578
+CompilerEndIf
+CompilerIf Not Defined(GL_PREVIOUS_ARB, #PB_Constant)
+#GL_PREVIOUS_ARB = $8578
+CompilerEndIf
+CompilerIf Not Defined(GL_PREVIOUS_EXT, #PB_Constant)
+#GL_PREVIOUS_EXT = $8578
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_RGB, #PB_Constant)
+#GL_SOURCE0_RGB = $8580
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_RGB_ARB, #PB_Constant)
+#GL_SOURCE0_RGB_ARB = $8580
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_RGB_EXT, #PB_Constant)
+#GL_SOURCE0_RGB_EXT = $8580
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC0_RGB, #PB_Constant)
+#GL_SRC0_RGB = $8580
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_RGB, #PB_Constant)
+#GL_SOURCE1_RGB = $8581
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_RGB_ARB, #PB_Constant)
+#GL_SOURCE1_RGB_ARB = $8581
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_RGB_EXT, #PB_Constant)
+#GL_SOURCE1_RGB_EXT = $8581
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC1_RGB, #PB_Constant)
+#GL_SRC1_RGB = $8581
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_RGB, #PB_Constant)
+#GL_SOURCE2_RGB = $8582
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_RGB_ARB, #PB_Constant)
+#GL_SOURCE2_RGB_ARB = $8582
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_RGB_EXT, #PB_Constant)
+#GL_SOURCE2_RGB_EXT = $8582
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC2_RGB, #PB_Constant)
+#GL_SRC2_RGB = $8582
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE3_RGB_NV, #PB_Constant)
+#GL_SOURCE3_RGB_NV = $8583
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_ALPHA, #PB_Constant)
+#GL_SOURCE0_ALPHA = $8588
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_ALPHA_ARB, #PB_Constant)
+#GL_SOURCE0_ALPHA_ARB = $8588
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE0_ALPHA_EXT, #PB_Constant)
+#GL_SOURCE0_ALPHA_EXT = $8588
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC0_ALPHA, #PB_Constant)
+#GL_SRC0_ALPHA = $8588
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_ALPHA, #PB_Constant)
+#GL_SOURCE1_ALPHA = $8589
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_ALPHA_ARB, #PB_Constant)
+#GL_SOURCE1_ALPHA_ARB = $8589
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE1_ALPHA_EXT, #PB_Constant)
+#GL_SOURCE1_ALPHA_EXT = $8589
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC1_ALPHA, #PB_Constant)
+#GL_SRC1_ALPHA = $8589
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC1_ALPHA_EXT, #PB_Constant)
+#GL_SRC1_ALPHA_EXT = $8589
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_ALPHA, #PB_Constant)
+#GL_SOURCE2_ALPHA = $858A
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_ALPHA_ARB, #PB_Constant)
+#GL_SOURCE2_ALPHA_ARB = $858A
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE2_ALPHA_EXT, #PB_Constant)
+#GL_SOURCE2_ALPHA_EXT = $858A
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC2_ALPHA, #PB_Constant)
+#GL_SRC2_ALPHA = $858A
+CompilerEndIf
+CompilerIf Not Defined(GL_SOURCE3_ALPHA_NV, #PB_Constant)
+#GL_SOURCE3_ALPHA_NV = $858B
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_RGB, #PB_Constant)
+#GL_OPERAND0_RGB = $8590
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_RGB_ARB, #PB_Constant)
+#GL_OPERAND0_RGB_ARB = $8590
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_RGB_EXT, #PB_Constant)
+#GL_OPERAND0_RGB_EXT = $8590
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_RGB, #PB_Constant)
+#GL_OPERAND1_RGB = $8591
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_RGB_ARB, #PB_Constant)
+#GL_OPERAND1_RGB_ARB = $8591
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_RGB_EXT, #PB_Constant)
+#GL_OPERAND1_RGB_EXT = $8591
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_RGB, #PB_Constant)
+#GL_OPERAND2_RGB = $8592
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_RGB_ARB, #PB_Constant)
+#GL_OPERAND2_RGB_ARB = $8592
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_RGB_EXT, #PB_Constant)
+#GL_OPERAND2_RGB_EXT = $8592
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND3_RGB_NV, #PB_Constant)
+#GL_OPERAND3_RGB_NV = $8593
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_ALPHA, #PB_Constant)
+#GL_OPERAND0_ALPHA = $8598
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_ALPHA_ARB, #PB_Constant)
+#GL_OPERAND0_ALPHA_ARB = $8598
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND0_ALPHA_EXT, #PB_Constant)
+#GL_OPERAND0_ALPHA_EXT = $8598
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_ALPHA, #PB_Constant)
+#GL_OPERAND1_ALPHA = $8599
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_ALPHA_ARB, #PB_Constant)
+#GL_OPERAND1_ALPHA_ARB = $8599
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND1_ALPHA_EXT, #PB_Constant)
+#GL_OPERAND1_ALPHA_EXT = $8599
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_ALPHA, #PB_Constant)
+#GL_OPERAND2_ALPHA = $859A
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_ALPHA_ARB, #PB_Constant)
+#GL_OPERAND2_ALPHA_ARB = $859A
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND2_ALPHA_EXT, #PB_Constant)
+#GL_OPERAND2_ALPHA_EXT = $859A
+CompilerEndIf
+CompilerIf Not Defined(GL_OPERAND3_ALPHA_NV, #PB_Constant)
+#GL_OPERAND3_ALPHA_NV = $859B
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_SUBSAMPLE_RATE_SGIX, #PB_Constant)
+#GL_PACK_SUBSAMPLE_RATE_SGIX = $85A0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_SUBSAMPLE_RATE_SGIX, #PB_Constant)
+#GL_UNPACK_SUBSAMPLE_RATE_SGIX = $85A1
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_SUBSAMPLE_4444_SGIX, #PB_Constant)
+#GL_PIXEL_SUBSAMPLE_4444_SGIX = $85A2
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_SUBSAMPLE_2424_SGIX, #PB_Constant)
+#GL_PIXEL_SUBSAMPLE_2424_SGIX = $85A3
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_SUBSAMPLE_4242_SGIX, #PB_Constant)
+#GL_PIXEL_SUBSAMPLE_4242_SGIX = $85A4
+CompilerEndIf
+CompilerIf Not Defined(GL_PERTURB_EXT, #PB_Constant)
+#GL_PERTURB_EXT = $85AE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_NORMAL_EXT, #PB_Constant)
+#GL_TEXTURE_NORMAL_EXT = $85AF
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE, #PB_Constant)
+#GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE = $85B0
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_HINT_APPLE, #PB_Constant)
+#GL_TRANSFORM_HINT_APPLE = $85B1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_CLIENT_STORAGE_APPLE, #PB_Constant)
+#GL_UNPACK_CLIENT_STORAGE_APPLE = $85B2
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_OBJECT_APPLE, #PB_Constant)
+#GL_BUFFER_OBJECT_APPLE = $85B3
+CompilerEndIf
+CompilerIf Not Defined(GL_STORAGE_CLIENT_APPLE, #PB_Constant)
+#GL_STORAGE_CLIENT_APPLE = $85B4
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_BINDING, #PB_Constant)
+#GL_VERTEX_ARRAY_BINDING = $85B5
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_BINDING_APPLE, #PB_Constant)
+#GL_VERTEX_ARRAY_BINDING_APPLE = $85B5
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_BINDING_OES, #PB_Constant)
+#GL_VERTEX_ARRAY_BINDING_OES = $85B5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RANGE_LENGTH_APPLE, #PB_Constant)
+#GL_TEXTURE_RANGE_LENGTH_APPLE = $85B7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RANGE_POINTER_APPLE, #PB_Constant)
+#GL_TEXTURE_RANGE_POINTER_APPLE = $85B8
+CompilerEndIf
+CompilerIf Not Defined(GL_YCBCR_422_APPLE, #PB_Constant)
+#GL_YCBCR_422_APPLE = $85B9
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_8_8_APPLE, #PB_Constant)
+#GL_UNSIGNED_SHORT_8_8_APPLE = $85BA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_8_8_MESA, #PB_Constant)
+#GL_UNSIGNED_SHORT_8_8_MESA = $85BA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_8_8_REV_APPLE, #PB_Constant)
+#GL_UNSIGNED_SHORT_8_8_REV_APPLE = $85BB
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_8_8_REV_MESA, #PB_Constant)
+#GL_UNSIGNED_SHORT_8_8_REV_MESA = $85BB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_STORAGE_HINT_APPLE, #PB_Constant)
+#GL_TEXTURE_STORAGE_HINT_APPLE = $85BC
+CompilerEndIf
+CompilerIf Not Defined(GL_STORAGE_PRIVATE_APPLE, #PB_Constant)
+#GL_STORAGE_PRIVATE_APPLE = $85BD
+CompilerEndIf
+CompilerIf Not Defined(GL_STORAGE_CACHED_APPLE, #PB_Constant)
+#GL_STORAGE_CACHED_APPLE = $85BE
+CompilerEndIf
+CompilerIf Not Defined(GL_STORAGE_SHARED_APPLE, #PB_Constant)
+#GL_STORAGE_SHARED_APPLE = $85BF
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACEMENT_CODE_ARRAY_SUN, #PB_Constant)
+#GL_REPLACEMENT_CODE_ARRAY_SUN = $85C0
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACEMENT_CODE_ARRAY_TYPE_SUN, #PB_Constant)
+#GL_REPLACEMENT_CODE_ARRAY_TYPE_SUN = $85C1
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACEMENT_CODE_ARRAY_STRIDE_SUN, #PB_Constant)
+#GL_REPLACEMENT_CODE_ARRAY_STRIDE_SUN = $85C2
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACEMENT_CODE_ARRAY_POINTER_SUN, #PB_Constant)
+#GL_REPLACEMENT_CODE_ARRAY_POINTER_SUN = $85C3
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_V3F_SUN, #PB_Constant)
+#GL_R1UI_V3F_SUN = $85C4
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_C4UB_V3F_SUN, #PB_Constant)
+#GL_R1UI_C4UB_V3F_SUN = $85C5
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_C3F_V3F_SUN, #PB_Constant)
+#GL_R1UI_C3F_V3F_SUN = $85C6
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_N3F_V3F_SUN, #PB_Constant)
+#GL_R1UI_N3F_V3F_SUN = $85C7
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_C4F_N3F_V3F_SUN, #PB_Constant)
+#GL_R1UI_C4F_N3F_V3F_SUN = $85C8
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_T2F_V3F_SUN, #PB_Constant)
+#GL_R1UI_T2F_V3F_SUN = $85C9
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_T2F_N3F_V3F_SUN, #PB_Constant)
+#GL_R1UI_T2F_N3F_V3F_SUN = $85CA
+CompilerEndIf
+CompilerIf Not Defined(GL_R1UI_T2F_C4F_N3F_V3F_SUN, #PB_Constant)
+#GL_R1UI_T2F_C4F_N3F_V3F_SUN = $85CB
+CompilerEndIf
+CompilerIf Not Defined(GL_SLICE_ACCUM_SUN, #PB_Constant)
+#GL_SLICE_ACCUM_SUN = $85CC
+CompilerEndIf
+CompilerIf Not Defined(GL_QUAD_MESH_SUN, #PB_Constant)
+#GL_QUAD_MESH_SUN = $8614
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGLE_MESH_SUN, #PB_Constant)
+#GL_TRIANGLE_MESH_SUN = $8615
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_ARB, #PB_Constant)
+#GL_VERTEX_PROGRAM_ARB = $8620
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_NV, #PB_Constant)
+#GL_VERTEX_PROGRAM_NV = $8620
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STATE_PROGRAM_NV, #PB_Constant)
+#GL_VERTEX_STATE_PROGRAM_NV = $8621
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_ENABLED, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_ENABLED = $8622
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_ENABLED_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_ENABLED_ARB = $8622
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIB_ARRAY_SIZE_NV, #PB_Constant)
+#GL_ATTRIB_ARRAY_SIZE_NV = $8623
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_SIZE, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_SIZE = $8623
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_SIZE_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_SIZE_ARB = $8623
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIB_ARRAY_STRIDE_NV, #PB_Constant)
+#GL_ATTRIB_ARRAY_STRIDE_NV = $8624
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_STRIDE, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_STRIDE = $8624
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_STRIDE_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_STRIDE_ARB = $8624
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIB_ARRAY_TYPE_NV, #PB_Constant)
+#GL_ATTRIB_ARRAY_TYPE_NV = $8625
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_TYPE, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_TYPE = $8625
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_TYPE_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_TYPE_ARB = $8625
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_ATTRIB_NV, #PB_Constant)
+#GL_CURRENT_ATTRIB_NV = $8626
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_VERTEX_ATTRIB, #PB_Constant)
+#GL_CURRENT_VERTEX_ATTRIB = $8626
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_VERTEX_ATTRIB_ARB, #PB_Constant)
+#GL_CURRENT_VERTEX_ATTRIB_ARB = $8626
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_LENGTH_ARB, #PB_Constant)
+#GL_PROGRAM_LENGTH_ARB = $8627
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_LENGTH_NV, #PB_Constant)
+#GL_PROGRAM_LENGTH_NV = $8627
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_STRING_ARB, #PB_Constant)
+#GL_PROGRAM_STRING_ARB = $8628
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_STRING_NV, #PB_Constant)
+#GL_PROGRAM_STRING_NV = $8628
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW_PROJECTION_NV, #PB_Constant)
+#GL_MODELVIEW_PROJECTION_NV = $8629
+CompilerEndIf
+CompilerIf Not Defined(GL_IDENTITY_NV, #PB_Constant)
+#GL_IDENTITY_NV = $862A
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERSE_NV, #PB_Constant)
+#GL_INVERSE_NV = $862B
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_NV, #PB_Constant)
+#GL_TRANSPOSE_NV = $862C
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERSE_TRANSPOSE_NV, #PB_Constant)
+#GL_INVERSE_TRANSPOSE_NV = $862D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB = $862E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRACK_MATRIX_STACK_DEPTH_NV, #PB_Constant)
+#GL_MAX_TRACK_MATRIX_STACK_DEPTH_NV = $862E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_MATRICES_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_MATRICES_ARB = $862F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRACK_MATRICES_NV, #PB_Constant)
+#GL_MAX_TRACK_MATRICES_NV = $862F
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX0_NV, #PB_Constant)
+#GL_MATRIX0_NV = $8630
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX1_NV, #PB_Constant)
+#GL_MATRIX1_NV = $8631
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX2_NV, #PB_Constant)
+#GL_MATRIX2_NV = $8632
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX3_NV, #PB_Constant)
+#GL_MATRIX3_NV = $8633
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX4_NV, #PB_Constant)
+#GL_MATRIX4_NV = $8634
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX5_NV, #PB_Constant)
+#GL_MATRIX5_NV = $8635
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX6_NV, #PB_Constant)
+#GL_MATRIX6_NV = $8636
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX7_NV, #PB_Constant)
+#GL_MATRIX7_NV = $8637
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_MATRIX_STACK_DEPTH_ARB, #PB_Constant)
+#GL_CURRENT_MATRIX_STACK_DEPTH_ARB = $8640
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_MATRIX_STACK_DEPTH_NV, #PB_Constant)
+#GL_CURRENT_MATRIX_STACK_DEPTH_NV = $8640
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_MATRIX_ARB, #PB_Constant)
+#GL_CURRENT_MATRIX_ARB = $8641
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_MATRIX_NV, #PB_Constant)
+#GL_CURRENT_MATRIX_NV = $8641
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_POINT_SIZE, #PB_Constant)
+#GL_VERTEX_PROGRAM_POINT_SIZE = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_POINT_SIZE_ARB, #PB_Constant)
+#GL_VERTEX_PROGRAM_POINT_SIZE_ARB = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_POINT_SIZE_NV, #PB_Constant)
+#GL_VERTEX_PROGRAM_POINT_SIZE_NV = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_POINT_SIZE, #PB_Constant)
+#GL_PROGRAM_POINT_SIZE = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_POINT_SIZE_ARB, #PB_Constant)
+#GL_PROGRAM_POINT_SIZE_ARB = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_POINT_SIZE_EXT, #PB_Constant)
+#GL_PROGRAM_POINT_SIZE_EXT = $8642
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_TWO_SIDE, #PB_Constant)
+#GL_VERTEX_PROGRAM_TWO_SIDE = $8643
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_TWO_SIDE_ARB, #PB_Constant)
+#GL_VERTEX_PROGRAM_TWO_SIDE_ARB = $8643
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_TWO_SIDE_NV, #PB_Constant)
+#GL_VERTEX_PROGRAM_TWO_SIDE_NV = $8643
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PARAMETER_NV, #PB_Constant)
+#GL_PROGRAM_PARAMETER_NV = $8644
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTRIB_ARRAY_POINTER_NV, #PB_Constant)
+#GL_ATTRIB_ARRAY_POINTER_NV = $8645
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_POINTER, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_POINTER = $8645
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB = $8645
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_TARGET_NV, #PB_Constant)
+#GL_PROGRAM_TARGET_NV = $8646
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_RESIDENT_NV, #PB_Constant)
+#GL_PROGRAM_RESIDENT_NV = $8647
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACK_MATRIX_NV, #PB_Constant)
+#GL_TRACK_MATRIX_NV = $8648
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACK_MATRIX_TRANSFORM_NV, #PB_Constant)
+#GL_TRACK_MATRIX_TRANSFORM_NV = $8649
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_BINDING_NV, #PB_Constant)
+#GL_VERTEX_PROGRAM_BINDING_NV = $864A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ERROR_POSITION_ARB, #PB_Constant)
+#GL_PROGRAM_ERROR_POSITION_ARB = $864B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ERROR_POSITION_NV, #PB_Constant)
+#GL_PROGRAM_ERROR_POSITION_NV = $864B
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_RECTANGLE_NV = $864C
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_RECTANGLE_SCALE_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_RECTANGLE_SCALE_NV = $864D
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_DOT_PRODUCT_TEXTURE_RECTANGLE_NV = $864E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLAMP, #PB_Constant)
+#GL_DEPTH_CLAMP = $864F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLAMP_NV, #PB_Constant)
+#GL_DEPTH_CLAMP_NV = $864F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLAMP_EXT, #PB_Constant)
+#GL_DEPTH_CLAMP_EXT = $864F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY0_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY0_NV = $8650
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY1_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY1_NV = $8651
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY2_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY2_NV = $8652
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY3_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY3_NV = $8653
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY4_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY4_NV = $8654
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY5_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY5_NV = $8655
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY6_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY6_NV = $8656
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY7_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY7_NV = $8657
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY8_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY8_NV = $8658
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY9_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY9_NV = $8659
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY10_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY10_NV = $865A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY11_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY11_NV = $865B
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY12_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY12_NV = $865C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY13_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY13_NV = $865D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY14_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY14_NV = $865E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY15_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY15_NV = $865F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB0_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB0_4_NV = $8660
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB1_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB1_4_NV = $8661
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB2_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB2_4_NV = $8662
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB3_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB3_4_NV = $8663
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB4_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB4_4_NV = $8664
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB5_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB5_4_NV = $8665
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB6_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB6_4_NV = $8666
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB7_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB7_4_NV = $8667
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB8_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB8_4_NV = $8668
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB9_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB9_4_NV = $8669
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB10_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB10_4_NV = $866A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB11_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB11_4_NV = $866B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB12_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB12_4_NV = $866C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB13_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB13_4_NV = $866D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB14_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB14_4_NV = $866E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP1_VERTEX_ATTRIB15_4_NV, #PB_Constant)
+#GL_MAP1_VERTEX_ATTRIB15_4_NV = $866F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB0_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB0_4_NV = $8670
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB1_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB1_4_NV = $8671
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB2_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB2_4_NV = $8672
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB3_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB3_4_NV = $8673
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB4_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB4_4_NV = $8674
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB5_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB5_4_NV = $8675
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB6_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB6_4_NV = $8676
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB7_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB7_4_NV = $8677
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINDING_ARB, #PB_Constant)
+#GL_PROGRAM_BINDING_ARB = $8677
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB8_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB8_4_NV = $8678
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB9_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB9_4_NV = $8679
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB10_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB10_4_NV = $867A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB11_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB11_4_NV = $867B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB12_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB12_4_NV = $867C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB13_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB13_4_NV = $867D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB14_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB14_4_NV = $867E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP2_VERTEX_ATTRIB15_4_NV, #PB_Constant)
+#GL_MAP2_VERTEX_ATTRIB15_4_NV = $867F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_IMAGE_SIZE, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_IMAGE_SIZE = $86A0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB = $86A0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED, #PB_Constant)
+#GL_TEXTURE_COMPRESSED = $86A1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPRESSED_ARB, #PB_Constant)
+#GL_TEXTURE_COMPRESSED_ARB = $86A1
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_COMPRESSED_TEXTURE_FORMATS, #PB_Constant)
+#GL_NUM_COMPRESSED_TEXTURE_FORMATS = $86A2
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB, #PB_Constant)
+#GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB = $86A2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_TEXTURE_FORMATS, #PB_Constant)
+#GL_COMPRESSED_TEXTURE_FORMATS = $86A3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_TEXTURE_FORMATS_ARB, #PB_Constant)
+#GL_COMPRESSED_TEXTURE_FORMATS_ARB = $86A3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNITS_ARB, #PB_Constant)
+#GL_MAX_VERTEX_UNITS_ARB = $86A4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNITS_OES, #PB_Constant)
+#GL_MAX_VERTEX_UNITS_OES = $86A4
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_VERTEX_UNITS_ARB, #PB_Constant)
+#GL_ACTIVE_VERTEX_UNITS_ARB = $86A5
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_SUM_UNITY_ARB, #PB_Constant)
+#GL_WEIGHT_SUM_UNITY_ARB = $86A6
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_BLEND_ARB, #PB_Constant)
+#GL_VERTEX_BLEND_ARB = $86A7
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_WEIGHT_ARB, #PB_Constant)
+#GL_CURRENT_WEIGHT_ARB = $86A8
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_TYPE_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_TYPE_ARB = $86A9
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_TYPE_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_TYPE_OES = $86A9
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_STRIDE_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_STRIDE_ARB = $86AA
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_STRIDE_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_STRIDE_OES = $86AA
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_SIZE_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_SIZE_ARB = $86AB
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_SIZE_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_SIZE_OES = $86AB
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_POINTER_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_POINTER_ARB = $86AC
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_POINTER_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_POINTER_OES = $86AC
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_ARB = $86AD
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_OES = $86AD
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGB, #PB_Constant)
+#GL_DOT3_RGB = $86AE
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGB_ARB, #PB_Constant)
+#GL_DOT3_RGB_ARB = $86AE
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGBA, #PB_Constant)
+#GL_DOT3_RGBA = $86AF
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGBA_ARB, #PB_Constant)
+#GL_DOT3_RGBA_ARB = $86AF
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGBA_IMG, #PB_Constant)
+#GL_DOT3_RGBA_IMG = $86AF
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_FXT1_3DFX, #PB_Constant)
+#GL_COMPRESSED_RGB_FXT1_3DFX = $86B0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_FXT1_3DFX, #PB_Constant)
+#GL_COMPRESSED_RGBA_FXT1_3DFX = $86B1
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_3DFX, #PB_Constant)
+#GL_MULTISAMPLE_3DFX = $86B2
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_BUFFERS_3DFX, #PB_Constant)
+#GL_SAMPLE_BUFFERS_3DFX = $86B3
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_3DFX, #PB_Constant)
+#GL_SAMPLES_3DFX = $86B4
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_2D_NV, #PB_Constant)
+#GL_EVAL_2D_NV = $86C0
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_TRIANGULAR_2D_NV, #PB_Constant)
+#GL_EVAL_TRIANGULAR_2D_NV = $86C1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_TESSELLATION_NV, #PB_Constant)
+#GL_MAP_TESSELLATION_NV = $86C2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_ATTRIB_U_ORDER_NV, #PB_Constant)
+#GL_MAP_ATTRIB_U_ORDER_NV = $86C3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAP_ATTRIB_V_ORDER_NV, #PB_Constant)
+#GL_MAP_ATTRIB_V_ORDER_NV = $86C4
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_FRACTIONAL_TESSELLATION_NV, #PB_Constant)
+#GL_EVAL_FRACTIONAL_TESSELLATION_NV = $86C5
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB0_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB0_NV = $86C6
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB1_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB1_NV = $86C7
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB2_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB2_NV = $86C8
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB3_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB3_NV = $86C9
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB4_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB4_NV = $86CA
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB5_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB5_NV = $86CB
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB6_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB6_NV = $86CC
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB7_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB7_NV = $86CD
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB8_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB8_NV = $86CE
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB9_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB9_NV = $86CF
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB10_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB10_NV = $86D0
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB11_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB11_NV = $86D1
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB12_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB12_NV = $86D2
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB13_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB13_NV = $86D3
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB14_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB14_NV = $86D4
+CompilerEndIf
+CompilerIf Not Defined(GL_EVAL_VERTEX_ATTRIB15_NV, #PB_Constant)
+#GL_EVAL_VERTEX_ATTRIB15_NV = $86D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MAP_TESSELLATION_NV, #PB_Constant)
+#GL_MAX_MAP_TESSELLATION_NV = $86D6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RATIONAL_EVAL_ORDER_NV, #PB_Constant)
+#GL_MAX_RATIONAL_EVAL_ORDER_NV = $86D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_PATCH_ATTRIBS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_PATCH_ATTRIBS_NV = $86D8
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_UNSIGNED_DOT_PRODUCT_MAPPING_NV, #PB_Constant)
+#GL_RGBA_UNSIGNED_DOT_PRODUCT_MAPPING_NV = $86D9
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_S8_S8_8_8_NV, #PB_Constant)
+#GL_UNSIGNED_INT_S8_S8_8_8_NV = $86DA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_8_S8_S8_REV_NV, #PB_Constant)
+#GL_UNSIGNED_INT_8_8_S8_S8_REV_NV = $86DB
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT_MAG_INTENSITY_NV, #PB_Constant)
+#GL_DSDT_MAG_INTENSITY_NV = $86DC
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CONSISTENT_NV, #PB_Constant)
+#GL_SHADER_CONSISTENT_NV = $86DD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SHADER_NV, #PB_Constant)
+#GL_TEXTURE_SHADER_NV = $86DE
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_OPERATION_NV, #PB_Constant)
+#GL_SHADER_OPERATION_NV = $86DF
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_MODES_NV, #PB_Constant)
+#GL_CULL_MODES_NV = $86E0
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_MATRIX_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_MATRIX_NV = $86E1
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_2D_MATRIX_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_2D_MATRIX_NV = $86E1
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_SCALE_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_SCALE_NV = $86E2
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_2D_SCALE_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_2D_SCALE_NV = $86E2
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_BIAS_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_BIAS_NV = $86E3
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_2D_BIAS_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_2D_BIAS_NV = $86E3
+CompilerEndIf
+CompilerIf Not Defined(GL_PREVIOUS_TEXTURE_INPUT_NV, #PB_Constant)
+#GL_PREVIOUS_TEXTURE_INPUT_NV = $86E4
+CompilerEndIf
+CompilerIf Not Defined(GL_CONST_EYE_NV, #PB_Constant)
+#GL_CONST_EYE_NV = $86E5
+CompilerEndIf
+CompilerIf Not Defined(GL_PASS_THROUGH_NV, #PB_Constant)
+#GL_PASS_THROUGH_NV = $86E6
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_FRAGMENT_NV, #PB_Constant)
+#GL_CULL_FRAGMENT_NV = $86E7
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_TEXTURE_2D_NV, #PB_Constant)
+#GL_OFFSET_TEXTURE_2D_NV = $86E8
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPENDENT_AR_TEXTURE_2D_NV, #PB_Constant)
+#GL_DEPENDENT_AR_TEXTURE_2D_NV = $86E9
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPENDENT_GB_TEXTURE_2D_NV, #PB_Constant)
+#GL_DEPENDENT_GB_TEXTURE_2D_NV = $86EA
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_STATE_NV, #PB_Constant)
+#GL_SURFACE_STATE_NV = $86EB
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_NV, #PB_Constant)
+#GL_DOT_PRODUCT_NV = $86EC
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_DEPTH_REPLACE_NV, #PB_Constant)
+#GL_DOT_PRODUCT_DEPTH_REPLACE_NV = $86ED
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_TEXTURE_2D_NV, #PB_Constant)
+#GL_DOT_PRODUCT_TEXTURE_2D_NV = $86EE
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_TEXTURE_3D_NV, #PB_Constant)
+#GL_DOT_PRODUCT_TEXTURE_3D_NV = $86EF
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_TEXTURE_CUBE_MAP_NV, #PB_Constant)
+#GL_DOT_PRODUCT_TEXTURE_CUBE_MAP_NV = $86F0
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_DIFFUSE_CUBE_MAP_NV, #PB_Constant)
+#GL_DOT_PRODUCT_DIFFUSE_CUBE_MAP_NV = $86F1
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_REFLECT_CUBE_MAP_NV, #PB_Constant)
+#GL_DOT_PRODUCT_REFLECT_CUBE_MAP_NV = $86F2
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_CONST_EYE_REFLECT_CUBE_MAP_NV, #PB_Constant)
+#GL_DOT_PRODUCT_CONST_EYE_REFLECT_CUBE_MAP_NV = $86F3
+CompilerEndIf
+CompilerIf Not Defined(GL_HILO_NV, #PB_Constant)
+#GL_HILO_NV = $86F4
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT_NV, #PB_Constant)
+#GL_DSDT_NV = $86F5
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT_MAG_NV, #PB_Constant)
+#GL_DSDT_MAG_NV = $86F6
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT_MAG_VIB_NV, #PB_Constant)
+#GL_DSDT_MAG_VIB_NV = $86F7
+CompilerEndIf
+CompilerIf Not Defined(GL_HILO16_NV, #PB_Constant)
+#GL_HILO16_NV = $86F8
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_HILO_NV, #PB_Constant)
+#GL_SIGNED_HILO_NV = $86F9
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_HILO16_NV, #PB_Constant)
+#GL_SIGNED_HILO16_NV = $86FA
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGBA_NV, #PB_Constant)
+#GL_SIGNED_RGBA_NV = $86FB
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGBA8_NV, #PB_Constant)
+#GL_SIGNED_RGBA8_NV = $86FC
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_REGISTERED_NV, #PB_Constant)
+#GL_SURFACE_REGISTERED_NV = $86FD
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGB_NV, #PB_Constant)
+#GL_SIGNED_RGB_NV = $86FE
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGB8_NV, #PB_Constant)
+#GL_SIGNED_RGB8_NV = $86FF
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_MAPPED_NV, #PB_Constant)
+#GL_SURFACE_MAPPED_NV = $8700
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_LUMINANCE_NV, #PB_Constant)
+#GL_SIGNED_LUMINANCE_NV = $8701
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_LUMINANCE8_NV, #PB_Constant)
+#GL_SIGNED_LUMINANCE8_NV = $8702
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_LUMINANCE_ALPHA_NV, #PB_Constant)
+#GL_SIGNED_LUMINANCE_ALPHA_NV = $8703
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_LUMINANCE8_ALPHA8_NV, #PB_Constant)
+#GL_SIGNED_LUMINANCE8_ALPHA8_NV = $8704
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_ALPHA_NV, #PB_Constant)
+#GL_SIGNED_ALPHA_NV = $8705
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_ALPHA8_NV, #PB_Constant)
+#GL_SIGNED_ALPHA8_NV = $8706
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_INTENSITY_NV, #PB_Constant)
+#GL_SIGNED_INTENSITY_NV = $8707
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_INTENSITY8_NV, #PB_Constant)
+#GL_SIGNED_INTENSITY8_NV = $8708
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT8_NV, #PB_Constant)
+#GL_DSDT8_NV = $8709
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT8_MAG8_NV, #PB_Constant)
+#GL_DSDT8_MAG8_NV = $870A
+CompilerEndIf
+CompilerIf Not Defined(GL_DSDT8_MAG8_INTENSITY8_NV, #PB_Constant)
+#GL_DSDT8_MAG8_INTENSITY8_NV = $870B
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGB_UNSIGNED_ALPHA_NV, #PB_Constant)
+#GL_SIGNED_RGB_UNSIGNED_ALPHA_NV = $870C
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_RGB8_UNSIGNED_ALPHA8_NV, #PB_Constant)
+#GL_SIGNED_RGB8_UNSIGNED_ALPHA8_NV = $870D
+CompilerEndIf
+CompilerIf Not Defined(GL_HI_SCALE_NV, #PB_Constant)
+#GL_HI_SCALE_NV = $870E
+CompilerEndIf
+CompilerIf Not Defined(GL_LO_SCALE_NV, #PB_Constant)
+#GL_LO_SCALE_NV = $870F
+CompilerEndIf
+CompilerIf Not Defined(GL_DS_SCALE_NV, #PB_Constant)
+#GL_DS_SCALE_NV = $8710
+CompilerEndIf
+CompilerIf Not Defined(GL_DT_SCALE_NV, #PB_Constant)
+#GL_DT_SCALE_NV = $8711
+CompilerEndIf
+CompilerIf Not Defined(GL_MAGNITUDE_SCALE_NV, #PB_Constant)
+#GL_MAGNITUDE_SCALE_NV = $8712
+CompilerEndIf
+CompilerIf Not Defined(GL_VIBRANCE_SCALE_NV, #PB_Constant)
+#GL_VIBRANCE_SCALE_NV = $8713
+CompilerEndIf
+CompilerIf Not Defined(GL_HI_BIAS_NV, #PB_Constant)
+#GL_HI_BIAS_NV = $8714
+CompilerEndIf
+CompilerIf Not Defined(GL_LO_BIAS_NV, #PB_Constant)
+#GL_LO_BIAS_NV = $8715
+CompilerEndIf
+CompilerIf Not Defined(GL_DS_BIAS_NV, #PB_Constant)
+#GL_DS_BIAS_NV = $8716
+CompilerEndIf
+CompilerIf Not Defined(GL_DT_BIAS_NV, #PB_Constant)
+#GL_DT_BIAS_NV = $8717
+CompilerEndIf
+CompilerIf Not Defined(GL_MAGNITUDE_BIAS_NV, #PB_Constant)
+#GL_MAGNITUDE_BIAS_NV = $8718
+CompilerEndIf
+CompilerIf Not Defined(GL_VIBRANCE_BIAS_NV, #PB_Constant)
+#GL_VIBRANCE_BIAS_NV = $8719
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BORDER_VALUES_NV, #PB_Constant)
+#GL_TEXTURE_BORDER_VALUES_NV = $871A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_HI_SIZE_NV, #PB_Constant)
+#GL_TEXTURE_HI_SIZE_NV = $871B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LO_SIZE_NV, #PB_Constant)
+#GL_TEXTURE_LO_SIZE_NV = $871C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DS_SIZE_NV, #PB_Constant)
+#GL_TEXTURE_DS_SIZE_NV = $871D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DT_SIZE_NV, #PB_Constant)
+#GL_TEXTURE_DT_SIZE_NV = $871E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MAG_SIZE_NV, #PB_Constant)
+#GL_TEXTURE_MAG_SIZE_NV = $871F
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW2_ARB, #PB_Constant)
+#GL_MODELVIEW2_ARB = $8722
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW3_ARB, #PB_Constant)
+#GL_MODELVIEW3_ARB = $8723
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW4_ARB, #PB_Constant)
+#GL_MODELVIEW4_ARB = $8724
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW5_ARB, #PB_Constant)
+#GL_MODELVIEW5_ARB = $8725
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW6_ARB, #PB_Constant)
+#GL_MODELVIEW6_ARB = $8726
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW7_ARB, #PB_Constant)
+#GL_MODELVIEW7_ARB = $8727
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW8_ARB, #PB_Constant)
+#GL_MODELVIEW8_ARB = $8728
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW9_ARB, #PB_Constant)
+#GL_MODELVIEW9_ARB = $8729
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW10_ARB, #PB_Constant)
+#GL_MODELVIEW10_ARB = $872A
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW11_ARB, #PB_Constant)
+#GL_MODELVIEW11_ARB = $872B
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW12_ARB, #PB_Constant)
+#GL_MODELVIEW12_ARB = $872C
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW13_ARB, #PB_Constant)
+#GL_MODELVIEW13_ARB = $872D
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW14_ARB, #PB_Constant)
+#GL_MODELVIEW14_ARB = $872E
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW15_ARB, #PB_Constant)
+#GL_MODELVIEW15_ARB = $872F
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW16_ARB, #PB_Constant)
+#GL_MODELVIEW16_ARB = $8730
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW17_ARB, #PB_Constant)
+#GL_MODELVIEW17_ARB = $8731
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW18_ARB, #PB_Constant)
+#GL_MODELVIEW18_ARB = $8732
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW19_ARB, #PB_Constant)
+#GL_MODELVIEW19_ARB = $8733
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW20_ARB, #PB_Constant)
+#GL_MODELVIEW20_ARB = $8734
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW21_ARB, #PB_Constant)
+#GL_MODELVIEW21_ARB = $8735
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW22_ARB, #PB_Constant)
+#GL_MODELVIEW22_ARB = $8736
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW23_ARB, #PB_Constant)
+#GL_MODELVIEW23_ARB = $8737
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW24_ARB, #PB_Constant)
+#GL_MODELVIEW24_ARB = $8738
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW25_ARB, #PB_Constant)
+#GL_MODELVIEW25_ARB = $8739
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW26_ARB, #PB_Constant)
+#GL_MODELVIEW26_ARB = $873A
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW27_ARB, #PB_Constant)
+#GL_MODELVIEW27_ARB = $873B
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW28_ARB, #PB_Constant)
+#GL_MODELVIEW28_ARB = $873C
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW29_ARB, #PB_Constant)
+#GL_MODELVIEW29_ARB = $873D
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW30_ARB, #PB_Constant)
+#GL_MODELVIEW30_ARB = $873E
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW31_ARB, #PB_Constant)
+#GL_MODELVIEW31_ARB = $873F
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGB_EXT, #PB_Constant)
+#GL_DOT3_RGB_EXT = $8740
+CompilerEndIf
+CompilerIf Not Defined(GL_Z400_BINARY_AMD, #PB_Constant)
+#GL_Z400_BINARY_AMD = $8740
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_RGBA_EXT, #PB_Constant)
+#GL_DOT3_RGBA_EXT = $8741
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_LENGTH_OES, #PB_Constant)
+#GL_PROGRAM_BINARY_LENGTH_OES = $8741
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_LENGTH, #PB_Constant)
+#GL_PROGRAM_BINARY_LENGTH = $8741
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_ATI, #PB_Constant)
+#GL_MIRROR_CLAMP_ATI = $8742
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_EXT, #PB_Constant)
+#GL_MIRROR_CLAMP_EXT = $8742
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_TO_EDGE, #PB_Constant)
+#GL_MIRROR_CLAMP_TO_EDGE = $8743
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_TO_EDGE_ATI, #PB_Constant)
+#GL_MIRROR_CLAMP_TO_EDGE_ATI = $8743
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_TO_EDGE_EXT, #PB_Constant)
+#GL_MIRROR_CLAMP_TO_EDGE_EXT = $8743
+CompilerEndIf
+CompilerIf Not Defined(GL_MODULATE_ADD_ATI, #PB_Constant)
+#GL_MODULATE_ADD_ATI = $8744
+CompilerEndIf
+CompilerIf Not Defined(GL_MODULATE_SIGNED_ADD_ATI, #PB_Constant)
+#GL_MODULATE_SIGNED_ADD_ATI = $8745
+CompilerEndIf
+CompilerIf Not Defined(GL_MODULATE_SUBTRACT_ATI, #PB_Constant)
+#GL_MODULATE_SUBTRACT_ATI = $8746
+CompilerEndIf
+CompilerIf Not Defined(GL_SET_AMD, #PB_Constant)
+#GL_SET_AMD = $874A
+CompilerEndIf
+CompilerIf Not Defined(GL_REPLACE_VALUE_AMD, #PB_Constant)
+#GL_REPLACE_VALUE_AMD = $874B
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_OP_VALUE_AMD, #PB_Constant)
+#GL_STENCIL_OP_VALUE_AMD = $874C
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_OP_VALUE_AMD, #PB_Constant)
+#GL_STENCIL_BACK_OP_VALUE_AMD = $874D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_LONG, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_LONG = $874E
+CompilerEndIf
+CompilerIf Not Defined(GL_OCCLUSION_QUERY_EVENT_MASK_AMD, #PB_Constant)
+#GL_OCCLUSION_QUERY_EVENT_MASK_AMD = $874F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_MESA, #PB_Constant)
+#GL_DEPTH_STENCIL_MESA = $8750
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_24_8_MESA, #PB_Constant)
+#GL_UNSIGNED_INT_24_8_MESA = $8751
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_8_24_REV_MESA, #PB_Constant)
+#GL_UNSIGNED_INT_8_24_REV_MESA = $8752
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_15_1_MESA, #PB_Constant)
+#GL_UNSIGNED_SHORT_15_1_MESA = $8753
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_SHORT_1_15_REV_MESA, #PB_Constant)
+#GL_UNSIGNED_SHORT_1_15_REV_MESA = $8754
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_MASK_MESA, #PB_Constant)
+#GL_TRACE_MASK_MESA = $8755
+CompilerEndIf
+CompilerIf Not Defined(GL_TRACE_NAME_MESA, #PB_Constant)
+#GL_TRACE_NAME_MESA = $8756
+CompilerEndIf
+CompilerIf Not Defined(GL_YCBCR_MESA, #PB_Constant)
+#GL_YCBCR_MESA = $8757
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_INVERT_MESA, #PB_Constant)
+#GL_PACK_INVERT_MESA = $8758
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OBJECT_MESA, #PB_Constant)
+#GL_DEBUG_OBJECT_MESA = $8759
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D_STACK_MESAX, #PB_Constant)
+#GL_TEXTURE_1D_STACK_MESAX = $8759
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_PRINT_MESA, #PB_Constant)
+#GL_DEBUG_PRINT_MESA = $875A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_STACK_MESAX, #PB_Constant)
+#GL_TEXTURE_2D_STACK_MESAX = $875A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_ASSERT_MESA, #PB_Constant)
+#GL_DEBUG_ASSERT_MESA = $875B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_1D_STACK_MESAX, #PB_Constant)
+#GL_PROXY_TEXTURE_1D_STACK_MESAX = $875B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_STACK_MESAX, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_STACK_MESAX = $875C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D_STACK_BINDING_MESAX, #PB_Constant)
+#GL_TEXTURE_1D_STACK_BINDING_MESAX = $875D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_STACK_BINDING_MESAX, #PB_Constant)
+#GL_TEXTURE_2D_STACK_BINDING_MESAX = $875E
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_FORMAT_MESA, #PB_Constant)
+#GL_PROGRAM_BINARY_FORMAT_MESA = $875F
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_ATI, #PB_Constant)
+#GL_STATIC_ATI = $8760
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_ATI, #PB_Constant)
+#GL_DYNAMIC_ATI = $8761
+CompilerEndIf
+CompilerIf Not Defined(GL_PRESERVE_ATI, #PB_Constant)
+#GL_PRESERVE_ATI = $8762
+CompilerEndIf
+CompilerIf Not Defined(GL_DISCARD_ATI, #PB_Constant)
+#GL_DISCARD_ATI = $8763
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_SIZE, #PB_Constant)
+#GL_BUFFER_SIZE = $8764
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_SIZE_ARB, #PB_Constant)
+#GL_BUFFER_SIZE_ARB = $8764
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_BUFFER_SIZE_ATI, #PB_Constant)
+#GL_OBJECT_BUFFER_SIZE_ATI = $8764
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_USAGE, #PB_Constant)
+#GL_BUFFER_USAGE = $8765
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_USAGE_ARB, #PB_Constant)
+#GL_BUFFER_USAGE_ARB = $8765
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_BUFFER_USAGE_ATI, #PB_Constant)
+#GL_OBJECT_BUFFER_USAGE_ATI = $8765
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_OBJECT_BUFFER_ATI, #PB_Constant)
+#GL_ARRAY_OBJECT_BUFFER_ATI = $8766
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_OBJECT_OFFSET_ATI, #PB_Constant)
+#GL_ARRAY_OBJECT_OFFSET_ATI = $8767
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_ATI, #PB_Constant)
+#GL_ELEMENT_ARRAY_ATI = $8768
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_TYPE_ATI, #PB_Constant)
+#GL_ELEMENT_ARRAY_TYPE_ATI = $8769
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_POINTER_ATI, #PB_Constant)
+#GL_ELEMENT_ARRAY_POINTER_ATI = $876A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_STREAMS_ATI, #PB_Constant)
+#GL_MAX_VERTEX_STREAMS_ATI = $876B
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM0_ATI, #PB_Constant)
+#GL_VERTEX_STREAM0_ATI = $876C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM1_ATI, #PB_Constant)
+#GL_VERTEX_STREAM1_ATI = $876D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM2_ATI, #PB_Constant)
+#GL_VERTEX_STREAM2_ATI = $876E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM3_ATI, #PB_Constant)
+#GL_VERTEX_STREAM3_ATI = $876F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM4_ATI, #PB_Constant)
+#GL_VERTEX_STREAM4_ATI = $8770
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM5_ATI, #PB_Constant)
+#GL_VERTEX_STREAM5_ATI = $8771
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM6_ATI, #PB_Constant)
+#GL_VERTEX_STREAM6_ATI = $8772
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_STREAM7_ATI, #PB_Constant)
+#GL_VERTEX_STREAM7_ATI = $8773
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SOURCE_ATI, #PB_Constant)
+#GL_VERTEX_SOURCE_ATI = $8774
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_ROT_MATRIX_ATI, #PB_Constant)
+#GL_BUMP_ROT_MATRIX_ATI = $8775
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_ROT_MATRIX_SIZE_ATI, #PB_Constant)
+#GL_BUMP_ROT_MATRIX_SIZE_ATI = $8776
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_NUM_TEX_UNITS_ATI, #PB_Constant)
+#GL_BUMP_NUM_TEX_UNITS_ATI = $8777
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_TEX_UNITS_ATI, #PB_Constant)
+#GL_BUMP_TEX_UNITS_ATI = $8778
+CompilerEndIf
+CompilerIf Not Defined(GL_DUDV_ATI, #PB_Constant)
+#GL_DUDV_ATI = $8779
+CompilerEndIf
+CompilerIf Not Defined(GL_DU8DV8_ATI, #PB_Constant)
+#GL_DU8DV8_ATI = $877A
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_ENVMAP_ATI, #PB_Constant)
+#GL_BUMP_ENVMAP_ATI = $877B
+CompilerEndIf
+CompilerIf Not Defined(GL_BUMP_TARGET_ATI, #PB_Constant)
+#GL_BUMP_TARGET_ATI = $877C
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_EXT = $8780
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_BINDING_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_BINDING_EXT = $8781
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_INDEX_EXT, #PB_Constant)
+#GL_OP_INDEX_EXT = $8782
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_NEGATE_EXT, #PB_Constant)
+#GL_OP_NEGATE_EXT = $8783
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_DOT3_EXT, #PB_Constant)
+#GL_OP_DOT3_EXT = $8784
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_DOT4_EXT, #PB_Constant)
+#GL_OP_DOT4_EXT = $8785
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MUL_EXT, #PB_Constant)
+#GL_OP_MUL_EXT = $8786
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_ADD_EXT, #PB_Constant)
+#GL_OP_ADD_EXT = $8787
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MADD_EXT, #PB_Constant)
+#GL_OP_MADD_EXT = $8788
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_FRAC_EXT, #PB_Constant)
+#GL_OP_FRAC_EXT = $8789
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MAX_EXT, #PB_Constant)
+#GL_OP_MAX_EXT = $878A
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MIN_EXT, #PB_Constant)
+#GL_OP_MIN_EXT = $878B
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_SET_GE_EXT, #PB_Constant)
+#GL_OP_SET_GE_EXT = $878C
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_SET_LT_EXT, #PB_Constant)
+#GL_OP_SET_LT_EXT = $878D
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_CLAMP_EXT, #PB_Constant)
+#GL_OP_CLAMP_EXT = $878E
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_FLOOR_EXT, #PB_Constant)
+#GL_OP_FLOOR_EXT = $878F
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_ROUND_EXT, #PB_Constant)
+#GL_OP_ROUND_EXT = $8790
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_EXP_BASE_2_EXT, #PB_Constant)
+#GL_OP_EXP_BASE_2_EXT = $8791
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_LOG_BASE_2_EXT, #PB_Constant)
+#GL_OP_LOG_BASE_2_EXT = $8792
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_POWER_EXT, #PB_Constant)
+#GL_OP_POWER_EXT = $8793
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_RECIP_EXT, #PB_Constant)
+#GL_OP_RECIP_EXT = $8794
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_RECIP_SQRT_EXT, #PB_Constant)
+#GL_OP_RECIP_SQRT_EXT = $8795
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_SUB_EXT, #PB_Constant)
+#GL_OP_SUB_EXT = $8796
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_CROSS_PRODUCT_EXT, #PB_Constant)
+#GL_OP_CROSS_PRODUCT_EXT = $8797
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MULTIPLY_MATRIX_EXT, #PB_Constant)
+#GL_OP_MULTIPLY_MATRIX_EXT = $8798
+CompilerEndIf
+CompilerIf Not Defined(GL_OP_MOV_EXT, #PB_Constant)
+#GL_OP_MOV_EXT = $8799
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_VERTEX_EXT, #PB_Constant)
+#GL_OUTPUT_VERTEX_EXT = $879A
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_COLOR0_EXT, #PB_Constant)
+#GL_OUTPUT_COLOR0_EXT = $879B
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_COLOR1_EXT, #PB_Constant)
+#GL_OUTPUT_COLOR1_EXT = $879C
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD0_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD0_EXT = $879D
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD1_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD1_EXT = $879E
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD2_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD2_EXT = $879F
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD3_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD3_EXT = $87A0
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD4_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD4_EXT = $87A1
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD5_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD5_EXT = $87A2
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD6_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD6_EXT = $87A3
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD7_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD7_EXT = $87A4
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD8_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD8_EXT = $87A5
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD9_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD9_EXT = $87A6
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD10_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD10_EXT = $87A7
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD11_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD11_EXT = $87A8
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD12_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD12_EXT = $87A9
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD13_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD13_EXT = $87AA
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD14_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD14_EXT = $87AB
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD15_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD15_EXT = $87AC
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD16_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD16_EXT = $87AD
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD17_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD17_EXT = $87AE
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD18_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD18_EXT = $87AF
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD19_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD19_EXT = $87B0
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD20_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD20_EXT = $87B1
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD21_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD21_EXT = $87B2
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD22_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD22_EXT = $87B3
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD23_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD23_EXT = $87B4
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD24_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD24_EXT = $87B5
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD25_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD25_EXT = $87B6
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD26_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD26_EXT = $87B7
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD27_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD27_EXT = $87B8
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD28_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD28_EXT = $87B9
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD29_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD29_EXT = $87BA
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD30_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD30_EXT = $87BB
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_TEXTURE_COORD31_EXT, #PB_Constant)
+#GL_OUTPUT_TEXTURE_COORD31_EXT = $87BC
+CompilerEndIf
+CompilerIf Not Defined(GL_OUTPUT_FOG_EXT, #PB_Constant)
+#GL_OUTPUT_FOG_EXT = $87BD
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALAR_EXT, #PB_Constant)
+#GL_SCALAR_EXT = $87BE
+CompilerEndIf
+CompilerIf Not Defined(GL_VECTOR_EXT, #PB_Constant)
+#GL_VECTOR_EXT = $87BF
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_EXT, #PB_Constant)
+#GL_MATRIX_EXT = $87C0
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_EXT, #PB_Constant)
+#GL_VARIANT_EXT = $87C1
+CompilerEndIf
+CompilerIf Not Defined(GL_INVARIANT_EXT, #PB_Constant)
+#GL_INVARIANT_EXT = $87C2
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCAL_CONSTANT_EXT, #PB_Constant)
+#GL_LOCAL_CONSTANT_EXT = $87C3
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCAL_EXT, #PB_Constant)
+#GL_LOCAL_EXT = $87C4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_INSTRUCTIONS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_INSTRUCTIONS_EXT = $87C5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_VARIANTS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_VARIANTS_EXT = $87C6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_INVARIANTS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_INVARIANTS_EXT = $87C7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_LOCAL_CONSTANTS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_LOCAL_CONSTANTS_EXT = $87C8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_LOCALS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_LOCALS_EXT = $87C9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_OPTIMIZED_VERTEX_SHADER_INSTRUCTIONS_EXT, #PB_Constant)
+#GL_MAX_OPTIMIZED_VERTEX_SHADER_INSTRUCTIONS_EXT = $87CA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_OPTIMIZED_VERTEX_SHADER_VARIANTS_EXT, #PB_Constant)
+#GL_MAX_OPTIMIZED_VERTEX_SHADER_VARIANTS_EXT = $87CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCAL_CONSTANTS_EXT, #PB_Constant)
+#GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCAL_CONSTANTS_EXT = $87CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_OPTIMIZED_VERTEX_SHADER_INVARIANTS_EXT, #PB_Constant)
+#GL_MAX_OPTIMIZED_VERTEX_SHADER_INVARIANTS_EXT = $87CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCALS_EXT, #PB_Constant)
+#GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCALS_EXT = $87CE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_INSTRUCTIONS_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_INSTRUCTIONS_EXT = $87CF
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_VARIANTS_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_VARIANTS_EXT = $87D0
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_INVARIANTS_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_INVARIANTS_EXT = $87D1
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_LOCAL_CONSTANTS_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_LOCAL_CONSTANTS_EXT = $87D2
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_LOCALS_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_LOCALS_EXT = $87D3
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_OPTIMIZED_EXT, #PB_Constant)
+#GL_VERTEX_SHADER_OPTIMIZED_EXT = $87D4
+CompilerEndIf
+CompilerIf Not Defined(GL_X_EXT, #PB_Constant)
+#GL_X_EXT = $87D5
+CompilerEndIf
+CompilerIf Not Defined(GL_Y_EXT, #PB_Constant)
+#GL_Y_EXT = $87D6
+CompilerEndIf
+CompilerIf Not Defined(GL_Z_EXT, #PB_Constant)
+#GL_Z_EXT = $87D7
+CompilerEndIf
+CompilerIf Not Defined(GL_W_EXT, #PB_Constant)
+#GL_W_EXT = $87D8
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_X_EXT, #PB_Constant)
+#GL_NEGATIVE_X_EXT = $87D9
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_Y_EXT, #PB_Constant)
+#GL_NEGATIVE_Y_EXT = $87DA
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_Z_EXT, #PB_Constant)
+#GL_NEGATIVE_Z_EXT = $87DB
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_W_EXT, #PB_Constant)
+#GL_NEGATIVE_W_EXT = $87DC
+CompilerEndIf
+CompilerIf Not Defined(GL_ZERO_EXT, #PB_Constant)
+#GL_ZERO_EXT = $87DD
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_EXT, #PB_Constant)
+#GL_ONE_EXT = $87DE
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_ONE_EXT, #PB_Constant)
+#GL_NEGATIVE_ONE_EXT = $87DF
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMALIZED_RANGE_EXT, #PB_Constant)
+#GL_NORMALIZED_RANGE_EXT = $87E0
+CompilerEndIf
+CompilerIf Not Defined(GL_FULL_RANGE_EXT, #PB_Constant)
+#GL_FULL_RANGE_EXT = $87E1
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_VERTEX_EXT, #PB_Constant)
+#GL_CURRENT_VERTEX_EXT = $87E2
+CompilerEndIf
+CompilerIf Not Defined(GL_MVP_MATRIX_EXT, #PB_Constant)
+#GL_MVP_MATRIX_EXT = $87E3
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_VALUE_EXT, #PB_Constant)
+#GL_VARIANT_VALUE_EXT = $87E4
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_DATATYPE_EXT, #PB_Constant)
+#GL_VARIANT_DATATYPE_EXT = $87E5
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_ARRAY_STRIDE_EXT, #PB_Constant)
+#GL_VARIANT_ARRAY_STRIDE_EXT = $87E6
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_ARRAY_TYPE_EXT, #PB_Constant)
+#GL_VARIANT_ARRAY_TYPE_EXT = $87E7
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_ARRAY_EXT, #PB_Constant)
+#GL_VARIANT_ARRAY_EXT = $87E8
+CompilerEndIf
+CompilerIf Not Defined(GL_VARIANT_ARRAY_POINTER_EXT, #PB_Constant)
+#GL_VARIANT_ARRAY_POINTER_EXT = $87E9
+CompilerEndIf
+CompilerIf Not Defined(GL_INVARIANT_VALUE_EXT, #PB_Constant)
+#GL_INVARIANT_VALUE_EXT = $87EA
+CompilerEndIf
+CompilerIf Not Defined(GL_INVARIANT_DATATYPE_EXT, #PB_Constant)
+#GL_INVARIANT_DATATYPE_EXT = $87EB
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCAL_CONSTANT_VALUE_EXT, #PB_Constant)
+#GL_LOCAL_CONSTANT_VALUE_EXT = $87EC
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCAL_CONSTANT_DATATYPE_EXT, #PB_Constant)
+#GL_LOCAL_CONSTANT_DATATYPE_EXT = $87ED
+CompilerEndIf
+CompilerIf Not Defined(GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD, #PB_Constant)
+#GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD = $87EE
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_ATI = $87F0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI, #PB_Constant)
+#GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI = $87F1
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_POINT_MODE_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_POINT_MODE_ATI = $87F2
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_NORMAL_MODE_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_NORMAL_MODE_ATI = $87F3
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI = $87F4
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_POINT_MODE_LINEAR_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_POINT_MODE_LINEAR_ATI = $87F5
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI = $87F6
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI = $87F7
+CompilerEndIf
+CompilerIf Not Defined(GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI, #PB_Constant)
+#GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI = $87F8
+CompilerEndIf
+CompilerIf Not Defined(GL_3DC_X_AMD, #PB_Constant)
+#GL_3DC_X_AMD = $87F9
+CompilerEndIf
+CompilerIf Not Defined(GL_3DC_XY_AMD, #PB_Constant)
+#GL_3DC_XY_AMD = $87FA
+CompilerEndIf
+CompilerIf Not Defined(GL_VBO_FREE_MEMORY_ATI, #PB_Constant)
+#GL_VBO_FREE_MEMORY_ATI = $87FB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FREE_MEMORY_ATI, #PB_Constant)
+#GL_TEXTURE_FREE_MEMORY_ATI = $87FC
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_FREE_MEMORY_ATI, #PB_Constant)
+#GL_RENDERBUFFER_FREE_MEMORY_ATI = $87FD
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_PROGRAM_BINARY_FORMATS, #PB_Constant)
+#GL_NUM_PROGRAM_BINARY_FORMATS = $87FE
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_PROGRAM_BINARY_FORMATS_OES, #PB_Constant)
+#GL_NUM_PROGRAM_BINARY_FORMATS_OES = $87FE
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_FORMATS, #PB_Constant)
+#GL_PROGRAM_BINARY_FORMATS = $87FF
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_FORMATS_OES, #PB_Constant)
+#GL_PROGRAM_BINARY_FORMATS_OES = $87FF
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_FUNC, #PB_Constant)
+#GL_STENCIL_BACK_FUNC = $8800
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_FUNC_ATI, #PB_Constant)
+#GL_STENCIL_BACK_FUNC_ATI = $8800
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_FAIL, #PB_Constant)
+#GL_STENCIL_BACK_FAIL = $8801
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_FAIL_ATI, #PB_Constant)
+#GL_STENCIL_BACK_FAIL_ATI = $8801
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_PASS_DEPTH_FAIL, #PB_Constant)
+#GL_STENCIL_BACK_PASS_DEPTH_FAIL = $8802
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_PASS_DEPTH_FAIL_ATI, #PB_Constant)
+#GL_STENCIL_BACK_PASS_DEPTH_FAIL_ATI = $8802
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_PASS_DEPTH_PASS, #PB_Constant)
+#GL_STENCIL_BACK_PASS_DEPTH_PASS = $8803
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_PASS_DEPTH_PASS_ATI, #PB_Constant)
+#GL_STENCIL_BACK_PASS_DEPTH_PASS_ATI = $8803
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_ARB, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_ARB = $8804
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ALU_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_ALU_INSTRUCTIONS_ARB = $8805
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_TEX_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_TEX_INSTRUCTIONS_ARB = $8806
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_TEX_INDIRECTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_TEX_INDIRECTIONS_ARB = $8807
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB = $8808
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB = $8809
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB = $880A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_ALU_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_ALU_INSTRUCTIONS_ARB = $880B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEX_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_TEX_INSTRUCTIONS_ARB = $880C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEX_INDIRECTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_TEX_INDIRECTIONS_ARB = $880D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB = $880E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB = $880F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB = $8810
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32F, #PB_Constant)
+#GL_RGBA32F = $8814
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32F_ARB, #PB_Constant)
+#GL_RGBA32F_ARB = $8814
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32F_EXT, #PB_Constant)
+#GL_RGBA32F_EXT = $8814
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT32_APPLE, #PB_Constant)
+#GL_RGBA_FLOAT32_APPLE = $8814
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT32_ATI, #PB_Constant)
+#GL_RGBA_FLOAT32_ATI = $8814
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32F, #PB_Constant)
+#GL_RGB32F = $8815
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32F_ARB, #PB_Constant)
+#GL_RGB32F_ARB = $8815
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32F_EXT, #PB_Constant)
+#GL_RGB32F_EXT = $8815
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_FLOAT32_APPLE, #PB_Constant)
+#GL_RGB_FLOAT32_APPLE = $8815
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_FLOAT32_ATI, #PB_Constant)
+#GL_RGB_FLOAT32_ATI = $8815
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA32F_ARB, #PB_Constant)
+#GL_ALPHA32F_ARB = $8816
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA32F_EXT, #PB_Constant)
+#GL_ALPHA32F_EXT = $8816
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_FLOAT32_APPLE, #PB_Constant)
+#GL_ALPHA_FLOAT32_APPLE = $8816
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_FLOAT32_ATI, #PB_Constant)
+#GL_ALPHA_FLOAT32_ATI = $8816
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY32F_ARB, #PB_Constant)
+#GL_INTENSITY32F_ARB = $8817
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_FLOAT32_APPLE, #PB_Constant)
+#GL_INTENSITY_FLOAT32_APPLE = $8817
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_FLOAT32_ATI, #PB_Constant)
+#GL_INTENSITY_FLOAT32_ATI = $8817
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE32F_ARB, #PB_Constant)
+#GL_LUMINANCE32F_ARB = $8818
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE32F_EXT, #PB_Constant)
+#GL_LUMINANCE32F_EXT = $8818
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_FLOAT32_APPLE, #PB_Constant)
+#GL_LUMINANCE_FLOAT32_APPLE = $8818
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_FLOAT32_ATI, #PB_Constant)
+#GL_LUMINANCE_FLOAT32_ATI = $8818
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA32F_ARB, #PB_Constant)
+#GL_LUMINANCE_ALPHA32F_ARB = $8819
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA32F_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA32F_EXT = $8819
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_FLOAT32_APPLE, #PB_Constant)
+#GL_LUMINANCE_ALPHA_FLOAT32_APPLE = $8819
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_FLOAT32_ATI, #PB_Constant)
+#GL_LUMINANCE_ALPHA_FLOAT32_ATI = $8819
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16F, #PB_Constant)
+#GL_RGBA16F = $881A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16F_ARB, #PB_Constant)
+#GL_RGBA16F_ARB = $881A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16F_EXT, #PB_Constant)
+#GL_RGBA16F_EXT = $881A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT16_APPLE, #PB_Constant)
+#GL_RGBA_FLOAT16_APPLE = $881A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT16_ATI, #PB_Constant)
+#GL_RGBA_FLOAT16_ATI = $881A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16F, #PB_Constant)
+#GL_RGB16F = $881B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16F_ARB, #PB_Constant)
+#GL_RGB16F_ARB = $881B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16F_EXT, #PB_Constant)
+#GL_RGB16F_EXT = $881B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_FLOAT16_APPLE, #PB_Constant)
+#GL_RGB_FLOAT16_APPLE = $881B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_FLOAT16_ATI, #PB_Constant)
+#GL_RGB_FLOAT16_ATI = $881B
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16F_ARB, #PB_Constant)
+#GL_ALPHA16F_ARB = $881C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16F_EXT, #PB_Constant)
+#GL_ALPHA16F_EXT = $881C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_FLOAT16_APPLE, #PB_Constant)
+#GL_ALPHA_FLOAT16_APPLE = $881C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_FLOAT16_ATI, #PB_Constant)
+#GL_ALPHA_FLOAT16_ATI = $881C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16F_ARB, #PB_Constant)
+#GL_INTENSITY16F_ARB = $881D
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_FLOAT16_APPLE, #PB_Constant)
+#GL_INTENSITY_FLOAT16_APPLE = $881D
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_FLOAT16_ATI, #PB_Constant)
+#GL_INTENSITY_FLOAT16_ATI = $881D
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16F_ARB, #PB_Constant)
+#GL_LUMINANCE16F_ARB = $881E
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16F_EXT, #PB_Constant)
+#GL_LUMINANCE16F_EXT = $881E
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_FLOAT16_APPLE, #PB_Constant)
+#GL_LUMINANCE_FLOAT16_APPLE = $881E
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_FLOAT16_ATI, #PB_Constant)
+#GL_LUMINANCE_FLOAT16_ATI = $881E
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA16F_ARB, #PB_Constant)
+#GL_LUMINANCE_ALPHA16F_ARB = $881F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA16F_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA16F_EXT = $881F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_FLOAT16_APPLE, #PB_Constant)
+#GL_LUMINANCE_ALPHA_FLOAT16_APPLE = $881F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_FLOAT16_ATI, #PB_Constant)
+#GL_LUMINANCE_ALPHA_FLOAT16_ATI = $881F
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT_MODE_ARB, #PB_Constant)
+#GL_RGBA_FLOAT_MODE_ARB = $8820
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_FLOAT_MODE_ATI, #PB_Constant)
+#GL_RGBA_FLOAT_MODE_ATI = $8820
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITEONLY_RENDERING_QCOM, #PB_Constant)
+#GL_WRITEONLY_RENDERING_QCOM = $8823
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_BUFFERS, #PB_Constant)
+#GL_MAX_DRAW_BUFFERS = $8824
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_BUFFERS_ARB, #PB_Constant)
+#GL_MAX_DRAW_BUFFERS_ARB = $8824
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_BUFFERS_ATI, #PB_Constant)
+#GL_MAX_DRAW_BUFFERS_ATI = $8824
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_DRAW_BUFFERS_EXT = $8824
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_BUFFERS_NV, #PB_Constant)
+#GL_MAX_DRAW_BUFFERS_NV = $8824
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER0, #PB_Constant)
+#GL_DRAW_BUFFER0 = $8825
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER0_ARB, #PB_Constant)
+#GL_DRAW_BUFFER0_ARB = $8825
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER0_ATI, #PB_Constant)
+#GL_DRAW_BUFFER0_ATI = $8825
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER0_EXT, #PB_Constant)
+#GL_DRAW_BUFFER0_EXT = $8825
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER0_NV, #PB_Constant)
+#GL_DRAW_BUFFER0_NV = $8825
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER1, #PB_Constant)
+#GL_DRAW_BUFFER1 = $8826
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER1_ARB, #PB_Constant)
+#GL_DRAW_BUFFER1_ARB = $8826
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER1_ATI, #PB_Constant)
+#GL_DRAW_BUFFER1_ATI = $8826
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER1_EXT, #PB_Constant)
+#GL_DRAW_BUFFER1_EXT = $8826
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER1_NV, #PB_Constant)
+#GL_DRAW_BUFFER1_NV = $8826
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER2, #PB_Constant)
+#GL_DRAW_BUFFER2 = $8827
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER2_ARB, #PB_Constant)
+#GL_DRAW_BUFFER2_ARB = $8827
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER2_ATI, #PB_Constant)
+#GL_DRAW_BUFFER2_ATI = $8827
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER2_EXT, #PB_Constant)
+#GL_DRAW_BUFFER2_EXT = $8827
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER2_NV, #PB_Constant)
+#GL_DRAW_BUFFER2_NV = $8827
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER3, #PB_Constant)
+#GL_DRAW_BUFFER3 = $8828
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER3_ARB, #PB_Constant)
+#GL_DRAW_BUFFER3_ARB = $8828
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER3_ATI, #PB_Constant)
+#GL_DRAW_BUFFER3_ATI = $8828
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER3_EXT, #PB_Constant)
+#GL_DRAW_BUFFER3_EXT = $8828
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER3_NV, #PB_Constant)
+#GL_DRAW_BUFFER3_NV = $8828
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER4, #PB_Constant)
+#GL_DRAW_BUFFER4 = $8829
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER4_ARB, #PB_Constant)
+#GL_DRAW_BUFFER4_ARB = $8829
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER4_ATI, #PB_Constant)
+#GL_DRAW_BUFFER4_ATI = $8829
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER4_EXT, #PB_Constant)
+#GL_DRAW_BUFFER4_EXT = $8829
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER4_NV, #PB_Constant)
+#GL_DRAW_BUFFER4_NV = $8829
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER5, #PB_Constant)
+#GL_DRAW_BUFFER5 = $882A
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER5_ARB, #PB_Constant)
+#GL_DRAW_BUFFER5_ARB = $882A
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER5_ATI, #PB_Constant)
+#GL_DRAW_BUFFER5_ATI = $882A
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER5_EXT, #PB_Constant)
+#GL_DRAW_BUFFER5_EXT = $882A
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER5_NV, #PB_Constant)
+#GL_DRAW_BUFFER5_NV = $882A
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER6, #PB_Constant)
+#GL_DRAW_BUFFER6 = $882B
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER6_ARB, #PB_Constant)
+#GL_DRAW_BUFFER6_ARB = $882B
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER6_ATI, #PB_Constant)
+#GL_DRAW_BUFFER6_ATI = $882B
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER6_EXT, #PB_Constant)
+#GL_DRAW_BUFFER6_EXT = $882B
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER6_NV, #PB_Constant)
+#GL_DRAW_BUFFER6_NV = $882B
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER7, #PB_Constant)
+#GL_DRAW_BUFFER7 = $882C
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER7_ARB, #PB_Constant)
+#GL_DRAW_BUFFER7_ARB = $882C
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER7_ATI, #PB_Constant)
+#GL_DRAW_BUFFER7_ATI = $882C
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER7_EXT, #PB_Constant)
+#GL_DRAW_BUFFER7_EXT = $882C
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER7_NV, #PB_Constant)
+#GL_DRAW_BUFFER7_NV = $882C
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER8, #PB_Constant)
+#GL_DRAW_BUFFER8 = $882D
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER8_ARB, #PB_Constant)
+#GL_DRAW_BUFFER8_ARB = $882D
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER8_ATI, #PB_Constant)
+#GL_DRAW_BUFFER8_ATI = $882D
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER8_EXT, #PB_Constant)
+#GL_DRAW_BUFFER8_EXT = $882D
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER8_NV, #PB_Constant)
+#GL_DRAW_BUFFER8_NV = $882D
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER9, #PB_Constant)
+#GL_DRAW_BUFFER9 = $882E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER9_ARB, #PB_Constant)
+#GL_DRAW_BUFFER9_ARB = $882E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER9_ATI, #PB_Constant)
+#GL_DRAW_BUFFER9_ATI = $882E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER9_EXT, #PB_Constant)
+#GL_DRAW_BUFFER9_EXT = $882E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER9_NV, #PB_Constant)
+#GL_DRAW_BUFFER9_NV = $882E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER10, #PB_Constant)
+#GL_DRAW_BUFFER10 = $882F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER10_ARB, #PB_Constant)
+#GL_DRAW_BUFFER10_ARB = $882F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER10_ATI, #PB_Constant)
+#GL_DRAW_BUFFER10_ATI = $882F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER10_EXT, #PB_Constant)
+#GL_DRAW_BUFFER10_EXT = $882F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER10_NV, #PB_Constant)
+#GL_DRAW_BUFFER10_NV = $882F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER11, #PB_Constant)
+#GL_DRAW_BUFFER11 = $8830
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER11_ARB, #PB_Constant)
+#GL_DRAW_BUFFER11_ARB = $8830
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER11_ATI, #PB_Constant)
+#GL_DRAW_BUFFER11_ATI = $8830
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER11_EXT, #PB_Constant)
+#GL_DRAW_BUFFER11_EXT = $8830
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER11_NV, #PB_Constant)
+#GL_DRAW_BUFFER11_NV = $8830
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER12, #PB_Constant)
+#GL_DRAW_BUFFER12 = $8831
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER12_ARB, #PB_Constant)
+#GL_DRAW_BUFFER12_ARB = $8831
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER12_ATI, #PB_Constant)
+#GL_DRAW_BUFFER12_ATI = $8831
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER12_EXT, #PB_Constant)
+#GL_DRAW_BUFFER12_EXT = $8831
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER12_NV, #PB_Constant)
+#GL_DRAW_BUFFER12_NV = $8831
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER13, #PB_Constant)
+#GL_DRAW_BUFFER13 = $8832
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER13_ARB, #PB_Constant)
+#GL_DRAW_BUFFER13_ARB = $8832
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER13_ATI, #PB_Constant)
+#GL_DRAW_BUFFER13_ATI = $8832
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER13_EXT, #PB_Constant)
+#GL_DRAW_BUFFER13_EXT = $8832
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER13_NV, #PB_Constant)
+#GL_DRAW_BUFFER13_NV = $8832
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER14, #PB_Constant)
+#GL_DRAW_BUFFER14 = $8833
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER14_ARB, #PB_Constant)
+#GL_DRAW_BUFFER14_ARB = $8833
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER14_ATI, #PB_Constant)
+#GL_DRAW_BUFFER14_ATI = $8833
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER14_EXT, #PB_Constant)
+#GL_DRAW_BUFFER14_EXT = $8833
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER14_NV, #PB_Constant)
+#GL_DRAW_BUFFER14_NV = $8833
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER15, #PB_Constant)
+#GL_DRAW_BUFFER15 = $8834
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER15_ARB, #PB_Constant)
+#GL_DRAW_BUFFER15_ARB = $8834
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER15_ATI, #PB_Constant)
+#GL_DRAW_BUFFER15_ATI = $8834
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER15_EXT, #PB_Constant)
+#GL_DRAW_BUFFER15_EXT = $8834
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_BUFFER15_NV, #PB_Constant)
+#GL_DRAW_BUFFER15_NV = $8834
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI, #PB_Constant)
+#GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI = $8835
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_ALPHA_3DC_ATI, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_ALPHA_3DC_ATI = $8837
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_ALPHA, #PB_Constant)
+#GL_BLEND_EQUATION_ALPHA = $883D
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_ALPHA_EXT, #PB_Constant)
+#GL_BLEND_EQUATION_ALPHA_EXT = $883D
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_EQUATION_ALPHA_OES, #PB_Constant)
+#GL_BLEND_EQUATION_ALPHA_OES = $883D
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBSAMPLE_DISTANCE_AMD, #PB_Constant)
+#GL_SUBSAMPLE_DISTANCE_AMD = $883F
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_PALETTE_ARB, #PB_Constant)
+#GL_MATRIX_PALETTE_ARB = $8840
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_PALETTE_OES, #PB_Constant)
+#GL_MATRIX_PALETTE_OES = $8840
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MATRIX_PALETTE_STACK_DEPTH_ARB, #PB_Constant)
+#GL_MAX_MATRIX_PALETTE_STACK_DEPTH_ARB = $8841
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PALETTE_MATRICES_ARB, #PB_Constant)
+#GL_MAX_PALETTE_MATRICES_ARB = $8842
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PALETTE_MATRICES_OES, #PB_Constant)
+#GL_MAX_PALETTE_MATRICES_OES = $8842
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_PALETTE_MATRIX_ARB, #PB_Constant)
+#GL_CURRENT_PALETTE_MATRIX_ARB = $8843
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_PALETTE_MATRIX_OES, #PB_Constant)
+#GL_CURRENT_PALETTE_MATRIX_OES = $8843
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_ARB, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_ARB = $8844
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_OES = $8844
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_MATRIX_INDEX_ARB, #PB_Constant)
+#GL_CURRENT_MATRIX_INDEX_ARB = $8845
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_SIZE_ARB, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_SIZE_ARB = $8846
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_SIZE_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_SIZE_OES = $8846
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_TYPE_ARB, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_TYPE_ARB = $8847
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_TYPE_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_TYPE_OES = $8847
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_STRIDE_ARB, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_STRIDE_ARB = $8848
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_STRIDE_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_STRIDE_OES = $8848
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_POINTER_ARB, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_POINTER_ARB = $8849
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_POINTER_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_POINTER_OES = $8849
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_SIZE, #PB_Constant)
+#GL_TEXTURE_DEPTH_SIZE = $884A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_SIZE_ARB, #PB_Constant)
+#GL_TEXTURE_DEPTH_SIZE_ARB = $884A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_TEXTURE_MODE, #PB_Constant)
+#GL_DEPTH_TEXTURE_MODE = $884B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_TEXTURE_MODE_ARB, #PB_Constant)
+#GL_DEPTH_TEXTURE_MODE_ARB = $884B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_MODE, #PB_Constant)
+#GL_TEXTURE_COMPARE_MODE = $884C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_MODE_ARB, #PB_Constant)
+#GL_TEXTURE_COMPARE_MODE_ARB = $884C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_MODE_EXT, #PB_Constant)
+#GL_TEXTURE_COMPARE_MODE_EXT = $884C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_FUNC, #PB_Constant)
+#GL_TEXTURE_COMPARE_FUNC = $884D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_FUNC_ARB, #PB_Constant)
+#GL_TEXTURE_COMPARE_FUNC_ARB = $884D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COMPARE_FUNC_EXT, #PB_Constant)
+#GL_TEXTURE_COMPARE_FUNC_EXT = $884D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPARE_R_TO_TEXTURE, #PB_Constant)
+#GL_COMPARE_R_TO_TEXTURE = $884E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPARE_R_TO_TEXTURE_ARB, #PB_Constant)
+#GL_COMPARE_R_TO_TEXTURE_ARB = $884E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPARE_REF_DEPTH_TO_TEXTURE_EXT, #PB_Constant)
+#GL_COMPARE_REF_DEPTH_TO_TEXTURE_EXT = $884E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPARE_REF_TO_TEXTURE, #PB_Constant)
+#GL_COMPARE_REF_TO_TEXTURE = $884E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPARE_REF_TO_TEXTURE_EXT, #PB_Constant)
+#GL_COMPARE_REF_TO_TEXTURE_EXT = $884E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_SEAMLESS, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_SEAMLESS = $884F
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_PROJECTIVE_TEXTURE_2D_NV, #PB_Constant)
+#GL_OFFSET_PROJECTIVE_TEXTURE_2D_NV = $8850
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_PROJECTIVE_TEXTURE_2D_SCALE_NV, #PB_Constant)
+#GL_OFFSET_PROJECTIVE_TEXTURE_2D_SCALE_NV = $8851
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_NV = $8852
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_SCALE_NV, #PB_Constant)
+#GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_SCALE_NV = $8853
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_HILO_TEXTURE_2D_NV, #PB_Constant)
+#GL_OFFSET_HILO_TEXTURE_2D_NV = $8854
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_HILO_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_OFFSET_HILO_TEXTURE_RECTANGLE_NV = $8855
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_HILO_PROJECTIVE_TEXTURE_2D_NV, #PB_Constant)
+#GL_OFFSET_HILO_PROJECTIVE_TEXTURE_2D_NV = $8856
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET_HILO_PROJECTIVE_TEXTURE_RECTANGLE_NV, #PB_Constant)
+#GL_OFFSET_HILO_PROJECTIVE_TEXTURE_RECTANGLE_NV = $8857
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPENDENT_HILO_TEXTURE_2D_NV, #PB_Constant)
+#GL_DEPENDENT_HILO_TEXTURE_2D_NV = $8858
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPENDENT_RGB_TEXTURE_3D_NV, #PB_Constant)
+#GL_DEPENDENT_RGB_TEXTURE_3D_NV = $8859
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPENDENT_RGB_TEXTURE_CUBE_MAP_NV, #PB_Constant)
+#GL_DEPENDENT_RGB_TEXTURE_CUBE_MAP_NV = $885A
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_PASS_THROUGH_NV, #PB_Constant)
+#GL_DOT_PRODUCT_PASS_THROUGH_NV = $885B
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_TEXTURE_1D_NV, #PB_Constant)
+#GL_DOT_PRODUCT_TEXTURE_1D_NV = $885C
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT_PRODUCT_AFFINE_DEPTH_REPLACE_NV, #PB_Constant)
+#GL_DOT_PRODUCT_AFFINE_DEPTH_REPLACE_NV = $885D
+CompilerEndIf
+CompilerIf Not Defined(GL_HILO8_NV, #PB_Constant)
+#GL_HILO8_NV = $885E
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_HILO8_NV, #PB_Constant)
+#GL_SIGNED_HILO8_NV = $885F
+CompilerEndIf
+CompilerIf Not Defined(GL_FORCE_BLUE_TO_ONE_NV, #PB_Constant)
+#GL_FORCE_BLUE_TO_ONE_NV = $8860
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE, #PB_Constant)
+#GL_POINT_SPRITE = $8861
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE_ARB, #PB_Constant)
+#GL_POINT_SPRITE_ARB = $8861
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE_NV, #PB_Constant)
+#GL_POINT_SPRITE_NV = $8861
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE_OES, #PB_Constant)
+#GL_POINT_SPRITE_OES = $8861
+CompilerEndIf
+CompilerIf Not Defined(GL_COORD_REPLACE, #PB_Constant)
+#GL_COORD_REPLACE = $8862
+CompilerEndIf
+CompilerIf Not Defined(GL_COORD_REPLACE_ARB, #PB_Constant)
+#GL_COORD_REPLACE_ARB = $8862
+CompilerEndIf
+CompilerIf Not Defined(GL_COORD_REPLACE_NV, #PB_Constant)
+#GL_COORD_REPLACE_NV = $8862
+CompilerEndIf
+CompilerIf Not Defined(GL_COORD_REPLACE_OES, #PB_Constant)
+#GL_COORD_REPLACE_OES = $8862
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE_R_MODE_NV, #PB_Constant)
+#GL_POINT_SPRITE_R_MODE_NV = $8863
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_COUNTER_BITS_NV, #PB_Constant)
+#GL_PIXEL_COUNTER_BITS_NV = $8864
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_COUNTER_BITS, #PB_Constant)
+#GL_QUERY_COUNTER_BITS = $8864
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_COUNTER_BITS_ARB, #PB_Constant)
+#GL_QUERY_COUNTER_BITS_ARB = $8864
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_COUNTER_BITS_EXT, #PB_Constant)
+#GL_QUERY_COUNTER_BITS_EXT = $8864
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_OCCLUSION_QUERY_ID_NV, #PB_Constant)
+#GL_CURRENT_OCCLUSION_QUERY_ID_NV = $8865
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_QUERY, #PB_Constant)
+#GL_CURRENT_QUERY = $8865
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_QUERY_ARB, #PB_Constant)
+#GL_CURRENT_QUERY_ARB = $8865
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_QUERY_EXT, #PB_Constant)
+#GL_CURRENT_QUERY_EXT = $8865
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_COUNT_NV, #PB_Constant)
+#GL_PIXEL_COUNT_NV = $8866
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT, #PB_Constant)
+#GL_QUERY_RESULT = $8866
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_ARB, #PB_Constant)
+#GL_QUERY_RESULT_ARB = $8866
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_EXT, #PB_Constant)
+#GL_QUERY_RESULT_EXT = $8866
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_COUNT_AVAILABLE_NV, #PB_Constant)
+#GL_PIXEL_COUNT_AVAILABLE_NV = $8867
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_AVAILABLE, #PB_Constant)
+#GL_QUERY_RESULT_AVAILABLE = $8867
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_AVAILABLE_ARB, #PB_Constant)
+#GL_QUERY_RESULT_AVAILABLE_ARB = $8867
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_AVAILABLE_EXT, #PB_Constant)
+#GL_QUERY_RESULT_AVAILABLE_EXT = $8867
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV, #PB_Constant)
+#GL_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV = $8868
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATTRIBS, #PB_Constant)
+#GL_MAX_VERTEX_ATTRIBS = $8869
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATTRIBS_ARB, #PB_Constant)
+#GL_MAX_VERTEX_ATTRIBS_ARB = $8869
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_NORMALIZED = $886A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_NORMALIZED_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_NORMALIZED_ARB = $886A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_INPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_INPUT_COMPONENTS = $886C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT = $886C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_OES = $886C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS = $886D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT = $886D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_OES = $886D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_TO_RGBA_NV, #PB_Constant)
+#GL_DEPTH_STENCIL_TO_RGBA_NV = $886E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_TO_BGRA_NV, #PB_Constant)
+#GL_DEPTH_STENCIL_TO_BGRA_NV = $886F
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_NV, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_NV = $8870
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_COORDS, #PB_Constant)
+#GL_MAX_TEXTURE_COORDS = $8871
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_COORDS_ARB, #PB_Constant)
+#GL_MAX_TEXTURE_COORDS_ARB = $8871
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_COORDS_NV, #PB_Constant)
+#GL_MAX_TEXTURE_COORDS_NV = $8871
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_TEXTURE_IMAGE_UNITS = $8872
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_IMAGE_UNITS_ARB, #PB_Constant)
+#GL_MAX_TEXTURE_IMAGE_UNITS_ARB = $8872
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_IMAGE_UNITS_NV, #PB_Constant)
+#GL_MAX_TEXTURE_IMAGE_UNITS_NV = $8872
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_BINDING_NV, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_BINDING_NV = $8873
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ERROR_STRING_ARB, #PB_Constant)
+#GL_PROGRAM_ERROR_STRING_ARB = $8874
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ERROR_STRING_NV, #PB_Constant)
+#GL_PROGRAM_ERROR_STRING_NV = $8874
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_FORMAT_ASCII_ARB, #PB_Constant)
+#GL_PROGRAM_FORMAT_ASCII_ARB = $8875
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_FORMAT_ARB, #PB_Constant)
+#GL_PROGRAM_FORMAT_ARB = $8876
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_PIXEL_DATA_RANGE_NV, #PB_Constant)
+#GL_WRITE_PIXEL_DATA_RANGE_NV = $8878
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXEL_DATA_RANGE_NV, #PB_Constant)
+#GL_READ_PIXEL_DATA_RANGE_NV = $8879
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_PIXEL_DATA_RANGE_LENGTH_NV, #PB_Constant)
+#GL_WRITE_PIXEL_DATA_RANGE_LENGTH_NV = $887A
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXEL_DATA_RANGE_LENGTH_NV, #PB_Constant)
+#GL_READ_PIXEL_DATA_RANGE_LENGTH_NV = $887B
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_PIXEL_DATA_RANGE_POINTER_NV, #PB_Constant)
+#GL_WRITE_PIXEL_DATA_RANGE_POINTER_NV = $887C
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_PIXEL_DATA_RANGE_POINTER_NV, #PB_Constant)
+#GL_READ_PIXEL_DATA_RANGE_POINTER_NV = $887D
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_INVOCATIONS, #PB_Constant)
+#GL_GEOMETRY_SHADER_INVOCATIONS = $887F
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_INVOCATIONS_EXT, #PB_Constant)
+#GL_GEOMETRY_SHADER_INVOCATIONS_EXT = $887F
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_INVOCATIONS_OES, #PB_Constant)
+#GL_GEOMETRY_SHADER_INVOCATIONS_OES = $887F
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_R_NV, #PB_Constant)
+#GL_FLOAT_R_NV = $8880
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RG_NV, #PB_Constant)
+#GL_FLOAT_RG_NV = $8881
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGB_NV, #PB_Constant)
+#GL_FLOAT_RGB_NV = $8882
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGBA_NV, #PB_Constant)
+#GL_FLOAT_RGBA_NV = $8883
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_R16_NV, #PB_Constant)
+#GL_FLOAT_R16_NV = $8884
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_R32_NV, #PB_Constant)
+#GL_FLOAT_R32_NV = $8885
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RG16_NV, #PB_Constant)
+#GL_FLOAT_RG16_NV = $8886
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RG32_NV, #PB_Constant)
+#GL_FLOAT_RG32_NV = $8887
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGB16_NV, #PB_Constant)
+#GL_FLOAT_RGB16_NV = $8888
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGB32_NV, #PB_Constant)
+#GL_FLOAT_RGB32_NV = $8889
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGBA16_NV, #PB_Constant)
+#GL_FLOAT_RGBA16_NV = $888A
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGBA32_NV, #PB_Constant)
+#GL_FLOAT_RGBA32_NV = $888B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FLOAT_COMPONENTS_NV, #PB_Constant)
+#GL_TEXTURE_FLOAT_COMPONENTS_NV = $888C
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_CLEAR_COLOR_VALUE_NV, #PB_Constant)
+#GL_FLOAT_CLEAR_COLOR_VALUE_NV = $888D
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_RGBA_MODE_NV, #PB_Constant)
+#GL_FLOAT_RGBA_MODE_NV = $888E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_UNSIGNED_REMAP_MODE_NV, #PB_Constant)
+#GL_TEXTURE_UNSIGNED_REMAP_MODE_NV = $888F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BOUNDS_TEST_EXT, #PB_Constant)
+#GL_DEPTH_BOUNDS_TEST_EXT = $8890
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BOUNDS_EXT, #PB_Constant)
+#GL_DEPTH_BOUNDS_EXT = $8891
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_BUFFER, #PB_Constant)
+#GL_ARRAY_BUFFER = $8892
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_BUFFER_ARB, #PB_Constant)
+#GL_ARRAY_BUFFER_ARB = $8892
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BUFFER, #PB_Constant)
+#GL_ELEMENT_ARRAY_BUFFER = $8893
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BUFFER_ARB, #PB_Constant)
+#GL_ELEMENT_ARRAY_BUFFER_ARB = $8893
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_ARRAY_BUFFER_BINDING = $8894
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_ARRAY_BUFFER_BINDING_ARB = $8894
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_ELEMENT_ARRAY_BUFFER_BINDING = $8895
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_ELEMENT_ARRAY_BUFFER_BINDING_ARB = $8895
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_VERTEX_ARRAY_BUFFER_BINDING = $8896
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_VERTEX_ARRAY_BUFFER_BINDING_ARB = $8896
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_NORMAL_ARRAY_BUFFER_BINDING = $8897
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_NORMAL_ARRAY_BUFFER_BINDING_ARB = $8897
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_COLOR_ARRAY_BUFFER_BINDING = $8898
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_COLOR_ARRAY_BUFFER_BINDING_ARB = $8898
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_INDEX_ARRAY_BUFFER_BINDING = $8899
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_INDEX_ARRAY_BUFFER_BINDING_ARB = $8899
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING = $889A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING_ARB = $889A
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_BUFFER_BINDING = $889B
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_BUFFER_BINDING_ARB = $889B
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING = $889C
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING_ARB = $889C
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING_ARB = $889D
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING = $889D
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_FOG_COORD_ARRAY_BUFFER_BINDING = $889D
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_WEIGHT_ARRAY_BUFFER_BINDING = $889E
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_WEIGHT_ARRAY_BUFFER_BINDING_ARB = $889E
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHT_ARRAY_BUFFER_BINDING_OES, #PB_Constant)
+#GL_WEIGHT_ARRAY_BUFFER_BINDING_OES = $889E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = $889F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB = $889F
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_INSTRUCTIONS_ARB = $88A0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_INSTRUCTIONS_ARB = $88A1
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB = $88A2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB = $88A3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_TEMPORARIES_ARB, #PB_Constant)
+#GL_PROGRAM_TEMPORARIES_ARB = $88A4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEMPORARIES_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_TEMPORARIES_ARB = $88A5
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_TEMPORARIES_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_TEMPORARIES_ARB = $88A6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB = $88A7
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PARAMETERS_ARB, #PB_Constant)
+#GL_PROGRAM_PARAMETERS_ARB = $88A8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_PARAMETERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_PARAMETERS_ARB = $88A9
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_PARAMETERS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_PARAMETERS_ARB = $88AA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB = $88AB
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ATTRIBS_ARB, #PB_Constant)
+#GL_PROGRAM_ATTRIBS_ARB = $88AC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_ATTRIBS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_ATTRIBS_ARB = $88AD
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_ATTRIBS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_ATTRIBS_ARB = $88AE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB = $88AF
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ADDRESS_REGISTERS_ARB, #PB_Constant)
+#GL_PROGRAM_ADDRESS_REGISTERS_ARB = $88B0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB = $88B1
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB, #PB_Constant)
+#GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB = $88B2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB = $88B3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB = $88B4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_ENV_PARAMETERS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_ENV_PARAMETERS_ARB = $88B5
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB, #PB_Constant)
+#GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB = $88B6
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_CURRENT_MATRIX_ARB, #PB_Constant)
+#GL_TRANSPOSE_CURRENT_MATRIX_ARB = $88B7
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_ONLY, #PB_Constant)
+#GL_READ_ONLY = $88B8
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_ONLY_ARB, #PB_Constant)
+#GL_READ_ONLY_ARB = $88B8
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_ONLY, #PB_Constant)
+#GL_WRITE_ONLY = $88B9
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_ONLY_ARB, #PB_Constant)
+#GL_WRITE_ONLY_ARB = $88B9
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_ONLY_OES, #PB_Constant)
+#GL_WRITE_ONLY_OES = $88B9
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_WRITE, #PB_Constant)
+#GL_READ_WRITE = $88BA
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_WRITE_ARB, #PB_Constant)
+#GL_READ_WRITE_ARB = $88BA
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_ACCESS, #PB_Constant)
+#GL_BUFFER_ACCESS = $88BB
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_ACCESS_ARB, #PB_Constant)
+#GL_BUFFER_ACCESS_ARB = $88BB
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_ACCESS_OES, #PB_Constant)
+#GL_BUFFER_ACCESS_OES = $88BB
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAPPED, #PB_Constant)
+#GL_BUFFER_MAPPED = $88BC
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAPPED_ARB, #PB_Constant)
+#GL_BUFFER_MAPPED_ARB = $88BC
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAPPED_OES, #PB_Constant)
+#GL_BUFFER_MAPPED_OES = $88BC
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAP_POINTER, #PB_Constant)
+#GL_BUFFER_MAP_POINTER = $88BD
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAP_POINTER_ARB, #PB_Constant)
+#GL_BUFFER_MAP_POINTER_ARB = $88BD
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAP_POINTER_OES, #PB_Constant)
+#GL_BUFFER_MAP_POINTER_OES = $88BD
+CompilerEndIf
+CompilerIf Not Defined(GL_WRITE_DISCARD_NV, #PB_Constant)
+#GL_WRITE_DISCARD_NV = $88BE
+CompilerEndIf
+CompilerIf Not Defined(GL_TIME_ELAPSED, #PB_Constant)
+#GL_TIME_ELAPSED = $88BF
+CompilerEndIf
+CompilerIf Not Defined(GL_TIME_ELAPSED_EXT, #PB_Constant)
+#GL_TIME_ELAPSED_EXT = $88BF
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX0_ARB, #PB_Constant)
+#GL_MATRIX0_ARB = $88C0
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX1_ARB, #PB_Constant)
+#GL_MATRIX1_ARB = $88C1
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX2_ARB, #PB_Constant)
+#GL_MATRIX2_ARB = $88C2
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX3_ARB, #PB_Constant)
+#GL_MATRIX3_ARB = $88C3
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX4_ARB, #PB_Constant)
+#GL_MATRIX4_ARB = $88C4
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX5_ARB, #PB_Constant)
+#GL_MATRIX5_ARB = $88C5
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX6_ARB, #PB_Constant)
+#GL_MATRIX6_ARB = $88C6
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX7_ARB, #PB_Constant)
+#GL_MATRIX7_ARB = $88C7
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX8_ARB, #PB_Constant)
+#GL_MATRIX8_ARB = $88C8
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX9_ARB, #PB_Constant)
+#GL_MATRIX9_ARB = $88C9
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX10_ARB, #PB_Constant)
+#GL_MATRIX10_ARB = $88CA
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX11_ARB, #PB_Constant)
+#GL_MATRIX11_ARB = $88CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX12_ARB, #PB_Constant)
+#GL_MATRIX12_ARB = $88CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX13_ARB, #PB_Constant)
+#GL_MATRIX13_ARB = $88CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX14_ARB, #PB_Constant)
+#GL_MATRIX14_ARB = $88CE
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX15_ARB, #PB_Constant)
+#GL_MATRIX15_ARB = $88CF
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX16_ARB, #PB_Constant)
+#GL_MATRIX16_ARB = $88D0
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX17_ARB, #PB_Constant)
+#GL_MATRIX17_ARB = $88D1
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX18_ARB, #PB_Constant)
+#GL_MATRIX18_ARB = $88D2
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX19_ARB, #PB_Constant)
+#GL_MATRIX19_ARB = $88D3
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX20_ARB, #PB_Constant)
+#GL_MATRIX20_ARB = $88D4
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX21_ARB, #PB_Constant)
+#GL_MATRIX21_ARB = $88D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX22_ARB, #PB_Constant)
+#GL_MATRIX22_ARB = $88D6
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX23_ARB, #PB_Constant)
+#GL_MATRIX23_ARB = $88D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX24_ARB, #PB_Constant)
+#GL_MATRIX24_ARB = $88D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX25_ARB, #PB_Constant)
+#GL_MATRIX25_ARB = $88D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX26_ARB, #PB_Constant)
+#GL_MATRIX26_ARB = $88DA
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX27_ARB, #PB_Constant)
+#GL_MATRIX27_ARB = $88DB
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX28_ARB, #PB_Constant)
+#GL_MATRIX28_ARB = $88DC
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX29_ARB, #PB_Constant)
+#GL_MATRIX29_ARB = $88DD
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX30_ARB, #PB_Constant)
+#GL_MATRIX30_ARB = $88DE
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX31_ARB, #PB_Constant)
+#GL_MATRIX31_ARB = $88DF
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_DRAW, #PB_Constant)
+#GL_STREAM_DRAW = $88E0
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_DRAW_ARB, #PB_Constant)
+#GL_STREAM_DRAW_ARB = $88E0
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_READ, #PB_Constant)
+#GL_STREAM_READ = $88E1
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_READ_ARB, #PB_Constant)
+#GL_STREAM_READ_ARB = $88E1
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_COPY, #PB_Constant)
+#GL_STREAM_COPY = $88E2
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_COPY_ARB, #PB_Constant)
+#GL_STREAM_COPY_ARB = $88E2
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_DRAW, #PB_Constant)
+#GL_STATIC_DRAW = $88E4
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_DRAW_ARB, #PB_Constant)
+#GL_STATIC_DRAW_ARB = $88E4
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_READ, #PB_Constant)
+#GL_STATIC_READ = $88E5
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_READ_ARB, #PB_Constant)
+#GL_STATIC_READ_ARB = $88E5
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_COPY, #PB_Constant)
+#GL_STATIC_COPY = $88E6
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_COPY_ARB, #PB_Constant)
+#GL_STATIC_COPY_ARB = $88E6
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_DRAW, #PB_Constant)
+#GL_DYNAMIC_DRAW = $88E8
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_DRAW_ARB, #PB_Constant)
+#GL_DYNAMIC_DRAW_ARB = $88E8
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_READ, #PB_Constant)
+#GL_DYNAMIC_READ = $88E9
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_READ_ARB, #PB_Constant)
+#GL_DYNAMIC_READ_ARB = $88E9
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_COPY, #PB_Constant)
+#GL_DYNAMIC_COPY = $88EA
+CompilerEndIf
+CompilerIf Not Defined(GL_DYNAMIC_COPY_ARB, #PB_Constant)
+#GL_DYNAMIC_COPY_ARB = $88EA
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER = $88EB
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_ARB, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_ARB = $88EB
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_EXT, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_EXT = $88EB
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_NV, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_NV = $88EB
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER = $88EC
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_ARB, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_ARB = $88EC
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_EXT, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_EXT = $88EC
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_NV, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_NV = $88EC
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_BINDING, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_BINDING = $88ED
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_BINDING_ARB = $88ED
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_BINDING_EXT, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_BINDING_EXT = $88ED
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_PACK_BUFFER_BINDING_NV, #PB_Constant)
+#GL_PIXEL_PACK_BUFFER_BINDING_NV = $88ED
+CompilerEndIf
+CompilerIf Not Defined(GL_ETC1_SRGB8_NV, #PB_Constant)
+#GL_ETC1_SRGB8_NV = $88EE
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_BINDING, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_BINDING = $88EF
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_BINDING_ARB, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_BINDING_ARB = $88EF
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_BINDING_EXT, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_BINDING_EXT = $88EF
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXEL_UNPACK_BUFFER_BINDING_NV, #PB_Constant)
+#GL_PIXEL_UNPACK_BUFFER_BINDING_NV = $88EF
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH24_STENCIL8, #PB_Constant)
+#GL_DEPTH24_STENCIL8 = $88F0
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH24_STENCIL8_EXT, #PB_Constant)
+#GL_DEPTH24_STENCIL8_EXT = $88F0
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH24_STENCIL8_OES, #PB_Constant)
+#GL_DEPTH24_STENCIL8_OES = $88F0
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_STENCIL_SIZE, #PB_Constant)
+#GL_TEXTURE_STENCIL_SIZE = $88F1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_STENCIL_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_STENCIL_SIZE_EXT = $88F1
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_TAG_BITS_EXT, #PB_Constant)
+#GL_STENCIL_TAG_BITS_EXT = $88F2
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_CLEAR_TAG_VALUE_EXT, #PB_Constant)
+#GL_STENCIL_CLEAR_TAG_VALUE_EXT = $88F3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV = $88F4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_CALL_DEPTH_NV, #PB_Constant)
+#GL_MAX_PROGRAM_CALL_DEPTH_NV = $88F5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_IF_DEPTH_NV, #PB_Constant)
+#GL_MAX_PROGRAM_IF_DEPTH_NV = $88F6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_LOOP_DEPTH_NV, #PB_Constant)
+#GL_MAX_PROGRAM_LOOP_DEPTH_NV = $88F7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_LOOP_COUNT_NV, #PB_Constant)
+#GL_MAX_PROGRAM_LOOP_COUNT_NV = $88F8
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC1_COLOR, #PB_Constant)
+#GL_SRC1_COLOR = $88F9
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC1_COLOR_EXT, #PB_Constant)
+#GL_SRC1_COLOR_EXT = $88F9
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC1_COLOR, #PB_Constant)
+#GL_ONE_MINUS_SRC1_COLOR = $88FA
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC1_COLOR_EXT, #PB_Constant)
+#GL_ONE_MINUS_SRC1_COLOR_EXT = $88FA
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC1_ALPHA, #PB_Constant)
+#GL_ONE_MINUS_SRC1_ALPHA = $88FB
+CompilerEndIf
+CompilerIf Not Defined(GL_ONE_MINUS_SRC1_ALPHA_EXT, #PB_Constant)
+#GL_ONE_MINUS_SRC1_ALPHA_EXT = $88FB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DUAL_SOURCE_DRAW_BUFFERS, #PB_Constant)
+#GL_MAX_DUAL_SOURCE_DRAW_BUFFERS = $88FC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT = $88FC
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_INTEGER, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_INTEGER = $88FD
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT = $88FD
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_INTEGER_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_INTEGER_NV = $88FD
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_DIVISOR, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_DIVISOR = $88FE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE = $88FE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB = $88FE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT = $88FE
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV = $88FE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ARRAY_TEXTURE_LAYERS, #PB_Constant)
+#GL_MAX_ARRAY_TEXTURE_LAYERS = $88FF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ARRAY_TEXTURE_LAYERS_EXT, #PB_Constant)
+#GL_MAX_ARRAY_TEXTURE_LAYERS_EXT = $88FF
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXEL_OFFSET, #PB_Constant)
+#GL_MIN_PROGRAM_TEXEL_OFFSET = $8904
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXEL_OFFSET_EXT, #PB_Constant)
+#GL_MIN_PROGRAM_TEXEL_OFFSET_EXT = $8904
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXEL_OFFSET_NV, #PB_Constant)
+#GL_MIN_PROGRAM_TEXEL_OFFSET_NV = $8904
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXEL_OFFSET, #PB_Constant)
+#GL_MAX_PROGRAM_TEXEL_OFFSET = $8905
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXEL_OFFSET_EXT, #PB_Constant)
+#GL_MAX_PROGRAM_TEXEL_OFFSET_EXT = $8905
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXEL_OFFSET_NV, #PB_Constant)
+#GL_MAX_PROGRAM_TEXEL_OFFSET_NV = $8905
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_ATTRIB_COMPONENTS_NV, #PB_Constant)
+#GL_PROGRAM_ATTRIB_COMPONENTS_NV = $8906
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_RESULT_COMPONENTS_NV, #PB_Constant)
+#GL_PROGRAM_RESULT_COMPONENTS_NV = $8907
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_ATTRIB_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_ATTRIB_COMPONENTS_NV = $8908
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_RESULT_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_RESULT_COMPONENTS_NV = $8909
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_TEST_TWO_SIDE_EXT, #PB_Constant)
+#GL_STENCIL_TEST_TWO_SIDE_EXT = $8910
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_STENCIL_FACE_EXT, #PB_Constant)
+#GL_ACTIVE_STENCIL_FACE_EXT = $8911
+CompilerEndIf
+CompilerIf Not Defined(GL_MIRROR_CLAMP_TO_BORDER_EXT, #PB_Constant)
+#GL_MIRROR_CLAMP_TO_BORDER_EXT = $8912
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_PASSED, #PB_Constant)
+#GL_SAMPLES_PASSED = $8914
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLES_PASSED_ARB, #PB_Constant)
+#GL_SAMPLES_PASSED_ARB = $8914
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_VERTICES_OUT, #PB_Constant)
+#GL_GEOMETRY_VERTICES_OUT = $8916
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_VERTICES_OUT_EXT, #PB_Constant)
+#GL_GEOMETRY_LINKED_VERTICES_OUT_EXT = $8916
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_VERTICES_OUT_OES, #PB_Constant)
+#GL_GEOMETRY_LINKED_VERTICES_OUT_OES = $8916
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_INPUT_TYPE, #PB_Constant)
+#GL_GEOMETRY_INPUT_TYPE = $8917
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_INPUT_TYPE_EXT, #PB_Constant)
+#GL_GEOMETRY_LINKED_INPUT_TYPE_EXT = $8917
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_INPUT_TYPE_OES, #PB_Constant)
+#GL_GEOMETRY_LINKED_INPUT_TYPE_OES = $8917
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_OUTPUT_TYPE, #PB_Constant)
+#GL_GEOMETRY_OUTPUT_TYPE = $8918
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT, #PB_Constant)
+#GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT = $8918
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES, #PB_Constant)
+#GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES = $8918
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_BINDING, #PB_Constant)
+#GL_SAMPLER_BINDING = $8919
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_VERTEX_COLOR, #PB_Constant)
+#GL_CLAMP_VERTEX_COLOR = $891A
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_VERTEX_COLOR_ARB, #PB_Constant)
+#GL_CLAMP_VERTEX_COLOR_ARB = $891A
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_FRAGMENT_COLOR, #PB_Constant)
+#GL_CLAMP_FRAGMENT_COLOR = $891B
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_FRAGMENT_COLOR_ARB, #PB_Constant)
+#GL_CLAMP_FRAGMENT_COLOR_ARB = $891B
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_READ_COLOR, #PB_Constant)
+#GL_CLAMP_READ_COLOR = $891C
+CompilerEndIf
+CompilerIf Not Defined(GL_CLAMP_READ_COLOR_ARB, #PB_Constant)
+#GL_CLAMP_READ_COLOR_ARB = $891C
+CompilerEndIf
+CompilerIf Not Defined(GL_FIXED_ONLY, #PB_Constant)
+#GL_FIXED_ONLY = $891D
+CompilerEndIf
+CompilerIf Not Defined(GL_FIXED_ONLY_ARB, #PB_Constant)
+#GL_FIXED_ONLY_ARB = $891D
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_PROGRAM_NV, #PB_Constant)
+#GL_TESS_CONTROL_PROGRAM_NV = $891E
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_PROGRAM_NV, #PB_Constant)
+#GL_TESS_EVALUATION_PROGRAM_NV = $891F
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_ATI, #PB_Constant)
+#GL_FRAGMENT_SHADER_ATI = $8920
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_0_ATI, #PB_Constant)
+#GL_REG_0_ATI = $8921
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_1_ATI, #PB_Constant)
+#GL_REG_1_ATI = $8922
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_2_ATI, #PB_Constant)
+#GL_REG_2_ATI = $8923
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_3_ATI, #PB_Constant)
+#GL_REG_3_ATI = $8924
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_4_ATI, #PB_Constant)
+#GL_REG_4_ATI = $8925
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_5_ATI, #PB_Constant)
+#GL_REG_5_ATI = $8926
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_6_ATI, #PB_Constant)
+#GL_REG_6_ATI = $8927
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_7_ATI, #PB_Constant)
+#GL_REG_7_ATI = $8928
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_8_ATI, #PB_Constant)
+#GL_REG_8_ATI = $8929
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_9_ATI, #PB_Constant)
+#GL_REG_9_ATI = $892A
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_10_ATI, #PB_Constant)
+#GL_REG_10_ATI = $892B
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_11_ATI, #PB_Constant)
+#GL_REG_11_ATI = $892C
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_12_ATI, #PB_Constant)
+#GL_REG_12_ATI = $892D
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_13_ATI, #PB_Constant)
+#GL_REG_13_ATI = $892E
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_14_ATI, #PB_Constant)
+#GL_REG_14_ATI = $892F
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_15_ATI, #PB_Constant)
+#GL_REG_15_ATI = $8930
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_16_ATI, #PB_Constant)
+#GL_REG_16_ATI = $8931
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_17_ATI, #PB_Constant)
+#GL_REG_17_ATI = $8932
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_18_ATI, #PB_Constant)
+#GL_REG_18_ATI = $8933
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_19_ATI, #PB_Constant)
+#GL_REG_19_ATI = $8934
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_20_ATI, #PB_Constant)
+#GL_REG_20_ATI = $8935
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_21_ATI, #PB_Constant)
+#GL_REG_21_ATI = $8936
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_22_ATI, #PB_Constant)
+#GL_REG_22_ATI = $8937
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_23_ATI, #PB_Constant)
+#GL_REG_23_ATI = $8938
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_24_ATI, #PB_Constant)
+#GL_REG_24_ATI = $8939
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_25_ATI, #PB_Constant)
+#GL_REG_25_ATI = $893A
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_26_ATI, #PB_Constant)
+#GL_REG_26_ATI = $893B
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_27_ATI, #PB_Constant)
+#GL_REG_27_ATI = $893C
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_28_ATI, #PB_Constant)
+#GL_REG_28_ATI = $893D
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_29_ATI, #PB_Constant)
+#GL_REG_29_ATI = $893E
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_30_ATI, #PB_Constant)
+#GL_REG_30_ATI = $893F
+CompilerEndIf
+CompilerIf Not Defined(GL_REG_31_ATI, #PB_Constant)
+#GL_REG_31_ATI = $8940
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_0_ATI, #PB_Constant)
+#GL_CON_0_ATI = $8941
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_1_ATI, #PB_Constant)
+#GL_CON_1_ATI = $8942
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_2_ATI, #PB_Constant)
+#GL_CON_2_ATI = $8943
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_3_ATI, #PB_Constant)
+#GL_CON_3_ATI = $8944
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_4_ATI, #PB_Constant)
+#GL_CON_4_ATI = $8945
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_5_ATI, #PB_Constant)
+#GL_CON_5_ATI = $8946
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_6_ATI, #PB_Constant)
+#GL_CON_6_ATI = $8947
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_7_ATI, #PB_Constant)
+#GL_CON_7_ATI = $8948
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_8_ATI, #PB_Constant)
+#GL_CON_8_ATI = $8949
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_9_ATI, #PB_Constant)
+#GL_CON_9_ATI = $894A
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_10_ATI, #PB_Constant)
+#GL_CON_10_ATI = $894B
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_11_ATI, #PB_Constant)
+#GL_CON_11_ATI = $894C
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_12_ATI, #PB_Constant)
+#GL_CON_12_ATI = $894D
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_13_ATI, #PB_Constant)
+#GL_CON_13_ATI = $894E
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_14_ATI, #PB_Constant)
+#GL_CON_14_ATI = $894F
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_15_ATI, #PB_Constant)
+#GL_CON_15_ATI = $8950
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_16_ATI, #PB_Constant)
+#GL_CON_16_ATI = $8951
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_17_ATI, #PB_Constant)
+#GL_CON_17_ATI = $8952
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_18_ATI, #PB_Constant)
+#GL_CON_18_ATI = $8953
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_19_ATI, #PB_Constant)
+#GL_CON_19_ATI = $8954
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_20_ATI, #PB_Constant)
+#GL_CON_20_ATI = $8955
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_21_ATI, #PB_Constant)
+#GL_CON_21_ATI = $8956
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_22_ATI, #PB_Constant)
+#GL_CON_22_ATI = $8957
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_23_ATI, #PB_Constant)
+#GL_CON_23_ATI = $8958
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_24_ATI, #PB_Constant)
+#GL_CON_24_ATI = $8959
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_25_ATI, #PB_Constant)
+#GL_CON_25_ATI = $895A
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_26_ATI, #PB_Constant)
+#GL_CON_26_ATI = $895B
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_27_ATI, #PB_Constant)
+#GL_CON_27_ATI = $895C
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_28_ATI, #PB_Constant)
+#GL_CON_28_ATI = $895D
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_29_ATI, #PB_Constant)
+#GL_CON_29_ATI = $895E
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_30_ATI, #PB_Constant)
+#GL_CON_30_ATI = $895F
+CompilerEndIf
+CompilerIf Not Defined(GL_CON_31_ATI, #PB_Constant)
+#GL_CON_31_ATI = $8960
+CompilerEndIf
+CompilerIf Not Defined(GL_MOV_ATI, #PB_Constant)
+#GL_MOV_ATI = $8961
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD_ATI, #PB_Constant)
+#GL_ADD_ATI = $8963
+CompilerEndIf
+CompilerIf Not Defined(GL_MUL_ATI, #PB_Constant)
+#GL_MUL_ATI = $8964
+CompilerEndIf
+CompilerIf Not Defined(GL_SUB_ATI, #PB_Constant)
+#GL_SUB_ATI = $8965
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT3_ATI, #PB_Constant)
+#GL_DOT3_ATI = $8966
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT4_ATI, #PB_Constant)
+#GL_DOT4_ATI = $8967
+CompilerEndIf
+CompilerIf Not Defined(GL_MAD_ATI, #PB_Constant)
+#GL_MAD_ATI = $8968
+CompilerEndIf
+CompilerIf Not Defined(GL_LERP_ATI, #PB_Constant)
+#GL_LERP_ATI = $8969
+CompilerEndIf
+CompilerIf Not Defined(GL_CND_ATI, #PB_Constant)
+#GL_CND_ATI = $896A
+CompilerEndIf
+CompilerIf Not Defined(GL_CND0_ATI, #PB_Constant)
+#GL_CND0_ATI = $896B
+CompilerEndIf
+CompilerIf Not Defined(GL_DOT2_ADD_ATI, #PB_Constant)
+#GL_DOT2_ADD_ATI = $896C
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_INTERPOLATOR_ATI, #PB_Constant)
+#GL_SECONDARY_INTERPOLATOR_ATI = $896D
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_FRAGMENT_REGISTERS_ATI, #PB_Constant)
+#GL_NUM_FRAGMENT_REGISTERS_ATI = $896E
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_FRAGMENT_CONSTANTS_ATI, #PB_Constant)
+#GL_NUM_FRAGMENT_CONSTANTS_ATI = $896F
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_PASSES_ATI, #PB_Constant)
+#GL_NUM_PASSES_ATI = $8970
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_INSTRUCTIONS_PER_PASS_ATI, #PB_Constant)
+#GL_NUM_INSTRUCTIONS_PER_PASS_ATI = $8971
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_INSTRUCTIONS_TOTAL_ATI, #PB_Constant)
+#GL_NUM_INSTRUCTIONS_TOTAL_ATI = $8972
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_INPUT_INTERPOLATOR_COMPONENTS_ATI, #PB_Constant)
+#GL_NUM_INPUT_INTERPOLATOR_COMPONENTS_ATI = $8973
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_LOOPBACK_COMPONENTS_ATI, #PB_Constant)
+#GL_NUM_LOOPBACK_COMPONENTS_ATI = $8974
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ALPHA_PAIRING_ATI, #PB_Constant)
+#GL_COLOR_ALPHA_PAIRING_ATI = $8975
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STR_ATI, #PB_Constant)
+#GL_SWIZZLE_STR_ATI = $8976
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STQ_ATI, #PB_Constant)
+#GL_SWIZZLE_STQ_ATI = $8977
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STR_DR_ATI, #PB_Constant)
+#GL_SWIZZLE_STR_DR_ATI = $8978
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STQ_DQ_ATI, #PB_Constant)
+#GL_SWIZZLE_STQ_DQ_ATI = $8979
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STRQ_ATI, #PB_Constant)
+#GL_SWIZZLE_STRQ_ATI = $897A
+CompilerEndIf
+CompilerIf Not Defined(GL_SWIZZLE_STRQ_DQ_ATI, #PB_Constant)
+#GL_SWIZZLE_STRQ_DQ_ATI = $897B
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLACE_OML, #PB_Constant)
+#GL_INTERLACE_OML = $8980
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLACE_READ_OML, #PB_Constant)
+#GL_INTERLACE_READ_OML = $8981
+CompilerEndIf
+CompilerIf Not Defined(GL_FORMAT_SUBSAMPLE_24_24_OML, #PB_Constant)
+#GL_FORMAT_SUBSAMPLE_24_24_OML = $8982
+CompilerEndIf
+CompilerIf Not Defined(GL_FORMAT_SUBSAMPLE_244_244_OML, #PB_Constant)
+#GL_FORMAT_SUBSAMPLE_244_244_OML = $8983
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_RESAMPLE_OML, #PB_Constant)
+#GL_PACK_RESAMPLE_OML = $8984
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_RESAMPLE_OML, #PB_Constant)
+#GL_UNPACK_RESAMPLE_OML = $8985
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_REPLICATE_OML, #PB_Constant)
+#GL_RESAMPLE_REPLICATE_OML = $8986
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_ZERO_FILL_OML, #PB_Constant)
+#GL_RESAMPLE_ZERO_FILL_OML = $8987
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_AVERAGE_OML, #PB_Constant)
+#GL_RESAMPLE_AVERAGE_OML = $8988
+CompilerEndIf
+CompilerIf Not Defined(GL_RESAMPLE_DECIMATE_OML, #PB_Constant)
+#GL_RESAMPLE_DECIMATE_OML = $8989
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_ARRAY_TYPE_OES, #PB_Constant)
+#GL_POINT_SIZE_ARRAY_TYPE_OES = $898A
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_ARRAY_STRIDE_OES, #PB_Constant)
+#GL_POINT_SIZE_ARRAY_STRIDE_OES = $898B
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_ARRAY_POINTER_OES, #PB_Constant)
+#GL_POINT_SIZE_ARRAY_POINTER_OES = $898C
+CompilerEndIf
+CompilerIf Not Defined(GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES, #PB_Constant)
+#GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES = $898D
+CompilerEndIf
+CompilerIf Not Defined(GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES, #PB_Constant)
+#GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES = $898E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES, #PB_Constant)
+#GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES = $898F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP1_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP1_APPLE = $8A00
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP2_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP2_APPLE = $8A01
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP1_SIZE_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP1_SIZE_APPLE = $8A02
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP1_COEFF_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP1_COEFF_APPLE = $8A03
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP1_ORDER_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP1_ORDER_APPLE = $8A04
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP1_DOMAIN_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP1_DOMAIN_APPLE = $8A05
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP2_SIZE_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP2_SIZE_APPLE = $8A06
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP2_COEFF_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP2_COEFF_APPLE = $8A07
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP2_ORDER_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP2_ORDER_APPLE = $8A08
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE, #PB_Constant)
+#GL_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE = $8A09
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_PIXELS_APPLE, #PB_Constant)
+#GL_DRAW_PIXELS_APPLE = $8A0A
+CompilerEndIf
+CompilerIf Not Defined(GL_FENCE_APPLE, #PB_Constant)
+#GL_FENCE_APPLE = $8A0B
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_APPLE, #PB_Constant)
+#GL_ELEMENT_ARRAY_APPLE = $8A0C
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_TYPE_APPLE, #PB_Constant)
+#GL_ELEMENT_ARRAY_TYPE_APPLE = $8A0D
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_POINTER_APPLE, #PB_Constant)
+#GL_ELEMENT_ARRAY_POINTER_APPLE = $8A0E
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_FLOAT_APPLE, #PB_Constant)
+#GL_COLOR_FLOAT_APPLE = $8A0F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER, #PB_Constant)
+#GL_UNIFORM_BUFFER = $8A11
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_SERIALIZED_MODIFY_APPLE, #PB_Constant)
+#GL_BUFFER_SERIALIZED_MODIFY_APPLE = $8A12
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_FLUSHING_UNMAP_APPLE, #PB_Constant)
+#GL_BUFFER_FLUSHING_UNMAP_APPLE = $8A13
+CompilerEndIf
+CompilerIf Not Defined(GL_AUX_DEPTH_STENCIL_APPLE, #PB_Constant)
+#GL_AUX_DEPTH_STENCIL_APPLE = $8A14
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_ROW_BYTES_APPLE, #PB_Constant)
+#GL_PACK_ROW_BYTES_APPLE = $8A15
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_ROW_BYTES_APPLE, #PB_Constant)
+#GL_UNPACK_ROW_BYTES_APPLE = $8A16
+CompilerEndIf
+CompilerIf Not Defined(GL_RELEASED_APPLE, #PB_Constant)
+#GL_RELEASED_APPLE = $8A19
+CompilerEndIf
+CompilerIf Not Defined(GL_VOLATILE_APPLE, #PB_Constant)
+#GL_VOLATILE_APPLE = $8A1A
+CompilerEndIf
+CompilerIf Not Defined(GL_RETAINED_APPLE, #PB_Constant)
+#GL_RETAINED_APPLE = $8A1B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNDEFINED_APPLE, #PB_Constant)
+#GL_UNDEFINED_APPLE = $8A1C
+CompilerEndIf
+CompilerIf Not Defined(GL_PURGEABLE_APPLE, #PB_Constant)
+#GL_PURGEABLE_APPLE = $8A1D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_422_APPLE, #PB_Constant)
+#GL_RGB_422_APPLE = $8A1F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_BINDING, #PB_Constant)
+#GL_UNIFORM_BUFFER_BINDING = $8A28
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_START, #PB_Constant)
+#GL_UNIFORM_BUFFER_START = $8A29
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_SIZE, #PB_Constant)
+#GL_UNIFORM_BUFFER_SIZE = $8A2A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_VERTEX_UNIFORM_BLOCKS = $8A2B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_BLOCKS = $8A2C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT = $8A2C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES = $8A2C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_FRAGMENT_UNIFORM_BLOCKS = $8A2D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_COMBINED_UNIFORM_BLOCKS = $8A2E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_UNIFORM_BUFFER_BINDINGS, #PB_Constant)
+#GL_MAX_UNIFORM_BUFFER_BINDINGS = $8A2F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_UNIFORM_BLOCK_SIZE, #PB_Constant)
+#GL_MAX_UNIFORM_BLOCK_SIZE = $8A30
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS = $8A31
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS = $8A32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT = $8A32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES = $8A32
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS = $8A33
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT, #PB_Constant)
+#GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT = $8A34
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH, #PB_Constant)
+#GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH = $8A35
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_UNIFORM_BLOCKS, #PB_Constant)
+#GL_ACTIVE_UNIFORM_BLOCKS = $8A36
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_TYPE, #PB_Constant)
+#GL_UNIFORM_TYPE = $8A37
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_SIZE, #PB_Constant)
+#GL_UNIFORM_SIZE = $8A38
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_NAME_LENGTH, #PB_Constant)
+#GL_UNIFORM_NAME_LENGTH = $8A39
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_INDEX, #PB_Constant)
+#GL_UNIFORM_BLOCK_INDEX = $8A3A
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_OFFSET, #PB_Constant)
+#GL_UNIFORM_OFFSET = $8A3B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_ARRAY_STRIDE, #PB_Constant)
+#GL_UNIFORM_ARRAY_STRIDE = $8A3C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_MATRIX_STRIDE, #PB_Constant)
+#GL_UNIFORM_MATRIX_STRIDE = $8A3D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_IS_ROW_MAJOR, #PB_Constant)
+#GL_UNIFORM_IS_ROW_MAJOR = $8A3E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_BINDING, #PB_Constant)
+#GL_UNIFORM_BLOCK_BINDING = $8A3F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_DATA_SIZE, #PB_Constant)
+#GL_UNIFORM_BLOCK_DATA_SIZE = $8A40
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_NAME_LENGTH, #PB_Constant)
+#GL_UNIFORM_BLOCK_NAME_LENGTH = $8A41
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS, #PB_Constant)
+#GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS = $8A42
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES, #PB_Constant)
+#GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES = $8A43
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER = $8A44
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER = $8A45
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER = $8A46
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SRGB_DECODE_EXT, #PB_Constant)
+#GL_TEXTURE_SRGB_DECODE_EXT = $8A48
+CompilerEndIf
+CompilerIf Not Defined(GL_DECODE_EXT, #PB_Constant)
+#GL_DECODE_EXT = $8A49
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_DECODE_EXT, #PB_Constant)
+#GL_SKIP_DECODE_EXT = $8A4A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_PIPELINE_OBJECT_EXT, #PB_Constant)
+#GL_PROGRAM_PIPELINE_OBJECT_EXT = $8A4F
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_RAW_422_APPLE, #PB_Constant)
+#GL_RGB_RAW_422_APPLE = $8A51
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT = $8A52
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_OBJECT_APPLE, #PB_Constant)
+#GL_SYNC_OBJECT_APPLE = $8A53
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT = $8A54
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT = $8A55
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT = $8A56
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT = $8A57
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER, #PB_Constant)
+#GL_FRAGMENT_SHADER = $8B30
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_ARB, #PB_Constant)
+#GL_FRAGMENT_SHADER_ARB = $8B30
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER, #PB_Constant)
+#GL_VERTEX_SHADER = $8B31
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SHADER_ARB, #PB_Constant)
+#GL_VERTEX_SHADER_ARB = $8B31
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_OBJECT_ARB, #PB_Constant)
+#GL_PROGRAM_OBJECT_ARB = $8B40
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_OBJECT_EXT, #PB_Constant)
+#GL_PROGRAM_OBJECT_EXT = $8B40
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_OBJECT_ARB, #PB_Constant)
+#GL_SHADER_OBJECT_ARB = $8B48
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_OBJECT_EXT, #PB_Constant)
+#GL_SHADER_OBJECT_EXT = $8B48
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_FRAGMENT_UNIFORM_COMPONENTS = $8B49
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB = $8B49
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_VERTEX_UNIFORM_COMPONENTS = $8B4A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB = $8B4A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VARYING_FLOATS, #PB_Constant)
+#GL_MAX_VARYING_FLOATS = $8B4B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VARYING_COMPONENTS, #PB_Constant)
+#GL_MAX_VARYING_COMPONENTS = $8B4B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VARYING_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_VARYING_COMPONENTS_EXT = $8B4B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VARYING_FLOATS_ARB, #PB_Constant)
+#GL_MAX_VARYING_FLOATS_ARB = $8B4B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS = $8B4C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB, #PB_Constant)
+#GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB = $8B4C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS = $8B4D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB, #PB_Constant)
+#GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB = $8B4D
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_TYPE_ARB, #PB_Constant)
+#GL_OBJECT_TYPE_ARB = $8B4E
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_TYPE, #PB_Constant)
+#GL_SHADER_TYPE = $8B4F
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_SUBTYPE_ARB, #PB_Constant)
+#GL_OBJECT_SUBTYPE_ARB = $8B4F
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC2, #PB_Constant)
+#GL_FLOAT_VEC2 = $8B50
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC2_ARB, #PB_Constant)
+#GL_FLOAT_VEC2_ARB = $8B50
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC3, #PB_Constant)
+#GL_FLOAT_VEC3 = $8B51
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC3_ARB, #PB_Constant)
+#GL_FLOAT_VEC3_ARB = $8B51
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC4, #PB_Constant)
+#GL_FLOAT_VEC4 = $8B52
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_VEC4_ARB, #PB_Constant)
+#GL_FLOAT_VEC4_ARB = $8B52
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC2, #PB_Constant)
+#GL_INT_VEC2 = $8B53
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC2_ARB, #PB_Constant)
+#GL_INT_VEC2_ARB = $8B53
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC3, #PB_Constant)
+#GL_INT_VEC3 = $8B54
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC3_ARB, #PB_Constant)
+#GL_INT_VEC3_ARB = $8B54
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC4, #PB_Constant)
+#GL_INT_VEC4 = $8B55
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_VEC4_ARB, #PB_Constant)
+#GL_INT_VEC4_ARB = $8B55
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL, #PB_Constant)
+#GL_BOOL = $8B56
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_ARB, #PB_Constant)
+#GL_BOOL_ARB = $8B56
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC2, #PB_Constant)
+#GL_BOOL_VEC2 = $8B57
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC2_ARB, #PB_Constant)
+#GL_BOOL_VEC2_ARB = $8B57
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC3, #PB_Constant)
+#GL_BOOL_VEC3 = $8B58
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC3_ARB, #PB_Constant)
+#GL_BOOL_VEC3_ARB = $8B58
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC4, #PB_Constant)
+#GL_BOOL_VEC4 = $8B59
+CompilerEndIf
+CompilerIf Not Defined(GL_BOOL_VEC4_ARB, #PB_Constant)
+#GL_BOOL_VEC4_ARB = $8B59
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2, #PB_Constant)
+#GL_FLOAT_MAT2 = $8B5A
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2_ARB, #PB_Constant)
+#GL_FLOAT_MAT2_ARB = $8B5A
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3, #PB_Constant)
+#GL_FLOAT_MAT3 = $8B5B
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3_ARB, #PB_Constant)
+#GL_FLOAT_MAT3_ARB = $8B5B
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4, #PB_Constant)
+#GL_FLOAT_MAT4 = $8B5C
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4_ARB, #PB_Constant)
+#GL_FLOAT_MAT4_ARB = $8B5C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D, #PB_Constant)
+#GL_SAMPLER_1D = $8B5D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_ARB, #PB_Constant)
+#GL_SAMPLER_1D_ARB = $8B5D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D, #PB_Constant)
+#GL_SAMPLER_2D = $8B5E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARB, #PB_Constant)
+#GL_SAMPLER_2D_ARB = $8B5E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_3D, #PB_Constant)
+#GL_SAMPLER_3D = $8B5F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_3D_ARB, #PB_Constant)
+#GL_SAMPLER_3D_ARB = $8B5F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_3D_OES, #PB_Constant)
+#GL_SAMPLER_3D_OES = $8B5F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE, #PB_Constant)
+#GL_SAMPLER_CUBE = $8B60
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_ARB, #PB_Constant)
+#GL_SAMPLER_CUBE_ARB = $8B60
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_SHADOW, #PB_Constant)
+#GL_SAMPLER_1D_SHADOW = $8B61
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_SHADOW_ARB, #PB_Constant)
+#GL_SAMPLER_1D_SHADOW_ARB = $8B61
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_SHADOW, #PB_Constant)
+#GL_SAMPLER_2D_SHADOW = $8B62
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_SHADOW_ARB, #PB_Constant)
+#GL_SAMPLER_2D_SHADOW_ARB = $8B62
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_SHADOW_EXT, #PB_Constant)
+#GL_SAMPLER_2D_SHADOW_EXT = $8B62
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_RECT, #PB_Constant)
+#GL_SAMPLER_2D_RECT = $8B63
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_RECT_ARB, #PB_Constant)
+#GL_SAMPLER_2D_RECT_ARB = $8B63
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_RECT_SHADOW, #PB_Constant)
+#GL_SAMPLER_2D_RECT_SHADOW = $8B64
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_RECT_SHADOW_ARB, #PB_Constant)
+#GL_SAMPLER_2D_RECT_SHADOW_ARB = $8B64
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2x3, #PB_Constant)
+#GL_FLOAT_MAT2x3 = $8B65
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2x3_NV, #PB_Constant)
+#GL_FLOAT_MAT2x3_NV = $8B65
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2x4, #PB_Constant)
+#GL_FLOAT_MAT2x4 = $8B66
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT2x4_NV, #PB_Constant)
+#GL_FLOAT_MAT2x4_NV = $8B66
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3x2, #PB_Constant)
+#GL_FLOAT_MAT3x2 = $8B67
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3x2_NV, #PB_Constant)
+#GL_FLOAT_MAT3x2_NV = $8B67
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3x4, #PB_Constant)
+#GL_FLOAT_MAT3x4 = $8B68
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT3x4_NV, #PB_Constant)
+#GL_FLOAT_MAT3x4_NV = $8B68
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4x2, #PB_Constant)
+#GL_FLOAT_MAT4x2 = $8B69
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4x2_NV, #PB_Constant)
+#GL_FLOAT_MAT4x2_NV = $8B69
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4x3, #PB_Constant)
+#GL_FLOAT_MAT4x3 = $8B6A
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_MAT4x3_NV, #PB_Constant)
+#GL_FLOAT_MAT4x3_NV = $8B6A
+CompilerEndIf
+CompilerIf Not Defined(GL_DELETE_STATUS, #PB_Constant)
+#GL_DELETE_STATUS = $8B80
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_DELETE_STATUS_ARB, #PB_Constant)
+#GL_OBJECT_DELETE_STATUS_ARB = $8B80
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPILE_STATUS, #PB_Constant)
+#GL_COMPILE_STATUS = $8B81
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_COMPILE_STATUS_ARB, #PB_Constant)
+#GL_OBJECT_COMPILE_STATUS_ARB = $8B81
+CompilerEndIf
+CompilerIf Not Defined(GL_LINK_STATUS, #PB_Constant)
+#GL_LINK_STATUS = $8B82
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_LINK_STATUS_ARB, #PB_Constant)
+#GL_OBJECT_LINK_STATUS_ARB = $8B82
+CompilerEndIf
+CompilerIf Not Defined(GL_VALIDATE_STATUS, #PB_Constant)
+#GL_VALIDATE_STATUS = $8B83
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_VALIDATE_STATUS_ARB, #PB_Constant)
+#GL_OBJECT_VALIDATE_STATUS_ARB = $8B83
+CompilerEndIf
+CompilerIf Not Defined(GL_INFO_LOG_LENGTH, #PB_Constant)
+#GL_INFO_LOG_LENGTH = $8B84
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_INFO_LOG_LENGTH_ARB, #PB_Constant)
+#GL_OBJECT_INFO_LOG_LENGTH_ARB = $8B84
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTACHED_SHADERS, #PB_Constant)
+#GL_ATTACHED_SHADERS = $8B85
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_ATTACHED_OBJECTS_ARB, #PB_Constant)
+#GL_OBJECT_ATTACHED_OBJECTS_ARB = $8B85
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_UNIFORMS, #PB_Constant)
+#GL_ACTIVE_UNIFORMS = $8B86
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_ACTIVE_UNIFORMS_ARB, #PB_Constant)
+#GL_OBJECT_ACTIVE_UNIFORMS_ARB = $8B86
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_UNIFORM_MAX_LENGTH, #PB_Constant)
+#GL_ACTIVE_UNIFORM_MAX_LENGTH = $8B87
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH_ARB, #PB_Constant)
+#GL_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH_ARB = $8B87
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_SOURCE_LENGTH, #PB_Constant)
+#GL_SHADER_SOURCE_LENGTH = $8B88
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_SHADER_SOURCE_LENGTH_ARB, #PB_Constant)
+#GL_OBJECT_SHADER_SOURCE_LENGTH_ARB = $8B88
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_ATTRIBUTES, #PB_Constant)
+#GL_ACTIVE_ATTRIBUTES = $8B89
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_ACTIVE_ATTRIBUTES_ARB, #PB_Constant)
+#GL_OBJECT_ACTIVE_ATTRIBUTES_ARB = $8B89
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, #PB_Constant)
+#GL_ACTIVE_ATTRIBUTE_MAX_LENGTH = $8B8A
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB, #PB_Constant)
+#GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB = $8B8A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_DERIVATIVE_HINT, #PB_Constant)
+#GL_FRAGMENT_SHADER_DERIVATIVE_HINT = $8B8B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB, #PB_Constant)
+#GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB = $8B8B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES, #PB_Constant)
+#GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES = $8B8B
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_LANGUAGE_VERSION, #PB_Constant)
+#GL_SHADING_LANGUAGE_VERSION = $8B8C
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_LANGUAGE_VERSION_ARB, #PB_Constant)
+#GL_SHADING_LANGUAGE_VERSION_ARB = $8B8C
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_PROGRAM, #PB_Constant)
+#GL_CURRENT_PROGRAM = $8B8D
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE4_RGB8_OES, #PB_Constant)
+#GL_PALETTE4_RGB8_OES = $8B90
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE4_RGBA8_OES, #PB_Constant)
+#GL_PALETTE4_RGBA8_OES = $8B91
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE4_R5_G6_B5_OES, #PB_Constant)
+#GL_PALETTE4_R5_G6_B5_OES = $8B92
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE4_RGBA4_OES, #PB_Constant)
+#GL_PALETTE4_RGBA4_OES = $8B93
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE4_RGB5_A1_OES, #PB_Constant)
+#GL_PALETTE4_RGB5_A1_OES = $8B94
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE8_RGB8_OES, #PB_Constant)
+#GL_PALETTE8_RGB8_OES = $8B95
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE8_RGBA8_OES, #PB_Constant)
+#GL_PALETTE8_RGBA8_OES = $8B96
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE8_R5_G6_B5_OES, #PB_Constant)
+#GL_PALETTE8_R5_G6_B5_OES = $8B97
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE8_RGBA4_OES, #PB_Constant)
+#GL_PALETTE8_RGBA4_OES = $8B98
+CompilerEndIf
+CompilerIf Not Defined(GL_PALETTE8_RGB5_A1_OES, #PB_Constant)
+#GL_PALETTE8_RGB5_A1_OES = $8B99
+CompilerEndIf
+CompilerIf Not Defined(GL_IMPLEMENTATION_COLOR_READ_TYPE, #PB_Constant)
+#GL_IMPLEMENTATION_COLOR_READ_TYPE = $8B9A
+CompilerEndIf
+CompilerIf Not Defined(GL_IMPLEMENTATION_COLOR_READ_TYPE_OES, #PB_Constant)
+#GL_IMPLEMENTATION_COLOR_READ_TYPE_OES = $8B9A
+CompilerEndIf
+CompilerIf Not Defined(GL_IMPLEMENTATION_COLOR_READ_FORMAT, #PB_Constant)
+#GL_IMPLEMENTATION_COLOR_READ_FORMAT = $8B9B
+CompilerEndIf
+CompilerIf Not Defined(GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES, #PB_Constant)
+#GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES = $8B9B
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_ARRAY_OES, #PB_Constant)
+#GL_POINT_SIZE_ARRAY_OES = $8B9C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CROP_RECT_OES, #PB_Constant)
+#GL_TEXTURE_CROP_RECT_OES = $8B9D
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES, #PB_Constant)
+#GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES = $8B9E
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES, #PB_Constant)
+#GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES = $8B9F
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_POSITION_MESA, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_POSITION_MESA = $8BB0
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_CALLBACK_MESA, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_CALLBACK_MESA = $8BB1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_CALLBACK_FUNC_MESA, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_CALLBACK_FUNC_MESA = $8BB2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_CALLBACK_DATA_MESA, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_CALLBACK_DATA_MESA = $8BB3
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_POSITION_MESA, #PB_Constant)
+#GL_VERTEX_PROGRAM_POSITION_MESA = $8BB4
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_CALLBACK_MESA, #PB_Constant)
+#GL_VERTEX_PROGRAM_CALLBACK_MESA = $8BB5
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_CALLBACK_FUNC_MESA, #PB_Constant)
+#GL_VERTEX_PROGRAM_CALLBACK_FUNC_MESA = $8BB6
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_CALLBACK_DATA_MESA, #PB_Constant)
+#GL_VERTEX_PROGRAM_CALLBACK_DATA_MESA = $8BB7
+CompilerEndIf
+CompilerIf Not Defined(GL_TILE_RASTER_ORDER_FIXED_MESA, #PB_Constant)
+#GL_TILE_RASTER_ORDER_FIXED_MESA = $8BB8
+CompilerEndIf
+CompilerIf Not Defined(GL_TILE_RASTER_ORDER_INCREASING_X_MESA, #PB_Constant)
+#GL_TILE_RASTER_ORDER_INCREASING_X_MESA = $8BB9
+CompilerEndIf
+CompilerIf Not Defined(GL_TILE_RASTER_ORDER_INCREASING_Y_MESA, #PB_Constant)
+#GL_TILE_RASTER_ORDER_INCREASING_Y_MESA = $8BBA
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_FLIP_Y_MESA, #PB_Constant)
+#GL_FRAMEBUFFER_FLIP_Y_MESA = $8BBB
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_FLIP_X_MESA, #PB_Constant)
+#GL_FRAMEBUFFER_FLIP_X_MESA = $8BBC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SWAP_XY_MESA, #PB_Constant)
+#GL_FRAMEBUFFER_SWAP_XY_MESA = $8BBD
+CompilerEndIf
+CompilerIf Not Defined(GL_CONST_BW_TILING_MESA, #PB_Constant)
+#GL_CONST_BW_TILING_MESA = $8BBE
+CompilerEndIf
+CompilerIf Not Defined(GL_COUNTER_TYPE_AMD, #PB_Constant)
+#GL_COUNTER_TYPE_AMD = $8BC0
+CompilerEndIf
+CompilerIf Not Defined(GL_COUNTER_RANGE_AMD, #PB_Constant)
+#GL_COUNTER_RANGE_AMD = $8BC1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_AMD, #PB_Constant)
+#GL_UNSIGNED_INT64_AMD = $8BC2
+CompilerEndIf
+CompilerIf Not Defined(GL_PERCENTAGE_AMD, #PB_Constant)
+#GL_PERCENTAGE_AMD = $8BC3
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFMON_RESULT_AVAILABLE_AMD, #PB_Constant)
+#GL_PERFMON_RESULT_AVAILABLE_AMD = $8BC4
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFMON_RESULT_SIZE_AMD, #PB_Constant)
+#GL_PERFMON_RESULT_SIZE_AMD = $8BC5
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFMON_RESULT_AMD, #PB_Constant)
+#GL_PERFMON_RESULT_AMD = $8BC6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_WIDTH_QCOM, #PB_Constant)
+#GL_TEXTURE_WIDTH_QCOM = $8BD2
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_HEIGHT_QCOM, #PB_Constant)
+#GL_TEXTURE_HEIGHT_QCOM = $8BD3
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_QCOM, #PB_Constant)
+#GL_TEXTURE_DEPTH_QCOM = $8BD4
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTERNAL_FORMAT_QCOM, #PB_Constant)
+#GL_TEXTURE_INTERNAL_FORMAT_QCOM = $8BD5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FORMAT_QCOM, #PB_Constant)
+#GL_TEXTURE_FORMAT_QCOM = $8BD6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_TYPE_QCOM, #PB_Constant)
+#GL_TEXTURE_TYPE_QCOM = $8BD7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMAGE_VALID_QCOM, #PB_Constant)
+#GL_TEXTURE_IMAGE_VALID_QCOM = $8BD8
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_NUM_LEVELS_QCOM, #PB_Constant)
+#GL_TEXTURE_NUM_LEVELS_QCOM = $8BD9
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_TARGET_QCOM, #PB_Constant)
+#GL_TEXTURE_TARGET_QCOM = $8BDA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_OBJECT_VALID_QCOM, #PB_Constant)
+#GL_TEXTURE_OBJECT_VALID_QCOM = $8BDB
+CompilerEndIf
+CompilerIf Not Defined(GL_STATE_RESTORE, #PB_Constant)
+#GL_STATE_RESTORE = $8BDC
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_EXTERNAL_2D_Y2Y_EXT, #PB_Constant)
+#GL_SAMPLER_EXTERNAL_2D_Y2Y_EXT = $8BE7
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_PROTECTED_EXT, #PB_Constant)
+#GL_TEXTURE_PROTECTED_EXT = $8BFA
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM, #PB_Constant)
+#GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM = $8BFB
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM, #PB_Constant)
+#GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM = $8BFC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM, #PB_Constant)
+#GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM = $8BFD
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM, #PB_Constant)
+#GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM = $8BFE
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM = $8BFF
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG, #PB_Constant)
+#GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG = $8C00
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG, #PB_Constant)
+#GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG = $8C01
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG, #PB_Constant)
+#GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG = $8C02
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG, #PB_Constant)
+#GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG = $8C03
+CompilerEndIf
+CompilerIf Not Defined(GL_MODULATE_COLOR_IMG, #PB_Constant)
+#GL_MODULATE_COLOR_IMG = $8C04
+CompilerEndIf
+CompilerIf Not Defined(GL_RECIP_ADD_SIGNED_ALPHA_IMG, #PB_Constant)
+#GL_RECIP_ADD_SIGNED_ALPHA_IMG = $8C05
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ALPHA_MODULATE_IMG, #PB_Constant)
+#GL_TEXTURE_ALPHA_MODULATE_IMG = $8C06
+CompilerEndIf
+CompilerIf Not Defined(GL_FACTOR_ALPHA_MODULATE_IMG, #PB_Constant)
+#GL_FACTOR_ALPHA_MODULATE_IMG = $8C07
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_ALPHA_MODULATE_IMG, #PB_Constant)
+#GL_FRAGMENT_ALPHA_MODULATE_IMG = $8C08
+CompilerEndIf
+CompilerIf Not Defined(GL_ADD_BLEND_IMG, #PB_Constant)
+#GL_ADD_BLEND_IMG = $8C09
+CompilerEndIf
+CompilerIf Not Defined(GL_SGX_BINARY_IMG, #PB_Constant)
+#GL_SGX_BINARY_IMG = $8C0A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RED_TYPE, #PB_Constant)
+#GL_TEXTURE_RED_TYPE = $8C10
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RED_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_RED_TYPE_ARB = $8C10
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GREEN_TYPE, #PB_Constant)
+#GL_TEXTURE_GREEN_TYPE = $8C11
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GREEN_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_GREEN_TYPE_ARB = $8C11
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BLUE_TYPE, #PB_Constant)
+#GL_TEXTURE_BLUE_TYPE = $8C12
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BLUE_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_BLUE_TYPE_ARB = $8C12
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ALPHA_TYPE, #PB_Constant)
+#GL_TEXTURE_ALPHA_TYPE = $8C13
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ALPHA_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_ALPHA_TYPE_ARB = $8C13
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LUMINANCE_TYPE, #PB_Constant)
+#GL_TEXTURE_LUMINANCE_TYPE = $8C14
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LUMINANCE_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_LUMINANCE_TYPE_ARB = $8C14
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTENSITY_TYPE, #PB_Constant)
+#GL_TEXTURE_INTENSITY_TYPE = $8C15
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_INTENSITY_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_INTENSITY_TYPE_ARB = $8C15
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_TYPE, #PB_Constant)
+#GL_TEXTURE_DEPTH_TYPE = $8C16
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_DEPTH_TYPE_ARB, #PB_Constant)
+#GL_TEXTURE_DEPTH_TYPE_ARB = $8C16
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_NORMALIZED, #PB_Constant)
+#GL_UNSIGNED_NORMALIZED = $8C17
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_NORMALIZED_ARB, #PB_Constant)
+#GL_UNSIGNED_NORMALIZED_ARB = $8C17
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_NORMALIZED_EXT, #PB_Constant)
+#GL_UNSIGNED_NORMALIZED_EXT = $8C17
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D_ARRAY, #PB_Constant)
+#GL_TEXTURE_1D_ARRAY = $8C18
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_1D_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_1D_ARRAY_EXT = $8C18
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_1D_ARRAY, #PB_Constant)
+#GL_PROXY_TEXTURE_1D_ARRAY = $8C19
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_1D_ARRAY_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_1D_ARRAY_EXT = $8C19
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_ARRAY, #PB_Constant)
+#GL_TEXTURE_2D_ARRAY = $8C1A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_2D_ARRAY_EXT = $8C1A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_ARRAY, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_ARRAY = $8C1B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_ARRAY_EXT, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_ARRAY_EXT = $8C1B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_1D_ARRAY, #PB_Constant)
+#GL_TEXTURE_BINDING_1D_ARRAY = $8C1C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_1D_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_BINDING_1D_ARRAY_EXT = $8C1C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D_ARRAY, #PB_Constant)
+#GL_TEXTURE_BINDING_2D_ARRAY = $8C1D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_BINDING_2D_ARRAY_EXT = $8C1D
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_PROGRAM_NV, #PB_Constant)
+#GL_GEOMETRY_PROGRAM_NV = $8C26
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_OUTPUT_VERTICES_NV, #PB_Constant)
+#GL_MAX_PROGRAM_OUTPUT_VERTICES_NV = $8C27
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TOTAL_OUTPUT_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_TOTAL_OUTPUT_COMPONENTS_NV = $8C28
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS = $8C29
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_ARB, #PB_Constant)
+#GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_ARB = $8C29
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT = $8C29
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES = $8C29
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER, #PB_Constant)
+#GL_TEXTURE_BUFFER = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_ARB, #PB_Constant)
+#GL_TEXTURE_BUFFER_ARB = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_EXT = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_OES = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_BINDING, #PB_Constant)
+#GL_TEXTURE_BUFFER_BINDING = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_BINDING_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_BINDING_EXT = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_BINDING_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_BINDING_OES = $8C2A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_BUFFER_SIZE, #PB_Constant)
+#GL_MAX_TEXTURE_BUFFER_SIZE = $8C2B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_BUFFER_SIZE_ARB, #PB_Constant)
+#GL_MAX_TEXTURE_BUFFER_SIZE_ARB = $8C2B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_BUFFER_SIZE_EXT, #PB_Constant)
+#GL_MAX_TEXTURE_BUFFER_SIZE_EXT = $8C2B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TEXTURE_BUFFER_SIZE_OES, #PB_Constant)
+#GL_MAX_TEXTURE_BUFFER_SIZE_OES = $8C2B
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_BUFFER, #PB_Constant)
+#GL_TEXTURE_BINDING_BUFFER = $8C2C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_BUFFER_ARB, #PB_Constant)
+#GL_TEXTURE_BINDING_BUFFER_ARB = $8C2C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_BUFFER_EXT, #PB_Constant)
+#GL_TEXTURE_BINDING_BUFFER_EXT = $8C2C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_BUFFER_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_BUFFER_OES = $8C2C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_DATA_STORE_BINDING, #PB_Constant)
+#GL_TEXTURE_BUFFER_DATA_STORE_BINDING = $8C2D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB, #PB_Constant)
+#GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB = $8C2D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT = $8C2D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES = $8C2D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_FORMAT_ARB, #PB_Constant)
+#GL_TEXTURE_BUFFER_FORMAT_ARB = $8C2E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_FORMAT_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_FORMAT_EXT = $8C2E
+CompilerEndIf
+CompilerIf Not Defined(GL_ANY_SAMPLES_PASSED, #PB_Constant)
+#GL_ANY_SAMPLES_PASSED = $8C2F
+CompilerEndIf
+CompilerIf Not Defined(GL_ANY_SAMPLES_PASSED_EXT, #PB_Constant)
+#GL_ANY_SAMPLES_PASSED_EXT = $8C2F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_SHADING, #PB_Constant)
+#GL_SAMPLE_SHADING = $8C36
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_SHADING_ARB, #PB_Constant)
+#GL_SAMPLE_SHADING_ARB = $8C36
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_SHADING_OES, #PB_Constant)
+#GL_SAMPLE_SHADING_OES = $8C36
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_SAMPLE_SHADING_VALUE, #PB_Constant)
+#GL_MIN_SAMPLE_SHADING_VALUE = $8C37
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_SAMPLE_SHADING_VALUE_ARB, #PB_Constant)
+#GL_MIN_SAMPLE_SHADING_VALUE_ARB = $8C37
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_SAMPLE_SHADING_VALUE_OES, #PB_Constant)
+#GL_MIN_SAMPLE_SHADING_VALUE_OES = $8C37
+CompilerEndIf
+CompilerIf Not Defined(GL_R11F_G11F_B10F, #PB_Constant)
+#GL_R11F_G11F_B10F = $8C3A
+CompilerEndIf
+CompilerIf Not Defined(GL_R11F_G11F_B10F_APPLE, #PB_Constant)
+#GL_R11F_G11F_B10F_APPLE = $8C3A
+CompilerEndIf
+CompilerIf Not Defined(GL_R11F_G11F_B10F_EXT, #PB_Constant)
+#GL_R11F_G11F_B10F_EXT = $8C3A
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10F_11F_11F_REV, #PB_Constant)
+#GL_UNSIGNED_INT_10F_11F_11F_REV = $8C3B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE, #PB_Constant)
+#GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE = $8C3B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10F_11F_11F_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_10F_11F_11F_REV_EXT = $8C3B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_SIGNED_COMPONENTS_EXT, #PB_Constant)
+#GL_RGBA_SIGNED_COMPONENTS_EXT = $8C3C
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB9_E5, #PB_Constant)
+#GL_RGB9_E5 = $8C3D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB9_E5_APPLE, #PB_Constant)
+#GL_RGB9_E5_APPLE = $8C3D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB9_E5_EXT, #PB_Constant)
+#GL_RGB9_E5_EXT = $8C3D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_5_9_9_9_REV, #PB_Constant)
+#GL_UNSIGNED_INT_5_9_9_9_REV = $8C3E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_5_9_9_9_REV_APPLE, #PB_Constant)
+#GL_UNSIGNED_INT_5_9_9_9_REV_APPLE = $8C3E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_5_9_9_9_REV_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_5_9_9_9_REV_EXT = $8C3E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SHARED_SIZE, #PB_Constant)
+#GL_TEXTURE_SHARED_SIZE = $8C3F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SHARED_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_SHARED_SIZE_EXT = $8C3F
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB, #PB_Constant)
+#GL_SRGB = $8C40
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_EXT, #PB_Constant)
+#GL_SRGB_EXT = $8C40
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB8, #PB_Constant)
+#GL_SRGB8 = $8C41
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB8_EXT, #PB_Constant)
+#GL_SRGB8_EXT = $8C41
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB8_NV, #PB_Constant)
+#GL_SRGB8_NV = $8C41
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_ALPHA, #PB_Constant)
+#GL_SRGB_ALPHA = $8C42
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB_ALPHA_EXT, #PB_Constant)
+#GL_SRGB_ALPHA_EXT = $8C42
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB8_ALPHA8, #PB_Constant)
+#GL_SRGB8_ALPHA8 = $8C43
+CompilerEndIf
+CompilerIf Not Defined(GL_SRGB8_ALPHA8_EXT, #PB_Constant)
+#GL_SRGB8_ALPHA8_EXT = $8C43
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE_ALPHA, #PB_Constant)
+#GL_SLUMINANCE_ALPHA = $8C44
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE_ALPHA_EXT, #PB_Constant)
+#GL_SLUMINANCE_ALPHA_EXT = $8C44
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE_ALPHA_NV, #PB_Constant)
+#GL_SLUMINANCE_ALPHA_NV = $8C44
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8_ALPHA8, #PB_Constant)
+#GL_SLUMINANCE8_ALPHA8 = $8C45
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8_ALPHA8_EXT, #PB_Constant)
+#GL_SLUMINANCE8_ALPHA8_EXT = $8C45
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8_ALPHA8_NV, #PB_Constant)
+#GL_SLUMINANCE8_ALPHA8_NV = $8C45
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE, #PB_Constant)
+#GL_SLUMINANCE = $8C46
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE_EXT, #PB_Constant)
+#GL_SLUMINANCE_EXT = $8C46
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE_NV, #PB_Constant)
+#GL_SLUMINANCE_NV = $8C46
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8, #PB_Constant)
+#GL_SLUMINANCE8 = $8C47
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8_EXT, #PB_Constant)
+#GL_SLUMINANCE8_EXT = $8C47
+CompilerEndIf
+CompilerIf Not Defined(GL_SLUMINANCE8_NV, #PB_Constant)
+#GL_SLUMINANCE8_NV = $8C47
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB, #PB_Constant)
+#GL_COMPRESSED_SRGB = $8C48
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_EXT = $8C48
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA = $8C49
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_EXT = $8C49
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SLUMINANCE, #PB_Constant)
+#GL_COMPRESSED_SLUMINANCE = $8C4A
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SLUMINANCE_EXT, #PB_Constant)
+#GL_COMPRESSED_SLUMINANCE_EXT = $8C4A
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SLUMINANCE_ALPHA, #PB_Constant)
+#GL_COMPRESSED_SLUMINANCE_ALPHA = $8C4B
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SLUMINANCE_ALPHA_EXT, #PB_Constant)
+#GL_COMPRESSED_SLUMINANCE_ALPHA_EXT = $8C4B
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_S3TC_DXT1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_S3TC_DXT1_EXT = $8C4C
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_S3TC_DXT1_NV, #PB_Constant)
+#GL_COMPRESSED_SRGB_S3TC_DXT1_NV = $8C4C
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT = $8C4D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV = $8C4D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT = $8C4E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV = $8C4E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT = $8C4F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV = $8C4F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_LATC1_EXT, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_LATC1_EXT = $8C70
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT, #PB_Constant)
+#GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT = $8C71
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT, #PB_Constant)
+#GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT = $8C72
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT, #PB_Constant)
+#GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT = $8C73
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_TESS_CONTROL_PROGRAM_PARAMETER_BUFFER_NV = $8C74
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_TESS_EVALUATION_PROGRAM_PARAMETER_BUFFER_NV = $8C75
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH = $8C76
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT = $8C76
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK_PRIMARY_COLOR_NV, #PB_Constant)
+#GL_BACK_PRIMARY_COLOR_NV = $8C77
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK_SECONDARY_COLOR_NV, #PB_Constant)
+#GL_BACK_SECONDARY_COLOR_NV = $8C78
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_NV, #PB_Constant)
+#GL_TEXTURE_COORD_NV = $8C79
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DISTANCE_NV, #PB_Constant)
+#GL_CLIP_DISTANCE_NV = $8C7A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ID_NV, #PB_Constant)
+#GL_VERTEX_ID_NV = $8C7B
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_ID_NV, #PB_Constant)
+#GL_PRIMITIVE_ID_NV = $8C7C
+CompilerEndIf
+CompilerIf Not Defined(GL_GENERIC_ATTRIB_NV, #PB_Constant)
+#GL_GENERIC_ATTRIB_NV = $8C7D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_ATTRIBS_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_ATTRIBS_NV = $8C7E
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_MODE, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_MODE = $8C7F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_MODE_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_MODE_EXT = $8C7F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_MODE_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_MODE_NV = $8C7F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS = $8C80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_EXT = $8C80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_NV = $8C80
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_VARYINGS_NV, #PB_Constant)
+#GL_ACTIVE_VARYINGS_NV = $8C81
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_VARYING_MAX_LENGTH_NV, #PB_Constant)
+#GL_ACTIVE_VARYING_MAX_LENGTH_NV = $8C82
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYINGS, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYINGS = $8C83
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYINGS_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYINGS_EXT = $8C83
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYINGS_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYINGS_NV = $8C83
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_START, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_START = $8C84
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_START_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_START_EXT = $8C84
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_START_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_START_NV = $8C84
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_SIZE, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_SIZE = $8C85
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_EXT = $8C85
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_NV = $8C85
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_RECORD_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_RECORD_NV = $8C86
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_GENERATED, #PB_Constant)
+#GL_PRIMITIVES_GENERATED = $8C87
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_GENERATED_EXT, #PB_Constant)
+#GL_PRIMITIVES_GENERATED_EXT = $8C87
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_GENERATED_NV, #PB_Constant)
+#GL_PRIMITIVES_GENERATED_NV = $8C87
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVES_GENERATED_OES, #PB_Constant)
+#GL_PRIMITIVES_GENERATED_OES = $8C87
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN = $8C88
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_EXT = $8C88
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV = $8C88
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTERIZER_DISCARD, #PB_Constant)
+#GL_RASTERIZER_DISCARD = $8C89
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTERIZER_DISCARD_EXT, #PB_Constant)
+#GL_RASTERIZER_DISCARD_EXT = $8C89
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTERIZER_DISCARD_NV, #PB_Constant)
+#GL_RASTERIZER_DISCARD_NV = $8C89
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS = $8C8A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT = $8C8A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV = $8C8A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS = $8C8B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT = $8C8B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV = $8C8B
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLEAVED_ATTRIBS, #PB_Constant)
+#GL_INTERLEAVED_ATTRIBS = $8C8C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLEAVED_ATTRIBS_EXT, #PB_Constant)
+#GL_INTERLEAVED_ATTRIBS_EXT = $8C8C
+CompilerEndIf
+CompilerIf Not Defined(GL_INTERLEAVED_ATTRIBS_NV, #PB_Constant)
+#GL_INTERLEAVED_ATTRIBS_NV = $8C8C
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARATE_ATTRIBS, #PB_Constant)
+#GL_SEPARATE_ATTRIBS = $8C8D
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARATE_ATTRIBS_EXT, #PB_Constant)
+#GL_SEPARATE_ATTRIBS_EXT = $8C8D
+CompilerEndIf
+CompilerIf Not Defined(GL_SEPARATE_ATTRIBS_NV, #PB_Constant)
+#GL_SEPARATE_ATTRIBS_NV = $8C8D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER = $8C8E
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_EXT = $8C8E
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_NV = $8C8E
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_BINDING, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_BINDING = $8C8F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_EXT, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_EXT = $8C8F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV = $8C8F
+CompilerEndIf
+CompilerIf Not Defined(GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM, #PB_Constant)
+#GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM = $8C90
+CompilerEndIf
+CompilerIf Not Defined(GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM, #PB_Constant)
+#GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM = $8C91
+CompilerEndIf
+CompilerIf Not Defined(GL_ATC_RGB_AMD, #PB_Constant)
+#GL_ATC_RGB_AMD = $8C92
+CompilerEndIf
+CompilerIf Not Defined(GL_ATC_RGBA_EXPLICIT_ALPHA_AMD, #PB_Constant)
+#GL_ATC_RGBA_EXPLICIT_ALPHA_AMD = $8C93
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_LOD_BIAS_QCOM, #PB_Constant)
+#GL_TEXTURE_LOD_BIAS_QCOM = $8C96
+CompilerEndIf
+CompilerIf Not Defined(GL_POINT_SPRITE_COORD_ORIGIN, #PB_Constant)
+#GL_POINT_SPRITE_COORD_ORIGIN = $8CA0
+CompilerEndIf
+CompilerIf Not Defined(GL_LOWER_LEFT, #PB_Constant)
+#GL_LOWER_LEFT = $8CA1
+CompilerEndIf
+CompilerIf Not Defined(GL_LOWER_LEFT_EXT, #PB_Constant)
+#GL_LOWER_LEFT_EXT = $8CA1
+CompilerEndIf
+CompilerIf Not Defined(GL_UPPER_LEFT, #PB_Constant)
+#GL_UPPER_LEFT = $8CA2
+CompilerEndIf
+CompilerIf Not Defined(GL_UPPER_LEFT_EXT, #PB_Constant)
+#GL_UPPER_LEFT_EXT = $8CA2
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_REF, #PB_Constant)
+#GL_STENCIL_BACK_REF = $8CA3
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_VALUE_MASK, #PB_Constant)
+#GL_STENCIL_BACK_VALUE_MASK = $8CA4
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_BACK_WRITEMASK, #PB_Constant)
+#GL_STENCIL_BACK_WRITEMASK = $8CA5
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_BINDING, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_BINDING = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_BINDING_ANGLE, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_BINDING_ANGLE = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_BINDING_APPLE, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_BINDING_APPLE = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_BINDING_EXT, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_BINDING_EXT = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_BINDING_NV, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_BINDING_NV = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BINDING, #PB_Constant)
+#GL_FRAMEBUFFER_BINDING = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BINDING_ANGLE, #PB_Constant)
+#GL_FRAMEBUFFER_BINDING_ANGLE = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BINDING_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_BINDING_EXT = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_BINDING_OES, #PB_Constant)
+#GL_FRAMEBUFFER_BINDING_OES = $8CA6
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BINDING, #PB_Constant)
+#GL_RENDERBUFFER_BINDING = $8CA7
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BINDING_ANGLE, #PB_Constant)
+#GL_RENDERBUFFER_BINDING_ANGLE = $8CA7
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BINDING_EXT, #PB_Constant)
+#GL_RENDERBUFFER_BINDING_EXT = $8CA7
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BINDING_OES, #PB_Constant)
+#GL_RENDERBUFFER_BINDING_OES = $8CA7
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER, #PB_Constant)
+#GL_READ_FRAMEBUFFER = $8CA8
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_ANGLE, #PB_Constant)
+#GL_READ_FRAMEBUFFER_ANGLE = $8CA8
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_APPLE, #PB_Constant)
+#GL_READ_FRAMEBUFFER_APPLE = $8CA8
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_EXT, #PB_Constant)
+#GL_READ_FRAMEBUFFER_EXT = $8CA8
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_NV, #PB_Constant)
+#GL_READ_FRAMEBUFFER_NV = $8CA8
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER = $8CA9
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_ANGLE, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_ANGLE = $8CA9
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_APPLE, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_APPLE = $8CA9
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_EXT, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_EXT = $8CA9
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_FRAMEBUFFER_NV, #PB_Constant)
+#GL_DRAW_FRAMEBUFFER_NV = $8CA9
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_BINDING, #PB_Constant)
+#GL_READ_FRAMEBUFFER_BINDING = $8CAA
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_BINDING_ANGLE, #PB_Constant)
+#GL_READ_FRAMEBUFFER_BINDING_ANGLE = $8CAA
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_BINDING_APPLE, #PB_Constant)
+#GL_READ_FRAMEBUFFER_BINDING_APPLE = $8CAA
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_BINDING_EXT, #PB_Constant)
+#GL_READ_FRAMEBUFFER_BINDING_EXT = $8CAA
+CompilerEndIf
+CompilerIf Not Defined(GL_READ_FRAMEBUFFER_BINDING_NV, #PB_Constant)
+#GL_READ_FRAMEBUFFER_BINDING_NV = $8CAA
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_COVERAGE_SAMPLES_NV, #PB_Constant)
+#GL_RENDERBUFFER_COVERAGE_SAMPLES_NV = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES_ANGLE, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES_ANGLE = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES_APPLE, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES_APPLE = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES_EXT, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES_EXT = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES_NV, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES_NV = $8CAB
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32F, #PB_Constant)
+#GL_DEPTH_COMPONENT32F = $8CAC
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH32F_STENCIL8, #PB_Constant)
+#GL_DEPTH32F_STENCIL8 = $8CAD
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE = $8CD0
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT = $8CD0
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES = $8CD0
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME = $8CD1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT = $8CD1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES = $8CD1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL = $8CD2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT = $8CD2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES = $8CD2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = $8CD3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT = $8CD3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES = $8CD3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT = $8CD4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES = $8CD4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER = $8CD4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT = $8CD4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_COMPLETE, #PB_Constant)
+#GL_FRAMEBUFFER_COMPLETE = $8CD5
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_COMPLETE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_COMPLETE_EXT = $8CD5
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_COMPLETE_OES, #PB_Constant)
+#GL_FRAMEBUFFER_COMPLETE_OES = $8CD5
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT = $8CD6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT = $8CD6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES = $8CD6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = $8CD7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT = $8CD7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES = $8CD7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS = $8CD9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT = $8CD9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES = $8CD9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT = $8CDA
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES = $8CDA
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER = $8CDB
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT = $8CDB
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_OES = $8CDB
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER = $8CDC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT = $8CDC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_OES = $8CDC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_UNSUPPORTED, #PB_Constant)
+#GL_FRAMEBUFFER_UNSUPPORTED = $8CDD
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_UNSUPPORTED_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_UNSUPPORTED_EXT = $8CDD
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_UNSUPPORTED_OES, #PB_Constant)
+#GL_FRAMEBUFFER_UNSUPPORTED_OES = $8CDD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_ATTACHMENTS, #PB_Constant)
+#GL_MAX_COLOR_ATTACHMENTS = $8CDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_ATTACHMENTS_EXT, #PB_Constant)
+#GL_MAX_COLOR_ATTACHMENTS_EXT = $8CDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_ATTACHMENTS_NV, #PB_Constant)
+#GL_MAX_COLOR_ATTACHMENTS_NV = $8CDF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT0, #PB_Constant)
+#GL_COLOR_ATTACHMENT0 = $8CE0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT0_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT0_EXT = $8CE0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT0_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT0_NV = $8CE0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT0_OES, #PB_Constant)
+#GL_COLOR_ATTACHMENT0_OES = $8CE0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT1, #PB_Constant)
+#GL_COLOR_ATTACHMENT1 = $8CE1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT1_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT1_EXT = $8CE1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT1_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT1_NV = $8CE1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT2, #PB_Constant)
+#GL_COLOR_ATTACHMENT2 = $8CE2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT2_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT2_EXT = $8CE2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT2_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT2_NV = $8CE2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT3, #PB_Constant)
+#GL_COLOR_ATTACHMENT3 = $8CE3
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT3_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT3_EXT = $8CE3
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT3_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT3_NV = $8CE3
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT4, #PB_Constant)
+#GL_COLOR_ATTACHMENT4 = $8CE4
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT4_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT4_EXT = $8CE4
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT4_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT4_NV = $8CE4
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT5, #PB_Constant)
+#GL_COLOR_ATTACHMENT5 = $8CE5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT5_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT5_EXT = $8CE5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT5_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT5_NV = $8CE5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT6, #PB_Constant)
+#GL_COLOR_ATTACHMENT6 = $8CE6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT6_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT6_EXT = $8CE6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT6_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT6_NV = $8CE6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT7, #PB_Constant)
+#GL_COLOR_ATTACHMENT7 = $8CE7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT7_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT7_EXT = $8CE7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT7_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT7_NV = $8CE7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT8, #PB_Constant)
+#GL_COLOR_ATTACHMENT8 = $8CE8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT8_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT8_EXT = $8CE8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT8_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT8_NV = $8CE8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT9, #PB_Constant)
+#GL_COLOR_ATTACHMENT9 = $8CE9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT9_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT9_EXT = $8CE9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT9_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT9_NV = $8CE9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT10, #PB_Constant)
+#GL_COLOR_ATTACHMENT10 = $8CEA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT10_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT10_EXT = $8CEA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT10_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT10_NV = $8CEA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT11, #PB_Constant)
+#GL_COLOR_ATTACHMENT11 = $8CEB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT11_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT11_EXT = $8CEB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT11_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT11_NV = $8CEB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT12, #PB_Constant)
+#GL_COLOR_ATTACHMENT12 = $8CEC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT12_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT12_EXT = $8CEC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT12_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT12_NV = $8CEC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT13, #PB_Constant)
+#GL_COLOR_ATTACHMENT13 = $8CED
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT13_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT13_EXT = $8CED
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT13_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT13_NV = $8CED
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT14, #PB_Constant)
+#GL_COLOR_ATTACHMENT14 = $8CEE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT14_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT14_EXT = $8CEE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT14_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT14_NV = $8CEE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT15, #PB_Constant)
+#GL_COLOR_ATTACHMENT15 = $8CEF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT15_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT15_EXT = $8CEF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT15_NV, #PB_Constant)
+#GL_COLOR_ATTACHMENT15_NV = $8CEF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT16, #PB_Constant)
+#GL_COLOR_ATTACHMENT16 = $8CF0
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT17, #PB_Constant)
+#GL_COLOR_ATTACHMENT17 = $8CF1
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT18, #PB_Constant)
+#GL_COLOR_ATTACHMENT18 = $8CF2
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT19, #PB_Constant)
+#GL_COLOR_ATTACHMENT19 = $8CF3
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT20, #PB_Constant)
+#GL_COLOR_ATTACHMENT20 = $8CF4
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT21, #PB_Constant)
+#GL_COLOR_ATTACHMENT21 = $8CF5
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT22, #PB_Constant)
+#GL_COLOR_ATTACHMENT22 = $8CF6
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT23, #PB_Constant)
+#GL_COLOR_ATTACHMENT23 = $8CF7
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT24, #PB_Constant)
+#GL_COLOR_ATTACHMENT24 = $8CF8
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT25, #PB_Constant)
+#GL_COLOR_ATTACHMENT25 = $8CF9
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT26, #PB_Constant)
+#GL_COLOR_ATTACHMENT26 = $8CFA
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT27, #PB_Constant)
+#GL_COLOR_ATTACHMENT27 = $8CFB
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT28, #PB_Constant)
+#GL_COLOR_ATTACHMENT28 = $8CFC
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT29, #PB_Constant)
+#GL_COLOR_ATTACHMENT29 = $8CFD
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT30, #PB_Constant)
+#GL_COLOR_ATTACHMENT30 = $8CFE
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT31, #PB_Constant)
+#GL_COLOR_ATTACHMENT31 = $8CFF
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_ATTACHMENT, #PB_Constant)
+#GL_DEPTH_ATTACHMENT = $8D00
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_ATTACHMENT_EXT, #PB_Constant)
+#GL_DEPTH_ATTACHMENT_EXT = $8D00
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_ATTACHMENT_OES, #PB_Constant)
+#GL_DEPTH_ATTACHMENT_OES = $8D00
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_ATTACHMENT, #PB_Constant)
+#GL_STENCIL_ATTACHMENT = $8D20
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_ATTACHMENT_EXT, #PB_Constant)
+#GL_STENCIL_ATTACHMENT_EXT = $8D20
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_ATTACHMENT_OES, #PB_Constant)
+#GL_STENCIL_ATTACHMENT_OES = $8D20
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER, #PB_Constant)
+#GL_FRAMEBUFFER = $8D40
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_EXT = $8D40
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_OES, #PB_Constant)
+#GL_FRAMEBUFFER_OES = $8D40
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER, #PB_Constant)
+#GL_RENDERBUFFER = $8D41
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_EXT, #PB_Constant)
+#GL_RENDERBUFFER_EXT = $8D41
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_OES, #PB_Constant)
+#GL_RENDERBUFFER_OES = $8D41
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_WIDTH, #PB_Constant)
+#GL_RENDERBUFFER_WIDTH = $8D42
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_WIDTH_EXT, #PB_Constant)
+#GL_RENDERBUFFER_WIDTH_EXT = $8D42
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_WIDTH_OES, #PB_Constant)
+#GL_RENDERBUFFER_WIDTH_OES = $8D42
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_HEIGHT, #PB_Constant)
+#GL_RENDERBUFFER_HEIGHT = $8D43
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_HEIGHT_EXT, #PB_Constant)
+#GL_RENDERBUFFER_HEIGHT_EXT = $8D43
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_HEIGHT_OES, #PB_Constant)
+#GL_RENDERBUFFER_HEIGHT_OES = $8D43
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_INTERNAL_FORMAT, #PB_Constant)
+#GL_RENDERBUFFER_INTERNAL_FORMAT = $8D44
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_INTERNAL_FORMAT_EXT, #PB_Constant)
+#GL_RENDERBUFFER_INTERNAL_FORMAT_EXT = $8D44
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_INTERNAL_FORMAT_OES, #PB_Constant)
+#GL_RENDERBUFFER_INTERNAL_FORMAT_OES = $8D44
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX1, #PB_Constant)
+#GL_STENCIL_INDEX1 = $8D46
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX1_EXT, #PB_Constant)
+#GL_STENCIL_INDEX1_EXT = $8D46
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX1_OES, #PB_Constant)
+#GL_STENCIL_INDEX1_OES = $8D46
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX4, #PB_Constant)
+#GL_STENCIL_INDEX4 = $8D47
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX4_EXT, #PB_Constant)
+#GL_STENCIL_INDEX4_EXT = $8D47
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX4_OES, #PB_Constant)
+#GL_STENCIL_INDEX4_OES = $8D47
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX8, #PB_Constant)
+#GL_STENCIL_INDEX8 = $8D48
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX8_EXT, #PB_Constant)
+#GL_STENCIL_INDEX8_EXT = $8D48
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX8_OES, #PB_Constant)
+#GL_STENCIL_INDEX8_OES = $8D48
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX16, #PB_Constant)
+#GL_STENCIL_INDEX16 = $8D49
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_INDEX16_EXT, #PB_Constant)
+#GL_STENCIL_INDEX16_EXT = $8D49
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_RED_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_RED_SIZE = $8D50
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_RED_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_RED_SIZE_EXT = $8D50
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_RED_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_RED_SIZE_OES = $8D50
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_GREEN_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_GREEN_SIZE = $8D51
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_GREEN_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_GREEN_SIZE_EXT = $8D51
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_GREEN_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_GREEN_SIZE_OES = $8D51
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BLUE_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_BLUE_SIZE = $8D52
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BLUE_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_BLUE_SIZE_EXT = $8D52
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_BLUE_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_BLUE_SIZE_OES = $8D52
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_ALPHA_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_ALPHA_SIZE = $8D53
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_ALPHA_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_ALPHA_SIZE_EXT = $8D53
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_ALPHA_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_ALPHA_SIZE_OES = $8D53
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_DEPTH_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_DEPTH_SIZE = $8D54
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_DEPTH_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_DEPTH_SIZE_EXT = $8D54
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_DEPTH_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_DEPTH_SIZE_OES = $8D54
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_STENCIL_SIZE, #PB_Constant)
+#GL_RENDERBUFFER_STENCIL_SIZE = $8D55
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_STENCIL_SIZE_EXT, #PB_Constant)
+#GL_RENDERBUFFER_STENCIL_SIZE_EXT = $8D55
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_STENCIL_SIZE_OES, #PB_Constant)
+#GL_RENDERBUFFER_STENCIL_SIZE_OES = $8D55
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE = $8D56
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE = $8D56
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE = $8D56
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT = $8D56
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV = $8D56
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES, #PB_Constant)
+#GL_MAX_SAMPLES = $8D57
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES_ANGLE, #PB_Constant)
+#GL_MAX_SAMPLES_ANGLE = $8D57
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES_APPLE, #PB_Constant)
+#GL_MAX_SAMPLES_APPLE = $8D57
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES_EXT, #PB_Constant)
+#GL_MAX_SAMPLES_EXT = $8D57
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES_NV, #PB_Constant)
+#GL_MAX_SAMPLES_NV = $8D57
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_GEN_STR_OES, #PB_Constant)
+#GL_TEXTURE_GEN_STR_OES = $8D60
+CompilerEndIf
+CompilerIf Not Defined(GL_HALF_FLOAT_OES, #PB_Constant)
+#GL_HALF_FLOAT_OES = $8D61
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB565_OES, #PB_Constant)
+#GL_RGB565_OES = $8D62
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB565, #PB_Constant)
+#GL_RGB565 = $8D62
+CompilerEndIf
+CompilerIf Not Defined(GL_ETC1_RGB8_OES, #PB_Constant)
+#GL_ETC1_RGB8_OES = $8D64
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_EXTERNAL_OES, #PB_Constant)
+#GL_TEXTURE_EXTERNAL_OES = $8D65
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_EXTERNAL_OES, #PB_Constant)
+#GL_SAMPLER_EXTERNAL_OES = $8D66
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_EXTERNAL_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_EXTERNAL_OES = $8D67
+CompilerEndIf
+CompilerIf Not Defined(GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES, #PB_Constant)
+#GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES = $8D68
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_FIXED_INDEX, #PB_Constant)
+#GL_PRIMITIVE_RESTART_FIXED_INDEX = $8D69
+CompilerEndIf
+CompilerIf Not Defined(GL_ANY_SAMPLES_PASSED_CONSERVATIVE, #PB_Constant)
+#GL_ANY_SAMPLES_PASSED_CONSERVATIVE = $8D6A
+CompilerEndIf
+CompilerIf Not Defined(GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT, #PB_Constant)
+#GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT = $8D6A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ELEMENT_INDEX, #PB_Constant)
+#GL_MAX_ELEMENT_INDEX = $8D6B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT = $8D6C
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32UI, #PB_Constant)
+#GL_RGBA32UI = $8D70
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32UI_EXT, #PB_Constant)
+#GL_RGBA32UI_EXT = $8D70
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32UI, #PB_Constant)
+#GL_RGB32UI = $8D71
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32UI_EXT, #PB_Constant)
+#GL_RGB32UI_EXT = $8D71
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA32UI_EXT, #PB_Constant)
+#GL_ALPHA32UI_EXT = $8D72
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY32UI_EXT, #PB_Constant)
+#GL_INTENSITY32UI_EXT = $8D73
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE32UI_EXT, #PB_Constant)
+#GL_LUMINANCE32UI_EXT = $8D74
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA32UI_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA32UI_EXT = $8D75
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16UI, #PB_Constant)
+#GL_RGBA16UI = $8D76
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16UI_EXT, #PB_Constant)
+#GL_RGBA16UI_EXT = $8D76
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16UI, #PB_Constant)
+#GL_RGB16UI = $8D77
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16UI_EXT, #PB_Constant)
+#GL_RGB16UI_EXT = $8D77
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16UI_EXT, #PB_Constant)
+#GL_ALPHA16UI_EXT = $8D78
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16UI_EXT, #PB_Constant)
+#GL_INTENSITY16UI_EXT = $8D79
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16UI_EXT, #PB_Constant)
+#GL_LUMINANCE16UI_EXT = $8D7A
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA16UI_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA16UI_EXT = $8D7B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8UI, #PB_Constant)
+#GL_RGBA8UI = $8D7C
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8UI_EXT, #PB_Constant)
+#GL_RGBA8UI_EXT = $8D7C
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8UI, #PB_Constant)
+#GL_RGB8UI = $8D7D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8UI_EXT, #PB_Constant)
+#GL_RGB8UI_EXT = $8D7D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8UI_EXT, #PB_Constant)
+#GL_ALPHA8UI_EXT = $8D7E
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY8UI_EXT, #PB_Constant)
+#GL_INTENSITY8UI_EXT = $8D7F
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8UI_EXT, #PB_Constant)
+#GL_LUMINANCE8UI_EXT = $8D80
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA8UI_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA8UI_EXT = $8D81
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32I, #PB_Constant)
+#GL_RGBA32I = $8D82
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA32I_EXT, #PB_Constant)
+#GL_RGBA32I_EXT = $8D82
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32I, #PB_Constant)
+#GL_RGB32I = $8D83
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB32I_EXT, #PB_Constant)
+#GL_RGB32I_EXT = $8D83
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA32I_EXT, #PB_Constant)
+#GL_ALPHA32I_EXT = $8D84
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY32I_EXT, #PB_Constant)
+#GL_INTENSITY32I_EXT = $8D85
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE32I_EXT, #PB_Constant)
+#GL_LUMINANCE32I_EXT = $8D86
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA32I_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA32I_EXT = $8D87
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16I, #PB_Constant)
+#GL_RGBA16I = $8D88
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16I_EXT, #PB_Constant)
+#GL_RGBA16I_EXT = $8D88
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16I, #PB_Constant)
+#GL_RGB16I = $8D89
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16I_EXT, #PB_Constant)
+#GL_RGB16I_EXT = $8D89
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16I_EXT, #PB_Constant)
+#GL_ALPHA16I_EXT = $8D8A
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16I_EXT, #PB_Constant)
+#GL_INTENSITY16I_EXT = $8D8B
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16I_EXT, #PB_Constant)
+#GL_LUMINANCE16I_EXT = $8D8C
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA16I_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA16I_EXT = $8D8D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8I, #PB_Constant)
+#GL_RGBA8I = $8D8E
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8I_EXT, #PB_Constant)
+#GL_RGBA8I_EXT = $8D8E
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8I, #PB_Constant)
+#GL_RGB8I = $8D8F
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8I_EXT, #PB_Constant)
+#GL_RGB8I_EXT = $8D8F
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8I_EXT, #PB_Constant)
+#GL_ALPHA8I_EXT = $8D90
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY8I_EXT, #PB_Constant)
+#GL_INTENSITY8I_EXT = $8D91
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8I_EXT, #PB_Constant)
+#GL_LUMINANCE8I_EXT = $8D92
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA8I_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA8I_EXT = $8D93
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_INTEGER, #PB_Constant)
+#GL_RED_INTEGER = $8D94
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_INTEGER_EXT, #PB_Constant)
+#GL_RED_INTEGER_EXT = $8D94
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_INTEGER, #PB_Constant)
+#GL_GREEN_INTEGER = $8D95
+CompilerEndIf
+CompilerIf Not Defined(GL_GREEN_INTEGER_EXT, #PB_Constant)
+#GL_GREEN_INTEGER_EXT = $8D95
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_INTEGER, #PB_Constant)
+#GL_BLUE_INTEGER = $8D96
+CompilerEndIf
+CompilerIf Not Defined(GL_BLUE_INTEGER_EXT, #PB_Constant)
+#GL_BLUE_INTEGER_EXT = $8D96
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_INTEGER, #PB_Constant)
+#GL_ALPHA_INTEGER = $8D97
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_INTEGER_EXT, #PB_Constant)
+#GL_ALPHA_INTEGER_EXT = $8D97
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_INTEGER, #PB_Constant)
+#GL_RGB_INTEGER = $8D98
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_INTEGER_EXT, #PB_Constant)
+#GL_RGB_INTEGER_EXT = $8D98
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_INTEGER, #PB_Constant)
+#GL_RGBA_INTEGER = $8D99
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_INTEGER_EXT, #PB_Constant)
+#GL_RGBA_INTEGER_EXT = $8D99
+CompilerEndIf
+CompilerIf Not Defined(GL_BGR_INTEGER, #PB_Constant)
+#GL_BGR_INTEGER = $8D9A
+CompilerEndIf
+CompilerIf Not Defined(GL_BGR_INTEGER_EXT, #PB_Constant)
+#GL_BGR_INTEGER_EXT = $8D9A
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA_INTEGER, #PB_Constant)
+#GL_BGRA_INTEGER = $8D9B
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA_INTEGER_EXT, #PB_Constant)
+#GL_BGRA_INTEGER_EXT = $8D9B
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_INTEGER_EXT, #PB_Constant)
+#GL_LUMINANCE_INTEGER_EXT = $8D9C
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_INTEGER_EXT, #PB_Constant)
+#GL_LUMINANCE_ALPHA_INTEGER_EXT = $8D9D
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_INTEGER_MODE_EXT, #PB_Constant)
+#GL_RGBA_INTEGER_MODE_EXT = $8D9E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_2_10_10_10_REV, #PB_Constant)
+#GL_INT_2_10_10_10_REV = $8D9F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV = $8DA0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_PARAMETER_BUFFER_SIZE_NV, #PB_Constant)
+#GL_MAX_PROGRAM_PARAMETER_BUFFER_SIZE_NV = $8DA1
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_VERTEX_PROGRAM_PARAMETER_BUFFER_NV = $8DA2
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV = $8DA3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV = $8DA4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_GENERIC_ATTRIBS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_GENERIC_ATTRIBS_NV = $8DA5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_GENERIC_RESULTS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_GENERIC_RESULTS_NV = $8DA6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_LAYERED, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_LAYERED = $8DA7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB = $8DA7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT = $8DA7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES = $8DA7
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS = $8DA8
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_ARB, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_ARB = $8DA8
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT = $8DA8
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_OES, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_OES = $8DA8
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB = $8DA9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT = $8DA9
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYER_NV, #PB_Constant)
+#GL_LAYER_NV = $8DAA
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT32F_NV, #PB_Constant)
+#GL_DEPTH_COMPONENT32F_NV = $8DAB
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH32F_STENCIL8_NV, #PB_Constant)
+#GL_DEPTH32F_STENCIL8_NV = $8DAC
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_32_UNSIGNED_INT_24_8_REV, #PB_Constant)
+#GL_FLOAT_32_UNSIGNED_INT_24_8_REV = $8DAD
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT_32_UNSIGNED_INT_24_8_REV_NV, #PB_Constant)
+#GL_FLOAT_32_UNSIGNED_INT_24_8_REV_NV = $8DAD
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_INCLUDE_ARB, #PB_Constant)
+#GL_SHADER_INCLUDE_ARB = $8DAE
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_BUFFER_FLOAT_MODE_NV, #PB_Constant)
+#GL_DEPTH_BUFFER_FLOAT_MODE_NV = $8DAF
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SRGB, #PB_Constant)
+#GL_FRAMEBUFFER_SRGB = $8DB9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SRGB_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_SRGB_EXT = $8DB9
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SRGB_CAPABLE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_SRGB_CAPABLE_EXT = $8DBA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RED_RGTC1, #PB_Constant)
+#GL_COMPRESSED_RED_RGTC1 = $8DBB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RED_RGTC1_EXT, #PB_Constant)
+#GL_COMPRESSED_RED_RGTC1_EXT = $8DBB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RED_RGTC1, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RED_RGTC1 = $8DBC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RED_RGTC1_EXT, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RED_RGTC1_EXT = $8DBC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RED_GREEN_RGTC2_EXT, #PB_Constant)
+#GL_COMPRESSED_RED_GREEN_RGTC2_EXT = $8DBD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RG_RGTC2, #PB_Constant)
+#GL_COMPRESSED_RG_RGTC2 = $8DBD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT = $8DBE
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RG_RGTC2, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RG_RGTC2 = $8DBE
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_ARRAY, #PB_Constant)
+#GL_SAMPLER_1D_ARRAY = $8DC0
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_ARRAY_EXT, #PB_Constant)
+#GL_SAMPLER_1D_ARRAY_EXT = $8DC0
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARRAY, #PB_Constant)
+#GL_SAMPLER_2D_ARRAY = $8DC1
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARRAY_EXT, #PB_Constant)
+#GL_SAMPLER_2D_ARRAY_EXT = $8DC1
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_BUFFER, #PB_Constant)
+#GL_SAMPLER_BUFFER = $8DC2
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_BUFFER_EXT, #PB_Constant)
+#GL_SAMPLER_BUFFER_EXT = $8DC2
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_BUFFER_OES, #PB_Constant)
+#GL_SAMPLER_BUFFER_OES = $8DC2
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_ARRAY_SHADOW, #PB_Constant)
+#GL_SAMPLER_1D_ARRAY_SHADOW = $8DC3
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_1D_ARRAY_SHADOW_EXT, #PB_Constant)
+#GL_SAMPLER_1D_ARRAY_SHADOW_EXT = $8DC3
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARRAY_SHADOW, #PB_Constant)
+#GL_SAMPLER_2D_ARRAY_SHADOW = $8DC4
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARRAY_SHADOW_EXT, #PB_Constant)
+#GL_SAMPLER_2D_ARRAY_SHADOW_EXT = $8DC4
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_ARRAY_SHADOW_NV, #PB_Constant)
+#GL_SAMPLER_2D_ARRAY_SHADOW_NV = $8DC4
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_SHADOW, #PB_Constant)
+#GL_SAMPLER_CUBE_SHADOW = $8DC5
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_SHADOW_EXT, #PB_Constant)
+#GL_SAMPLER_CUBE_SHADOW_EXT = $8DC5
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_SHADOW_NV, #PB_Constant)
+#GL_SAMPLER_CUBE_SHADOW_NV = $8DC5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC2, #PB_Constant)
+#GL_UNSIGNED_INT_VEC2 = $8DC6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC2_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_VEC2_EXT = $8DC6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC3, #PB_Constant)
+#GL_UNSIGNED_INT_VEC3 = $8DC7
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC3_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_VEC3_EXT = $8DC7
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC4, #PB_Constant)
+#GL_UNSIGNED_INT_VEC4 = $8DC8
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_VEC4_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_VEC4_EXT = $8DC8
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_1D, #PB_Constant)
+#GL_INT_SAMPLER_1D = $8DC9
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_1D_EXT, #PB_Constant)
+#GL_INT_SAMPLER_1D_EXT = $8DC9
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D, #PB_Constant)
+#GL_INT_SAMPLER_2D = $8DCA
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_EXT, #PB_Constant)
+#GL_INT_SAMPLER_2D_EXT = $8DCA
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_3D, #PB_Constant)
+#GL_INT_SAMPLER_3D = $8DCB
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_3D_EXT, #PB_Constant)
+#GL_INT_SAMPLER_3D_EXT = $8DCB
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE, #PB_Constant)
+#GL_INT_SAMPLER_CUBE = $8DCC
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE_EXT, #PB_Constant)
+#GL_INT_SAMPLER_CUBE_EXT = $8DCC
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_RECT, #PB_Constant)
+#GL_INT_SAMPLER_2D_RECT = $8DCD
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_RECT_EXT, #PB_Constant)
+#GL_INT_SAMPLER_2D_RECT_EXT = $8DCD
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_1D_ARRAY, #PB_Constant)
+#GL_INT_SAMPLER_1D_ARRAY = $8DCE
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_1D_ARRAY_EXT, #PB_Constant)
+#GL_INT_SAMPLER_1D_ARRAY_EXT = $8DCE
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_ARRAY, #PB_Constant)
+#GL_INT_SAMPLER_2D_ARRAY = $8DCF
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_ARRAY_EXT, #PB_Constant)
+#GL_INT_SAMPLER_2D_ARRAY_EXT = $8DCF
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_BUFFER, #PB_Constant)
+#GL_INT_SAMPLER_BUFFER = $8DD0
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_BUFFER_EXT, #PB_Constant)
+#GL_INT_SAMPLER_BUFFER_EXT = $8DD0
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_BUFFER_OES, #PB_Constant)
+#GL_INT_SAMPLER_BUFFER_OES = $8DD0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_1D, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_1D = $8DD1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_1D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_1D_EXT = $8DD1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D = $8DD2
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_EXT = $8DD2
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_3D, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_3D = $8DD3
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_3D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_3D_EXT = $8DD3
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE = $8DD4
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE_EXT = $8DD4
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_RECT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_RECT = $8DD5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_RECT_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_RECT_EXT = $8DD5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_1D_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_1D_ARRAY = $8DD6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT = $8DD6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_ARRAY = $8DD7
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT = $8DD7
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_BUFFER, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_BUFFER = $8DD8
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT = $8DD8
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_BUFFER_OES, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_BUFFER_OES = $8DD8
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER, #PB_Constant)
+#GL_GEOMETRY_SHADER = $8DD9
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_ARB, #PB_Constant)
+#GL_GEOMETRY_SHADER_ARB = $8DD9
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_EXT, #PB_Constant)
+#GL_GEOMETRY_SHADER_EXT = $8DD9
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SHADER_OES, #PB_Constant)
+#GL_GEOMETRY_SHADER_OES = $8DD9
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_VERTICES_OUT_ARB, #PB_Constant)
+#GL_GEOMETRY_VERTICES_OUT_ARB = $8DDA
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_VERTICES_OUT_EXT, #PB_Constant)
+#GL_GEOMETRY_VERTICES_OUT_EXT = $8DDA
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_INPUT_TYPE_ARB, #PB_Constant)
+#GL_GEOMETRY_INPUT_TYPE_ARB = $8DDB
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_INPUT_TYPE_EXT, #PB_Constant)
+#GL_GEOMETRY_INPUT_TYPE_EXT = $8DDB
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_OUTPUT_TYPE_ARB, #PB_Constant)
+#GL_GEOMETRY_OUTPUT_TYPE_ARB = $8DDC
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_OUTPUT_TYPE_EXT, #PB_Constant)
+#GL_GEOMETRY_OUTPUT_TYPE_EXT = $8DDC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_VARYING_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_GEOMETRY_VARYING_COMPONENTS_ARB = $8DDD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_VARYING_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_VARYING_COMPONENTS_EXT = $8DDD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_VARYING_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_VERTEX_VARYING_COMPONENTS_ARB = $8DDE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_VARYING_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_VARYING_COMPONENTS_EXT = $8DDE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_COMPONENTS = $8DDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB = $8DDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT = $8DDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES = $8DDF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_VERTICES, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_VERTICES = $8DE0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_VERTICES_ARB, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_VERTICES_ARB = $8DE0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT = $8DE0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_VERTICES_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_VERTICES_OES = $8DE0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS = $8DE1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB = $8DE1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT = $8DE1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_OES = $8DE1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT = $8DE2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT = $8DE3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT = $8DE4
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_SUBROUTINES, #PB_Constant)
+#GL_ACTIVE_SUBROUTINES = $8DE5
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_SUBROUTINE_UNIFORMS, #PB_Constant)
+#GL_ACTIVE_SUBROUTINE_UNIFORMS = $8DE6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SUBROUTINES, #PB_Constant)
+#GL_MAX_SUBROUTINES = $8DE7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS, #PB_Constant)
+#GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS = $8DE8
+CompilerEndIf
+CompilerIf Not Defined(GL_NAMED_STRING_LENGTH_ARB, #PB_Constant)
+#GL_NAMED_STRING_LENGTH_ARB = $8DE9
+CompilerEndIf
+CompilerIf Not Defined(GL_NAMED_STRING_TYPE_ARB, #PB_Constant)
+#GL_NAMED_STRING_TYPE_ARB = $8DEA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_BINDABLE_UNIFORM_SIZE_EXT, #PB_Constant)
+#GL_MAX_BINDABLE_UNIFORM_SIZE_EXT = $8DED
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_EXT, #PB_Constant)
+#GL_UNIFORM_BUFFER_EXT = $8DEE
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_BINDING_EXT, #PB_Constant)
+#GL_UNIFORM_BUFFER_BINDING_EXT = $8DEF
+CompilerEndIf
+CompilerIf Not Defined(GL_LOW_FLOAT, #PB_Constant)
+#GL_LOW_FLOAT = $8DF0
+CompilerEndIf
+CompilerIf Not Defined(GL_MEDIUM_FLOAT, #PB_Constant)
+#GL_MEDIUM_FLOAT = $8DF1
+CompilerEndIf
+CompilerIf Not Defined(GL_HIGH_FLOAT, #PB_Constant)
+#GL_HIGH_FLOAT = $8DF2
+CompilerEndIf
+CompilerIf Not Defined(GL_LOW_INT, #PB_Constant)
+#GL_LOW_INT = $8DF3
+CompilerEndIf
+CompilerIf Not Defined(GL_MEDIUM_INT, #PB_Constant)
+#GL_MEDIUM_INT = $8DF4
+CompilerEndIf
+CompilerIf Not Defined(GL_HIGH_INT, #PB_Constant)
+#GL_HIGH_INT = $8DF5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_10_10_10_2_OES, #PB_Constant)
+#GL_UNSIGNED_INT_10_10_10_2_OES = $8DF6
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_10_10_10_2_OES, #PB_Constant)
+#GL_INT_10_10_10_2_OES = $8DF7
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_FORMATS, #PB_Constant)
+#GL_SHADER_BINARY_FORMATS = $8DF8
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SHADER_BINARY_FORMATS, #PB_Constant)
+#GL_NUM_SHADER_BINARY_FORMATS = $8DF9
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_COMPILER, #PB_Constant)
+#GL_SHADER_COMPILER = $8DFA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_UNIFORM_VECTORS, #PB_Constant)
+#GL_MAX_VERTEX_UNIFORM_VECTORS = $8DFB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VARYING_VECTORS, #PB_Constant)
+#GL_MAX_VARYING_VECTORS = $8DFC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_UNIFORM_VECTORS, #PB_Constant)
+#GL_MAX_FRAGMENT_UNIFORM_VECTORS = $8DFD
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_COLOR_SAMPLES_NV, #PB_Constant)
+#GL_RENDERBUFFER_COLOR_SAMPLES_NV = $8E10
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MULTISAMPLE_COVERAGE_MODES_NV, #PB_Constant)
+#GL_MAX_MULTISAMPLE_COVERAGE_MODES_NV = $8E11
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_COVERAGE_MODES_NV, #PB_Constant)
+#GL_MULTISAMPLE_COVERAGE_MODES_NV = $8E12
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_WAIT, #PB_Constant)
+#GL_QUERY_WAIT = $8E13
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_WAIT_NV, #PB_Constant)
+#GL_QUERY_WAIT_NV = $8E13
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_NO_WAIT, #PB_Constant)
+#GL_QUERY_NO_WAIT = $8E14
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_NO_WAIT_NV, #PB_Constant)
+#GL_QUERY_NO_WAIT_NV = $8E14
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_WAIT, #PB_Constant)
+#GL_QUERY_BY_REGION_WAIT = $8E15
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_WAIT_NV, #PB_Constant)
+#GL_QUERY_BY_REGION_WAIT_NV = $8E15
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_NO_WAIT, #PB_Constant)
+#GL_QUERY_BY_REGION_NO_WAIT = $8E16
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_NO_WAIT_NV, #PB_Constant)
+#GL_QUERY_BY_REGION_NO_WAIT_NV = $8E16
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_WAIT_INVERTED, #PB_Constant)
+#GL_QUERY_WAIT_INVERTED = $8E17
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_NO_WAIT_INVERTED, #PB_Constant)
+#GL_QUERY_NO_WAIT_INVERTED = $8E18
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_WAIT_INVERTED, #PB_Constant)
+#GL_QUERY_BY_REGION_WAIT_INVERTED = $8E19
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BY_REGION_NO_WAIT_INVERTED, #PB_Constant)
+#GL_QUERY_BY_REGION_NO_WAIT_INVERTED = $8E1A
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_CLAMP, #PB_Constant)
+#GL_POLYGON_OFFSET_CLAMP = $8E1B
+CompilerEndIf
+CompilerIf Not Defined(GL_POLYGON_OFFSET_CLAMP_EXT, #PB_Constant)
+#GL_POLYGON_OFFSET_CLAMP_EXT = $8E1B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS = $8E1E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT = $8E1E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_OES = $8E1E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS = $8E1F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT = $8E1F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_OES = $8E1F
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_SAMPLES_NV, #PB_Constant)
+#GL_COLOR_SAMPLES_NV = $8E20
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK = $8E22
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_NV = $8E22
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED = $8E23
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_PAUSED, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_PAUSED = $8E23
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV = $8E23
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE = $8E24
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_ACTIVE, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_ACTIVE = $8E24
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV = $8E24
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BINDING, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BINDING = $8E25
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BINDING_NV, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BINDING_NV = $8E25
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAME_NV, #PB_Constant)
+#GL_FRAME_NV = $8E26
+CompilerEndIf
+CompilerIf Not Defined(GL_FIELDS_NV, #PB_Constant)
+#GL_FIELDS_NV = $8E27
+CompilerEndIf
+CompilerIf Not Defined(GL_CURRENT_TIME_NV, #PB_Constant)
+#GL_CURRENT_TIME_NV = $8E28
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMESTAMP, #PB_Constant)
+#GL_TIMESTAMP = $8E28
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMESTAMP_EXT, #PB_Constant)
+#GL_TIMESTAMP_EXT = $8E28
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_FILL_STREAMS_NV, #PB_Constant)
+#GL_NUM_FILL_STREAMS_NV = $8E29
+CompilerEndIf
+CompilerIf Not Defined(GL_PRESENT_TIME_NV, #PB_Constant)
+#GL_PRESENT_TIME_NV = $8E2A
+CompilerEndIf
+CompilerIf Not Defined(GL_PRESENT_DURATION_NV, #PB_Constant)
+#GL_PRESENT_DURATION_NV = $8E2B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_COMPONENT16_NONLINEAR_NV, #PB_Constant)
+#GL_DEPTH_COMPONENT16_NONLINEAR_NV = $8E2C
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_MATRIX_EXT, #PB_Constant)
+#GL_PROGRAM_MATRIX_EXT = $8E2D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_PROGRAM_MATRIX_EXT, #PB_Constant)
+#GL_TRANSPOSE_PROGRAM_MATRIX_EXT = $8E2E
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_MATRIX_STACK_DEPTH_EXT, #PB_Constant)
+#GL_PROGRAM_MATRIX_STACK_DEPTH_EXT = $8E2F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_R, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_R = $8E42
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_R_EXT, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_R_EXT = $8E42
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_G, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_G = $8E43
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_G_EXT, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_G_EXT = $8E43
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_B, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_B = $8E44
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_B_EXT, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_B_EXT = $8E44
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_A, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_A = $8E45
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_A_EXT, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_A_EXT = $8E45
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_RGBA, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_RGBA = $8E46
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SWIZZLE_RGBA_EXT, #PB_Constant)
+#GL_TEXTURE_SWIZZLE_RGBA_EXT = $8E46
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS, #PB_Constant)
+#GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS = $8E47
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_SUBROUTINE_MAX_LENGTH, #PB_Constant)
+#GL_ACTIVE_SUBROUTINE_MAX_LENGTH = $8E48
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH, #PB_Constant)
+#GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH = $8E49
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_COMPATIBLE_SUBROUTINES, #PB_Constant)
+#GL_NUM_COMPATIBLE_SUBROUTINES = $8E4A
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPATIBLE_SUBROUTINES, #PB_Constant)
+#GL_COMPATIBLE_SUBROUTINES = $8E4B
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION, #PB_Constant)
+#GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION = $8E4C
+CompilerEndIf
+CompilerIf Not Defined(GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT, #PB_Constant)
+#GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT = $8E4C
+CompilerEndIf
+CompilerIf Not Defined(GL_FIRST_VERTEX_CONVENTION, #PB_Constant)
+#GL_FIRST_VERTEX_CONVENTION = $8E4D
+CompilerEndIf
+CompilerIf Not Defined(GL_FIRST_VERTEX_CONVENTION_EXT, #PB_Constant)
+#GL_FIRST_VERTEX_CONVENTION_EXT = $8E4D
+CompilerEndIf
+CompilerIf Not Defined(GL_FIRST_VERTEX_CONVENTION_OES, #PB_Constant)
+#GL_FIRST_VERTEX_CONVENTION_OES = $8E4D
+CompilerEndIf
+CompilerIf Not Defined(GL_LAST_VERTEX_CONVENTION, #PB_Constant)
+#GL_LAST_VERTEX_CONVENTION = $8E4E
+CompilerEndIf
+CompilerIf Not Defined(GL_LAST_VERTEX_CONVENTION_EXT, #PB_Constant)
+#GL_LAST_VERTEX_CONVENTION_EXT = $8E4E
+CompilerEndIf
+CompilerIf Not Defined(GL_LAST_VERTEX_CONVENTION_OES, #PB_Constant)
+#GL_LAST_VERTEX_CONVENTION_OES = $8E4E
+CompilerEndIf
+CompilerIf Not Defined(GL_PROVOKING_VERTEX, #PB_Constant)
+#GL_PROVOKING_VERTEX = $8E4F
+CompilerEndIf
+CompilerIf Not Defined(GL_PROVOKING_VERTEX_EXT, #PB_Constant)
+#GL_PROVOKING_VERTEX_EXT = $8E4F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_POSITION, #PB_Constant)
+#GL_SAMPLE_POSITION = $8E50
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_POSITION_NV, #PB_Constant)
+#GL_SAMPLE_POSITION_NV = $8E50
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_ARB, #PB_Constant)
+#GL_SAMPLE_LOCATION_ARB = $8E50
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_NV, #PB_Constant)
+#GL_SAMPLE_LOCATION_NV = $8E50
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK, #PB_Constant)
+#GL_SAMPLE_MASK = $8E51
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_NV, #PB_Constant)
+#GL_SAMPLE_MASK_NV = $8E51
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_VALUE, #PB_Constant)
+#GL_SAMPLE_MASK_VALUE = $8E52
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_MASK_VALUE_NV, #PB_Constant)
+#GL_SAMPLE_MASK_VALUE_NV = $8E52
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_RENDERBUFFER_NV, #PB_Constant)
+#GL_TEXTURE_BINDING_RENDERBUFFER_NV = $8E53
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV, #PB_Constant)
+#GL_TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV = $8E54
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_RENDERBUFFER_NV, #PB_Constant)
+#GL_TEXTURE_RENDERBUFFER_NV = $8E55
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_RENDERBUFFER_NV, #PB_Constant)
+#GL_SAMPLER_RENDERBUFFER_NV = $8E56
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_RENDERBUFFER_NV, #PB_Constant)
+#GL_INT_SAMPLER_RENDERBUFFER_NV = $8E57
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV = $8E58
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLE_MASK_WORDS, #PB_Constant)
+#GL_MAX_SAMPLE_MASK_WORDS = $8E59
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLE_MASK_WORDS_NV, #PB_Constant)
+#GL_MAX_SAMPLE_MASK_WORDS_NV = $8E59
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_PROGRAM_INVOCATIONS_NV, #PB_Constant)
+#GL_MAX_GEOMETRY_PROGRAM_INVOCATIONS_NV = $8E5A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_INVOCATIONS, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_INVOCATIONS = $8E5A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT = $8E5A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES = $8E5A
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_FRAGMENT_INTERPOLATION_OFFSET, #PB_Constant)
+#GL_MIN_FRAGMENT_INTERPOLATION_OFFSET = $8E5B
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES, #PB_Constant)
+#GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES = $8E5B
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_NV, #PB_Constant)
+#GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_NV = $8E5B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_INTERPOLATION_OFFSET, #PB_Constant)
+#GL_MAX_FRAGMENT_INTERPOLATION_OFFSET = $8E5C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES, #PB_Constant)
+#GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES = $8E5C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_NV, #PB_Constant)
+#GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_NV = $8E5C
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_INTERPOLATION_OFFSET_BITS, #PB_Constant)
+#GL_FRAGMENT_INTERPOLATION_OFFSET_BITS = $8E5D
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES, #PB_Constant)
+#GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES = $8E5D
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_PROGRAM_INTERPOLATION_OFFSET_BITS_NV, #PB_Constant)
+#GL_FRAGMENT_PROGRAM_INTERPOLATION_OFFSET_BITS_NV = $8E5D
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET, #PB_Constant)
+#GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET = $8E5E
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB, #PB_Constant)
+#GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB = $8E5E
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV, #PB_Constant)
+#GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV = $8E5E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET, #PB_Constant)
+#GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET = $8E5F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB = $8E5F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_NV, #PB_Constant)
+#GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_NV = $8E5F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_UNIFORM_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_MESH_UNIFORM_BLOCKS_EXT = $8E60
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_UNIFORM_BLOCKS_NV, #PB_Constant)
+#GL_MAX_MESH_UNIFORM_BLOCKS_NV = $8E60
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_TEXTURE_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_MESH_TEXTURE_IMAGE_UNITS_EXT = $8E61
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_TEXTURE_IMAGE_UNITS_NV, #PB_Constant)
+#GL_MAX_MESH_TEXTURE_IMAGE_UNITS_NV = $8E61
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_IMAGE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_MESH_IMAGE_UNIFORMS_EXT = $8E62
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_IMAGE_UNIFORMS_NV, #PB_Constant)
+#GL_MAX_MESH_IMAGE_UNIFORMS_NV = $8E62
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_MESH_UNIFORM_COMPONENTS_EXT = $8E63
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_UNIFORM_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_MESH_UNIFORM_COMPONENTS_NV = $8E63
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT = $8E64
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_NV, #PB_Constant)
+#GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_NV = $8E64
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_ATOMIC_COUNTERS_EXT, #PB_Constant)
+#GL_MAX_MESH_ATOMIC_COUNTERS_EXT = $8E65
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_ATOMIC_COUNTERS_NV, #PB_Constant)
+#GL_MAX_MESH_ATOMIC_COUNTERS_NV = $8E65
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_SHADER_STORAGE_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_MESH_SHADER_STORAGE_BLOCKS_EXT = $8E66
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_SHADER_STORAGE_BLOCKS_NV, #PB_Constant)
+#GL_MAX_MESH_SHADER_STORAGE_BLOCKS_NV = $8E66
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT = $8E67
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_NV = $8E67
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_UNIFORM_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TASK_UNIFORM_BLOCKS_EXT = $8E68
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_UNIFORM_BLOCKS_NV, #PB_Constant)
+#GL_MAX_TASK_UNIFORM_BLOCKS_NV = $8E68
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_TEXTURE_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_TASK_TEXTURE_IMAGE_UNITS_EXT = $8E69
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_TEXTURE_IMAGE_UNITS_NV, #PB_Constant)
+#GL_MAX_TASK_TEXTURE_IMAGE_UNITS_NV = $8E69
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_IMAGE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_TASK_IMAGE_UNIFORMS_EXT = $8E6A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_IMAGE_UNIFORMS_NV, #PB_Constant)
+#GL_MAX_TASK_IMAGE_UNIFORMS_NV = $8E6A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TASK_UNIFORM_COMPONENTS_EXT = $8E6B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_UNIFORM_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_TASK_UNIFORM_COMPONENTS_NV = $8E6B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT = $8E6C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_NV, #PB_Constant)
+#GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_NV = $8E6C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_ATOMIC_COUNTERS_EXT, #PB_Constant)
+#GL_MAX_TASK_ATOMIC_COUNTERS_EXT = $8E6D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_ATOMIC_COUNTERS_NV, #PB_Constant)
+#GL_MAX_TASK_ATOMIC_COUNTERS_NV = $8E6D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_SHADER_STORAGE_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TASK_SHADER_STORAGE_BLOCKS_EXT = $8E6E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_SHADER_STORAGE_BLOCKS_NV, #PB_Constant)
+#GL_MAX_TASK_SHADER_STORAGE_BLOCKS_NV = $8E6E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT = $8E6F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_NV, #PB_Constant)
+#GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_NV = $8E6F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TRANSFORM_FEEDBACK_BUFFERS, #PB_Constant)
+#GL_MAX_TRANSFORM_FEEDBACK_BUFFERS = $8E70
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_STREAMS, #PB_Constant)
+#GL_MAX_VERTEX_STREAMS = $8E71
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_VERTICES, #PB_Constant)
+#GL_PATCH_VERTICES = $8E72
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_VERTICES_EXT, #PB_Constant)
+#GL_PATCH_VERTICES_EXT = $8E72
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_VERTICES_OES, #PB_Constant)
+#GL_PATCH_VERTICES_OES = $8E72
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_DEFAULT_INNER_LEVEL, #PB_Constant)
+#GL_PATCH_DEFAULT_INNER_LEVEL = $8E73
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_DEFAULT_INNER_LEVEL_EXT, #PB_Constant)
+#GL_PATCH_DEFAULT_INNER_LEVEL_EXT = $8E73
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_DEFAULT_OUTER_LEVEL, #PB_Constant)
+#GL_PATCH_DEFAULT_OUTER_LEVEL = $8E74
+CompilerEndIf
+CompilerIf Not Defined(GL_PATCH_DEFAULT_OUTER_LEVEL_EXT, #PB_Constant)
+#GL_PATCH_DEFAULT_OUTER_LEVEL_EXT = $8E74
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_OUTPUT_VERTICES, #PB_Constant)
+#GL_TESS_CONTROL_OUTPUT_VERTICES = $8E75
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_OUTPUT_VERTICES_EXT, #PB_Constant)
+#GL_TESS_CONTROL_OUTPUT_VERTICES_EXT = $8E75
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_OUTPUT_VERTICES_OES, #PB_Constant)
+#GL_TESS_CONTROL_OUTPUT_VERTICES_OES = $8E75
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_MODE, #PB_Constant)
+#GL_TESS_GEN_MODE = $8E76
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_MODE_EXT, #PB_Constant)
+#GL_TESS_GEN_MODE_EXT = $8E76
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_MODE_OES, #PB_Constant)
+#GL_TESS_GEN_MODE_OES = $8E76
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_SPACING, #PB_Constant)
+#GL_TESS_GEN_SPACING = $8E77
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_SPACING_EXT, #PB_Constant)
+#GL_TESS_GEN_SPACING_EXT = $8E77
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_SPACING_OES, #PB_Constant)
+#GL_TESS_GEN_SPACING_OES = $8E77
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_VERTEX_ORDER, #PB_Constant)
+#GL_TESS_GEN_VERTEX_ORDER = $8E78
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_VERTEX_ORDER_EXT, #PB_Constant)
+#GL_TESS_GEN_VERTEX_ORDER_EXT = $8E78
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_VERTEX_ORDER_OES, #PB_Constant)
+#GL_TESS_GEN_VERTEX_ORDER_OES = $8E78
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_POINT_MODE, #PB_Constant)
+#GL_TESS_GEN_POINT_MODE = $8E79
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_POINT_MODE_EXT, #PB_Constant)
+#GL_TESS_GEN_POINT_MODE_EXT = $8E79
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_GEN_POINT_MODE_OES, #PB_Constant)
+#GL_TESS_GEN_POINT_MODE_OES = $8E79
+CompilerEndIf
+CompilerIf Not Defined(GL_ISOLINES, #PB_Constant)
+#GL_ISOLINES = $8E7A
+CompilerEndIf
+CompilerIf Not Defined(GL_ISOLINES_EXT, #PB_Constant)
+#GL_ISOLINES_EXT = $8E7A
+CompilerEndIf
+CompilerIf Not Defined(GL_ISOLINES_OES, #PB_Constant)
+#GL_ISOLINES_OES = $8E7A
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_ODD, #PB_Constant)
+#GL_FRACTIONAL_ODD = $8E7B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_ODD_EXT, #PB_Constant)
+#GL_FRACTIONAL_ODD_EXT = $8E7B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_ODD_OES, #PB_Constant)
+#GL_FRACTIONAL_ODD_OES = $8E7B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_EVEN, #PB_Constant)
+#GL_FRACTIONAL_EVEN = $8E7C
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_EVEN_EXT, #PB_Constant)
+#GL_FRACTIONAL_EVEN_EXT = $8E7C
+CompilerEndIf
+CompilerIf Not Defined(GL_FRACTIONAL_EVEN_OES, #PB_Constant)
+#GL_FRACTIONAL_EVEN_OES = $8E7C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PATCH_VERTICES, #PB_Constant)
+#GL_MAX_PATCH_VERTICES = $8E7D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PATCH_VERTICES_EXT, #PB_Constant)
+#GL_MAX_PATCH_VERTICES_EXT = $8E7D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PATCH_VERTICES_OES, #PB_Constant)
+#GL_MAX_PATCH_VERTICES_OES = $8E7D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_GEN_LEVEL, #PB_Constant)
+#GL_MAX_TESS_GEN_LEVEL = $8E7E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_GEN_LEVEL_EXT, #PB_Constant)
+#GL_MAX_TESS_GEN_LEVEL_EXT = $8E7E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_GEN_LEVEL_OES, #PB_Constant)
+#GL_MAX_TESS_GEN_LEVEL_OES = $8E7E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS = $8E7F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT = $8E7F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_OES = $8E7F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS = $8E80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT = $8E80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES = $8E80
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS = $8E81
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT = $8E81
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_OES = $8E81
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS = $8E82
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT = $8E82
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES = $8E82
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS = $8E83
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT = $8E83
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_OES = $8E83
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_PATCH_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_PATCH_COMPONENTS = $8E84
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_PATCH_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_PATCH_COMPONENTS_EXT = $8E84
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_PATCH_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_PATCH_COMPONENTS_OES = $8E84
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS = $8E85
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT = $8E85
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_OES = $8E85
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS = $8E86
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT = $8E86
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES = $8E86
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER = $8E87
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_EXT, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_EXT = $8E87
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SHADER_OES, #PB_Constant)
+#GL_TESS_EVALUATION_SHADER_OES = $8E87
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER, #PB_Constant)
+#GL_TESS_CONTROL_SHADER = $8E88
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_EXT, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_EXT = $8E88
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SHADER_OES, #PB_Constant)
+#GL_TESS_CONTROL_SHADER_OES = $8E88
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS = $8E89
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT = $8E89
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_OES = $8E89
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS = $8E8A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT = $8E8A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_OES = $8E8A
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_BPTC_UNORM, #PB_Constant)
+#GL_COMPRESSED_RGBA_BPTC_UNORM = $8E8C
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_BPTC_UNORM_ARB, #PB_Constant)
+#GL_COMPRESSED_RGBA_BPTC_UNORM_ARB = $8E8C
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_BPTC_UNORM_EXT, #PB_Constant)
+#GL_COMPRESSED_RGBA_BPTC_UNORM_EXT = $8E8C
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM = $8E8D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB = $8E8D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT = $8E8D
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT = $8E8E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB = $8E8E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT = $8E8E
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT = $8E8F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB = $8E8F
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT, #PB_Constant)
+#GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT = $8E8F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRP_IMG, #PB_Constant)
+#GL_TRP_IMG = $8EA0
+CompilerEndIf
+CompilerIf Not Defined(GL_TRP_ERROR_CONTEXT_RESET_IMG, #PB_Constant)
+#GL_TRP_ERROR_CONTEXT_RESET_IMG = $8EA1
+CompilerEndIf
+CompilerIf Not Defined(GL_TRP_UNSUPPORTED_CONTEXT_IMG, #PB_Constant)
+#GL_TRP_UNSUPPORTED_CONTEXT_IMG = $8EA2
+CompilerEndIf
+CompilerIf Not Defined(GL_PVRIC_SIGNATURE_MISMATCH_IMG, #PB_Constant)
+#GL_PVRIC_SIGNATURE_MISMATCH_IMG = $8EA3
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_COMPONENT_NV, #PB_Constant)
+#GL_COVERAGE_COMPONENT_NV = $8ED0
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_COMPONENT4_NV, #PB_Constant)
+#GL_COVERAGE_COMPONENT4_NV = $8ED1
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_ATTACHMENT_NV, #PB_Constant)
+#GL_COVERAGE_ATTACHMENT_NV = $8ED2
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_BUFFERS_NV, #PB_Constant)
+#GL_COVERAGE_BUFFERS_NV = $8ED3
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_SAMPLES_NV, #PB_Constant)
+#GL_COVERAGE_SAMPLES_NV = $8ED4
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_ALL_FRAGMENTS_NV, #PB_Constant)
+#GL_COVERAGE_ALL_FRAGMENTS_NV = $8ED5
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_EDGE_FRAGMENTS_NV, #PB_Constant)
+#GL_COVERAGE_EDGE_FRAGMENTS_NV = $8ED6
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_AUTOMATIC_NV, #PB_Constant)
+#GL_COVERAGE_AUTOMATIC_NV = $8ED7
+CompilerEndIf
+CompilerIf Not Defined(GL_INCLUSIVE_EXT, #PB_Constant)
+#GL_INCLUSIVE_EXT = $8F10
+CompilerEndIf
+CompilerIf Not Defined(GL_EXCLUSIVE_EXT, #PB_Constant)
+#GL_EXCLUSIVE_EXT = $8F11
+CompilerEndIf
+CompilerIf Not Defined(GL_WINDOW_RECTANGLE_EXT, #PB_Constant)
+#GL_WINDOW_RECTANGLE_EXT = $8F12
+CompilerEndIf
+CompilerIf Not Defined(GL_WINDOW_RECTANGLE_MODE_EXT, #PB_Constant)
+#GL_WINDOW_RECTANGLE_MODE_EXT = $8F13
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_WINDOW_RECTANGLES_EXT, #PB_Constant)
+#GL_MAX_WINDOW_RECTANGLES_EXT = $8F14
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_WINDOW_RECTANGLES_EXT, #PB_Constant)
+#GL_NUM_WINDOW_RECTANGLES_EXT = $8F15
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_GPU_ADDRESS_NV, #PB_Constant)
+#GL_BUFFER_GPU_ADDRESS_NV = $8F1D
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_UNIFIED_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_UNIFIED_NV = $8F1E
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_UNIFIED_NV, #PB_Constant)
+#GL_ELEMENT_ARRAY_UNIFIED_NV = $8F1F
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_ADDRESS_NV = $8F20
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_ADDRESS_NV = $8F21
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_NORMAL_ARRAY_ADDRESS_NV = $8F22
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_COLOR_ARRAY_ADDRESS_NV = $8F23
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_INDEX_ARRAY_ADDRESS_NV = $8F24
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_ADDRESS_NV = $8F25
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_ADDRESS_NV = $8F26
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_ADDRESS_NV = $8F27
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_FOG_COORD_ARRAY_ADDRESS_NV = $8F28
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_ADDRESS_NV, #PB_Constant)
+#GL_ELEMENT_ARRAY_ADDRESS_NV = $8F29
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ATTRIB_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_VERTEX_ATTRIB_ARRAY_LENGTH_NV = $8F2A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_VERTEX_ARRAY_LENGTH_NV = $8F2B
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_NORMAL_ARRAY_LENGTH_NV = $8F2C
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_COLOR_ARRAY_LENGTH_NV = $8F2D
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_INDEX_ARRAY_LENGTH_NV = $8F2E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_LENGTH_NV = $8F2F
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_LENGTH_NV = $8F30
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_LENGTH_NV = $8F31
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORD_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_FOG_COORD_ARRAY_LENGTH_NV = $8F32
+CompilerEndIf
+CompilerIf Not Defined(GL_ELEMENT_ARRAY_LENGTH_NV, #PB_Constant)
+#GL_ELEMENT_ARRAY_LENGTH_NV = $8F33
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_ADDRESS_NV, #PB_Constant)
+#GL_GPU_ADDRESS_NV = $8F34
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_BUFFER_ADDRESS_NV, #PB_Constant)
+#GL_MAX_SHADER_BUFFER_ADDRESS_NV = $8F35
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_READ_BUFFER, #PB_Constant)
+#GL_COPY_READ_BUFFER = $8F36
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_READ_BUFFER_NV, #PB_Constant)
+#GL_COPY_READ_BUFFER_NV = $8F36
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_READ_BUFFER_BINDING, #PB_Constant)
+#GL_COPY_READ_BUFFER_BINDING = $8F36
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_WRITE_BUFFER, #PB_Constant)
+#GL_COPY_WRITE_BUFFER = $8F37
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_WRITE_BUFFER_NV, #PB_Constant)
+#GL_COPY_WRITE_BUFFER_NV = $8F37
+CompilerEndIf
+CompilerIf Not Defined(GL_COPY_WRITE_BUFFER_BINDING, #PB_Constant)
+#GL_COPY_WRITE_BUFFER_BINDING = $8F37
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_IMAGE_UNITS = $8F38
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_IMAGE_UNITS_EXT, #PB_Constant)
+#GL_MAX_IMAGE_UNITS_EXT = $8F38
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS, #PB_Constant)
+#GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS = $8F39
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT, #PB_Constant)
+#GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT = $8F39
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES, #PB_Constant)
+#GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES = $8F39
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_NAME, #PB_Constant)
+#GL_IMAGE_BINDING_NAME = $8F3A
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_NAME_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_NAME_EXT = $8F3A
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LEVEL, #PB_Constant)
+#GL_IMAGE_BINDING_LEVEL = $8F3B
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LEVEL_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_LEVEL_EXT = $8F3B
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LAYERED, #PB_Constant)
+#GL_IMAGE_BINDING_LAYERED = $8F3C
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LAYERED_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_LAYERED_EXT = $8F3C
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LAYER, #PB_Constant)
+#GL_IMAGE_BINDING_LAYER = $8F3D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_LAYER_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_LAYER_EXT = $8F3D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_ACCESS, #PB_Constant)
+#GL_IMAGE_BINDING_ACCESS = $8F3E
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_ACCESS_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_ACCESS_EXT = $8F3E
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_INDIRECT_BUFFER, #PB_Constant)
+#GL_DRAW_INDIRECT_BUFFER = $8F3F
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_INDIRECT_UNIFIED_NV, #PB_Constant)
+#GL_DRAW_INDIRECT_UNIFIED_NV = $8F40
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_INDIRECT_ADDRESS_NV, #PB_Constant)
+#GL_DRAW_INDIRECT_ADDRESS_NV = $8F41
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_INDIRECT_LENGTH_NV, #PB_Constant)
+#GL_DRAW_INDIRECT_LENGTH_NV = $8F42
+CompilerEndIf
+CompilerIf Not Defined(GL_DRAW_INDIRECT_BUFFER_BINDING, #PB_Constant)
+#GL_DRAW_INDIRECT_BUFFER_BINDING = $8F43
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_SUBROUTINE_PARAMETERS_NV, #PB_Constant)
+#GL_MAX_PROGRAM_SUBROUTINE_PARAMETERS_NV = $8F44
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_SUBROUTINE_NUM_NV, #PB_Constant)
+#GL_MAX_PROGRAM_SUBROUTINE_NUM_NV = $8F45
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2, #PB_Constant)
+#GL_DOUBLE_MAT2 = $8F46
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2_EXT, #PB_Constant)
+#GL_DOUBLE_MAT2_EXT = $8F46
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3, #PB_Constant)
+#GL_DOUBLE_MAT3 = $8F47
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3_EXT, #PB_Constant)
+#GL_DOUBLE_MAT3_EXT = $8F47
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4, #PB_Constant)
+#GL_DOUBLE_MAT4 = $8F48
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4_EXT, #PB_Constant)
+#GL_DOUBLE_MAT4_EXT = $8F48
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2x3, #PB_Constant)
+#GL_DOUBLE_MAT2x3 = $8F49
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2x3_EXT, #PB_Constant)
+#GL_DOUBLE_MAT2x3_EXT = $8F49
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2x4, #PB_Constant)
+#GL_DOUBLE_MAT2x4 = $8F4A
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT2x4_EXT, #PB_Constant)
+#GL_DOUBLE_MAT2x4_EXT = $8F4A
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3x2, #PB_Constant)
+#GL_DOUBLE_MAT3x2 = $8F4B
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3x2_EXT, #PB_Constant)
+#GL_DOUBLE_MAT3x2_EXT = $8F4B
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3x4, #PB_Constant)
+#GL_DOUBLE_MAT3x4 = $8F4C
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT3x4_EXT, #PB_Constant)
+#GL_DOUBLE_MAT3x4_EXT = $8F4C
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4x2, #PB_Constant)
+#GL_DOUBLE_MAT4x2 = $8F4D
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4x2_EXT, #PB_Constant)
+#GL_DOUBLE_MAT4x2_EXT = $8F4D
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4x3, #PB_Constant)
+#GL_DOUBLE_MAT4x3 = $8F4E
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_MAT4x3_EXT, #PB_Constant)
+#GL_DOUBLE_MAT4x3_EXT = $8F4E
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_BINDING_BUFFER, #PB_Constant)
+#GL_VERTEX_BINDING_BUFFER = $8F4F
+CompilerEndIf
+CompilerIf Not Defined(GL_MALI_SHADER_BINARY_ARM, #PB_Constant)
+#GL_MALI_SHADER_BINARY_ARM = $8F60
+CompilerEndIf
+CompilerIf Not Defined(GL_MALI_PROGRAM_BINARY_ARM, #PB_Constant)
+#GL_MALI_PROGRAM_BINARY_ARM = $8F61
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT, #PB_Constant)
+#GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT = $8F63
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_PIXEL_LOCAL_STORAGE_EXT, #PB_Constant)
+#GL_SHADER_PIXEL_LOCAL_STORAGE_EXT = $8F64
+CompilerEndIf
+CompilerIf Not Defined(GL_FETCH_PER_SAMPLE_ARM, #PB_Constant)
+#GL_FETCH_PER_SAMPLE_ARM = $8F65
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM, #PB_Constant)
+#GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM = $8F66
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT, #PB_Constant)
+#GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT = $8F67
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_ASTC_DECODE_PRECISION_EXT, #PB_Constant)
+#GL_TEXTURE_ASTC_DECODE_PRECISION_EXT = $8F69
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM, #PB_Constant)
+#GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM = $8F6A
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT, #PB_Constant)
+#GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT = $8F6E
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT = $8F6F
+CompilerEndIf
+CompilerIf Not Defined(GL_RED_SNORM, #PB_Constant)
+#GL_RED_SNORM = $8F90
+CompilerEndIf
+CompilerIf Not Defined(GL_RG_SNORM, #PB_Constant)
+#GL_RG_SNORM = $8F91
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB_SNORM, #PB_Constant)
+#GL_RGB_SNORM = $8F92
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA_SNORM, #PB_Constant)
+#GL_RGBA_SNORM = $8F93
+CompilerEndIf
+CompilerIf Not Defined(GL_R8_SNORM, #PB_Constant)
+#GL_R8_SNORM = $8F94
+CompilerEndIf
+CompilerIf Not Defined(GL_RG8_SNORM, #PB_Constant)
+#GL_RG8_SNORM = $8F95
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB8_SNORM, #PB_Constant)
+#GL_RGB8_SNORM = $8F96
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA8_SNORM, #PB_Constant)
+#GL_RGBA8_SNORM = $8F97
+CompilerEndIf
+CompilerIf Not Defined(GL_R16_SNORM, #PB_Constant)
+#GL_R16_SNORM = $8F98
+CompilerEndIf
+CompilerIf Not Defined(GL_R16_SNORM_EXT, #PB_Constant)
+#GL_R16_SNORM_EXT = $8F98
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16_SNORM, #PB_Constant)
+#GL_RG16_SNORM = $8F99
+CompilerEndIf
+CompilerIf Not Defined(GL_RG16_SNORM_EXT, #PB_Constant)
+#GL_RG16_SNORM_EXT = $8F99
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16_SNORM, #PB_Constant)
+#GL_RGB16_SNORM = $8F9A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB16_SNORM_EXT, #PB_Constant)
+#GL_RGB16_SNORM_EXT = $8F9A
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16_SNORM, #PB_Constant)
+#GL_RGBA16_SNORM = $8F9B
+CompilerEndIf
+CompilerIf Not Defined(GL_RGBA16_SNORM_EXT, #PB_Constant)
+#GL_RGBA16_SNORM_EXT = $8F9B
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNED_NORMALIZED, #PB_Constant)
+#GL_SIGNED_NORMALIZED = $8F9C
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART, #PB_Constant)
+#GL_PRIMITIVE_RESTART = $8F9D
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_RESTART_INDEX, #PB_Constant)
+#GL_PRIMITIVE_RESTART_INDEX = $8F9E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB, #PB_Constant)
+#GL_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB = $8F9F
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFMON_GLOBAL_MODE_QCOM, #PB_Constant)
+#GL_PERFMON_GLOBAL_MODE_QCOM = $8FA0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM, #PB_Constant)
+#GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM = $8FA1
+CompilerEndIf
+CompilerIf Not Defined(GL_BINNING_CONTROL_HINT_QCOM, #PB_Constant)
+#GL_BINNING_CONTROL_HINT_QCOM = $8FB0
+CompilerEndIf
+CompilerIf Not Defined(GL_CPU_OPTIMIZED_QCOM, #PB_Constant)
+#GL_CPU_OPTIMIZED_QCOM = $8FB1
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_OPTIMIZED_QCOM, #PB_Constant)
+#GL_GPU_OPTIMIZED_QCOM = $8FB2
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM, #PB_Constant)
+#GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM = $8FB3
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_DISJOINT_EXT, #PB_Constant)
+#GL_GPU_DISJOINT_EXT = $8FBB
+CompilerEndIf
+CompilerIf Not Defined(GL_SR8_EXT, #PB_Constant)
+#GL_SR8_EXT = $8FBD
+CompilerEndIf
+CompilerIf Not Defined(GL_SRG8_EXT, #PB_Constant)
+#GL_SRG8_EXT = $8FBE
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FORMAT_SRGB_OVERRIDE_EXT, #PB_Constant)
+#GL_TEXTURE_FORMAT_SRGB_OVERRIDE_EXT = $8FBF
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_VIV, #PB_Constant)
+#GL_SHADER_BINARY_VIV = $8FC4
+CompilerEndIf
+CompilerIf Not Defined(GL_INT8_NV, #PB_Constant)
+#GL_INT8_NV = $8FE0
+CompilerEndIf
+CompilerIf Not Defined(GL_INT8_VEC2_NV, #PB_Constant)
+#GL_INT8_VEC2_NV = $8FE1
+CompilerEndIf
+CompilerIf Not Defined(GL_INT8_VEC3_NV, #PB_Constant)
+#GL_INT8_VEC3_NV = $8FE2
+CompilerEndIf
+CompilerIf Not Defined(GL_INT8_VEC4_NV, #PB_Constant)
+#GL_INT8_VEC4_NV = $8FE3
+CompilerEndIf
+CompilerIf Not Defined(GL_INT16_NV, #PB_Constant)
+#GL_INT16_NV = $8FE4
+CompilerEndIf
+CompilerIf Not Defined(GL_INT16_VEC2_NV, #PB_Constant)
+#GL_INT16_VEC2_NV = $8FE5
+CompilerEndIf
+CompilerIf Not Defined(GL_INT16_VEC3_NV, #PB_Constant)
+#GL_INT16_VEC3_NV = $8FE6
+CompilerEndIf
+CompilerIf Not Defined(GL_INT16_VEC4_NV, #PB_Constant)
+#GL_INT16_VEC4_NV = $8FE7
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC2_ARB, #PB_Constant)
+#GL_INT64_VEC2_ARB = $8FE9
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC2_NV, #PB_Constant)
+#GL_INT64_VEC2_NV = $8FE9
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC3_ARB, #PB_Constant)
+#GL_INT64_VEC3_ARB = $8FEA
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC3_NV, #PB_Constant)
+#GL_INT64_VEC3_NV = $8FEA
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC4_ARB, #PB_Constant)
+#GL_INT64_VEC4_ARB = $8FEB
+CompilerEndIf
+CompilerIf Not Defined(GL_INT64_VEC4_NV, #PB_Constant)
+#GL_INT64_VEC4_NV = $8FEB
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT8_NV, #PB_Constant)
+#GL_UNSIGNED_INT8_NV = $8FEC
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT8_VEC2_NV, #PB_Constant)
+#GL_UNSIGNED_INT8_VEC2_NV = $8FED
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT8_VEC3_NV, #PB_Constant)
+#GL_UNSIGNED_INT8_VEC3_NV = $8FEE
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT8_VEC4_NV, #PB_Constant)
+#GL_UNSIGNED_INT8_VEC4_NV = $8FEF
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT16_NV, #PB_Constant)
+#GL_UNSIGNED_INT16_NV = $8FF0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT16_VEC2_NV, #PB_Constant)
+#GL_UNSIGNED_INT16_VEC2_NV = $8FF1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT16_VEC3_NV, #PB_Constant)
+#GL_UNSIGNED_INT16_VEC3_NV = $8FF2
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT16_VEC4_NV, #PB_Constant)
+#GL_UNSIGNED_INT16_VEC4_NV = $8FF3
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC2_ARB, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC2_ARB = $8FF5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC2_NV, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC2_NV = $8FF5
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC3_ARB, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC3_ARB = $8FF6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC3_NV, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC3_NV = $8FF6
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC4_ARB, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC4_ARB = $8FF7
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT64_VEC4_NV, #PB_Constant)
+#GL_UNSIGNED_INT64_VEC4_NV = $8FF7
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_NV, #PB_Constant)
+#GL_FLOAT16_NV = $8FF8
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_VEC2_NV, #PB_Constant)
+#GL_FLOAT16_VEC2_NV = $8FF9
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_VEC3_NV, #PB_Constant)
+#GL_FLOAT16_VEC3_NV = $8FFA
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_VEC4_NV, #PB_Constant)
+#GL_FLOAT16_VEC4_NV = $8FFB
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC2, #PB_Constant)
+#GL_DOUBLE_VEC2 = $8FFC
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC2_EXT, #PB_Constant)
+#GL_DOUBLE_VEC2_EXT = $8FFC
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC3, #PB_Constant)
+#GL_DOUBLE_VEC3 = $8FFD
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC3_EXT, #PB_Constant)
+#GL_DOUBLE_VEC3_EXT = $8FFD
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC4, #PB_Constant)
+#GL_DOUBLE_VEC4 = $8FFE
+CompilerEndIf
+CompilerIf Not Defined(GL_DOUBLE_VEC4_EXT, #PB_Constant)
+#GL_DOUBLE_VEC4_EXT = $8FFE
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_BUFFER_AMD, #PB_Constant)
+#GL_SAMPLER_BUFFER_AMD = $9001
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_BUFFER_AMD, #PB_Constant)
+#GL_INT_SAMPLER_BUFFER_AMD = $9002
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD = $9003
+CompilerEndIf
+CompilerIf Not Defined(GL_TESSELLATION_MODE_AMD, #PB_Constant)
+#GL_TESSELLATION_MODE_AMD = $9004
+CompilerEndIf
+CompilerIf Not Defined(GL_TESSELLATION_FACTOR_AMD, #PB_Constant)
+#GL_TESSELLATION_FACTOR_AMD = $9005
+CompilerEndIf
+CompilerIf Not Defined(GL_DISCRETE_AMD, #PB_Constant)
+#GL_DISCRETE_AMD = $9006
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTINUOUS_AMD, #PB_Constant)
+#GL_CONTINUOUS_AMD = $9007
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_ARRAY = $9009
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_ARRAY_ARB = $9009
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_ARRAY_EXT = $9009
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_TEXTURE_CUBE_MAP_ARRAY_OES = $9009
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_ARRAY = $900A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_ARB = $900A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT = $900A
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES = $900A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_PROXY_TEXTURE_CUBE_MAP_ARRAY = $900B
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_PROXY_TEXTURE_CUBE_MAP_ARRAY_ARB = $900B
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY = $900C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_ARB = $900C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_EXT = $900C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_OES = $900C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW = $900D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_ARB, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_ARB = $900D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT = $900D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES, #PB_Constant)
+#GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES = $900D
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_INT_SAMPLER_CUBE_MAP_ARRAY = $900E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_INT_SAMPLER_CUBE_MAP_ARRAY_ARB = $900E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT = $900E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES = $900E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY = $900F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_ARB, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_ARB = $900F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT = $900F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES = $900F
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_SNORM, #PB_Constant)
+#GL_ALPHA_SNORM = $9010
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_SNORM, #PB_Constant)
+#GL_LUMINANCE_SNORM = $9011
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE_ALPHA_SNORM, #PB_Constant)
+#GL_LUMINANCE_ALPHA_SNORM = $9012
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY_SNORM, #PB_Constant)
+#GL_INTENSITY_SNORM = $9013
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA8_SNORM, #PB_Constant)
+#GL_ALPHA8_SNORM = $9014
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_SNORM, #PB_Constant)
+#GL_LUMINANCE8_SNORM = $9015
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE8_ALPHA8_SNORM, #PB_Constant)
+#GL_LUMINANCE8_ALPHA8_SNORM = $9016
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY8_SNORM, #PB_Constant)
+#GL_INTENSITY8_SNORM = $9017
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA16_SNORM, #PB_Constant)
+#GL_ALPHA16_SNORM = $9018
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16_SNORM, #PB_Constant)
+#GL_LUMINANCE16_SNORM = $9019
+CompilerEndIf
+CompilerIf Not Defined(GL_LUMINANCE16_ALPHA16_SNORM, #PB_Constant)
+#GL_LUMINANCE16_ALPHA16_SNORM = $901A
+CompilerEndIf
+CompilerIf Not Defined(GL_INTENSITY16_SNORM, #PB_Constant)
+#GL_INTENSITY16_SNORM = $901B
+CompilerEndIf
+CompilerIf Not Defined(GL_FACTOR_MIN_AMD, #PB_Constant)
+#GL_FACTOR_MIN_AMD = $901C
+CompilerEndIf
+CompilerIf Not Defined(GL_FACTOR_MAX_AMD, #PB_Constant)
+#GL_FACTOR_MAX_AMD = $901D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLAMP_NEAR_AMD, #PB_Constant)
+#GL_DEPTH_CLAMP_NEAR_AMD = $901E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_CLAMP_FAR_AMD, #PB_Constant)
+#GL_DEPTH_CLAMP_FAR_AMD = $901F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_BUFFER_NV, #PB_Constant)
+#GL_VIDEO_BUFFER_NV = $9020
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_BUFFER_BINDING_NV, #PB_Constant)
+#GL_VIDEO_BUFFER_BINDING_NV = $9021
+CompilerEndIf
+CompilerIf Not Defined(GL_FIELD_UPPER_NV, #PB_Constant)
+#GL_FIELD_UPPER_NV = $9022
+CompilerEndIf
+CompilerIf Not Defined(GL_FIELD_LOWER_NV, #PB_Constant)
+#GL_FIELD_LOWER_NV = $9023
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_VIDEO_CAPTURE_STREAMS_NV, #PB_Constant)
+#GL_NUM_VIDEO_CAPTURE_STREAMS_NV = $9024
+CompilerEndIf
+CompilerIf Not Defined(GL_NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV, #PB_Constant)
+#GL_NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV = $9025
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_TO_422_SUPPORTED_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_TO_422_SUPPORTED_NV = $9026
+CompilerEndIf
+CompilerIf Not Defined(GL_LAST_VIDEO_CAPTURE_STATUS_NV, #PB_Constant)
+#GL_LAST_VIDEO_CAPTURE_STATUS_NV = $9027
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_BUFFER_PITCH_NV, #PB_Constant)
+#GL_VIDEO_BUFFER_PITCH_NV = $9028
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_COLOR_CONVERSION_MATRIX_NV, #PB_Constant)
+#GL_VIDEO_COLOR_CONVERSION_MATRIX_NV = $9029
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_COLOR_CONVERSION_MAX_NV, #PB_Constant)
+#GL_VIDEO_COLOR_CONVERSION_MAX_NV = $902A
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_COLOR_CONVERSION_MIN_NV, #PB_Constant)
+#GL_VIDEO_COLOR_CONVERSION_MIN_NV = $902B
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_COLOR_CONVERSION_OFFSET_NV, #PB_Constant)
+#GL_VIDEO_COLOR_CONVERSION_OFFSET_NV = $902C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_BUFFER_INTERNAL_FORMAT_NV, #PB_Constant)
+#GL_VIDEO_BUFFER_INTERNAL_FORMAT_NV = $902D
+CompilerEndIf
+CompilerIf Not Defined(GL_PARTIAL_SUCCESS_NV, #PB_Constant)
+#GL_PARTIAL_SUCCESS_NV = $902E
+CompilerEndIf
+CompilerIf Not Defined(GL_SUCCESS_NV, #PB_Constant)
+#GL_SUCCESS_NV = $902F
+CompilerEndIf
+CompilerIf Not Defined(GL_FAILURE_NV, #PB_Constant)
+#GL_FAILURE_NV = $9030
+CompilerEndIf
+CompilerIf Not Defined(GL_YCBYCR8_422_NV, #PB_Constant)
+#GL_YCBYCR8_422_NV = $9031
+CompilerEndIf
+CompilerIf Not Defined(GL_YCBAYCR8A_4224_NV, #PB_Constant)
+#GL_YCBAYCR8A_4224_NV = $9032
+CompilerEndIf
+CompilerIf Not Defined(GL_Z6Y10Z6CB10Z6Y10Z6CR10_422_NV, #PB_Constant)
+#GL_Z6Y10Z6CB10Z6Y10Z6CR10_422_NV = $9033
+CompilerEndIf
+CompilerIf Not Defined(GL_Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV, #PB_Constant)
+#GL_Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV = $9034
+CompilerEndIf
+CompilerIf Not Defined(GL_Z4Y12Z4CB12Z4Y12Z4CR12_422_NV, #PB_Constant)
+#GL_Z4Y12Z4CB12Z4Y12Z4CR12_422_NV = $9035
+CompilerEndIf
+CompilerIf Not Defined(GL_Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV, #PB_Constant)
+#GL_Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV = $9036
+CompilerEndIf
+CompilerIf Not Defined(GL_Z4Y12Z4CB12Z4CR12_444_NV, #PB_Constant)
+#GL_Z4Y12Z4CB12Z4CR12_444_NV = $9037
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_FRAME_WIDTH_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_FRAME_WIDTH_NV = $9038
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_FRAME_HEIGHT_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_FRAME_HEIGHT_NV = $9039
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV = $903A
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV = $903B
+CompilerEndIf
+CompilerIf Not Defined(GL_VIDEO_CAPTURE_SURFACE_ORIGIN_NV, #PB_Constant)
+#GL_VIDEO_CAPTURE_SURFACE_ORIGIN_NV = $903C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COVERAGE_SAMPLES_NV, #PB_Constant)
+#GL_TEXTURE_COVERAGE_SAMPLES_NV = $9045
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COLOR_SAMPLES_NV, #PB_Constant)
+#GL_TEXTURE_COLOR_SAMPLES_NV = $9046
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX, #PB_Constant)
+#GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX = $9047
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX, #PB_Constant)
+#GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX = $9048
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX, #PB_Constant)
+#GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX = $9049
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX, #PB_Constant)
+#GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX = $904A
+CompilerEndIf
+CompilerIf Not Defined(GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX, #PB_Constant)
+#GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX = $904B
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_1D, #PB_Constant)
+#GL_IMAGE_1D = $904C
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_1D_EXT, #PB_Constant)
+#GL_IMAGE_1D_EXT = $904C
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D, #PB_Constant)
+#GL_IMAGE_2D = $904D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_EXT, #PB_Constant)
+#GL_IMAGE_2D_EXT = $904D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_3D, #PB_Constant)
+#GL_IMAGE_3D = $904E
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_3D_EXT, #PB_Constant)
+#GL_IMAGE_3D_EXT = $904E
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_RECT, #PB_Constant)
+#GL_IMAGE_2D_RECT = $904F
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_RECT_EXT, #PB_Constant)
+#GL_IMAGE_2D_RECT_EXT = $904F
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBE, #PB_Constant)
+#GL_IMAGE_CUBE = $9050
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBE_EXT, #PB_Constant)
+#GL_IMAGE_CUBE_EXT = $9050
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BUFFER, #PB_Constant)
+#GL_IMAGE_BUFFER = $9051
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BUFFER_EXT, #PB_Constant)
+#GL_IMAGE_BUFFER_EXT = $9051
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BUFFER_OES, #PB_Constant)
+#GL_IMAGE_BUFFER_OES = $9051
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_1D_ARRAY, #PB_Constant)
+#GL_IMAGE_1D_ARRAY = $9052
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_1D_ARRAY_EXT, #PB_Constant)
+#GL_IMAGE_1D_ARRAY_EXT = $9052
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_ARRAY, #PB_Constant)
+#GL_IMAGE_2D_ARRAY = $9053
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_ARRAY_EXT, #PB_Constant)
+#GL_IMAGE_2D_ARRAY_EXT = $9053
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_IMAGE_CUBE_MAP_ARRAY = $9054
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_IMAGE_CUBE_MAP_ARRAY_EXT = $9054
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_IMAGE_CUBE_MAP_ARRAY_OES = $9054
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_MULTISAMPLE, #PB_Constant)
+#GL_IMAGE_2D_MULTISAMPLE = $9055
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_MULTISAMPLE_EXT, #PB_Constant)
+#GL_IMAGE_2D_MULTISAMPLE_EXT = $9055
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_IMAGE_2D_MULTISAMPLE_ARRAY = $9056
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_2D_MULTISAMPLE_ARRAY_EXT, #PB_Constant)
+#GL_IMAGE_2D_MULTISAMPLE_ARRAY_EXT = $9056
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_1D, #PB_Constant)
+#GL_INT_IMAGE_1D = $9057
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_1D_EXT, #PB_Constant)
+#GL_INT_IMAGE_1D_EXT = $9057
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D, #PB_Constant)
+#GL_INT_IMAGE_2D = $9058
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_EXT, #PB_Constant)
+#GL_INT_IMAGE_2D_EXT = $9058
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_3D, #PB_Constant)
+#GL_INT_IMAGE_3D = $9059
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_3D_EXT, #PB_Constant)
+#GL_INT_IMAGE_3D_EXT = $9059
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_RECT, #PB_Constant)
+#GL_INT_IMAGE_2D_RECT = $905A
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_RECT_EXT, #PB_Constant)
+#GL_INT_IMAGE_2D_RECT_EXT = $905A
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_CUBE, #PB_Constant)
+#GL_INT_IMAGE_CUBE = $905B
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_CUBE_EXT, #PB_Constant)
+#GL_INT_IMAGE_CUBE_EXT = $905B
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_BUFFER, #PB_Constant)
+#GL_INT_IMAGE_BUFFER = $905C
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_BUFFER_EXT, #PB_Constant)
+#GL_INT_IMAGE_BUFFER_EXT = $905C
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_BUFFER_OES, #PB_Constant)
+#GL_INT_IMAGE_BUFFER_OES = $905C
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_1D_ARRAY, #PB_Constant)
+#GL_INT_IMAGE_1D_ARRAY = $905D
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_1D_ARRAY_EXT, #PB_Constant)
+#GL_INT_IMAGE_1D_ARRAY_EXT = $905D
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_ARRAY, #PB_Constant)
+#GL_INT_IMAGE_2D_ARRAY = $905E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_ARRAY_EXT, #PB_Constant)
+#GL_INT_IMAGE_2D_ARRAY_EXT = $905E
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_INT_IMAGE_CUBE_MAP_ARRAY = $905F
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT = $905F
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_INT_IMAGE_CUBE_MAP_ARRAY_OES = $905F
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_MULTISAMPLE, #PB_Constant)
+#GL_INT_IMAGE_2D_MULTISAMPLE = $9060
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_MULTISAMPLE_EXT, #PB_Constant)
+#GL_INT_IMAGE_2D_MULTISAMPLE_EXT = $9060
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY = $9061
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT, #PB_Constant)
+#GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT = $9061
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_1D, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_1D = $9062
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_1D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_1D_EXT = $9062
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D = $9063
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_EXT = $9063
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_3D, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_3D = $9064
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_3D_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_3D_EXT = $9064
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_RECT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_RECT = $9065
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_RECT_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_RECT_EXT = $9065
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_CUBE, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_CUBE = $9066
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_CUBE_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_CUBE_EXT = $9066
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_BUFFER, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_BUFFER = $9067
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_BUFFER_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_BUFFER_EXT = $9067
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_BUFFER_OES, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_BUFFER_OES = $9067
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_1D_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_1D_ARRAY = $9068
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_1D_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_1D_ARRAY_EXT = $9068
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_ARRAY = $9069
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_ARRAY_EXT = $9069
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY = $906A
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT = $906A
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES = $906A
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE = $906B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_EXT = $906B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY = $906C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT, #PB_Constant)
+#GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT = $906C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_IMAGE_SAMPLES, #PB_Constant)
+#GL_MAX_IMAGE_SAMPLES = $906D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_IMAGE_SAMPLES_EXT, #PB_Constant)
+#GL_MAX_IMAGE_SAMPLES_EXT = $906D
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_FORMAT, #PB_Constant)
+#GL_IMAGE_BINDING_FORMAT = $906E
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_BINDING_FORMAT_EXT, #PB_Constant)
+#GL_IMAGE_BINDING_FORMAT_EXT = $906E
+CompilerEndIf
+CompilerIf Not Defined(GL_RGB10_A2UI, #PB_Constant)
+#GL_RGB10_A2UI = $906F
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FORMAT_SVG_NV, #PB_Constant)
+#GL_PATH_FORMAT_SVG_NV = $9070
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FORMAT_PS_NV, #PB_Constant)
+#GL_PATH_FORMAT_PS_NV = $9071
+CompilerEndIf
+CompilerIf Not Defined(GL_STANDARD_FONT_NAME_NV, #PB_Constant)
+#GL_STANDARD_FONT_NAME_NV = $9072
+CompilerEndIf
+CompilerIf Not Defined(GL_SYSTEM_FONT_NAME_NV, #PB_Constant)
+#GL_SYSTEM_FONT_NAME_NV = $9073
+CompilerEndIf
+CompilerIf Not Defined(GL_FILE_NAME_NV, #PB_Constant)
+#GL_FILE_NAME_NV = $9074
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STROKE_WIDTH_NV, #PB_Constant)
+#GL_PATH_STROKE_WIDTH_NV = $9075
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_END_CAPS_NV, #PB_Constant)
+#GL_PATH_END_CAPS_NV = $9076
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_INITIAL_END_CAP_NV, #PB_Constant)
+#GL_PATH_INITIAL_END_CAP_NV = $9077
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_TERMINAL_END_CAP_NV, #PB_Constant)
+#GL_PATH_TERMINAL_END_CAP_NV = $9078
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_JOIN_STYLE_NV, #PB_Constant)
+#GL_PATH_JOIN_STYLE_NV = $9079
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_MITER_LIMIT_NV, #PB_Constant)
+#GL_PATH_MITER_LIMIT_NV = $907A
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_DASH_CAPS_NV, #PB_Constant)
+#GL_PATH_DASH_CAPS_NV = $907B
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_INITIAL_DASH_CAP_NV, #PB_Constant)
+#GL_PATH_INITIAL_DASH_CAP_NV = $907C
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_TERMINAL_DASH_CAP_NV, #PB_Constant)
+#GL_PATH_TERMINAL_DASH_CAP_NV = $907D
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_DASH_OFFSET_NV, #PB_Constant)
+#GL_PATH_DASH_OFFSET_NV = $907E
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_CLIENT_LENGTH_NV, #PB_Constant)
+#GL_PATH_CLIENT_LENGTH_NV = $907F
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FILL_MODE_NV, #PB_Constant)
+#GL_PATH_FILL_MODE_NV = $9080
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FILL_MASK_NV, #PB_Constant)
+#GL_PATH_FILL_MASK_NV = $9081
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FILL_COVER_MODE_NV, #PB_Constant)
+#GL_PATH_FILL_COVER_MODE_NV = $9082
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STROKE_COVER_MODE_NV, #PB_Constant)
+#GL_PATH_STROKE_COVER_MODE_NV = $9083
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STROKE_MASK_NV, #PB_Constant)
+#GL_PATH_STROKE_MASK_NV = $9084
+CompilerEndIf
+CompilerIf Not Defined(GL_COUNT_UP_NV, #PB_Constant)
+#GL_COUNT_UP_NV = $9088
+CompilerEndIf
+CompilerIf Not Defined(GL_COUNT_DOWN_NV, #PB_Constant)
+#GL_COUNT_DOWN_NV = $9089
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_OBJECT_BOUNDING_BOX_NV, #PB_Constant)
+#GL_PATH_OBJECT_BOUNDING_BOX_NV = $908A
+CompilerEndIf
+CompilerIf Not Defined(GL_CONVEX_HULL_NV, #PB_Constant)
+#GL_CONVEX_HULL_NV = $908B
+CompilerEndIf
+CompilerIf Not Defined(GL_BOUNDING_BOX_NV, #PB_Constant)
+#GL_BOUNDING_BOX_NV = $908D
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSLATE_X_NV, #PB_Constant)
+#GL_TRANSLATE_X_NV = $908E
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSLATE_Y_NV, #PB_Constant)
+#GL_TRANSLATE_Y_NV = $908F
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSLATE_2D_NV, #PB_Constant)
+#GL_TRANSLATE_2D_NV = $9090
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSLATE_3D_NV, #PB_Constant)
+#GL_TRANSLATE_3D_NV = $9091
+CompilerEndIf
+CompilerIf Not Defined(GL_AFFINE_2D_NV, #PB_Constant)
+#GL_AFFINE_2D_NV = $9092
+CompilerEndIf
+CompilerIf Not Defined(GL_AFFINE_3D_NV, #PB_Constant)
+#GL_AFFINE_3D_NV = $9094
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_AFFINE_2D_NV, #PB_Constant)
+#GL_TRANSPOSE_AFFINE_2D_NV = $9096
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSPOSE_AFFINE_3D_NV, #PB_Constant)
+#GL_TRANSPOSE_AFFINE_3D_NV = $9098
+CompilerEndIf
+CompilerIf Not Defined(GL_UTF8_NV, #PB_Constant)
+#GL_UTF8_NV = $909A
+CompilerEndIf
+CompilerIf Not Defined(GL_UTF16_NV, #PB_Constant)
+#GL_UTF16_NV = $909B
+CompilerEndIf
+CompilerIf Not Defined(GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV, #PB_Constant)
+#GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV = $909C
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_COMMAND_COUNT_NV, #PB_Constant)
+#GL_PATH_COMMAND_COUNT_NV = $909D
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_COORD_COUNT_NV, #PB_Constant)
+#GL_PATH_COORD_COUNT_NV = $909E
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_DASH_ARRAY_COUNT_NV, #PB_Constant)
+#GL_PATH_DASH_ARRAY_COUNT_NV = $909F
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_COMPUTED_LENGTH_NV, #PB_Constant)
+#GL_PATH_COMPUTED_LENGTH_NV = $90A0
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FILL_BOUNDING_BOX_NV, #PB_Constant)
+#GL_PATH_FILL_BOUNDING_BOX_NV = $90A1
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STROKE_BOUNDING_BOX_NV, #PB_Constant)
+#GL_PATH_STROKE_BOUNDING_BOX_NV = $90A2
+CompilerEndIf
+CompilerIf Not Defined(GL_SQUARE_NV, #PB_Constant)
+#GL_SQUARE_NV = $90A3
+CompilerEndIf
+CompilerIf Not Defined(GL_ROUND_NV, #PB_Constant)
+#GL_ROUND_NV = $90A4
+CompilerEndIf
+CompilerIf Not Defined(GL_TRIANGULAR_NV, #PB_Constant)
+#GL_TRIANGULAR_NV = $90A5
+CompilerEndIf
+CompilerIf Not Defined(GL_BEVEL_NV, #PB_Constant)
+#GL_BEVEL_NV = $90A6
+CompilerEndIf
+CompilerIf Not Defined(GL_MITER_REVERT_NV, #PB_Constant)
+#GL_MITER_REVERT_NV = $90A7
+CompilerEndIf
+CompilerIf Not Defined(GL_MITER_TRUNCATE_NV, #PB_Constant)
+#GL_MITER_TRUNCATE_NV = $90A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SKIP_MISSING_GLYPH_NV, #PB_Constant)
+#GL_SKIP_MISSING_GLYPH_NV = $90A9
+CompilerEndIf
+CompilerIf Not Defined(GL_USE_MISSING_GLYPH_NV, #PB_Constant)
+#GL_USE_MISSING_GLYPH_NV = $90AA
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_ERROR_POSITION_NV, #PB_Constant)
+#GL_PATH_ERROR_POSITION_NV = $90AB
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_FOG_GEN_MODE_NV, #PB_Constant)
+#GL_PATH_FOG_GEN_MODE_NV = $90AC
+CompilerEndIf
+CompilerIf Not Defined(GL_ACCUM_ADJACENT_PAIRS_NV, #PB_Constant)
+#GL_ACCUM_ADJACENT_PAIRS_NV = $90AD
+CompilerEndIf
+CompilerIf Not Defined(GL_ADJACENT_PAIRS_NV, #PB_Constant)
+#GL_ADJACENT_PAIRS_NV = $90AE
+CompilerEndIf
+CompilerIf Not Defined(GL_FIRST_TO_REST_NV, #PB_Constant)
+#GL_FIRST_TO_REST_NV = $90AF
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_GEN_MODE_NV, #PB_Constant)
+#GL_PATH_GEN_MODE_NV = $90B0
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_GEN_COEFF_NV, #PB_Constant)
+#GL_PATH_GEN_COEFF_NV = $90B1
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_GEN_COLOR_FORMAT_NV, #PB_Constant)
+#GL_PATH_GEN_COLOR_FORMAT_NV = $90B2
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_GEN_COMPONENTS_NV, #PB_Constant)
+#GL_PATH_GEN_COMPONENTS_NV = $90B3
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_DASH_OFFSET_RESET_NV, #PB_Constant)
+#GL_PATH_DASH_OFFSET_RESET_NV = $90B4
+CompilerEndIf
+CompilerIf Not Defined(GL_MOVE_TO_RESETS_NV, #PB_Constant)
+#GL_MOVE_TO_RESETS_NV = $90B5
+CompilerEndIf
+CompilerIf Not Defined(GL_MOVE_TO_CONTINUES_NV, #PB_Constant)
+#GL_MOVE_TO_CONTINUES_NV = $90B6
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STENCIL_FUNC_NV, #PB_Constant)
+#GL_PATH_STENCIL_FUNC_NV = $90B7
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STENCIL_REF_NV, #PB_Constant)
+#GL_PATH_STENCIL_REF_NV = $90B8
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STENCIL_VALUE_MASK_NV, #PB_Constant)
+#GL_PATH_STENCIL_VALUE_MASK_NV = $90B9
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALED_RESOLVE_FASTEST_EXT, #PB_Constant)
+#GL_SCALED_RESOLVE_FASTEST_EXT = $90BA
+CompilerEndIf
+CompilerIf Not Defined(GL_SCALED_RESOLVE_NICEST_EXT, #PB_Constant)
+#GL_SCALED_RESOLVE_NICEST_EXT = $90BB
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_MAP_BUFFER_ALIGNMENT, #PB_Constant)
+#GL_MIN_MAP_BUFFER_ALIGNMENT = $90BC
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STENCIL_DEPTH_OFFSET_FACTOR_NV, #PB_Constant)
+#GL_PATH_STENCIL_DEPTH_OFFSET_FACTOR_NV = $90BD
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_STENCIL_DEPTH_OFFSET_UNITS_NV, #PB_Constant)
+#GL_PATH_STENCIL_DEPTH_OFFSET_UNITS_NV = $90BE
+CompilerEndIf
+CompilerIf Not Defined(GL_PATH_COVER_DEPTH_FUNC_NV, #PB_Constant)
+#GL_PATH_COVER_DEPTH_FUNC_NV = $90BF
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, #PB_Constant)
+#GL_IMAGE_FORMAT_COMPATIBILITY_TYPE = $90C7
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE, #PB_Constant)
+#GL_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE = $90C8
+CompilerEndIf
+CompilerIf Not Defined(GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS, #PB_Constant)
+#GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS = $90C9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_VERTEX_IMAGE_UNIFORMS = $90CA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS = $90CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT = $90CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_OES = $90CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS = $90CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT = $90CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_OES = $90CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_GEOMETRY_IMAGE_UNIFORMS = $90CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT = $90CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES = $90CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_FRAGMENT_IMAGE_UNIFORMS = $90CE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_COMBINED_IMAGE_UNIFORMS = $90CF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEEP_3D_TEXTURE_WIDTH_HEIGHT_NV, #PB_Constant)
+#GL_MAX_DEEP_3D_TEXTURE_WIDTH_HEIGHT_NV = $90D0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEEP_3D_TEXTURE_DEPTH_NV, #PB_Constant)
+#GL_MAX_DEEP_3D_TEXTURE_DEPTH_NV = $90D1
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BUFFER, #PB_Constant)
+#GL_SHADER_STORAGE_BUFFER = $90D2
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BUFFER_BINDING, #PB_Constant)
+#GL_SHADER_STORAGE_BUFFER_BINDING = $90D3
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BUFFER_START, #PB_Constant)
+#GL_SHADER_STORAGE_BUFFER_START = $90D4
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BUFFER_SIZE, #PB_Constant)
+#GL_SHADER_STORAGE_BUFFER_SIZE = $90D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS = $90D6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS = $90D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT = $90D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES = $90D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS = $90D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT = $90D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES = $90D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS = $90D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT = $90D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES = $90D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS = $90DA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS = $90DB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS, #PB_Constant)
+#GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS = $90DC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS, #PB_Constant)
+#GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS = $90DD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_STORAGE_BLOCK_SIZE, #PB_Constant)
+#GL_MAX_SHADER_STORAGE_BLOCK_SIZE = $90DE
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT, #PB_Constant)
+#GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT = $90DF
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_X11_FENCE_EXT, #PB_Constant)
+#GL_SYNC_X11_FENCE_EXT = $90E1
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_STENCIL_TEXTURE_MODE, #PB_Constant)
+#GL_DEPTH_STENCIL_TEXTURE_MODE = $90EA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS, #PB_Constant)
+#GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS = $90EB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB, #PB_Constant)
+#GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB = $90EB
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER = $90EC
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER = $90ED
+CompilerEndIf
+CompilerIf Not Defined(GL_DISPATCH_INDIRECT_BUFFER, #PB_Constant)
+#GL_DISPATCH_INDIRECT_BUFFER = $90EE
+CompilerEndIf
+CompilerIf Not Defined(GL_DISPATCH_INDIRECT_BUFFER_BINDING, #PB_Constant)
+#GL_DISPATCH_INDIRECT_BUFFER_BINDING = $90EF
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ATTACHMENT_EXT, #PB_Constant)
+#GL_COLOR_ATTACHMENT_EXT = $90F0
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTIVIEW_EXT, #PB_Constant)
+#GL_MULTIVIEW_EXT = $90F1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MULTIVIEW_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_MULTIVIEW_BUFFERS_EXT = $90F2
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_ROBUST_ACCESS, #PB_Constant)
+#GL_CONTEXT_ROBUST_ACCESS = $90F3
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_ROBUST_ACCESS_EXT, #PB_Constant)
+#GL_CONTEXT_ROBUST_ACCESS_EXT = $90F3
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_ROBUST_ACCESS_KHR, #PB_Constant)
+#GL_CONTEXT_ROBUST_ACCESS_KHR = $90F3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_PROGRAM_NV, #PB_Constant)
+#GL_COMPUTE_PROGRAM_NV = $90FB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV, #PB_Constant)
+#GL_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV = $90FC
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_MULTISAMPLE, #PB_Constant)
+#GL_TEXTURE_2D_MULTISAMPLE = $9100
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_MULTISAMPLE, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_MULTISAMPLE = $9101
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_TEXTURE_2D_MULTISAMPLE_ARRAY = $9102
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES, #PB_Constant)
+#GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES = $9102
+CompilerEndIf
+CompilerIf Not Defined(GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY = $9103
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D_MULTISAMPLE, #PB_Constant)
+#GL_TEXTURE_BINDING_2D_MULTISAMPLE = $9104
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY = $9105
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES, #PB_Constant)
+#GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES = $9105
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SAMPLES, #PB_Constant)
+#GL_TEXTURE_SAMPLES = $9106
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FIXED_SAMPLE_LOCATIONS, #PB_Constant)
+#GL_TEXTURE_FIXED_SAMPLE_LOCATIONS = $9107
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_MULTISAMPLE, #PB_Constant)
+#GL_SAMPLER_2D_MULTISAMPLE = $9108
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_MULTISAMPLE, #PB_Constant)
+#GL_INT_SAMPLER_2D_MULTISAMPLE = $9109
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE = $910A
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_SAMPLER_2D_MULTISAMPLE_ARRAY = $910B
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES, #PB_Constant)
+#GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES = $910B
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY = $910C
+CompilerEndIf
+CompilerIf Not Defined(GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES, #PB_Constant)
+#GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES = $910C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY = $910D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES, #PB_Constant)
+#GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES = $910D
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_TEXTURE_SAMPLES, #PB_Constant)
+#GL_MAX_COLOR_TEXTURE_SAMPLES = $910E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEPTH_TEXTURE_SAMPLES, #PB_Constant)
+#GL_MAX_DEPTH_TEXTURE_SAMPLES = $910F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_INTEGER_SAMPLES, #PB_Constant)
+#GL_MAX_INTEGER_SAMPLES = $9110
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SERVER_WAIT_TIMEOUT, #PB_Constant)
+#GL_MAX_SERVER_WAIT_TIMEOUT = $9111
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SERVER_WAIT_TIMEOUT_APPLE, #PB_Constant)
+#GL_MAX_SERVER_WAIT_TIMEOUT_APPLE = $9111
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_TYPE, #PB_Constant)
+#GL_OBJECT_TYPE = $9112
+CompilerEndIf
+CompilerIf Not Defined(GL_OBJECT_TYPE_APPLE, #PB_Constant)
+#GL_OBJECT_TYPE_APPLE = $9112
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_CONDITION, #PB_Constant)
+#GL_SYNC_CONDITION = $9113
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_CONDITION_APPLE, #PB_Constant)
+#GL_SYNC_CONDITION_APPLE = $9113
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_STATUS, #PB_Constant)
+#GL_SYNC_STATUS = $9114
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_STATUS_APPLE, #PB_Constant)
+#GL_SYNC_STATUS_APPLE = $9114
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FLAGS, #PB_Constant)
+#GL_SYNC_FLAGS = $9115
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FLAGS_APPLE, #PB_Constant)
+#GL_SYNC_FLAGS_APPLE = $9115
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FENCE, #PB_Constant)
+#GL_SYNC_FENCE = $9116
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_FENCE_APPLE, #PB_Constant)
+#GL_SYNC_FENCE_APPLE = $9116
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_GPU_COMMANDS_COMPLETE, #PB_Constant)
+#GL_SYNC_GPU_COMMANDS_COMPLETE = $9117
+CompilerEndIf
+CompilerIf Not Defined(GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE, #PB_Constant)
+#GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE = $9117
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNALED, #PB_Constant)
+#GL_UNSIGNALED = $9118
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNALED_APPLE, #PB_Constant)
+#GL_UNSIGNALED_APPLE = $9118
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNALED, #PB_Constant)
+#GL_SIGNALED = $9119
+CompilerEndIf
+CompilerIf Not Defined(GL_SIGNALED_APPLE, #PB_Constant)
+#GL_SIGNALED_APPLE = $9119
+CompilerEndIf
+CompilerIf Not Defined(GL_ALREADY_SIGNALED, #PB_Constant)
+#GL_ALREADY_SIGNALED = $911A
+CompilerEndIf
+CompilerIf Not Defined(GL_ALREADY_SIGNALED_APPLE, #PB_Constant)
+#GL_ALREADY_SIGNALED_APPLE = $911A
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMEOUT_EXPIRED, #PB_Constant)
+#GL_TIMEOUT_EXPIRED = $911B
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMEOUT_EXPIRED_APPLE, #PB_Constant)
+#GL_TIMEOUT_EXPIRED_APPLE = $911B
+CompilerEndIf
+CompilerIf Not Defined(GL_CONDITION_SATISFIED, #PB_Constant)
+#GL_CONDITION_SATISFIED = $911C
+CompilerEndIf
+CompilerIf Not Defined(GL_CONDITION_SATISFIED_APPLE, #PB_Constant)
+#GL_CONDITION_SATISFIED_APPLE = $911C
+CompilerEndIf
+CompilerIf Not Defined(GL_WAIT_FAILED, #PB_Constant)
+#GL_WAIT_FAILED = $911D
+CompilerEndIf
+CompilerIf Not Defined(GL_WAIT_FAILED_APPLE, #PB_Constant)
+#GL_WAIT_FAILED_APPLE = $911D
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_ACCESS_FLAGS, #PB_Constant)
+#GL_BUFFER_ACCESS_FLAGS = $911F
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAP_LENGTH, #PB_Constant)
+#GL_BUFFER_MAP_LENGTH = $9120
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_MAP_OFFSET, #PB_Constant)
+#GL_BUFFER_MAP_OFFSET = $9121
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_VERTEX_OUTPUT_COMPONENTS = $9122
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_INPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_GEOMETRY_INPUT_COMPONENTS = $9123
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT = $9123
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES = $9123
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_COMPONENTS = $9124
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT = $9124
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES = $9124
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_INPUT_COMPONENTS, #PB_Constant)
+#GL_MAX_FRAGMENT_INPUT_COMPONENTS = $9125
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_PROFILE_MASK, #PB_Constant)
+#GL_CONTEXT_PROFILE_MASK = $9126
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COMPRESSED_BLOCK_WIDTH, #PB_Constant)
+#GL_UNPACK_COMPRESSED_BLOCK_WIDTH = $9127
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COMPRESSED_BLOCK_HEIGHT, #PB_Constant)
+#GL_UNPACK_COMPRESSED_BLOCK_HEIGHT = $9128
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COMPRESSED_BLOCK_DEPTH, #PB_Constant)
+#GL_UNPACK_COMPRESSED_BLOCK_DEPTH = $9129
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COMPRESSED_BLOCK_SIZE, #PB_Constant)
+#GL_UNPACK_COMPRESSED_BLOCK_SIZE = $912A
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_COMPRESSED_BLOCK_WIDTH, #PB_Constant)
+#GL_PACK_COMPRESSED_BLOCK_WIDTH = $912B
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_COMPRESSED_BLOCK_HEIGHT, #PB_Constant)
+#GL_PACK_COMPRESSED_BLOCK_HEIGHT = $912C
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_COMPRESSED_BLOCK_DEPTH, #PB_Constant)
+#GL_PACK_COMPRESSED_BLOCK_DEPTH = $912D
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_COMPRESSED_BLOCK_SIZE, #PB_Constant)
+#GL_PACK_COMPRESSED_BLOCK_SIZE = $912E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMMUTABLE_FORMAT, #PB_Constant)
+#GL_TEXTURE_IMMUTABLE_FORMAT = $912F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_IMMUTABLE_FORMAT_EXT, #PB_Constant)
+#GL_TEXTURE_IMMUTABLE_FORMAT_EXT = $912F
+CompilerEndIf
+CompilerIf Not Defined(GL_SGX_PROGRAM_BINARY_IMG, #PB_Constant)
+#GL_SGX_PROGRAM_BINARY_IMG = $9130
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_SAMPLES_IMG, #PB_Constant)
+#GL_RENDERBUFFER_SAMPLES_IMG = $9133
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG = $9134
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SAMPLES_IMG, #PB_Constant)
+#GL_MAX_SAMPLES_IMG = $9135
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SAMPLES_IMG, #PB_Constant)
+#GL_TEXTURE_SAMPLES_IMG = $9136
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG, #PB_Constant)
+#GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG = $9137
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG, #PB_Constant)
+#GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG = $9138
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_IMG, #PB_Constant)
+#GL_CUBIC_IMG = $9139
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_MIPMAP_NEAREST_IMG, #PB_Constant)
+#GL_CUBIC_MIPMAP_NEAREST_IMG = $913A
+CompilerEndIf
+CompilerIf Not Defined(GL_CUBIC_MIPMAP_LINEAR_IMG, #PB_Constant)
+#GL_CUBIC_MIPMAP_LINEAR_IMG = $913B
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG = $913C
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_DOWNSAMPLE_SCALES_IMG, #PB_Constant)
+#GL_NUM_DOWNSAMPLE_SCALES_IMG = $913D
+CompilerEndIf
+CompilerIf Not Defined(GL_DOWNSAMPLE_SCALES_IMG, #PB_Constant)
+#GL_DOWNSAMPLE_SCALES_IMG = $913E
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG = $913F
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_MESSAGE_LENGTH, #PB_Constant)
+#GL_MAX_DEBUG_MESSAGE_LENGTH = $9143
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_MESSAGE_LENGTH_AMD, #PB_Constant)
+#GL_MAX_DEBUG_MESSAGE_LENGTH_AMD = $9143
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_MESSAGE_LENGTH_ARB, #PB_Constant)
+#GL_MAX_DEBUG_MESSAGE_LENGTH_ARB = $9143
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_MESSAGE_LENGTH_KHR, #PB_Constant)
+#GL_MAX_DEBUG_MESSAGE_LENGTH_KHR = $9143
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_LOGGED_MESSAGES, #PB_Constant)
+#GL_MAX_DEBUG_LOGGED_MESSAGES = $9144
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_LOGGED_MESSAGES_AMD, #PB_Constant)
+#GL_MAX_DEBUG_LOGGED_MESSAGES_AMD = $9144
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_LOGGED_MESSAGES_ARB, #PB_Constant)
+#GL_MAX_DEBUG_LOGGED_MESSAGES_ARB = $9144
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEBUG_LOGGED_MESSAGES_KHR, #PB_Constant)
+#GL_MAX_DEBUG_LOGGED_MESSAGES_KHR = $9144
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_LOGGED_MESSAGES, #PB_Constant)
+#GL_DEBUG_LOGGED_MESSAGES = $9145
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_LOGGED_MESSAGES_AMD, #PB_Constant)
+#GL_DEBUG_LOGGED_MESSAGES_AMD = $9145
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_LOGGED_MESSAGES_ARB, #PB_Constant)
+#GL_DEBUG_LOGGED_MESSAGES_ARB = $9145
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_LOGGED_MESSAGES_KHR, #PB_Constant)
+#GL_DEBUG_LOGGED_MESSAGES_KHR = $9145
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_HIGH, #PB_Constant)
+#GL_DEBUG_SEVERITY_HIGH = $9146
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_HIGH_AMD, #PB_Constant)
+#GL_DEBUG_SEVERITY_HIGH_AMD = $9146
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_HIGH_ARB, #PB_Constant)
+#GL_DEBUG_SEVERITY_HIGH_ARB = $9146
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_HIGH_KHR, #PB_Constant)
+#GL_DEBUG_SEVERITY_HIGH_KHR = $9146
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_MEDIUM, #PB_Constant)
+#GL_DEBUG_SEVERITY_MEDIUM = $9147
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_MEDIUM_AMD, #PB_Constant)
+#GL_DEBUG_SEVERITY_MEDIUM_AMD = $9147
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_MEDIUM_ARB, #PB_Constant)
+#GL_DEBUG_SEVERITY_MEDIUM_ARB = $9147
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_MEDIUM_KHR, #PB_Constant)
+#GL_DEBUG_SEVERITY_MEDIUM_KHR = $9147
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_LOW, #PB_Constant)
+#GL_DEBUG_SEVERITY_LOW = $9148
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_LOW_AMD, #PB_Constant)
+#GL_DEBUG_SEVERITY_LOW_AMD = $9148
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_LOW_ARB, #PB_Constant)
+#GL_DEBUG_SEVERITY_LOW_ARB = $9148
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_SEVERITY_LOW_KHR, #PB_Constant)
+#GL_DEBUG_SEVERITY_LOW_KHR = $9148
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_API_ERROR_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_API_ERROR_AMD = $9149
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_WINDOW_SYSTEM_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_WINDOW_SYSTEM_AMD = $914A
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_DEPRECATION_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_DEPRECATION_AMD = $914B
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_UNDEFINED_BEHAVIOR_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_UNDEFINED_BEHAVIOR_AMD = $914C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_PERFORMANCE_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_PERFORMANCE_AMD = $914D
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_SHADER_COMPILER_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_SHADER_COMPILER_AMD = $914E
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_APPLICATION_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_APPLICATION_AMD = $914F
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_CATEGORY_OTHER_AMD, #PB_Constant)
+#GL_DEBUG_CATEGORY_OTHER_AMD = $9150
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_OBJECT_EXT, #PB_Constant)
+#GL_BUFFER_OBJECT_EXT = $9151
+CompilerEndIf
+CompilerIf Not Defined(GL_DATA_BUFFER_AMD, #PB_Constant)
+#GL_DATA_BUFFER_AMD = $9151
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFORMANCE_MONITOR_AMD, #PB_Constant)
+#GL_PERFORMANCE_MONITOR_AMD = $9152
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_OBJECT_AMD, #PB_Constant)
+#GL_QUERY_OBJECT_AMD = $9153
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_OBJECT_EXT, #PB_Constant)
+#GL_QUERY_OBJECT_EXT = $9153
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_OBJECT_AMD, #PB_Constant)
+#GL_VERTEX_ARRAY_OBJECT_AMD = $9154
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_OBJECT_EXT, #PB_Constant)
+#GL_VERTEX_ARRAY_OBJECT_EXT = $9154
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_OBJECT_AMD, #PB_Constant)
+#GL_SAMPLER_OBJECT_AMD = $9155
+CompilerEndIf
+CompilerIf Not Defined(GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD, #PB_Constant)
+#GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD = $9160
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BUFFER, #PB_Constant)
+#GL_QUERY_BUFFER = $9192
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BUFFER_AMD, #PB_Constant)
+#GL_QUERY_BUFFER_AMD = $9192
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BUFFER_BINDING, #PB_Constant)
+#GL_QUERY_BUFFER_BINDING = $9193
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_BUFFER_BINDING_AMD, #PB_Constant)
+#GL_QUERY_BUFFER_BINDING_AMD = $9193
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_NO_WAIT, #PB_Constant)
+#GL_QUERY_RESULT_NO_WAIT = $9194
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESULT_NO_WAIT_AMD, #PB_Constant)
+#GL_QUERY_RESULT_NO_WAIT_AMD = $9194
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_X_ARB, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_X_ARB = $9195
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_X_EXT, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_X_EXT = $9195
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_X_AMD, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_X_AMD = $9195
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Y_ARB, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Y_ARB = $9196
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Y_EXT, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Y_EXT = $9196
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Y_AMD, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Y_AMD = $9196
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Z_ARB, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Z_ARB = $9197
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Z_EXT, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Z_EXT = $9197
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_Z_AMD, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_Z_AMD = $9197
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_TEXTURE_SIZE_ARB, #PB_Constant)
+#GL_MAX_SPARSE_TEXTURE_SIZE_ARB = $9198
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_TEXTURE_SIZE_EXT, #PB_Constant)
+#GL_MAX_SPARSE_TEXTURE_SIZE_EXT = $9198
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_TEXTURE_SIZE_AMD, #PB_Constant)
+#GL_MAX_SPARSE_TEXTURE_SIZE_AMD = $9198
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_3D_TEXTURE_SIZE_ARB, #PB_Constant)
+#GL_MAX_SPARSE_3D_TEXTURE_SIZE_ARB = $9199
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_3D_TEXTURE_SIZE_EXT, #PB_Constant)
+#GL_MAX_SPARSE_3D_TEXTURE_SIZE_EXT = $9199
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_3D_TEXTURE_SIZE_AMD, #PB_Constant)
+#GL_MAX_SPARSE_3D_TEXTURE_SIZE_AMD = $9199
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS, #PB_Constant)
+#GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS = $919A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB, #PB_Constant)
+#GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB = $919A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_EXT, #PB_Constant)
+#GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_EXT = $919A
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_SPARSE_LEVEL_AMD, #PB_Constant)
+#GL_MIN_SPARSE_LEVEL_AMD = $919B
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_LOD_WARNING_AMD, #PB_Constant)
+#GL_MIN_LOD_WARNING_AMD = $919C
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET = $919D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET_EXT = $919D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET_OES = $919D
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_SIZE, #PB_Constant)
+#GL_TEXTURE_BUFFER_SIZE = $919E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_SIZE_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_SIZE_EXT = $919E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_SIZE_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_SIZE_OES = $919E
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT = $919F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT = $919F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES, #PB_Constant)
+#GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES = $919F
+CompilerEndIf
+CompilerIf Not Defined(GL_STREAM_RASTERIZATION_AMD, #PB_Constant)
+#GL_STREAM_RASTERIZATION_AMD = $91A0
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ELEMENT_SWIZZLE_AMD, #PB_Constant)
+#GL_VERTEX_ELEMENT_SWIZZLE_AMD = $91A4
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ID_SWIZZLE_AMD, #PB_Constant)
+#GL_VERTEX_ID_SWIZZLE_AMD = $91A5
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SPARSE_ARB, #PB_Constant)
+#GL_TEXTURE_SPARSE_ARB = $91A6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_SPARSE_EXT, #PB_Constant)
+#GL_TEXTURE_SPARSE_EXT = $91A6
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_INDEX_ARB, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_INDEX_ARB = $91A7
+CompilerEndIf
+CompilerIf Not Defined(GL_VIRTUAL_PAGE_SIZE_INDEX_EXT, #PB_Constant)
+#GL_VIRTUAL_PAGE_SIZE_INDEX_EXT = $91A7
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_VIRTUAL_PAGE_SIZES_ARB, #PB_Constant)
+#GL_NUM_VIRTUAL_PAGE_SIZES_ARB = $91A8
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_VIRTUAL_PAGE_SIZES_EXT, #PB_Constant)
+#GL_NUM_VIRTUAL_PAGE_SIZES_EXT = $91A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB, #PB_Constant)
+#GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB = $91A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT, #PB_Constant)
+#GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT = $91A9
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SPARSE_LEVELS_ARB, #PB_Constant)
+#GL_NUM_SPARSE_LEVELS_ARB = $91AA
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SPARSE_LEVELS_EXT, #PB_Constant)
+#GL_NUM_SPARSE_LEVELS_EXT = $91AA
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXELS_PER_SAMPLE_PATTERN_X_AMD, #PB_Constant)
+#GL_PIXELS_PER_SAMPLE_PATTERN_X_AMD = $91AE
+CompilerEndIf
+CompilerIf Not Defined(GL_PIXELS_PER_SAMPLE_PATTERN_Y_AMD, #PB_Constant)
+#GL_PIXELS_PER_SAMPLE_PATTERN_Y_AMD = $91AF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_COMPILER_THREADS_KHR, #PB_Constant)
+#GL_MAX_SHADER_COMPILER_THREADS_KHR = $91B0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_COMPILER_THREADS_ARB, #PB_Constant)
+#GL_MAX_SHADER_COMPILER_THREADS_ARB = $91B0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPLETION_STATUS_KHR, #PB_Constant)
+#GL_COMPLETION_STATUS_KHR = $91B1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPLETION_STATUS_ARB, #PB_Constant)
+#GL_COMPLETION_STATUS_ARB = $91B1
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDERBUFFER_STORAGE_SAMPLES_AMD, #PB_Constant)
+#GL_RENDERBUFFER_STORAGE_SAMPLES_AMD = $91B2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_FRAMEBUFFER_SAMPLES_AMD, #PB_Constant)
+#GL_MAX_COLOR_FRAMEBUFFER_SAMPLES_AMD = $91B3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COLOR_FRAMEBUFFER_STORAGE_SAMPLES_AMD, #PB_Constant)
+#GL_MAX_COLOR_FRAMEBUFFER_STORAGE_SAMPLES_AMD = $91B4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DEPTH_STENCIL_FRAMEBUFFER_SAMPLES_AMD, #PB_Constant)
+#GL_MAX_DEPTH_STENCIL_FRAMEBUFFER_SAMPLES_AMD = $91B5
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SUPPORTED_MULTISAMPLE_MODES_AMD, #PB_Constant)
+#GL_NUM_SUPPORTED_MULTISAMPLE_MODES_AMD = $91B6
+CompilerEndIf
+CompilerIf Not Defined(GL_SUPPORTED_MULTISAMPLE_MODES_AMD, #PB_Constant)
+#GL_SUPPORTED_MULTISAMPLE_MODES_AMD = $91B7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SHADER, #PB_Constant)
+#GL_COMPUTE_SHADER = $91B9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_UNIFORM_BLOCKS, #PB_Constant)
+#GL_MAX_COMPUTE_UNIFORM_BLOCKS = $91BB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS, #PB_Constant)
+#GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS = $91BC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_IMAGE_UNIFORMS, #PB_Constant)
+#GL_MAX_COMPUTE_IMAGE_UNIFORMS = $91BD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_WORK_GROUP_COUNT, #PB_Constant)
+#GL_MAX_COMPUTE_WORK_GROUP_COUNT = $91BE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_WORK_GROUP_SIZE, #PB_Constant)
+#GL_MAX_COMPUTE_WORK_GROUP_SIZE = $91BF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB, #PB_Constant)
+#GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB = $91BF
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT2_AMD, #PB_Constant)
+#GL_FLOAT16_MAT2_AMD = $91C5
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT3_AMD, #PB_Constant)
+#GL_FLOAT16_MAT3_AMD = $91C6
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT4_AMD, #PB_Constant)
+#GL_FLOAT16_MAT4_AMD = $91C7
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT2x3_AMD, #PB_Constant)
+#GL_FLOAT16_MAT2x3_AMD = $91C8
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT2x4_AMD, #PB_Constant)
+#GL_FLOAT16_MAT2x4_AMD = $91C9
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT3x2_AMD, #PB_Constant)
+#GL_FLOAT16_MAT3x2_AMD = $91CA
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT3x4_AMD, #PB_Constant)
+#GL_FLOAT16_MAT3x4_AMD = $91CB
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT4x2_AMD, #PB_Constant)
+#GL_FLOAT16_MAT4x2_AMD = $91CC
+CompilerEndIf
+CompilerIf Not Defined(GL_FLOAT16_MAT4x3_AMD, #PB_Constant)
+#GL_FLOAT16_MAT4x3_AMD = $91CD
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_FLIP_Y_WEBGL, #PB_Constant)
+#GL_UNPACK_FLIP_Y_WEBGL = $9240
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_PREMULTIPLY_ALPHA_WEBGL, #PB_Constant)
+#GL_UNPACK_PREMULTIPLY_ALPHA_WEBGL = $9241
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTEXT_LOST_WEBGL, #PB_Constant)
+#GL_CONTEXT_LOST_WEBGL = $9242
+CompilerEndIf
+CompilerIf Not Defined(GL_UNPACK_COLORSPACE_CONVERSION_WEBGL, #PB_Constant)
+#GL_UNPACK_COLORSPACE_CONVERSION_WEBGL = $9243
+CompilerEndIf
+CompilerIf Not Defined(GL_BROWSER_DEFAULT_WEBGL, #PB_Constant)
+#GL_BROWSER_DEFAULT_WEBGL = $9244
+CompilerEndIf
+CompilerIf Not Defined(GL_UNMASKED_VENDOR_WEBGL, #PB_Constant)
+#GL_UNMASKED_VENDOR_WEBGL = $9245
+CompilerEndIf
+CompilerIf Not Defined(GL_UNMASKED_RENDERER_WEBGL, #PB_Constant)
+#GL_UNMASKED_RENDERER_WEBGL = $9246
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_CLIENT_WAIT_TIMEOUT_WEBGL, #PB_Constant)
+#GL_MAX_CLIENT_WAIT_TIMEOUT_WEBGL = $9247
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_VIDEO_IMAGE_WEBGL, #PB_Constant)
+#GL_TEXTURE_VIDEO_IMAGE_WEBGL = $9248
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLER_VIDEO_IMAGE_WEBGL, #PB_Constant)
+#GL_SAMPLER_VIDEO_IMAGE_WEBGL = $9249
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_DMP, #PB_Constant)
+#GL_SHADER_BINARY_DMP = $9250
+CompilerEndIf
+CompilerIf Not Defined(GL_SMAPHS30_PROGRAM_BINARY_DMP, #PB_Constant)
+#GL_SMAPHS30_PROGRAM_BINARY_DMP = $9251
+CompilerEndIf
+CompilerIf Not Defined(GL_SMAPHS_PROGRAM_BINARY_DMP, #PB_Constant)
+#GL_SMAPHS_PROGRAM_BINARY_DMP = $9252
+CompilerEndIf
+CompilerIf Not Defined(GL_DMP_PROGRAM_BINARY_DMP, #PB_Constant)
+#GL_DMP_PROGRAM_BINARY_DMP = $9253
+CompilerEndIf
+CompilerIf Not Defined(GL_GCCSO_SHADER_BINARY_FJ, #PB_Constant)
+#GL_GCCSO_SHADER_BINARY_FJ = $9260
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_R11_EAC, #PB_Constant)
+#GL_COMPRESSED_R11_EAC = $9270
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_R11_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_R11_EAC_OES = $9270
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_R11_EAC, #PB_Constant)
+#GL_COMPRESSED_SIGNED_R11_EAC = $9271
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_R11_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_SIGNED_R11_EAC_OES = $9271
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RG11_EAC, #PB_Constant)
+#GL_COMPRESSED_RG11_EAC = $9272
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RG11_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_RG11_EAC_OES = $9272
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RG11_EAC, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RG11_EAC = $9273
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SIGNED_RG11_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_SIGNED_RG11_EAC_OES = $9273
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB8_ETC2, #PB_Constant)
+#GL_COMPRESSED_RGB8_ETC2 = $9274
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB8_ETC2_OES, #PB_Constant)
+#GL_COMPRESSED_RGB8_ETC2_OES = $9274
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ETC2, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ETC2 = $9275
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ETC2_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ETC2_OES = $9275
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2, #PB_Constant)
+#GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 = $9276
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES, #PB_Constant)
+#GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES = $9276
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2, #PB_Constant)
+#GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 = $9277
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES = $9277
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA8_ETC2_EAC, #PB_Constant)
+#GL_COMPRESSED_RGBA8_ETC2_EAC = $9278
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA8_ETC2_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA8_ETC2_EAC_OES = $9278
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC = $9279
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC_OES = $9279
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_PREMULTIPLIED_SRC_NV, #PB_Constant)
+#GL_BLEND_PREMULTIPLIED_SRC_NV = $9280
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_OVERLAP_NV, #PB_Constant)
+#GL_BLEND_OVERLAP_NV = $9281
+CompilerEndIf
+CompilerIf Not Defined(GL_UNCORRELATED_NV, #PB_Constant)
+#GL_UNCORRELATED_NV = $9282
+CompilerEndIf
+CompilerIf Not Defined(GL_DISJOINT_NV, #PB_Constant)
+#GL_DISJOINT_NV = $9283
+CompilerEndIf
+CompilerIf Not Defined(GL_CONJOINT_NV, #PB_Constant)
+#GL_CONJOINT_NV = $9284
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_ADVANCED_COHERENT_KHR, #PB_Constant)
+#GL_BLEND_ADVANCED_COHERENT_KHR = $9285
+CompilerEndIf
+CompilerIf Not Defined(GL_BLEND_ADVANCED_COHERENT_NV, #PB_Constant)
+#GL_BLEND_ADVANCED_COHERENT_NV = $9285
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_NV, #PB_Constant)
+#GL_SRC_NV = $9286
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_NV, #PB_Constant)
+#GL_DST_NV = $9287
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_OVER_NV, #PB_Constant)
+#GL_SRC_OVER_NV = $9288
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_OVER_NV, #PB_Constant)
+#GL_DST_OVER_NV = $9289
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_IN_NV, #PB_Constant)
+#GL_SRC_IN_NV = $928A
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_IN_NV, #PB_Constant)
+#GL_DST_IN_NV = $928B
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_OUT_NV, #PB_Constant)
+#GL_SRC_OUT_NV = $928C
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_OUT_NV, #PB_Constant)
+#GL_DST_OUT_NV = $928D
+CompilerEndIf
+CompilerIf Not Defined(GL_SRC_ATOP_NV, #PB_Constant)
+#GL_SRC_ATOP_NV = $928E
+CompilerEndIf
+CompilerIf Not Defined(GL_DST_ATOP_NV, #PB_Constant)
+#GL_DST_ATOP_NV = $928F
+CompilerEndIf
+CompilerIf Not Defined(GL_PLUS_NV, #PB_Constant)
+#GL_PLUS_NV = $9291
+CompilerEndIf
+CompilerIf Not Defined(GL_PLUS_DARKER_NV, #PB_Constant)
+#GL_PLUS_DARKER_NV = $9292
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTIPLY, #PB_Constant)
+#GL_MULTIPLY = $9294
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTIPLY_KHR, #PB_Constant)
+#GL_MULTIPLY_KHR = $9294
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTIPLY_NV, #PB_Constant)
+#GL_MULTIPLY_NV = $9294
+CompilerEndIf
+CompilerIf Not Defined(GL_SCREEN, #PB_Constant)
+#GL_SCREEN = $9295
+CompilerEndIf
+CompilerIf Not Defined(GL_SCREEN_KHR, #PB_Constant)
+#GL_SCREEN_KHR = $9295
+CompilerEndIf
+CompilerIf Not Defined(GL_SCREEN_NV, #PB_Constant)
+#GL_SCREEN_NV = $9295
+CompilerEndIf
+CompilerIf Not Defined(GL_OVERLAY, #PB_Constant)
+#GL_OVERLAY = $9296
+CompilerEndIf
+CompilerIf Not Defined(GL_OVERLAY_KHR, #PB_Constant)
+#GL_OVERLAY_KHR = $9296
+CompilerEndIf
+CompilerIf Not Defined(GL_OVERLAY_NV, #PB_Constant)
+#GL_OVERLAY_NV = $9296
+CompilerEndIf
+CompilerIf Not Defined(GL_DARKEN, #PB_Constant)
+#GL_DARKEN = $9297
+CompilerEndIf
+CompilerIf Not Defined(GL_DARKEN_KHR, #PB_Constant)
+#GL_DARKEN_KHR = $9297
+CompilerEndIf
+CompilerIf Not Defined(GL_DARKEN_NV, #PB_Constant)
+#GL_DARKEN_NV = $9297
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHTEN, #PB_Constant)
+#GL_LIGHTEN = $9298
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHTEN_KHR, #PB_Constant)
+#GL_LIGHTEN_KHR = $9298
+CompilerEndIf
+CompilerIf Not Defined(GL_LIGHTEN_NV, #PB_Constant)
+#GL_LIGHTEN_NV = $9298
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORDODGE, #PB_Constant)
+#GL_COLORDODGE = $9299
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORDODGE_KHR, #PB_Constant)
+#GL_COLORDODGE_KHR = $9299
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORDODGE_NV, #PB_Constant)
+#GL_COLORDODGE_NV = $9299
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORBURN, #PB_Constant)
+#GL_COLORBURN = $929A
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORBURN_KHR, #PB_Constant)
+#GL_COLORBURN_KHR = $929A
+CompilerEndIf
+CompilerIf Not Defined(GL_COLORBURN_NV, #PB_Constant)
+#GL_COLORBURN_NV = $929A
+CompilerEndIf
+CompilerIf Not Defined(GL_HARDLIGHT, #PB_Constant)
+#GL_HARDLIGHT = $929B
+CompilerEndIf
+CompilerIf Not Defined(GL_HARDLIGHT_KHR, #PB_Constant)
+#GL_HARDLIGHT_KHR = $929B
+CompilerEndIf
+CompilerIf Not Defined(GL_HARDLIGHT_NV, #PB_Constant)
+#GL_HARDLIGHT_NV = $929B
+CompilerEndIf
+CompilerIf Not Defined(GL_SOFTLIGHT, #PB_Constant)
+#GL_SOFTLIGHT = $929C
+CompilerEndIf
+CompilerIf Not Defined(GL_SOFTLIGHT_KHR, #PB_Constant)
+#GL_SOFTLIGHT_KHR = $929C
+CompilerEndIf
+CompilerIf Not Defined(GL_SOFTLIGHT_NV, #PB_Constant)
+#GL_SOFTLIGHT_NV = $929C
+CompilerEndIf
+CompilerIf Not Defined(GL_DIFFERENCE, #PB_Constant)
+#GL_DIFFERENCE = $929E
+CompilerEndIf
+CompilerIf Not Defined(GL_DIFFERENCE_KHR, #PB_Constant)
+#GL_DIFFERENCE_KHR = $929E
+CompilerEndIf
+CompilerIf Not Defined(GL_DIFFERENCE_NV, #PB_Constant)
+#GL_DIFFERENCE_NV = $929E
+CompilerEndIf
+CompilerIf Not Defined(GL_MINUS_NV, #PB_Constant)
+#GL_MINUS_NV = $929F
+CompilerEndIf
+CompilerIf Not Defined(GL_EXCLUSION, #PB_Constant)
+#GL_EXCLUSION = $92A0
+CompilerEndIf
+CompilerIf Not Defined(GL_EXCLUSION_KHR, #PB_Constant)
+#GL_EXCLUSION_KHR = $92A0
+CompilerEndIf
+CompilerIf Not Defined(GL_EXCLUSION_NV, #PB_Constant)
+#GL_EXCLUSION_NV = $92A0
+CompilerEndIf
+CompilerIf Not Defined(GL_CONTRAST_NV, #PB_Constant)
+#GL_CONTRAST_NV = $92A1
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERT_RGB_NV, #PB_Constant)
+#GL_INVERT_RGB_NV = $92A3
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEARDODGE_NV, #PB_Constant)
+#GL_LINEARDODGE_NV = $92A4
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEARBURN_NV, #PB_Constant)
+#GL_LINEARBURN_NV = $92A5
+CompilerEndIf
+CompilerIf Not Defined(GL_VIVIDLIGHT_NV, #PB_Constant)
+#GL_VIVIDLIGHT_NV = $92A6
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEARLIGHT_NV, #PB_Constant)
+#GL_LINEARLIGHT_NV = $92A7
+CompilerEndIf
+CompilerIf Not Defined(GL_PINLIGHT_NV, #PB_Constant)
+#GL_PINLIGHT_NV = $92A8
+CompilerEndIf
+CompilerIf Not Defined(GL_HARDMIX_NV, #PB_Constant)
+#GL_HARDMIX_NV = $92A9
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_HUE, #PB_Constant)
+#GL_HSL_HUE = $92AD
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_HUE_KHR, #PB_Constant)
+#GL_HSL_HUE_KHR = $92AD
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_HUE_NV, #PB_Constant)
+#GL_HSL_HUE_NV = $92AD
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_SATURATION, #PB_Constant)
+#GL_HSL_SATURATION = $92AE
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_SATURATION_KHR, #PB_Constant)
+#GL_HSL_SATURATION_KHR = $92AE
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_SATURATION_NV, #PB_Constant)
+#GL_HSL_SATURATION_NV = $92AE
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_COLOR, #PB_Constant)
+#GL_HSL_COLOR = $92AF
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_COLOR_KHR, #PB_Constant)
+#GL_HSL_COLOR_KHR = $92AF
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_COLOR_NV, #PB_Constant)
+#GL_HSL_COLOR_NV = $92AF
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_LUMINOSITY, #PB_Constant)
+#GL_HSL_LUMINOSITY = $92B0
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_LUMINOSITY_KHR, #PB_Constant)
+#GL_HSL_LUMINOSITY_KHR = $92B0
+CompilerEndIf
+CompilerIf Not Defined(GL_HSL_LUMINOSITY_NV, #PB_Constant)
+#GL_HSL_LUMINOSITY_NV = $92B0
+CompilerEndIf
+CompilerIf Not Defined(GL_PLUS_CLAMPED_NV, #PB_Constant)
+#GL_PLUS_CLAMPED_NV = $92B1
+CompilerEndIf
+CompilerIf Not Defined(GL_PLUS_CLAMPED_ALPHA_NV, #PB_Constant)
+#GL_PLUS_CLAMPED_ALPHA_NV = $92B2
+CompilerEndIf
+CompilerIf Not Defined(GL_MINUS_CLAMPED_NV, #PB_Constant)
+#GL_MINUS_CLAMPED_NV = $92B3
+CompilerEndIf
+CompilerIf Not Defined(GL_INVERT_OVG_NV, #PB_Constant)
+#GL_INVERT_OVG_NV = $92B4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_LGPU_GPUS_NVX, #PB_Constant)
+#GL_MAX_LGPU_GPUS_NVX = $92BA
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTICAST_GPUS_NV, #PB_Constant)
+#GL_MULTICAST_GPUS_NV = $92BA
+CompilerEndIf
+CompilerIf Not Defined(GL_PURGED_CONTEXT_RESET_NV, #PB_Constant)
+#GL_PURGED_CONTEXT_RESET_NV = $92BB
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_BOUNDING_BOX_ARB, #PB_Constant)
+#GL_PRIMITIVE_BOUNDING_BOX_ARB = $92BE
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_BOUNDING_BOX, #PB_Constant)
+#GL_PRIMITIVE_BOUNDING_BOX = $92BE
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_BOUNDING_BOX_EXT, #PB_Constant)
+#GL_PRIMITIVE_BOUNDING_BOX_EXT = $92BE
+CompilerEndIf
+CompilerIf Not Defined(GL_PRIMITIVE_BOUNDING_BOX_OES, #PB_Constant)
+#GL_PRIMITIVE_BOUNDING_BOX_OES = $92BE
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TO_COVERAGE_DITHER_MODE_NV, #PB_Constant)
+#GL_ALPHA_TO_COVERAGE_DITHER_MODE_NV = $92BF
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER = $92C0
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_BINDING, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_BINDING = $92C1
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_START, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_START = $92C2
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_SIZE, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_SIZE = $92C3
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE = $92C4
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS = $92C5
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES = $92C6
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER = $92C7
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER = $92C8
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER = $92C9
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER = $92CA
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER = $92CB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS = $92CC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS = $92CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT = $92CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_OES = $92CD
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS = $92CE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT = $92CE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_OES = $92CE
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS = $92CF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT = $92CF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES = $92CF
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS = $92D0
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS = $92D1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_VERTEX_ATOMIC_COUNTERS = $92D2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS = $92D3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT = $92D3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES, #PB_Constant)
+#GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES = $92D3
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS = $92D4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT = $92D4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES, #PB_Constant)
+#GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES = $92D4
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTERS = $92D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT = $92D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES, #PB_Constant)
+#GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES = $92D5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_FRAGMENT_ATOMIC_COUNTERS = $92D6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMBINED_ATOMIC_COUNTERS, #PB_Constant)
+#GL_MAX_COMBINED_ATOMIC_COUNTERS = $92D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE, #PB_Constant)
+#GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE = $92D8
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_ATOMIC_COUNTER_BUFFERS, #PB_Constant)
+#GL_ACTIVE_ATOMIC_COUNTER_BUFFERS = $92D9
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX, #PB_Constant)
+#GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX = $92DA
+CompilerEndIf
+CompilerIf Not Defined(GL_UNSIGNED_INT_ATOMIC_COUNTER, #PB_Constant)
+#GL_UNSIGNED_INT_ATOMIC_COUNTER = $92DB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS, #PB_Constant)
+#GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS = $92DC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COVERAGE_TO_COLOR_NV, #PB_Constant)
+#GL_FRAGMENT_COVERAGE_TO_COLOR_NV = $92DD
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_COVERAGE_COLOR_NV, #PB_Constant)
+#GL_FRAGMENT_COVERAGE_COLOR_NV = $92DE
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT, #PB_Constant)
+#GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT = $92DF
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_NV, #PB_Constant)
+#GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_NV = $92DF
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OUTPUT, #PB_Constant)
+#GL_DEBUG_OUTPUT = $92E0
+CompilerEndIf
+CompilerIf Not Defined(GL_DEBUG_OUTPUT_KHR, #PB_Constant)
+#GL_DEBUG_OUTPUT_KHR = $92E0
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM, #PB_Constant)
+#GL_UNIFORM = $92E1
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK, #PB_Constant)
+#GL_UNIFORM_BLOCK = $92E2
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_INPUT, #PB_Constant)
+#GL_PROGRAM_INPUT = $92E3
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_OUTPUT, #PB_Constant)
+#GL_PROGRAM_OUTPUT = $92E4
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_VARIABLE, #PB_Constant)
+#GL_BUFFER_VARIABLE = $92E5
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_STORAGE_BLOCK, #PB_Constant)
+#GL_SHADER_STORAGE_BLOCK = $92E6
+CompilerEndIf
+CompilerIf Not Defined(GL_IS_PER_PATCH, #PB_Constant)
+#GL_IS_PER_PATCH = $92E7
+CompilerEndIf
+CompilerIf Not Defined(GL_IS_PER_PATCH_EXT, #PB_Constant)
+#GL_IS_PER_PATCH_EXT = $92E7
+CompilerEndIf
+CompilerIf Not Defined(GL_IS_PER_PATCH_OES, #PB_Constant)
+#GL_IS_PER_PATCH_OES = $92E7
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SUBROUTINE, #PB_Constant)
+#GL_VERTEX_SUBROUTINE = $92E8
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SUBROUTINE, #PB_Constant)
+#GL_TESS_CONTROL_SUBROUTINE = $92E9
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SUBROUTINE, #PB_Constant)
+#GL_TESS_EVALUATION_SUBROUTINE = $92EA
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SUBROUTINE, #PB_Constant)
+#GL_GEOMETRY_SUBROUTINE = $92EB
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SUBROUTINE, #PB_Constant)
+#GL_FRAGMENT_SUBROUTINE = $92EC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SUBROUTINE, #PB_Constant)
+#GL_COMPUTE_SUBROUTINE = $92ED
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_VERTEX_SUBROUTINE_UNIFORM = $92EE
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_CONTROL_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_TESS_CONTROL_SUBROUTINE_UNIFORM = $92EF
+CompilerEndIf
+CompilerIf Not Defined(GL_TESS_EVALUATION_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_TESS_EVALUATION_SUBROUTINE_UNIFORM = $92F0
+CompilerEndIf
+CompilerIf Not Defined(GL_GEOMETRY_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_GEOMETRY_SUBROUTINE_UNIFORM = $92F1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_FRAGMENT_SUBROUTINE_UNIFORM = $92F2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPUTE_SUBROUTINE_UNIFORM, #PB_Constant)
+#GL_COMPUTE_SUBROUTINE_UNIFORM = $92F3
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_VARYING, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_VARYING = $92F4
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_RESOURCES, #PB_Constant)
+#GL_ACTIVE_RESOURCES = $92F5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_NAME_LENGTH, #PB_Constant)
+#GL_MAX_NAME_LENGTH = $92F6
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_NUM_ACTIVE_VARIABLES, #PB_Constant)
+#GL_MAX_NUM_ACTIVE_VARIABLES = $92F7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_NUM_COMPATIBLE_SUBROUTINES, #PB_Constant)
+#GL_MAX_NUM_COMPATIBLE_SUBROUTINES = $92F8
+CompilerEndIf
+CompilerIf Not Defined(GL_NAME_LENGTH, #PB_Constant)
+#GL_NAME_LENGTH = $92F9
+CompilerEndIf
+CompilerIf Not Defined(GL_TYPE, #PB_Constant)
+#GL_TYPE = $92FA
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_SIZE, #PB_Constant)
+#GL_ARRAY_SIZE = $92FB
+CompilerEndIf
+CompilerIf Not Defined(GL_OFFSET, #PB_Constant)
+#GL_OFFSET = $92FC
+CompilerEndIf
+CompilerIf Not Defined(GL_BLOCK_INDEX, #PB_Constant)
+#GL_BLOCK_INDEX = $92FD
+CompilerEndIf
+CompilerIf Not Defined(GL_ARRAY_STRIDE, #PB_Constant)
+#GL_ARRAY_STRIDE = $92FE
+CompilerEndIf
+CompilerIf Not Defined(GL_MATRIX_STRIDE, #PB_Constant)
+#GL_MATRIX_STRIDE = $92FF
+CompilerEndIf
+CompilerIf Not Defined(GL_IS_ROW_MAJOR, #PB_Constant)
+#GL_IS_ROW_MAJOR = $9300
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_INDEX, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_INDEX = $9301
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_BINDING, #PB_Constant)
+#GL_BUFFER_BINDING = $9302
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_DATA_SIZE, #PB_Constant)
+#GL_BUFFER_DATA_SIZE = $9303
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_ACTIVE_VARIABLES, #PB_Constant)
+#GL_NUM_ACTIVE_VARIABLES = $9304
+CompilerEndIf
+CompilerIf Not Defined(GL_ACTIVE_VARIABLES, #PB_Constant)
+#GL_ACTIVE_VARIABLES = $9305
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_VERTEX_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_VERTEX_SHADER = $9306
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_CONTROL_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_TESS_CONTROL_SHADER = $9307
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT, #PB_Constant)
+#GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT = $9307
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES, #PB_Constant)
+#GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES = $9307
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_EVALUATION_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_TESS_EVALUATION_SHADER = $9308
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT, #PB_Constant)
+#GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT = $9308
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES, #PB_Constant)
+#GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES = $9308
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_GEOMETRY_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_GEOMETRY_SHADER = $9309
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_GEOMETRY_SHADER_EXT, #PB_Constant)
+#GL_REFERENCED_BY_GEOMETRY_SHADER_EXT = $9309
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_GEOMETRY_SHADER_OES, #PB_Constant)
+#GL_REFERENCED_BY_GEOMETRY_SHADER_OES = $9309
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_FRAGMENT_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_FRAGMENT_SHADER = $930A
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_COMPUTE_SHADER, #PB_Constant)
+#GL_REFERENCED_BY_COMPUTE_SHADER = $930B
+CompilerEndIf
+CompilerIf Not Defined(GL_TOP_LEVEL_ARRAY_SIZE, #PB_Constant)
+#GL_TOP_LEVEL_ARRAY_SIZE = $930C
+CompilerEndIf
+CompilerIf Not Defined(GL_TOP_LEVEL_ARRAY_STRIDE, #PB_Constant)
+#GL_TOP_LEVEL_ARRAY_STRIDE = $930D
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCATION, #PB_Constant)
+#GL_LOCATION = $930E
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCATION_INDEX, #PB_Constant)
+#GL_LOCATION_INDEX = $930F
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCATION_INDEX_EXT, #PB_Constant)
+#GL_LOCATION_INDEX_EXT = $930F
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_WIDTH, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_WIDTH = $9310
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_HEIGHT, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_HEIGHT = $9311
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_LAYERS, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_LAYERS = $9312
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT = $9312
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_LAYERS_OES, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_LAYERS_OES = $9312
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_SAMPLES, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_SAMPLES = $9313
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS, #PB_Constant)
+#GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS = $9314
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_WIDTH, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_WIDTH = $9315
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_HEIGHT, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_HEIGHT = $9316
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_LAYERS, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_LAYERS = $9317
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_LAYERS_EXT, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_LAYERS_EXT = $9317
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_LAYERS_OES, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_LAYERS_OES = $9317
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAMEBUFFER_SAMPLES, #PB_Constant)
+#GL_MAX_FRAMEBUFFER_SAMPLES = $9318
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTER_MULTISAMPLE_EXT, #PB_Constant)
+#GL_RASTER_MULTISAMPLE_EXT = $9327
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTER_SAMPLES_EXT, #PB_Constant)
+#GL_RASTER_SAMPLES_EXT = $9328
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_RASTER_SAMPLES_EXT, #PB_Constant)
+#GL_MAX_RASTER_SAMPLES_EXT = $9329
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTER_FIXED_SAMPLE_LOCATIONS_EXT, #PB_Constant)
+#GL_RASTER_FIXED_SAMPLE_LOCATIONS_EXT = $932A
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT, #PB_Constant)
+#GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT = $932B
+CompilerEndIf
+CompilerIf Not Defined(GL_EFFECTIVE_RASTER_SAMPLES_EXT, #PB_Constant)
+#GL_EFFECTIVE_RASTER_SAMPLES_EXT = $932C
+CompilerEndIf
+CompilerIf Not Defined(GL_DEPTH_SAMPLES_NV, #PB_Constant)
+#GL_DEPTH_SAMPLES_NV = $932D
+CompilerEndIf
+CompilerIf Not Defined(GL_STENCIL_SAMPLES_NV, #PB_Constant)
+#GL_STENCIL_SAMPLES_NV = $932E
+CompilerEndIf
+CompilerIf Not Defined(GL_MIXED_DEPTH_SAMPLES_SUPPORTED_NV, #PB_Constant)
+#GL_MIXED_DEPTH_SAMPLES_SUPPORTED_NV = $932F
+CompilerEndIf
+CompilerIf Not Defined(GL_MIXED_STENCIL_SAMPLES_SUPPORTED_NV, #PB_Constant)
+#GL_MIXED_STENCIL_SAMPLES_SUPPORTED_NV = $9330
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_MODULATION_TABLE_NV, #PB_Constant)
+#GL_COVERAGE_MODULATION_TABLE_NV = $9331
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_MODULATION_NV, #PB_Constant)
+#GL_COVERAGE_MODULATION_NV = $9332
+CompilerEndIf
+CompilerIf Not Defined(GL_COVERAGE_MODULATION_TABLE_SIZE_NV, #PB_Constant)
+#GL_COVERAGE_MODULATION_TABLE_SIZE_NV = $9333
+CompilerEndIf
+CompilerIf Not Defined(GL_WARP_SIZE_NV, #PB_Constant)
+#GL_WARP_SIZE_NV = $9339
+CompilerEndIf
+CompilerIf Not Defined(GL_WARPS_PER_SM_NV, #PB_Constant)
+#GL_WARPS_PER_SM_NV = $933A
+CompilerEndIf
+CompilerIf Not Defined(GL_SM_COUNT_NV, #PB_Constant)
+#GL_SM_COUNT_NV = $933B
+CompilerEndIf
+CompilerIf Not Defined(GL_FILL_RECTANGLE_NV, #PB_Constant)
+#GL_FILL_RECTANGLE_NV = $933C
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_SUBPIXEL_BITS_ARB, #PB_Constant)
+#GL_SAMPLE_LOCATION_SUBPIXEL_BITS_ARB = $933D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_SUBPIXEL_BITS_NV, #PB_Constant)
+#GL_SAMPLE_LOCATION_SUBPIXEL_BITS_NV = $933D
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_ARB, #PB_Constant)
+#GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_ARB = $933E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_NV, #PB_Constant)
+#GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_NV = $933E
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_ARB, #PB_Constant)
+#GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_ARB = $933F
+CompilerEndIf
+CompilerIf Not Defined(GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_NV, #PB_Constant)
+#GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_NV = $933F
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_ARB, #PB_Constant)
+#GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_ARB = $9340
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_NV, #PB_Constant)
+#GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_NV = $9340
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAMMABLE_SAMPLE_LOCATION_ARB, #PB_Constant)
+#GL_PROGRAMMABLE_SAMPLE_LOCATION_ARB = $9341
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAMMABLE_SAMPLE_LOCATION_NV, #PB_Constant)
+#GL_PROGRAMMABLE_SAMPLE_LOCATION_NV = $9341
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB, #PB_Constant)
+#GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB = $9342
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_NV, #PB_Constant)
+#GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_NV = $9342
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB, #PB_Constant)
+#GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB = $9343
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_NV, #PB_Constant)
+#GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_NV = $9343
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_VARIABLE_GROUP_INVOCATIONS_ARB, #PB_Constant)
+#GL_MAX_COMPUTE_VARIABLE_GROUP_INVOCATIONS_ARB = $9344
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COMPUTE_VARIABLE_GROUP_SIZE_ARB, #PB_Constant)
+#GL_MAX_COMPUTE_VARIABLE_GROUP_SIZE_ARB = $9345
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTERIZATION_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTERIZATION_NV = $9346
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV, #PB_Constant)
+#GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV = $9347
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV, #PB_Constant)
+#GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV = $9348
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV, #PB_Constant)
+#GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV = $9349
+CompilerEndIf
+CompilerIf Not Defined(GL_LOCATION_COMPONENT, #PB_Constant)
+#GL_LOCATION_COMPONENT = $934A
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_INDEX, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_INDEX = $934B
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE, #PB_Constant)
+#GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE = $934C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TO_COVERAGE_DITHER_DEFAULT_NV, #PB_Constant)
+#GL_ALPHA_TO_COVERAGE_DITHER_DEFAULT_NV = $934D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TO_COVERAGE_DITHER_ENABLE_NV, #PB_Constant)
+#GL_ALPHA_TO_COVERAGE_DITHER_ENABLE_NV = $934E
+CompilerEndIf
+CompilerIf Not Defined(GL_ALPHA_TO_COVERAGE_DITHER_DISABLE_NV, #PB_Constant)
+#GL_ALPHA_TO_COVERAGE_DITHER_DISABLE_NV = $934F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_POSITIVE_X_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_POSITIVE_X_NV = $9350
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_NEGATIVE_X_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_NEGATIVE_X_NV = $9351
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_POSITIVE_Y_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_POSITIVE_Y_NV = $9352
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_NEGATIVE_Y_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_NEGATIVE_Y_NV = $9353
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_POSITIVE_Z_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_POSITIVE_Z_NV = $9354
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_NEGATIVE_Z_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_NEGATIVE_Z_NV = $9355
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_POSITIVE_W_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_POSITIVE_W_NV = $9356
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_NEGATIVE_W_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_NEGATIVE_W_NV = $9357
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_X_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_X_NV = $9358
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_Y_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_Y_NV = $9359
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_Z_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_Z_NV = $935A
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_SWIZZLE_W_NV, #PB_Constant)
+#GL_VIEWPORT_SWIZZLE_W_NV = $935B
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_ORIGIN, #PB_Constant)
+#GL_CLIP_ORIGIN = $935C
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_ORIGIN_EXT, #PB_Constant)
+#GL_CLIP_ORIGIN_EXT = $935C
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DEPTH_MODE, #PB_Constant)
+#GL_CLIP_DEPTH_MODE = $935D
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_DEPTH_MODE_EXT, #PB_Constant)
+#GL_CLIP_DEPTH_MODE_EXT = $935D
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_ONE_TO_ONE, #PB_Constant)
+#GL_NEGATIVE_ONE_TO_ONE = $935E
+CompilerEndIf
+CompilerIf Not Defined(GL_NEGATIVE_ONE_TO_ONE_EXT, #PB_Constant)
+#GL_NEGATIVE_ONE_TO_ONE_EXT = $935E
+CompilerEndIf
+CompilerIf Not Defined(GL_ZERO_TO_ONE, #PB_Constant)
+#GL_ZERO_TO_ONE = $935F
+CompilerEndIf
+CompilerIf Not Defined(GL_ZERO_TO_ONE_EXT, #PB_Constant)
+#GL_ZERO_TO_ONE_EXT = $935F
+CompilerEndIf
+CompilerIf Not Defined(GL_CLEAR_TEXTURE, #PB_Constant)
+#GL_CLEAR_TEXTURE = $9365
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_REDUCTION_MODE_ARB, #PB_Constant)
+#GL_TEXTURE_REDUCTION_MODE_ARB = $9366
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_REDUCTION_MODE_EXT, #PB_Constant)
+#GL_TEXTURE_REDUCTION_MODE_EXT = $9366
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHTED_AVERAGE_ARB, #PB_Constant)
+#GL_WEIGHTED_AVERAGE_ARB = $9367
+CompilerEndIf
+CompilerIf Not Defined(GL_WEIGHTED_AVERAGE_EXT, #PB_Constant)
+#GL_WEIGHTED_AVERAGE_EXT = $9367
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_GLYPHS_AVAILABLE_NV, #PB_Constant)
+#GL_FONT_GLYPHS_AVAILABLE_NV = $9368
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_TARGET_UNAVAILABLE_NV, #PB_Constant)
+#GL_FONT_TARGET_UNAVAILABLE_NV = $9369
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_UNAVAILABLE_NV, #PB_Constant)
+#GL_FONT_UNAVAILABLE_NV = $936A
+CompilerEndIf
+CompilerIf Not Defined(GL_FONT_UNINTELLIGIBLE_NV, #PB_Constant)
+#GL_FONT_UNINTELLIGIBLE_NV = $936B
+CompilerEndIf
+CompilerIf Not Defined(GL_STANDARD_FONT_FORMAT_NV, #PB_Constant)
+#GL_STANDARD_FONT_FORMAT_NV = $936C
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_INPUT_NV, #PB_Constant)
+#GL_FRAGMENT_INPUT_NV = $936D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_UNIFIED_NV, #PB_Constant)
+#GL_UNIFORM_BUFFER_UNIFIED_NV = $936E
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_ADDRESS_NV, #PB_Constant)
+#GL_UNIFORM_BUFFER_ADDRESS_NV = $936F
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BUFFER_LENGTH_NV, #PB_Constant)
+#GL_UNIFORM_BUFFER_LENGTH_NV = $9370
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLES_NV, #PB_Constant)
+#GL_MULTISAMPLES_NV = $9371
+CompilerEndIf
+CompilerIf Not Defined(GL_SUPERSAMPLE_SCALE_X_NV, #PB_Constant)
+#GL_SUPERSAMPLE_SCALE_X_NV = $9372
+CompilerEndIf
+CompilerIf Not Defined(GL_SUPERSAMPLE_SCALE_Y_NV, #PB_Constant)
+#GL_SUPERSAMPLE_SCALE_Y_NV = $9373
+CompilerEndIf
+CompilerIf Not Defined(GL_CONFORMANT_NV, #PB_Constant)
+#GL_CONFORMANT_NV = $9374
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_DILATE_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_DILATE_NV = $9379
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_DILATE_RANGE_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_DILATE_RANGE_NV = $937A
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV = $937B
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_POSITION_W_SCALE_NV, #PB_Constant)
+#GL_VIEWPORT_POSITION_W_SCALE_NV = $937C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_POSITION_W_SCALE_X_COEFF_NV, #PB_Constant)
+#GL_VIEWPORT_POSITION_W_SCALE_X_COEFF_NV = $937D
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV, #PB_Constant)
+#GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV = $937E
+CompilerEndIf
+CompilerIf Not Defined(GL_REPRESENTATIVE_FRAGMENT_TEST_NV, #PB_Constant)
+#GL_REPRESENTATIVE_FRAGMENT_TEST_NV = $937F
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SAMPLE_COUNTS, #PB_Constant)
+#GL_NUM_SAMPLE_COUNTS = $9380
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_LINE_WIDTH_RANGE_ARB, #PB_Constant)
+#GL_MULTISAMPLE_LINE_WIDTH_RANGE_ARB = $9381
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_LINE_WIDTH_RANGE, #PB_Constant)
+#GL_MULTISAMPLE_LINE_WIDTH_RANGE = $9381
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB, #PB_Constant)
+#GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB = $9382
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY, #PB_Constant)
+#GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY = $9382
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_EAC_R11, #PB_Constant)
+#GL_VIEW_CLASS_EAC_R11 = $9383
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_EAC_RG11, #PB_Constant)
+#GL_VIEW_CLASS_EAC_RG11 = $9384
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ETC2_RGB, #PB_Constant)
+#GL_VIEW_CLASS_ETC2_RGB = $9385
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ETC2_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ETC2_RGBA = $9386
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ETC2_EAC_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ETC2_EAC_RGBA = $9387
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_4x4_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_4x4_RGBA = $9388
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_5x4_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_5x4_RGBA = $9389
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_5x5_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_5x5_RGBA = $938A
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_6x5_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_6x5_RGBA = $938B
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_6x6_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_6x6_RGBA = $938C
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_8x5_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_8x5_RGBA = $938D
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_8x6_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_8x6_RGBA = $938E
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_8x8_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_8x8_RGBA = $938F
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_10x5_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_10x5_RGBA = $9390
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_10x6_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_10x6_RGBA = $9391
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_10x8_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_10x8_RGBA = $9392
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_10x10_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_10x10_RGBA = $9393
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_12x10_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_12x10_RGBA = $9394
+CompilerEndIf
+CompilerIf Not Defined(GL_VIEW_CLASS_ASTC_12x12_RGBA, #PB_Constant)
+#GL_VIEW_CLASS_ASTC_12x12_RGBA = $9395
+CompilerEndIf
+CompilerIf Not Defined(GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE, #PB_Constant)
+#GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE = $93A0
+CompilerEndIf
+CompilerIf Not Defined(GL_BGRA8_EXT, #PB_Constant)
+#GL_BGRA8_EXT = $93A1
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_USAGE_ANGLE, #PB_Constant)
+#GL_TEXTURE_USAGE_ANGLE = $93A2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_ANGLE, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_ANGLE = $93A3
+CompilerEndIf
+CompilerIf Not Defined(GL_PACK_REVERSE_ROW_ORDER_ANGLE, #PB_Constant)
+#GL_PACK_REVERSE_ROW_ORDER_ANGLE = $93A4
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_ANGLE, #PB_Constant)
+#GL_PROGRAM_BINARY_ANGLE = $93A6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_4x4, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_4x4 = $93B0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_4x4_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_4x4_KHR = $93B0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x4, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x4 = $93B1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x4_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x4_KHR = $93B1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x5, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x5 = $93B2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x5_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x5_KHR = $93B2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x5, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x5 = $93B3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x5_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x5_KHR = $93B3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x6, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x6 = $93B4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x6_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x6_KHR = $93B4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x5, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x5 = $93B5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x5_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x5_KHR = $93B5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x6, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x6 = $93B6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x6_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x6_KHR = $93B6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x8, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x8 = $93B7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_8x8_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_8x8_KHR = $93B7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x5, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x5 = $93B8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x5_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x5_KHR = $93B8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x6, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x6 = $93B9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x6_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x6_KHR = $93B9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x8, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x8 = $93BA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x8_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x8_KHR = $93BA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x10, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x10 = $93BB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_10x10_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_10x10_KHR = $93BB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_12x10, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_12x10 = $93BC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_12x10_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_12x10_KHR = $93BC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_12x12, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_12x12 = $93BD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_12x12_KHR, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_12x12_KHR = $93BD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_3x3x3_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_3x3x3_OES = $93C0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_4x3x3_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_4x3x3_OES = $93C1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_4x4x3_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_4x4x3_OES = $93C2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_4x4x4_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_4x4x4_OES = $93C3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x4x4_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x4x4_OES = $93C4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x5x4_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x5x4_OES = $93C5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_5x5x5_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_5x5x5_OES = $93C6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x5x5_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x5x5_OES = $93C7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x6x5_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x6x5_OES = $93C8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_RGBA_ASTC_6x6x6_OES, #PB_Constant)
+#GL_COMPRESSED_RGBA_ASTC_6x6x6_OES = $93C9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4 = $93D0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR = $93D0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4 = $93D1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR = $93D1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5 = $93D2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR = $93D2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5 = $93D3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR = $93D3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6 = $93D4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR = $93D4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5 = $93D5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR = $93D5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6 = $93D6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR = $93D6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8 = $93D7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR = $93D7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5 = $93D8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR = $93D8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6 = $93D9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR = $93D9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8 = $93DA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR = $93DA
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10 = $93DB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR = $93DB
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10 = $93DC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR = $93DC
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12 = $93DD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR = $93DD
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES = $93E0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES = $93E1
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES = $93E2
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES = $93E3
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES = $93E4
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES = $93E5
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES = $93E6
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES = $93E7
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES = $93E8
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES, #PB_Constant)
+#GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES = $93E9
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG = $93F0
+CompilerEndIf
+CompilerIf Not Defined(GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG, #PB_Constant)
+#GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG = $93F1
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_EVENT_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_EVENT_INTEL = $94F0
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DURATION_NORM_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DURATION_NORM_INTEL = $94F1
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DURATION_RAW_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DURATION_RAW_INTEL = $94F2
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_THROUGHPUT_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_THROUGHPUT_INTEL = $94F3
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_RAW_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_RAW_INTEL = $94F4
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_TIMESTAMP_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_TIMESTAMP_INTEL = $94F5
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DATA_UINT32_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DATA_UINT32_INTEL = $94F8
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DATA_UINT64_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DATA_UINT64_INTEL = $94F9
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DATA_FLOAT_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DATA_FLOAT_INTEL = $94FA
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DATA_DOUBLE_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DATA_DOUBLE_INTEL = $94FB
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DATA_BOOL32_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DATA_BOOL32_INTEL = $94FC
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_QUERY_NAME_LENGTH_MAX_INTEL, #PB_Constant)
+#GL_PERFQUERY_QUERY_NAME_LENGTH_MAX_INTEL = $94FD
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_NAME_LENGTH_MAX_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_NAME_LENGTH_MAX_INTEL = $94FE
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_COUNTER_DESC_LENGTH_MAX_INTEL, #PB_Constant)
+#GL_PERFQUERY_COUNTER_DESC_LENGTH_MAX_INTEL = $94FF
+CompilerEndIf
+CompilerIf Not Defined(GL_PERFQUERY_GPA_EXTENDED_COUNTERS_INTEL, #PB_Constant)
+#GL_PERFQUERY_GPA_EXTENDED_COUNTERS_INTEL = $9500
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT, #PB_Constant)
+#GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT = $9530
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT, #PB_Constant)
+#GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT = $9531
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_SIZE_KHR, #PB_Constant)
+#GL_SUBGROUP_SIZE_KHR = $9532
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_SUPPORTED_STAGES_KHR, #PB_Constant)
+#GL_SUBGROUP_SUPPORTED_STAGES_KHR = $9533
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_SUPPORTED_FEATURES_KHR, #PB_Constant)
+#GL_SUBGROUP_SUPPORTED_FEATURES_KHR = $9534
+CompilerEndIf
+CompilerIf Not Defined(GL_SUBGROUP_QUAD_ALL_STAGES_KHR, #PB_Constant)
+#GL_SUBGROUP_QUAD_ALL_STAGES_KHR = $9535
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_TOTAL_MEMORY_SIZE_NV, #PB_Constant)
+#GL_MAX_MESH_TOTAL_MEMORY_SIZE_NV = $9536
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_TOTAL_MEMORY_SIZE_NV, #PB_Constant)
+#GL_MAX_TASK_TOTAL_MEMORY_SIZE_NV = $9537
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_VERTICES_EXT, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_VERTICES_EXT = $9538
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_VERTICES_NV, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_VERTICES_NV = $9538
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_PRIMITIVES_NV, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_PRIMITIVES_NV = $9539
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_OUTPUT_COUNT_NV, #PB_Constant)
+#GL_MAX_TASK_OUTPUT_COUNT_NV = $953A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_SIZE_NV, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_SIZE_NV = $953B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_SIZE_NV, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_SIZE_NV = $953C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DRAW_MESH_TASKS_COUNT_NV, #PB_Constant)
+#GL_MAX_DRAW_MESH_TASKS_COUNT_NV = $953D
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_WORK_GROUP_SIZE_EXT, #PB_Constant)
+#GL_MESH_WORK_GROUP_SIZE_EXT = $953E
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_WORK_GROUP_SIZE_NV, #PB_Constant)
+#GL_MESH_WORK_GROUP_SIZE_NV = $953E
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_WORK_GROUP_SIZE_EXT, #PB_Constant)
+#GL_TASK_WORK_GROUP_SIZE_EXT = $953F
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_WORK_GROUP_SIZE_NV, #PB_Constant)
+#GL_TASK_WORK_GROUP_SIZE_NV = $953F
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_TYPE_VIDMEM_ALLOC_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_TYPE_VIDMEM_ALLOC_NV = $9540
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_MEMTYPE_VIDMEM_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_MEMTYPE_VIDMEM_NV = $9542
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT, #PB_Constant)
+#GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT = $9543
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_NV, #PB_Constant)
+#GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_NV = $9543
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_SYS_RESERVED_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_SYS_RESERVED_NV = $9544
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_TEXTURE_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_TEXTURE_NV = $9545
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_RENDERBUFFER_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_RENDERBUFFER_NV = $9546
+CompilerEndIf
+CompilerIf Not Defined(GL_QUERY_RESOURCE_BUFFEROBJECT_NV, #PB_Constant)
+#GL_QUERY_RESOURCE_BUFFEROBJECT_NV = $9547
+CompilerEndIf
+CompilerIf Not Defined(GL_PER_GPU_STORAGE_NV, #PB_Constant)
+#GL_PER_GPU_STORAGE_NV = $9548
+CompilerEndIf
+CompilerIf Not Defined(GL_MULTICAST_PROGRAMMABLE_SAMPLE_LOCATION_NV, #PB_Constant)
+#GL_MULTICAST_PROGRAMMABLE_SAMPLE_LOCATION_NV = $9549
+CompilerEndIf
+CompilerIf Not Defined(GL_UPLOAD_GPU_MASK_NVX, #PB_Constant)
+#GL_UPLOAD_GPU_MASK_NVX = $954A
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_MODE_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_MODE_NV = $954D
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_MODE_POST_SNAP_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_MODE_POST_SNAP_NV = $954E
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_TRIANGLES_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_TRIANGLES_NV = $954F
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_NV, #PB_Constant)
+#GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_NV = $9550
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_FORMAT_SPIR_V, #PB_Constant)
+#GL_SHADER_BINARY_FORMAT_SPIR_V = $9551
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_FORMAT_SPIR_V_ARB, #PB_Constant)
+#GL_SHADER_BINARY_FORMAT_SPIR_V_ARB = $9551
+CompilerEndIf
+CompilerIf Not Defined(GL_SPIR_V_BINARY, #PB_Constant)
+#GL_SPIR_V_BINARY = $9552
+CompilerEndIf
+CompilerIf Not Defined(GL_SPIR_V_BINARY_ARB, #PB_Constant)
+#GL_SPIR_V_BINARY_ARB = $9552
+CompilerEndIf
+CompilerIf Not Defined(GL_SPIR_V_EXTENSIONS, #PB_Constant)
+#GL_SPIR_V_EXTENSIONS = $9553
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_SPIR_V_EXTENSIONS, #PB_Constant)
+#GL_NUM_SPIR_V_EXTENSIONS = $9554
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_TEST_EXCLUSIVE_NV, #PB_Constant)
+#GL_SCISSOR_TEST_EXCLUSIVE_NV = $9555
+CompilerEndIf
+CompilerIf Not Defined(GL_SCISSOR_BOX_EXCLUSIVE_NV, #PB_Constant)
+#GL_SCISSOR_BOX_EXCLUSIVE_NV = $9556
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT, #PB_Constant)
+#GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT = $9557
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_VIEWS_NV, #PB_Constant)
+#GL_MAX_MESH_VIEWS_NV = $9557
+CompilerEndIf
+CompilerIf Not Defined(GL_RENDER_GPU_MASK_NV, #PB_Constant)
+#GL_RENDER_GPU_MASK_NV = $9558
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SHADER_EXT, #PB_Constant)
+#GL_MESH_SHADER_EXT = $9559
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SHADER_NV, #PB_Constant)
+#GL_MESH_SHADER_NV = $9559
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SHADER_EXT, #PB_Constant)
+#GL_TASK_SHADER_EXT = $955A
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SHADER_NV, #PB_Constant)
+#GL_TASK_SHADER_NV = $955A
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_BINDING_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_BINDING_NV = $955B
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_TEXEL_WIDTH_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_TEXEL_WIDTH_NV = $955C
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_TEXEL_HEIGHT_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_TEXEL_HEIGHT_NV = $955D
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_PALETTE_SIZE_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_PALETTE_SIZE_NV = $955E
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_COARSE_FRAGMENT_SAMPLES_NV, #PB_Constant)
+#GL_MAX_COARSE_FRAGMENT_SAMPLES_NV = $955F
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_NV = $9563
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_NO_INVOCATIONS_NV, #PB_Constant)
+#GL_SHADING_RATE_NO_INVOCATIONS_NV = $9564
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_PIXEL_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_PIXEL_NV = $9565
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV = $9566
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV = $9567
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV = $9568
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV = $9569
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV = $956A
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV, #PB_Constant)
+#GL_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV = $956B
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV, #PB_Constant)
+#GL_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV = $956C
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV, #PB_Constant)
+#GL_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV = $956D
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV, #PB_Constant)
+#GL_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV = $956E
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV, #PB_Constant)
+#GL_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV = $956F
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_VERTICES_OUT_EXT, #PB_Constant)
+#GL_MESH_VERTICES_OUT_EXT = $9579
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_VERTICES_OUT_NV, #PB_Constant)
+#GL_MESH_VERTICES_OUT_NV = $9579
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PRIMITIVES_OUT_EXT, #PB_Constant)
+#GL_MESH_PRIMITIVES_OUT_EXT = $957A
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PRIMITIVES_OUT_NV, #PB_Constant)
+#GL_MESH_PRIMITIVES_OUT_NV = $957A
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_TYPE_EXT, #PB_Constant)
+#GL_MESH_OUTPUT_TYPE_EXT = $957B
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_OUTPUT_TYPE_NV, #PB_Constant)
+#GL_MESH_OUTPUT_TYPE_NV = $957B
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SUBROUTINE_EXT, #PB_Constant)
+#GL_MESH_SUBROUTINE_EXT = $957C
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SUBROUTINE_NV, #PB_Constant)
+#GL_MESH_SUBROUTINE_NV = $957C
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SUBROUTINE_EXT, #PB_Constant)
+#GL_TASK_SUBROUTINE_EXT = $957D
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SUBROUTINE_NV, #PB_Constant)
+#GL_TASK_SUBROUTINE_NV = $957D
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SUBROUTINE_UNIFORM_EXT, #PB_Constant)
+#GL_MESH_SUBROUTINE_UNIFORM_EXT = $957E
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SUBROUTINE_UNIFORM_NV, #PB_Constant)
+#GL_MESH_SUBROUTINE_UNIFORM_NV = $957E
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SUBROUTINE_UNIFORM_EXT, #PB_Constant)
+#GL_TASK_SUBROUTINE_UNIFORM_EXT = $957F
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SUBROUTINE_UNIFORM_NV, #PB_Constant)
+#GL_TASK_SUBROUTINE_UNIFORM_NV = $957F
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_TILING_EXT, #PB_Constant)
+#GL_TEXTURE_TILING_EXT = $9580
+CompilerEndIf
+CompilerIf Not Defined(GL_DEDICATED_MEMORY_OBJECT_EXT, #PB_Constant)
+#GL_DEDICATED_MEMORY_OBJECT_EXT = $9581
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_TILING_TYPES_EXT, #PB_Constant)
+#GL_NUM_TILING_TYPES_EXT = $9582
+CompilerEndIf
+CompilerIf Not Defined(GL_TILING_TYPES_EXT, #PB_Constant)
+#GL_TILING_TYPES_EXT = $9583
+CompilerEndIf
+CompilerIf Not Defined(GL_OPTIMAL_TILING_EXT, #PB_Constant)
+#GL_OPTIMAL_TILING_EXT = $9584
+CompilerEndIf
+CompilerIf Not Defined(GL_LINEAR_TILING_EXT, #PB_Constant)
+#GL_LINEAR_TILING_EXT = $9585
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_OPAQUE_FD_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_OPAQUE_FD_EXT = $9586
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_OPAQUE_WIN32_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_OPAQUE_WIN32_EXT = $9587
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_OPAQUE_WIN32_KMT_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_OPAQUE_WIN32_KMT_EXT = $9588
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_D3D12_TILEPOOL_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_D3D12_TILEPOOL_EXT = $9589
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_D3D12_RESOURCE_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_D3D12_RESOURCE_EXT = $958A
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_D3D11_IMAGE_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_D3D11_IMAGE_EXT = $958B
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT = $958C
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_GENERAL_EXT, #PB_Constant)
+#GL_LAYOUT_GENERAL_EXT = $958D
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_COLOR_ATTACHMENT_EXT, #PB_Constant)
+#GL_LAYOUT_COLOR_ATTACHMENT_EXT = $958E
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT, #PB_Constant)
+#GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT = $958F
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT, #PB_Constant)
+#GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT = $9590
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_SHADER_READ_ONLY_EXT, #PB_Constant)
+#GL_LAYOUT_SHADER_READ_ONLY_EXT = $9591
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_TRANSFER_SRC_EXT, #PB_Constant)
+#GL_LAYOUT_TRANSFER_SRC_EXT = $9592
+CompilerEndIf
+CompilerIf Not Defined(GL_LAYOUT_TRANSFER_DST_EXT, #PB_Constant)
+#GL_LAYOUT_TRANSFER_DST_EXT = $9593
+CompilerEndIf
+CompilerIf Not Defined(GL_HANDLE_TYPE_D3D12_FENCE_EXT, #PB_Constant)
+#GL_HANDLE_TYPE_D3D12_FENCE_EXT = $9594
+CompilerEndIf
+CompilerIf Not Defined(GL_D3D12_FENCE_VALUE_EXT, #PB_Constant)
+#GL_D3D12_FENCE_VALUE_EXT = $9595
+CompilerEndIf
+CompilerIf Not Defined(GL_TIMELINE_SEMAPHORE_VALUE_NV, #PB_Constant)
+#GL_TIMELINE_SEMAPHORE_VALUE_NV = $9595
+CompilerEndIf
+CompilerIf Not Defined(GL_NUM_DEVICE_UUIDS_EXT, #PB_Constant)
+#GL_NUM_DEVICE_UUIDS_EXT = $9596
+CompilerEndIf
+CompilerIf Not Defined(GL_DEVICE_UUID_EXT, #PB_Constant)
+#GL_DEVICE_UUID_EXT = $9597
+CompilerEndIf
+CompilerIf Not Defined(GL_DRIVER_UUID_EXT, #PB_Constant)
+#GL_DRIVER_UUID_EXT = $9598
+CompilerEndIf
+CompilerIf Not Defined(GL_DEVICE_LUID_EXT, #PB_Constant)
+#GL_DEVICE_LUID_EXT = $9599
+CompilerEndIf
+CompilerIf Not Defined(GL_DEVICE_NODE_MASK_EXT, #PB_Constant)
+#GL_DEVICE_NODE_MASK_EXT = $959A
+CompilerEndIf
+CompilerIf Not Defined(GL_PROTECTED_MEMORY_OBJECT_EXT, #PB_Constant)
+#GL_PROTECTED_MEMORY_OBJECT_EXT = $959B
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_EXT, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_EXT = $959C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_NV, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_NV = $959C
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_EXT, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_EXT = $959D
+CompilerEndIf
+CompilerIf Not Defined(GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_NV, #PB_Constant)
+#GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_NV = $959D
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_EXT, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_EXT = $959E
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_NV, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_NV = $959E
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_EXT, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_EXT = $959F
+CompilerEndIf
+CompilerIf Not Defined(GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_NV, #PB_Constant)
+#GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_NV = $959F
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_MESH_SHADER_EXT, #PB_Constant)
+#GL_REFERENCED_BY_MESH_SHADER_EXT = $95A0
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_MESH_SHADER_NV, #PB_Constant)
+#GL_REFERENCED_BY_MESH_SHADER_NV = $95A0
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TASK_SHADER_EXT, #PB_Constant)
+#GL_REFERENCED_BY_TASK_SHADER_EXT = $95A1
+CompilerEndIf
+CompilerIf Not Defined(GL_REFERENCED_BY_TASK_SHADER_NV, #PB_Constant)
+#GL_REFERENCED_BY_TASK_SHADER_NV = $95A1
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_INVOCATIONS_NV, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_INVOCATIONS_NV = $95A2
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_INVOCATIONS_NV, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_INVOCATIONS_NV = $95A3
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTACHED_MEMORY_OBJECT_NV, #PB_Constant)
+#GL_ATTACHED_MEMORY_OBJECT_NV = $95A4
+CompilerEndIf
+CompilerIf Not Defined(GL_ATTACHED_MEMORY_OFFSET_NV, #PB_Constant)
+#GL_ATTACHED_MEMORY_OFFSET_NV = $95A5
+CompilerEndIf
+CompilerIf Not Defined(GL_MEMORY_ATTACHABLE_ALIGNMENT_NV, #PB_Constant)
+#GL_MEMORY_ATTACHABLE_ALIGNMENT_NV = $95A6
+CompilerEndIf
+CompilerIf Not Defined(GL_MEMORY_ATTACHABLE_SIZE_NV, #PB_Constant)
+#GL_MEMORY_ATTACHABLE_SIZE_NV = $95A7
+CompilerEndIf
+CompilerIf Not Defined(GL_MEMORY_ATTACHABLE_NV, #PB_Constant)
+#GL_MEMORY_ATTACHABLE_NV = $95A8
+CompilerEndIf
+CompilerIf Not Defined(GL_DETACHED_MEMORY_INCARNATION_NV, #PB_Constant)
+#GL_DETACHED_MEMORY_INCARNATION_NV = $95A9
+CompilerEndIf
+CompilerIf Not Defined(GL_DETACHED_TEXTURES_NV, #PB_Constant)
+#GL_DETACHED_TEXTURES_NV = $95AA
+CompilerEndIf
+CompilerIf Not Defined(GL_DETACHED_BUFFERS_NV, #PB_Constant)
+#GL_DETACHED_BUFFERS_NV = $95AB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DETACHED_TEXTURES_NV, #PB_Constant)
+#GL_MAX_DETACHED_TEXTURES_NV = $95AC
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_DETACHED_BUFFERS_NV, #PB_Constant)
+#GL_MAX_DETACHED_BUFFERS_NV = $95AD
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_SAMPLE_ORDER_DEFAULT_NV, #PB_Constant)
+#GL_SHADING_RATE_SAMPLE_ORDER_DEFAULT_NV = $95AE
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_SAMPLE_ORDER_PIXEL_MAJOR_NV, #PB_Constant)
+#GL_SHADING_RATE_SAMPLE_ORDER_PIXEL_MAJOR_NV = $95AF
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_SAMPLE_ORDER_SAMPLE_MAJOR_NV, #PB_Constant)
+#GL_SHADING_RATE_SAMPLE_ORDER_SAMPLE_MAJOR_NV = $95B0
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV = $95B1
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV, #PB_Constant)
+#GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV = $95B2
+CompilerEndIf
+CompilerIf Not Defined(GL_SEMAPHORE_TYPE_NV, #PB_Constant)
+#GL_SEMAPHORE_TYPE_NV = $95B3
+CompilerEndIf
+CompilerIf Not Defined(GL_SEMAPHORE_TYPE_BINARY_NV, #PB_Constant)
+#GL_SEMAPHORE_TYPE_BINARY_NV = $95B4
+CompilerEndIf
+CompilerIf Not Defined(GL_SEMAPHORE_TYPE_TIMELINE_NV, #PB_Constant)
+#GL_SEMAPHORE_TYPE_TIMELINE_NV = $95B5
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV, #PB_Constant)
+#GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV = $95B6
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR = $9630
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VIEWS_OVR, #PB_Constant)
+#GL_MAX_VIEWS_OVR = $9631
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR, #PB_Constant)
+#GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR = $9632
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR = $9633
+CompilerEndIf
+CompilerIf Not Defined(GL_GS_SHADER_BINARY_MTK, #PB_Constant)
+#GL_GS_SHADER_BINARY_MTK = $9640
+CompilerEndIf
+CompilerIf Not Defined(GL_GS_PROGRAM_BINARY_MTK, #PB_Constant)
+#GL_GS_PROGRAM_BINARY_MTK = $9641
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT, #PB_Constant)
+#GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT = $9650
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT, #PB_Constant)
+#GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT = $9651
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT, #PB_Constant)
+#GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT = $9652
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM, #PB_Constant)
+#GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM = $96A0
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM, #PB_Constant)
+#GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM = $96A2
+CompilerEndIf
+CompilerIf Not Defined(GL_VALIDATE_SHADER_BINARY_QCOM, #PB_Constant)
+#GL_VALIDATE_SHADER_BINARY_QCOM = $96A3
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_QCOM, #PB_Constant)
+#GL_SHADING_RATE_QCOM = $96A4
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM, #PB_Constant)
+#GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM = $96A5
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X1_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_1X1_PIXELS_QCOM = $96A6
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X2_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_1X2_PIXELS_QCOM = $96A7
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X1_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_2X1_PIXELS_QCOM = $96A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X2_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_2X2_PIXELS_QCOM = $96A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X4_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_1X4_PIXELS_QCOM = $96AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X1_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_4X1_PIXELS_QCOM = $96AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X2_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_4X2_PIXELS_QCOM = $96AC
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X4_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_2X4_PIXELS_QCOM = $96AD
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X4_PIXELS_QCOM, #PB_Constant)
+#GL_SHADING_RATE_4X4_PIXELS_QCOM = $96AE
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X1_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_1X1_PIXELS_EXT = $96A6
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X2_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_1X2_PIXELS_EXT = $96A7
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X1_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_2X1_PIXELS_EXT = $96A8
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X2_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_2X2_PIXELS_EXT = $96A9
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_1X4_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_1X4_PIXELS_EXT = $96AA
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X1_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_4X1_PIXELS_EXT = $96AB
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X2_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_4X2_PIXELS_EXT = $96AC
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_2X4_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_2X4_PIXELS_EXT = $96AD
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_4X4_PIXELS_EXT, #PB_Constant)
+#GL_SHADING_RATE_4X4_PIXELS_EXT = $96AE
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_EXT = $96C0
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT = $96C1
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT = $96C2
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT = $96C4
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT = $96C5
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT = $96C6
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT = $96C7
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT = $96C8
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT = $96C9
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT = $96CA
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT = $96CB
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT = $96CC
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT = $96CD
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT = $96CE
+CompilerEndIf
+CompilerIf Not Defined(GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT, #PB_Constant)
+#GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT = $96CF
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_EXT, #PB_Constant)
+#GL_SHADING_RATE_EXT = $96D0
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADING_RATE_ATTACHMENT_EXT, #PB_Constant)
+#GL_SHADING_RATE_ATTACHMENT_EXT = $96D1
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT = $96D2
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT = $96D3
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT = $96D4
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT = $96D5
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT = $96D6
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT, #PB_Constant)
+#GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT = $96D7
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT, #PB_Constant)
+#GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT = $96D8
+CompilerEndIf
+CompilerIf Not Defined(GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT, #PB_Constant)
+#GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT = $96D9
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT, #PB_Constant)
+#GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT = $96DA
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT, #PB_Constant)
+#GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT = $96DB
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT, #PB_Constant)
+#GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT = $96DC
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT = $96DD
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT = $96DE
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT = $96DF
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_COUNT_ARM, #PB_Constant)
+#GL_SHADER_CORE_COUNT_ARM = $96F0
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_ACTIVE_COUNT_ARM, #PB_Constant)
+#GL_SHADER_CORE_ACTIVE_COUNT_ARM = $96F1
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_PRESENT_MASK_ARM, #PB_Constant)
+#GL_SHADER_CORE_PRESENT_MASK_ARM = $96F2
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_MAX_WARP_COUNT_ARM, #PB_Constant)
+#GL_SHADER_CORE_MAX_WARP_COUNT_ARM = $96F3
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_PIXEL_RATE_ARM, #PB_Constant)
+#GL_SHADER_CORE_PIXEL_RATE_ARM = $96F4
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_TEXEL_RATE_ARM, #PB_Constant)
+#GL_SHADER_CORE_TEXEL_RATE_ARM = $96F5
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_CORE_FMA_RATE_ARM, #PB_Constant)
+#GL_SHADER_CORE_FMA_RATE_ARM = $96F6
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_Y_DEGAMMA_QCOM, #PB_Constant)
+#GL_TEXTURE_Y_DEGAMMA_QCOM = $9710
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_CBCR_DEGAMMA_QCOM, #PB_Constant)
+#GL_TEXTURE_CBCR_DEGAMMA_QCOM = $9711
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT = $9740
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT = $9741
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_PAYLOAD_SIZE_EXT, #PB_Constant)
+#GL_MAX_TASK_PAYLOAD_SIZE_EXT = $9742
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_SHARED_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_TASK_SHARED_MEMORY_SIZE_EXT = $9743
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_SHARED_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_MESH_SHARED_MEMORY_SIZE_EXT = $9744
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT = $9745
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT = $9746
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_MEMORY_SIZE_EXT = $9747
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT, #PB_Constant)
+#GL_MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT = $9748
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_COMPONENTS_EXT, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_COMPONENTS_EXT = $9749
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_LAYERS_EXT, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_LAYERS_EXT = $974A
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT, #PB_Constant)
+#GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT = $974B
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT, #PB_Constant)
+#GL_MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT = $974C
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT, #PB_Constant)
+#GL_MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT = $974D
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT, #PB_Constant)
+#GL_MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT = $974E
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT, #PB_Constant)
+#GL_MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT = $974F
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT, #PB_Constant)
+#GL_MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT = $9750
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_COUNT_EXT, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_COUNT_EXT = $9751
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_COUNT_EXT, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_COUNT_EXT = $9752
+CompilerEndIf
+CompilerIf Not Defined(GL_TASK_SHADER_INVOCATIONS_EXT, #PB_Constant)
+#GL_TASK_SHADER_INVOCATIONS_EXT = $9753
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_SHADER_INVOCATIONS_EXT, #PB_Constant)
+#GL_MESH_SHADER_INVOCATIONS_EXT = $9754
+CompilerEndIf
+CompilerIf Not Defined(GL_MESH_PRIMITIVES_GENERATED_EXT, #PB_Constant)
+#GL_MESH_PRIMITIVES_GENERATED_EXT = $9755
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT, #PB_Constant)
+#GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT = $9756
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT = $9757
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_MESH_WORK_GROUP_SIZE_EXT, #PB_Constant)
+#GL_MAX_MESH_WORK_GROUP_SIZE_EXT = $9758
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT = $9759
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_TASK_WORK_GROUP_SIZE_EXT, #PB_Constant)
+#GL_MAX_TASK_WORK_GROUP_SIZE_EXT = $975A
+CompilerEndIf
+CompilerIf Not Defined(GL_SHADER_BINARY_HUAWEI, #PB_Constant)
+#GL_SHADER_BINARY_HUAWEI = $9770
+CompilerEndIf
+CompilerIf Not Defined(GL_PROGRAM_BINARY_HUAWEI, #PB_Constant)
+#GL_PROGRAM_BINARY_HUAWEI = $9771
+CompilerEndIf
+CompilerIf Not Defined(GL_FRAGMENT_SHADING_RATE_PRIMITIVE_RATE_WITH_MULTI_VIEWPORT_SUPPORTED_EXT, #PB_Constant)
+#GL_FRAGMENT_SHADING_RATE_PRIMITIVE_RATE_WITH_MULTI_VIEWPORT_SUPPORTED_EXT = $9780
+CompilerEndIf
+CompilerIf Not Defined(GL_BUFFER_CLIENT_POINTER_SIZE_MESA, #PB_Constant)
+#GL_BUFFER_CLIENT_POINTER_SIZE_MESA = $9790
+CompilerEndIf
+CompilerIf Not Defined(GL_RASTER_POSITION_UNCLIPPED_IBM, #PB_Constant)
+#GL_RASTER_POSITION_UNCLIPPED_IBM = $19262
+CompilerEndIf
+CompilerIf Not Defined(GL_CULL_VERTEX_IBM, #PB_Constant)
+#GL_CULL_VERTEX_IBM = 103050
+CompilerEndIf
+CompilerIf Not Defined(GL_ALL_STATIC_DATA_IBM, #PB_Constant)
+#GL_ALL_STATIC_DATA_IBM = 103060
+CompilerEndIf
+CompilerIf Not Defined(GL_STATIC_VERTEX_ARRAY_IBM, #PB_Constant)
+#GL_STATIC_VERTEX_ARRAY_IBM = 103061
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_LIST_IBM, #PB_Constant)
+#GL_VERTEX_ARRAY_LIST_IBM = 103070
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_LIST_IBM, #PB_Constant)
+#GL_NORMAL_ARRAY_LIST_IBM = 103071
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_LIST_IBM, #PB_Constant)
+#GL_COLOR_ARRAY_LIST_IBM = 103072
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_LIST_IBM, #PB_Constant)
+#GL_INDEX_ARRAY_LIST_IBM = 103073
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_LIST_IBM, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_LIST_IBM = 103074
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_LIST_IBM, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_LIST_IBM = 103075
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_LIST_IBM, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_LIST_IBM = 103076
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_LIST_IBM, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_LIST_IBM = 103077
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_VERTEX_ARRAY_LIST_STRIDE_IBM = 103080
+CompilerEndIf
+CompilerIf Not Defined(GL_NORMAL_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_NORMAL_ARRAY_LIST_STRIDE_IBM = 103081
+CompilerEndIf
+CompilerIf Not Defined(GL_COLOR_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_COLOR_ARRAY_LIST_STRIDE_IBM = 103082
+CompilerEndIf
+CompilerIf Not Defined(GL_INDEX_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_INDEX_ARRAY_LIST_STRIDE_IBM = 103083
+CompilerEndIf
+CompilerIf Not Defined(GL_TEXTURE_COORD_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_TEXTURE_COORD_ARRAY_LIST_STRIDE_IBM = 103084
+CompilerEndIf
+CompilerIf Not Defined(GL_EDGE_FLAG_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_EDGE_FLAG_ARRAY_LIST_STRIDE_IBM = 103085
+CompilerEndIf
+CompilerIf Not Defined(GL_FOG_COORDINATE_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_FOG_COORDINATE_ARRAY_LIST_STRIDE_IBM = 103086
+CompilerEndIf
+CompilerIf Not Defined(GL_SECONDARY_COLOR_ARRAY_LIST_STRIDE_IBM, #PB_Constant)
+#GL_SECONDARY_COLOR_ARRAY_LIST_STRIDE_IBM = 103087
+CompilerEndIf
+CompilerIf Not Defined(GL_PREFER_DOUBLEBUFFER_HINT_PGI, #PB_Constant)
+#GL_PREFER_DOUBLEBUFFER_HINT_PGI = $1A1F8
+CompilerEndIf
+CompilerIf Not Defined(GL_CONSERVE_MEMORY_HINT_PGI, #PB_Constant)
+#GL_CONSERVE_MEMORY_HINT_PGI = $1A1FD
+CompilerEndIf
+CompilerIf Not Defined(GL_RECLAIM_MEMORY_HINT_PGI, #PB_Constant)
+#GL_RECLAIM_MEMORY_HINT_PGI = $1A1FE
+CompilerEndIf
+CompilerIf Not Defined(GL_NATIVE_GRAPHICS_HANDLE_PGI, #PB_Constant)
+#GL_NATIVE_GRAPHICS_HANDLE_PGI = $1A202
+CompilerEndIf
+CompilerIf Not Defined(GL_NATIVE_GRAPHICS_BEGIN_HINT_PGI, #PB_Constant)
+#GL_NATIVE_GRAPHICS_BEGIN_HINT_PGI = $1A203
+CompilerEndIf
+CompilerIf Not Defined(GL_NATIVE_GRAPHICS_END_HINT_PGI, #PB_Constant)
+#GL_NATIVE_GRAPHICS_END_HINT_PGI = $1A204
+CompilerEndIf
+CompilerIf Not Defined(GL_ALWAYS_FAST_HINT_PGI, #PB_Constant)
+#GL_ALWAYS_FAST_HINT_PGI = $1A20C
+CompilerEndIf
+CompilerIf Not Defined(GL_ALWAYS_SOFT_HINT_PGI, #PB_Constant)
+#GL_ALWAYS_SOFT_HINT_PGI = $1A20D
+CompilerEndIf
+CompilerIf Not Defined(GL_ALLOW_DRAW_OBJ_HINT_PGI, #PB_Constant)
+#GL_ALLOW_DRAW_OBJ_HINT_PGI = $1A20E
+CompilerEndIf
+CompilerIf Not Defined(GL_ALLOW_DRAW_WIN_HINT_PGI, #PB_Constant)
+#GL_ALLOW_DRAW_WIN_HINT_PGI = $1A20F
+CompilerEndIf
+CompilerIf Not Defined(GL_ALLOW_DRAW_FRG_HINT_PGI, #PB_Constant)
+#GL_ALLOW_DRAW_FRG_HINT_PGI = $1A210
+CompilerEndIf
+CompilerIf Not Defined(GL_ALLOW_DRAW_MEM_HINT_PGI, #PB_Constant)
+#GL_ALLOW_DRAW_MEM_HINT_PGI = $1A211
+CompilerEndIf
+CompilerIf Not Defined(GL_STRICT_DEPTHFUNC_HINT_PGI, #PB_Constant)
+#GL_STRICT_DEPTHFUNC_HINT_PGI = $1A216
+CompilerEndIf
+CompilerIf Not Defined(GL_STRICT_LIGHTING_HINT_PGI, #PB_Constant)
+#GL_STRICT_LIGHTING_HINT_PGI = $1A217
+CompilerEndIf
+CompilerIf Not Defined(GL_STRICT_SCISSOR_HINT_PGI, #PB_Constant)
+#GL_STRICT_SCISSOR_HINT_PGI = $1A218
+CompilerEndIf
+CompilerIf Not Defined(GL_FULL_STIPPLE_HINT_PGI, #PB_Constant)
+#GL_FULL_STIPPLE_HINT_PGI = $1A219
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_NEAR_HINT_PGI, #PB_Constant)
+#GL_CLIP_NEAR_HINT_PGI = $1A220
+CompilerEndIf
+CompilerIf Not Defined(GL_CLIP_FAR_HINT_PGI, #PB_Constant)
+#GL_CLIP_FAR_HINT_PGI = $1A221
+CompilerEndIf
+CompilerIf Not Defined(GL_WIDE_LINE_HINT_PGI, #PB_Constant)
+#GL_WIDE_LINE_HINT_PGI = $1A222
+CompilerEndIf
+CompilerIf Not Defined(GL_BACK_NORMALS_HINT_PGI, #PB_Constant)
+#GL_BACK_NORMALS_HINT_PGI = $1A223
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_DATA_HINT_PGI, #PB_Constant)
+#GL_VERTEX_DATA_HINT_PGI = $1A22A
+CompilerEndIf
+CompilerIf Not Defined(GL_VERTEX_CONSISTENT_HINT_PGI, #PB_Constant)
+#GL_VERTEX_CONSISTENT_HINT_PGI = $1A22B
+CompilerEndIf
+CompilerIf Not Defined(GL_MATERIAL_SIDE_HINT_PGI, #PB_Constant)
+#GL_MATERIAL_SIDE_HINT_PGI = $1A22C
+CompilerEndIf
+CompilerIf Not Defined(GL_MAX_VERTEX_HINT_PGI, #PB_Constant)
+#GL_MAX_VERTEX_HINT_PGI = $1A22D
+CompilerEndIf
+
+CompilerEndIf

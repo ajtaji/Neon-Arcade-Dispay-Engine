@@ -1157,11 +1157,12 @@ EndProcedure
 ; the next tab - the strip's scissor hides only what passes the end of
 ; the whole strip. Three rules replace that:
 ;
-;   - THE LIMIT FOLLOWS THE TEXT. 22 line heights of the UI face - a name
-;     of about 45 ordinary characters - and never less than the old 300
-;     units, so a host that scales its face up does not get tabs that
-;     hold fewer characters. It is also never wider than the strip: a tab
-;     whose close box lies beyond the strip's end cannot be closed.
+;   - THE LIMIT FOLLOWS THE TEXT. 26 line heights of the UI face - a name
+;     of about 45 characters in a wide face, 55 in a narrow one - and
+;     never less than the old 300 units, so a host that scales its face
+;     up does not get tabs that hold fewer characters. It is also never
+;     wider than the strip: a tab whose close box lies beyond the strip's
+;     end cannot be closed.
 ;   - A LABEL TOO LONG FOR THE LIMIT IS SHORTENED with an ellipsis
 ;     (Neon_FitText) to the room between the tab's left margin and its
 ;     close box, or its right margin when it has none.
@@ -1176,7 +1177,7 @@ EndProcedure
 #NEON_TAB_PADL   = 12.0     ; left margin, tab edge to label
 #NEON_TAB_PADR   = 8.0      ; label to the right edge of a tab with no close box
 #NEON_TAB_GAPX   = 6.0      ; label to close box
-#NEON_TAB_LINES  = 22.0     ; the widest tab, in line heights of the UI face
+#NEON_TAB_LINES  = 26.0    ; the widest tab, in line heights of the UI face
 
 ; The side of a tab's square close box in a strip h high.
 Procedure.f Neon_TabCloseSide(h.f)

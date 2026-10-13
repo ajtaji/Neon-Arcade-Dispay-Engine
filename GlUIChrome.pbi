@@ -1209,7 +1209,101 @@ Procedure.f Neon_TabLabelRoom(TabW.f, h.f, WithClose.b)
   ProcedureReturn TabW - Neon_S(#NEON_TAB_PADL) - Neon_S(#NEON_TAB_PADR)
 EndProcedure
 
-Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClose.b = #False, *ClosedIndex.Integer = 0)
+; ----------------------------------------------------------------------
+; A "|" INSIDE A LABEL
+; ----------------------------------------------------------------------
+; The labels arrive bar-separated, so a label that itself holds a bar
+; used to arrive as two tabs, and every tab after it was one place off
+; (a file name may hold a bar on Linux). A caller that builds the list
+; from text it does not control passes each label through Neon_TabEscape
+; first; the strip undoes it per tab. The escape character is ESC (27):
+; ESC b stands for a bar, ESC e for ESC itself, so the escaped text holds
+; no bar at all and no text can collide with the scheme. A label with
+; neither character is returned as it came, so a caller with fixed labels
+; need not call it.
+Procedure.s Neon_TabEscape(Label.s)
+  If FindString(Label, Chr(27)) : Label = ReplaceString(Label, Chr(27), Chr(27) + "e") : EndIf
+  If FindString(Label, "|") : Label = ReplaceString(Label, "|", Chr(27) + "b") : EndIf
+  ProcedureReturn Label
+EndProcedure
+
+Procedure.s Neon_TabUnescape(Label.s)
+  If FindString(Label, Chr(27)) = 0 : ProcedureReturn Label : EndIf
+  ; ESC b first: in escaped text every ESC starts a pair, so "ESC b" is
+  ; never the tail of "ESC e" followed by a plain b.
+  Label = ReplaceString(Label, Chr(27) + "b", "|")
+  ProcedureReturn ReplaceString(Label, Chr(27) + "e", Chr(27))
+EndProcedure
+
+; ----------------------------------------------------------------------
+; A STRIP WITH MORE TABS THAN ROOM (Flags = #NEON_TAB_SCROLL)
+; ----------------------------------------------------------------------
+; Without the flag a strip is what it always was: tabs laid out from the
+; left, and whatever passes the right end is cut off by the scissor and
+; cannot be reached. With it, and only while the tabs are wider than the
+; strip:
+;
+;   - the strip remembers, per ID, how far its tabs are moved left. The
+;     figure survives from frame to frame and is brought back into range
+;     whenever the tabs or the strip get narrower (a tab was closed);
+;   - a small arrow is drawn at each end that has tabs beyond it. A click
+;     on one brings the nearest tab that is cut off or hidden on that side
+;     fully into view;
+;   - the mouse wheel over the strip does the same, one tab a notch;
+;   - #NEON_TAB_REVEAL brings the ACTIVE tab fully into view. The host
+;     passes it on the frame the active tab changed - by any means: only
+;     the host knows. It is not done every frame, or the wheel and the
+;     arrows could never move the strip away from the active tab. A strip
+;     drawn for the first time reveals its active tab by itself.
+;
+; NOTHING IS DRAWN OR CLICKED UNDER AN ARROW. The tabs are clipped to the
+; room between the arrows, and so are their hot zones and hit tests: a tab
+; half under an arrow answers only where it shows.
+;
+; The widest tab is two arrow widths narrower than in a plain strip
+; (Neon_TabStripRoom), so that any tab fits between two arrows whole.
+; ----------------------------------------------------------------------
+#NEON_TAB_SCROLL = 1
+#NEON_TAB_REVEAL = 2
+
+Global NewMap Neon_TabScrollPos.f()     ; by Str(ID): pixels the tabs are moved left
+
+Procedure.f Neon_TabArrowWidth(h.f)
+  ProcedureReturn Neon_TabCloseSide(h) + Neon_S(4.0)
+EndProcedure
+
+; The width to hand Neon_TabMaxWidth for a strip w wide drawn with Flags.
+Procedure.f Neon_TabStripRoom(w.f, h.f, Flags.i)
+  If Flags & #NEON_TAB_SCROLL : ProcedureReturn w - 2.0 * Neon_TabArrowWidth(h) : EndIf
+  ProcedureReturn w
+EndProcedure
+
+; How far strip ID's tabs are moved left (0 when it never scrolled).
+Procedure.f Neon_TabScrollOffset(ID.i)
+  If FindMapElement(Neon_TabScrollPos(), Str(ID)) : ProcedureReturn Neon_TabScrollPos() : EndIf
+  ProcedureReturn 0.0
+EndProcedure
+
+; The scroll position at which tab i is wholly in view, changed as little
+; as possible from Scroll. px() and pw() are the tabs' positions and widths
+; along the row; Lead is the margin in front of the first tab.
+Procedure.f Neon_TabScrollToShow(i.i, Array px.f(1), Array pw.f(1), Scroll.f, MaxScroll.f, x.f, w.f, Lead.f, ArrowW.f)
+  Protected l.f = x + Lead + px(i) - Scroll
+  Protected r.f = l + pw(i)
+  Protected vl.f = x, vr.f = x + w
+  If Scroll > 0.0 : vl + ArrowW : EndIf
+  If Scroll < MaxScroll : vr - ArrowW : EndIf
+  If l < vl - 0.01
+    Scroll = Lead + px(i) - ArrowW                  ; its left edge at the left arrow
+  ElseIf r > vr + 0.01
+    Scroll = Lead + px(i) + pw(i) - (w - ArrowW)    ; its right edge at the right arrow
+  EndIf
+  If Scroll > MaxScroll : Scroll = MaxScroll : EndIf
+  If Scroll < 0.0 : Scroll = 0.0 : EndIf
+  ProcedureReturn Scroll
+EndProcedure
+
+Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClose.b = #False, *ClosedIndex.Integer = 0, Flags.i = 0)
   If *ClosedIndex : *ClosedIndex\i = -1 : EndIf
   Neon_Box(x, y, w, h, Neon_C_BgR, Neon_C_BgG, Neon_C_BgB)
   Neon_Box(x, y + h - 1, w, 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
@@ -1219,17 +1313,23 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
   If count = 0 : ProcedureReturn Active : EndIf
 
   Protected result.i = Active
-  Protected cx.f = x + Neon_S(4)
-  Protected i.i, lbl.s, tw.f, tabW.f, room.f
+  Protected lead.f = Neon_S(4)
+  Protected cx.f = x + lead
+  Protected i.i, n.i, lbl.s, tw.f, tabW.f, room.f
   Protected activeX.f = cx, activeW.f = 0.0
   Protected th.f = 17.0 : If *Neon_FontUI : th = *Neon_FontUI\LineHeight : EndIf
-  Protected maxW.f = Neon_TabMaxWidth(w)
+  Protected maxW.f = Neon_TabMaxWidth(Neon_TabStripRoom(w, h, Flags))
   Protected side.f = Neon_TabCloseSide(h)
   Protected sh.f = 15.0 : If *Neon_FontSmall : sh = *Neon_FontSmall\LineHeight : EndIf
 
-  Neon_ScissorSet(x, y, w, h)
+  ; Every tab's label, width and place along the row, before anything is
+  ; drawn: whether the row scrolls depends on all of them.
+  Protected Dim shown.s(count)
+  Protected Dim px.f(count)
+  Protected Dim pw.f(count)
+  Protected total.f = 0.0
   For i = 0 To count - 1
-    lbl = StringField(Labels, i + 1, "|")
+    lbl = Neon_TabUnescape(StringField(Labels, i + 1, "|"))
     tw = 60.0
     If *Neon_FontUI : tw = GetGLTextWidth(*Neon_FontUI, lbl) : EndIf
     tabW = tw + Neon_S(26.0)
@@ -1237,15 +1337,95 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
     If tabW > maxW : tabW = maxW : EndIf
     room = Neon_TabLabelRoom(tabW, h, WithClose)
     If tw > room : lbl = Neon_FitText(*Neon_FontUI, lbl, room) : EndIf
+    shown(i) = lbl : px(i) = total : pw(i) = tabW
+    total + tabW
+  Next
+
+  ; The scroll position, and what the pointer did to it this frame.
+  Protected scrolls.b = Bool(Flags & #NEON_TAB_SCROLL)
+  Protected overflow.b = #False, clickUsed.b = #False
+  Protected scroll.f = 0.0, maxScroll.f = 0.0
+  Protected arrowW.f = Neon_TabArrowWidth(h)
+  Protected viewL.f = x, viewR.f = x + w
+  Protected leftArrow.b = #False, rightArrow.b = #False
+  Protected key.s = Str(ID), stepBy.i = 0, firstDraw.b = #False
+  If scrolls
+    If FindMapElement(Neon_TabScrollPos(), key) : scroll = Neon_TabScrollPos() : Else : firstDraw = #True : EndIf
+    maxScroll = lead + total - w
+    If maxScroll > 0.0 : overflow = #True : Else : maxScroll = 0.0 : EndIf
+    If scroll > maxScroll : scroll = maxScroll : EndIf
+    If scroll < 0.0 : scroll = 0.0 : EndIf
+    If overflow
+      If (firstDraw Or (Flags & #NEON_TAB_REVEAL)) And Active >= 0 And Active < count
+        scroll = Neon_TabScrollToShow(Active, px(), pw(), scroll, maxScroll, x, w, lead, arrowW)
+      EndIf
+      ; the arrows as the frame before drew them take the click
+      If Neon_MouseClicked
+        If scroll > 0.0 And Neon_Hit(x, y, arrowW, h - 1)
+          stepBy = -1 : clickUsed = #True
+        ElseIf scroll < maxScroll And Neon_Hit(x + w - arrowW, y, arrowW, h - 1)
+          stepBy = 1 : clickUsed = #True
+        EndIf
+      EndIf
+      If Neon_Wheel <> 0 And Neon_Hit(x, y, w, h) And Not Neon_MenuBlocksMouse()
+        stepBy = -Neon_Wheel          ; wheel up = towards the first tab
+        If stepBy > 8 : stepBy = 8 : ElseIf stepBy < -8 : stepBy = -8 : EndIf
+        Neon_Wheel = 0
+      EndIf
+      While stepBy <> 0
+        viewL = x : viewR = x + w
+        If scroll > 0.0 : viewL + arrowW : EndIf
+        If scroll < maxScroll : viewR - arrowW : EndIf
+        If stepBy > 0
+          ; the first tab that ends beyond the view
+          For n = 0 To count - 1
+            If x + lead + px(n) + pw(n) - scroll > viewR + 0.5
+              scroll = Neon_TabScrollToShow(n, px(), pw(), scroll, maxScroll, x, w, lead, arrowW)
+              Break
+            EndIf
+          Next
+          stepBy - 1
+        Else
+          ; the last tab that starts before the view
+          For n = count - 1 To 0 Step -1
+            If x + lead + px(n) - scroll < viewL - 0.5
+              scroll = Neon_TabScrollToShow(n, px(), pw(), scroll, maxScroll, x, w, lead, arrowW)
+              Break
+            EndIf
+          Next
+          stepBy + 1
+        EndIf
+      Wend
+      leftArrow = Bool(scroll > 0.0)
+      rightArrow = Bool(scroll < maxScroll)
+      viewL = x : viewR = x + w
+      If leftArrow : viewL + arrowW : EndIf
+      If rightArrow : viewR - arrowW : EndIf
+    EndIf
+    Neon_TabScrollPos(key) = scroll
+  EndIf
+
+  Neon_ScissorSet(viewL, y, viewR - viewL, h)
+  For i = 0 To count - 1
+    lbl = shown(i) : tabW = pw(i)
+    cx = x + lead + px(i) - scroll
 
     Protected isActive.b = Bool(i = Active)
-    Protected over.b = Neon_Hit(cx, y, tabW, h - 1)
+    If isActive : activeX = cx : activeW = tabW : EndIf
+    ; The part of the tab that shows. A strip that does not scroll keeps
+    ; the whole tab, as it always did.
+    Protected zx.f = cx, zw.f = tabW
+    If overflow
+      If zx < viewL : zw - (viewL - zx) : zx = viewL : EndIf
+      If zx + zw > viewR : zw = viewR - zx : EndIf
+      If zw <= 0.0 : Continue : EndIf
+    EndIf
+    Protected over.b = Neon_Hit(zx, y, zw, h - 1)
     Protected tabKey.i = Neon_HotKey(5, ID, i)
-    Neon_HotZone(cx, y, tabW, h - 1, tabKey)
+    Neon_HotZone(zx, y, zw, h - 1, tabKey)
     Protected hover.f = Neon_Animate("tab-hover:" + Str(tabKey), Bool(over), 18.0, 0.0)
 
     If isActive
-      activeX = cx : activeW = tabW
       Neon_Box(cx, y, tabW, h - 1, Neon_C_PanelR, Neon_C_PanelG, Neon_C_PanelB)
       Neon_Box(cx, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
       Neon_Box(cx + tabW - 1, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
@@ -1260,24 +1440,57 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
     If WithClose
       Protected bx.f = cx + tabW - side - Neon_S(1.0)
       Protected by.f = y + (h - 1 - side) / 2.0
-      Protected onX.b = Neon_Hit(bx, by, side, side)
-      Neon_HotZone(bx, by, side, side, Neon_HotKey(6, ID, i))
-      If onX : Neon_Box(bx, by, side, side, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
-      Neon_TextCentre(*Neon_FontSmall, bx, side, by + (side - sh) / 2.0, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
-      If onX And Neon_MouseClicked
-        If *ClosedIndex : *ClosedIndex\i = i : EndIf
-        cx + tabW
-        Continue
+      ; the part of the close box that shows: (hx, by, hw, side)
+      Protected hx.f = bx, hw.f = side
+      If overflow
+        If hx < viewL : hw - (viewL - hx) : hx = viewL : EndIf
+        If hx + hw > viewR : hw = viewR - hx : EndIf
+      EndIf
+      If hw > 0.0
+        Protected onX.b = Neon_Hit(hx, by, hw, side)
+        Neon_HotZone(hx, by, hw, side, Neon_HotKey(6, ID, i))
+        If onX : Neon_Box(hx, by, hw, side, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
+        Neon_TextCentre(*Neon_FontSmall, bx, side, by + (side - sh) / 2.0, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+        If onX And Neon_MouseClicked And Not clickUsed
+          If *ClosedIndex : *ClosedIndex\i = i : EndIf
+          Continue
+        EndIf
       EndIf
     EndIf
 
-    If over And Neon_MouseClicked : result = i : EndIf
-    cx + tabW
+    If over And Neon_MouseClicked And Not clickUsed : result = i : EndIf
   Next
   If activeW > 0.0
-    Protected indicatorX.f = Neon_Animate("tab-x:" + Str(ID), activeX, 22.0, activeX)
+    ; The indicator slides along the ROW, not the screen: scrolling moves it
+    ; with its tab at once.
+    Protected indicatorX.f = Neon_Animate("tab-x:" + Str(ID), activeX + scroll, 22.0, activeX + scroll) - scroll
     Protected indicatorW.f = Neon_Animate("tab-w:" + Str(ID), activeW, 22.0, activeW)
     Neon_Box(indicatorX, y, indicatorW, 2, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB)
+  EndIf
+  If overflow
+    ; the arrows, over the strip's own background, outside the tabs' clip
+    Neon_ScissorSet(x, y, w, h)
+    Protected side2.i, ax.f, overArrow.b, arrowKey.i, arrowHover.f
+    For side2 = 0 To 1
+      If (side2 = 0 And leftArrow) Or (side2 = 1 And rightArrow)
+        ax = x : If side2 = 1 : ax = x + w - arrowW : EndIf
+        overArrow = Neon_Hit(ax, y, arrowW, h - 1)
+        arrowKey = Neon_HotKey(11, ID, side2)
+        Neon_HotZone(ax, y, arrowW, h - 1, arrowKey)
+        arrowHover = Neon_Animate("tab-arrow:" + Str(arrowKey), Bool(overArrow), 18.0, 0.0)
+        Neon_Box(ax, y, arrowW, h - 1, Neon_C_BgR, Neon_C_BgG, Neon_C_BgB)
+        If arrowHover > 0.0
+          Neon_Box(ax, y + 2, arrowW, h - 3, Neon_C_HeadR, Neon_C_HeadG, Neon_C_HeadB, arrowHover)
+        EndIf
+        If side2 = 0
+          Neon_Box(ax + arrowW - 1, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
+          Neon_TextCentre(*Neon_FontSmall, ax, arrowW, y + (h - 1 - sh) / 2.0, "<", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+        Else
+          Neon_Box(ax, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
+          Neon_TextCentre(*Neon_FontSmall, ax, arrowW, y + (h - 1 - sh) / 2.0, ">", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+        EndIf
+      EndIf
+    Next
   EndIf
   Neon_ScissorClear()
   ProcedureReturn result

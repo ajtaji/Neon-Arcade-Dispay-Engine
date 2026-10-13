@@ -11,7 +11,9 @@
 ;                   drop-downs that SCROLL when they are taller than the
 ;                   canvas (the caller that motivated this has a Board
 ;                   menu of five categories and ~50 boards)
-;   Neon_TabStrip   a row of tabs, optionally with close boxes
+;   Neon_TabStrip   a row of tabs, optionally with close boxes; a label
+;                   too long for its tab is shortened, never overdrawn
+;   Neon_FitText    a string shortened with an ellipsis to a given width
 ;   Neon_ScrollBarV / Neon_ScrollBarH
 ;   Neon_TextInput  a single-line text field with a caret and selection-
 ;                   free editing (backspace/delete/arrows/home/end)
@@ -313,6 +315,63 @@ EndProcedure
 
 Procedure Neon_TextCentre(*f.GLFont, x.f, w.f, y.f, t.s, r.f, g.f, b.f, a.f = 1.0)
   If *f : DrawGLText(*f, x + (w - GetGLTextWidth(*f, t)) / 2.0, y, t, r, g, b, a, #True, #True) : EndIf
+EndProcedure
+
+; A string unit that belongs to the character before it: the second half
+; of a surrogate pair, a combining mark, a variation selector, a joiner.
+; A text is never cut in front of one.
+Procedure.b Neon_IsJoinedUnit(c.i)
+  If c >= $DC00 And c <= $DFFF : ProcedureReturn #True : EndIf
+  If c >= $0300 And c <= $036F : ProcedureReturn #True : EndIf
+  If c >= $FE00 And c <= $FE0F : ProcedureReturn #True : EndIf
+  ProcedureReturn Bool(c = $200D)
+EndProcedure
+
+; Text that is no wider than MaxW when drawn with *f. A text that fits
+; comes back untouched. One that does not is cut and ended with an
+; ellipsis, keeping as much as fits; "" when not even the ellipsis fits.
+;
+; A widget with a fixed amount of room needs this, because a scissor only
+; hides the overflow - and hides nothing at all when what the text runs
+; under is inside the same clip, as a tab's close box is.
+;
+; MEASURED WITH GetGLTextWidth, the same sum of advances DrawGLText walks,
+; so what fits here fits on screen. CUT BETWEEN CHARACTERS, never between
+; string units: half a surrogate pair is two unrenderable boxes, and an
+; accent without its letter lands on the ellipsis. Spaces left hanging in
+; front of the ellipsis are dropped.
+;
+; The ellipsis is the one character where the face has it - the glyph
+; cache says whether it rasterised - and three full stops where not, so a
+; missing glyph is never what marks the cut.
+Procedure.s Neon_FitText(*f.GLFont, Text.s, MaxW.f)
+  If Not *f Or Text = "" : ProcedureReturn Text : EndIf
+  If GetGLTextWidth(*f, Text) <= MaxW : ProcedureReturn Text : EndIf
+  Protected tail.s = Chr($2026)
+  If GLFontGlyphState(*f, $2026) <> #GLF_RESIDENT : tail = "..." : EndIf
+  If GetGLTextWidth(*f, tail) > MaxW : ProcedureReturn "" : EndIf
+
+  ; The longest prefix that still leaves room for the ellipsis. Width only
+  ; grows with length, so halving finds it in a handful of measurements.
+  Protected lo.i = 0, hi.i = Len(Text) - 1, half.i, cut.i
+  Protected *u.Character
+  Protected best.s = tail, cand.s
+  While lo < hi
+    half = (lo + hi + 1) >> 1
+    cut = half
+    *u = @Text + cut * SizeOf(Character)
+    While cut > 0 And Neon_IsJoinedUnit(*u\c)
+      cut - 1
+      *u - SizeOf(Character)
+    Wend
+    cand = RTrim(Left(Text, cut)) + tail
+    If GetGLTextWidth(*f, cand) <= MaxW
+      lo = half : best = cand
+    Else
+      hi = half - 1
+    EndIf
+  Wend
+  ProcedureReturn best
 EndProcedure
 
 Procedure.b Neon_Hit(x.f, y.f, w.f, h.f)
@@ -1091,7 +1150,64 @@ EndProcedure
 ; receives the index whose close box was clicked (-1 when none) - the
 ; caller decides what closing means, because only it knows whether the
 ; document is dirty.
+;
+; A TAB IS AS WIDE AS ITS LABEL, UP TO A LIMIT, AND THE LABEL NEVER LEAVES
+; IT. The limit used to be a flat 300 units with the label drawn in full
+; regardless, so a long file name ran over the close box and on across
+; the next tab - the strip's scissor hides only what passes the end of
+; the whole strip. Three rules replace that:
+;
+;   - THE LIMIT FOLLOWS THE TEXT. 22 line heights of the UI face - a name
+;     of about 45 ordinary characters - and never less than the old 300
+;     units, so a host that scales its face up does not get tabs that
+;     hold fewer characters. It is also never wider than the strip: a tab
+;     whose close box lies beyond the strip's end cannot be closed.
+;   - A LABEL TOO LONG FOR THE LIMIT IS SHORTENED with an ellipsis
+;     (Neon_FitText) to the room between the tab's left margin and its
+;     close box, or its right margin when it has none.
+;   - THE CLOSE BOX IS SIZED FROM THE SAME SCALE AS THE TEXT, and one
+;     rectangle is the box that lights up, the hot zone and the hit test.
+;     It was 18 fixed pixels around a mark drawn in a face that scales.
+;
+; The three helpers are public so a host can ask the same questions the
+; strip asks - for instance to shorten a name itself and keep a suffix
+; that must stay visible.
 ; ----------------------------------------------------------------------
+#NEON_TAB_PADL   = 12.0     ; left margin, tab edge to label
+#NEON_TAB_PADR   = 8.0      ; label to the right edge of a tab with no close box
+#NEON_TAB_GAPX   = 6.0      ; label to close box
+#NEON_TAB_LINES  = 22.0     ; the widest tab, in line heights of the UI face
+
+; The side of a tab's square close box in a strip h high.
+Procedure.f Neon_TabCloseSide(h.f)
+  Protected side.f = Neon_S(18.0)
+  If *Neon_FontSmall And *Neon_FontSmall\LineHeight + Neon_S(2.0) > side
+    side = *Neon_FontSmall\LineHeight + Neon_S(2.0)
+  EndIf
+  If side > h - 1 : side = h - 1 : EndIf
+  If side < 0.0 : side = 0.0 : EndIf
+  ProcedureReturn side
+EndProcedure
+
+; The widest a tab may be in a strip w wide.
+Procedure.f Neon_TabMaxWidth(w.f)
+  Protected maxW.f = Neon_S(300.0)
+  If *Neon_FontUI And *Neon_FontUI\LineHeight * #NEON_TAB_LINES > maxW
+    maxW = *Neon_FontUI\LineHeight * #NEON_TAB_LINES
+  EndIf
+  If maxW > w - Neon_S(8.0) : maxW = w - Neon_S(8.0) : EndIf
+  If maxW < 0.0 : maxW = 0.0 : EndIf
+  ProcedureReturn maxW
+EndProcedure
+
+; The room for the label in a tab TabW wide.
+Procedure.f Neon_TabLabelRoom(TabW.f, h.f, WithClose.b)
+  If WithClose
+    ProcedureReturn TabW - Neon_S(#NEON_TAB_PADL) - Neon_S(#NEON_TAB_GAPX) - Neon_TabCloseSide(h) - Neon_S(1.0)
+  EndIf
+  ProcedureReturn TabW - Neon_S(#NEON_TAB_PADL) - Neon_S(#NEON_TAB_PADR)
+EndProcedure
+
 Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClose.b = #False, *ClosedIndex.Integer = 0)
   If *ClosedIndex : *ClosedIndex\i = -1 : EndIf
   Neon_Box(x, y, w, h, Neon_C_BgR, Neon_C_BgG, Neon_C_BgB)
@@ -1103,9 +1219,12 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
 
   Protected result.i = Active
   Protected cx.f = x + Neon_S(4)
-  Protected i.i, lbl.s, tw.f, tabW.f
+  Protected i.i, lbl.s, tw.f, tabW.f, room.f
   Protected activeX.f = cx, activeW.f = 0.0
   Protected th.f = 17.0 : If *Neon_FontUI : th = *Neon_FontUI\LineHeight : EndIf
+  Protected maxW.f = Neon_TabMaxWidth(w)
+  Protected side.f = Neon_TabCloseSide(h)
+  Protected sh.f = 15.0 : If *Neon_FontSmall : sh = *Neon_FontSmall\LineHeight : EndIf
 
   Neon_ScissorSet(x, y, w, h)
   For i = 0 To count - 1
@@ -1113,8 +1232,10 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
     tw = 60.0
     If *Neon_FontUI : tw = GetGLTextWidth(*Neon_FontUI, lbl) : EndIf
     tabW = tw + Neon_S(26.0)
-    If WithClose : tabW + Neon_S(18.0) : EndIf
-    If tabW > Neon_S(300.0) : tabW = Neon_S(300.0) : EndIf
+    If WithClose : tabW + side : EndIf
+    If tabW > maxW : tabW = maxW : EndIf
+    room = Neon_TabLabelRoom(tabW, h, WithClose)
+    If tw > room : lbl = Neon_FitText(*Neon_FontUI, lbl, room) : EndIf
 
     Protected isActive.b = Bool(i = Active)
     Protected over.b = Neon_Hit(cx, y, tabW, h - 1)
@@ -1136,12 +1257,12 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
     EndIf
 
     If WithClose
-      Protected bx.f = cx + tabW - 17.0
-      Protected by.f = y + (h - 14) / 2.0
-      Protected onX.b = Neon_Hit(bx - 2, by - 2, 18, 18)
-      Neon_HotZone(bx - 2, by - 2, 18, 18, Neon_HotKey(6, ID, i))
-      If onX : Neon_Box(bx - 2, by - 2, 18, 18, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
-      Neon_Text(*Neon_FontSmall, bx, by - 1, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+      Protected bx.f = cx + tabW - side - Neon_S(1.0)
+      Protected by.f = y + (h - 1 - side) / 2.0
+      Protected onX.b = Neon_Hit(bx, by, side, side)
+      Neon_HotZone(bx, by, side, side, Neon_HotKey(6, ID, i))
+      If onX : Neon_Box(bx, by, side, side, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
+      Neon_TextCentre(*Neon_FontSmall, bx, side, by + (side - sh) / 2.0, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
       If onX And Neon_MouseClicked
         If *ClosedIndex : *ClosedIndex\i = i : EndIf
         cx + tabW
@@ -1344,9 +1465,17 @@ Procedure.b Neon_ListItem(Label.s, Depth.i = 0, Selected.b = #False, Group.b = #
     tr = Neon_C_AccR : tg = Neon_C_AccG : tb = Neon_C_AccB
   EndIf
   Protected th.f = 15.0 : If *f : th = *f\LineHeight : EndIf
-  Neon_Text(*f, Neon_ListX + Neon_S(8) + Depth * Neon_S(14), rowY + (Neon_ListRowH - th) / 2.0, Label, tr, tg, tb)
+  ; The label is what the row IS, so it takes the room it needs, up to the
+  ; whole row. The detail gets what is left, shortened, and gives way
+  ; entirely before it would run under the label - right-aligned and drawn
+  ; in full, a long detail used to be laid over the label it describes.
+  Protected lx.f = Neon_ListX + Neon_S(8) + Depth * Neon_S(14)
+  Protected rx.f = Neon_ListX + Neon_ListW - Neon_S(16)
+  Label = Neon_FitText(*f, Label, rx - lx)
+  Neon_Text(*f, lx, rowY + (Neon_ListRowH - th) / 2.0, Label, tr, tg, tb)
   If Detail <> ""
-    Neon_TextRight(*f, Neon_ListX + Neon_ListW - Neon_S(16), rowY + (Neon_ListRowH - th) / 2.0, Detail, Neon_C_FaintR, Neon_C_FaintG, Neon_C_FaintB)
+    Detail = Neon_FitText(*f, Detail, rx - lx - GetGLTextWidth(*f, Label) - Neon_S(12))
+    Neon_TextRight(*f, rx, rowY + (Neon_ListRowH - th) / 2.0, Detail, Neon_C_FaintR, Neon_C_FaintG, Neon_C_FaintB)
   EndIf
 
   ProcedureReturn Bool(over And Neon_MouseClicked)

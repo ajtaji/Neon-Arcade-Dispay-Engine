@@ -1,4 +1,137 @@
 ; ======================================================================
+; HOSTING THIS ENGINE IN AN APPLICATION - READ THIS FIRST
+; ======================================================================
+; Everything below has been rediscovered the hard way more than once. Each
+; item is a thing that produces a WRONG-LOOKING UI rather than an error, so
+; the search always starts in the wrong place. The HiDPI companion to this
+; list is at the top of GlUtilities.pbi ("THE FIVE THINGS").
+;
+; ----------------------------------------------------------------------
+; 1. BUILD LINES
+; ----------------------------------------------------------------------
+;   Windows (x64, from PowerShell):
+;     pbcompiler App.pb /EXE App.exe /THREAD /DPIAWARE ^
+;        /CONSTANT GL_ENGINE_DIR$=C:/path/to/engine/
+;
+;   Linux (the flags are NOT the Windows ones):
+;     pbcompiler App.pb -o App -t \
+;        --constant GL_ENGINE_DIR$=/path/to/engine/
+;
+;   /EXE -> -o, /CONSOLE -> -cl, /THREAD -> -t. The trailing slash on
+;   GL_ENGINE_DIR$ matters. There is NO -dpiaware on Linux and none is
+;   needed: GTK reports the backing scale at run time instead.
+;
+;   WITHOUT /DPIAWARE on Windows the OS scales the whole window by the
+;   desktop factor, so a 1180-wide layout becomes 1475 at 125% and runs off
+;   the monitor. It is a build flag, not a code change - do not reach for
+;   SetProcessDPIAware().
+;
+; ----------------------------------------------------------------------
+; 2. LET OpenGLWindow() MAKE THE WINDOW
+; ----------------------------------------------------------------------
+;     Gl = OpenGLWindow("Title", W, H, Flags)   ; -> Util_MainWindowID
+;
+;   It opens the window AND the GL gadget AND calls LoadModernGL() AND
+;   compiles Util_ShapeShader / Util_TextShader. Hand-rolling
+;   OpenWindow + OpenGLGadget skips the shaders, and then EVERY Neon_ call
+;   draws nothing: you get a window showing only its glClear colour, with
+;   no error anywhere. LoadModernGL() on its own only resolves entry
+;   points - it does not build the shaders.
+;
+; ----------------------------------------------------------------------
+; 3. GIVE THE CHROME ITS FOUR FONTS
+; ----------------------------------------------------------------------
+;     *Neon_FontUI    = Neon_CreateFontPx("Segoe UI", Round(14 * s))
+;     *Neon_FontSmall = Neon_CreateFontPx("Segoe UI", Round(12 * s))
+;     *Neon_FontBold  = Neon_CreateFontPx("Segoe UI", Round(15 * s), #PB_Font_Bold)
+;     *Neon_FontMono  = Neon_CreateFontPx("Consolas", Round(13 * s))
+;
+;   Panels, buttons, tabs and menus all draw their labels through these
+;   four globals. Leave them unset and every control renders its FRAME
+;   with NO TEXT - which reads as a font bug, not a missing assignment.
+;
+;   Then, for a 1:1 application frontend, snap each face:
+;     GLFontSetSnapToPixel(*Neon_FontUI, #True)   ; and the others
+;   A proportional face keeps fractional x origins otherwise, so the atlas
+;   is sampled BETWEEN two physical pixels and the whole UI looks softly
+;   out of focus. Rebuild the faces when the window moves to a display
+;   with a different scale.
+;
+; ----------------------------------------------------------------------
+; 4. THE THREE SIZE GLOBALS ARE IN THREE DIFFERENT UNITS
+; ----------------------------------------------------------------------
+;   Util_BaseWidth/Height   the CANVAS - the units your layout is written
+;                           in. A game sets this to its authored
+;                           resolution and gets letterboxing for free. An
+;                           application frontend that wants 1:1 sets it to
+;                           the PHYSICAL client size.
+;   GL_ViewportX/Y/W/H      the drawable, in PHYSICAL pixels.
+;   Util_WinWidth/Height    the window in LOGICAL (toolkit) units - the
+;                           same units OpenWindow() took.
+;
+;   THE TRAP: Neon_PhysWinHeight() is DesktopScaledY(Util_WinHeight), i.e.
+;   it converts logical -> physical ITSELF, and Neon_ScissorSet() uses it
+;   to flip y to a bottom-left origin. Store physical pixels in Util_Win*
+;   and that conversion happens TWICE, so every scissor rectangle lands
+;   off-screen. Nothing errors; anything drawn inside a scissor just
+;   vanishes. A tab strip keeps its background (drawn before the scissor)
+;   and silently loses its tabs (drawn after it); lists come up empty.
+;
+;   For a 1:1 application frontend, per frame:
+;     cw = GadgetWidth(Gl) : ch = GadgetHeight(Gl)          ; logical
+;     GetClientRect_(WindowID(Win), @r)                      ; physical
+;     pw = r\right - r\left : ph = r\bottom - r\top          ; (Linux: cw * Linux_DPIScale)
+;     Util_BaseWidth = pw : Util_BaseHeight = ph
+;     Util_WinWidth  = cw : Util_WinHeight  = ch
+;     GL_ViewportX = 0 : GL_ViewportY = 0
+;     GL_ViewportW = pw : GL_ViewportH = ph
+;
+; ----------------------------------------------------------------------
+; 5. THE FRAME
+; ----------------------------------------------------------------------
+;     SetGadgetAttribute(Gl, #PB_OpenGL_SetContext, #True)
+;     ... set the size globals as in 4 ...
+;     Neon_ChromeBeginFrame(mouseX, mouseY, down, wheel, keyCode, keyChar, dt)
+;     glBindFramebuffer(#GL_FRAMEBUFFER, 0)
+;     glDisable_(#GL_SCISSOR_TEST)
+;     glViewport_(0, 0, pw, ph)
+;     glClearColor_(...) : glClear_(#GL_COLOR_BUFFER_BIT)
+;     ... draw ...
+;     Neon_ChromeEndFrame()
+;     SetGadgetAttribute(Gl, #PB_OpenGL_FlipBuffers, #True)
+;
+;   The pointer goes in in the SAME units as GL_Viewport*, because
+;   MapPhysicalToVirtual() divides by GL_ViewportW / Util_BaseWidth. With
+;   a 1:1 canvas that is physical pixels: WindowMouseX(Win) * (pw / cw).
+;
+; ----------------------------------------------------------------------
+; 6. SCALE EVERY AUTHORED NUMBER WITH Neon_S()
+; ----------------------------------------------------------------------
+;   Set Neon_UIScale once to the display scale, then write Neon_S(12), not
+;   12. On a 1:1 canvas a bare constant is 12 PHYSICAL pixels at every
+;   scale - half the intended size at 200%. GlIdeShell.pbi calls Neon_S
+;   107 times for exactly this reason.
+;
+; ----------------------------------------------------------------------
+; 7. SMALL THINGS THAT COST AN HOUR
+; ----------------------------------------------------------------------
+;   - Neon_TabStrip splits its labels on "|" - not a tab, not a comma.
+;     Use Neon_TabEscape() for a label that contains a bar.
+;   - Never open a window larger than the desktop; it cannot be dragged
+;     back. Cap against SPI_GETWORKAREA, converting with
+;     DesktopResolutionX/Y because the work area is in PHYSICAL pixels
+;     while OpenWindow takes LOGICAL ones. Then clamp the real frame with
+;     GetWindowRect_/SetWindowPos_, because the size OpenWindow took was
+;     the CLIENT area and the title bar is extra.
+;   - On Linux, before any engine include:
+;       SetEnvironmentVariable("GDK_BACKEND", "x11")
+;       ImportC "" : gtk_widget_get_scale_factor(*widget) : EndImport
+;     and after the gadget exists:
+;       Linux_DPIScale = gtk_widget_get_scale_factor(GadgetID(Gl))
+;     GL_HandleResize() and MapPhysicalToVirtual() both read it.
+; ======================================================================
+
+; ======================================================================
 ; GlUIChrome.pbi - the Neon widget kit's APPLICATION CHROME half
 ; ======================================================================
 ;

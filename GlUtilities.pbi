@@ -91,6 +91,17 @@
 ; (GlUI.pbi) before hit-testing it. It undoes the letterbox offset, the
 ; scale, and - when UI_UseCRT is set - the barrel warp, so the click lands
 ; where the user seems to be pointing rather than where the pixel is.
+;
+; 6. Util_BaseWidth/Height, Util_WinWidth/Height AND GL_Viewport* ARE THREE
+;    DIFFERENT UNITS. Util_Base* is the CANVAS (whatever units the layout is
+;    written in), GL_Viewport* is the drawable in PHYSICAL pixels, and
+;    Util_Win* is the window in LOGICAL/toolkit units - the units OpenWindow
+;    took. Neon_PhysWinHeight() does DesktopScaledY(Util_WinHeight), so it
+;    converts logical -> physical itself; store physical pixels in Util_Win*
+;    and Neon_ScissorSet() scales twice and puts every scissor rectangle
+;    off-screen. Nothing errors - anything drawn inside a scissor simply
+;    disappears, so a tab strip keeps its background and loses its tabs.
+;    The full application-hosting checklist is at the top of GlUIChrome.pbi.
 ; ============================================================================
 
 XIncludeFile "opengl_constants.pbi"

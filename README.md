@@ -55,3 +55,42 @@ DrawRetroCRT() ; or DrawPassthrough()
 Set `Util_BaseWidth` and `Util_BaseHeight` to the authored canvas size. Call `GL_HandleResize()` after creating the window and whenever PureBasic reports a window-size event. Pass mouse coordinates through `MapPhysicalToVirtual()` before UI hit testing.
 
 For DPI-aware builds, enable PureBasic's **DPI aware** compiler option.
+
+## Building an application against the engine
+
+The engine's location is passed in, so no file needs editing per machine
+(the trailing slash matters):
+
+**Windows** (x64, from PowerShell)
+
+```
+pbcompiler App.pb /EXE App.exe /THREAD /DPIAWARE ^
+   /CONSTANT GL_ENGINE_DIR$=C:/path/to/engine/
+```
+
+**Linux** — the flags differ: `/EXE` → `-o`, `/CONSOLE` → `-cl`, `/THREAD` → `-t`
+
+```
+pbcompiler App.pb -o App -t \
+   --constant GL_ENGINE_DIR$=/path/to/engine/
+```
+
+`/DPIAWARE` is Windows-only and is not optional there: without it the OS
+scales the whole window by the desktop factor, so a 1180-wide layout becomes
+1475 at 125% and runs off the monitor. Linux has no equivalent switch and
+needs none — GTK reports the backing scale at run time into `Linux_DPIScale`.
+
+### Before you write any drawing code
+
+Two comment blocks carry the things that otherwise get rediscovered:
+
+- **`GlUtilities.pbi`, "HiDPI: THE FIVE THINGS"** — DPI, window sizing, the
+  authored canvas, font sizing, and the three size globals and their units.
+- **`GlUIChrome.pbi`, "HOSTING THIS ENGINE IN AN APPLICATION"** — the host
+  checklist: let `OpenGLWindow()` make the window (it compiles the shaders
+  every `Neon_` call needs), assign the chrome's four font globals, the
+  per-frame pipeline, pixel snapping for sharp text, and `Neon_S()`.
+
+Every item in both lists produces a *wrong-looking UI* rather than an error:
+a blank window, controls with frames but no labels, soft text, or widgets
+that vanish inside a scissor. None of them raise anything.

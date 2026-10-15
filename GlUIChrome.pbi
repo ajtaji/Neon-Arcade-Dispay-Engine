@@ -129,6 +129,38 @@
 ;     and after the gadget exists:
 ;       Linux_DPIScale = gtk_widget_get_scale_factor(GadgetID(Gl))
 ;     GL_HandleResize() and MapPhysicalToVirtual() both read it.
+;
+; ----------------------------------------------------------------------
+; 8. WHERE THE DISPLAY SCALE COMES FROM
+; ----------------------------------------------------------------------
+;   NOT DesktopResolutionX(). It returns 1.0 under DPI awareness unless the
+;   executable carries a legacy manifest, so anything derived from it - the
+;   startup window size, the font sizes - silently comes out at 100% on a
+;   scaled display, and the symptom is a layout that is simply too small
+;   rather than anything that errors.
+;
+;   Ask Windows, per window, loaded dynamically (Win10 1607+):
+;     lib = OpenLibrary(#PB_Any, "user32.dll")
+;     GetDpiForWindow_ = GetFunction(lib, "GetDpiForWindow")
+;     dpi = CallFunctionFast(GetDpiForWindow_, WindowID(Window))
+;     scale = dpi / 96.0     ; fall back: GetDpiForSystem, DesktopResolutionX
+;
+;   Per WINDOW matters - a second monitor can be at a different scale than
+;   the first, and the faces must be rebuilt when the window moves.
+;
+;   And set per-monitor v2 BEFORE any window exists:
+;     CallFunctionFast(SetProcessDpiAwarenessContext_, -4)
+;   /DPIAWARE alone is only SYSTEM-DPI aware: Windows then bitmap-stretches
+;   the whole window once it crosses onto a monitor with a different scale,
+;   which is the soft text the 1:1 canvas and GLFontSetSnapToPixel prevent.
+;
+;   MEASURING ANY OF THIS: the measuring process must itself be DPI-aware.
+;   A DPI-unaware harness gets virtualised numbers from GetClientRect,
+;   SetCursorPos and screen capture alike - a 1475px client reads as 1180px -
+;   so every comparison against physical-pixel predictions is wrong by the
+;   scale factor, consistently enough to look like corroboration. Call
+;   SetProcessDPIAware() first, and always take a baseline at a known scale
+;   before concluding that scaling is broken.
 ; ======================================================================
 
 ; ======================================================================

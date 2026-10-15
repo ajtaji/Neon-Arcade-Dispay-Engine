@@ -104,6 +104,16 @@
 ;   MapPhysicalToVirtual() divides by GL_ViewportW / Util_BaseWidth. With
 ;   a 1:1 canvas that is physical pixels: WindowMouseX(Win) * (pw / cw).
 ;
+;
+;   AND DO NOT "CONVERT" IT. Under DPI awareness WindowMouseX/Y already
+;   return PHYSICAL pixels. Multiplying them by a GadgetWidth/GetClientRect
+;   ratio "to make them physical" scales a physical number twice, and every
+;   click then lands at the scale factor away from where the user pressed -
+;   invisible at 100%, where the factor is 1, and unusable at 125%. That
+;   ratio looks like a sensible conversion because GadgetWidth() IS logical
+;   while GetClientRect is physical; the two simply disagree about units and
+;   the pointer follows neither.
+;
 ; ----------------------------------------------------------------------
 ; 6. SCALE EVERY AUTHORED NUMBER WITH Neon_S()
 ; ----------------------------------------------------------------------

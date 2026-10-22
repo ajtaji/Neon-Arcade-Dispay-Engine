@@ -46,6 +46,9 @@
 ;     *Neon_FontBold  = Neon_CreateFontPx("Segoe UI", Round(15 * s), #PB_Font_Bold)
 ;     *Neon_FontMono  = Neon_CreateFontPx("Consolas", Round(13 * s))
 ;
+;   A fifth is optional: *Neon_FontItalic, the face of a tab styled "i"
+;   (Neon_TabStrip's Styles); without it such a tab uses *Neon_FontUI.
+;
 ;   Panels, buttons, tabs and menus all draw their labels through these
 ;   four globals. Leave them unset and every control renders its FRAME
 ;   with NO TEXT - which reads as a font bug, not a missing assignment.
@@ -187,7 +190,9 @@
 ;                   canvas (the caller that motivated this has a Board
 ;                   menu of five categories and ~50 boards)
 ;   Neon_TabStrip   a row of tabs, optionally with close boxes; a label
-;                   too long for its tab is shortened, never overdrawn
+;                   too long for its tab is shortened, never overdrawn;
+;                   a tab may be italic or pinned, and Neon_TabAt says
+;                   which tab is under a point (a right or double click)
 ;   Neon_FitText    a string shortened with an ellipsis to a given width
 ;   Neon_ScrollBarV / Neon_ScrollBarH
 ;   Neon_TextInput  a single-line text field with a caret and selection-
@@ -251,6 +256,7 @@ Global *Neon_FontUI.GLFont      ; proportional, chrome
 Global *Neon_FontSmall.GLFont   ; proportional, small
 Global *Neon_FontMono.GLFont    ; monospaced, content
 Global *Neon_FontBold.GLFont    ; proportional, headings
+Global *Neon_FontItalic.GLFont  ; proportional, slanted: a tab styled "i". Optional - the UI face when 0
 
 ; ----------------------------------------------------------------------
 ; FONT SIZING - ASK, MEASURE, CORRECT
@@ -1443,6 +1449,49 @@ EndProcedure
 
 Global NewMap Neon_TabScrollPos.f()     ; by Str(ID): pixels the tabs are moved left
 
+; ----------------------------------------------------------------------
+; A TAB'S STYLE, AND WHICH TAB IS UNDER A POINT
+; ----------------------------------------------------------------------
+; Styles, when given, holds one character per tab, in order:
+;   "i"  the label is drawn in *Neon_FontItalic (a host's "preview" tab);
+;   "p"  PINNED: where the close box would be, a pin is drawn instead. A
+;        click on it reports the tab in *PinIndex, never in *ClosedIndex,
+;        so a pinned tab cannot be closed by its corner by mistake;
+;   anything else (or a short string) - an ordinary tab.
+; A pinned tab keeps the close box's room, so it is as wide as it would be
+; unpinned and the row does not shift when a tab is pinned.
+;
+; Neon_TabAt answers which tab of strip ID is under a point, from the
+; frame that drew it last - for what the strip itself does not report: a
+; right click, a double click. -1 for a point on no tab, under an arrow, or
+; for a strip never drawn. It reads the layout; it draws and changes nothing.
+; ----------------------------------------------------------------------
+Structure Neon_TabRowLayout
+  Y.f
+  H.f
+  ViewL.f
+  ViewR.f
+  Count.i
+  Array X.f(0)        ; each tab's shown part: left edge and width (0 = hidden)
+  Array W.f(0)
+EndStructure
+Global NewMap Neon_TabLayout.Neon_TabRowLayout()
+
+Procedure.i Neon_TabAt(ID.i, PX.f, PY.f)
+  If FindMapElement(Neon_TabLayout(), Str(ID)) = 0 : ProcedureReturn -1 : EndIf
+  Protected *row.Neon_TabRowLayout = @Neon_TabLayout()
+  If PY < *row\Y Or PY >= *row\Y + *row\H - 1 Or PX < *row\ViewL Or PX >= *row\ViewR
+    ProcedureReturn -1
+  EndIf
+  Protected i.i
+  For i = 0 To *row\Count - 1
+    If *row\W(i) > 0.0 And PX >= *row\X(i) And PX < *row\X(i) + *row\W(i)
+      ProcedureReturn i
+    EndIf
+  Next
+  ProcedureReturn -1
+EndProcedure
+
 Procedure.f Neon_TabArrowWidth(h.f)
   ProcedureReturn Neon_TabCloseSide(h) + Neon_S(4.0)
 EndProcedure
@@ -1478,13 +1527,20 @@ Procedure.f Neon_TabScrollToShow(i.i, Array px.f(1), Array pw.f(1), Scroll.f, Ma
   ProcedureReturn Scroll
 EndProcedure
 
-Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClose.b = #False, *ClosedIndex.Integer = 0, Flags.i = 0)
+Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClose.b = #False, *ClosedIndex.Integer = 0, Flags.i = 0,
+                          Styles.s = "", *PinIndex.Integer = 0)
   If *ClosedIndex : *ClosedIndex\i = -1 : EndIf
+  If *PinIndex : *PinIndex\i = -1 : EndIf
   Neon_Box(x, y, w, h, Neon_C_BgR, Neon_C_BgG, Neon_C_BgB)
   Neon_Box(x, y + h - 1, w, 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
 
   Protected count.i = 0
   If Labels <> "" : count = CountString(Labels, "|") + 1 : EndIf
+  ; AddMapElement REPLACES the row's record with a new, zeroed one, so a tab
+  ; this frame does not draw (scrolled out of view) has no place in it.
+  Protected *layout.Neon_TabRowLayout = AddMapElement(Neon_TabLayout(), Str(ID))
+  *layout\Y = y : *layout\H = h : *layout\ViewL = x : *layout\ViewR = x + w : *layout\Count = count
+  ReDim *layout\X(count) : ReDim *layout\W(count)
   If count = 0 : ProcedureReturn Active : EndIf
 
   Protected result.i = Active
@@ -1502,16 +1558,19 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
   Protected Dim shown.s(count)
   Protected Dim px.f(count)
   Protected Dim pw.f(count)
+  Protected Dim face.i(count)
   Protected total.f = 0.0
   For i = 0 To count - 1
     lbl = Neon_TabUnescape(StringField(Labels, i + 1, "|"))
+    face(i) = *Neon_FontUI
+    If Mid(Styles, i + 1, 1) = "i" And *Neon_FontItalic : face(i) = *Neon_FontItalic : EndIf
     tw = 60.0
-    If *Neon_FontUI : tw = GetGLTextWidth(*Neon_FontUI, lbl) : EndIf
+    If face(i) : tw = GetGLTextWidth(face(i), lbl) : EndIf
     tabW = tw + Neon_S(26.0)
     If WithClose : tabW + side : EndIf
     If tabW > maxW : tabW = maxW : EndIf
     room = Neon_TabLabelRoom(tabW, h, WithClose)
-    If tw > room : lbl = Neon_FitText(*Neon_FontUI, lbl, room) : EndIf
+    If tw > room : lbl = Neon_FitText(face(i), lbl, room) : EndIf
     shown(i) = lbl : px(i) = total : pw(i) = tabW
     total + tabW
   Next
@@ -1580,6 +1639,7 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
     Neon_TabScrollPos(key) = scroll
   EndIf
 
+  *layout\ViewL = viewL : *layout\ViewR = viewR
   Neon_ScissorSet(viewL, y, viewR - viewL, h)
   For i = 0 To count - 1
     lbl = shown(i) : tabW = pw(i)
@@ -1595,6 +1655,7 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
       If zx + zw > viewR : zw = viewR - zx : EndIf
       If zw <= 0.0 : Continue : EndIf
     EndIf
+    *layout\X(i) = zx : *layout\W(i) = zw
     Protected over.b = Neon_Hit(zx, y, zw, h - 1)
     Protected tabKey.i = Neon_HotKey(5, ID, i)
     Neon_HotZone(zx, y, zw, h - 1, tabKey)
@@ -1604,12 +1665,12 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
       Neon_Box(cx, y, tabW, h - 1, Neon_C_PanelR, Neon_C_PanelG, Neon_C_PanelB)
       Neon_Box(cx, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
       Neon_Box(cx + tabW - 1, y, 1, h - 1, Neon_C_LineR, Neon_C_LineG, Neon_C_LineB)
-      Neon_Text(*Neon_FontUI, cx + Neon_S(12), y + (h - th) / 2.0, lbl, Neon_C_TextR, Neon_C_TextG, Neon_C_TextB)
+      Neon_Text(face(i), cx + Neon_S(12), y + (h - th) / 2.0, lbl, Neon_C_TextR, Neon_C_TextG, Neon_C_TextB)
     Else
       If hover > 0.0
         Neon_Box(cx, y + 2, tabW, h - 3, Neon_C_HeadR, Neon_C_HeadG, Neon_C_HeadB, hover)
       EndIf
-      Neon_Text(*Neon_FontUI, cx + Neon_S(12), y + (h - th) / 2.0, lbl, Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+      Neon_Text(face(i), cx + Neon_S(12), y + (h - th) / 2.0, lbl, Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
     EndIf
 
     If WithClose
@@ -1624,11 +1685,31 @@ Procedure.i Neon_TabStrip(ID.i, x.f, y.f, w.f, h.f, Labels.s, Active.i, WithClos
       If hw > 0.0
         Protected onX.b = Neon_Hit(hx, by, hw, side)
         Neon_HotZone(hx, by, hw, side, Neon_HotKey(6, ID, i))
-        If onX : Neon_Box(hx, by, hw, side, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
-        Neon_TextCentre(*Neon_FontSmall, bx, side, by + (side - sh) / 2.0, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
-        If onX And Neon_MouseClicked And Not clickUsed
-          If *ClosedIndex : *ClosedIndex\i = i : EndIf
-          Continue
+        If Mid(Styles, i + 1, 1) = "p"
+          ; A pin, in boxes so that no face needs the glyph: a head, its
+          ; collar and the point, on a nine-by-nine grid of the box.
+          Protected pu.f = side / 9.0
+          Protected pr.f = Neon_C_DimR, pg.f = Neon_C_DimG, pb.f = Neon_C_DimB
+          If onX
+            Neon_Box(hx, by, hw, side, Neon_C_HeadR, Neon_C_HeadG, Neon_C_HeadB)
+            pr = Neon_C_TextR : pg = Neon_C_TextG : pb = Neon_C_TextB
+          ElseIf isActive
+            pr = Neon_C_AccR : pg = Neon_C_AccG : pb = Neon_C_AccB
+          EndIf
+          Neon_Box(bx + 3.0 * pu, by + 1.5 * pu, 3.0 * pu, 3.0 * pu, pr, pg, pb)
+          Neon_Box(bx + 2.0 * pu, by + 4.5 * pu, 5.0 * pu, 1.0 * pu, pr, pg, pb)
+          Neon_Box(bx + 4.0 * pu, by + 5.5 * pu, 1.0 * pu, 2.5 * pu, pr, pg, pb)
+          If onX And Neon_MouseClicked And Not clickUsed
+            If *PinIndex : *PinIndex\i = i : EndIf
+            Continue
+          EndIf
+        Else
+          If onX : Neon_Box(hx, by, hw, side, Neon_C_RedR * 0.5, Neon_C_RedG * 0.35, Neon_C_RedB * 0.35) : EndIf
+          Neon_TextCentre(*Neon_FontSmall, bx, side, by + (side - sh) / 2.0, "x", Neon_C_DimR, Neon_C_DimG, Neon_C_DimB)
+          If onX And Neon_MouseClicked And Not clickUsed
+            If *ClosedIndex : *ClosedIndex\i = i : EndIf
+            Continue
+          EndIf
         EndIf
       EndIf
     EndIf

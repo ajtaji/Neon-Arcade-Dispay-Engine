@@ -319,6 +319,8 @@ Global Neon_MouseReleased.b                  ; edge: came up this frame
 Global Neon_Wheel.i                          ; notches, consumed by whoever is under the pointer
 Global Neon_KeyCode.i                        ; a #PB_Shortcut_* constant, or 0
 Global Neon_KeyChar.i                        ; a printable character code, or 0
+Global Neon_KeyCtrl.b                        ; Ctrl is held for this frame's key - the host sets it after
+                                             ; Neon_ChromeBeginFrame (left #False, Ctrl+A / C / X / V do nothing)
 Global Neon_DeltaTime.f
 Global Neon_AnimationActive.b
 Global NewMap Neon_Animation.f()
@@ -463,6 +465,7 @@ Procedure Neon_ChromeEndFrame()
   Neon_Wheel   = 0
   Neon_KeyCode = 0
   Neon_KeyChar = 0
+  Neon_KeyCtrl = #False
   ; This frame's hot zones become the map the host consults while no
   ; frame is being drawn at all.
   Protected i.i
@@ -1755,11 +1758,27 @@ EndProcedure
 ; ----------------------------------------------------------------------
 ; SINGLE-LINE TEXT INPUT
 ; ----------------------------------------------------------------------
-; Deliberately SINGLE-LINE, and deliberately without selection. It is a
-; find box, a filter, a name field. It is NOT a text editor, and the
-; distance between the two is the whole of wave 2.
+; Deliberately SINGLE-LINE. It is a find box, a filter, a name field, a
+; path. It is NOT a text editor, and the distance between the two is the
+; whole of wave 2 - so its one selection is the WHOLE text: Ctrl+A selects
+; it (drawn highlighted), and typing, Backspace, Delete or a paste replaces
+; it; an arrow, Home, End or a click lets it go. Ctrl+C copies (the whole
+; text when nothing is selected), Ctrl+X cuts the selection, Ctrl+V pastes
+; the clipboard's first line at the caret. Ctrl comes from Neon_KeyCtrl,
+; which the host sets; a host that does not set it gets none of this.
 ; ----------------------------------------------------------------------
 Global Neon_CaretPhase.f
+Global Neon_TextAllID.i                ; the text input whose whole text is selected (0 = none)
+
+; The clipboard's first line, as one line can hold it: what comes after the first line break is left out,
+; and a tab becomes a space.
+Procedure.s Neon_ClipboardLine()
+  Protected t.s = GetClipboardText(), cut.i
+  t = ReplaceString(t, #CRLF$, #LF$) : t = ReplaceString(t, #CR$, #LF$)
+  cut = FindString(t, #LF$)
+  If cut : t = Left(t, cut - 1) : EndIf
+  ProcedureReturn ReplaceString(t, #TAB$, " ")
+EndProcedure
 
 Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s = "", *CaretPos.Integer = 0)
   Protected submitted.b = #False
@@ -1775,7 +1794,9 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
       Neon_FocusID = 0
       focused = #False
     EndIf
+    If Neon_TextAllID = ID : Neon_TextAllID = 0 : EndIf
   EndIf
+  If Not focused And Neon_TextAllID = ID : Neon_TextAllID = 0 : EndIf
 
   Protected caret.i = Len(*Text\s)
   If *CaretPos
@@ -1786,6 +1807,36 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
 
   If focused
     Neon_CaretPhase + Neon_DeltaTime * 3.4
+    Protected all.b = Bool(Neon_TextAllID = ID), paste.s
+    If Neon_KeyCtrl And Neon_KeyCode
+      Select Neon_KeyCode
+        Case #PB_Shortcut_A
+          Neon_TextAllID = ID : all = #True : caret = Len(*Text\s) : Neon_KeyCode = 0
+        Case #PB_Shortcut_C
+          SetClipboardText(*Text\s) : Neon_KeyCode = 0
+        Case #PB_Shortcut_X
+          If all : SetClipboardText(*Text\s) : *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : EndIf
+          Neon_KeyCode = 0
+        Case #PB_Shortcut_V
+          paste = Neon_ClipboardLine()
+          If all : *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : EndIf
+          *Text\s = Left(*Text\s, caret) + paste + Mid(*Text\s, caret + 1) : caret + Len(paste)
+          Neon_KeyCode = 0 : Neon_CaretPhase = 0.0
+      EndSelect
+      Neon_KeyChar = 0              ; the control character Ctrl made of that letter
+    EndIf
+    ; a selected whole text is replaced by what is typed, and gone with Backspace / Delete
+    If all And (Neon_KeyCode = #PB_Shortcut_Back Or Neon_KeyCode = #PB_Shortcut_Delete)
+      *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : Neon_KeyCode = 0
+    EndIf
+    If all And Neon_KeyChar >= 32 And Neon_KeyChar <> 127
+      *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False
+    EndIf
+    If all And Neon_KeyCode
+      Select Neon_KeyCode
+        Case #PB_Shortcut_Left, #PB_Shortcut_Right, #PB_Shortcut_Home, #PB_Shortcut_End : Neon_TextAllID = 0 : all = #False
+      EndSelect
+    EndIf
     Select Neon_KeyCode
       Case #PB_Shortcut_Back
         If caret > 0
@@ -1839,6 +1890,9 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
   Protected th.f = 17.0 : If *Neon_FontUI : th = *Neon_FontUI\LineHeight : EndIf
   Protected ty.f = y + (h - th) / 2.0
   Neon_ScissorSet(x + 1, y + 1, w - 2, h - 2)
+  If focused And Neon_TextAllID = ID And *Text\s <> "" And *Neon_FontUI
+    Neon_Box(x + Neon_S(6), ty, GetGLTextWidth(*Neon_FontUI, *Text\s) + Neon_S(4), th, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB, 0.35)
+  EndIf
   If *Text\s = "" And Not focused
     Neon_Text(*Neon_FontUI, x + Neon_S(8), ty, Placeholder, Neon_C_FaintR, Neon_C_FaintG, Neon_C_FaintB)
   Else

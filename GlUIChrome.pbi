@@ -157,6 +157,27 @@
 ;                        down at 125%, 50% at 150%, and are invisible at 100%.
 ;     your own hit tests compare against Neon_MX / Neon_MY (canvas units,
 ;     set by Neon_ChromeBeginFrame), never against a raw WindowMouseX.
+;     UI_UseCRT       = #False     <- REQUIRED unless the frame really goes
+;                                     out through DrawRetroCRT(). It defaults
+;                                     to #True, and then MapPhysicalToVirtual
+;                                     bends every pointer position by the CRT
+;                                     barrel curve: right at the centre, and
+;                                     more off the nearer the pointer gets to
+;                                     the top or bottom edge - "the vertical
+;                                     is off". The IDE sets it straight after
+;                                     its first resize (GlIdeShell.pbi).
+;     the GL gadget   = at (0, 0), sized to the WHOLE inner client. Every
+;                       mouse number is measured from the window's client
+;                       origin, not from the gadget, so a ToolBar,
+;                       StatusBar or gadget placed above it shifts every Y
+;                       by that height. Draw your bars in GL instead.
+;     GL_HandleResize() is the LETTERBOX for a fixed authored canvas. A 1:1
+;                       application does not call it: size the gadget, read
+;                       GetClientRect, then set the viewport and the base
+;                       canvas to the same physical numbers, as
+;                       GlIdeHandleResize() in GlIdeShell.pbi does. Calling
+;                       both leaves GL_ViewportY and Util_BaseHeight from
+;                       the letterbox, and the Y mapping follows them.
 ;
 ;   Rebuild the fonts and reset Neon_UIScale when the window moves to a
 ;   monitor with a different scale (s changes; #PB_Event_SizeWindow /
@@ -165,7 +186,10 @@
 ;   How to check a host: at a 125% desktop, hover the right-hand end of a
 ;   button and click it. If the highlight sits left of or above the pointer
 ;   the mouse is double-scaled; if the button's label or tab widths look
-;   smaller than its frame, Neon_UIScale was left at 1.0.
+;   smaller than its frame, Neon_UIScale was left at 1.0. Then check the
+;   VERTICAL on a button near the top AND one near the bottom: right in the
+;   middle but off at the edges is UI_UseCRT left on; off by the same amount
+;   everywhere is a bar above the gadget or a letterbox GL_ViewportY.
 ;
 ; ----------------------------------------------------------------------
 ; 6. SCALE EVERY AUTHORED NUMBER WITH Neon_S()

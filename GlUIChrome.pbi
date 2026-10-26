@@ -136,8 +136,14 @@
 ;   So, for an application that draws 1:1 (the PureMetal Forge IDE, the
 ;   desktop emulators), exactly this and nothing else:
 ;
-;     s  = physical / logical client width   (1.25 here; GetClientRect
-;          width / WindowWidth - or DesktopResolutionX(), the same number)
+;     s  = physical / logical client width   (1.25 here): GetClientRect
+;          width / WindowWidth(Win, #PB_Window_InnerCoordinate), measured.
+;          NOT DesktopResolutionX() - under per-monitor DPI awareness it
+;          can read 1.0, and then "logical" sizes derived from it are
+;          physical. Re-measure it; when it changes (another monitor),
+;          rebuild the fonts and Neon_UIScale.
+;     Util_WinWidth/Height = WindowWidth/Height(Win,
+;          #PB_Window_InnerCoordinate) as measured, never physical / a scale.
 ;     Util_BaseWidth  = physical w : Util_BaseHeight = physical h
 ;     GL_ViewportX/Y  = 0          : GL_ViewportW/H  = physical w / h
 ;     Util_WinWidth   = logical w  : Util_WinHeight  = logical h

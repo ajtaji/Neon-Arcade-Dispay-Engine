@@ -105,7 +105,9 @@
 ;
 ;   The pointer goes in in the SAME units as GL_Viewport*, because
 ;   MapPhysicalToVirtual() divides by GL_ViewportW / Util_BaseWidth. With
-;   a 1:1 canvas that is physical pixels: WindowMouseX(Win) * (pw / cw).
+;   a 1:1 canvas that is physical pixels - and on Windows that is exactly
+;   what WindowMouseX(Win) / WindowMouseY(Win) return. Pass them in AS THEY
+;   ARE (see "THE MOUSE ON WINDOWS, MEASURED" below).
 ;
 ;
 ;   AND DO NOT "CONVERT" IT. Under DPI awareness WindowMouseX/Y already
@@ -116,6 +118,54 @@
 ;   ratio looks like a sensible conversion because GadgetWidth() IS logical
 ;   while GetClientRect is physical; the two simply disagree about units and
 ;   the pointer follows neither.
+;
+; ----------------------------------------------------------------------
+; 5a. THE MOUSE AND THE SCALE ON WINDOWS, MEASURED (2026-10-26, 125% desktop)
+; ----------------------------------------------------------------------
+;   A DPI-aware (/DPIAWARE) window opened as 800x600, cursor placed at known
+;   PHYSICAL client points with ClientToScreen_ + SetCursorPos_:
+;
+;     WindowWidth(Win, #PB_Window_InnerCoordinate)   800    LOGICAL
+;     GadgetWidth(Gl)                                800    LOGICAL
+;     GetClientRect_(WindowID(Win))                  1000   PHYSICAL
+;     cursor at physical x=400 -> WindowMouseX(Win)  400    PHYSICAL
+;     cursor at physical x=600 -> WindowMouseX(Win)  600    PHYSICAL
+;     GetGadgetAttribute(Gl, #PB_OpenGL_MouseX)      0      only set inside
+;                                                           a gadget event
+;
+;   So, for an application that draws 1:1 (the PureMetal Forge IDE, the
+;   desktop emulators), exactly this and nothing else:
+;
+;     s  = physical / logical client width   (1.25 here; GetClientRect
+;          width / WindowWidth - or DesktopResolutionX(), the same number)
+;     Util_BaseWidth  = physical w : Util_BaseHeight = physical h
+;     GL_ViewportX/Y  = 0          : GL_ViewportW/H  = physical w / h
+;     Util_WinWidth   = logical w  : Util_WinHeight  = logical h
+;     Neon_UIScale    = s          <- REQUIRED. Left at 1.0, every chrome
+;                                     metric (tab strip, list rows, menus,
+;                                     button padding) is laid out at 100%
+;                                     while your own s-scaled layout is at
+;                                     125%: the controls look and hit-test
+;                                     at sizes that disagree with the rest.
+;     fonts           = built at (logical pixel size) * s, then snapped
+;     authored sizes  = Neon_S(logical) - never your own private scale var
+;                       that can drift from Neon_UIScale
+;     Neon_ChromeBeginFrame(WindowMouseX(Win), WindowMouseY(Win), ...)
+;                     <- AS THEY ARE. Not * s, not * DesktopResolutionX(),
+;                        not * (physical / logical): each of those is the
+;                        double scale - clicks land 25% too far right and
+;                        down at 125%, 50% at 150%, and are invisible at 100%.
+;     your own hit tests compare against Neon_MX / Neon_MY (canvas units,
+;     set by Neon_ChromeBeginFrame), never against a raw WindowMouseX.
+;
+;   Rebuild the fonts and reset Neon_UIScale when the window moves to a
+;   monitor with a different scale (s changes; #PB_Event_SizeWindow /
+;   #PB_Event_MoveWindow, compare s with the last one).
+;
+;   How to check a host: at a 125% desktop, hover the right-hand end of a
+;   button and click it. If the highlight sits left of or above the pointer
+;   the mouse is double-scaled; if the button's label or tab widths look
+;   smaller than its frame, Neon_UIScale was left at 1.0.
 ;
 ; ----------------------------------------------------------------------
 ; 6. SCALE EVERY AUTHORED NUMBER WITH Neon_S()

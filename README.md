@@ -54,6 +54,8 @@ DrawRetroCRT() ; or DrawPassthrough()
 
 Set `Util_BaseWidth` and `Util_BaseHeight` to the authored canvas size. Call `GL_HandleResize()` after creating the window and whenever PureBasic reports a window-size event. Pass mouse coordinates through `MapPhysicalToVirtual()` before UI hit testing.
 
+**On Windows, give it `WindowMouseX(Win)` / `WindowMouseY(Win)` exactly as they are.** In a DPI-aware window they are already physical pixels (measured: 400 at physical x = 400 on a 125% desktop), while `WindowWidth`/`GadgetWidth` are logical. Multiplying the mouse by the scale, by `DesktopResolutionX()` or by physical/logical "to convert it" scales it twice. For a 1:1 application also set `Neon_UIScale` to physical/logical and build the fonts at that scale, or the chrome's tabs, rows and menus are sized at 100% beside a 125% layout. The full, measured checklist is section 5a of the hosting block in `GlUIChrome.pbi`.
+
 For DPI-aware builds, enable PureBasic's **DPI aware** compiler option.
 
 ## Building an application against the engine

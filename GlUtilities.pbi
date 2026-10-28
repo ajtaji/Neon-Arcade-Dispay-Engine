@@ -2295,6 +2295,120 @@ Procedure GL_HandleResize(GadgetID.i)
   CompilerEndIf
 EndProcedure
 
+; ======================================================================
+; RENDER TARGETS - an offscreen picture you draw INTO, then draw like a sprite
+; ======================================================================
+; Added 2026-10-27 for the Nintendo 64 emulator (its VI scales the console's
+; framebuffer into one, and the window or full screen shows that). Nothing
+; above this section was changed; a program that does not call these is
+; exactly as before.
+;
+; WHY NOT InitRetroCRT: that framebuffer is a single global tied to the CRT
+; post-process shader. These are any number of independent targets with no
+; shader of their own.
+;
+; USE:
+;     *Vi.GLRenderTarget = GL_CreateRenderTarget(640, 480)   ; linear filter
+;     ...each frame:
+;     GL_BeginRenderTarget(*Vi)          ; draw calls now land in *Vi, in its
+;       glClear_(...)                    ; own pixels: Util_BaseWidth/Height,
+;       DrawGLSprite(..., #True)         ; Util_WinWidth/Height and GL_Viewport*
+;     GL_EndRenderTarget(*Vi)            ; are the target's until End
+;     DrawGLSprite(@*Vi\Sprite, x, y, 0.0, k, ..., #True)   ; show it
+;
+; THE TRAPS:
+;   - Begin / End must pair, and do not nest: End puts back the size
+;     globals, the viewport and framebuffer 0 exactly as Begin found them.
+;     A host that sizes its canvas once per frame (the 1:1 hosting of
+;     GlUIChrome.pbi section 5a) is unaffected.
+;   - Draw into the target with Scaled = #True: in the target, the canvas
+;     IS the target (Util_BaseWidth/Height = its size), and logical = base.
+;   - The texture's first row is the BOTTOM of the picture, like every
+;     texture the engine draws, so *T\Sprite shows it upright.
+;   - Neon chrome (scissors, menus) is not for use inside a target: it reads
+;     the window's mouse and the window's scissor flip.
+;   - GL_FreeRenderTarget before the GL context goes away.
+; ======================================================================
+Structure GLRenderTarget
+  FBO.l
+  Tex.l
+  Width.i
+  Height.i
+  Sprite.GLSprite          ; the target as a sprite (TextureID = Tex)
+  SavedBaseW.f : SavedBaseH.f : SavedWinW.f : SavedWinH.f
+  SavedVX.i : SavedVY.i : SavedVW.i : SavedVH.i
+EndStructure
+
+Prototype GL_DeleteFramebuffers_Type(n.l, *framebuffers)
+Global GL_DeleteFramebuffersFn.GL_DeleteFramebuffers_Type
+
+; A target of Width x Height pixels, RGBA8. Linear = #True filters it when it is drawn larger or smaller.
+; Returns 0 if the GPU has no framebuffer objects.
+Procedure.i GL_CreateRenderTarget(Width.i, Height.i, Linear.i = #True)
+  Protected *T.GLRenderTarget, f.i = #GL_NEAREST
+  If Not glGenFramebuffers Or Not glBindFramebuffer Or Not glFramebufferTexture2D : ProcedureReturn 0 : EndIf
+  *T = AllocateStructure(GLRenderTarget)
+  If Linear : f = #GL_LINEAR : EndIf
+  glGenTextures_(1, @*T\Tex)
+  glBindTexture_(#GL_TEXTURE_2D, *T\Tex)
+  glTexImage2D_(#GL_TEXTURE_2D, 0, #GL_RGBA, Width, Height, 0, #GL_RGBA, #GL_UNSIGNED_BYTE, #Null)
+  glTexParameteri_(#GL_TEXTURE_2D, #GL_TEXTURE_MIN_FILTER, f)
+  glTexParameteri_(#GL_TEXTURE_2D, #GL_TEXTURE_MAG_FILTER, f)
+  glTexParameteri_(#GL_TEXTURE_2D, #GL_TEXTURE_WRAP_S, #GL_CLAMP_TO_EDGE)
+  glTexParameteri_(#GL_TEXTURE_2D, #GL_TEXTURE_WRAP_T, #GL_CLAMP_TO_EDGE)
+  glGenFramebuffers(1, @*T\FBO)
+  glBindFramebuffer(#GL_FRAMEBUFFER, *T\FBO)
+  glFramebufferTexture2D(#GL_FRAMEBUFFER, #GL_COLOR_ATTACHMENT0, #GL_TEXTURE_2D, *T\Tex, 0)
+  If glCheckFramebufferStatus And glCheckFramebufferStatus(#GL_FRAMEBUFFER) <> 36053   ; GL_FRAMEBUFFER_COMPLETE
+    glBindFramebuffer(#GL_FRAMEBUFFER, 0)
+    glDeleteTextures_(1, @*T\Tex) : FreeStructure(*T)
+    ProcedureReturn 0
+  EndIf
+  glBindFramebuffer(#GL_FRAMEBUFFER, 0)
+  *T\Width = Width : *T\Height = Height
+  *T\Sprite\TextureID = *T\Tex : *T\Sprite\Width = Width : *T\Sprite\Height = Height
+  ProcedureReturn *T
+EndProcedure
+
+; A new size (the contents are lost).
+Procedure GL_ResizeRenderTarget(*T.GLRenderTarget, Width.i, Height.i)
+  If Not *T : ProcedureReturn : EndIf
+  glBindTexture_(#GL_TEXTURE_2D, *T\Tex)
+  glTexImage2D_(#GL_TEXTURE_2D, 0, #GL_RGBA, Width, Height, 0, #GL_RGBA, #GL_UNSIGNED_BYTE, #Null)
+  *T\Width = Width : *T\Height = Height : *T\Sprite\Width = Width : *T\Sprite\Height = Height
+EndProcedure
+
+; Draw calls go into *T, in its own pixels, until GL_EndRenderTarget.
+Procedure GL_BeginRenderTarget(*T.GLRenderTarget)
+  If Not *T : ProcedureReturn : EndIf
+  *T\SavedBaseW = Util_BaseWidth : *T\SavedBaseH = Util_BaseHeight
+  *T\SavedWinW = Util_WinWidth : *T\SavedWinH = Util_WinHeight
+  *T\SavedVX = GL_ViewportX : *T\SavedVY = GL_ViewportY : *T\SavedVW = GL_ViewportW : *T\SavedVH = GL_ViewportH
+  glBindFramebuffer(#GL_FRAMEBUFFER, *T\FBO)
+  Util_BaseWidth = *T\Width : Util_BaseHeight = *T\Height
+  Util_WinWidth = *T\Width : Util_WinHeight = *T\Height
+  GL_ViewportX = 0 : GL_ViewportY = 0 : GL_ViewportW = *T\Width : GL_ViewportH = *T\Height
+  glViewport_(0, 0, *T\Width, *T\Height)
+EndProcedure
+
+; Back to the window: framebuffer 0, and the size globals and viewport as GL_BeginRenderTarget found them.
+Procedure GL_EndRenderTarget(*T.GLRenderTarget)
+  If Not *T : ProcedureReturn : EndIf
+  glBindFramebuffer(#GL_FRAMEBUFFER, 0)
+  Util_BaseWidth = *T\SavedBaseW : Util_BaseHeight = *T\SavedBaseH
+  Util_WinWidth = *T\SavedWinW : Util_WinHeight = *T\SavedWinH
+  GL_ViewportX = *T\SavedVX : GL_ViewportY = *T\SavedVY : GL_ViewportW = *T\SavedVW : GL_ViewportH = *T\SavedVH
+  glViewport_(GL_ViewportX, GL_ViewportY, GL_ViewportW, GL_ViewportH)
+EndProcedure
+
+Procedure GL_FreeRenderTarget(*T.GLRenderTarget)
+  If Not *T : ProcedureReturn : EndIf
+  If Not GL_DeleteFramebuffersFn : GL_DeleteFramebuffersFn = GetGLProc("glDeleteFramebuffers") : EndIf
+  If GL_DeleteFramebuffersFn : GL_DeleteFramebuffersFn(1, @*T\FBO) : EndIf
+  glDeleteTextures_(1, @*T\Tex)
+  FreeStructure(*T)
+EndProcedure
+
 ; IDE Options = PureBasic 6.21 (Windows - x64)
 ; CursorPosition = 661
 ; FirstLine = 637

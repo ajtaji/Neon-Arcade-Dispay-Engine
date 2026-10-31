@@ -93,6 +93,16 @@ Two comment blocks carry the things that otherwise get rediscovered:
   every `Neon_` call needs), assign the chrome's four font globals, the
   per-frame pipeline, pixel snapping for sharp text, and `Neon_S()`.
 
+- **`GlUtilities.pbi`, "HOST SERVICES"** — everything an application needs
+  from the OS beyond a window, with a Windows and a Linux branch each, so the
+  application itself never calls the OS: `GL_HostPrepare()` (first thing),
+  a microsecond clock, physical core count, large zeroed memory, keys held and
+  key names, full screen on the window's monitor, the pointer, the program's
+  load address for crash reports, a second GL context for a worker thread,
+  16-bit stereo sound out, the work area and the window's place, and game
+  controllers. An application that needs something more from the OS adds it
+  there, documented, rather than calling the OS itself.
+
 Every item in both lists produces a *wrong-looking UI* rather than an error:
 a blank window, controls with frames but no labels, soft text, or widgets
 that vanish inside a scissor. None of them raise anything.

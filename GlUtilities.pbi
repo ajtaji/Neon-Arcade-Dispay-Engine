@@ -2409,6 +2409,756 @@ Procedure GL_FreeRenderTarget(*T.GLRenderTarget)
   FreeStructure(*T)
 EndProcedure
 
+; ======================================================================
+; HOST SERVICES - what an emulator needs from the OS beyond a window
+; ======================================================================
+; Added 2026-10-30 for the Nintendo 64 emulator, which until then called
+; Win32 for these and so did not build on Linux. An application built on
+; this engine calls THESE, never the OS: each has a Windows and a Linux
+; branch here, and a program that does not call them is exactly as before.
+;
+;   GL_HostPrepare()                  first thing, before any window: on Linux the
+;                                     X11 shield and XInitThreads (item 2 of
+;                                     "HiDPI: THE FIVE THINGS"); nothing on Windows
+;   GL_HostScaleRead(Gadget)          after the window: Linux_DPIScale from GTK
+;   GL_Micros()                       a monotonic clock in microseconds
+;   GL_PhysicalCores()                the host's physical cores (not hardware
+;                                     threads) this process may run on
+;   GL_ReserveZeroed(Bytes)           a large zeroed block whose pages the OS
+;   GL_ReleaseReserved(*Mem, Bytes)   gives as they are first written (4 GB of
+;                                     scaled framebuffer costs only what is drawn)
+;   GL_KeyHeld(Key)                   is the key down NOW (not an event), Key a
+;                                     #PB_Shortcut_ code; false if the keyboard
+;                                     state cannot be read
+;   GL_KeyName(Key)                   the keyboard's own name for a key
+;   GL_FullscreenEnter(Win)           borderless over the monitor the window is
+;   GL_FullscreenLeave(Win)           on, no display-mode change; Leave puts the
+;   GL_FullscreenIsOn()               window back exactly where it was
+;   GL_FullscreenRect(*R.GLHostRect)  the monitor it covers, in physical pixels
+;   GL_WindowRect(Win, *R.GLHostRect) the window's outer rectangle, physical pixels
+;   GL_CursorShow(Win, Gadget, Show)  hide / show the pointer over the window
+;   GL_ProgramBase()                  where the program is loaded: an
+;                                     OnErrorAddress() minus this is the
+;                                     offset to look up in the build
+;   GL_SharedContextCreate()          a second GL context sharing textures and
+;   GL_SharedContextBind(*C)          buffers with the CURRENT one, for a worker
+;   GL_SharedContextFree(*C)          thread (Create on the window's thread with
+;                                     its context current; Bind on the worker)
+;   GL_AudioOpen(Rate, Pairs, Count)  16-bit stereo out: Count buffers of Pairs
+;   GL_AudioNext()                    pairs; Next gives a buffer to fill (0 when
+;   GL_AudioPlay(*Buffer)             all are queued), Play queues it
+;   GL_AudioClose()
+;   GL_TimerFine(On)                  Delay(1) waits about 1 ms, not 15.6 (Windows;
+;                                     Linux timers are fine already)
+;   GL_WorkArea(*R.GLHostRect)        the primary desktop minus its taskbars, in
+;                                     LOGICAL units (what OpenWindow takes)
+;   GL_ClientPixels(Win, *W, *H)      the window's inner size in PHYSICAL pixels
+;   GL_WindowPlaceGet(Win, *R)        the window's normal (not maximized) place,
+;   GL_WindowPlaceSet(Win, *R, Max)   and whether it is maximized; Set puts it back
+;                                     and says #False (doing nothing) when that
+;                                     place is on no monitor now
+;   GL_PadRead(Port, *P.GLPadState)   an Xbox-layout pad (XInput bits, triggers
+;                                     0-255, sticks -32768..32767 up positive)
+;   GL_JoyRead(Id, *J.GLJoyState)     any other controller: 32 buttons, 6 axes
+;                                     0-65535, the hat in hundredths of a degree
+;                                     ($FFFF centred), its name
+;
+; THE TRAPS:
+;   - Keys are #PB_Shortcut_ codes. On Windows they equal the virtual-key
+;     codes; on Linux they are X keysyms. Store them as such in settings
+;     files, and a file written on one OS maps differently on the other.
+;   - LINUX, THE SHARED CONTEXT: GLX, so the host must run on X11 - the
+;     GDK_BACKEND=x11 shield of "HiDPI: THE FIVE THINGS" item 2, which every
+;     Linux host here already sets. The worker's context is current on a
+;     16x16 pbuffer of the window context's own FBConfig: draw nothing to
+;     the window from it. Xlib is called from two threads, so the host
+;     must also call XInitThreads() before the first window (it is in the
+;     shield block) - GL_HostPrepare() does both.
+;   - LINUX, AUDIO: ALSA's "default" device (under WSLg and most desktops
+;     that is PulseAudio/PipeWire behind it), non-blocking.
+;   - LINUX, GL_PhysicalCores: counts distinct (package, core) pairs in
+;     /proc/cpuinfo; it does not read the affinity mask.
+;   - LINUX, PADS: the kernel joystick devices /dev/input/js0..15 (Id = N of
+;     jsN). GL_PadRead takes the devices whose name has "box" in it (the
+;     xpad driver's Xbox pads) in that layout; GL_JoyRead takes any.
+;   - GL_WindowPlaceGet/Set: Windows gives physical pixels (the normal place
+;     even while maximized); Linux gives the toolkit's units and, while
+;     maximized, the maximized place. Store what Get gave and hand it to Set
+;     on the same machine; do not mix it with OpenWindow sizes.
+; ======================================================================
+
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  ImportC ""
+    GL_clock_gettime(clk.l, *ts) As "clock_gettime"
+    GL_mmap(*addr, length.i, prot.l, flags.l, fd.l, offset.i) As "mmap"
+    GL_munmap(*addr, length.i) As "munmap"
+    GL_dl_iterate_phdr(*callback, *data) As "dl_iterate_phdr"
+    GL_gtk_window_fullscreen(*window) As "gtk_window_fullscreen"
+    GL_gtk_window_unfullscreen(*window) As "gtk_window_unfullscreen"
+    GL_gtk_widget_get_window(*widget) As "gtk_widget_get_window"
+    GL_gdk_window_set_cursor(*window, *cursor) As "gdk_window_set_cursor"
+    GL_gdk_cursor_new_for_display(*display, type.l) As "gdk_cursor_new_for_display"
+    GL_gdk_display_get_default() As "gdk_display_get_default"
+    GL_gtk_widget_get_scale_factor(*widget) As "gtk_widget_get_scale_factor"
+  EndImport
+  ImportC "-lX11"
+    GL_XInitThreads() As "XInitThreads"
+    GL_XOpenDisplay(*name) As "XOpenDisplay"
+    GL_XQueryKeymap(*display, *keys) As "XQueryKeymap"
+    GL_XKeysymToKeycode(*display, keysym.i) As "XKeysymToKeycode"
+    GL_XKeysymToString(keysym.i) As "XKeysymToString"
+    GL_XFree(*data) As "XFree"
+  EndImport
+  ImportC "-lGL"
+    GL_glXGetCurrentDisplay() As "glXGetCurrentDisplay"
+    GL_glXGetCurrentContext() As "glXGetCurrentContext"
+    GL_glXQueryContext(*display, *ctx, attribute.l, *value) As "glXQueryContext"
+    GL_glXChooseFBConfig(*display, screen.l, *attribs, *count) As "glXChooseFBConfig"
+    GL_glXCreateNewContext(*display, *config, renderType.l, *share, direct.l) As "glXCreateNewContext"
+    GL_glXCreatePbuffer(*display, *config, *attribs) As "glXCreatePbuffer"
+    GL_glXDestroyPbuffer(*display, pbuffer.i) As "glXDestroyPbuffer"
+    GL_glXMakeContextCurrent(*display, drawable.i, readable.i, *ctx) As "glXMakeContextCurrent"
+    GL_glXDestroyContext(*display, *ctx) As "glXDestroyContext"
+  EndImport
+  ImportC "-lasound"
+    GL_snd_pcm_open(*pcm, name.p-ascii, stream.l, mode.l) As "snd_pcm_open"
+    GL_snd_pcm_set_params(*pcm, format.l, access.l, channels.l, rate.l, resample.l, latency.l) As "snd_pcm_set_params"
+    GL_snd_pcm_avail_update(*pcm) As "snd_pcm_avail_update"
+    GL_snd_pcm_writei(*pcm, *buffer, frames.i) As "snd_pcm_writei"
+    GL_snd_pcm_recover(*pcm, err.l, silent.l) As "snd_pcm_recover"
+    GL_snd_pcm_drop(*pcm) As "snd_pcm_drop"
+    GL_snd_pcm_close(*pcm) As "snd_pcm_close"
+  EndImport
+CompilerEndIf
+
+Structure GLHostRect
+  X.i : Y.i : W.i : H.i
+EndStructure
+
+; --- the host's start ---
+Procedure GL_HostPrepare()
+  CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+    SetEnvironmentVariable("GDK_BACKEND", "x11")
+    GL_XInitThreads()
+  CompilerEndIf
+EndProcedure
+
+Procedure GL_HostScaleRead(Gadget.i)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+    Linux_DPIScale = GL_gtk_widget_get_scale_factor(GadgetID(Gadget))
+    If Linux_DPIScale <= 0 : Linux_DPIScale = 1.0 : EndIf
+  CompilerEndIf
+EndProcedure
+
+; --- the clock ---
+Global GL_MicrosFreq.q
+Procedure.q GL_Micros()
+  Protected c.q
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    If GL_MicrosFreq = 0 : QueryPerformanceFrequency_(@GL_MicrosFreq) : EndIf
+    QueryPerformanceCounter_(@c)
+    ProcedureReturn c * 1000000 / GL_MicrosFreq
+  CompilerElse
+    Protected Dim ts.q(1)
+    GL_clock_gettime(1, @ts(0))                     ; CLOCK_MONOTONIC: seconds, nanoseconds
+    ProcedureReturn ts(0) * 1000000 + ts(1) / 1000
+  CompilerEndIf
+EndProcedure
+
+; --- the cores ---
+Procedure.i GL_PhysicalCores()
+  Protected n.i
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ; each core's mask of hardware threads (GetLogicalProcessorInformation) against the process's affinity
+    Protected lib.i, fn.i, aff.i, sysaff.i, need.l, *buf, k.i
+    lib = OpenLibrary(#PB_Any, "kernel32.dll")
+    If lib
+      fn = GetFunction(lib, "GetLogicalProcessorInformation")
+      If fn And GetProcessAffinityMask_(GetCurrentProcess_(), @aff, @sysaff)
+        CallFunctionFast(fn, 0, @need)
+        If need > 0
+          *buf = AllocateMemory(need)
+          If *buf And CallFunctionFast(fn, *buf, @need)
+            For k = 0 To need / 32 - 1             ; (32 bytes an entry: the mask, the relationship, its data)
+              If PeekL(*buf + k * 32 + 8) = 0 And PeekI(*buf + k * 32) & aff : n + 1 : EndIf   ; RelationProcessorCore
+            Next
+          EndIf
+          If *buf : FreeMemory(*buf) : EndIf
+        EndIf
+      EndIf
+      CloseLibrary(lib)
+    EndIf
+  CompilerElse
+    Protected f.i, line.s, pkg.s, NewMap seen.i()
+    f = ReadFile(#PB_Any, "/proc/cpuinfo")
+    If f
+      While Not Eof(f)
+        line = ReadString(f)
+        If Left(line, 11) = "physical id" : pkg = Trim(StringField(line, 2, ":")) : EndIf
+        If Left(line, 7) = "core id" : seen(pkg + "/" + Trim(StringField(line, 2, ":"))) = 1 : EndIf
+      Wend
+      CloseFile(f)
+      n = MapSize(seen())
+    EndIf
+  CompilerEndIf
+  If n < 1 Or n > CountCPUs(#PB_System_ProcessCPUs) : n = CountCPUs(#PB_System_ProcessCPUs) : EndIf
+  ProcedureReturn n
+EndProcedure
+
+; --- large zeroed memory, committed as it is written ---
+Procedure GL_ReserveZeroed(Bytes.i)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ProcedureReturn VirtualAlloc_(0, Bytes, #MEM_RESERVE | #MEM_COMMIT, #PAGE_READWRITE)
+  CompilerElse
+    Protected *m = GL_mmap(0, Bytes, 3, $22, -1, 0)  ; PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS
+    If *m = -1 : ProcedureReturn 0 : EndIf        ; (MAP_FAILED)
+    ProcedureReturn *m
+  CompilerEndIf
+EndProcedure
+
+Procedure GL_ReleaseReserved(*Mem, Bytes.i)
+  If *Mem = 0 : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    VirtualFree_(*Mem, 0, #MEM_RELEASE)
+  CompilerElse
+    GL_munmap(*Mem, Bytes)
+  CompilerEndIf
+EndProcedure
+
+; --- keys ---
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  Global *GL_KeyDisplay
+CompilerEndIf
+
+Procedure.i GL_KeyHeld(Key.i)
+  If Key = 0 : ProcedureReturn #False : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ProcedureReturn Bool(GetAsyncKeyState_(Key) & $8000)
+  CompilerElse
+    Protected Dim keys.a(31), code.i
+    If *GL_KeyDisplay = 0 : *GL_KeyDisplay = GL_XOpenDisplay(0) : EndIf
+    If *GL_KeyDisplay = 0 : ProcedureReturn #False : EndIf
+    code = GL_XKeysymToKeycode(*GL_KeyDisplay, Key) & $FF
+    If code = 0 : ProcedureReturn #False : EndIf
+    GL_XQueryKeymap(*GL_KeyDisplay, @keys(0))
+    ProcedureReturn Bool(keys(code >> 3) & (1 << (code & 7)))
+  CompilerEndIf
+EndProcedure
+
+Procedure.s GL_KeyName(Key.i)
+  If Key = 0 : ProcedureReturn "" : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected buf.s = Space(64), sc.i, ext.i
+    Select Key                                   ; the keys whose scan code needs the extended bit to name right
+      Case #VK_LEFT, #VK_RIGHT, #VK_UP, #VK_DOWN, #VK_PRIOR, #VK_NEXT, #VK_END, #VK_HOME, #VK_INSERT, #VK_DELETE, #VK_DIVIDE, #VK_NUMLOCK
+        ext = 1 << 24
+    EndSelect
+    sc = MapVirtualKey_(Key, 0)
+    If sc And GetKeyNameText_((sc << 16) | ext, @buf, 64) > 0 : ProcedureReturn buf : EndIf
+    ProcedureReturn "Key " + Str(Key)
+  CompilerElse
+    Protected *s = GL_XKeysymToString(Key)
+    If *s : ProcedureReturn PeekS(*s, -1, #PB_Ascii) : EndIf
+    ProcedureReturn "Key " + Str(Key)
+  CompilerEndIf
+EndProcedure
+
+; --- full screen ---
+Global GL_FullOn.i, GL_FullMonX.i, GL_FullMonY.i, GL_FullMonW.i, GL_FullMonH.i
+CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+  Global GL_FullPlace.WINDOWPLACEMENT, GL_FullStyle.i
+CompilerElse
+  ImportC ""
+    GL_gdk_display_get_monitor_at_window(*display, *window) As "gdk_display_get_monitor_at_window"
+    GL_gdk_monitor_get_geometry(*monitor, *rect) As "gdk_monitor_get_geometry"
+    GL_gdk_monitor_get_scale_factor(*monitor) As "gdk_monitor_get_scale_factor"
+  EndImport
+CompilerEndIf
+
+Procedure GL_FullscreenEnter(Win.i)
+  If GL_FullOn : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected hwnd.i = WindowID(Win), mi.MONITORINFO
+    GL_FullPlace\length = SizeOf(WINDOWPLACEMENT)
+    GetWindowPlacement_(hwnd, @GL_FullPlace)
+    GL_FullStyle = GetWindowLongPtr_(hwnd, #GWL_STYLE)
+    mi\cbSize = SizeOf(MONITORINFO)
+    GetMonitorInfo_(MonitorFromWindow_(hwnd, #MONITOR_DEFAULTTONEAREST), @mi)
+    GL_FullMonX = mi\rcMonitor\left : GL_FullMonY = mi\rcMonitor\top : GL_FullMonW = mi\rcMonitor\right - mi\rcMonitor\left : GL_FullMonH = mi\rcMonitor\bottom - mi\rcMonitor\top
+    SetWindowLongPtr_(hwnd, #GWL_STYLE, (GL_FullStyle & ~#WS_OVERLAPPEDWINDOW) | #WS_POPUP)
+    SetWindowPos_(hwnd, #HWND_TOP, mi\rcMonitor\left, mi\rcMonitor\top, mi\rcMonitor\right - mi\rcMonitor\left, mi\rcMonitor\bottom - mi\rcMonitor\top, #SWP_FRAMECHANGED | #SWP_NOOWNERZORDER | #SWP_SHOWWINDOW)
+  CompilerElse
+    Protected Dim g.l(3), *mon = GL_gdk_display_get_monitor_at_window(GL_gdk_display_get_default(), GL_gtk_widget_get_window(WindowID(Win))), sc.i = 1
+    If *mon : GL_gdk_monitor_get_geometry(*mon, @g(0)) : sc = GL_gdk_monitor_get_scale_factor(*mon) : EndIf
+    GL_FullMonX = g(0) * sc : GL_FullMonY = g(1) * sc : GL_FullMonW = g(2) * sc : GL_FullMonH = g(3) * sc
+    GL_gtk_window_fullscreen(WindowID(Win))         ; GTK picks the window's monitor and keeps its placement
+  CompilerEndIf
+  GL_FullOn = 1
+EndProcedure
+
+Procedure GL_FullscreenLeave(Win.i)
+  If GL_FullOn = 0 : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected hwnd.i = WindowID(Win)
+    SetWindowLongPtr_(hwnd, #GWL_STYLE, GL_FullStyle)
+    SetWindowPlacement_(hwnd, @GL_FullPlace)
+    SetWindowPos_(hwnd, 0, 0, 0, 0, 0, #SWP_NOMOVE | #SWP_NOSIZE | #SWP_NOZORDER | #SWP_NOOWNERZORDER | #SWP_FRAMECHANGED)
+  CompilerElse
+    GL_gtk_window_unfullscreen(WindowID(Win))
+  CompilerEndIf
+  GL_FullOn = 0
+EndProcedure
+
+Procedure.i GL_FullscreenIsOn()
+  ProcedureReturn GL_FullOn
+EndProcedure
+
+Procedure GL_FullscreenRect(*R.GLHostRect)
+  *R\X = GL_FullMonX : *R\Y = GL_FullMonY : *R\W = GL_FullMonW : *R\H = GL_FullMonH
+EndProcedure
+
+Procedure GL_WindowRect(Win.i, *R.GLHostRect)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected r.RECT
+    GetWindowRect_(WindowID(Win), @r)
+    *R\X = r\left : *R\Y = r\top : *R\W = r\right - r\left : *R\H = r\bottom - r\top
+  CompilerElse
+    Protected s.d = Linux_DPIScale
+    If s <= 0 : s = 1.0 : EndIf
+    *R\X = WindowX(Win, #PB_Window_FrameCoordinate) * s : *R\Y = WindowY(Win, #PB_Window_FrameCoordinate) * s
+    *R\W = WindowWidth(Win, #PB_Window_FrameCoordinate) * s : *R\H = WindowHeight(Win, #PB_Window_FrameCoordinate) * s
+  CompilerEndIf
+EndProcedure
+; --- the pointer ---
+Global GL_CursorHidden.i
+Procedure GL_CursorShow(Win.i, Gadget.i, Show.i)
+  If Bool(Show) = Bool(GL_CursorHidden = 0) : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ShowCursor_(Bool(Show))
+  CompilerElse
+    Protected *gw = GL_gtk_widget_get_window(GadgetID(Gadget))
+    If *gw
+      If Show : GL_gdk_window_set_cursor(*gw, 0) : Else : GL_gdk_window_set_cursor(*gw, GL_gdk_cursor_new_for_display(GL_gdk_display_get_default(), -2)) : EndIf   ; GDK_BLANK_CURSOR
+    EndIf
+  CompilerEndIf
+  GL_CursorHidden = Bool(Show = 0)
+EndProcedure
+
+; --- where the program is loaded ---
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  Global GL_ProgramBaseAt.i
+  ProcedureC.l GL_ProgramBaseCb(*info, size.i, *data)   ; dl_iterate_phdr: the first object is the program
+    If GL_ProgramBaseAt = 0 : GL_ProgramBaseAt = PeekI(*info) : EndIf   ; dlpi_addr
+    ProcedureReturn 1
+  EndProcedure
+CompilerEndIf
+
+Procedure.i GL_ProgramBase()
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ProcedureReturn GetModuleHandle_(0)
+  CompilerElse
+    If GL_ProgramBaseAt = 0 : GL_dl_iterate_phdr(@GL_ProgramBaseCb(), 0) : EndIf
+    ProcedureReturn GL_ProgramBaseAt
+  CompilerEndIf
+EndProcedure
+
+; --- a second GL context for a worker thread ---
+Structure GLSharedContext
+  Context.i
+  Surface.i        ; Windows: the hidden window's DC; Linux: the pbuffer
+  Window.i         ; Windows: the hidden window; Linux: the X display
+  Error.s
+EndStructure
+
+Procedure GL_SharedContextFree(*C.GLSharedContext)
+  If *C = 0 : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    If *C\Context : wglDeleteContext_(*C\Context) : EndIf
+    If *C\Surface : ReleaseDC_(*C\Window, *C\Surface) : EndIf
+    If *C\Window : DestroyWindow_(*C\Window) : EndIf
+  CompilerElse
+    If *C\Context : GL_glXDestroyContext(*C\Window, *C\Context) : EndIf
+    If *C\Surface : GL_glXDestroyPbuffer(*C\Window, *C\Surface) : EndIf
+  CompilerEndIf
+  FreeStructure(*C)
+EndProcedure
+
+; The context: *C with \Error "" on success. On failure \Error says why and the
+; caller frees *C (its fields are what was made before it failed). With a
+; context current it shares that one's objects; with none (a program with no
+; window, such as a test run) it is a context of its own.
+Procedure GL_SharedContextCreate()
+  Protected *C.GLSharedContext = AllocateStructure(GLSharedContext)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected share.i = wglGetCurrentContext_(), dc.i = wglGetCurrentDC_(), pfd.PIXELFORMATDESCRIPTOR, fmt.i
+    *C\Window = CreateWindowEx_(0, "STATIC", "gl worker", #WS_POPUP, 0, 0, 16, 16, 0, 0, GetModuleHandle_(0), 0)
+    If *C\Window = 0 : *C\Error = "no window for the worker's context" : ProcedureReturn *C : EndIf
+    *C\Surface = GetDC_(*C\Window)
+    pfd\nSize = SizeOf(PIXELFORMATDESCRIPTOR) : pfd\nVersion = 1
+    If share And dc
+      fmt = GetPixelFormat_(dc) : DescribePixelFormat_(dc, fmt, SizeOf(PIXELFORMATDESCRIPTOR), @pfd)   ; the window's own format
+    Else
+      pfd\dwFlags = #PFD_DRAW_TO_WINDOW | #PFD_SUPPORT_OPENGL | #PFD_DOUBLEBUFFER : pfd\iPixelType = #PFD_TYPE_RGBA
+      pfd\cColorBits = 32 : pfd\cDepthBits = 24 : pfd\iLayerType = #PFD_MAIN_PLANE
+    EndIf
+    fmt = ChoosePixelFormat_(*C\Surface, @pfd)
+    If fmt = 0 Or SetPixelFormat_(*C\Surface, fmt, @pfd) = 0 : *C\Error = "no pixel format for the worker's context" : ProcedureReturn *C : EndIf
+    *C\Context = wglCreateContext_(*C\Surface)
+    If *C\Context = 0 : *C\Error = "the worker's context cannot be made" : ProcedureReturn *C : EndIf
+    If share And wglShareLists_(share, *C\Context) = 0 : *C\Error = "the GL contexts cannot share" : ProcedureReturn *C : EndIf
+  CompilerElse
+    Protected *dpy = GL_glXGetCurrentDisplay(), *cur = GL_glXGetCurrentContext(), id.l, n.l, *cfgs, *cfg
+    Protected Dim a.l(8)
+    If *dpy And *cur
+      GL_glXQueryContext(*dpy, *cur, $8013, @id)    ; GLX_FBCONFIG_ID: the window context's own
+      a(0) = $8013 : a(1) = id : a(2) = 0
+    Else
+      *cur = 0 : *dpy = GL_XOpenDisplay(0)
+      If *dpy = 0 : *C\Error = "no X display for a GL context (the host must run on X11)" : ProcedureReturn *C : EndIf
+      a(0) = $8010 : a(1) = 4 : a(2) = $8011 : a(3) = 1 : a(4) = 0   ; GLX_DRAWABLE_TYPE pbuffer, GLX_RENDER_TYPE RGBA
+    EndIf
+    *C\Window = *dpy
+    *cfgs = GL_glXChooseFBConfig(*dpy, 0, @a(0), @n)
+    If *cfgs = 0 Or n < 1 : *C\Error = "the window context's FBConfig is not found" : ProcedureReturn *C : EndIf
+    *cfg = PeekI(*cfgs) : GL_XFree(*cfgs)
+    a(0) = $8041 : a(1) = 16 : a(2) = $8040 : a(3) = 16 : a(4) = 0   ; GLX_PBUFFER_WIDTH, GLX_PBUFFER_HEIGHT
+    *C\Surface = GL_glXCreatePbuffer(*dpy, *cfg, @a(0))
+    If *C\Surface = 0 : *C\Error = "no pbuffer for the worker's context" : ProcedureReturn *C : EndIf
+    *C\Context = GL_glXCreateNewContext(*dpy, *cfg, $8014, *cur, #True)   ; GLX_RGBA_TYPE, sharing *cur, direct
+    If *C\Context = 0 : *C\Error = "the worker's context cannot be made" : ProcedureReturn *C : EndIf
+  CompilerEndIf
+  ProcedureReturn *C
+EndProcedure
+
+; On the worker thread: its context current there. #True if it is.
+Procedure.i GL_SharedContextBind(*C.GLSharedContext)
+  If *C = 0 Or *C\Context = 0 : ProcedureReturn #False : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    ProcedureReturn Bool(wglMakeCurrent_(*C\Surface, *C\Context))
+  CompilerElse
+    ProcedureReturn Bool(GL_glXMakeContextCurrent(*C\Window, *C\Surface, *C\Surface, *C\Context))
+  CompilerEndIf
+EndProcedure
+
+; --- sound out ---
+Global GL_AudioPairs.i, GL_AudioCount.i, GL_AudioOn.i
+CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+  Structure GLWaveFormat
+    wFormatTag.w : nChannels.w : nSamplesPerSec.l : nAvgBytesPerSec.l : nBlockAlign.w : wBitsPerSample.w : cbSize.w
+  EndStructure
+  Structure GLWaveHeader
+    *lpData : dwBufferLength.l : dwBytesRecorded.l : *dwUser : dwFlags.l : dwLoops.l : *lpNext : *reserved
+  EndStructure
+  Import "winmm.lib"
+    GL_waveOutOpen(*handle, device.l, *format, callback.i, instance.i, flags.l) As "waveOutOpen"
+    GL_waveOutPrepareHeader(handle.i, *header, size.l) As "waveOutPrepareHeader"
+    GL_waveOutUnprepareHeader(handle.i, *header, size.l) As "waveOutUnprepareHeader"
+    GL_waveOutWrite(handle.i, *header, size.l) As "waveOutWrite"
+    GL_waveOutReset(handle.i) As "waveOutReset"
+    GL_waveOutClose(handle.i) As "waveOutClose"
+  EndImport
+  Global GL_AudioHandle.i, *GL_AudioHeaders, *GL_AudioData
+CompilerElse
+  Global *GL_AudioPcm, *GL_AudioData
+CompilerEndIf
+
+Procedure GL_AudioClose()
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected i.i
+    If GL_AudioHandle
+      GL_waveOutReset(GL_AudioHandle)
+      For i = 0 To GL_AudioCount - 1 : GL_waveOutUnprepareHeader(GL_AudioHandle, *GL_AudioHeaders + i * SizeOf(GLWaveHeader), SizeOf(GLWaveHeader)) : Next
+      GL_waveOutClose(GL_AudioHandle) : GL_AudioHandle = 0
+    EndIf
+    If *GL_AudioHeaders : FreeMemory(*GL_AudioHeaders) : *GL_AudioHeaders = 0 : EndIf
+  CompilerElse
+    If *GL_AudioPcm : GL_snd_pcm_drop(*GL_AudioPcm) : GL_snd_pcm_close(*GL_AudioPcm) : *GL_AudioPcm = 0 : EndIf
+  CompilerEndIf
+  If *GL_AudioData : FreeMemory(*GL_AudioData) : *GL_AudioData = 0 : EndIf
+  GL_AudioOn = 0
+EndProcedure
+
+; #True when the sound card is open.
+Procedure.i GL_AudioOpen(Rate.i, Pairs.i, Count.i)
+  GL_AudioClose()
+  GL_AudioPairs = Pairs : GL_AudioCount = Count
+  *GL_AudioData = AllocateMemory(Pairs * 4 * Count)
+  If *GL_AudioData = 0 : ProcedureReturn #False : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected fmt.GLWaveFormat, i.i, *h.GLWaveHeader
+    fmt\wFormatTag = 1 : fmt\nChannels = 2 : fmt\nSamplesPerSec = Rate : fmt\wBitsPerSample = 16
+    fmt\nBlockAlign = 4 : fmt\nAvgBytesPerSec = Rate * 4
+    If GL_waveOutOpen(@GL_AudioHandle, -1, @fmt, 0, 0, 0) <> 0 : GL_AudioHandle = 0 : GL_AudioClose() : ProcedureReturn #False : EndIf
+    *GL_AudioHeaders = AllocateMemory(SizeOf(GLWaveHeader) * Count)
+    For i = 0 To Count - 1
+      *h = *GL_AudioHeaders + i * SizeOf(GLWaveHeader)
+      *h\lpData = *GL_AudioData + i * Pairs * 4 : *h\dwBufferLength = Pairs * 4 : *h\dwFlags = 1   ; WHDR_DONE: free
+    Next
+  CompilerElse
+    If GL_snd_pcm_open(@*GL_AudioPcm, "default", 0, 1) < 0 : *GL_AudioPcm = 0 : GL_AudioClose() : ProcedureReturn #False : EndIf   ; playback, non-blocking
+    ; S16_LE, interleaved read/write, stereo; latency: the buffers' worth
+    If GL_snd_pcm_set_params(*GL_AudioPcm, 2, 3, 2, Rate, 1, Pairs * Count * 1000000 / Rate) < 0 : GL_AudioClose() : ProcedureReturn #False : EndIf
+  CompilerEndIf
+  GL_AudioOn = 1
+  ProcedureReturn #True
+EndProcedure
+
+; A buffer of Pairs pairs to fill and GL_AudioPlay, or 0 while all are queued.
+Procedure GL_AudioNext()
+  If GL_AudioOn = 0 : ProcedureReturn 0 : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected i.i, *h.GLWaveHeader
+    For i = 0 To GL_AudioCount - 1
+      *h = *GL_AudioHeaders + i * SizeOf(GLWaveHeader)
+      If *h\dwFlags & 1                          ; WHDR_DONE
+        If *h\dwFlags & 2 : GL_waveOutUnprepareHeader(GL_AudioHandle, *h, SizeOf(GLWaveHeader)) : EndIf   ; WHDR_PREPARED
+        *h\dwFlags = 0
+        ProcedureReturn *h\lpData
+      EndIf
+    Next
+    ProcedureReturn 0
+  CompilerElse
+    Protected room.i = GL_snd_pcm_avail_update(*GL_AudioPcm)
+    If room < 0 : GL_snd_pcm_recover(*GL_AudioPcm, room, 1) : ProcedureReturn 0 : EndIf
+    If room < GL_AudioPairs : ProcedureReturn 0 : EndIf
+    ProcedureReturn *GL_AudioData                ; (one scratch buffer: Play copies it to ALSA at once)
+  CompilerEndIf
+EndProcedure
+
+Procedure GL_AudioPlay(*Buffer)
+  If GL_AudioOn = 0 Or *Buffer = 0 : ProcedureReturn : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected *h.GLWaveHeader = *GL_AudioHeaders + ((*Buffer - *GL_AudioData) / (GL_AudioPairs * 4)) * SizeOf(GLWaveHeader)
+    GL_waveOutPrepareHeader(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
+    GL_waveOutWrite(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
+  CompilerElse
+    Protected r.i = GL_snd_pcm_writei(*GL_AudioPcm, *Buffer, GL_AudioPairs)
+    If r < 0 : GL_snd_pcm_recover(*GL_AudioPcm, r, 1) : EndIf
+  CompilerEndIf
+EndProcedure
+
+; --- the system timer ---
+Procedure GL_TimerFine(On.i)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Static lib.i
+    If lib = 0 : lib = OpenLibrary(#PB_Any, "winmm.dll") : EndIf
+    If lib
+      If On : CallFunction(lib, "timeBeginPeriod", 1) : Else : CallFunction(lib, "timeEndPeriod", 1) : EndIf
+    EndIf
+  CompilerEndIf
+EndProcedure
+
+; --- the desktop and the window's place ---
+
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  ImportC ""
+    GL_gdk_display_get_primary_monitor(*display) As "gdk_display_get_primary_monitor"
+    GL_gdk_display_get_monitor(*display, n.l) As "gdk_display_get_monitor"
+    GL_gdk_monitor_get_workarea(*monitor, *rect) As "gdk_monitor_get_workarea"
+  EndImport
+CompilerEndIf
+
+Procedure GL_WorkArea(*R.GLHostRect)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected wa.RECT, s.f = 1.0, lib.i, fn.i
+    lib = OpenLibrary(#PB_Any, "user32.dll")
+    If lib
+      fn = GetFunction(lib, "GetDpiForSystem")
+      If fn : s = CallFunctionFast(fn) / 96.0 : EndIf
+      CloseLibrary(lib)
+    EndIf
+    If s < 1.0 : s = 1.0 : EndIf
+    SystemParametersInfo_(#SPI_GETWORKAREA, 0, @wa, 0)
+    *R\X = wa\left / s : *R\Y = wa\top / s : *R\W = (wa\right - wa\left) / s : *R\H = (wa\bottom - wa\top) / s
+  CompilerElse
+    Protected Dim g.l(3), *mon = GL_gdk_display_get_primary_monitor(GL_gdk_display_get_default())
+    If *mon = 0 : *mon = GL_gdk_display_get_monitor(GL_gdk_display_get_default(), 0) : EndIf
+    If *mon
+      GL_gdk_monitor_get_workarea(*mon, @g(0))      ; GdkRectangle: x, y, width, height (application pixels)
+      *R\X = g(0) : *R\Y = g(1) : *R\W = g(2) : *R\H = g(3)
+    Else
+      ExamineDesktops() : *R\X = 0 : *R\Y = 0 : *R\W = DesktopWidth(0) : *R\H = DesktopHeight(0)
+    EndIf
+  CompilerEndIf
+EndProcedure
+
+Procedure GL_ClientPixels(Win.i, *W.Integer, *H.Integer)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected r.RECT
+    GetClientRect_(WindowID(Win), @r)
+    *W\i = r\right - r\left : *H\i = r\bottom - r\top
+  CompilerElse
+    Protected s.d = Linux_DPIScale
+    If s <= 0 : s = 1.0 : EndIf
+    *W\i = WindowWidth(Win, #PB_Window_InnerCoordinate) * s : *H\i = WindowHeight(Win, #PB_Window_InnerCoordinate) * s
+  CompilerEndIf
+EndProcedure
+
+; #True when the window is maximized.
+Procedure.i GL_WindowPlaceGet(Win.i, *R.GLHostRect)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected wp.WINDOWPLACEMENT
+    wp\length = SizeOf(WINDOWPLACEMENT)
+    If GetWindowPlacement_(WindowID(Win), @wp) = 0 : ProcedureReturn #False : EndIf
+    *R\X = wp\rcNormalPosition\left : *R\Y = wp\rcNormalPosition\top
+    *R\W = wp\rcNormalPosition\right - wp\rcNormalPosition\left : *R\H = wp\rcNormalPosition\bottom - wp\rcNormalPosition\top
+    ProcedureReturn Bool(wp\showCmd = #SW_SHOWMAXIMIZED)
+  CompilerElse
+    *R\X = WindowX(Win) : *R\Y = WindowY(Win) : *R\W = WindowWidth(Win) : *R\H = WindowHeight(Win)
+    ProcedureReturn Bool(GetWindowState(Win) = #PB_Window_Maximize)
+  CompilerEndIf
+EndProcedure
+
+Procedure.i GL_WindowPlaceSet(Win.i, *R.GLHostRect, Max.i)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected wp.WINDOWPLACEMENT, wr.RECT
+    wr\left = *R\X : wr\top = *R\Y : wr\right = *R\X + *R\W : wr\bottom = *R\Y + *R\H
+    If MonitorFromRect_(@wr, 0) = 0 : ProcedureReturn #False : EndIf   ; MONITOR_DEFAULTTONULL: on no monitor
+    wp\length = SizeOf(WINDOWPLACEMENT) : GetWindowPlacement_(WindowID(Win), @wp)
+    wp\rcNormalPosition = wr
+    If Max : wp\showCmd = #SW_SHOWMAXIMIZED : Else : wp\showCmd = #SW_SHOWNORMAL : EndIf
+    SetWindowPlacement_(WindowID(Win), @wp)
+  CompilerElse
+    Protected k.i, n.i = ExamineDesktops(), on.i
+    For k = 0 To n - 1
+      If *R\X + *R\W > DesktopX(k) And *R\X < DesktopX(k) + DesktopWidth(k) And *R\Y + *R\H > DesktopY(k) And *R\Y < DesktopY(k) + DesktopHeight(k) : on = 1 : EndIf
+    Next
+    If on = 0 : ProcedureReturn #False : EndIf
+    ResizeWindow(Win, *R\X, *R\Y, *R\W, *R\H)
+    If Max : SetWindowState(Win, #PB_Window_Maximize) : EndIf
+  CompilerEndIf
+  ProcedureReturn #True
+EndProcedure
+
+; --- game controllers ---
+Structure GLPadState
+  Buttons.u : LT.a : RT.a : LX.w : LY.w : RX.w : RY.w   ; (XInput's XINPUT_GAMEPAD, field for field)
+EndStructure
+Structure GLJoyState
+  Buttons.l : Axis.l[6] : POV.l : Name.s
+EndStructure
+
+CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+  Prototype.l GL_ProtoXInputGetState(index.l, *state)
+  Prototype.l GL_ProtoJoyGetPosEx(id.l, *info)
+  Prototype.l GL_ProtoJoyGetDevCaps(id.i, *caps, size.l)
+  Global GL_XInputGetState.GL_ProtoXInputGetState, GL_JoyGetPosEx.GL_ProtoJoyGetPosEx, GL_JoyGetDevCaps.GL_ProtoJoyGetDevCaps, GL_PadLibsTried.i
+  Procedure GL_PadLibs()
+    Protected lib.i
+    If GL_PadLibsTried : ProcedureReturn : EndIf
+    GL_PadLibsTried = 1
+    lib = OpenLibrary(#PB_Any, "xinput1_4.dll")
+    If lib = 0 : lib = OpenLibrary(#PB_Any, "xinput9_1_0.dll") : EndIf
+    If lib : GL_XInputGetState = GetFunction(lib, "XInputGetState") : EndIf
+    lib = OpenLibrary(#PB_Any, "winmm.dll")
+    If lib : GL_JoyGetPosEx = GetFunction(lib, "joyGetPosEx") : GL_JoyGetDevCaps = GetFunction(lib, "joyGetDevCapsW") : EndIf
+  EndProcedure
+CompilerElse
+  ImportC ""
+    GL_open(path.p-ascii, flags.l) As "open"
+    GL_read(fd.l, *buf, n.i) As "read"
+    GL_close(fd.l) As "close"
+    GL_ioctl(fd.l, request.i, *arg) As "ioctl"
+    GL_errno() As "__errno_location"
+  EndImport
+  Structure GLJsDevice
+    fd.l : tried.q : Buttons.q : Axis.l[8] : Name.s
+  EndStructure
+  Global Dim GL_Js.GLJsDevice(15)
+  ; The device's events since the last call into its state; #False when it is not there (looked for again a second later).
+  Procedure.i GL_JsPoll(id.i)
+    Protected *d.GLJsDevice = @GL_Js(id), ev.q, v.i, num.i, *nm
+    If *d\fd <= 0
+      If ElapsedMilliseconds() < *d\tried : ProcedureReturn #False : EndIf
+      *d\tried = ElapsedMilliseconds() + 1000
+      *d\fd = GL_open("/dev/input/js" + Str(id), $800)   ; O_RDONLY | O_NONBLOCK
+      If *d\fd <= 0 : *d\fd = 0 : ProcedureReturn #False : EndIf
+      *d\Buttons = 0 : FillMemory(@*d\Axis[0], 32, 0)
+      *nm = AllocateMemory(129)
+      If GL_ioctl(*d\fd, $80806A13, *nm) > 0 : *d\Name = PeekS(*nm, -1, #PB_UTF8) : Else : *d\Name = "controller " + Str(id + 1) : EndIf   ; JSIOCGNAME(128)
+      FreeMemory(*nm)
+    EndIf
+    Protected got.i
+    Repeat
+      got = GL_read(*d\fd, @ev, 8)                   ; js_event: time.l, value.w, type.a, number.a
+      If got <> 8 : Break : EndIf
+      v = PeekW(@ev + 4) : num = PeekA(@ev + 7)
+      Select PeekA(@ev + 6) & $7F
+        Case 1 : If num < 64 : If v : *d\Buttons | (1 << num) : Else : *d\Buttons & ~(1 << num) : EndIf : EndIf
+        Case 2 : If num < 8 : *d\Axis[num] = v : EndIf
+      EndSelect
+    ForEver
+    If got < 0 And PeekL(GL_errno()) <> 11           ; anything but EAGAIN (nothing new): unplugged
+      GL_close(*d\fd) : *d\fd = 0 : ProcedureReturn #False
+    EndIf
+    ProcedureReturn #True
+  EndProcedure
+CompilerEndIf
+
+; #True when an Xbox-layout pad answers on Port (0-3).
+Procedure.i GL_PadRead(Port.i, *P.GLPadState)
+  FillMemory(*P, SizeOf(GLPadState), 0)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected Dim st.q(1)                             ; XINPUT_STATE: dwPacketNumber, then the pad
+    GL_PadLibs()
+    If GL_XInputGetState = 0 Or GL_XInputGetState(Port, @st(0)) <> 0 : ProcedureReturn #False : EndIf
+    CopyMemory(@st(0) + 4, *P, SizeOf(GLPadState))
+    ProcedureReturn #True
+  CompilerElse
+    Protected *d.GLJsDevice, b.q, hx.i, hy.i
+    If Port < 0 Or Port > 15 Or GL_JsPoll(Port) = #False : ProcedureReturn #False : EndIf
+    *d = @GL_Js(Port)
+    If FindString(LCase(*d\Name), "box") = 0 : ProcedureReturn #False : EndIf
+    b = *d\Buttons                                   ; xpad: A B X Y LB RB Back Start; axes LX LY LT RX RY RT hatX hatY
+    If b & 1 : *P\Buttons | $1000 : EndIf : If b & 2 : *P\Buttons | $2000 : EndIf
+    If b & 4 : *P\Buttons | $4000 : EndIf : If b & 8 : *P\Buttons | $8000 : EndIf
+    If b & 16 : *P\Buttons | $100 : EndIf : If b & 32 : *P\Buttons | $200 : EndIf
+    If b & 64 : *P\Buttons | $20 : EndIf : If b & 128 : *P\Buttons | $10 : EndIf
+    hx = *d\Axis[6] : hy = *d\Axis[7]
+    If hy < 0 : *P\Buttons | 1 : ElseIf hy > 0 : *P\Buttons | 2 : EndIf
+    If hx < 0 : *P\Buttons | 4 : ElseIf hx > 0 : *P\Buttons | 8 : EndIf
+    *P\LX = *d\Axis[0] : *P\LY = -1 - *d\Axis[1] : *P\RX = *d\Axis[3] : *P\RY = -1 - *d\Axis[4]   ; (Linux: down positive)
+    *P\LT = (*d\Axis[2] + 32767) * 255 / 65534 : *P\RT = (*d\Axis[5] + 32767) * 255 / 65534
+    ProcedureReturn #True
+  CompilerEndIf
+EndProcedure
+
+; #True when controller Id (0-15) answers.
+Procedure.i GL_JoyRead(Id.i, *J.GLJoyState)
+  Protected k.i
+  *J\Buttons = 0 : *J\POV = $FFFF : *J\Name = ""
+  For k = 0 To 5 : *J\Axis[k] = 32767 : Next
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected j.JOYINFOEX, *caps
+    GL_PadLibs()
+    If GL_JoyGetPosEx = 0 : ProcedureReturn #False : EndIf
+    j\dwSize = SizeOf(JOYINFOEX) : j\dwFlags = $FF   ; JOY_RETURNALL
+    If GL_JoyGetPosEx(Id, @j) <> 0 : ProcedureReturn #False : EndIf
+    *J\Buttons = j\dwButtons
+    *J\Axis[0] = j\dwXpos & $FFFF : *J\Axis[1] = j\dwYpos & $FFFF : *J\Axis[2] = j\dwZpos & $FFFF
+    *J\Axis[3] = j\dwRpos & $FFFF : *J\Axis[4] = j\dwUpos & $FFFF : *J\Axis[5] = j\dwVpos & $FFFF
+    *J\POV = j\dwPOV & $FFFF
+    *J\Name = "controller " + Str(Id + 1)
+    *caps = AllocateMemory(1024)
+    If GL_JoyGetDevCaps And GL_JoyGetDevCaps(Id, *caps, 1024) = 0 : *J\Name = Trim(PeekS(*caps + 4, 32, #PB_Unicode)) : EndIf
+    FreeMemory(*caps)
+  CompilerElse
+    Protected *d.GLJsDevice, hx.i, hy.i
+    If Id < 0 Or Id > 15 Or GL_JsPoll(Id) = #False : ProcedureReturn #False : EndIf
+    *d = @GL_Js(Id)
+    *J\Buttons = *d\Buttons & $FFFFFFFF : *J\Name = *d\Name
+    For k = 0 To 5 : *J\Axis[k] = *d\Axis[k] + 32767 : Next
+    hx = *d\Axis[6] : hy = *d\Axis[7]                ; the hat as two axes: to hundredths of a degree from up
+    If hx Or hy
+      If hy < 0 And hx = 0 : *J\POV = 0 : ElseIf hy < 0 And hx > 0 : *J\POV = 4500 : ElseIf hy = 0 And hx > 0 : *J\POV = 9000
+      ElseIf hy > 0 And hx > 0 : *J\POV = 13500 : ElseIf hy > 0 And hx = 0 : *J\POV = 18000 : ElseIf hy > 0 And hx < 0 : *J\POV = 22500
+      ElseIf hy = 0 And hx < 0 : *J\POV = 27000 : Else : *J\POV = 31500 : EndIf
+    EndIf
+  CompilerEndIf
+  ProcedureReturn #True
+EndProcedure
+
+
 ; IDE Options = PureBasic 6.21 (Windows - x64)
 ; CursorPosition = 661
 ; FirstLine = 637

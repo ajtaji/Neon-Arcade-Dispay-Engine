@@ -3,6 +3,18 @@
 ; ============================================================================
 ;Declare.i GenerateSpriteHull(*Sprite)
 
+; Which way DrawGLSprite samples a texture filled from memory: 1 = row 0 of
+; the uploaded pixels is drawn at the BOTTOM (Windows), 0 = at the top
+; (Linux), from the V_Top / V_Bottom choice in DrawGLSprite. A host that
+; uploads rows computes the source row as
+;   If #GL_SpriteRowsBottomUp : row = Height - 1 - y : Else : row = y : EndIf
+; and needs no OS test of its own.
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  #GL_SpriteRowsBottomUp = 0
+CompilerElse
+  #GL_SpriteRowsBottomUp = 1
+CompilerEndIf
+
 
 ;   INTERNAL: Core Image Processor  
 Procedure.i Internal_ProcessGLSprite(Img.i, ColorKey.i = -1)

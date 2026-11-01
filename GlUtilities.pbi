@@ -2436,7 +2436,11 @@ EndProcedure
 ;   GL_KeySnap(Key)                   then is Key down in that read
 ;   #GL_Key_*                         Shift / Control / Alt, their Left / Right,
 ;                                     and the punctuation keys, for both OSes
-;   GL_FullscreenEnter(Win)           borderless over the monitor the window is
+;   GL_KeyEventCode(Key)              a key code from the OpenGL gadget's
+;                                     KeyDown / KeyUp event, made the same for
+;                                     both: on Linux KeyUp gives a letter's
+;                                     lower-case keysym ($61), KeyDown $41
+;   GL_FullscreenEnter(Win)          borderless over the monitor the window is
 ;   GL_FullscreenLeave(Win)           on, no display-mode change; Leave puts the
 ;   GL_FullscreenIsOn()               window back exactly where it was
 ;   GL_FullscreenRect(*R.GLHostRect)  the monitor it covers, in physical pixels
@@ -2763,6 +2767,17 @@ Procedure.i GL_KeySnap(Key.i)
     If code = 0 : ProcedureReturn #False : EndIf
     ProcedureReturn Bool(GL_KeySnapState(code >> 3) & (1 << (code & 7)))
   CompilerEndIf
+EndProcedure
+
+; Pass #PB_OpenGL_Key through this for every KeyDown and KeyUp. Measured under
+; WSLg (PureBasic 6.41 Linux): 'a' comes as $41 (#PB_Shortcut_A) on KeyDown and
+; as $61, the raw lower-case keysym, on KeyUp, so a key table never saw a letter
+; released. On Windows $61-$7A are other keys (numpad, F-keys): left alone.
+Procedure.i GL_KeyEventCode(Key.i)
+  CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+    If Key >= $61 And Key <= $7A : ProcedureReturn Key - $20 : EndIf
+  CompilerEndIf
+  ProcedureReturn Key
 EndProcedure
 
 Procedure.s GL_KeyName(Key.i)

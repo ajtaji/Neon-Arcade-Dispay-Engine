@@ -2516,6 +2516,9 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     GL_XKeysymToKeycode(*display, keysym.i) As "XKeysymToKeycode"
     GL_XKeysymToString(keysym.i) As "XKeysymToString"
     GL_XFree(*data) As "XFree"
+    GL_XSetErrorHandler(*handler) As "XSetErrorHandler"
+    GL_XQueryExtension(*display, name.p-ascii, *major, *event, *error) As "XQueryExtension"
+    GL_XCloseDisplay(*display) As "XCloseDisplay"
   EndImport
   ImportC "-lGL"
     GL_glXGetCurrentDisplay() As "glXGetCurrentDisplay"
@@ -2545,10 +2548,48 @@ Structure GLHostRect
 EndStructure
 
 ; --- the host's start ---
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  ; Some X servers (WSLg's, measured 2026-10-13 and 2026-10-31) refuse ONE optional
+  ; GLX request while an OpenGL gadget is set up - GLXBadContextTag answering
+  ; X_GLXVendorPrivate (minor 16), the kind used to set the swap interval - and the
+  ; context works regardless. GDK's own X error handler ends the program on it, so
+  ; no OpenGL gadget could open there. This handler lets exactly that error through
+  ; and hands every other one to the handler it replaced, unchanged.
+  Structure GLXErrorEvent
+    type.l : pad.l
+    *display
+    resourceid.i
+    serial.i
+    error_code.a : request_code.a : minor_code.a
+  EndStructure
+  Global GL_XGlxOpcode.i, GL_XPrevHandler.i, GL_XIgnoredGlx.i
+  ProcedureC.l GL_XErrorFilter(*display, *e.GLXErrorEvent)
+    If GL_XGlxOpcode And *e\request_code = GL_XGlxOpcode And *e\minor_code = 16
+      GL_XIgnoredGlx + 1
+      ProcedureReturn 0
+    EndIf
+    If GL_XPrevHandler : ProcedureReturn CallCFunctionFast(GL_XPrevHandler, *display, *e) : EndIf
+    ProcedureReturn 0
+  EndProcedure
+  Procedure GL_XErrorFilterInstall()
+    Protected *dpy, major.l, ev.l, er.l
+    If GL_XGlxOpcode = 0
+      *dpy = GL_XOpenDisplay(0)                     ; the opcode is the server's, the same on every connection
+      If *dpy
+        If GL_XQueryExtension(*dpy, "GLX", @major, @ev, @er) : GL_XGlxOpcode = major : EndIf
+        GL_XCloseDisplay(*dpy)
+      EndIf
+    EndIf
+    Protected prev.i = GL_XSetErrorHandler(@GL_XErrorFilter())
+    If prev <> @GL_XErrorFilter() : GL_XPrevHandler = prev : EndIf
+  EndProcedure
+CompilerEndIf
+
 Procedure GL_HostPrepare()
   CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     SetEnvironmentVariable("GDK_BACKEND", "x11")
     GL_XInitThreads()
+    GL_XErrorFilterInstall()
   CompilerElseIf #PB_Compiler_OS = #PB_OS_Windows
     ; per-monitor v2 DPI awareness before any window (GlUIChrome.pbi, the HiDPI
     ; section): /DPIAWARE alone is only system-DPI aware, and Windows then

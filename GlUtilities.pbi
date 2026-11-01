@@ -2454,6 +2454,8 @@ EndProcedure
 ;   GL_AudioPlay(*Buffer)             all are queued), Play queues it
 ;   GL_AudioQueued()                  pairs played into the card and not yet heard
 ;   GL_AudioClose()
+;   GL_NoPowerThrottling()            keep full speed with the window behind
+;                                     another (Windows 11 EcoQoS; Linux nothing)
 ;   GL_TimerFine(On)                  Delay(1) waits about 1 ms, not 15.6 (Windows;
 ;                                     Linux timers are fine already)
 ;   GL_WorkArea(*R.GLHostRect)        the primary desktop minus its taskbars, in
@@ -2669,11 +2671,14 @@ EndProcedure
 ; the same codes GL_KeyHeld, GL_KeySnap, GL_KeyName and the OpenGL gadget's
 ; #PB_OpenGL_Key use. Shift / Control / Alt are either side on Windows; on
 ; Linux X has no either-side keysym, so they are the LEFT key there.
+; PureBasic's own Linux #PB_Shortcut_LeftWindows ($5B, the '[' keysym),
+; #PB_Shortcut_Capital and #PB_Shortcut_Menu (both 0) are wrong: use these.
 CompilerIf #PB_Compiler_OS = #PB_OS_Windows
   #GL_Key_Shift        = $10 : #GL_Key_Control      = $11 : #GL_Key_Alt          = $12
   #GL_Key_ShiftLeft    = $A0 : #GL_Key_ShiftRight   = $A1
   #GL_Key_ControlLeft  = $A2 : #GL_Key_ControlRight = $A3
   #GL_Key_AltLeft      = $A4 : #GL_Key_AltRight     = $A5
+  #GL_Key_CapsLock     = $14 : #GL_Key_SuperLeft    = $5B : #GL_Key_SuperRight   = $5C
   #GL_Key_Minus        = $BD : #GL_Key_Equals       = $BB
   #GL_Key_BracketLeft  = $DB : #GL_Key_BracketRight = $DD : #GL_Key_Backslash = $DC
   #GL_Key_Semicolon    = $BA : #GL_Key_Apostrophe   = $DE : #GL_Key_Grave     = $C0
@@ -2683,6 +2688,7 @@ CompilerElse
   #GL_Key_ShiftLeft    = $FFE1 : #GL_Key_ShiftRight   = $FFE2
   #GL_Key_ControlLeft  = $FFE3 : #GL_Key_ControlRight = $FFE4
   #GL_Key_AltLeft      = $FFE9 : #GL_Key_AltRight     = $FFEA
+  #GL_Key_CapsLock     = $FFE5 : #GL_Key_SuperLeft    = $FFEB : #GL_Key_SuperRight   = $FFEC
   #GL_Key_Minus        = $2D   : #GL_Key_Equals       = $3D
   #GL_Key_BracketLeft  = $5B   : #GL_Key_BracketRight = $5D   : #GL_Key_Backslash = $5C
   #GL_Key_Semicolon    = $3B   : #GL_Key_Apostrophe   = $27   : #GL_Key_Grave     = $60
@@ -3027,6 +3033,25 @@ Procedure.i GL_AudioQueued()
     If GL_snd_pcm_delay(*GL_AudioPcm, @d) < 0 : ProcedureReturn 0 : EndIf
     If d < 0 : d = 0 : EndIf
     ProcedureReturn d
+  CompilerEndIf
+EndProcedure
+
+; --- power throttling ---
+; Windows 11 EcoQoS slows a process whose window is behind another; a program
+; keeping real time opts out once at start. Loaded at run time, so a Windows
+; without the call skips it; Linux has no such throttling.
+Procedure GL_NoPowerThrottling()
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected lib.i, fn.i, Dim st.l(2)
+    lib = OpenLibrary(#PB_Any, "kernel32.dll")
+    If lib
+      fn = GetFunction(lib, "SetProcessInformation")
+      If fn
+        st(0) = 1 : st(1) = 1 : st(2) = 0          ; Version 1, ControlMask EXECUTION_SPEED, StateMask 0 = never throttle
+        CallFunctionFast(fn, -1, 4, @st(0), 12)    ; GetCurrentProcess(), ProcessPowerThrottling
+      EndIf
+      CloseLibrary(lib)
+    EndIf
   CompilerEndIf
 EndProcedure
 

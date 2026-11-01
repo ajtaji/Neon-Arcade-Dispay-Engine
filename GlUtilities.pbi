@@ -2432,6 +2432,10 @@ EndProcedure
 ;                                     #PB_Shortcut_ code; false if the keyboard
 ;                                     state cannot be read
 ;   GL_KeyName(Key)                   the keyboard's own name for a key
+;   GL_KeysSnapshot()                 read the whole keyboard once (a frame);
+;   GL_KeySnap(Key)                   then is Key down in that read
+;   #GL_Key_*                         Shift / Control / Alt, their Left / Right,
+;                                     and the punctuation keys, for both OSes
 ;   GL_FullscreenEnter(Win)           borderless over the monitor the window is
 ;   GL_FullscreenLeave(Win)           on, no display-mode change; Leave puts the
 ;   GL_FullscreenIsOn()               window back exactly where it was
@@ -2448,6 +2452,7 @@ EndProcedure
 ;   GL_AudioOpen(Rate, Pairs, Count)  16-bit stereo out: Count buffers of Pairs
 ;   GL_AudioNext()                    pairs; Next gives a buffer to fill (0 when
 ;   GL_AudioPlay(*Buffer)             all are queued), Play queues it
+;   GL_AudioQueued()                  pairs played into the card and not yet heard
 ;   GL_AudioClose()
 ;   GL_TimerFine(On)                  Delay(1) waits about 1 ms, not 15.6 (Windows;
 ;                                     Linux timers are fine already)
@@ -2528,6 +2533,7 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     GL_snd_pcm_writei(*pcm, *buffer, frames.i) As "snd_pcm_writei"
     GL_snd_pcm_recover(*pcm, err.l, silent.l) As "snd_pcm_recover"
     GL_snd_pcm_drop(*pcm) As "snd_pcm_drop"
+    GL_snd_pcm_delay(*pcm, *delay) As "snd_pcm_delay"
     GL_snd_pcm_close(*pcm) As "snd_pcm_close"
   EndImport
 CompilerEndIf
@@ -2655,6 +2661,60 @@ Procedure.i GL_KeyHeld(Key.i)
     If code = 0 : ProcedureReturn #False : EndIf
     GL_XQueryKeymap(*GL_KeyDisplay, @keys(0))
     ProcedureReturn Bool(keys(code >> 3) & (1 << (code & 7)))
+  CompilerEndIf
+EndProcedure
+
+; Keys PureBasic has no #PB_Shortcut_ code for (modifiers alone, left/right
+; sides, punctuation): the virtual-key code on Windows, the X keysym on Linux,
+; the same codes GL_KeyHeld, GL_KeySnap, GL_KeyName and the OpenGL gadget's
+; #PB_OpenGL_Key use. Shift / Control / Alt are either side on Windows; on
+; Linux X has no either-side keysym, so they are the LEFT key there.
+CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+  #GL_Key_Shift        = $10 : #GL_Key_Control      = $11 : #GL_Key_Alt          = $12
+  #GL_Key_ShiftLeft    = $A0 : #GL_Key_ShiftRight   = $A1
+  #GL_Key_ControlLeft  = $A2 : #GL_Key_ControlRight = $A3
+  #GL_Key_AltLeft      = $A4 : #GL_Key_AltRight     = $A5
+  #GL_Key_Minus        = $BD : #GL_Key_Equals       = $BB
+  #GL_Key_BracketLeft  = $DB : #GL_Key_BracketRight = $DD : #GL_Key_Backslash = $DC
+  #GL_Key_Semicolon    = $BA : #GL_Key_Apostrophe   = $DE : #GL_Key_Grave     = $C0
+  #GL_Key_Comma        = $BC : #GL_Key_Period       = $BE : #GL_Key_Slash     = $BF
+CompilerElse
+  #GL_Key_Shift        = $FFE1 : #GL_Key_Control      = $FFE3 : #GL_Key_Alt        = $FFE9
+  #GL_Key_ShiftLeft    = $FFE1 : #GL_Key_ShiftRight   = $FFE2
+  #GL_Key_ControlLeft  = $FFE3 : #GL_Key_ControlRight = $FFE4
+  #GL_Key_AltLeft      = $FFE9 : #GL_Key_AltRight     = $FFEA
+  #GL_Key_Minus        = $2D   : #GL_Key_Equals       = $3D
+  #GL_Key_BracketLeft  = $5B   : #GL_Key_BracketRight = $5D   : #GL_Key_Backslash = $5C
+  #GL_Key_Semicolon    = $3B   : #GL_Key_Apostrophe   = $27   : #GL_Key_Grave     = $60
+  #GL_Key_Comma        = $2C   : #GL_Key_Period       = $2E   : #GL_Key_Slash     = $2F
+CompilerEndIf
+
+; One read of the whole keyboard per frame, for a host that tests many keys:
+; GL_KeysSnapshot() once, then GL_KeySnap(Key) per key answers from it (same
+; codes as GL_KeyHeld). GL_KeyHeld costs one OS call - one X server round trip
+; on Linux - per key; ~70 keys a frame that way cost 14 ms on Windows.
+Global Dim GL_KeySnapState.a(255)
+Procedure GL_KeysSnapshot()
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    If GetKeyboardState_(@GL_KeySnapState(0)) = 0 : FillMemory(@GL_KeySnapState(0), 256, 0) : EndIf
+  CompilerElse
+    If *GL_KeyDisplay = 0 : *GL_KeyDisplay = GL_XOpenDisplay(0) : EndIf
+    If *GL_KeyDisplay = 0 : FillMemory(@GL_KeySnapState(0), 256, 0) : ProcedureReturn : EndIf
+    GL_XQueryKeymap(*GL_KeyDisplay, @GL_KeySnapState(0))   ; 32 bytes: one bit per X keycode
+  CompilerEndIf
+EndProcedure
+
+Procedure.i GL_KeySnap(Key.i)
+  If Key = 0 : ProcedureReturn #False : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    If Key > 255 : ProcedureReturn #False : EndIf
+    ProcedureReturn Bool(GL_KeySnapState(Key) & $80)
+  CompilerElse
+    Protected code.i
+    If *GL_KeyDisplay = 0 : ProcedureReturn #False : EndIf
+    code = GL_XKeysymToKeycode(*GL_KeyDisplay, Key) & $FF   ; answered from Xlib's cached keyboard map
+    If code = 0 : ProcedureReturn #False : EndIf
+    ProcedureReturn Bool(GL_KeySnapState(code >> 3) & (1 << (code & 7)))
   CompilerEndIf
 EndProcedure
 
@@ -2947,6 +3007,26 @@ Procedure GL_AudioPlay(*Buffer)
   CompilerElse
     Protected r.i = GL_snd_pcm_writei(*GL_AudioPcm, *Buffer, GL_AudioPairs)
     If r < 0 : GL_snd_pcm_recover(*GL_AudioPcm, r, 1) : EndIf
+  CompilerEndIf
+EndProcedure
+
+; Pairs given to GL_AudioPlay that the card has not played yet (0 = it has run
+; dry). Divide by Pairs, rounding up, for buffers. A buffer GL_AudioNext handed
+; out and not yet played is not counted.
+Procedure.i GL_AudioQueued()
+  If GL_AudioOn = 0 : ProcedureReturn 0 : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected i.i, n.i, *h.GLWaveHeader
+    For i = 0 To GL_AudioCount - 1
+      *h = *GL_AudioHeaders + i * SizeOf(GLWaveHeader)
+      If *h\dwFlags & 3 = 2 : n + 1 : EndIf      ; WHDR_PREPARED, not WHDR_DONE: written, playing or waiting
+    Next
+    ProcedureReturn n * GL_AudioPairs
+  CompilerElse
+    Protected d.i                                ; snd_pcm_sframes_t: 8 bytes on x64
+    If GL_snd_pcm_delay(*GL_AudioPcm, @d) < 0 : ProcedureReturn 0 : EndIf
+    If d < 0 : d = 0 : EndIf
+    ProcedureReturn d
   CompilerEndIf
 EndProcedure
 

@@ -2995,6 +2995,51 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Windows
   Global GL_AudioHandle.i, *GL_AudioHeaders, *GL_AudioData
 CompilerElse
   Global *GL_AudioPcm, *GL_AudioData
+  ; Linux has more than one sound system: a sound server - PulseAudio, or PipeWire, which answers PulseAudio's
+  ; clients (WSLg's is one: PULSE_SERVER names its socket) - or ALSA alone. GL_AudioOpen asks the server when one
+  ; is there (its socket: PULSE_SERVER, or pulse/native or pipewire-0 under XDG_RUNTIME_DIR) and libpulse-simple
+  ; loads (at run time: a system without it is not refused), else ALSA's default device. GL_AUDIO=alsa or
+  ; GL_AUDIO=pulse chooses. GL_AudioDriver names what is in use: "PulseAudio", "PipeWire (PulseAudio)", "ALSA".
+  Structure GLPaSampleSpec : format.l : rate.l : channels.a : EndStructure
+  Structure GLPaBufferAttr : maxlength.l : tlength.l : prebuf.l : minreq.l : fragsize.l : EndStructure
+  PrototypeC.i GLPaSimpleNew(*server, name.p-utf8, dir.l, *dev, stream.p-utf8, *ss, *map, *attr, *err)
+  PrototypeC.l GLPaSimpleWrite(*s, *data, bytes.i, *err)
+  PrototypeC.q GLPaSimpleLatency(*s, *err)
+  PrototypeC.l GLPaSimpleFlush(*s, *err)
+  PrototypeC GLPaSimpleFree(*s)
+  Global GL_PaLib.i, *GL_Pa, GL_PaRate.i, GL_PaNew.GLPaSimpleNew, GL_PaWrite.GLPaSimpleWrite, GL_PaLatency.GLPaSimpleLatency
+  Global GL_PaFlush.GLPaSimpleFlush, GL_PaFree.GLPaSimpleFree
+CompilerEndIf
+Global GL_AudioDriver.s                           ; what plays the sound: "waveOut", "PulseAudio", "PipeWire (PulseAudio)", "ALSA", "" none
+
+CompilerIf #PB_Compiler_OS = #PB_OS_Linux
+  ; The sound server's kind, if there is one to ask: "" none, else "PulseAudio" or "PipeWire (PulseAudio)".
+  Procedure.s GL_AudioServer()
+    Protected run.s = GetEnvironmentVariable("XDG_RUNTIME_DIR"), srv.s = GetEnvironmentVariable("PULSE_SERVER")
+    If run <> "" And FileSize(run + "/pipewire-0") >= 0 : ProcedureReturn "PipeWire (PulseAudio)" : EndIf   ; (a socket: there, size 0)
+    If srv <> "" : ProcedureReturn "PulseAudio" : EndIf
+    If run <> "" And FileSize(run + "/pulse/native") >= 0 : ProcedureReturn "PulseAudio" : EndIf
+    ProcedureReturn ""
+  EndProcedure
+
+  ; The stream on the sound server: 16-bit stereo at Rate, its buffer Pairs * Count pairs. #False: it cannot.
+  Procedure.i GL_AudioOpenPulse(Rate.i, Pairs.i, Count.i)
+    Protected ss.GLPaSampleSpec, at.GLPaBufferAttr, err.l
+    If GL_PaLib = 0
+      GL_PaLib = OpenLibrary(#PB_Any, "libpulse-simple.so.0")
+      If GL_PaLib = 0 : ProcedureReturn #False : EndIf
+      GL_PaNew = GetFunction(GL_PaLib, "pa_simple_new") : GL_PaWrite = GetFunction(GL_PaLib, "pa_simple_write")
+      GL_PaLatency = GetFunction(GL_PaLib, "pa_simple_get_latency") : GL_PaFlush = GetFunction(GL_PaLib, "pa_simple_flush")
+      GL_PaFree = GetFunction(GL_PaLib, "pa_simple_free")
+    EndIf
+    If GL_PaNew = 0 Or GL_PaWrite = 0 Or GL_PaLatency = 0 Or GL_PaFree = 0 : ProcedureReturn #False : EndIf
+    ss\format = 3 : ss\rate = Rate : ss\channels = 2   ; PA_SAMPLE_S16LE, stereo
+    at\maxlength = -1 : at\tlength = Pairs * Count * 4 : at\prebuf = -1 : at\minreq = -1 : at\fragsize = -1
+    *GL_Pa = GL_PaNew(#Null, GetFilePart(ProgramFilename()), 1, #Null, "playback", @ss, #Null, @at, @err)   ; PA_STREAM_PLAYBACK
+    If *GL_Pa = 0 : ProcedureReturn #False : EndIf
+    GL_PaRate = Rate
+    ProcedureReturn #True
+  EndProcedure
 CompilerEndIf
 
 Procedure GL_AudioClose()
@@ -3008,9 +3053,10 @@ Procedure GL_AudioClose()
     If *GL_AudioHeaders : FreeMemory(*GL_AudioHeaders) : *GL_AudioHeaders = 0 : EndIf
   CompilerElse
     If *GL_AudioPcm : GL_snd_pcm_drop(*GL_AudioPcm) : GL_snd_pcm_close(*GL_AudioPcm) : *GL_AudioPcm = 0 : EndIf
+    If *GL_Pa : If GL_PaFlush : GL_PaFlush(*GL_Pa, #Null) : EndIf : GL_PaFree(*GL_Pa) : *GL_Pa = 0 : EndIf
   CompilerEndIf
   If *GL_AudioData : FreeMemory(*GL_AudioData) : *GL_AudioData = 0 : EndIf
-  GL_AudioOn = 0
+  GL_AudioOn = 0 : GL_AudioDriver = ""
 EndProcedure
 
 ; #True when the sound card is open.
@@ -3030,10 +3076,17 @@ Procedure.i GL_AudioOpen(Rate.i, Pairs.i, Count.i)
       *h\lpData = *GL_AudioData + i * Pairs * 4 : *h\dwBufferLength = Pairs * 4 : *h\dwFlags = 1   ; WHDR_DONE: free
     Next
   CompilerElse
-    If GL_snd_pcm_open(@*GL_AudioPcm, "default", 0, 1) < 0 : *GL_AudioPcm = 0 : GL_AudioClose() : ProcedureReturn #False : EndIf   ; playback, non-blocking
-    ; S16_LE, interleaved read/write, stereo; latency: the buffers' worth
-    If GL_snd_pcm_set_params(*GL_AudioPcm, 2, 3, 2, Rate, 1, Pairs * Count * 1000000 / Rate) < 0 : GL_AudioClose() : ProcedureReturn #False : EndIf
+    Protected want.s = LCase(GetEnvironmentVariable("GL_AUDIO")), server.s = GL_AudioServer()
+    If want <> "alsa" And (server <> "" Or want = "pulse") And GL_AudioOpenPulse(Rate, Pairs, Count)
+      GL_AudioDriver = server : If GL_AudioDriver = "" : GL_AudioDriver = "PulseAudio" : EndIf
+    Else
+      If GL_snd_pcm_open(@*GL_AudioPcm, "default", 0, 1) < 0 : *GL_AudioPcm = 0 : GL_AudioClose() : ProcedureReturn #False : EndIf   ; playback, non-blocking
+      ; S16_LE, interleaved read/write, stereo; latency: the buffers' worth
+      If GL_snd_pcm_set_params(*GL_AudioPcm, 2, 3, 2, Rate, 1, Pairs * Count * 1000000 / Rate) < 0 : GL_AudioClose() : ProcedureReturn #False : EndIf
+      GL_AudioDriver = "ALSA"
+    EndIf
   CompilerEndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows : GL_AudioDriver = "waveOut" : CompilerEndIf
   GL_AudioOn = 1
   ProcedureReturn #True
 EndProcedure
@@ -3053,6 +3106,11 @@ Procedure GL_AudioNext()
     Next
     ProcedureReturn 0
   CompilerElse
+    If *GL_Pa                                    ; (the server: room while what it holds is under the buffers' worth)
+      Protected lat.q = GL_PaLatency(*GL_Pa, #Null) * GL_PaRate / 1000000
+      If lat + GL_AudioPairs > GL_AudioPairs * GL_AudioCount : ProcedureReturn 0 : EndIf
+      ProcedureReturn *GL_AudioData
+    EndIf
     Protected room.i = GL_snd_pcm_avail_update(*GL_AudioPcm)
     If room < 0 : GL_snd_pcm_recover(*GL_AudioPcm, room, 1) : ProcedureReturn 0 : EndIf
     If room < GL_AudioPairs : ProcedureReturn 0 : EndIf
@@ -3067,6 +3125,7 @@ Procedure GL_AudioPlay(*Buffer)
     GL_waveOutPrepareHeader(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
     GL_waveOutWrite(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
   CompilerElse
+    If *GL_Pa : GL_PaWrite(*GL_Pa, *Buffer, GL_AudioPairs * 4, #Null) : ProcedureReturn : EndIf
     Protected r.i = GL_snd_pcm_writei(*GL_AudioPcm, *Buffer, GL_AudioPairs)
     If r < 0 : GL_snd_pcm_recover(*GL_AudioPcm, r, 1) : EndIf
   CompilerEndIf
@@ -3085,6 +3144,7 @@ Procedure.i GL_AudioQueued()
     Next
     ProcedureReturn n * GL_AudioPairs
   CompilerElse
+    If *GL_Pa : ProcedureReturn GL_PaLatency(*GL_Pa, #Null) * GL_PaRate / 1000000 : EndIf   ; (microseconds to pairs)
     Protected d.i                                ; snd_pcm_sframes_t: 8 bytes on x64
     If GL_snd_pcm_delay(*GL_AudioPcm, @d) < 0 : ProcedureReturn 0 : EndIf
     If d < 0 : d = 0 : EndIf

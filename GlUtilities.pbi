@@ -2497,49 +2497,49 @@ EndProcedure
 
 CompilerIf #PB_Compiler_OS = #PB_OS_Linux
   ImportC ""
-    GL_clock_gettime(clk.l, *ts) As "clock_gettime"
+    GL_clock_gettime.l(clk.l, *ts) As "clock_gettime"
     GL_mmap(*addr, length.i, prot.l, flags.l, fd.l, offset.i) As "mmap"
-    GL_munmap(*addr, length.i) As "munmap"
-    GL_dl_iterate_phdr(*callback, *data) As "dl_iterate_phdr"
+    GL_munmap.l(*addr, length.i) As "munmap"
+    GL_dl_iterate_phdr.l(*callback, *data) As "dl_iterate_phdr"
     GL_gtk_window_fullscreen(*window) As "gtk_window_fullscreen"
     GL_gtk_window_unfullscreen(*window) As "gtk_window_unfullscreen"
     GL_gtk_widget_get_window(*widget) As "gtk_widget_get_window"
     GL_gdk_window_set_cursor(*window, *cursor) As "gdk_window_set_cursor"
     GL_gdk_cursor_new_for_display(*display, type.l) As "gdk_cursor_new_for_display"
     GL_gdk_display_get_default() As "gdk_display_get_default"
-    GL_gtk_widget_get_scale_factor(*widget) As "gtk_widget_get_scale_factor"
+    GL_gtk_widget_get_scale_factor.l(*widget) As "gtk_widget_get_scale_factor"
   EndImport
   ImportC "-lX11"
-    GL_XInitThreads() As "XInitThreads"
+    GL_XInitThreads.l() As "XInitThreads"
     GL_XOpenDisplay(*name) As "XOpenDisplay"
-    GL_XQueryKeymap(*display, *keys) As "XQueryKeymap"
+    GL_XQueryKeymap.l(*display, *keys) As "XQueryKeymap"
     GL_XKeysymToKeycode(*display, keysym.i) As "XKeysymToKeycode"
     GL_XKeysymToString(keysym.i) As "XKeysymToString"
-    GL_XFree(*data) As "XFree"
+    GL_XFree.l(*data) As "XFree"
     GL_XSetErrorHandler(*handler) As "XSetErrorHandler"
-    GL_XQueryExtension(*display, name.p-ascii, *major, *event, *error) As "XQueryExtension"
-    GL_XCloseDisplay(*display) As "XCloseDisplay"
+    GL_XQueryExtension.l(*display, name.p-ascii, *major, *event, *error) As "XQueryExtension"
+    GL_XCloseDisplay.l(*display) As "XCloseDisplay"
   EndImport
   ImportC "-lGL"
     GL_glXGetCurrentDisplay() As "glXGetCurrentDisplay"
     GL_glXGetCurrentContext() As "glXGetCurrentContext"
-    GL_glXQueryContext(*display, *ctx, attribute.l, *value) As "glXQueryContext"
+    GL_glXQueryContext.l(*display, *ctx, attribute.l, *value) As "glXQueryContext"
     GL_glXChooseFBConfig(*display, screen.l, *attribs, *count) As "glXChooseFBConfig"
     GL_glXCreateNewContext(*display, *config, renderType.l, *share, direct.l) As "glXCreateNewContext"
     GL_glXCreatePbuffer(*display, *config, *attribs) As "glXCreatePbuffer"
     GL_glXDestroyPbuffer(*display, pbuffer.i) As "glXDestroyPbuffer"
-    GL_glXMakeContextCurrent(*display, drawable.i, readable.i, *ctx) As "glXMakeContextCurrent"
+    GL_glXMakeContextCurrent.l(*display, drawable.i, readable.i, *ctx) As "glXMakeContextCurrent"
     GL_glXDestroyContext(*display, *ctx) As "glXDestroyContext"
   EndImport
   ImportC "-lasound"
-    GL_snd_pcm_open(*pcm, name.p-ascii, stream.l, mode.l) As "snd_pcm_open"
-    GL_snd_pcm_set_params(*pcm, format.l, access.l, channels.l, rate.l, resample.l, latency.l) As "snd_pcm_set_params"
+    GL_snd_pcm_open.l(*pcm, name.p-ascii, stream.l, mode.l) As "snd_pcm_open"
+    GL_snd_pcm_set_params.l(*pcm, format.l, access.l, channels.l, rate.l, resample.l, latency.l) As "snd_pcm_set_params"
     GL_snd_pcm_avail_update(*pcm) As "snd_pcm_avail_update"
     GL_snd_pcm_writei(*pcm, *buffer, frames.i) As "snd_pcm_writei"
-    GL_snd_pcm_recover(*pcm, err.l, silent.l) As "snd_pcm_recover"
-    GL_snd_pcm_drop(*pcm) As "snd_pcm_drop"
-    GL_snd_pcm_delay(*pcm, *delay) As "snd_pcm_delay"
-    GL_snd_pcm_close(*pcm) As "snd_pcm_close"
+    GL_snd_pcm_recover.l(*pcm, err.l, silent.l) As "snd_pcm_recover"
+    GL_snd_pcm_drop.l(*pcm) As "snd_pcm_drop"
+    GL_snd_pcm_delay.l(*pcm, *delay) As "snd_pcm_delay"
+    GL_snd_pcm_close.l(*pcm) As "snd_pcm_close"
   EndImport
 CompilerEndIf
 
@@ -2791,7 +2791,7 @@ CompilerElse
   ImportC ""
     GL_gdk_display_get_monitor_at_window(*display, *window) As "gdk_display_get_monitor_at_window"
     GL_gdk_monitor_get_geometry(*monitor, *rect) As "gdk_monitor_get_geometry"
-    GL_gdk_monitor_get_scale_factor(*monitor) As "gdk_monitor_get_scale_factor"
+    GL_gdk_monitor_get_scale_factor.l(*monitor) As "gdk_monitor_get_scale_factor"
   EndImport
 CompilerEndIf
 
@@ -3214,10 +3214,10 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Windows
   EndProcedure
 CompilerElse
   ImportC ""
-    GL_open(path.p-ascii, flags.l) As "open"
+    GL_open.l(path.p-ascii, flags.l) As "open"
     GL_read(fd.l, *buf, n.i) As "read"
-    GL_close(fd.l) As "close"
-    GL_ioctl(fd.l, request.i, *arg) As "ioctl"
+    GL_close.l(fd.l) As "close"
+    GL_ioctl.l(fd.l, request.i, *arg) As "ioctl"
     GL_errno() As "__errno_location"
   EndImport
   Structure GLJsDevice

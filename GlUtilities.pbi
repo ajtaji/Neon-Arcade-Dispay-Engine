@@ -2419,7 +2419,8 @@ EndProcedure
 ;
 ;   GL_HostPrepare()                  first thing, before any window: on Linux the
 ;                                     X11 shield and XInitThreads (item 2 of
-;                                     "HiDPI: THE FIVE THINGS"); nothing on Windows
+;                                     "HiDPI: THE FIVE THINGS"); on Windows
+;                                     per-monitor v2 DPI awareness
 ;   GL_HostScaleRead(Gadget)          after the window: Linux_DPIScale from GTK
 ;   GL_Micros()                       a monotonic clock in microseconds
 ;   GL_PhysicalCores()                the host's physical cores (not hardware
@@ -2540,6 +2541,18 @@ Procedure GL_HostPrepare()
   CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     SetEnvironmentVariable("GDK_BACKEND", "x11")
     GL_XInitThreads()
+  CompilerElseIf #PB_Compiler_OS = #PB_OS_Windows
+    ; per-monitor v2 DPI awareness before any window (GlUIChrome.pbi, the HiDPI
+    ; section): /DPIAWARE alone is only system-DPI aware, and Windows then
+    ; bitmap-stretches the window on a monitor with a different scale.
+    ; Loaded dynamically: the call exists from Windows 10 1607.
+    Protected lib.i, fn.i
+    lib = OpenLibrary(#PB_Any, "user32.dll")
+    If lib
+      fn = GetFunction(lib, "SetProcessDpiAwarenessContext")
+      If fn : CallFunctionFast(fn, -4) : EndIf   ; DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2
+      CloseLibrary(lib)
+    EndIf
   CompilerEndIf
 EndProcedure
 

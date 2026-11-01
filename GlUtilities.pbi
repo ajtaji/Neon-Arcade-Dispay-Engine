@@ -3007,8 +3007,17 @@ CompilerElse
   PrototypeC.q GLPaSimpleLatency(*s, *err)
   PrototypeC.l GLPaSimpleFlush(*s, *err)
   PrototypeC GLPaSimpleFree(*s)
-  Global GL_PaLib.i, *GL_Pa, GL_PaRate.i, GL_PaNew.GLPaSimpleNew, GL_PaWrite.GLPaSimpleWrite, GL_PaLatency.GLPaSimpleLatency
+  Global GL_PaLib.i, *GL_Pa, GL_PaRate.i, GL_PaCap.i, GL_PaNew.GLPaSimpleNew, GL_PaWrite.GLPaSimpleWrite, GL_PaLatency.GLPaSimpleLatency
   Global GL_PaFlush.GLPaSimpleFlush, GL_PaFree.GLPaSimpleFree
+  ; What the server still holds, counted here: the pairs written since the anchor less the time since it at the
+  ; rate. The server's own latency cannot be used for this - it adds the sink's delay, a fixed 143 ms under WSLg,
+  ; so the queue looked full for ever, nothing more was written, and almost every sample was dropped.
+  Global GL_PaWritten.q, GL_PaT0.q
+  Procedure.i GL_PaQueued()
+    Protected q.q = GL_PaWritten - (ElapsedMilliseconds() - GL_PaT0) * GL_PaRate / 1000
+    If q < 0 : GL_PaWritten = 0 : GL_PaT0 = ElapsedMilliseconds() : q = 0 : EndIf   ; (ran dry: count afresh from now)
+    ProcedureReturn q
+  EndProcedure
 CompilerEndIf
 Global GL_AudioDriver.s                           ; what plays the sound: "waveOut", "PulseAudio", "PipeWire (PulseAudio)", "ALSA", "" none
 
@@ -3034,12 +3043,15 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     EndIf
     If GL_PaNew = 0 Or GL_PaWrite = 0 Or GL_PaLatency = 0 Or GL_PaFree = 0 : ProcedureReturn #False : EndIf
     ss\format = 3 : ss\rate = Rate : ss\channels = 2   ; PA_SAMPLE_S16LE, stereo
-    ; (prebuf: playing from the first buffer - left at the server's default, the whole target, it never began, as
-    ; GL_AudioNext keeps the queue just under that)
-    at\maxlength = -1 : at\tlength = Pairs * Count * 4 : at\prebuf = Pairs * 4 : at\minreq = -1 : at\fragsize = -1
+    ; The queue kept on the server: the buffers' worth, and at least 150 ms - a server takes the sound in bursts
+    ; (WSLg's: 64 ms down to 21 between two writes), and a queue that ran under that went dry, the sound dropping.
+    ; It starts playing at half of that (prebuf; at the server's default, the whole queue, it never began, as
+    ; GL_AudioNext keeps it just under that).
+    GL_PaCap = Pairs * Count : If GL_PaCap < Rate * 150 / 1000 : GL_PaCap = Rate * 150 / 1000 : EndIf
+    at\maxlength = -1 : at\tlength = GL_PaCap * 4 : at\prebuf = (GL_PaCap / 2) * 4 : at\minreq = -1 : at\fragsize = -1
     *GL_Pa = GL_PaNew(#Null, GetFilePart(ProgramFilename()), 1, #Null, "playback", @ss, #Null, @at, @err)   ; PA_STREAM_PLAYBACK
     If *GL_Pa = 0 : ProcedureReturn #False : EndIf
-    GL_PaRate = Rate
+    GL_PaRate = Rate : GL_PaWritten = 0 : GL_PaT0 = ElapsedMilliseconds()
     ProcedureReturn #True
   EndProcedure
 CompilerEndIf
@@ -3109,8 +3121,8 @@ Procedure GL_AudioNext()
     ProcedureReturn 0
   CompilerElse
     If *GL_Pa                                    ; (the server: room while what it holds is under the buffers' worth)
-      Protected lat.q = GL_PaLatency(*GL_Pa, #Null) * GL_PaRate / 1000000
-      If lat + GL_AudioPairs > GL_AudioPairs * GL_AudioCount : ProcedureReturn 0 : EndIf
+      Protected lat.q = GL_PaQueued()
+      If lat + GL_AudioPairs > GL_PaCap : ProcedureReturn 0 : EndIf
       ProcedureReturn *GL_AudioData
     EndIf
     Protected room.i = GL_snd_pcm_avail_update(*GL_AudioPcm)
@@ -3127,7 +3139,7 @@ Procedure GL_AudioPlay(*Buffer)
     GL_waveOutPrepareHeader(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
     GL_waveOutWrite(GL_AudioHandle, *h, SizeOf(GLWaveHeader))
   CompilerElse
-    If *GL_Pa : GL_PaWrite(*GL_Pa, *Buffer, GL_AudioPairs * 4, #Null) : ProcedureReturn : EndIf
+    If *GL_Pa : GL_PaQueued() : GL_PaWrite(*GL_Pa, *Buffer, GL_AudioPairs * 4, #Null) : GL_PaWritten + GL_AudioPairs : ProcedureReturn : EndIf
     Protected r.i = GL_snd_pcm_writei(*GL_AudioPcm, *Buffer, GL_AudioPairs)
     If r < 0 : GL_snd_pcm_recover(*GL_AudioPcm, r, 1) : EndIf
   CompilerEndIf
@@ -3146,7 +3158,7 @@ Procedure.i GL_AudioQueued()
     Next
     ProcedureReturn n * GL_AudioPairs
   CompilerElse
-    If *GL_Pa : ProcedureReturn GL_PaLatency(*GL_Pa, #Null) * GL_PaRate / 1000000 : EndIf   ; (microseconds to pairs)
+    If *GL_Pa : ProcedureReturn GL_PaQueued() : EndIf   ; (the pairs written less those played since: GL_PaQueued)
     Protected d.i                                ; snd_pcm_sframes_t: 8 bytes on x64
     If GL_snd_pcm_delay(*GL_AudioPcm, @d) < 0 : ProcedureReturn 0 : EndIf
     If d < 0 : d = 0 : EndIf

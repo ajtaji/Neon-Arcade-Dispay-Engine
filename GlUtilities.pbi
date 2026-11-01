@@ -3034,7 +3034,9 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     EndIf
     If GL_PaNew = 0 Or GL_PaWrite = 0 Or GL_PaLatency = 0 Or GL_PaFree = 0 : ProcedureReturn #False : EndIf
     ss\format = 3 : ss\rate = Rate : ss\channels = 2   ; PA_SAMPLE_S16LE, stereo
-    at\maxlength = -1 : at\tlength = Pairs * Count * 4 : at\prebuf = -1 : at\minreq = -1 : at\fragsize = -1
+    ; (prebuf: playing from the first buffer - left at the server's default, the whole target, it never began, as
+    ; GL_AudioNext keeps the queue just under that)
+    at\maxlength = -1 : at\tlength = Pairs * Count * 4 : at\prebuf = Pairs * 4 : at\minreq = -1 : at\fragsize = -1
     *GL_Pa = GL_PaNew(#Null, GetFilePart(ProgramFilename()), 1, #Null, "playback", @ss, #Null, @at, @err)   ; PA_STREAM_PLAYBACK
     If *GL_Pa = 0 : ProcedureReturn #False : EndIf
     GL_PaRate = Rate

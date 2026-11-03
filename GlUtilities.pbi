@@ -2504,6 +2504,7 @@ CompilerIf #PB_Compiler_OS = #PB_OS_Linux
     GL_clock_gettime.l(clk.l, *ts) As "clock_gettime"
     GL_mmap(*addr, length.i, prot.l, flags.l, fd.l, offset.i) As "mmap"
     GL_munmap.l(*addr, length.i) As "munmap"
+    GL_sched_getaffinity.l(pid.l, size.i, *mask) As "sched_getaffinity"
     GL_dl_iterate_phdr.l(*callback, *data) As "dl_iterate_phdr"
     GL_gtk_window_fullscreen(*window) As "gtk_window_fullscreen"
     GL_gtk_window_unfullscreen(*window) As "gtk_window_unfullscreen"
@@ -2665,6 +2666,23 @@ Procedure.i GL_PhysicalCores()
       Wend
       CloseFile(f)
       n = MapSize(seen())
+    EndIf
+    ; THE AFFINITY (2026-11-02): /proc/cpuinfo is the whole machine; the process may be allowed fewer CPUs (taskset,
+    ; cgroups, a container). sched_getaffinity says how many; two hardware threads a core, so half of them are
+    ; cores - and never more than cpuinfo's cores. (An N64 emulator started cpuinfo's cores of spinning helpers on
+    ; 4 allowed CPUs: 6% of real time.)
+    Protected Dim aff.q(15), bits.i, i.i, w.q
+    If GL_sched_getaffinity(0, 128, @aff(0)) = 0
+      For i = 0 To 15
+        w = aff(i)
+        While w : bits + 1 : w & (w - 1) : Wend
+      Next
+      If bits > 0
+        Protected cpus.i = CountCPUs(#PB_System_ProcessCPUs), allowed.i = bits
+        If cpus > n And bits > 1 : allowed = (bits * n + cpus - 1) / cpus : EndIf   ; (SMT: cpus / n threads a core)
+        If allowed < 1 : allowed = 1 : EndIf
+        If allowed < n : n = allowed : EndIf
+      EndIf
     EndIf
   CompilerEndIf
   If n < 1 Or n > CountCPUs(#PB_System_ProcessCPUs) : n = CountCPUs(#PB_System_ProcessCPUs) : EndIf

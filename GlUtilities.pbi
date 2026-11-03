@@ -3306,16 +3306,18 @@ EndStructure
 
 CompilerIf #PB_Compiler_OS = #PB_OS_Windows
   Prototype.l GL_ProtoXInputGetState(index.l, *state)
+  Prototype.l GL_ProtoXInputSetState(index.l, *vibration)
   Prototype.l GL_ProtoJoyGetPosEx(id.l, *info)
   Prototype.l GL_ProtoJoyGetDevCaps(id.i, *caps, size.l)
   Global GL_XInputGetState.GL_ProtoXInputGetState, GL_JoyGetPosEx.GL_ProtoJoyGetPosEx, GL_JoyGetDevCaps.GL_ProtoJoyGetDevCaps, GL_PadLibsTried.i
+  Global GL_XInputSetState.GL_ProtoXInputSetState
   Procedure GL_PadLibs()
     Protected lib.i
     If GL_PadLibsTried : ProcedureReturn : EndIf
     GL_PadLibsTried = 1
     lib = OpenLibrary(#PB_Any, "xinput1_4.dll")
     If lib = 0 : lib = OpenLibrary(#PB_Any, "xinput9_1_0.dll") : EndIf
-    If lib : GL_XInputGetState = GetFunction(lib, "XInputGetState") : EndIf
+    If lib : GL_XInputGetState = GetFunction(lib, "XInputGetState") : GL_XInputSetState = GetFunction(lib, "XInputSetState") : EndIf
     lib = OpenLibrary(#PB_Any, "winmm.dll")
     If lib : GL_JoyGetPosEx = GetFunction(lib, "joyGetPosEx") : GL_JoyGetDevCaps = GetFunction(lib, "joyGetDevCapsW") : EndIf
   EndProcedure
@@ -3326,6 +3328,7 @@ CompilerElse
     GL_close.l(fd.l) As "close"
     GL_ioctl.l(fd.l, request.i, *arg) As "ioctl"
     GL_errno() As "__errno_location"
+    GL_write(fd.l, *buf, n.i) As "write"
   EndImport
   Structure GLJsDevice
     fd.l : tried.q : Buttons.q : Axis.l[8] : Name.s
@@ -3386,6 +3389,57 @@ Procedure.i GL_PadRead(Port.i, *P.GLPadState)
     *P\LX = *d\Axis[0] : *P\LY = -1 - *d\Axis[1] : *P\RX = *d\Axis[3] : *P\RY = -1 - *d\Axis[4]   ; (Linux: down positive)
     *P\LT = (*d\Axis[2] + 32767) * 255 / 65534 : *P\RT = (*d\Axis[5] + 32767) * 255 / 65534
     ProcedureReturn #True
+  CompilerEndIf
+EndProcedure
+
+; THE GAMEPAD'S VIBRATION (2026-11-02): pad Port's motors at Strength (0 off .. 65535 full), both motors alike.
+; Windows: XInputSetState. Linux: the js device's event node (/sys/class/input/jsN/device/eventM) and a force-
+; feedback rumble effect on it (EVIOCSFF uploads it - again with each strength - and an EV_FF event plays or stops
+; it). A pad that cannot vibrate, or a node that will not open for writing, is left alone.
+CompilerIf #PB_Compiler_OS <> #PB_OS_Windows
+  Global GL_FfFd.l = -1, GL_FfPort.i = -1, GL_FfId.i = -1
+  Procedure GL_FfOpen(Port.i)
+    Protected d.i, n.s
+    If GL_FfFd > 0 : GL_close(GL_FfFd) : EndIf
+    GL_FfFd = -1 : GL_FfId = -1 : GL_FfPort = Port
+    d = ExamineDirectory(#PB_Any, "/sys/class/input/js" + Str(Port) + "/device/", "event*")
+    If d
+      While NextDirectoryEntry(d)
+        n = DirectoryEntryName(d)
+        If Left(n, 5) = "event" : GL_FfFd = GL_open("/dev/input/" + n, $802) : Break : EndIf   ; O_RDWR | O_NONBLOCK
+      Wend
+      FinishDirectory(d)
+    EndIf
+    If GL_FfFd <= 0 : GL_FfFd = -1 : EndIf
+  EndProcedure
+CompilerEndIf
+Procedure GL_PadRumble(Port.i, Strength.i)
+  If Strength < 0 : Strength = 0 : ElseIf Strength > 65535 : Strength = 65535 : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    Protected vib.l
+    GL_PadLibs()
+    If GL_XInputSetState = 0 Or Port < 0 Or Port > 3 : ProcedureReturn : EndIf
+    vib = Strength | (Strength << 16)                ; XINPUT_VIBRATION: the left (low-frequency) and right motors
+    GL_XInputSetState(Port, @vib)
+  CompilerElse
+    Protected *e = AllocateMemory(48), *ev = AllocateMemory(24)
+    If Port < 0 Or Port > 15 : FreeMemory(*e) : FreeMemory(*ev) : ProcedureReturn : EndIf
+    If Port <> GL_FfPort : GL_FfOpen(Port) : EndIf
+    If GL_FfFd > 0
+      If Strength
+        PokeU(*e, $50) : PokeW(*e + 2, GL_FfId)      ; struct ff_effect: FF_RUMBLE, the id (-1: a new one), replay length 0 (on until stopped)
+        PokeU(*e + 16, Strength) : PokeU(*e + 18, Strength)   ; strong and weak magnitude
+        If GL_ioctl(GL_FfFd, $40304580, *e) >= 0     ; EVIOCSFF
+          GL_FfId = PeekW(*e + 2)
+          PokeU(*ev + 16, $15) : PokeU(*ev + 18, GL_FfId) : PokeL(*ev + 20, 1)   ; struct input_event: EV_FF, the effect, play
+          GL_write(GL_FfFd, *ev, 24)
+        EndIf
+      ElseIf GL_FfId >= 0
+        PokeU(*ev + 16, $15) : PokeU(*ev + 18, GL_FfId) : PokeL(*ev + 20, 0)       ; stop
+        GL_write(GL_FfFd, *ev, 24)
+      EndIf
+    EndIf
+    FreeMemory(*e) : FreeMemory(*ev)
   CompilerEndIf
 EndProcedure
 

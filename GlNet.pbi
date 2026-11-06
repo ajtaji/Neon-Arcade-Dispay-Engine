@@ -21,13 +21,16 @@
 ;   n = GL_NetRecv(h, *Buf, Cap)         bytes, 0 = the peer closed (TCP), WOULDBLOCK, or an error
 ;   n = GL_NetRecvFrom(h, *Buf, Cap)     UDP; GL_NetFromAddr$ / GL_NetFromPort say who sent it
 ;   r = GL_NetPoll(h)                    bit0 readable, bit1 writable, bit2 error or hang-up; < 0 an error
+;   GL_NetWaitBegin()                    clear the idle wait's interest set
+;   GL_NetWaitAdd(h, Mask)               add read (1), write (2), or both (3); errors always wake
+;   n = GL_NetWait(Milliseconds)         BLOCK until readiness or timeout; no socket is consumed
 ;   GL_NetShutdown(h, How)               0 receive, 1 send, 2 both
 ;   GL_NetClose(h)
 ;   a$ = GL_NetResolve(Name$ [, Family]) the first address of a host name, "" when it fails
 ;   p = GL_NetLocalPort(h)               the port a socket is bound to (after Bind to port 0)
 ;   GL_NetError(h)                       a connect's outcome: 0 or an error code (SO_ERROR)
 ;
-; EVERY SOCKET IS NON-BLOCKING and nothing here waits - except GL_NetResolve, which asks the system
+; EVERY SOCKET IS NON-BLOCKING. GL_NetWait is an explicit readiness wait; GL_NetResolve asks the system
 ; resolver and can take as long as it does (call it off the frame loop, or accept the stall). Errors
 ; are RESULT CODES (never an assert, never a message box): the fixed list #GL_NET_* below, the same on
 ; both systems (the OS's own number is in GL_NetOsError for diagnostics).
@@ -117,6 +120,10 @@ EndStructure
 Structure GLNetSock
   used.i : os.i : kind.i : family.i
 EndStructure
+; A caller supplies only work it can consume: readable data already reported to a guest, or a
+; permanently writable socket, must not turn an idle wait into a busy loop. Rebuild the interest
+; set before each wait. Masks are the GL_NetPoll bits (1 read, 2 write); errors always wake it.
+Global Dim GL_NetWaitMask.i(#GL_NET_MAX)
 Global Dim GL_NetSocks.GLNetSock(#GL_NET_MAX)
 Global GL_NetLib.i, GL_NetReady.i, GL_NetOsError.i, GL_NetFromAddr$, GL_NetFromPort.i
 Global GL_NetSocketF.GLNetSocket, GL_NetCloseF.GLNetClose, GL_NetPollF.GLNetPollFn, GL_NetAcceptF.GLNetAcceptFn
@@ -417,6 +424,52 @@ Procedure.i GL_NetPoll(h.i)                        ; bit0 readable, bit1 writabl
     If rev & $38 : r | 4 : EndIf                                   ; POLLERR, POLLHUP, POLLNVAL
     If rev & $10 : r | 1 : EndIf
   CompilerEndIf
+  ProcedureReturn r
+EndProcedure
+
+Procedure GL_NetWaitBegin()
+  Protected h.i
+  For h = 1 To #GL_NET_MAX : GL_NetWaitMask(h) = 0 : Next
+EndProcedure
+
+Procedure.i GL_NetWaitAdd(h.i, Mask.i)
+  If Not GL_NetValid(h) : ProcedureReturn #GL_NET_BADHANDLE : EndIf
+  If Mask < 1 Or Mask > 3 : ProcedureReturn #GL_NET_BADARG : EndIf
+  GL_NetWaitMask(h) | Mask
+  ProcedureReturn 0
+EndProcedure
+
+; Sleep in the OS readiness wait, without opening/closing/consuming a socket. Windows WSAPoll
+; uses 16-byte WSAPOLLFDs (SOCKET is 64-bit); Linux poll uses 8-byte pollfds (fd is 32-bit).
+; timeout is milliseconds, >= 0. Return ready count, 0 at the deadline, or a GL_NET error.
+Procedure.i GL_NetWait(Milliseconds.i)
+  Protected Dim fds.a(#GL_NET_MAX * 16), h.i, n.i, stride.i, mask.i, r.i
+  If Milliseconds < 0 : ProcedureReturn #GL_NET_BADARG : EndIf
+  CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+    stride = 16
+  CompilerElse
+    stride = 8
+  CompilerEndIf
+  For h = 1 To #GL_NET_MAX
+    If GL_NetWaitMask(h) And GL_NetValid(h)
+      mask = 0
+      CompilerIf #PB_Compiler_OS = #PB_OS_Windows
+        PokeI(@fds(n * stride), GL_NetSocks(h)\os)
+        If GL_NetWaitMask(h) & 1 : mask | $100 : EndIf   ; POLLRDNORM
+        If GL_NetWaitMask(h) & 2 : mask | $10 : EndIf    ; POLLWRNORM
+        PokeW(@fds(n * stride + 8), mask)
+      CompilerElse
+        PokeL(@fds(n * stride), GL_NetSocks(h)\os)
+        If GL_NetWaitMask(h) & 1 : mask | 1 : EndIf      ; POLLIN
+        If GL_NetWaitMask(h) & 2 : mask | 4 : EndIf      ; POLLOUT
+        PokeW(@fds(n * stride + 4), mask)
+      CompilerEndIf
+      n + 1
+    EndIf
+  Next
+  If n = 0 : Delay(Milliseconds) : ProcedureReturn 0 : EndIf
+  r = GL_NetPollF(@fds(0), n, Milliseconds)
+  If r < 0 : ProcedureReturn GL_NetMapError() : EndIf
   ProcedureReturn r
 EndProcedure
 

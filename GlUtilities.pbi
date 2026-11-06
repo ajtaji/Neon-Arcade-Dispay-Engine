@@ -2632,6 +2632,17 @@ Procedure.q GL_Micros()
   CompilerEndIf
 EndProcedure
 
+; --- an event wait for idle applications ---
+; GL_HostWait(Milliseconds) blocks in the toolkit until a window event or the deadline.
+; It returns the event just like WaitWindowEvent: process it BEFORE calling WindowEvent again,
+; so EventGadget/EventType and the rest still refer to that event. No polling or spin loop.
+; A non-positive timeout is a non-blocking event read; callers use a positive deadline to sleep.
+; PureBasic supplies the Windows message wait and the Linux GTK main-context wait here.
+Procedure.i GL_HostWait(Milliseconds.i)
+  If Milliseconds <= 0 : ProcedureReturn WindowEvent() : EndIf
+  ProcedureReturn WaitWindowEvent(Milliseconds)
+EndProcedure
+
 ; --- the cores ---
 Procedure.i GL_PhysicalCores()
   Protected n.i

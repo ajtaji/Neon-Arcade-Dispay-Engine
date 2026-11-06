@@ -37,6 +37,27 @@ XIncludeFile "GlUIChrome.pbi"
 
 `GlUtilities.pbi` loads the OpenGL binding files. `GlUI.pbi` uses the collision helpers in `GlMath.pbi`. `GlUIChrome.pbi` provides the higher-level application chrome and can be omitted when it is not needed.
 
+## Network host services (`GlNet.pbi`, optional)
+
+`XIncludeFile "GlNet.pbi"` after `GlUtilities.pbi` gives an application TCP and UDP sockets and name resolution
+without calling the OS: `GL_NetInit`, `GL_NetOpen`, `GL_NetBind`, `GL_NetListen`, `GL_NetAccept`, `GL_NetConnect`,
+`GL_NetSend`/`GL_NetSendTo`, `GL_NetRecv`/`GL_NetRecvFrom`, `GL_NetPoll`, `GL_NetShutdown`, `GL_NetClose`,
+`GL_NetResolve`, `GL_NetLocalPort`, `GL_NetError`. Windows uses ws2_32.dll and Linux uses libc, both loaded at run
+time. Every socket is non-blocking, and every failure is a fixed result code (`#GL_NET_*`, the same on both
+systems), never an assert. The one call that waits is `GL_NetResolve`, which uses the system resolver. The model
+and the codes are at the top of the file. `tests/GlNetTest.pb` proves loopback TCP and UDP (31 checks; run on
+Windows and on Linux).
+
+**Security.**
+- Nothing listens unless the application calls `GL_NetListen`, or binds a UDP socket. `GL_NetInit` opens nothing.
+- Bind to loopback (`127.0.0.1` / `::1`) unless the user asked for the network. `0.0.0.0` or `::` is reachable from
+  every machine that can reach this one. The engine never chooses an address for you.
+- An emulator that hands sockets to a guest program gives untrusted code network access with the user's rights. Put
+  a policy in front of it (what may be connected to, what may listen, whether at all), off by default. The engine
+  is the mechanism; the policy is the application's.
+- Received bytes come from anyone. `GL_NetRecv` never writes past its capacity. On Linux, a send to a closed peer
+  returns `#GL_NET_RESET` and raises no SIGPIPE.
+
 ## Rendering flow
 
 The usual frame renders the game into the engine framebuffer and then presents that framebuffer to the window:

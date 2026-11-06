@@ -14,6 +14,7 @@
 ;   GL_NetBind(h, Addr$, Port)           a numeric address ("127.0.0.1", "::1", "0.0.0.0")
 ;   GL_NetListen(h, Backlog)             TCP: start accepting
 ;   c = GL_NetAccept(h)                  a new handle, or #GL_NET_WOULDBLOCK
+;                                        (GL_NetFromAddr$ / GL_NetFromPort = the peer's address and port)
 ;   GL_NetConnect(h, Addr$, Port)        0, #GL_NET_INPROGRESS (poll for writable), or an error
 ;   n = GL_NetSend(h, *Buf, Len)         bytes sent, #GL_NET_WOULDBLOCK, or an error
 ;   n = GL_NetSendTo(h, *Buf, Len, Addr$, Port)        UDP

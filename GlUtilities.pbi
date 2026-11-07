@@ -3490,6 +3490,58 @@ Procedure.i GL_JoyRead(Id.i, *J.GLJoyState)
 EndProcedure
 
 
+; Persistent blocking worker. Create/start/wait/close belong to one owner thread.
+; Job data is owned by the callback from Start through Wait; semaphore handoff
+; publishes its writes. Callbacks must not call UI functions. Build with /THREAD.
+Prototype GLWorkFn(*data)
+Structure GLWorkerS
+  fn.GLWorkFn
+  *data
+  thread.i
+  go.i
+  done.i
+  busy.i
+  stop.i
+EndStructure
+Procedure GL_WorkerLoop(*w.GLWorkerS)
+  Repeat
+    WaitSemaphore(*w\go)
+    If *w\stop : Break : EndIf
+    *w\fn(*w\data)
+    SignalSemaphore(*w\done)
+  ForEver
+EndProcedure
+Procedure.i GL_WorkerCreate(fn.GLWorkFn, *data)
+  Protected *w.GLWorkerS = AllocateMemory(SizeOf(GLWorkerS))
+  If Not *w : ProcedureReturn 0 : EndIf
+  *w\fn = fn : *w\data = *data
+  *w\go = CreateSemaphore() : *w\done = CreateSemaphore()
+  If *w\go And *w\done : *w\thread = CreateThread(@GL_WorkerLoop(), *w) : EndIf
+  If Not *w\thread
+    If *w\go : FreeSemaphore(*w\go) : EndIf
+    If *w\done : FreeSemaphore(*w\done) : EndIf
+    FreeMemory(*w) : ProcedureReturn 0
+  EndIf
+  ProcedureReturn *w
+EndProcedure
+Procedure.i GL_WorkerStart(*w.GLWorkerS)
+  If Not *w Or *w\busy Or *w\stop : ProcedureReturn #False : EndIf
+  *w\busy = #True : SignalSemaphore(*w\go)
+  ProcedureReturn #True
+EndProcedure
+Procedure GL_WorkerWait(*w.GLWorkerS)
+  If *w And *w\busy
+    WaitSemaphore(*w\done) : *w\busy = #False
+  EndIf
+EndProcedure
+Procedure GL_WorkerClose(*w.GLWorkerS)
+  If Not *w : ProcedureReturn : EndIf
+  GL_WorkerWait(*w)
+  *w\stop = #True : SignalSemaphore(*w\go)
+  WaitThread(*w\thread)
+  FreeSemaphore(*w\go) : FreeSemaphore(*w\done) : FreeMemory(*w)
+EndProcedure
+
 ; IDE Options = PureBasic 6.21 (Windows - x64)
 ; CursorPosition = 661
 ; FirstLine = 637

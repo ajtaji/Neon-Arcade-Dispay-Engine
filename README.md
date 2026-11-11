@@ -127,3 +127,9 @@ Two comment blocks carry the things that otherwise get rediscovered:
 Every item in both lists produces a *wrong-looking UI* rather than an error:
 a blank window, controls with frames but no labels, soft text, or widgets
 that vanish inside a scissor. None of them raise anything.
+
+`GlClock.pbi` provides `GL_UtcMicroseconds()`: the host wall clock as Unix
+microseconds in UTC, using Windows FILETIME or Linux CLOCK_REALTIME. It is
+separate from the monotonic `GL_Micros()` timer and returns -1 when unavailable.
+It inherits the host's time synchronization; it does not contact a time server
+or apply a local timezone. Zentaji uses a recorded boot sample to seed its RTC.

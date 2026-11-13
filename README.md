@@ -1,6 +1,6 @@
 # Neon Arcade Display Engine
 
-A PureBasic 2D rendering and user-interface framework built on OpenGL. The engine uses a fixed-resolution framebuffer for game rendering, preserves aspect ratio when the window changes size, and maps input back into virtual-canvas coordinates.
+A PureBasic rendering and user-interface framework built on OpenGL. The engine uses a fixed-resolution framebuffer for game rendering, preserves aspect ratio when the window changes size, and maps input back into virtual-canvas coordinates.
 
 ## Current features
 
@@ -36,6 +36,42 @@ XIncludeFile "GlUIChrome.pbi"
 ```
 
 `GlUtilities.pbi` loads the OpenGL binding files. `GlUI.pbi` uses the collision helpers in `GlMath.pbi`. `GlUIChrome.pbi` provides the higher-level application chrome and can be omitted when it is not needed.
+
+## Optional 3D module
+
+Include `Gl3D.pbi` after `GlUtilities.pbi` for desktop OpenGL 3.3 and up.
+Create the window as usual, call `InitRetroCRT`, capture the window context
+with `GL_ContextCapture`, and initialize a `G3DPass` with `G3D_Init`.
+The pass owns a depth renderbuffer on the existing Neon canvas. With
+`Util_FBO` bound, render between `G3D_Begin` and `G3D_End`, draw the UI,
+then present with `DrawPassthrough` or `DrawRetroCRT`. Free models with
+`G3D_Free` and release the pass with `G3D_Shutdown` before closing the
+owning context.
+
+`G3D_Load` reads a glTF 2.0 `.glb` with PureBasic’s JSON reader. The loader
+accepts triangle primitives with float positions and normals, indexed or
+non-indexed geometry, one embedded buffer, and up to four joint influences
+per vertex. It supports TRS and matrix nodes, inverse bind matrices, and
+opaque factor-based metallic, roughness and emissive materials, including
+emissive strength. Reflection comes from a studio environment defined in
+the shader. External buffers, texture maps, sparse accessors, compressed
+mesh extensions and morph targets are outside the current format support.
+
+Use `G3D_Play(model, clip, blendSeconds)` for looping clips and crossfades,
+`G3D_Update(model, deltaSeconds)` to advance animation and springs, and
+`G3D_Draw(model, camera)` during the pass. The CPU builds the joint palette
+and the vertex shader skins the vertices. `G3D_Spring` enables gravity and
+damped motion for a named bone. `G3D_Impulse(model, x, y, z)` applies a
+velocity impulse in model space. `G3D_Load` enables springs for common bust
+and hip secondary-bone names. Use `G3D_LookAt` for a perspective camera and
+`G3D_Mesh` to upload procedural triangles.
+
+Applications can supply a vertex projection to the 3D pass when they
+initialize it. Pass GLSL defining
+`projectVertex(inout vec3 point, inout vec3 normal)` to `G3D_Init`.
+Set its four `projectionParams` values with `G3D_SetProjection` between
+`G3D_Begin` and `G3D_End`. The default pass uses the supplied mesh
+positions and normals directly.
 
 ## Network host services (`GlNet.pbi`, optional)
 

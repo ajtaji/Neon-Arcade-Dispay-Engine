@@ -407,6 +407,10 @@ Global NewMap Neon_Animation.f()
 
 ; Focus for keyboard-taking widgets (currently Neon_TextInput). 0 = none.
 Global Neon_FocusID.i = 0
+; A text input drew this frame with the keyboard, so its caret blinks (Neon_TextInput sets it,
+; Neon_ChromeBeginFrame clears it). A host that sleeps between frames reads it after its frame to know
+; it owes the blink a frame at Neon_CaretFlipInMs().
+Global Neon_CaretDrawn.b
 
 ; ----------------------------------------------------------------------
 ; UI SCALE - the DISPLAY's density, never the window's size
@@ -511,6 +515,7 @@ Procedure Neon_ChromeBeginFrame(MousePhysX.i, MousePhysY.i, MouseIsDown.b, Wheel
   Neon_DeltaTime     = Dt
   Neon_AnimationActive = #False
   Neon_HotCount      = 0
+  Neon_CaretDrawn    = #False
 EndProcedure
 
 ; Frame-rate-independent exponential easing for immediate-mode widgets.
@@ -1846,9 +1851,38 @@ EndProcedure
 ; text when nothing is selected), Ctrl+X cuts the selection, Ctrl+V pastes
 ; the clipboard's first line at the caret. Ctrl comes from Neon_KeyCtrl,
 ; which the host sets; a host that does not set it gets none of this.
+; A click puts the caret at the character under the pointer, and a text
+; wider than the box scrolls so the caret is always inside it.
 ; ----------------------------------------------------------------------
-Global Neon_CaretPhase.f
+Global Neon_CaretPhase.f             ; still advanced and reset for a caller that reads it; no longer drawn from
 Global Neon_TextAllID.i                ; the text input whose whole text is selected (0 = none)
+
+; THE CARET'S BLINK, BY THE CLOCK. It was Sin(Neon_CaretPhase), the phase advanced by each drawn frame's
+; time and restarted only by a typed character or a paste. A host that draws only when something happens
+; draws one frame a key, so walking back through a name with the arrows marched the phase into its dark
+; half after about ten keys, and kept the caret dark until the host next drew: the place being edited
+; vanished for seconds. Now every key that moves the caret or edits the text, a click in the field and the
+; field taking the keyboard show it AT ONCE and restart the blink, and the blink is real time: on for
+; #NEON_CARET_BLINK_MS, off for as long, however often or seldom frames are drawn.
+#NEON_CARET_BLINK_MS = 530
+Global Neon_CaretMs.q                  ; when the caret was last shown afresh (ElapsedMilliseconds)
+Global Neon_CaretFocusID.i             ; the text input the restart was made for on taking the keyboard (0 = none)
+; Each text input's horizontal scroll in pixels, by its ID (Str(ID)); a field with none is drawn from its start.
+; One caret blink is shared by every field: only the one with the keyboard draws a caret.
+Global NewMap Neon_TextScroll.f()
+
+; Is the caret drawn now: the first #NEON_CARET_BLINK_MS after a restart, then every other one.
+Procedure.b Neon_CaretOn()
+  Protected since.q = ElapsedMilliseconds() - Neon_CaretMs
+  ProcedureReturn Bool((since / #NEON_CARET_BLINK_MS) % 2 = 0)
+EndProcedure
+
+; How many ms until Neon_CaretOn() next changes (1 to #NEON_CARET_BLINK_MS) - when a host that sleeps
+; between frames, and whose last frame left Neon_CaretDrawn set, wakes to draw the blink.
+Procedure.i Neon_CaretFlipInMs()
+  Protected since.q = ElapsedMilliseconds() - Neon_CaretMs
+  ProcedureReturn #NEON_CARET_BLINK_MS - (since % #NEON_CARET_BLINK_MS)
+EndProcedure
 
 ; The clipboard's first line, as one line can hold it: what comes after the first line break is left out,
 ; and a tab becomes a space.
@@ -1864,12 +1898,17 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
   Protected submitted.b = #False
   Protected focused.b = Bool(Neon_FocusID = ID)
   Protected over.b = Neon_Hit(x, y, w, h)
+  Protected shown.b                     ; the caret is to be shown at once and its blink restarted
+  Protected placeAt.b                   ; a click in the field: the caret goes to the character under the pointer
+  Protected key.s = Str(ID), scroll.f   ; this field's own scroll (Neon_TextScroll), as it was drawn last
   Neon_HotZone(x, y, w, h, Neon_HotKey(9, ID, 0))
 
   If Neon_MouseClicked
     If over
       Neon_FocusID = ID
       focused = #True
+      shown = #True
+      placeAt = #True
     ElseIf focused
       Neon_FocusID = 0
       focused = #False
@@ -1877,12 +1916,27 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
     If Neon_TextAllID = ID : Neon_TextAllID = 0 : EndIf
   EndIf
   If Not focused And Neon_TextAllID = ID : Neon_TextAllID = 0 : EndIf
+  ; taking the keyboard by any road (a click, or the host setting Neon_FocusID) shows the caret at once
+  If focused And Neon_CaretFocusID <> ID : Neon_CaretFocusID = ID : shown = #True : EndIf
+  If Not focused And Neon_CaretFocusID = ID : Neon_CaretFocusID = 0 : EndIf
 
   Protected caret.i = Len(*Text\s)
   If *CaretPos
     caret = *CaretPos\i
     If caret > Len(*Text\s) : caret = Len(*Text\s) : EndIf
     If caret < 0 : caret = 0 : EndIf
+  EndIf
+  If FindMapElement(Neon_TextScroll(), key) : scroll = Neon_TextScroll() : EndIf
+  ; A click puts the caret on the nearer edge of the character under the pointer, measured in the text as
+  ; it was drawn - its scroll taken off. Only a caller that keeps the caret (*CaretPos) has one to place.
+  If placeAt And *CaretPos And *Neon_FontUI
+    Protected px.f = Neon_MX - (x + Neon_S(8)) + scroll, before.f = 0.0, upTo.f, i.i
+    caret = Len(*Text\s)
+    For i = 1 To Len(*Text\s)
+      upTo = GetGLTextWidth(*Neon_FontUI, Left(*Text\s, i))
+      If px < (before + upTo) / 2.0 : caret = i - 1 : Break : EndIf
+      before = upTo
+    Next
   EndIf
 
   If focused
@@ -1891,23 +1945,23 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
     If Neon_KeyCtrl And Neon_KeyCode
       Select Neon_KeyCode
         Case #PB_Shortcut_A
-          Neon_TextAllID = ID : all = #True : caret = Len(*Text\s) : Neon_KeyCode = 0
+          Neon_TextAllID = ID : all = #True : caret = Len(*Text\s) : Neon_KeyCode = 0 : shown = #True
         Case #PB_Shortcut_C
           SetClipboardText(*Text\s) : Neon_KeyCode = 0
         Case #PB_Shortcut_X
-          If all : SetClipboardText(*Text\s) : *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : EndIf
+          If all : SetClipboardText(*Text\s) : *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : shown = #True : EndIf
           Neon_KeyCode = 0
         Case #PB_Shortcut_V
           paste = Neon_ClipboardLine()
           If all : *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : EndIf
           *Text\s = Left(*Text\s, caret) + paste + Mid(*Text\s, caret + 1) : caret + Len(paste)
-          Neon_KeyCode = 0 : Neon_CaretPhase = 0.0
+          Neon_KeyCode = 0 : Neon_CaretPhase = 0.0 : shown = #True
       EndSelect
       Neon_KeyChar = 0              ; the control character Ctrl made of that letter
     EndIf
     ; a selected whole text is replaced by what is typed, and gone with Backspace / Delete
     If all And (Neon_KeyCode = #PB_Shortcut_Back Or Neon_KeyCode = #PB_Shortcut_Delete)
-      *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : Neon_KeyCode = 0
+      *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False : Neon_KeyCode = 0 : shown = #True
     EndIf
     If all And Neon_KeyChar >= 32 And Neon_KeyChar <> 127
       *Text\s = "" : caret = 0 : Neon_TextAllID = 0 : all = #False
@@ -1917,6 +1971,12 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
         Case #PB_Shortcut_Left, #PB_Shortcut_Right, #PB_Shortcut_Home, #PB_Shortcut_End : Neon_TextAllID = 0 : all = #False
       EndSelect
     EndIf
+    ; a key that moves the caret or edits the text shows the caret at once, even where it does nothing
+    ; (Left at the start), so the place is never lost while the keys come
+    Select Neon_KeyCode
+      Case #PB_Shortcut_Back, #PB_Shortcut_Delete, #PB_Shortcut_Left, #PB_Shortcut_Right, #PB_Shortcut_Home, #PB_Shortcut_End
+        shown = #True
+    EndSelect
     Select Neon_KeyCode
       Case #PB_Shortcut_Back
         If caret > 0
@@ -1952,10 +2012,38 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
       caret + 1
       Neon_KeyChar = 0
       Neon_CaretPhase = 0.0
+      shown = #True
     EndIf
   EndIf
+  If shown : Neon_CaretMs = ElapsedMilliseconds() : EndIf
+  If focused : Neon_CaretDrawn = #True : EndIf
 
   If *CaretPos : *CaretPos\i = caret : EndIf
+
+  ; THE SCROLL, this field's own (Neon_TextScroll, by its ID). A text wider than the box is moved left just
+  ; far enough that the caret stays inside the box: past the right edge it follows to the right, past the
+  ; left edge it follows back, and on taking the keyboard the caret's end comes into view. A text that fits,
+  ; and any field without the keyboard, is drawn from its start exactly as before (scroll 0).
+  Protected cw.f = 0.0, textW.f = 0.0, room.f
+  If *Neon_FontUI
+    cw = GetGLTextWidth(*Neon_FontUI, Left(*Text\s, caret))
+    textW = GetGLTextWidth(*Neon_FontUI, *Text\s)
+  EndIf
+  room = w - Neon_S(16) - Neon_S(1.5)        ; 8 each side, and the caret's own width at the right
+  If room < 1.0 : room = 1.0 : EndIf
+  If Not focused Or textW <= room
+    scroll = 0.0
+  Else
+    If cw - scroll > room : scroll = cw - room : EndIf
+    If cw - scroll < 0.0 : scroll = cw : EndIf
+    If scroll > textW - room : scroll = textW - room : EndIf
+    If scroll < 0.0 : scroll = 0.0 : EndIf
+  EndIf
+  If scroll = 0.0
+    If FindMapElement(Neon_TextScroll(), key) : DeleteMapElement(Neon_TextScroll()) : EndIf
+  Else
+    Neon_TextScroll(key) = scroll
+  EndIf
 
   ; --- draw ---------------------------------------------------------
   Neon_Box(x, y, w, h, 0.09, 0.093, 0.102)
@@ -1971,17 +2059,15 @@ Procedure.b Neon_TextInput(ID.i, x.f, y.f, w.f, h.f, *Text.String, Placeholder.s
   Protected ty.f = y + (h - th) / 2.0
   Neon_ScissorSet(x + 1, y + 1, w - 2, h - 2)
   If focused And Neon_TextAllID = ID And *Text\s <> "" And *Neon_FontUI
-    Neon_Box(x + Neon_S(6), ty, GetGLTextWidth(*Neon_FontUI, *Text\s) + Neon_S(4), th, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB, 0.35)
+    Neon_Box(x + Neon_S(6) - scroll, ty, textW + Neon_S(4), th, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB, 0.35)
   EndIf
   If *Text\s = "" And Not focused
     Neon_Text(*Neon_FontUI, x + Neon_S(8), ty, Placeholder, Neon_C_FaintR, Neon_C_FaintG, Neon_C_FaintB)
   Else
-    Neon_Text(*Neon_FontUI, x + Neon_S(8), ty, *Text\s, Neon_C_TextR, Neon_C_TextG, Neon_C_TextB)
+    Neon_Text(*Neon_FontUI, x + Neon_S(8) - scroll, ty, *Text\s, Neon_C_TextR, Neon_C_TextG, Neon_C_TextB)
   EndIf
-  If focused And Sin(Neon_CaretPhase) > -0.2
-    Protected cw.f = 0.0
-    If *Neon_FontUI : cw = GetGLTextWidth(*Neon_FontUI, Left(*Text\s, caret)) : EndIf
-    Neon_Box(x + Neon_S(8) + cw, ty, Neon_S(1.5), th, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB)
+  If focused And Neon_CaretOn()
+    Neon_Box(x + Neon_S(8) + cw - scroll, ty, Neon_S(1.5), th, Neon_C_AccR, Neon_C_AccG, Neon_C_AccB)
   EndIf
   Neon_ScissorClear()
   ProcedureReturn submitted

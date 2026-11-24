@@ -11,6 +11,9 @@
 *.ilk
 *.pdb
 
+# The check runners' build folder (tools/*.py)
+build/
+
 # Temporary and editor files
 *.log
 *.tmp

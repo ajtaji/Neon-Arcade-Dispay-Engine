@@ -10,6 +10,7 @@ A PureBasic rendering and user-interface framework built on OpenGL. The engine u
 - Camera translation and zoom
 - Sprite loading, batching, animation data, and instanced particles
 - AABB, circle, pixel-perfect, SAT, and line collision helpers
+- Tile sets and tile maps: flipped and rotated tiles, animated tiles, a map file
 - Runtime glyph caching with Unicode code-point lookup and paged texture atlases
 - Immediate-mode neon UI controls and application chrome
 - CRT and passthrough presentation paths
@@ -169,3 +170,57 @@ microseconds in UTC, using Windows FILETIME or Linux CLOCK_REALTIME. It is
 separate from the monotonic `GL_Micros()` timer and returns -1 when unavailable.
 It inherits the host's time synchronization; it does not contact a time server
 or apply a local timezone. Zentaji uses a recorded boot sample to seed its RTC.
+
+## Tile maps (`GlTiles.pbi`, optional)
+
+`XIncludeFile "GlTiles.pbi"` after `GlSpriteFunctions.pbi` (and `GlFile.pbi`, which saves the map file).
+`GL_TileSetCreate(*Sprite, TileW, TileH, Spacing, Margin)` cuts a sprite sheet into tiles numbered left to
+right, top to bottom from 0; a set holds at most 1023. `GL_TileMapCreate(Width, Height, *Set)` makes an empty
+grid of 16-bit cells. `GL_TileMapSet(*Map, X, Y, Tile, Flags)` puts a tile in a cell, or `#GL_TILE_EMPTY`;
+the flags are `#GL_TILE_FLIPX`, `#GL_TILE_FLIPY`, `#GL_TILE_DIAG` and the rotations `#GL_TILE_ROT90`,
+`#GL_TILE_ROT180`, `#GL_TILE_ROT270` (applied as Tiled applies them), and `GL_TilePalette(slot)` for indexed
+tile sets. `GL_TileMapGet` and `GL_TileMapFlags` read a cell back. A change shows on the next draw.
+
+`GL_TileMapDraw(*Map, MapX, MapY, R, G, B, A, Scaled, IgnoreCamera, TimeMs)` draws the map with its top-left
+corner at `MapX, MapY` through the 2D camera, placed as `DrawGLSprite` places a sprite. Only the cells the
+camera can see are submitted, into the sprite batcher, so a whole screen of one tile set is one `glDrawArrays`:
+a 320x240 canvas of 16x16 tiles is at most 21 x 16 = 336 quads, and a batch holds 10000. The map may be any
+size up to 65535 x 65535 cells. Draw maps outside the program's own `BeginBatch` / `EndBatch`. Each draw counts
+its calls in `GL_StatDrawCalls`. `GL_TileMapRange` tells which cells a draw would submit, and
+`GL_TileMapSubmit` adds them to a batch the program has begun, so maps that share a sheet can share one call.
+
+`GL_TileSetAnimAdd(*Set, Tile, FrameTile, Ms)` gives a tile frames; every cell that holds the tile shows the
+frame for the time, keeping the cell's flips. The time is `GL_Micros() / 1000` unless `TimeMs` is passed.
+
+```purebasic
+*Sheet = LoadGLSprite("tiles.png")
+*Set = GL_TileSetCreate(*Sheet, 16, 16)
+GL_TileSetAnimAdd(*Set, 40, 40, 150) : GL_TileSetAnimAdd(*Set, 40, 41, 150)   ; water
+*Map = GL_TileMapCreate(200, 30, *Set)
+GL_TileMapFill(*Map, 0, 25, 200, 5, 3)
+GL_TileMapSet(*Map, 10, 24, 7, #GL_TILE_FLIPX)
+; each frame, inside the canvas
+GL_CameraX = PlayerX - Util_BaseWidth / 2
+GL_TileMapDraw(*Map, 0, 0, 1, 1, 1, 1, #True)
+```
+
+`GL_TileMapSave(*Map, Path, SaveSet)` writes the map file through `GL_FileStore` (into `Path.new`, which then
+replaces `Path`); `GL_TileMapLoad(Path, *Set, Index)` reads tile layer `Index` back and `GL_TileSetLoad(*Set,
+Path)` reads the set's animations (and collision table) from the same file. Failures return 0 and say why in
+`GL_TileError()`.
+
+**The map file (`.ntm`).** Big-endian. Header: `"NTMP"`, version (2 bytes, 1), number of chunks (2). Then
+chunks: a 4-byte id, a 4-byte payload length, the payload, zero bytes to a multiple of 4. A reader skips ids it
+does not know.
+
+| Chunk | Payload |
+|---|---|
+| `MAP ` | width, height, tile width, tile height (2 bytes each), then width x height cells (2 bytes each), row 0 first. One chunk per tile layer, back to front. |
+| `ANIM` | entries (2); each: tile (2), frames (2), then per frame tile (2) and milliseconds (2) |
+| `TFLG` | count (2), then one collision byte per tile (see layers) |
+
+A cell: bits 0-9 the tile number + 1 (0 is an empty cell), bit 10 flip X, bit 11 flip Y, bit 12 diagonal,
+bits 13-15 the palette slot. `tools/tiles_check.py` proves the cut of a sheet, the cells submitted for 400
+camera positions against a pass over every cell, the eight orientations, animation by the clock and the file
+round trip; `tools/draw_check.py` draws maps into a render target of an invisible window and compares every
+pixel with a CPU reference.

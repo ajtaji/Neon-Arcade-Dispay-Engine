@@ -12,6 +12,7 @@ A PureBasic rendering and user-interface framework built on OpenGL. The engine u
 - AABB, circle, pixel-perfect, SAT, and line collision helpers
 - Tile sets and tile maps: flipped and rotated tiles, animated tiles, a map file
 - Layers of tiles or sprites with parallax, opacity, tint and draw order; tile collision queries
+- Colour-indexed images and palettes: swap, cycle and fade, drawn by a palette look-up in the shader
 - Runtime glyph caching with Unicode code-point lookup and paged texture atlases
 - Immediate-mode neon UI controls and application chrome
 - CRT and passthrough presentation paths
@@ -219,6 +220,7 @@ does not know.
 | `MAP ` | width, height, tile width, tile height (2 bytes each), then width x height cells (2 bytes each), row 0 first. One chunk per tile layer, back to front. |
 | `ANIM` | entries (2); each: tile (2), frames (2), then per frame tile (2) and milliseconds (2) |
 | `TFLG` | count (2), then one collision byte per tile (see layers) |
+| `TPAL` | count (2), then one palette slot per tile of an indexed set (see palettes) |
 
 A cell: bits 0-11 the tile number + 1 (0 is an empty cell), bit 12 diagonal, bit 13 reserved (0), bit 14 flip
 X, bit 15 flip Y - the tile word of the console's 2D engine (LibPureMetalN64 `lpm_2d_tile`), so one map file
@@ -281,3 +283,65 @@ edge is not overlapping, so a box standing exactly on the floor hits nothing. `t
 draw order, the parallax arithmetic at 300 camera positions, the sprite quads, and 600 each of boxes, circles
 and lines against a slow reference that visits every cell by other methods; `tools/draw_check.py` draws a
 parallax layer, a half-transparent flipped sprite layer and a fixed layer and compares every pixel.
+
+## Palettes and indexed images (`GlPalette.pbi`, comes with `GlTiles.pbi`)
+
+An indexed image is a picture of colour numbers, one byte a pixel, with up to eight palettes in slots.
+`GL_IndexedCreate(Width, Height, *Indices)` makes one; `GL_IndexedSet` / `GL_IndexedGet` change and read a pixel;
+`GL_IndexedPalette(*Img, Slot, *Pal)` puts a palette in a slot; `GL_IndexedFromImage(Img, *Pal)` turns a
+PureBasic image of up to 256 colours into one, adding its colours to the palette. `GL_PaletteCreate(Count)` makes
+a palette of up to 256 `RGBA()` colours; an entry whose alpha is 0 is transparent. A palette keeps the colours as
+set (`GL_PaletteSet`, `GL_PaletteGet`) and as shown (`GL_PaletteShown`). The operations work on the shown
+colours, in the order called, and `GL_PaletteReset` puts the set colours back:
+
+- `GL_PaletteCycle(*Pal, First, Count, Steps)` rotates a range; `GL_PaletteCycleTime(*Pal, First, Count, StepMs,
+  TimeMs)` rotates it one step every `StepMs` by the clock (worked out from the time, so it does not drift)
+- `GL_PaletteFade(*Pal, Colour, Amount, First, Count)` mixes toward a colour, alpha kept;
+  `GL_PaletteFadeTo(*Pal, *Other, Amount, First, Count)` mixes toward another palette, all four channels. Every
+  channel is `(a * (256 - k) + b * k + 128) >> 8` with `k = Amount * 256` rounded - whole numbers, the same on
+  every back end
+- swapping: `GL_IndexedDraw(*Img, X, Y, *Pal, Slot, Angle, Scale, R, G, B, A, Scaled, SrcX, SrcY, SrcW, SrcH,
+  IgnoreCamera, Orient)` draws as `DrawGLSprite` does with any palette; `GL_LayerImageAdd(*Layer, *Img, X, Y,
+  *Pal)` gives a sprite its own palette; `GL_LayerPalette(*Layer, Slot, *Pal)` replaces a slot for a whole layer
+
+`GL_TileSetCreateIndexed(*Img, TileW, TileH, Spacing, Margin)` cuts tiles from an indexed image, and
+`GL_TileSetPaletteSlot(*Set, Tile, Slot)` picks the palette each tile is drawn with, so one image shows several
+palettes at once.
+
+```purebasic
+*Water = GL_PaletteCreate() : *Night = GL_PaletteCreate()
+; ... GL_PaletteSet the colours; entry 0 transparent
+*Img = GL_IndexedLoad("world.nti")                ; indices and their palettes
+*Set = GL_TileSetCreateIndexed(*Img, 16, 16)
+*Base = GL_IndexedPaletteOf(*Img, 0)
+; each frame
+GL_PaletteReset(*Base)
+GL_PaletteCycleTime(*Base, 200, 8, 120)           ; the waterfall's eight blues
+GL_PaletteFade(*Base, RGBA(0, 0, 40, 255), Dusk)  ; evening falls
+GL_LayersDraw(*World, #True)
+```
+
+The OpenGL back end looks the colour up in the fragment shader: the indices are an R8 texture, each palette in
+use is one row of a 256 x 256 texture, and every vertex carries its palette's row, so tiles and sprites with
+different palettes are still one draw call. A changed palette re-sends its row (1 KB) at its next draw; the
+indices are sent again only after `GL_IndexedSet`. It needs GLSL 1.30 and R8 textures (OpenGL 3.0), inside what
+the engine already requires. `GL_IndexedToSprite(*Img, *Pal)` and `GL_IndexedBake(*Img, *Pal, *Sprite)` re-colour
+on the CPU into an ordinary sprite - width x height look-ups and an upload every time the palette changes - for
+code that needs a `GLSprite`. `GL_PaletteShutdown()` frees the back end before the context goes;
+`GL_IndexedFree` frees an image's texture.
+
+**The indexed image file (`.nti`)**, also a palette file with no image chunk: big-endian, header `"NTIX"`,
+version (2, 1), number of chunks (2), then chunks as the map file.
+
+| Chunk | Payload |
+|---|---|
+| `IDX8` | width, height (2 each), then one byte a pixel, row 0 first |
+| `IDX4` | width, height (2 each), then two pixels a byte, the first in the high half, each row starting on a byte |
+| `PAL ` | slot (1), 0 (1), count (2), then the colours as R, G, B, A bytes (`$RRGGBBAA`) |
+
+`GL_IndexedSave(*Img, Path, Packed)`, `GL_IndexedLoad(Path)` (the image then owns its palettes),
+`GL_PaletteSave(*Pal, Path)`, `GL_PaletteLoad(Path, Slot)`; failures say why in `GL_PaletteError()`.
+`tools/palette_check.py` proves the cycles, the clock, 2000 fades and 300 palette fades against references, their
+order, the slot rules, the look-up, pictures and the file; `tools/draw_check.py` draws an indexed map with two
+palettes, after a cycle and a fade, with a layer's swap, two sprites with their own palettes in one call, and the
+CPU re-colour, and compares every pixel with the CPU look-up.

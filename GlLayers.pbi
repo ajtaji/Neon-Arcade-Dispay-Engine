@@ -32,6 +32,11 @@
 ; a change of sheet starts a new one. Sprites wholly off the canvas are not
 ; submitted.
 ;
+; PALETTES (GlPalette.pbi): GL_LayerImageAdd puts an indexed image in a sprite
+; layer, with its own palette if given (a swap per sprite); GL_LayerPalette
+; replaces an image palette slot for everything the layer draws (a swap per
+; layer). Indexed sprites of one image are one call whatever their palettes.
+;
 ; --- COLLISION AGAINST A TILE LAYER ---
 ; Each tile of a set has a collision byte (GL_TileSetCollision): 0,
 ; #GL_TILE_SOLID, #GL_TILE_ONEWAY or #GL_TILE_SLOPE. The queries, in the
@@ -53,7 +58,10 @@
 #GL_LAYER_SPRITES = 2
 
 Structure GLLayerSprite
-  *Sprite.GLSprite
+  *Sprite.GLSprite                ; an ordinary sprite, or 0 and...
+  *Image.GLIndexedImage           ; ...an indexed image (GL_LayerImageAdd), drawn with
+  *Palette.GLPalette              ; this palette (a swap), or 0 for its slot Slot
+  Slot.i
   X.f : Y.f                       ; top-left, in the layer
   W.f : H.f                       ; drawn size; 0 = the picture rectangle's size
   Angle.f                         ; radians, about the centre
@@ -77,6 +85,7 @@ Structure GLLayer
   Order.i
   Fixed.i
   Seq.i                           ; when it was added (ties in Order)
+  Palette.i[#GL_PALETTE_SLOTS]    ; GL_LayerPalette: palettes replacing image slots, 0 = keep
 EndStructure
 
 Structure GLLayers
@@ -155,6 +164,35 @@ Procedure.i GL_LayerSpriteAdd(*Layer.GLLayer, *Sprite.GLSprite, X.f, Y.f)
   ProcedureReturn *E
 EndProcedure
 
+; Add an indexed image to a sprite layer. *Pal swaps its palette (0: the
+; image's slot Slot, or the layer's replacement for that slot).
+Procedure.i GL_LayerImageAdd(*Layer.GLLayer, *Img.GLIndexedImage, X.f, Y.f, *Pal.GLPalette = 0, Slot.i = 0)
+  Protected *E.GLLayerSprite
+  If Not *Layer Or *Layer\Kind <> #GL_LAYER_SPRITES Or Not *Img : ProcedureReturn 0 : EndIf
+  LastElement(*Layer\Sprites())
+  *E = AddElement(*Layer\Sprites())
+  *E\Image = *Img : *E\Palette = *Pal : *E\Slot = Slot : *E\X = X : *E\Y = Y
+  *E\R = 1.0 : *E\G = 1.0 : *E\B = 1.0 : *E\A = 1.0 : *E\Visible = #True
+  ProcedureReturn *E
+EndProcedure
+
+; Draw everything on this layer that uses palette slot Slot with *Pal instead
+; (0 puts the image's own palette back). A palette swap for a whole layer.
+Procedure.i GL_LayerPalette(*Layer.GLLayer, Slot.i, *Pal.GLPalette)
+  If Not *Layer Or Slot < 0 Or Slot >= #GL_PALETTE_SLOTS : ProcedureReturn #False : EndIf
+  *Layer\Palette[Slot] = *Pal
+  ProcedureReturn #True
+EndProcedure
+
+; The layer's slot replacements for a draw, or 0 when it has none.
+Procedure.i GLLayer_Palettes(*Layer.GLLayer)
+  Protected k.i
+  For k = 0 To #GL_PALETTE_SLOTS - 1
+    If *Layer\Palette[k] : ProcedureReturn @*Layer\Palette[0] : EndIf
+  Next
+  ProcedureReturn 0
+EndProcedure
+
 Procedure GL_LayerSpriteRemove(*Layer.GLLayer, *Entry.GLLayerSprite)
   If Not *Layer Or Not *Entry : ProcedureReturn : EndIf
   ForEach *Layer\Sprites()
@@ -226,35 +264,65 @@ Procedure GLLayer_QuadTurned(*X.GLTileXform, CX.f, CY.f, HW.f, HH.f, CosA.f, Sin
   GL_BatchCount + 1
 EndProcedure
 
-; Add a sprite layer's visible sprites, starting a new batch at each change of
-; sheet. Returns the sprites submitted. Leaves the last batch open.
+; An indexed image's quad, turned, into the palette batch (GlPalette.pbi).
+Procedure GLLayer_QuadTurnedPal(*X.GLTileXform, CX.f, CY.f, HW.f, HH.f, CosA.f, SinA.f, U0.f, VTop.f, U1.f, VBottom.f, Orient.i, R.f, G.f, B.f, A.f, Row.i)
+  Protected s.f, t.f, i.i, right.i, bottom.i, lx.f, ly.f, Q.GLLayerQuad
+  For i = 0 To 3
+    right = i & 1 : bottom = i >> 1
+    lx = -HW : If right : lx = HW : EndIf
+    ly = -HH : If bottom : ly = HH : EndIf
+    Q\NX[i] = (CX + lx * CosA - ly * SinA) * *X\KX + *X\CX
+    Q\NY[i] = (CY + lx * SinA + ly * CosA) * *X\KY + *X\CY
+    GLTile_SourceCorner(Orient, right, bottom, s, t)
+    Q\U[i] = U0 + (U1 - U0) * s : Q\V[i] = VTop + (VBottom - VTop) * t
+  Next
+  GLPal_Quad(@Q\NX[0], @Q\NY[0], @Q\U[0], @Q\V[0], R, G, B, A, Row)
+EndProcedure
+
+; Add a sprite layer's visible sprites, in the layer's order, starting a new
+; batch at each change of sheet (or between sprites and indexed images).
+; Returns the sprites submitted. Leaves the last batch open.
 Procedure.i GLLayer_SubmitSprites(*L.GLLayer, OX.f, OY.f, Scaled.b)
   Protected Xf.GLTileXform, *E.GLLayerSprite, n.i, w.f, h.f, sw.f, sh.f, cx.f, cy.f, rad.f
-  Protected u0.f, vt.f, u1.f, vb.f, X0.f, Y0.f, X1.f, Y1.f
+  Protected u0.f, vt.f, u1.f, vb.f, X0.f, Y0.f, X1.f, Y1.f, pw.i, ph.i, *Pal.GLPalette, row.i, *Over
   Protected TR.f = *L\TintR, TG.f = *L\TintG, TB.f = *L\TintB, TA.f = *L\Opacity
   GLTile_MakeXform(@Xf, Scaled, *L\Fixed)
   If Not GLTile_VisibleWorld(Scaled, *L\Fixed, @X0, @Y0, @X1, @Y1) : ProcedureReturn 0 : EndIf
+  *Over = GLLayer_Palettes(*L)
   ForEach *L\Sprites()
     *E = @*L\Sprites()
-    If Not *E\Visible Or Not *E\Sprite : Continue : EndIf
+    If Not *E\Visible Or (Not *E\Sprite And Not *E\Image) : Continue : EndIf
+    If *E\Sprite : pw = *E\Sprite\Width : ph = *E\Sprite\Height : Else : pw = *E\Image\Width : ph = *E\Image\Height : EndIf
     sw = *E\SrcW : sh = *E\SrcH
-    If sw <= 0 Or sh <= 0 : sw = *E\Sprite\Width : sh = *E\Sprite\Height : EndIf
+    If sw <= 0 Or sh <= 0 : sw = pw : sh = ph : EndIf
     w = *E\W : h = *E\H
     If w <= 0 Or h <= 0 : w = sw : h = sh : EndIf
     cx = OX + *E\X + w / 2.0 : cy = OY + *E\Y + h / 2.0
     rad = Sqr(w * w + h * h) / 2.0
     If cx + rad <= X0 Or cx - rad >= X1 Or cy + rad <= Y0 Or cy - rad >= Y1 : Continue : EndIf
-    If *E\Sprite\TextureID <> GL_CurrentBatchTexture
-      GLTile_Flush()
-      GL_CurrentBatchTexture = *E\Sprite\TextureID
-    EndIf
     If *E\SrcW > 0 And *E\SrcH > 0
-      GLTile_SourceUV(*E\Sprite\Width, *E\Sprite\Height, *E\SrcX, *E\SrcY, sw, sh, @u0, @vt, @u1, @vb)
+      GLTile_SourceUV(pw, ph, *E\SrcX, *E\SrcY, sw, sh, @u0, @vt, @u1, @vb)
     Else
-      GLTile_SourceUV(*E\Sprite\Width, *E\Sprite\Height, 0, 0, sw, sh, @u0, @vt, @u1, @vb)
+      GLTile_SourceUV(pw, ph, 0, 0, sw, sh, @u0, @vt, @u1, @vb)
     EndIf
-    GLLayer_QuadTurned(@Xf, cx, cy, w / 2.0, h / 2.0, Cos(*E\Angle), Sin(*E\Angle), u0, vt, u1, vb, *E\Orient,
-                       *E\R * TR, *E\G * TG, *E\B * TB, *E\A * TA)
+    If *E\Sprite
+      GLPal_Flush()                                   ; keep the layer's order across the two batches
+      If *E\Sprite\TextureID <> GL_CurrentBatchTexture
+        GLTile_Flush()
+        GL_CurrentBatchTexture = *E\Sprite\TextureID
+      EndIf
+      GLLayer_QuadTurned(@Xf, cx, cy, w / 2.0, h / 2.0, Cos(*E\Angle), Sin(*E\Angle), u0, vt, u1, vb, *E\Orient,
+                         *E\R * TR, *E\G * TG, *E\B * TB, *E\A * TA)
+    Else
+      *Pal = GLPal_Choose(*E\Image, *E\Slot, *Over, *E\Palette)
+      If Not *Pal : Continue : EndIf
+      GLTile_Flush()
+      If Not GLPal_Begin(*E\Image) : Continue : EndIf
+      row = GLPal_BackPaletteCommit(*Pal)
+      If row < 0 : Continue : EndIf
+      GLLayer_QuadTurnedPal(@Xf, cx, cy, w / 2.0, h / 2.0, Cos(*E\Angle), Sin(*E\Angle), u0, vt, u1, vb, *E\Orient,
+                            *E\R * TR, *E\G * TG, *E\B * TB, *E\A * TA, row)
+    EndIf
     n + 1
   Next
   ProcedureReturn n
@@ -266,13 +334,14 @@ Procedure.i GL_LayerDraw(*Layer.GLLayer, Scaled.b = #False, TimeMs.q = -1)
   If Not *Layer Or Not *Layer\Visible Or *Layer\Opacity <= 0.0 : ProcedureReturn 0 : EndIf
   GL_LayerOrigin(*Layer, @OX, @OY)
   If *Layer\Kind = #GL_LAYER_TILES
-    ProcedureReturn GL_TileMapDraw(*Layer\Map, OX, OY, *Layer\TintR, *Layer\TintG, *Layer\TintB, *Layer\Opacity, Scaled, *Layer\Fixed, TimeMs)
+    ProcedureReturn GL_TileMapDraw(*Layer\Map, OX, OY, *Layer\TintR, *Layer\TintG, *Layer\TintB, *Layer\Opacity, Scaled, *Layer\Fixed, TimeMs, GLLayer_Palettes(*Layer))
   EndIf
   If Not GL_BatchShader : InitSpriteBatcher() : EndIf
-  GLTile_Flushes = 0 : GL_BatchCount = 0 : GL_CurrentBatchTexture = 0
+  GLPal_Flush()                                       ; nothing of another draw rides along
+  GLTile_Flushes = 0 : GLPal_Flushes = 0 : GL_BatchCount = 0 : GL_CurrentBatchTexture = 0
   GLLayer_SubmitSprites(*Layer, OX, OY, Scaled)
-  GLTile_Flush()
-  ProcedureReturn GLTile_Flushes
+  GLTile_Flush() : GLPal_Flush()
+  ProcedureReturn GLTile_Flushes + GLPal_Flushes
 EndProcedure
 
 ; Draw every visible layer, back to front. Returns the glDrawArrays issued.

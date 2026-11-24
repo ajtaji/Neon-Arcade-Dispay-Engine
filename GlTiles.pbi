@@ -43,6 +43,12 @@
 ; with the cell's own orientation. The time is GL_Micros() / 1000 unless the
 ; program passes its own (a paused game passes a paused clock).
 ;
+; --- INDEXED TILE SETS ---
+; GL_TileSetCreateIndexed cuts a colour-indexed image (GlPalette.pbi, included
+; at the end of this file) instead of a sprite; each tile is drawn with the
+; image's palette slot GL_TileSetPaletteSlot gives it, and a draw can replace
+; slots (*Palettes) - the per-layer palette swap.
+;
 ; --- THE MAP FILE (.ntm) ---
 ; Big-endian, so that the console engine can use the cells where they lie.
 ; Documented in the README and at GL_TileMapSave. Saved through GL_FileStore.
@@ -81,7 +87,8 @@ Structure GLTileAnim
 EndStructure
 
 Structure GLTileSet
-  *Sprite.GLSprite            ; the sheet (not owned: the program frees it)
+  *Sprite.GLSprite            ; the sheet (not owned: the program frees it), or 0 when...
+  *Indexed                    ; ...the sheet is a GLIndexedImage (GL_TileSetCreateIndexed)
   ImageW.i : ImageH.i
   TileW.i : TileH.i
   Spacing.i : Margin.i
@@ -89,6 +96,7 @@ Structure GLTileSet
   Animated.i                  ; how many tiles have frames
   Array Anim.GLTileAnim(0)    ; one per tile
   Array Collide.a(0)          ; one collision byte per tile (#GL_TILE_SOLID ...)
+  Array PalSlot.a(0)          ; indexed sets: the palette slot each tile is drawn with
 EndStructure
 
 Structure GLTileMap
@@ -126,29 +134,49 @@ EndProcedure
 ; TILE SETS
 ; ============================================================================
 
-; Cut *Sprite into TileW x TileH tiles. Spacing is the gap between tiles,
-; Margin the border round the sheet, both in pixels. Returns the set or 0.
-Procedure.i GL_TileSetCreate(*Sprite.GLSprite, TileW.i, TileH.i, Spacing.i = 0, Margin.i = 0)
+; A set cut from a sheet of ImageW x ImageH pixels (the sheet is attached by the caller).
+Procedure.i GLTile_NewSet(ImageW.i, ImageH.i, TileW.i, TileH.i, Spacing.i, Margin.i)
   Protected *Set.GLTileSet, Columns.i, Rows.i
-  If Not *Sprite : ProcedureReturn GLTile_Fail("GL_TileSetCreate: no sprite.") : EndIf
   If TileW < 1 Or TileH < 1 Or Spacing < 0 Or Margin < 0
     ProcedureReturn GLTile_Fail("GL_TileSetCreate: tile size must be at least 1, spacing and margin not negative.")
   EndIf
-  Columns = (*Sprite\Width - 2 * Margin + Spacing) / (TileW + Spacing)
-  Rows = (*Sprite\Height - 2 * Margin + Spacing) / (TileH + Spacing)
+  Columns = (ImageW - 2 * Margin + Spacing) / (TileW + Spacing)
+  Rows = (ImageH - 2 * Margin + Spacing) / (TileH + Spacing)
   If Columns < 1 Or Rows < 1 : ProcedureReturn GLTile_Fail("GL_TileSetCreate: the sheet holds no whole tile.") : EndIf
   If Columns * Rows > #GL_TILE_MAX
     ProcedureReturn GLTile_Fail("GL_TileSetCreate: " + Str(Columns * Rows) + " tiles; a set holds at most " + Str(#GL_TILE_MAX) + ".")
   EndIf
   *Set = AllocateStructure(GLTileSet)
-  *Set\Sprite = *Sprite
-  *Set\ImageW = *Sprite\Width : *Set\ImageH = *Sprite\Height
+  *Set\ImageW = ImageW : *Set\ImageH = ImageH
   *Set\TileW = TileW : *Set\TileH = TileH
   *Set\Spacing = Spacing : *Set\Margin = Margin
   *Set\Columns = Columns : *Set\Rows = Rows : *Set\Count = Columns * Rows
   ReDim *Set\Anim(*Set\Count - 1)
   ReDim *Set\Collide(*Set\Count - 1)
+  ReDim *Set\PalSlot(*Set\Count - 1)
   ProcedureReturn *Set
+EndProcedure
+
+; Cut *Sprite into TileW x TileH tiles. Spacing is the gap between tiles,
+; Margin the border round the sheet, both in pixels. Returns the set or 0.
+Procedure.i GL_TileSetCreate(*Sprite.GLSprite, TileW.i, TileH.i, Spacing.i = 0, Margin.i = 0)
+  Protected *Set.GLTileSet
+  If Not *Sprite : ProcedureReturn GLTile_Fail("GL_TileSetCreate: no sprite.") : EndIf
+  *Set = GLTile_NewSet(*Sprite\Width, *Sprite\Height, TileW, TileH, Spacing, Margin)
+  If *Set : *Set\Sprite = *Sprite : EndIf
+  ProcedureReturn *Set
+EndProcedure
+
+; Indexed sets: the palette slot (0..7 of the image) Tile is drawn with.
+Procedure.i GL_TileSetPaletteSlot(*Set.GLTileSet, Tile.i, Slot.i)
+  If Not *Set Or Tile < 0 Or Tile >= *Set\Count Or Slot < 0 Or Slot > 7 : ProcedureReturn #False : EndIf
+  *Set\PalSlot(Tile) = Slot
+  ProcedureReturn #True
+EndProcedure
+
+Procedure.i GL_TileSetPaletteSlotGet(*Set.GLTileSet, Tile.i)
+  If Not *Set Or Tile < 0 Or Tile >= *Set\Count : ProcedureReturn 0 : EndIf
+  ProcedureReturn *Set\PalSlot(Tile)
 EndProcedure
 
 ; Set Tile's collision byte: 0, or #GL_TILE_SOLID, #GL_TILE_ONEWAY, #GL_TILE_SLOPE.
@@ -414,18 +442,32 @@ Procedure.q GLTile_Now()
   ProcedureReturn GL_Micros() / 1000
 EndProcedure
 
+; Indexed tile sets are drawn by GlPalette.pbi (included at the end of this file).
+Declare GLTile_QuadPal(*X.GLTileXform, X0.f, Y0.f, X1.f, Y1.f, U0.f, VTop.f, U1.f, VBottom.f, Orient.i, R.f, G.f, B.f, A.f, Row.i)
+Declare.i GLTile_SlotRow(*Set.GLTileSet, Slot.i, *Palettes)
+Declare.i GLTile_BeginIndexed(*Set.GLTileSet)
+Declare.i GLTile_EndIndexed()
+
+Structure GLTileSlotRows
+  Row.i[8]
+EndStructure
+
 ; Add the visible cells of *Map (top-left at MapX, MapY) to the CURRENT batch,
 ; whose texture must be the map's tile sheet. Returns the quads added. Several
 ; maps on one sheet can share one batch this way; GL_TileMapDraw is the usual
-; call. TimeMs < 0 reads the clock.
-Procedure.i GL_TileMapSubmit(*Map.GLTileMap, MapX.f, MapY.f, R.f = 1.0, G.f = 1.0, B.f = 1.0, A.f = 1.0, Scaled.b = #False, IgnoreCamera.b = #False, TimeMs.q = -1)
+; call. TimeMs < 0 reads the clock. *Palettes (indexed sets): the address of 8
+; GLPalette addresses that replace the image's palette slots (0 = none; a 0
+; in the list keeps that slot).
+Procedure.i GL_TileMapSubmit(*Map.GLTileMap, MapX.f, MapY.f, R.f = 1.0, G.f = 1.0, B.f = 1.0, A.f = 1.0, Scaled.b = #False, IgnoreCamera.b = #False, TimeMs.q = -1, *Palettes = 0)
   Protected Rg.GLTileRange, Xf.GLTileXform, *Set.GLTileSet, cx.i, cy.i, cell.i, tile.i, n.i
-  Protected sx.i, sy.i, x0.f, y0.f, x1.f, y1.f, u0.f, vt.f, u1.f, vb.f, *Row
+  Protected sx.i, sy.i, x0.f, y0.f, x1.f, y1.f, u0.f, vt.f, u1.f, vb.f, *Row, indexed.i, slot.i, Rows.GLTileSlotRows
   If Not *Map Or Not *Map\Set : ProcedureReturn 0 : EndIf
   *Set = *Map\Set
   If GL_TileMapRange(*Map, MapX, MapY, @Rg, Scaled, IgnoreCamera) = 0 : ProcedureReturn 0 : EndIf
   If *Set\Animated And TimeMs < 0 : TimeMs = GLTile_Now() : EndIf
   GLTile_MakeXform(@Xf, Scaled, IgnoreCamera)
+  indexed = Bool(*Set\Indexed)
+  For slot = 0 To 7 : Rows\Row[slot] = -2 : Next          ; -2: not looked up yet
   For cy = Rg\Row0 To Rg\Row1
     y0 = MapY + cy * *Map\TileH : y1 = MapY + (cy + 1) * *Map\TileH
     *Row = *Map\Cells + (cy * *Map\Width) * 2
@@ -438,7 +480,14 @@ Procedure.i GL_TileMapSubmit(*Map.GLTileMap, MapX.f, MapY.f, R.f = 1.0, G.f = 1.
       sy = *Set\Margin + (tile / *Set\Columns) * (*Set\TileH + *Set\Spacing)
       GLTile_SourceUV(*Set\ImageW, *Set\ImageH, sx, sy, *Set\TileW, *Set\TileH, @u0, @vt, @u1, @vb)
       x0 = MapX + cx * *Map\TileW : x1 = MapX + (cx + 1) * *Map\TileW
-      GLTile_Quad(@Xf, x0, y0, x1, y1, u0, vt, u1, vb, cell & #GL_TILE_ORIENT, R, G, B, A)
+      If indexed
+        slot = *Set\PalSlot(tile)
+        If Rows\Row[slot] = -2 : Rows\Row[slot] = GLTile_SlotRow(*Set, slot, *Palettes) : EndIf
+        If Rows\Row[slot] < 0 : Continue : EndIf
+        GLTile_QuadPal(@Xf, x0, y0, x1, y1, u0, vt, u1, vb, cell & #GL_TILE_ORIENT, R, G, B, A, Rows\Row[slot])
+      Else
+        GLTile_Quad(@Xf, x0, y0, x1, y1, u0, vt, u1, vb, cell & #GL_TILE_ORIENT, R, G, B, A)
+      EndIf
       n + 1
     Next
   Next
@@ -447,9 +496,16 @@ EndProcedure
 
 ; Draw the visible part of *Map with its top-left at MapX, MapY (world, or
 ; canvas when IgnoreCamera). R, G, B, A tint every tile. Returns the number
-; of glDrawArrays issued (1 for any screenful that fits the batch).
-Procedure.i GL_TileMapDraw(*Map.GLTileMap, MapX.f = 0.0, MapY.f = 0.0, R.f = 1.0, G.f = 1.0, B.f = 1.0, A.f = 1.0, Scaled.b = #False, IgnoreCamera.b = #False, TimeMs.q = -1)
-  If Not *Map Or Not *Map\Set Or Not *Map\Set\Sprite : ProcedureReturn 0 : EndIf
+; of glDrawArrays issued (1 for any screenful that fits the batch). *Palettes
+; as GL_TileMapSubmit (a layer's palette swap).
+Procedure.i GL_TileMapDraw(*Map.GLTileMap, MapX.f = 0.0, MapY.f = 0.0, R.f = 1.0, G.f = 1.0, B.f = 1.0, A.f = 1.0, Scaled.b = #False, IgnoreCamera.b = #False, TimeMs.q = -1, *Palettes = 0)
+  If Not *Map Or Not *Map\Set : ProcedureReturn 0 : EndIf
+  If *Map\Set\Indexed
+    If Not GLTile_BeginIndexed(*Map\Set) : ProcedureReturn 0 : EndIf
+    GL_TileMapSubmit(*Map, MapX, MapY, R, G, B, A, Scaled, IgnoreCamera, TimeMs, *Palettes)
+    ProcedureReturn GLTile_EndIndexed()
+  EndIf
+  If Not *Map\Set\Sprite : ProcedureReturn 0 : EndIf
   If Not GL_BatchShader : InitSpriteBatcher() : EndIf
   GLTile_Flushes = 0
   GL_CurrentBatchTexture = *Map\Set\Sprite\TextureID : GL_BatchCount = 0
@@ -562,8 +618,41 @@ Procedure.i GLTile_AnimBytes(*Set.GLTileSet)
   ProcedureReturn n
 EndProcedure
 
+; A per-tile byte table (*Table, one byte a tile) as chunk Id, when any byte
+; is not 0: count (2), then the bytes. Returns the chunk's bytes (0 = none),
+; writes it at *Out when *Out is not 0, counts it in *Chunks.
+Procedure.i GLTile_TableChunk(*Set.GLTileSet, Id.s, *Table, *Out, *Chunks.Integer)
+  Protected i.i, bytes.i = 2 + *Set\Count
+  For i = 0 To *Set\Count - 1
+    If PeekA(*Table + i) : Break : EndIf
+  Next
+  If i >= *Set\Count : ProcedureReturn 0 : EndIf
+  *Chunks\i + 1
+  If *Out
+    PokeS(*Out, Id, 4, #PB_Ascii | #PB_String_NoZero) : GLTile_Put32(*Out + 4, bytes)
+    GLTile_Put16(*Out + 8, *Set\Count)
+    CopyMemory(*Table, *Out + 10, *Set\Count)
+  EndIf
+  ProcedureReturn 8 + ((bytes + 3) & ~3)
+EndProcedure
+
+; Read chunk Id into the per-tile byte table *Table (cleared when the file
+; has none). False if the chunk is not for a set of this many tiles.
+Procedure.i GLTile_TableLoad(*Set.GLTileSet, *Buf, Size.i, Path.s, Id.s, *Table, What.s)
+  Protected at.i, len.i
+  FillMemory(*Table, *Set\Count, 0)
+  at = GLTile_FindChunk(*Buf, Size, Id, 0, @len)
+  If at < 0 : ProcedureReturn #True : EndIf
+  If len < 2 Or GLTile_Get16(*Buf + at) <> *Set\Count Or len <> 2 + *Set\Count
+    ProcedureReturn GLTile_Fail(Path + ": the " + What + " is not for a set of " + Str(*Set\Count) + " tiles.")
+  EndIf
+  CopyMemory(*Buf + at + 2, *Table, *Set\Count)
+  ProcedureReturn #True
+EndProcedure
+
 ; The chunks a tile set contributes to a saved map: "ANIM" when anything is
-; animated, "TFLG" when any tile has a collision byte. Returns their bytes,
+; animated, "TFLG" when any tile has a collision byte, "TPAL" when any tile
+; of an indexed set uses a palette slot other than 0. Returns their bytes,
 ; writes them at *Out when *Out is not 0, and counts them in *Chunks.
 Procedure.i GLTile_SetChunks(*Set.GLTileSet, *Out, *Chunks.Integer)
   Protected bytes.i = GLTile_AnimBytes(*Set), i.i, k.i, *F.GLTileFrame, *P, total.i
@@ -586,23 +675,15 @@ Procedure.i GLTile_SetChunks(*Set.GLTileSet, *Out, *Chunks.Integer)
       *Out + 8 + ((bytes + 3) & ~3)
     EndIf
   EndIf
-  For i = 0 To *Set\Count - 1
-    If *Set\Collide(i) : Break : EndIf
-  Next
-  If i < *Set\Count
-    bytes = 2 + *Set\Count
-    total + 8 + ((bytes + 3) & ~3) : *Chunks\i + 1
-    If *Out
-      PokeS(*Out, "TFLG", 4, #PB_Ascii | #PB_String_NoZero) : GLTile_Put32(*Out + 4, bytes)
-      GLTile_Put16(*Out + 8, *Set\Count)
-      For i = 0 To *Set\Count - 1 : PokeA(*Out + 10 + i, *Set\Collide(i)) : Next
-    EndIf
-  EndIf
+  bytes = GLTile_TableChunk(*Set, "TFLG", @*Set\Collide(0), *Out, *Chunks)
+  total + bytes : If *Out : *Out + bytes : EndIf
+  bytes = GLTile_TableChunk(*Set, "TPAL", @*Set\PalSlot(0), *Out, *Chunks)
+  total + bytes
   ProcedureReturn total
 EndProcedure
 
-; Save *Map to Path; with SaveSet the tile set's animations and collision
-; table go in the same file.
+; Save *Map to Path; with SaveSet the tile set's animations, collision table
+; and palette slots go in the same file.
 Procedure.i GL_TileMapSave(*Map.GLTileMap, Path.s, SaveSet.i = #True)
   Protected mapBytes.i, total.i, chunks.i, *Buf, *P, i.i, ok.i, setBytes.i
   If Not *Map : ProcedureReturn GLTile_Fail("GL_TileMapSave: no map.") : EndIf
@@ -651,7 +732,7 @@ Procedure.i GL_TileMapLoad(Path.s, *Set.GLTileSet, Index.i = 0)
   ProcedureReturn *Map
 EndProcedure
 
-; Replace *Set's animations (and collision table) with those saved in Path.
+; Replace *Set's animations, collision table and palette slots with those saved in Path.
 Procedure.i GL_TileSetLoad(*Set.GLTileSet, Path.s)
   Protected Size.i, *Buf, at.i, len.i, entries.i, e.i, tile.i, frames.i, k.i, *P, *End, ok.i = #True
   If Not *Set : ProcedureReturn GLTile_Fail("GL_TileSetLoad: no tile set.") : EndIf
@@ -673,17 +754,10 @@ Procedure.i GL_TileSetLoad(*Set.GLTileSet, Path.s)
     Next
     If Not ok : GLTile_Fail(Path + ": the animation table does not fit this tile set.") : EndIf
   EndIf
-  If ok
-    For k = 0 To *Set\Count - 1 : *Set\Collide(k) = 0 : Next
-    at = GLTile_FindChunk(*Buf, Size, "TFLG", 0, @len)
-    If at >= 0
-      If len < 2 Or GLTile_Get16(*Buf + at) <> *Set\Count Or len <> 2 + *Set\Count
-        ok = #False : GLTile_Fail(Path + ": the collision table is not for a set of " + Str(*Set\Count) + " tiles.")
-      Else
-        For k = 0 To *Set\Count - 1 : *Set\Collide(k) = PeekA(*Buf + at + 2 + k) : Next
-      EndIf
-    EndIf
-  EndIf
+  If ok : ok = GLTile_TableLoad(*Set, *Buf, Size, Path, "TFLG", @*Set\Collide(0), "collision table") : EndIf
+  If ok : ok = GLTile_TableLoad(*Set, *Buf, Size, Path, "TPAL", @*Set\PalSlot(0), "palette slot table") : EndIf
   FreeMemory(*Buf)
   ProcedureReturn ok
 EndProcedure
+
+XIncludeFile #PB_Compiler_FilePath + "GlPalette.pbi"

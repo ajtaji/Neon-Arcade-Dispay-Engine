@@ -212,6 +212,176 @@ GL_EndRenderTarget(*Target)
 Check(Bool(draws = 2), "a hidden layer is not drawn")
 GL_LayersFree(*Stack)
 
+; ---------------------------------------------------------------- palettes
+; First compile and link the palette shaders here, reporting to the console,
+; so that a driver's refusal is a FAIL line and never the engine's message box.
+Procedure.l TryShader(Type.l, Src.s)
+  Protected *s = UTF8(Src), sh.l = glCreateShader(Type), ok.l, n.l, *log
+  Dim *Text(0) : *Text(0) = *s
+  glShaderSource(sh, 1, @*Text(), #Null) : glCompileShader(sh)
+  glGetShaderiv(sh, #GL_COMPILE_STATUS, @ok)
+  If Not ok
+    glGetShaderiv(sh, #GL_INFO_LOG_LENGTH, @n) : *log = AllocateMemory(n + 1)
+    glGetShaderInfoLog(sh, n, #Null, *log) : PrintN("shader log: " + PeekS(*log, -1, #PB_UTF8)) : FreeMemory(*log)
+    sh = 0
+  EndIf
+  FreeMemory(*s)
+  ProcedureReturn sh
+EndProcedure
+Define vs.l = TryShader(#GL_VERTEX_SHADER, GLPal_VertexSource()), fs.l = TryShader(#GL_FRAGMENT_SHADER, GLPal_FragmentSource()), prog.l, linked.l
+Check(Bool(vs And fs), "the palette shaders compile on this driver")
+prog = glCreateProgram() : glAttachShader(prog, vs) : glAttachShader(prog, fs) : glLinkProgram(prog)
+glGetProgramiv(prog, #GL_LINK_STATUS, @linked)
+Check(Bool(linked), "and link")
+Check(GL_PaletteInit(), "palette back end: " + GL_PaletteError())
+
+; the indexed sheet: 64 x 32, index (x * 3 + y * 5) & 255; index 0 is transparent in P0
+Define *ISheet.GLIndexedImage = GL_IndexedCreate(64, 32), *P0.GLPalette = GL_PaletteCreate(), *P1.GLPalette = GL_PaletteCreate(), *P2.GLPalette = GL_PaletteCreate()
+For y = 0 To 31 : For x = 0 To 63 : GL_IndexedSet(*ISheet, x, y, (x * 3 + y * 5) & 255) : Next : Next
+For i = 0 To 255
+  GL_PaletteSet(*P0, i, RGBA(i, 255 - i, (i * 7) & 255, 255))
+  GL_PaletteSet(*P1, i, RGBA((i * 13) & 255, i, 100, 255))
+  GL_PaletteSet(*P2, i, RGBA(255 - i, (i * 3) & 255, 50, 255))
+Next
+GL_PaletteSet(*P0, 0, RGBA(0, 0, 0, 0))
+GL_IndexedPalette(*ISheet, 0, *P0) : GL_IndexedPalette(*ISheet, 1, *P1)
+Define *ISet.GLTileSet = GL_TileSetCreateIndexed(*ISheet, 16, 16)
+For i = 4 To 7 : GL_TileSetPaletteSlot(*ISet, i, 1) : Next    ; the bottom row of tiles uses slot 1
+Define *IMap.GLTileMap = GL_TileMapCreate(30, 20, *ISet)
+RandomSeed(5)
+For y = 0 To 19 : For x = 0 To 29
+  If Random(9) > 0 : GL_TileMapSet(*IMap, x, y, Random(7), OrientBits(Random(7))) : EndIf
+Next : Next
+
+; CPU reference: the shown colour of an image pixel through a palette (0 when transparent)
+Procedure.l RefIndexed(*Img.GLIndexedImage, *Pal.GLPalette, ix.i, iy.i)
+  Protected c.l = GL_PaletteShown(*Pal, GL_IndexedGet(*Img, ix, iy))
+  If Alpha(c) = 0 : ProcedureReturn 0 : EndIf
+  ProcedureReturn c
+EndProcedure
+Procedure.l RefWorldIdx(*Map.GLTileMap, MapX.f, MapY.f, wx.f, wy.f, *Swap0.GLPalette)
+  Protected cx.i = Round((wx - MapX) / 16.0, #PB_Round_Down), cy.i = Round((wy - MapY) / 16.0, #PB_Round_Down)
+  Protected s.f, t.f, tile.i, flags.i, sx.i, sy.i, *Pal.GLPalette, *Img.GLIndexedImage = *Map\Set\Indexed
+  If cx < 0 Or cy < 0 Or cx >= *Map\Width Or cy >= *Map\Height : ProcedureReturn 0 : EndIf
+  tile = GL_TileMapGet(*Map, cx, cy) : flags = GL_TileMapFlags(*Map, cx, cy)
+  If tile < 0 : ProcedureReturn 0 : EndIf
+  s = (wx - MapX) / 16.0 - cx : t = (wy - MapY) / 16.0 - cy
+  If flags & #GL_TILE_FLIPY : t = 1.0 - t : EndIf
+  If flags & #GL_TILE_FLIPX : s = 1.0 - s : EndIf
+  If flags & #GL_TILE_DIAG : Swap s, t : EndIf
+  GL_TileSetSource(*Map\Set, tile, @sx, @sy)
+  *Pal = GL_IndexedPaletteOf(*Img, GL_TileSetPaletteSlotGet(*Map\Set, tile))
+  If GL_TileSetPaletteSlotGet(*Map\Set, tile) = 0 And *Swap0 : *Pal = *Swap0 : EndIf
+  ProcedureReturn RefIndexed(*Img, *Pal, sx + Int(s * 16.0), sy + Int(t * 16.0))
+EndProcedure
+Procedure.i CheckIndexedMap(*Map.GLTileMap, MapX.f, MapY.f, *Swap0.GLPalette, Name.s)
+  Protected x.i, y.i, bad.i, first.s, want.l
+  For y = 0 To #H - 1 : For x = 0 To #W - 1
+    want = RefWorldIdx(*Map, MapX, MapY, WorldX(x), WorldY(y), *Swap0)
+    If Pixel(x, y) <> want
+      If bad = 0 : first = " first at " + Str(x) + "," + Str(y) + " got $" + Hex(Pixel(x, y) & $FFFFFFFF) + " want $" + Hex(want & $FFFFFFFF) : EndIf
+      bad + 1
+    EndIf
+  Next : Next
+  Check(Bool(bad = 0), Name + ": " + Str(bad) + " pixels differ" + first)
+EndProcedure
+
+GL_CameraX = 37 : GL_CameraY = 21 : GL_CameraZoom = 1
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+before = GL_StatDrawCalls
+draws = GL_TileMapDraw(*IMap, 8, 4, 1, 1, 1, 1, #True, #False, 0)
+ReadBack()
+GL_EndRenderTarget(*Target)
+Check(Bool(draws = 1 And GL_StatDrawCalls - before = 1), "an indexed map with two palettes at once: one draw call (" + Str(draws) + ")")
+CheckIndexedMap(*IMap, 8, 4, 0, "indexed tile map, palettes by tile, index 0 transparent")
+
+; the clock cycles P0 (entries 1..254), P1 is faded half way to red: redraw, the indices are not sent again
+GL_PaletteReset(*P0) : GL_PaletteCycleTime(*P0, 1, 254, 50, 175)
+GL_PaletteReset(*P1) : GL_PaletteFade(*P1, RGBA(255, 0, 0, 255), 0.5)
+Check(Bool(*ISheet\Changed = #False And *P0\Changed And *P1\Changed), "a palette change marks the palettes, not the image")
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+draws = GL_TileMapDraw(*IMap, 8, 4, 1, 1, 1, 1, #True, #False, 0)
+ReadBack()
+GL_EndRenderTarget(*Target)
+CheckIndexedMap(*IMap, 8, 4, 0, "after a cycle and a fade")
+
+; a layer swaps slot 0 for P2
+Define *PStack.GLLayers = GL_LayersCreate(), *PL.GLLayer = GL_LayerAddTiles(*PStack, *IMap, 0)
+*PL\X = 8 : *PL\Y = 4
+GL_LayerPalette(*PL, 0, *P2)
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+draws = GL_LayersDraw(*PStack, #True, 0)
+ReadBack()
+GL_EndRenderTarget(*Target)
+Check(Bool(draws = 1), "the swapped layer: one call")
+CheckIndexedMap(*IMap, 8, 4, *P2, "a layer's palette swap for slot 0")
+GL_LayersFree(*PStack)
+
+; two indexed sprites of one image, each with its own palette, in one sprite layer: one call
+Define *SStack.GLLayers = GL_LayersCreate(), *SL.GLLayer = GL_LayerAddSprites(*SStack, 0), *sa.GLLayerSprite, *sb.GLLayerSprite
+*sa = GL_LayerImageAdd(*SL, *ISheet, 0, 0, *P1)
+*sb = GL_LayerImageAdd(*SL, *ISheet, 70, 40, *P2) : *sb\Orient = #GL_TILE_FLIPX
+GL_CameraX = 0 : GL_CameraY = 0
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+before = GL_StatDrawCalls
+draws = GL_LayersDraw(*SStack, #True, 0)
+ReadBack()
+GL_EndRenderTarget(*Target)
+Check(Bool(draws = 1 And GL_StatDrawCalls - before = 1), "two sprites, two palettes, one image: one draw call (" + Str(draws) + ")")
+Define want.l
+bad = 0 : first = ""
+For y = 0 To #H - 1 : For x = 0 To #W - 1
+  want = 0
+  If x < 64 And y < 32 : want = RefIndexed(*ISheet, *P1, x, y) : EndIf
+  If x >= 70 And x < 134 And y >= 40 And y < 72 : want = RefIndexed(*ISheet, *P2, 63 - (x - 70), y - 40) : EndIf
+  If Pixel(x, y) <> want
+    If bad = 0 : first = " first at " + Str(x) + "," + Str(y) : EndIf
+    bad + 1
+  EndIf
+Next : Next
+Check(Bool(bad = 0), "per-sprite palette swap, one flipped: " + Str(bad) + " pixels differ" + first)
+GL_LayersFree(*SStack)
+
+; one GL_IndexedDraw of a part of the image with slot 1, and a pixel changed afterwards
+GL_IndexedSet(*ISheet, 20, 5, 77)
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+draws = GL_IndexedDraw(*ISheet, 10, 10, 0, 1, 0.0, 1.0, 1, 1, 1, 1, #True, 16, 0, 32, 16)
+ReadBack()
+GL_EndRenderTarget(*Target)
+bad = 0
+For y = 0 To #H - 1 : For x = 0 To #W - 1
+  want = 0
+  If x >= 10 And x < 42 And y >= 10 And y < 26 : want = RefIndexed(*ISheet, *P1, 16 + x - 10, y - 10) : EndIf
+  If Pixel(x, y) <> want : bad + 1 : EndIf
+Next : Next
+Check(Bool(draws = 1 And bad = 0 And Pixel(14, 15) = RefIndexed(*ISheet, *P1, 20, 5)), "GL_IndexedDraw of a part, through slot 1, with a pixel changed since the last draw: " + Str(bad) + " differ")
+
+; the CPU re-colour into an ordinary sprite, and baking it again after a fade
+Define *Baked.GLSprite = GL_IndexedToSprite(*ISheet, *P2)
+Check(Bool(*Baked And *Baked\Width = 64 And PeekB(*Baked\AlphaMask) = 1), "baked into a 64 x 32 sprite with its mask")
+GL_PaletteReset(*P2) : GL_PaletteFade(*P2, RGBA(0, 0, 255, 255), 0.75)
+Check(GL_IndexedBake(*ISheet, *P2, *Baked), "baked again after a fade")
+GL_BeginRenderTarget(*Target)
+glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
+DrawGLSprite(*Baked, 20, 30, 0.0, 1.0, 1, 1, 1, 1, #True, -1, -1, -1, -1, #True)
+ReadBack()
+GL_EndRenderTarget(*Target)
+bad = 0
+For y = 0 To #H - 1 : For x = 0 To #W - 1
+  want = 0
+  If x >= 20 And x < 84 And y >= 30 And y < 62 : want = RefIndexed(*ISheet, *P2, x - 20, y - 30) : EndIf
+  If Pixel(x, y) <> want : bad + 1 : EndIf
+Next : Next
+Check(Bool(bad = 0), "the baked sprite drawn by DrawGLSprite matches the look-up: " + Str(bad) + " differ")
+GL_IndexedFree(*ISheet)
+GL_PaletteShutdown()
+Check(Bool(*P0\Row = -1 And *P1\Row = -1 And *P0\Changed), "shutdown takes every palette's row back")
+
 ; NOTE (not a pass/fail): which image rows DrawGLSprite shows for SrcY = 0.
 GL_BeginRenderTarget(*Target)
 glClearColor_(0, 0, 0, 0) : glClear_(#GL_COLOR_BUFFER_BIT)
@@ -221,4 +391,4 @@ GL_EndRenderTarget(*Target)
 PrintN("note: DrawGLSprite(SrcY = 0, SrcH = 16) shows image row " + Str(Green(Pixel(0, 0)) / 8) + " at its top (row 0 is the top of the image)")
 
 GL_FreeRenderTarget(*Target)
-PrintN("PASS draw: " + Str(Checks) + " checks - tile maps at 6 camera positions pixel for pixel against the CPU reference, tint, batches of 10000, three layers")
+PrintN("PASS draw: " + Str(Checks) + " checks - tile maps at 6 camera positions pixel for pixel against the CPU reference, tint, batches of 10000, three layers, indexed maps, cycles, fades, swaps, the CPU re-colour")

@@ -49,6 +49,10 @@
 ;   A fifth is optional: *Neon_FontItalic, the face of a tab styled "i"
 ;   (Neon_TabStrip's Styles); without it such a tab uses *Neon_FontUI.
 ;
+;   Or let the kit make all five, from the typefaces SELECTED (THE FACES,
+;   below Neon_CreateFontPx): Neon_ChromeFonts(s) after Neon_SetFaces /
+;   Neon_UseFaceSet - Segoe UI and Consolas unless another set is chosen.
+;
 ;   Panels, buttons, tabs and menus all draw their labels through these
 ;   four globals. Leave them unset and every control renders its FRAME
 ;   with NO TEXT - which reads as a font bug, not a missing assignment.
@@ -281,6 +285,8 @@
 ;                   group rows, hover and selection
 ;   Neon_Scissor*   canvas-space clipping, which every scrolling thing
 ;                   above needs and the engine had no way to express
+;   Neon_ChromeBeginNav   all of the above driven without a pointer - a
+;                   game pad, a remote, the keys alone (at the end)
 ;
 ; RELATIONSHIP TO GlUI.pbi
 ; ------------------------
@@ -385,6 +391,109 @@ Procedure.i Neon_CreateFontPx(FontName.s, WantPixels.i, Style.i = 0)
 EndProcedure
 
 ; ----------------------------------------------------------------------
+; THE FACES - which typefaces the five fonts are made from
+; ----------------------------------------------------------------------
+; The kit draws through the five fonts above, and the host makes them. The
+; hosting notes (3, at the top) name Windows' own typefaces for that,
+; "Segoe UI" and "Consolas", and a host on a machine without them had to
+; know which others to name. Now the typefaces are SELECTED here and
+; Neon_ChromeFonts makes the five from the selection, at the sizes the
+; hosting notes give: UI 14, small 12, bold 15, mono 13, italic 14 pixels,
+; times Scale.
+;
+;   Neon_SetFaces(UIFace, MonoFace [, UIFile, MonoFile])
+;       Name the proportional face (UI, small, bold, italic) and the
+;       monospaced one. With a file, the file is first registered for this
+;       process (RegisterFontFile) and the name must be the family name it
+;       holds ("Lato" for Lato-Regular.ttf). A file that cannot be
+;       registered is REFUSED: #False, the reason in Neon_FaceError(), and
+;       the selection is left as it was - asked for a name it does not
+;       have, the system hands back some other face without a word.
+;   Neon_UseFaceSet(Set [, FontDir])
+;       One of the two sets the engine documents:
+;         #NEON_FACES_WINDOWS  "Segoe UI" and "Consolas" (the default);
+;         #NEON_FACES_OPEN     "Lato" (Lato-Regular.ttf) and "JetBrains
+;                              Mono" (JetBrainsMono-Regular.ttf), both SIL
+;                              Open Font License 1.1, from FontDir - the
+;                              engine's assets/fonts/ folder.
+;   Neon_ChromeFonts(Scale)
+;       Make *Neon_FontUI, Small, Bold, Mono and Italic from the selection,
+;       snapped to the pixel, replacing (and freeing) the five it made last
+;       time. Fonts the host made itself are never freed here.
+;
+; NOTHING CHANGES for a program that never calls these: the selection
+; starts as Segoe UI and Consolas, and a host that makes its own fonts is
+; not touched. Bold and italic of a face registered from one regular file
+; are the system's own emboldened and slanted forms of it.
+; ----------------------------------------------------------------------
+#NEON_FACES_WINDOWS = 0
+#NEON_FACES_OPEN    = 1
+
+Global Neon_FaceUI.s   = "Segoe UI"
+Global Neon_FaceMono.s = "Consolas"
+Global Neon_FaceErr.s
+Global Dim Neon_FacesMade.i(4)             ; the five Neon_ChromeFonts made last (UI, Small, Bold, Mono, Italic)
+
+Procedure.s Neon_FaceError()
+  ProcedureReturn Neon_FaceErr
+EndProcedure
+
+Procedure.b Neon_SetFaces(UIFace.s, MonoFace.s, UIFile.s = "", MonoFile.s = "")
+  Neon_FaceErr = ""
+  If UIFace = "" Or MonoFace = ""
+    Neon_FaceErr = "a face needs a name" : ProcedureReturn #False
+  EndIf
+  If UIFile <> "" And RegisterFontFile(UIFile) = 0
+    Neon_FaceErr = "the font file " + UIFile + " could not be registered (missing, or not a font)" : ProcedureReturn #False
+  EndIf
+  If MonoFile <> "" And RegisterFontFile(MonoFile) = 0
+    Neon_FaceErr = "the font file " + MonoFile + " could not be registered (missing, or not a font)" : ProcedureReturn #False
+  EndIf
+  Neon_FaceUI = UIFace
+  Neon_FaceMono = MonoFace
+  ProcedureReturn #True
+EndProcedure
+
+Procedure.b Neon_UseFaceSet(Set.i, FontDir.s = "")
+  If Set = #NEON_FACES_WINDOWS
+    ProcedureReturn Neon_SetFaces("Segoe UI", "Consolas")
+  ElseIf Set = #NEON_FACES_OPEN
+    If FontDir <> "" And Right(FontDir, 1) <> "/" And Right(FontDir, 1) <> "\" : FontDir + "/" : EndIf
+    ProcedureReturn Neon_SetFaces("Lato", "JetBrains Mono", FontDir + "Lato-Regular.ttf", FontDir + "JetBrainsMono-Regular.ttf")
+  EndIf
+  Neon_FaceErr = "no face set " + Str(Set)
+  ProcedureReturn #False
+EndProcedure
+
+Procedure.b Neon_ChromeFonts(Scale.f = 1.0)
+  Protected Dim made.i(4), i.i
+  If Scale <= 0.0 : Scale = 1.0 : EndIf
+  made(0) = Neon_CreateFontPx(Neon_FaceUI, Round(14 * Scale, #PB_Round_Nearest))
+  made(1) = Neon_CreateFontPx(Neon_FaceUI, Round(12 * Scale, #PB_Round_Nearest))
+  made(2) = Neon_CreateFontPx(Neon_FaceUI, Round(15 * Scale, #PB_Round_Nearest), #PB_Font_Bold)
+  made(3) = Neon_CreateFontPx(Neon_FaceMono, Round(13 * Scale, #PB_Round_Nearest))
+  made(4) = Neon_CreateFontPx(Neon_FaceUI, Round(14 * Scale, #PB_Round_Nearest), #PB_Font_Italic)
+  For i = 0 To 4
+    If made(i) = 0
+      Neon_FaceErr = "a font could not be made"
+      For i = 0 To 4 : If made(i) : FreeGLFont(made(i)) : EndIf : Next
+      ProcedureReturn #False
+    EndIf
+    GLFontSetSnapToPixel(made(i), #True)
+  Next
+  ; free the five made last time - unless the host has since put its own in that place
+  If *Neon_FontUI = Neon_FacesMade(0) And Neon_FacesMade(0) : FreeGLFont(Neon_FacesMade(0)) : EndIf
+  If *Neon_FontSmall = Neon_FacesMade(1) And Neon_FacesMade(1) : FreeGLFont(Neon_FacesMade(1)) : EndIf
+  If *Neon_FontBold = Neon_FacesMade(2) And Neon_FacesMade(2) : FreeGLFont(Neon_FacesMade(2)) : EndIf
+  If *Neon_FontMono = Neon_FacesMade(3) And Neon_FacesMade(3) : FreeGLFont(Neon_FacesMade(3)) : EndIf
+  If *Neon_FontItalic = Neon_FacesMade(4) And Neon_FacesMade(4) : FreeGLFont(Neon_FacesMade(4)) : EndIf
+  *Neon_FontUI = made(0) : *Neon_FontSmall = made(1) : *Neon_FontBold = made(2)
+  *Neon_FontMono = made(3) : *Neon_FontItalic = made(4)
+  For i = 0 To 4 : Neon_FacesMade(i) = made(i) : Next
+  ProcedureReturn #True
+EndProcedure
+
+; ----------------------------------------------------------------------
 ; PER-FRAME INPUT SNAPSHOT
 ; ----------------------------------------------------------------------
 ; The engine draws; the host says what the mouse and keyboard did. Read
@@ -404,6 +513,9 @@ Global Neon_KeyCtrl.b                        ; Ctrl is held for this frame's key
 Global Neon_DeltaTime.f
 Global Neon_AnimationActive.b
 Global NewMap Neon_Animation.f()
+; Set only by Neon_ChromeBeginNav (DRIVING THE CHROME WITHOUT A POINTER, at the end of this file):
+Global Neon_NavOn.b                          ; this frame's pointer is the navigation focus, not a mouse
+Global Neon_NavPage.i                        ; -1 / +1: page whatever scrolls under the focus (consumed by it)
 
 ; Focus for keyboard-taking widgets (currently Neon_TextInput). 0 = none.
 Global Neon_FocusID.i = 0
@@ -516,6 +628,8 @@ Procedure Neon_ChromeBeginFrame(MousePhysX.i, MousePhysY.i, MouseIsDown.b, Wheel
   Neon_AnimationActive = #False
   Neon_HotCount      = 0
   Neon_CaretDrawn    = #False
+  Neon_NavOn         = #False
+  Neon_NavPage       = 0
 EndProcedure
 
 ; Frame-rate-independent exponential easing for immediate-mode widgets.
@@ -551,6 +665,7 @@ Procedure Neon_ChromeEndFrame()
   Neon_KeyCode = 0
   Neon_KeyChar = 0
   Neon_KeyCtrl = #False
+  Neon_NavPage = 0
   ; This frame's hot zones become the map the host consults while no
   ; frame is being drawn at all.
   Protected i.i
@@ -743,10 +858,12 @@ Procedure Neon_ScissorSet(x.f, y.f, w.f, h.f)
   If ph < 0 : ph = 0 : EndIf
   glEnable_(#GL_SCISSOR_TEST)
   glScissor_(px, py, pw, ph)
+  GL_DrawLogClip(#True, x, y, w, h)          ; the canvas rectangle, for the draw log
 EndProcedure
 
 Procedure Neon_ScissorClear()
   glDisable_(#GL_SCISSOR_TEST)
+  GL_DrawLogClip(#False)
 EndProcedure
 
 ; ----------------------------------------------------------------------
@@ -797,6 +914,14 @@ Procedure.b Neon_ScrollBarV(ID.i, x.f, y.f, w.f, h.f, Total.i, Visible.i, *Top.I
       changed = #True
     EndIf
   EndIf
+  ; a page asked for by navigation (Neon_ChromeBeginNav) with the focus on this bar: as a click on the track
+  If Neon_NavPage <> 0 And over
+    Protected pagedFrom.i = *Top\i
+    *Top\i + Neon_NavPage * Visible : Neon_NavPage = 0
+    If *Top\i > maxTop : *Top\i = maxTop : EndIf
+    If *Top\i < 0 : *Top\i = 0 : EndIf
+    If *Top\i <> pagedFrom : changed = #True : EndIf
+  EndIf
   If Not Neon_MouseDown And Neon_DragScrollID = ID : Neon_DragScrollID = 0 : EndIf
 
   If Neon_DragScrollID = ID And Neon_MouseDown And travel > 0
@@ -842,6 +967,13 @@ Procedure.b Neon_ScrollBarH(ID.i, x.f, y.f, w.f, h.f, Total.i, Visible.i, *Left.
       If Neon_MX < thumbX : *Left\i - Visible : Else : *Left\i + Visible : EndIf
       changed = #True
     EndIf
+  EndIf
+  If Neon_NavPage <> 0 And Neon_Hit(x, y, w, h)
+    Protected pagedFrom.i = *Left\i
+    *Left\i + Neon_NavPage * Visible : Neon_NavPage = 0
+    If *Left\i > maxLeft : *Left\i = maxLeft : EndIf
+    If *Left\i < 0 : *Left\i = 0 : EndIf
+    If *Left\i <> pagedFrom : changed = #True : EndIf
   EndIf
   If Not Neon_MouseDown And Neon_DragScrollID = ID : Neon_DragScrollID = 0 : EndIf
   If Neon_DragScrollID = ID And Neon_MouseDown And travel > 0
@@ -1110,6 +1242,10 @@ Procedure.b Neon_MenuBegin(Title.s)
     Neon_DropScroll - Neon_Wheel * Int(Neon_S(24.0) * 2)
     Neon_Wheel = 0
   EndIf
+  If Neon_DropScrolls And Neon_NavPage <> 0 And Neon_Hit(Neon_DropX, Neon_DropY, Neon_DropW, panelH)
+    Neon_DropScroll + Neon_NavPage * Int(Neon_DropViewH)
+    Neon_NavPage = 0
+  EndIf
   If Not Neon_DropScrolls : Neon_DropScroll = 0 : EndIf
   Protected maxScroll.i = wantH - Neon_DropViewH
   If maxScroll < 0 : maxScroll = 0 : EndIf
@@ -1173,8 +1309,10 @@ Procedure.b Neon_MenuItem(Label.s, Shortcut.s = "", Enabled.b = #True, Checked.b
     If need > Neon_DropMaxW : Neon_DropMaxW = need : EndIf
   EndIf
 
-  ; entirely outside the clipped view: measured, not drawn
-  If rowY + Neon_S(24.0) < viewY Or rowY > viewY + viewH
+  ; entirely outside the clipped view: measured, not drawn. (2026-11-24) A row that only TOUCHES the
+  ; view's edge has nothing in view either; it used to be drawn (into the clip) and given a hot zone, so
+  ; a hidden row could take the pointer's hover or the navigation focus.
+  If rowY + Neon_S(24.0) <= viewY Or rowY >= viewY + viewH
     ProcedureReturn #False
   EndIf
 
@@ -1258,7 +1396,7 @@ Procedure.b Neon_SubMenuBegin(Label.s)
   Neon_SubKey = Str(Neon_MenuOpenRoot) + ":" + Label
   Protected isOpen.b = Bool(Neon_SubOpenKey = Neon_SubKey)
 
-  Protected visible.b = Bool(rowY + Neon_S(24.0) >= Neon_DropViewY And rowY <= Neon_DropViewY + Neon_DropViewH)
+  Protected visible.b = Bool(rowY + Neon_S(24.0) > Neon_DropViewY And rowY < Neon_DropViewY + Neon_DropViewH)   ; touching an edge is not in view
   Protected over.b = Bool(visible And Neon_Hit(Neon_DropX, rowY, Neon_DropW, Neon_S(24.0)) And Neon_MY >= Neon_DropViewY And Neon_MY < Neon_DropViewY + Neon_DropViewH)
   If visible : Neon_HotZone(Neon_DropX, rowY, Neon_DropW, Neon_S(24.0), Neon_HotKey(4, Neon_DropX, rowY)) : EndIf
   If over And Neon_SubOpenKey <> Neon_SubKey
@@ -1337,6 +1475,10 @@ Procedure.b Neon_SubMenuBegin(Label.s)
   If Neon_SubScrolls And Neon_Wheel <> 0 And Neon_Hit(Neon_SubX, Neon_SubY, Neon_SubW, panelH)
     Neon_SubScroll - Neon_Wheel * Int(Neon_S(24.0) * 2)
     Neon_Wheel = 0
+  EndIf
+  If Neon_SubScrolls And Neon_NavPage <> 0 And Neon_Hit(Neon_SubX, Neon_SubY, Neon_SubW, panelH)
+    Neon_SubScroll + Neon_NavPage * Int(Neon_SubViewH)
+    Neon_NavPage = 0
   EndIf
   If Not Neon_SubScrolls : Neon_SubScroll = 0 : EndIf
   Protected maxScroll.i = wantH - Neon_SubViewH
@@ -2111,6 +2253,10 @@ Procedure Neon_ListBegin(ID.i, x.f, y.f, w.f, h.f, RowH.f, *Top.Integer)
     *Top\i - Neon_Wheel * 3
     Neon_Wheel = 0
   EndIf
+  If Neon_NavPage <> 0 And Neon_Hit(x, y, w, h) And Not Neon_MenuBlocksMouse()
+    *Top\i + Neon_NavPage * visible      ; a page of rows; its own bar does not page again
+    Neon_NavPage = 0
+  EndIf
   If *Top\i > maxTop : *Top\i = maxTop : EndIf
   If *Top\i < 0 : *Top\i = 0 : EndIf
   Neon_ListTop = *Top\i
@@ -2126,7 +2272,7 @@ Procedure.b Neon_ListItem(Label.s, Depth.i = 0, Selected.b = #False, Group.b = #
   Neon_ListRow + 1
 
   Protected rowY.f = Neon_ListY + (idx - Neon_ListTop) * Neon_ListRowH
-  If rowY + Neon_ListRowH < Neon_ListY Or rowY > Neon_ListY + Neon_ListH
+  If rowY + Neon_ListRowH <= Neon_ListY Or rowY >= Neon_ListY + Neon_ListH        ; touching an edge is not in view
     ProcedureReturn #False
   EndIf
 
@@ -2179,6 +2325,200 @@ Procedure Neon_ListEnd()
   Neon_ScrollBarV(Neon_ListID + 900000, Neon_ListX + Neon_ListW - Neon_S(10), Neon_ListY, Neon_S(10), Neon_ListH,
                   Neon_ListRow, visible, *Neon_ListTopPtr)
   Neon_ListInside = #False
+EndProcedure
+
+; ----------------------------------------------------------------------
+; DRIVING THE CHROME WITHOUT A POINTER - a game pad, a remote, keys alone
+; ----------------------------------------------------------------------
+; GlUI's arcade widgets always took a D-pad (Neon_UpdateInput's DPadX,
+; DPadY, ActionPressed). The chrome took only a pointer: its menus, tabs,
+; lists, buttons and scroll bars answer to where the mouse is and what its
+; button did, and nothing else could reach them.
+;
+; Every control the chrome draws already says where it is, as it draws:
+; the HOT ZONES (above), one rectangle and one stable identity per thing
+; the pointer can act on, in the order drawn, the topmost last. That list,
+; from the frame just gone, is the set of things that can have the focus.
+; So a host without a pointer calls, ONCE A FRAME, IN PLACE OF
+; Neon_ChromeBeginFrame:
+;
+;   Neon_ChromeBeginNav(Action, Dt [, KeyChar])
+;
+; and draws its frame exactly as before. Action is one of:
+;   #NEON_NAV_NEXT / #NEON_NAV_PREV   the focus to the next / previous
+;                                     control, in the order drawn, round
+;                                     the end. While a menu is open only
+;                                     the menu bar and its drop-downs take
+;                                     part (an open menu owns the input).
+;   #NEON_NAV_ACTIVATE                press the focused control: exactly a
+;                                     click on it (the button comes up on
+;                                     the next frame by itself)
+;   #NEON_NAV_BACK                    Escape: closes a menu, lets a text
+;                                     field go
+;   #NEON_NAV_LEFT / #NEON_NAV_RIGHT  the Left / Right keys (a text field's
+;                                     caret)
+;   #NEON_NAV_UP / #NEON_NAV_DOWN     one notch of the wheel over the focus:
+;                                     a list or a long drop-down scrolls, a
+;                                     scrolling tab strip steps a tab
+;   #NEON_NAV_PAGEUP / _PAGEDOWN      a page of whatever scrolls under the
+;                                     focus: a scroll bar (as a click on its
+;                                     track), a list, a long drop-down
+;   #NEON_NAV_NONE                    nothing; the focus stays where it is
+; KeyChar is a character to type, for a host with an on-screen keyboard
+; (0: none).
+;
+; THE POINTER IS PUT ON THE FOCUS. The kit's own snapshot is filled as if
+; a mouse sat at the centre of the focused control - so every widget does
+; what it does for a mouse, by the same code, and the focused control
+; shows the look it has under a pointer (that hover look is the focus
+; mark: nothing new is drawn). Neon_NavOn says the frame was driven this
+; way; Neon_NavID is the focused control's hot-zone identity, and
+; Neon_NavX/Y/W/H its rectangle as last drawn.
+;
+; THE FOCUS FOLLOWS ITS CONTROL by that identity across frames. When the
+; control is gone (a list scrolled it away, a menu closed), the focus goes
+; to the control nearest where it was - or, when it was on a menu that
+; has just closed, back to that menu's name on the bar.
+;
+; A host with both a mouse and a pad calls Neon_ChromeBeginFrame on the
+; frames the mouse moves and Neon_ChromeBeginNav on the others; the
+; focus is kept meanwhile. A host that never calls Neon_ChromeBeginNav
+; sees no change at all.
+;
+; What a pad cannot do here: drag a scroll bar's thumb (it pages
+; instead), and type without a KeyChar from the host.
+; ----------------------------------------------------------------------
+#NEON_NAV_NONE     = 0
+#NEON_NAV_NEXT     = 1
+#NEON_NAV_PREV     = 2
+#NEON_NAV_ACTIVATE = 3
+#NEON_NAV_BACK     = 4
+#NEON_NAV_LEFT     = 5
+#NEON_NAV_RIGHT    = 6
+#NEON_NAV_UP       = 7
+#NEON_NAV_DOWN     = 8
+#NEON_NAV_PAGEUP   = 9
+#NEON_NAV_PAGEDOWN = 10
+
+Global Neon_NavID.i                               ; the focused control's hot-zone identity (0 = none yet)
+Global Neon_NavX.f, Neon_NavY.f, Neon_NavW.f, Neon_NavH.f
+Global Neon_NavMenuRoot.i = -1                    ; the menu that was open when the focus was last in one
+
+; The kind of control a hot-zone identity is (Neon_HotKey's Tag).
+Procedure.i Neon_NavKind(ID.i)
+  ProcedureReturn (ID >> 42) & $3FFFFF
+EndProcedure
+
+; Does zone i of the frame just gone take part in navigation now?
+Procedure.b Neon_NavTakes(i.i)
+  If Neon_HotPrev(i)\w <= 0.0 Or Neon_HotPrev(i)\h <= 0.0 : ProcedureReturn #False : EndIf
+  Protected kind.i = Neon_NavKind(Neon_HotPrev(i)\id)
+  If Neon_MenuAnyOpenLastFrame
+    ProcedureReturn Bool(kind >= 2 And kind <= 4)      ; menu bar names, items, submenu rows
+  EndIf
+  ProcedureReturn Bool(kind <> 3 And kind <> 4)         ; the rows of a menu that closed on the frame just gone
+EndProcedure
+
+Procedure Neon_ChromeBeginNav(Action.i, Dt.f, KeyChar.i = 0)
+  Protected i.i, n.i, cur.i = -1, best.d, d.d, fx.d, fy.d, wasKind.i
+  Protected Dim order.i(Neon_HotPrevCount)
+  For i = 0 To Neon_HotPrevCount - 1
+    If Neon_NavTakes(i) : order(n) = i : n + 1 : EndIf
+  Next
+  If Neon_MenuOpenRoot >= 0 : Neon_NavMenuRoot = Neon_MenuOpenRoot : EndIf
+
+  ; where the focus is: its control, else (once there was one) the nearest
+  If n > 0 And Neon_NavID <> 0
+    For i = 0 To n - 1
+      If Neon_HotPrev(order(i))\id = Neon_NavID : cur = i : Break : EndIf
+    Next
+    If cur < 0
+      wasKind = Neon_NavKind(Neon_NavID)
+      If (wasKind = 3 Or wasKind = 4) And Neon_MenuOpenRoot < 0 And Neon_NavMenuRoot >= 0
+        For i = 0 To n - 1
+          If Neon_HotPrev(order(i))\id = Neon_HotKey(2, Neon_NavMenuRoot, 0) : cur = i : Break : EndIf
+        Next
+      EndIf
+    EndIf
+    If cur < 0
+      fx = Neon_NavX + Neon_NavW / 2.0 : fy = Neon_NavY + Neon_NavH / 2.0
+      best = -1
+      For i = 0 To n - 1
+        d = Pow(Neon_HotPrev(order(i))\x + Neon_HotPrev(order(i))\w / 2.0 - fx, 2) +
+            Pow(Neon_HotPrev(order(i))\y + Neon_HotPrev(order(i))\h / 2.0 - fy, 2)
+        If best < 0 Or d < best : best = d : cur = i : EndIf
+      Next
+    EndIf
+  EndIf
+
+  If n > 0
+    Select Action
+      Case #NEON_NAV_NEXT
+        cur + 1 : If cur >= n : cur = 0 : EndIf
+      Case #NEON_NAV_PREV
+        If cur < 0 : cur = n - 1 : Else : cur - 1 : If cur < 0 : cur = n - 1 : EndIf : EndIf
+      Default
+        If cur < 0 : cur = 0 : EndIf
+    EndSelect
+    Neon_NavID = Neon_HotPrev(order(cur))\id
+    Neon_NavX = Neon_HotPrev(order(cur))\x : Neon_NavY = Neon_HotPrev(order(cur))\y
+    Neon_NavW = Neon_HotPrev(order(cur))\w : Neon_NavH = Neon_HotPrev(order(cur))\h
+  EndIf
+
+  Protected wheel.i, key.i, down.b = Bool(Action = #NEON_NAV_ACTIVATE And n > 0)
+  Select Action
+    Case #NEON_NAV_BACK  : key = #PB_Shortcut_Escape
+    Case #NEON_NAV_LEFT  : key = #PB_Shortcut_Left
+    Case #NEON_NAV_RIGHT : key = #PB_Shortcut_Right
+    Case #NEON_NAV_UP    : wheel = 1
+    Case #NEON_NAV_DOWN  : wheel = -1
+  EndSelect
+  ; ACTIVATE on the text field that already has the keyboard is Return (it submits): a click there
+  ; would only move its caret to the middle of the field.
+  If down And Neon_FocusID <> 0 And Neon_NavID = Neon_HotKey(9, Neon_FocusID, 0)
+    down = #False : key = #PB_Shortcut_Return
+  EndIf
+  Neon_ChromeBeginFrame(0, 0, down, wheel, key, KeyChar, Dt)
+  If n > 0 And Neon_NavID <> 0
+    Neon_MX = Neon_NavX + Neon_NavW / 2.0
+    Neon_MY = Neon_NavY + Neon_NavH / 2.0
+  Else
+    Neon_MX = -1000000.0 : Neon_MY = -1000000.0    ; nothing to focus yet: the pointer is nowhere
+  EndIf
+  If Action = #NEON_NAV_PAGEUP : Neon_NavPage = -1 : ElseIf Action = #NEON_NAV_PAGEDOWN : Neon_NavPage = 1 : EndIf
+  Neon_NavOn = #True
+EndProcedure
+
+; ----------------------------------------------------------------------
+; FORGETTING - everything the chrome remembers from frame to frame
+; ----------------------------------------------------------------------
+; An immediate-mode widget keeps a little state of its own between frames,
+; keyed by its ID: the hover fades, how far a tab strip or a text field is
+; scrolled, a list's row count, a menu's measured size, which menu is
+; open, which field has the keyboard, where the navigation focus is.
+; Neon_ChromeReset forgets all of it at once, so the next frame is drawn as
+; the very first was - for a host that replaces its whole screen with an
+; unrelated one, and for a check or a replayed script that must start from
+; the same place every time. The palette, the fonts, the faces and
+; Neon_UIScale are the host's and are kept.
+Procedure Neon_ChromeReset()
+  Protected i.i
+  ClearMap(Neon_Animation())
+  ClearMap(Neon_TabScrollPos()) : ClearMap(Neon_TabLayout())
+  ClearMap(Neon_TextScroll()) : ClearMap(Neon_ListCount())
+  ClearMap(Neon_SubMeasW()) : ClearMap(Neon_SubMeasH()) : ClearMap(Neon_SubScrollMap())
+  For i = 0 To #NEON_MENU_MAXROOTS
+    Neon_MenuMeasW(i) = 0 : Neon_MenuMeasH(i) = 0 : Neon_MenuTabX(i) = 0 : Neon_MenuTabW(i) = 0
+  Next
+  Neon_MenuCloseAll()
+  Neon_DropScroll = 0 : Neon_MenuAnyOpenLastFrame = #False : Neon_MenuRootCountLastFrame = 0
+  Neon_MenuBlockActive = #False
+  Neon_HotCount = 0 : Neon_HotPrevCount = 0
+  Neon_FocusID = 0 : Neon_TextAllID = 0 : Neon_CaretFocusID = 0
+  Neon_DragScrollID = 0
+  Neon_MousePrev = #False : Neon_MouseDown = #False : Neon_MouseClicked = #False : Neon_MouseReleased = #False
+  Neon_NavID = 0 : Neon_NavMenuRoot = -1 : Neon_NavX = 0 : Neon_NavY = 0 : Neon_NavW = 0 : Neon_NavH = 0
+  Neon_NavOn = #False : Neon_NavPage = 0
 EndProcedure
 
 ; IDE Options = PureBasic 6.21 (Windows - x64)

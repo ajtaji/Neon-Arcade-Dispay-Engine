@@ -297,8 +297,11 @@ Procedure Neon_DrawUI(DeltaTime.f)
         If *Fnt : DrawGLText(*Fnt, gx, gy - (TH + 10.0), UI_Gadgets()\Text, 0.8, 0.8, 0.8, 1.0, #True, #True) : EndIf
         DrawGLBox(gx, gy, gw, gh, 0.05, 0.05, 0.05, 1.0, #True, #True)
         Define SegW.f = (gw - 6.0) / 20.0
+        ; Segment i is lit when the value passes its start (i / 20). (2026-11-24) The test was
+        ; "start > value" for dark, which lit segment 0 at a value of 0: an empty meter showed one
+        ; segment, and every value of exactly k / 20 one segment too many.
         For i = 0 To 19
-          Define segColor.f = 0.8 : If (i/20.0) > UI_Gadgets()\Value : segColor = 0.1 : EndIf
+          Define segColor.f = 0.8 : If (i/20.0) >= UI_Gadgets()\Value : segColor = 0.1 : EndIf
           DrawGLBox(gx + 3.0 + (i * SegW), gy + 3.0, SegW - 2.0, gh - 6.0, 0.0, segColor, segColor * 0.5, 1.0, #True, #True)
         Next
 
@@ -324,42 +327,61 @@ Procedure Neon_UpdateInput(MousePhysX.i, MousePhysY.i, MouseClicked.b, MouseRele
   MapPhysicalToVirtual(MousePhysX, MousePhysY, @UI_MouseX, @UI_MouseY)
   
   ; 1. Process Global Vertical Navigation
-  If DPadY <> 0
+  ; (2026-11-24) The walk past labels is bounded by the list's length: a list of
+  ; nothing but labels and breadcrumbs used to spin here for ever, and an empty
+  ; list read a gadget that was not there.
+  Define Steps.i, Count.i = ListSize(UI_Gadgets())
+  If DPadY <> 0 And Count > 0
     UI_FocusIndex + DPadY
-    If UI_FocusIndex < 0 : UI_FocusIndex = ListSize(UI_Gadgets()) - 1 : EndIf
-    If UI_FocusIndex >= ListSize(UI_Gadgets()) : UI_FocusIndex = 0 : EndIf
-    
+    If UI_FocusIndex < 0 : UI_FocusIndex = Count - 1 : EndIf
+    If UI_FocusIndex >= Count : UI_FocusIndex = 0 : EndIf
+
     SelectElement(UI_Gadgets(), UI_FocusIndex)
-    While UI_Gadgets()\Type = #NEON_LABEL Or UI_Gadgets()\Type = #NEON_BREADCRUMB
+    While (UI_Gadgets()\Type = #NEON_LABEL Or UI_Gadgets()\Type = #NEON_BREADCRUMB) And Steps < Count
       UI_FocusIndex + DPadY
-      If UI_FocusIndex < 0 : UI_FocusIndex = ListSize(UI_Gadgets()) - 1 : EndIf
-      If UI_FocusIndex >= ListSize(UI_Gadgets()) : UI_FocusIndex = 0 : EndIf
+      If UI_FocusIndex < 0 : UI_FocusIndex = Count - 1 : EndIf
+      If UI_FocusIndex >= Count : UI_FocusIndex = 0 : EndIf
       SelectElement(UI_Gadgets(), UI_FocusIndex)
+      Steps + 1
     Wend
   EndIf
-  
+
+  ; 2. Determine Mouse Hover - for EVERY gadget before any is processed.
+  ; (2026-11-24) This was done inside the processing loop below, so when the
+  ; pointer moved onto a gadget later in the list than the focused one, the
+  ; focused one was still processed as focused first: for that frame two
+  ; gadgets were focused, and a DPadX in that frame moved the old one.
   Define Index = 0
   ForEach UI_Gadgets()
     UI_Gadgets()\IsHovered = #False
-    
-    ; 2. Determine Mouse Hover
     If UI_Gadgets()\Type <> #NEON_LABEL And UI_Gadgets()\Type <> #NEON_BREADCRUMB
       If CheckCollisionAABB(UI_MouseX, UI_MouseY, 1.0, 1.0, UI_Gadgets()\X, UI_Gadgets()\Y, UI_Gadgets()\W, UI_Gadgets()\H)
         UI_Gadgets()\IsHovered = #True
         UI_FocusIndex = Index
       EndIf
     EndIf
-    
+    Index + 1
+  Next
+
+  Index = 0
+  ForEach UI_Gadgets()
     ; 3. Process the Focused Gadget
     If Index = UI_FocusIndex And UI_Gadgets()\Type <> #NEON_LABEL And UI_Gadgets()\Type <> #NEON_BREADCRUMB
       UI_Gadgets()\IsFocused = #True
-      
+
 ;  - KEYBOARD HORIZONTAL LOGIC  -
+      ; (2026-11-24) A value the pad changes now reaches the callback, as the
+      ; same change made with the mouse always did (on its release). It did
+      ; not: a slider, carousel, toggle or DIP switch moved by the pad changed
+      ; on screen and the program was never told.
       If DPadX <> 0
+        Define PadChanged.b = #False
         If UI_Gadgets()\Type = #NEON_SLIDER
+          Define OldValue.f = UI_Gadgets()\Value
           UI_Gadgets()\Value + (DPadX * 0.05)
           If UI_Gadgets()\Value < 0.0 : UI_Gadgets()\Value = 0.0 : EndIf
           If UI_Gadgets()\Value > 1.0 : UI_Gadgets()\Value = 1.0 : EndIf
+          PadChanged = Bool(UI_Gadgets()\Value <> OldValue)
         ElseIf UI_Gadgets()\Type = #NEON_DIPBANK
           UI_Gadgets()\SubFocus + DPadX
           If UI_Gadgets()\SubFocus < 0 : UI_Gadgets()\SubFocus = Int(UI_Gadgets()\Value) - 1 : EndIf
@@ -369,6 +391,11 @@ Procedure Neon_UpdateInput(MousePhysX.i, MousePhysY.i, MouseClicked.b, MouseRele
           UI_Gadgets()\Value + DPadX
           If UI_Gadgets()\Value < 0 : UI_Gadgets()\Value = TotalOptions - 1 : EndIf
           If UI_Gadgets()\Value >= TotalOptions : UI_Gadgets()\Value = 0 : EndIf
+          PadChanged = Bool(TotalOptions > 1)
+        EndIf
+        If PadChanged And UI_Gadgets()\Callback <> 0
+          UI_Gadgets()\Callback(UI_Gadgets()\ID, 1)
+          ProcedureReturn
         EndIf
       EndIf
       
@@ -436,9 +463,11 @@ Procedure Neon_UpdateInput(MousePhysX.i, MousePhysY.i, MouseClicked.b, MouseRele
         If UI_Gadgets()\Type = #NEON_DIPBANK
           ; Flip the specific bit targeted by the SubFocus cursor
           UI_Gadgets()\IsActive = UI_Gadgets()\IsActive ! (1 << UI_Gadgets()\SubFocus)
+          If UI_Gadgets()\Callback <> 0 : UI_Gadgets()\Callback(UI_Gadgets()\ID, 1) : ProcedureReturn : EndIf
         ElseIf UI_Gadgets()\Type = #NEON_TOGGLE
           ; STRICT TOGGLE MATH
-          If UI_Gadgets()\IsActive : UI_Gadgets()\IsActive = 0 : Else : UI_Gadgets()\IsActive = 1 : EndIf 
+          If UI_Gadgets()\IsActive : UI_Gadgets()\IsActive = 0 : Else : UI_Gadgets()\IsActive = 1 : EndIf
+          If UI_Gadgets()\Callback <> 0 : UI_Gadgets()\Callback(UI_Gadgets()\ID, 1) : ProcedureReturn : EndIf
         ElseIf UI_Gadgets()\Type = #NEON_BUTTON
           UI_Gadgets()\IsActive = #False
           UI_Gadgets()\HoverAlpha = 1.5    ;FORCE THE BUTTON To VISUALLY FLASH

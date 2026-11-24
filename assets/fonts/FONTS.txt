@@ -1,0 +1,25 @@
+The typefaces of the engine's open face set (GlUIChrome.pbi, #NEON_FACES_OPEN)
+=============================================================================
+
+Both are licensed under the SIL Open Font License, Version 1.1, which allows them
+to be used, embedded and redistributed with software, a cartridge included, as
+long as the licence travels with them and they are not sold on their own.
+
+Lato-Regular.ttf          family "Lato" - stands for Segoe UI (the UI, small,
+                          bold and italic fonts; bold and italic are the
+                          system's forms of the regular file)
+  licence                 Lato-OFL.txt (Copyright (c) 2010-2014 by tyPoland
+                          Lukasz Dziedzic, Reserved Font Name "Lato")
+  from                    the PureBasicCode repository,
+                          Mips/Examples/Demos/PureMetalDemo/Lato-Regular.ttf
+                          and its OFL.txt (the same file as the N64 demos use)
+
+JetBrainsMono-Regular.ttf family "JetBrains Mono" - stands for Consolas (the
+                          mono font)
+  licence                 SIL Open Font License 1.1 (Copyright 2020 The
+                          JetBrains Mono Project Authors); its text goes here as
+                          JetBrainsMono-OFL.txt
+  NOT HERE YET            no copy of the face is on this machine at a written
+                          path, so the file and its licence text are to be
+                          added. Until they are, Neon_UseFaceSet
+                          (#NEON_FACES_OPEN) refuses and names the missing file.

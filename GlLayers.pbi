@@ -88,7 +88,7 @@ EndStructure
 Structure GLTileHit
   Col.i : Row.i
   Tile.i                          ; the tile in the cell
-  Flags.i                         ; the cell's orientation and palette bits
+  Flags.i                         ; the cell's orientation bits
   Kind.i                          ; the tile's collision byte
   Blocks.i                        ; inside the solid part of a SOLID or SLOPE tile
   T.f                             ; lines: 0..1 where the line enters (the solid part if Blocks)
@@ -462,7 +462,7 @@ Procedure.i GLTile_Query(*Map.GLTileMap, MapX.f, MapY.f, Shape.i, A.f, B.f, C.f,
         blocks = #True
       EndIf
       *H = AddElement(Hits())
-      *H\Col = cx : *H\Row = cy : *H\Tile = tile : *H\Flags = cell & (#GL_TILE_ORIENT | #GL_TILE_PALETTE)
+      *H\Col = cx : *H\Row = cy : *H\Tile = tile : *H\Flags = cell & #GL_TILE_ORIENT
       *H\Kind = kind : *H\Blocks = blocks
       If Shape = #GLTile_ShapeLine : *H\T = tCell : If blocks : *H\T = tSolid : EndIf : EndIf
       If kind & #GL_TILE_ONEWAY

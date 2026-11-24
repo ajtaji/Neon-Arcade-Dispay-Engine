@@ -10,6 +10,18 @@ XIncludeFile #PB_Compiler_FilePath + "../GlSpriteFunctions.pbi"
 XIncludeFile #PB_Compiler_FilePath + "../GlTiles.pbi"
 OpenConsole()
 
+; Orientation number 0-7 (bit 0 FLIPX, bit 1 FLIPY, bit 2 DIAG) as cell bits.
+Procedure.i OrientBits(o.i)
+  Protected f.i
+  If o & 1 : f | #GL_TILE_FLIPX : EndIf
+  If o & 2 : f | #GL_TILE_FLIPY : EndIf
+  If o & 4 : f | #GL_TILE_DIAG : EndIf
+  ProcedureReturn f
+EndProcedure
+Procedure.i OrientNumber(f.i)
+  ProcedureReturn Bool(f & #GL_TILE_FLIPX) | (Bool(f & #GL_TILE_FLIPY) << 1) | (Bool(f & #GL_TILE_DIAG) << 2)
+EndProcedure
+
 Global Checks.i
 Procedure Check(ok.i, message.s)
   Checks + 1
@@ -71,16 +83,18 @@ Check(Bool(GL_TileSetCreate(*Big, 8, 8) = 0), "a sheet of 16384 tiles is refused
 ; ------------------------------------------------------------------- the cells
 Define *Map.GLTileMap = GL_TileMapCreate(40, 30, *Set)
 Check(Bool(*Map And GL_TileMapGet(*Map, 0, 0) = #GL_TILE_EMPTY), "a new map is empty")
-Check(Bool(GL_TileMapSet(*Map, 3, 4, 14, #GL_TILE_ROT90 | GL_TilePalette(5))), "set a tile")
-Check(Bool(GL_TileMapGet(*Map, 3, 4) = 14 And GL_TileMapFlags(*Map, 3, 4) = #GL_TILE_ROT90 | GL_TilePalette(5)), "get it back with its flags")
-Check(Bool(GL_TileMapCell(*Map, 3, 4) = (15 | $1400 | $A000)), "cell layout: number+1, DIAG|FLIPX, palette 5")
+Check(Bool(GL_TileMapSet(*Map, 3, 4, 14, #GL_TILE_ROT90 | $2000)), "set a tile (the reserved bit is not stored)")
+Check(Bool(GL_TileMapGet(*Map, 3, 4) = 14 And GL_TileMapFlags(*Map, 3, 4) = #GL_TILE_ROT90), "get it back with its flags")
+Check(Bool(GL_TileMapCell(*Map, 3, 4) = (15 | $1000 | $4000)), "cell layout (the console engine's word): number+1 in bits 0-11, DIAG bit 12, FLIPX bit 14")
+Check(Bool(GL_TileMapSet(*Map, 0, 0, 4094, #GL_TILE_FLIPY) And GL_TileMapCell(*Map, 0, 0) = $8FFF And GL_TileMapGet(*Map, 0, 0) = 4094), "tile 4094, flipped down: $8FFF")
+GL_TileMapSet(*Map, 0, 0, #GL_TILE_EMPTY)
 Check(Bool(GL_TileMapSet(*Map, 40, 0, 1) = #False And GL_TileMapSet(*Map, -1, 0, 1) = #False), "outside the map refused")
 Check(Bool(GL_TileMapSet(*Map, 0, 0, #GL_TILE_MAX) = #False), "tile number past the field refused")
 GL_TileMapSet(*Map, 3, 4, #GL_TILE_EMPTY)
 Check(Bool(GL_TileMapCell(*Map, 3, 4) = 0), "empty clears the cell")
 Define x.i, y.i
 For y = 0 To 29 : For x = 0 To 39
-  If (x * 7 + y * 3) % 5 <> 0 : GL_TileMapSet(*Map, x, y, (x + y * 3) % 15, ((x + y) % 8) << 10) : EndIf
+  If (x * 7 + y * 3) % 5 <> 0 : GL_TileMapSet(*Map, x, y, (x + y * 3) % 15, OrientBits((x + y) % 8)) : EndIf
 Next : Next
 
 ; ------------------------------------------------- which cells a camera submits
@@ -135,7 +149,7 @@ GL_CameraX = -60.5 : GL_CameraY = -30.25 : GL_CameraZoom = 1.75
 GLTile_SourceUV(100, 70, 37, 19, 16, 16, @u0, @vt, @u1, @vb)
 For o = 0 To 7
   GL_TileMapFill(*One, 0, 0, 4, 4, #GL_TILE_EMPTY)
-  GL_TileMapSet(*One, 2, 1, 7, o << 10)
+  GL_TileMapSet(*One, 2, 1, 7, OrientBits(o))
   GL_BatchCount = 0
   Check(Bool(GL_TileMapSubmit(*One, 10, 20) = 1), "orientation " + Str(o) + ": one quad")
   ; forward reference: the picture's corner (cs, ct) goes through DIAG, then

@@ -9,18 +9,22 @@
 ; between tiles and the margin round the sheet, numbered left to right, top to
 ; bottom from 0. A set holds at most #GL_TILE_MAX tiles.
 ;
-; A TILE MAP is a grid of 16-bit cells. One cell:
+; A TILE MAP is a grid of 16-bit cells - the same word as the console's 2D
+; engine (LibPureMetalN64 lpm_2d_tile: bits 0-11 the tile, 0 empty, bit 14
+; flipped across, bit 15 flipped down), so one map serves both. One cell:
 ;
-;   bits  0-9   tile number + 1 (0 = empty cell, 1..1023 = tiles 0..1022)
-;   bit   10    #GL_TILE_FLIPX   mirror left-right
-;   bit   11    #GL_TILE_FLIPY   mirror top-bottom
+;   bits  0-11  tile number + 1 (0 = empty cell, 1..4095 = tiles 0..4094)
 ;   bit   12    #GL_TILE_DIAG    swap x and y (with the flips: the rotations)
-;   bits 13-15  palette slot 0-7 (indexed tile sets, GlPalette.pbi)
+;   bit   13    reserved, 0
+;   bit   14    #GL_TILE_FLIPX   mirror left-right
+;   bit   15    #GL_TILE_FLIPY   mirror top-bottom
 ;
 ; The orientation is applied to the picture as DIAG first, then FLIPX, then
 ; FLIPY - the order Tiled uses, so #GL_TILE_ROT90 = DIAG | FLIPX turns the
 ; tile a quarter clockwise. The program never handles the +1: GL_TileMapSet and
 ; GL_TileMapGet speak tile numbers, and #GL_TILE_EMPTY (-1) for an empty cell.
+; A palette is chosen per tile of the set, per layer and per sprite
+; (GlPalette.pbi), not per cell.
 ;
 ; --- DRAWING ---
 ; GL_TileMapDraw draws through the 2D camera (GL_CameraX/Y/Zoom) exactly as
@@ -49,28 +53,21 @@
 ; ============================================================================
 
 #GL_TILE_EMPTY    = -1
-#GL_TILE_MAX      = 1023          ; tiles 0..1022 fit the 10-bit cell field
-#GL_TILE_NUMBER   = $03FF
-#GL_TILE_FLIPX    = $0400
-#GL_TILE_FLIPY    = $0800
+#GL_TILE_MAX      = 4095          ; tiles 0..4094 fit the 12-bit cell field
+#GL_TILE_NUMBER   = $0FFF
 #GL_TILE_DIAG     = $1000
+#GL_TILE_FLIPX    = $4000
+#GL_TILE_FLIPY    = $8000
 #GL_TILE_ROT90    = #GL_TILE_DIAG | #GL_TILE_FLIPX
 #GL_TILE_ROT180   = #GL_TILE_FLIPX | #GL_TILE_FLIPY
 #GL_TILE_ROT270   = #GL_TILE_DIAG | #GL_TILE_FLIPY
-#GL_TILE_ORIENT   = $1C00
-#GL_TILE_PALSHIFT = 13
-#GL_TILE_PALETTE  = $E000
+#GL_TILE_ORIENT   = $D000
 
 ; A tile's collision byte (GL_TileSetCollision; the queries are in GlLayers.pbi).
 #GL_TILE_SOLID    = 1             ; the whole tile stops things
 #GL_TILE_ONEWAY   = 2             ; stops things from one side only: the top, turned with the cell
 #GL_TILE_SLOPE    = 4             ; 45 degrees: solid below the line from the bottom-left corner
                                   ; to the top-right corner, turned with the cell
-
-; The palette-slot bits of a cell, for GL_TileMapSet's Flags.
-Macro GL_TilePalette(Slot)
-  (((Slot) & 7) << #GL_TILE_PALSHIFT)
-EndMacro
 
 Structure GLTileFrame
   Tile.l
@@ -271,11 +268,11 @@ Procedure.i GL_TileMapSetCell(*Map.GLTileMap, X.i, Y.i, Cell.i)
 EndProcedure
 
 ; Put Tile (or #GL_TILE_EMPTY) at X, Y. Flags: #GL_TILE_FLIPX / FLIPY / DIAG /
-; ROT90 / ROT180 / ROT270, | GL_TilePalette(slot). Takes effect on the next draw.
+; ROT90 / ROT180 / ROT270. Takes effect on the next draw.
 Procedure.i GL_TileMapSet(*Map.GLTileMap, X.i, Y.i, Tile.i, Flags.i = 0)
   If Tile = #GL_TILE_EMPTY : ProcedureReturn GL_TileMapSetCell(*Map, X, Y, 0) : EndIf
   If Tile < 0 Or Tile >= #GL_TILE_MAX : ProcedureReturn #False : EndIf
-  ProcedureReturn GL_TileMapSetCell(*Map, X, Y, (Tile + 1) | (Flags & (#GL_TILE_ORIENT | #GL_TILE_PALETTE)))
+  ProcedureReturn GL_TileMapSetCell(*Map, X, Y, (Tile + 1) | (Flags & #GL_TILE_ORIENT))
 EndProcedure
 
 ; The tile at X, Y, or #GL_TILE_EMPTY (also outside the map).
@@ -283,9 +280,9 @@ Procedure.i GL_TileMapGet(*Map.GLTileMap, X.i, Y.i)
   ProcedureReturn (GL_TileMapCell(*Map, X, Y) & #GL_TILE_NUMBER) - 1
 EndProcedure
 
-; The orientation and palette bits at X, Y.
+; The orientation bits at X, Y.
 Procedure.i GL_TileMapFlags(*Map.GLTileMap, X.i, Y.i)
-  ProcedureReturn GL_TileMapCell(*Map, X, Y) & (#GL_TILE_ORIENT | #GL_TILE_PALETTE)
+  ProcedureReturn GL_TileMapCell(*Map, X, Y) & #GL_TILE_ORIENT
 EndProcedure
 
 ; Fill a W x H block (clipped to the map).

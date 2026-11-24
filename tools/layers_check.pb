@@ -13,6 +13,18 @@ XIncludeFile #PB_Compiler_FilePath + "../GlTiles.pbi"
 XIncludeFile #PB_Compiler_FilePath + "../GlLayers.pbi"
 OpenConsole()
 
+; Orientation number 0-7 (bit 0 FLIPX, bit 1 FLIPY, bit 2 DIAG) as cell bits.
+Procedure.i OrientBits(o.i)
+  Protected f.i
+  If o & 1 : f | #GL_TILE_FLIPX : EndIf
+  If o & 2 : f | #GL_TILE_FLIPY : EndIf
+  If o & 4 : f | #GL_TILE_DIAG : EndIf
+  ProcedureReturn f
+EndProcedure
+Procedure.i OrientNumber(f.i)
+  ProcedureReturn Bool(f & #GL_TILE_FLIPX) | (Bool(f & #GL_TILE_FLIPY) << 1) | (Bool(f & #GL_TILE_DIAG) << 2)
+EndProcedure
+
 Global Checks.i
 Procedure Check(ok.i, message.s)
   Checks + 1
@@ -108,7 +120,7 @@ Check(Bool(GL_TileSetCollisionGet(*Set, 3) = #GL_TILE_SLOPE And GL_TileSetCollis
 RandomSeed(11)
 For y = 0 To 17 : For x = 0 To 23
   k = Random(5)
-  If k : GL_TileMapSet(*Map, x, y, k, Random(7) << 10) : EndIf      ; tile 5: kind 0
+  If k : GL_TileMapSet(*Map, x, y, k, OrientBits(Random(7))) : EndIf      ; tile 5: kind 0
 Next : Next
 Global MapX.f = 4.0, MapY.f = -8.0
 
@@ -299,10 +311,10 @@ Next
 
 ; one-way tiles: never "block", carry the side they stop things from
 Define *Plat.GLTileMap = GL_TileMapCreate(8, 1, *Set), o.i, nx.f, ny.f, s.f, t.f, ms.f, mt.f
-For o = 0 To 7 : GL_TileMapSet(*Plat, o, 0, 2, o << 10) : Next
+For o = 0 To 7 : GL_TileMapSet(*Plat, o, 0, 2, OrientBits(o)) : Next
 Check(Bool(CheckCollisionTileBox(*Plat, 0, 0, 0, 0, 128, 16, Hits()) = #False And ListSize(Hits()) = 8), "one-way tiles are reported, not blocking")
 ForEach Hits()
-  o = Hits()\Flags >> 10
+  o = OrientNumber(Hits()\Flags)
   ; reference: the picture's top edge middle and its centre, turned with the cell
   s = 0.5 : t = 0.0 : ms = 0.5 : mt = 0.5
   If o & 4 : Swap s, t : Swap ms, mt : EndIf

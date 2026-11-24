@@ -176,11 +176,11 @@ or apply a local timezone. Zentaji uses a recorded boot sample to seed its RTC.
 
 `XIncludeFile "GlTiles.pbi"` after `GlSpriteFunctions.pbi` (and `GlFile.pbi`, which saves the map file).
 `GL_TileSetCreate(*Sprite, TileW, TileH, Spacing, Margin)` cuts a sprite sheet into tiles numbered left to
-right, top to bottom from 0; a set holds at most 1023. `GL_TileMapCreate(Width, Height, *Set)` makes an empty
+right, top to bottom from 0; a set holds at most 4095. `GL_TileMapCreate(Width, Height, *Set)` makes an empty
 grid of 16-bit cells. `GL_TileMapSet(*Map, X, Y, Tile, Flags)` puts a tile in a cell, or `#GL_TILE_EMPTY`;
 the flags are `#GL_TILE_FLIPX`, `#GL_TILE_FLIPY`, `#GL_TILE_DIAG` and the rotations `#GL_TILE_ROT90`,
-`#GL_TILE_ROT180`, `#GL_TILE_ROT270` (applied as Tiled applies them), and `GL_TilePalette(slot)` for indexed
-tile sets. `GL_TileMapGet` and `GL_TileMapFlags` read a cell back. A change shows on the next draw.
+`#GL_TILE_ROT180`, `#GL_TILE_ROT270` (applied as Tiled applies them). `GL_TileMapGet` and
+`GL_TileMapFlags` read a cell back. A change shows on the next draw.
 
 `GL_TileMapDraw(*Map, MapX, MapY, R, G, B, A, Scaled, IgnoreCamera, TimeMs)` draws the map with its top-left
 corner at `MapX, MapY` through the 2D camera, placed as `DrawGLSprite` places a sprite. Only the cells the
@@ -220,8 +220,9 @@ does not know.
 | `ANIM` | entries (2); each: tile (2), frames (2), then per frame tile (2) and milliseconds (2) |
 | `TFLG` | count (2), then one collision byte per tile (see layers) |
 
-A cell: bits 0-9 the tile number + 1 (0 is an empty cell), bit 10 flip X, bit 11 flip Y, bit 12 diagonal,
-bits 13-15 the palette slot. `tools/tiles_check.py` proves the cut of a sheet, the cells submitted for 400
+A cell: bits 0-11 the tile number + 1 (0 is an empty cell), bit 12 diagonal, bit 13 reserved (0), bit 14 flip
+X, bit 15 flip Y - the tile word of the console's 2D engine (LibPureMetalN64 `lpm_2d_tile`), so one map file
+serves both. `tools/tiles_check.py` proves the cut of a sheet, the cells submitted for 400
 camera positions against a pass over every cell, the eight orientations, animation by the clock and the file
 round trip; `tools/draw_check.py` draws maps into a render target of an invisible window and compares every
 pixel with a CPU reference.

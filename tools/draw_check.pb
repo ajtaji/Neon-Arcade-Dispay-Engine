@@ -12,6 +12,18 @@ XIncludeFile #PB_Compiler_FilePath + "../GlTiles.pbi"
 XIncludeFile #PB_Compiler_FilePath + "../GlLayers.pbi"
 OpenConsole()
 
+; Orientation number 0-7 (bit 0 FLIPX, bit 1 FLIPY, bit 2 DIAG) as cell bits.
+Procedure.i OrientBits(o.i)
+  Protected f.i
+  If o & 1 : f | #GL_TILE_FLIPX : EndIf
+  If o & 2 : f | #GL_TILE_FLIPY : EndIf
+  If o & 4 : f | #GL_TILE_DIAG : EndIf
+  ProcedureReturn f
+EndProcedure
+Procedure.i OrientNumber(f.i)
+  ProcedureReturn Bool(f & #GL_TILE_FLIPX) | (Bool(f & #GL_TILE_FLIPY) << 1) | (Bool(f & #GL_TILE_DIAG) << 2)
+EndProcedure
+
 Global Checks.i
 Procedure Check(ok.i, message.s)
   Checks + 1
@@ -54,7 +66,7 @@ GL_TileSetAnimAdd(*Set, 7, 2, 100) : GL_TileSetAnimAdd(*Set, 7, 5, 100)
 Define *Map.GLTileMap = GL_TileMapCreate(30, 20, *Set)
 RandomSeed(7)
 For y = 0 To 19 : For x = 0 To 29
-  If Random(9) > 0 : GL_TileMapSet(*Map, x, y, Random(7), Random(7) << 10) : EndIf
+  If Random(9) > 0 : GL_TileMapSet(*Map, x, y, Random(7), OrientBits(Random(7))) : EndIf
 Next : Next
 
 Define *Target.GLRenderTarget = GL_CreateRenderTarget(#W, #H, #False)
@@ -150,7 +162,7 @@ Check(Bool(visible > 10000 And draws = (visible + 9999) / 10000 And GL_StatDrawC
 GL_TileMapFill(*Map, 0, 0, 30, 20, #GL_TILE_EMPTY)
 RandomSeed(9)
 For y = 0 To 19 : For x = 0 To 29
-  If Random(9) > 0 : GL_TileMapSet(*Map, x, y, Random(6), Random(7) << 10) : EndIf
+  If Random(9) > 0 : GL_TileMapSet(*Map, x, y, Random(6), OrientBits(Random(7))) : EndIf
 Next : Next
 Define *Ui.GLTileMap = GL_TileMapCreate(3, 1, *Set)
 GL_TileMapSet(*Ui, 0, 0, 1) : GL_TileMapSet(*Ui, 1, 0, 2, #GL_TILE_ROT90) : GL_TileMapSet(*Ui, 2, 0, 3)

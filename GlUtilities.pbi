@@ -1803,6 +1803,86 @@ Procedure.i GLTextColumnForX(*f.GLFont, Text.s, X.f)
 EndProcedure
 
 ; ----------------------------------------------------------------------------
+; THE DRAW LOG - what was drawn, as a list, not as pixels
+; ----------------------------------------------------------------------------
+; A picture of text is not a reference: two machines rasterise the same face
+; differently. What a UI DID draw is: which primitive, where, how big, in what
+; colour, with which text and inside which clip. While the log is on,
+; DrawGLBox, DrawGLText and DrawGLPolygon each add one entry, with the
+; arguments as the caller passed them (canvas units, before the camera), and
+; whatever sets the GL scissor for a canvas rectangle says so through
+; GL_DrawLogClip (the UI kit's Neon_ScissorSet / Neon_ScissorClear do), so
+; every entry carries the clip in force. A check compares the list; a port to
+; another machine compares its own list with the same one.
+;
+; Off by default, and then the only cost is one test of a global per draw.
+; Drawing is unchanged with it on: the log is kept beside the draw, not
+; instead of it.
+; ----------------------------------------------------------------------------
+#GL_LOG_BOX    = 1
+#GL_LOG_TEXT   = 2
+#GL_LOG_POLY   = 3
+#GL_LOG_CLIP   = 4             ; a clip was set (X, Y, W, H the canvas rectangle)
+#GL_LOG_NOCLIP = 5             ; the clip was taken away
+
+Structure GLDrawLogEntry
+  Kind.i
+  X.f : Y.f : W.f : H.f        ; box: as passed; text: origin, measured width, line height; poly: centre and radii
+  R.f : G.f : B.f : A.f
+  Text.s                       ; the text drawn (text entries)
+  *Font.GLFont                 ; its face (text entries)
+  Sides.i                      ; poly entries: sides; and Solid in bit 16
+  Flags.i                      ; bit 0 Scaled, bit 1 IgnoreCamera
+  Clip.b                       ; a clip was in force ...
+  CX.f : CY.f : CW.f : CH.f    ; ... this canvas rectangle
+EndStructure
+
+Global GL_DrawLogOn.b
+Global NewList GL_DrawLog.GLDrawLogEntry()
+Global GL_LogClipOn.b, GL_LogClipX.f, GL_LogClipY.f, GL_LogClipW.f, GL_LogClipH.f
+
+; Empty the log and start recording.
+Procedure GL_DrawLogStart()
+  ClearList(GL_DrawLog())
+  GL_DrawLogOn = #True
+EndProcedure
+
+; Stop recording; the entries stay until the next start.
+Procedure GL_DrawLogStop()
+  GL_DrawLogOn = #False
+EndProcedure
+
+Procedure GL_DrawLogAdd(Kind.i, X.f, Y.f, W.f, H.f, R.f, G.f, B.f, A.f, Flags.i, Text.s = "", *Font = 0, Sides.i = 0)
+  AddElement(GL_DrawLog())
+  GL_DrawLog()\Kind = Kind
+  GL_DrawLog()\X = X : GL_DrawLog()\Y = Y : GL_DrawLog()\W = W : GL_DrawLog()\H = H
+  GL_DrawLog()\R = R : GL_DrawLog()\G = G : GL_DrawLog()\B = B : GL_DrawLog()\A = A
+  GL_DrawLog()\Text = Text : GL_DrawLog()\Font = *Font : GL_DrawLog()\Sides = Sides
+  GL_DrawLog()\Flags = Flags
+  GL_DrawLog()\Clip = GL_LogClipOn
+  GL_DrawLog()\CX = GL_LogClipX : GL_DrawLog()\CY = GL_LogClipY
+  GL_DrawLog()\CW = GL_LogClipW : GL_DrawLog()\CH = GL_LogClipH
+EndProcedure
+
+; The clip now in force, in canvas units (On = #False: none). Kept whether or
+; not the log is on, so a log started mid-frame still knows the clip.
+Procedure GL_DrawLogClip(On.b, X.f = 0.0, Y.f = 0.0, W.f = 0.0, H.f = 0.0)
+  GL_LogClipOn = On
+  If On
+    GL_LogClipX = X : GL_LogClipY = Y : GL_LogClipW = W : GL_LogClipH = H
+  Else
+    GL_LogClipX = 0 : GL_LogClipY = 0 : GL_LogClipW = 0 : GL_LogClipH = 0
+  EndIf
+  If GL_DrawLogOn
+    If On
+      GL_DrawLogAdd(#GL_LOG_CLIP, X, Y, W, H, 0, 0, 0, 0, 0)
+    Else
+      GL_DrawLogAdd(#GL_LOG_NOCLIP, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    EndIf
+  EndIf
+EndProcedure
+
+; ----------------------------------------------------------------------------
 ; DrawGLText()
 ; Description: Renders text using the font's glyph cache.
 ; Parameters:
@@ -1826,6 +1906,10 @@ EndProcedure
 Procedure DrawGLText(*f.GLFont, ScreenX.f, ScreenY.f, Text.s, R.f=1.0, G.f=1.0, B.f=1.0, A.f=1.0, Scaled.b=#False, IgnoreCamera.b=#True)
   If Not *f Or Text = "" : ProcedureReturn : EndIf
   GL_StatTextCalls + 1
+  If GL_DrawLogOn
+    GL_DrawLogAdd(#GL_LOG_TEXT, ScreenX, ScreenY, GetGLTextWidth(*f, Text), *f\LineHeight, R, G, B, A,
+                  Bool(Scaled) | (Bool(IgnoreCamera) << 1), Text, *f)
+  EndIf
 
   Protected TW.f = Util_WinWidth, TH.f = Util_WinHeight
   If Scaled : TW = Util_BaseWidth : TH = Util_BaseHeight : EndIf
@@ -1976,7 +2060,11 @@ EndProcedure
 ;   IgnoreCamera     - Defaults to #False (Moves with the game world).
 ; ----------------------------------------------------------------------------
 Procedure DrawGLPolygon(X.f, Y.f, RadiusX.f, RadiusY.f, Sides.i, R.f=1.0, G.f=1.0, B.f=1.0, A.f=1.0, Solid.b=#True, Scaled.b=#False, IgnoreCamera.b=#False)
-  If Sides < 3 : ProcedureReturn : EndIf 
+  If Sides < 3 : ProcedureReturn : EndIf
+  If GL_DrawLogOn
+    GL_DrawLogAdd(#GL_LOG_POLY, X, Y, RadiusX, RadiusY, R, G, B, A, Bool(Scaled) | (Bool(IgnoreCamera) << 1), "", 0,
+                  Sides | (Bool(Solid) << 16))
+  EndIf
   glUseProgram(Util_ShapeShader) : glUniform4f(Util_ShapeLoc_Color, R, G, B, A) : glBindVertexArray(Util_ShapeVAO)
   Define TW.f = Util_WinWidth, TH.f = Util_WinHeight : If Scaled : TW = Util_BaseWidth : TH = Util_BaseHeight : EndIf
   
@@ -2019,6 +2107,7 @@ EndProcedure
 ;   IgnoreCamera - Defaults to #False (Moves with the game world).
 ; ----------------------------------------------------------------------------
 Procedure DrawGLBox(X.f, Y.f, W.f, H.f, R.f=1.0, G.f=1.0, B.f=1.0, A.f=1.0, Scaled.b=#False, IgnoreCamera.b=#False)
+  If GL_DrawLogOn : GL_DrawLogAdd(#GL_LOG_BOX, X, Y, W, H, R, G, B, A, Bool(Scaled) | (Bool(IgnoreCamera) << 1)) : EndIf
   glUseProgram(Util_ShapeShader) : glUniform4f(Util_ShapeLoc_Color, R, G, B, A) : glBindVertexArray(Util_ShapeVAO)
   Define TW.f = Util_WinWidth, TH.f = Util_WinHeight : If Scaled : TW = Util_BaseWidth : TH = Util_BaseHeight : EndIf
   

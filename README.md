@@ -15,6 +15,8 @@ A PureBasic rendering and user-interface framework built on OpenGL. The engine u
 - Colour-indexed images and palettes: swap, cycle and fade, drawn by a palette look-up in the shader
 - Runtime glyph caching with Unicode code-point lookup and paged texture atlases
 - Immediate-mode neon UI controls and application chrome
+- The UI driven by a game pad or keys alone (`Neon_ChromeBeginNav`), the UI's typefaces selectable, a widget gallery and a UI check
+- A draw log: what was drawn as a list (kind, rectangle, colour, text, clip), for checks that do not compare pixels
 - CRT and passthrough presentation paths
 - HiDPI-aware viewport and input mapping
 
@@ -351,3 +353,157 @@ on the ground through the collision queries. Five draw calls a frame. Build it w
 order, the slot rules, the look-up, pictures and the file; `tools/draw_check.py` draws an indexed map with two
 palettes, after a cycle and a fade, with a layer's swap, two sprites with their own palettes in one call, and the
 CPU re-colour, and compares every pixel with the CPU look-up.
+
+## The widget gallery (`examples/WidgetGallery.pb`)
+
+Every widget and call of `GlUI.pbi` and `GlUIChrome.pbi`, in every state it has, laid out with the kit's public
+calls on a 1280 x 720 canvas, on four screens chosen by a tab strip under the menu bar:
+
+| Screen | What is on it |
+|---|---|
+| Arcade (GlUI) | a label, a breadcrumb, three buttons (one widened to its label), a slider, two toggles (on, off), three meters (empty, the slider's level, full), a DIP bank of eight, a carousel; hover and focus by mouse or pad |
+| Controls | the chrome's buttons (normal, lit, disabled); the five faces; right-aligned and centred text; box, frame, glow; one text cut to nine widths with the ellipsis (and a cut that must not split an accent or a surrogate pair); three text inputs (placeholder, caret, a text that scrolls; Ctrl+A / C / X / V, Home, End, Backspace, Delete, Return, Esc); vertical and horizontal scroll bars over clipped content, and one with nothing to scroll; what the kit reports (`Neon_HoverIdAt`, `Neon_MenuBlocksMouse`, the navigation focus, `Neon_S`, the faces, `Neon_TabEscape`, `Neon_IsJoinedUnit`, `Neon_Animate`) |
+| Lists and tabs | a tab strip with close boxes, an italic tab and a pinned one; a strip of 24 tabs that scrolls; labels holding a bar and an ESC; `Neon_TabAt`; a list of 78 rows in a box of 26 (groups, indents, details, a label cut short), an empty list, one that fits |
+| Event log | every GlUI callback and every action a chrome widget reported, in the order it happened |
+
+The menu bar is on every screen: shortcuts, separators, check marks, a disabled item, submenus, and a menu of 60
+items that scrolls. View > Faces switches the typefaces (below).
+
+It is driven as any engine program is, by the mouse and the keys, or by a game pad (`GL_PadRead`): the D-pad moves
+the focus (up / down) and the value (left / right), A acts, B goes back, the right stick scrolls, the triggers
+page, the shoulder buttons change screens. F5 plays the gallery's script with the mouse and keys, F6 the same
+script with the pad's actions. The screens, the event log and the script are in
+`examples/WidgetGalleryScreens.pbi`, which the UI check includes, so the check drives exactly what the gallery
+shows. Build it with `pbcompiler WidgetGallery.pb /EXE WidgetGallery.exe /THREAD /DPIAWARE` in its folder;
+`--faces open` starts it with the open faces.
+
+## Driving the chrome without a pointer (`Neon_ChromeBeginNav`)
+
+GlUI's widgets always took a D-pad: `Neon_UpdateInput(... DPadX, DPadY, ActionPressed)`. The chrome took only a
+pointer. Now a host without one - a game pad, a remote, the keys alone - calls, once a frame, **in place of**
+`Neon_ChromeBeginFrame`:
+
+```purebasic
+Neon_ChromeBeginNav(Action, Dt [, KeyChar])
+```
+
+and draws its frame exactly as before. The things that can have the focus are the ones the chrome already
+declares as it draws: its hot zones (every button, menu name and item, submenu row, tab, close box, tab arrow,
+text field, list row and scroll-bar thumb), in the order drawn. While a menu is open only the menu bar and its
+drop-downs take part.
+
+| Action | Does |
+|---|---|
+| `#NEON_NAV_NEXT` / `#NEON_NAV_PREV` | the focus to the next / previous control, round the end |
+| `#NEON_NAV_ACTIVATE` | a click on the focused control (the button comes up on the next frame by itself); on the text field that already has the keyboard, Return (it submits) |
+| `#NEON_NAV_BACK` | Escape: closes a menu, lets a text field go |
+| `#NEON_NAV_LEFT` / `#NEON_NAV_RIGHT` | the Left / Right keys (a text field's caret) |
+| `#NEON_NAV_UP` / `#NEON_NAV_DOWN` | one notch of the wheel over the focus: a list or a long drop-down scrolls, a scrolling tab strip steps a tab |
+| `#NEON_NAV_PAGEUP` / `#NEON_NAV_PAGEDOWN` | a page of what scrolls under the focus: a scroll bar (as a click on its track), a list, a long drop-down |
+| `#NEON_NAV_NONE` | nothing; the focus stays |
+
+The pointer is put on the focus: the kit's snapshot is filled as if a mouse sat at the centre of the focused
+control, so every widget does what it does for a mouse, by the same code, and the focused control shows the look
+it has under a pointer - that hover look is the focus mark. The focus follows its control across frames by the
+control's identity; when the control is gone (scrolled away, its menu closed) the focus goes to the nearest
+control, or back to the menu's name on the bar. `Neon_NavOn` says a frame was driven this way, `Neon_NavID` and
+`Neon_NavX / Y / W / H` say where the focus is. A host with both calls `Neon_ChromeBeginFrame` on the frames the
+mouse moves and `Neon_ChromeBeginNav` on the others. A pad cannot drag a scroll bar's thumb (it pages instead), and
+types only what the host passes as `KeyChar` (an on-screen keyboard). A host that never calls it sees no change.
+
+```purebasic
+; a pad's frame; Pressed() is the host's own "went down this frame" test of its pad
+; (GlUI on the same screen takes DPadY / DPadX / ActionPressed as it always did)
+If Pressed(#Up) : a = #NEON_NAV_PREV : ElseIf Pressed(#Down) : a = #NEON_NAV_NEXT
+ElseIf Pressed(#A) : a = #NEON_NAV_ACTIVATE : ElseIf Pressed(#B) : a = #NEON_NAV_BACK : Else : a = #NEON_NAV_NONE : EndIf
+Neon_ChromeBeginNav(a, dt)
+; ... draw the frame, menus last ...
+Neon_ChromeEndFrame()
+```
+
+`Neon_ChromeReset()` forgets everything the chrome remembers between frames (hover fades, scroll positions, list
+counts, measured menus, the open menu, the keyboard, the focus), so the next frame is drawn as the first was - for
+a host that replaces its whole screen, and for a check or a replayed script.
+
+## The typefaces (`Neon_SetFaces`, `Neon_UseFaceSet`, `Neon_ChromeFonts`)
+
+The chrome draws through five fonts the host gives it (`*Neon_FontUI`, `Small`, `Bold`, `Mono`, `Italic`). The
+typefaces they are made from are now selected:
+
+- `Neon_SetFaces(UIFace, MonoFace [, UIFile, MonoFile])` names the proportional and the monospaced face; with a
+  file, the file is registered for the process first (`RegisterFontFile`) and the name is the family it holds.
+  A file that cannot be registered is refused: `#False`, the reason in `Neon_FaceError()`, the selection as it was.
+- `Neon_UseFaceSet(Set [, FontDir])` picks one of the two documented sets: `#NEON_FACES_WINDOWS` ("Segoe UI",
+  "Consolas", the default) or `#NEON_FACES_OPEN` ("Lato" from `Lato-Regular.ttf`, "JetBrains Mono" from
+  `JetBrainsMono-Regular.ttf`, both SIL Open Font License 1.1, in `assets/fonts/`).
+- `Neon_ChromeFonts(Scale)` makes the five from the selection at the sizes of the hosting notes (UI 14, small
+  12, bold 15, mono 13, italic 14 pixels, times Scale), snapped to the pixel, replacing the five it made before.
+
+Nothing changes for a program that never calls them: the selection starts as Segoe UI and Consolas, and fonts a
+host makes itself are never touched. Bold and italic of a face registered from one regular file are the system's
+own emboldened and slanted forms. `assets/fonts/FONTS.txt` lists the files and their licences;
+**`JetBrainsMono-Regular.ttf` is not in the repository yet** - until it is, `#NEON_FACES_OPEN` is refused and says so.
+
+## The draw log (`GlUtilities.pbi`)
+
+`GL_DrawLogStart()` empties `GL_DrawLog()` and records; `GL_DrawLogStop()` stops. While it records, `DrawGLBox`,
+`DrawGLText` and `DrawGLPolygon` each add one `GLDrawLogEntry`: `Kind` (`#GL_LOG_BOX`, `_TEXT`, `_POLY`), the
+rectangle as passed (canvas units, before the camera; a text's measured width and its face's line height; a
+polygon's centre and radii), the colour, the text and face, the sides, `Flags` (Scaled, IgnoreCamera) and the
+clip in force (`Clip`, `CX, CY, CW, CH`). Whatever sets the GL scissor for a canvas rectangle reports it with
+`GL_DrawLogClip(On, X, Y, W, H)` - the kit's `Neon_ScissorSet` / `Neon_ScissorClear` do - which also adds a
+`#GL_LOG_CLIP` / `#GL_LOG_NOCLIP` entry. Drawing is unchanged with the log on; off, it costs one test a draw.
+
+## The UI check (`tools/ui_check.py`)
+
+`python tools/ui_check.py` builds `tools/ui_check.pb` into `build/ui_check/` and runs it in an invisible window.
+The faces are "metric faces": fixed-advance fonts with round numbers (advance / line height: ui 8 / 16, small
+7 / 14, bold 9 / 18, mono 8 / 16, italic 8 / 16, arcade 12 / 24), since the kit's layout depends on nothing else
+of a face, so every expected value is exact on any machine. It proves the draw log and the faces; `Neon_FitText`
+at every width 0 - 360 for six texts against a reference that walks code points; GlUI's sizing rules; then plays
+the gallery's script twice from `Neon_ChromeReset` - with the mouse and keys, and with a pad's actions - and after
+every step checks the state, the return values and the event log against values worked out from the kit's
+layout rules (rectangles, hot zones, fitted text, scroll positions, the caret and the selection, colours and
+clips of the primitives that show the state), and requires the two runs to agree (the state and the step's log;
+for a drag, which a pad does as pages, the state). The record of both runs is compared line for line with
+`tools/ui_check_expected.txt`; `python tools/ui_check.py --write` writes it.
+
+**The expected record** (`tools/ui_check_expected.txt`, UTF-8, one item a line, numbers with 3 decimals,
+colours with 4):
+
+```
+# neon-ui-expected 1          the format and its version; lines starting with # are comments
+canvas 1280 720               the canvas
+face <name> <advance> <line>  each metric face: ui, small, bold, mono, italic, arcade
+ellipsis U+2026               the cut's ending: the character, or "..." where the face lacks it
+run mouse | run pad           a run of the script
+step <n> <name>               a step of it (the names are the script's, Gallery_MakeScript)
+state <text>                  the state after the step, as Gallery_StateText gives it; "state log <text>" an
+                              event-log entry the step added
+box X Y W H R G B A clip CX CY CW CH | clip -
+text X Y W H R G B A clip ... <face> "<text>"
+poly X Y RX RY R G B A clip ... <sides> <solid>
+clip X Y W H | noclip         the clip set / taken away
+end                           the step's last frame ends
+```
+
+The primitives are those of the step's last frame, in the order drawn. In a text, `\`, `"` and the control
+characters are written `\uXXXX`. A port compares its own record with this one: the states and the order, kind,
+rectangles, texts and clips exactly, the colours to 1/255.
+
+## Changes to the kit's behaviour (2026-11-24)
+
+Found while working out the gallery's expected values; each is a fault, fixed where it lies:
+
+- **GlUI, a value the pad changed reached no callback.** A slider or carousel moved with DPadX, a toggle or DIP
+  switch flipped with ActionPressed changed on screen and the program was never told; the same change with the
+  mouse always called back. Now it calls back too (and, as every callback does, ends the frame).
+- **GlUI, two gadgets focused for a frame.** When the pointer moved onto a gadget later in the list than the
+  focused one, the old one was still processed as focused in that frame (a DPadX in it moved the old one). Hover is
+  now found for every gadget before any is processed.
+- **GlUI, DPadY over a list of only labels looped for ever**, and over an empty list read a gadget that was not
+  there.
+- **GlUI, an empty meter showed one segment** (and a value of exactly k / 20 one too many): segment i is lit when
+  the value passes its start.
+- **The chrome, a menu row or list row that only touches its view's edge** was drawn and, for menus, given a hot
+  zone, so a row with nothing in view could take the hover or the focus.

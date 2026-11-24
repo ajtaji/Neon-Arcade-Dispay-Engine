@@ -11,6 +11,7 @@ A PureBasic rendering and user-interface framework built on OpenGL. The engine u
 - Sprite loading, batching, animation data, and instanced particles
 - AABB, circle, pixel-perfect, SAT, and line collision helpers
 - Tile sets and tile maps: flipped and rotated tiles, animated tiles, a map file
+- Layers of tiles or sprites with parallax, opacity, tint and draw order; tile collision queries
 - Runtime glyph caching with Unicode code-point lookup and paged texture atlases
 - Immediate-mode neon UI controls and application chrome
 - CRT and passthrough presentation paths
@@ -224,3 +225,58 @@ bits 13-15 the palette slot. `tools/tiles_check.py` proves the cut of a sheet, t
 camera positions against a pass over every cell, the eight orientations, animation by the clock and the file
 round trip; `tools/draw_check.py` draws maps into a render target of an invisible window and compares every
 pixel with a CPU reference.
+
+## Layers and tile collision (`GlLayers.pbi`, optional)
+
+`XIncludeFile "GlLayers.pbi"` after `GlTiles.pbi`. `GL_LayersCreate()` makes a set of layers;
+`GL_LayerAddTiles(*Layers, *Map, Order)` and `GL_LayerAddSprites(*Layers, Order)` add one.
+`GL_LayersDraw(*Layers, Scaled, TimeMs)` draws them back to front: the lowest `Order` first, equal orders in the
+order they were added (`GL_LayerSetOrder` moves one). A layer's fields are set directly: `X`, `Y` (where its
+top-left sits), `ScrollX`, `ScrollY`, `ParallaxX`, `ParallaxY` (1 moves with the world, 0.5 half as fast, 0 not
+at all), `Opacity`, `TintR`, `TintG`, `TintB`, `Visible`, and `Fixed`, which pins the layer to the screen in
+canvas pixels for a UI layer. A layer's content point P is drawn at the world position
+`X - ScrollX + P + GL_CameraX * (1 - ParallaxX)`; `GL_LayerOrigin` returns it for P = 0. The camera's zoom
+applies to every layer that is not fixed.
+
+`GL_LayerSpriteAdd(*Layer, *Sprite, X, Y)` returns an entry whose fields can be changed at any time: `W`, `H`
+(drawn size), `Angle`, `SrcX`, `SrcY`, `SrcW`, `SrcH` (a part of the picture, rows counted from the top on every
+OS), `Orient` (the tile flips and rotations), `R`, `G`, `B`, `A`, `Visible`. A sprite layer batches consecutive
+sprites on one sheet into one draw call and skips sprites off the canvas; a tile layer is one call per screen.
+
+```purebasic
+*World = GL_LayersCreate()
+*Sky = GL_LayerAddTiles(*World, *SkyMap, 0) : *Sky\ParallaxX = 0.25 : *Sky\ParallaxY = 0
+*Hills = GL_LayerAddTiles(*World, *HillMap, 1) : *Hills\ParallaxX = 0.5
+*Ground = GL_LayerAddTiles(*World, *GroundMap, 2)
+*Actors = GL_LayerAddSprites(*World, 3)
+*Hero = GL_LayerSpriteAdd(*Actors, *HeroSheet, 100, 180)
+*Hud = GL_LayerAddTiles(*World, *HudMap, 9) : *Hud\Fixed = #True
+; each frame
+*Hero\X = PlayerX : *Hero\SrcX = Frame * 16 : *Hero\SrcW = 16 : *Hero\SrcH = 24
+GL_LayersDraw(*World, #True)
+```
+
+**Collision.** `GL_TileSetCollision(*Set, Tile, Kind)` gives each tile a collision byte: `#GL_TILE_SOLID`,
+`#GL_TILE_ONEWAY` (stops things from its top side only) or `#GL_TILE_SLOPE` (45 degrees, solid below the line
+from the bottom-left to the top-right corner). A cell's flips and rotations turn the slope and the one-way side
+with the picture. The table is saved in the map file (`TFLG`). The queries follow `GlMath.pbi`:
+
+```purebasic
+NewList Hits.GLTileHit()
+If CheckCollisionTileBox(*Map, MapX, MapY, X, Y, W, H, Hits())    ; or CheckCollisionLayerBox(*Ground, X, Y, W, H, Hits())
+  ; inside a solid part
+EndIf
+ForEach Hits()        ; every non-empty cell the box overlaps: Col, Row, Tile, Flags, Kind, Blocks
+  If Hits()\Kind & #GL_TILE_ONEWAY And VelocityY > 0 And Hits()\NormalY < 0 And OldBottom <= Hits()\Row * 16 + MapY
+    ; landed on a platform
+  EndIf
+Next
+```
+
+`CheckCollisionTileCircle(*Map, MapX, MapY, CX, CY, Radius, Hits())` and `CheckCollisionTileLine(*Map, MapX,
+MapY, X1, Y1, X2, Y2, Hits())` work the same; a line's hits are nearest first, each with `T` (0..1) where the
+line enters the cell, or its solid part when `Blocks`. The `Layer` forms use the layer's origin. Touching an
+edge is not overlapping, so a box standing exactly on the floor hits nothing. `tools/layers_check.py` proves the
+draw order, the parallax arithmetic at 300 camera positions, the sprite quads, and 600 each of boxes, circles
+and lines against a slow reference that visits every cell by other methods; `tools/draw_check.py` draws a
+parallax layer, a half-transparent flipped sprite layer and a fixed layer and compares every pixel.

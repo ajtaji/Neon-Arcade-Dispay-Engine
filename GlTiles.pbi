@@ -61,6 +61,12 @@
 #GL_TILE_PALSHIFT = 13
 #GL_TILE_PALETTE  = $E000
 
+; A tile's collision byte (GL_TileSetCollision; the queries are in GlLayers.pbi).
+#GL_TILE_SOLID    = 1             ; the whole tile stops things
+#GL_TILE_ONEWAY   = 2             ; stops things from one side only: the top, turned with the cell
+#GL_TILE_SLOPE    = 4             ; 45 degrees: solid below the line from the bottom-left corner
+                                  ; to the top-right corner, turned with the cell
+
 ; The palette-slot bits of a cell, for GL_TileMapSet's Flags.
 Macro GL_TilePalette(Slot)
   (((Slot) & 7) << #GL_TILE_PALSHIFT)
@@ -85,6 +91,7 @@ Structure GLTileSet
   Columns.i : Rows.i : Count.i
   Animated.i                  ; how many tiles have frames
   Array Anim.GLTileAnim(0)    ; one per tile
+  Array Collide.a(0)          ; one collision byte per tile (#GL_TILE_SOLID ...)
 EndStructure
 
 Structure GLTileMap
@@ -143,7 +150,20 @@ Procedure.i GL_TileSetCreate(*Sprite.GLSprite, TileW.i, TileH.i, Spacing.i = 0, 
   *Set\Spacing = Spacing : *Set\Margin = Margin
   *Set\Columns = Columns : *Set\Rows = Rows : *Set\Count = Columns * Rows
   ReDim *Set\Anim(*Set\Count - 1)
+  ReDim *Set\Collide(*Set\Count - 1)
   ProcedureReturn *Set
+EndProcedure
+
+; Set Tile's collision byte: 0, or #GL_TILE_SOLID, #GL_TILE_ONEWAY, #GL_TILE_SLOPE.
+Procedure.i GL_TileSetCollision(*Set.GLTileSet, Tile.i, Kind.i)
+  If Not *Set Or Tile < 0 Or Tile >= *Set\Count Or Kind < 0 Or Kind > 255 : ProcedureReturn #False : EndIf
+  *Set\Collide(Tile) = Kind
+  ProcedureReturn #True
+EndProcedure
+
+Procedure.i GL_TileSetCollisionGet(*Set.GLTileSet, Tile.i)
+  If Not *Set Or Tile < 0 Or Tile >= *Set\Count : ProcedureReturn 0 : EndIf
+  ProcedureReturn *Set\Collide(Tile)
 EndProcedure
 
 Procedure GL_TileSetAnimClear(*Set.GLTileSet, Tile.i)
@@ -456,7 +476,7 @@ EndProcedure
 ;           width x height cells (2 each) as above, row 0 first. One chunk per
 ;           tile layer, back to front.
 ;   "ANIM"  entries (2); each: tile (2), frames (2), frames x (tile (2), ms (2))
-;   "TFLG"  count (2), then count collision bytes, one per tile (GlLayers.pbi)
+;   "TFLG"  count (2), then count collision bytes, one per tile (GL_TileSetCollision)
 
 Procedure GLTile_Put16(*P, Value.i)
   PokeA(*P, (Value >> 8) & $FF) : PokeA(*P + 1, Value & $FF)
@@ -545,12 +565,9 @@ Procedure.i GLTile_AnimBytes(*Set.GLTileSet)
   ProcedureReturn n
 EndProcedure
 
-; Extra chunks a tile set contributes to a saved map (GlLayers.pbi adds the
-; collision table through this hook). Returns total bytes, writes at *Out
-; when *Out is not 0 and counts the chunks in *Chunks.
-Prototype.i GLTile_SetChunksProto(*Set.GLTileSet, *Out, *Chunks.Integer)
-Global GLTile_ExtraChunks.GLTile_SetChunksProto
-
+; The chunks a tile set contributes to a saved map: "ANIM" when anything is
+; animated, "TFLG" when any tile has a collision byte. Returns their bytes,
+; writes them at *Out when *Out is not 0, and counts them in *Chunks.
 Procedure.i GLTile_SetChunks(*Set.GLTileSet, *Out, *Chunks.Integer)
   Protected bytes.i = GLTile_AnimBytes(*Set), i.i, k.i, *F.GLTileFrame, *P, total.i
   If bytes
@@ -572,12 +589,23 @@ Procedure.i GLTile_SetChunks(*Set.GLTileSet, *Out, *Chunks.Integer)
       *Out + 8 + ((bytes + 3) & ~3)
     EndIf
   EndIf
-  If GLTile_ExtraChunks : total + GLTile_ExtraChunks(*Set, *Out, *Chunks) : EndIf
+  For i = 0 To *Set\Count - 1
+    If *Set\Collide(i) : Break : EndIf
+  Next
+  If i < *Set\Count
+    bytes = 2 + *Set\Count
+    total + 8 + ((bytes + 3) & ~3) : *Chunks\i + 1
+    If *Out
+      PokeS(*Out, "TFLG", 4, #PB_Ascii | #PB_String_NoZero) : GLTile_Put32(*Out + 4, bytes)
+      GLTile_Put16(*Out + 8, *Set\Count)
+      For i = 0 To *Set\Count - 1 : PokeA(*Out + 10 + i, *Set\Collide(i)) : Next
+    EndIf
+  EndIf
   ProcedureReturn total
 EndProcedure
 
-; Save *Map to Path; with SaveSet the tile set's animations (and collision
-; table, when GlLayers.pbi is included) go in the same file.
+; Save *Map to Path; with SaveSet the tile set's animations and collision
+; table go in the same file.
 Procedure.i GL_TileMapSave(*Map.GLTileMap, Path.s, SaveSet.i = #True)
   Protected mapBytes.i, total.i, chunks.i, *Buf, *P, i.i, ok.i, setBytes.i
   If Not *Map : ProcedureReturn GLTile_Fail("GL_TileMapSave: no map.") : EndIf
@@ -626,10 +654,6 @@ Procedure.i GL_TileMapLoad(Path.s, *Set.GLTileSet, Index.i = 0)
   ProcedureReturn *Map
 EndProcedure
 
-; Hook for further tile-set chunks on load (GlLayers.pbi: the collision table).
-Prototype.i GLTile_LoadChunksProto(*Set.GLTileSet, *Buf, Size.i)
-Global GLTile_LoadExtra.GLTile_LoadChunksProto
-
 ; Replace *Set's animations (and collision table) with those saved in Path.
 Procedure.i GL_TileSetLoad(*Set.GLTileSet, Path.s)
   Protected Size.i, *Buf, at.i, len.i, entries.i, e.i, tile.i, frames.i, k.i, *P, *End, ok.i = #True
@@ -652,7 +676,17 @@ Procedure.i GL_TileSetLoad(*Set.GLTileSet, Path.s)
     Next
     If Not ok : GLTile_Fail(Path + ": the animation table does not fit this tile set.") : EndIf
   EndIf
-  If ok And GLTile_LoadExtra : ok = GLTile_LoadExtra(*Set, *Buf, Size) : EndIf
+  If ok
+    For k = 0 To *Set\Count - 1 : *Set\Collide(k) = 0 : Next
+    at = GLTile_FindChunk(*Buf, Size, "TFLG", 0, @len)
+    If at >= 0
+      If len < 2 Or GLTile_Get16(*Buf + at) <> *Set\Count Or len <> 2 + *Set\Count
+        ok = #False : GLTile_Fail(Path + ": the collision table is not for a set of " + Str(*Set\Count) + " tiles.")
+      Else
+        For k = 0 To *Set\Count - 1 : *Set\Collide(k) = PeekA(*Buf + at + 2 + k) : Next
+      EndIf
+    EndIf
+  EndIf
   FreeMemory(*Buf)
   ProcedureReturn ok
 EndProcedure

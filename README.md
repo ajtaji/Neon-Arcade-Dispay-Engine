@@ -341,6 +341,12 @@ version (2, 1), number of chunks (2), then chunks as the map file.
 
 `GL_IndexedSave(*Img, Path, Packed)`, `GL_IndexedLoad(Path)` (the image then owns its palettes),
 `GL_PaletteSave(*Pal, Path)`, `GL_PaletteLoad(Path, Slot)`; failures say why in `GL_PaletteError()`.
+`examples/TileWorld.pb` puts the three together: a starry sky, far hills and the ground at three parallax
+speeds, two heroes that share one picture and differ by palette, a status strip fixed to the screen, water and
+stars cycling by the clock, coins as animated tiles, D for dusk (a fade), arrows to scroll, the heroes standing
+on the ground through the collision queries. Five draw calls a frame. Build it with
+`pbcompiler TileWorld.pb /EXE TileWorld.exe /THREAD /DPIAWARE` in its folder.
+
 `tools/palette_check.py` proves the cycles, the clock, 2000 fades and 300 palette fades against references, their
 order, the slot rules, the look-up, pictures and the file; `tools/draw_check.py` draws an indexed map with two
 palettes, after a cycle and a fade, with a layer's swap, two sprites with their own palettes in one call, and the

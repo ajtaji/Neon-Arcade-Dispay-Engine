@@ -1,0 +1,9 @@
+server bound to 127.0.0.1:65434
+sent 5 bytes
+ready sockets: 1
+server got 5 bytes: hello from 127.0.0.1:65435
+client got the echo: 5 bytes
+connect: -2 (0 connected, -2 in progress)
+writable; outcome 0
+accepted handle 5 from 127.0.0.1
+a refused call: GL_NetSend on handle 999 = -9 (#GL_NET_BADHANDLE)

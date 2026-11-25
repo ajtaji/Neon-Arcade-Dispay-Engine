@@ -1,0 +1,9 @@
+tiles in the set: 32 (8 columns)
+tile 9 is cut from the sheet at 16, 16
+tile 6 at 0, 149, 150, 300 ms: 6 6 7 6
+cell 6,7: tile 10, flags $4000, raw cell $400B
+cell 0,0: tile -1 (#GL_TILE_EMPTY is -1)
+outside the map: tile -1
+saved 492 bytes, tile layers in the file: 1
+read back: 20 x 10, cell 6,7 $400B, tile 3 collides 1, tile 6 frames 2
+refused: GL_TileMapCreate: a map is 1 to 65535 cells each way.

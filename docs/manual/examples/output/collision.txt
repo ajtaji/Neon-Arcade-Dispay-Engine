@@ -1,0 +1,13 @@
+boxes 0,0 10x10 and 10,0 10x10 (touching): 0
+boxes 0,0 10x10 and 9.5,0 10x10:           1
+circles r5 at 0,0 and r5 at 10,0 (touching): 1
+the two diagonals cross at 5.00, 5.00
+segments that only meet at an end: 0
+segment 0,0 - 10,0 against a circle r1 at 5,1: 1
+Bezier (0,0)(0,100)(100,100)(100,0) at t 0.5: 50.00, 75.00
+SAT squares 10 wide, centres 9 apart:  1
+SAT squares 10 wide, centres 11 apart: 0
+masks at 0,0 and 3,0 (the blocks overlap):  1
+masks at 0,0 and 5,0 (only empty pixels):   0
+hull of the solid block, about the sprite's centre:
+    (-2.0,-2.0) (-2.0,-1.0) (-2.0,0.0) (-2.0,1.0) (-1.0,1.0) (0.0,1.0) (1.0,1.0) (1.0,-2.0)

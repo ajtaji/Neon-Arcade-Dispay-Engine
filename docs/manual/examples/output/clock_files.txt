@@ -1,0 +1,7 @@
+UTC now: 2026-11-25 15:11:11 and 477266 us
+Delay(20) took 20593 us by GL_Micros
+create new:                 1
+create new again (refused): 0
+overwrite, same size:       1
+overwrite, other size:      0  (the file stays 1000 bytes)
+2 pages written, page size 4096

@@ -1,0 +1,8 @@
+shown 1..4 after one step: (120,0,0,255) (30,0,0,255) (60,0,0,255) (90,0,0,255) 
+set 1 is still (30,0,0,255)
+at 250 ms, shown 1 = (90,0,0,255) (set 3 was (90,0,0,255))
+entry 4 faded a quarter toward blue: (90,0,64,255)
+entry 0 keeps alpha 0: (0,0,64,0)
+pixel 0,0 = (30,0,0,255), pixel 3,1 = (210,0,0,255), pixel 1,0 = (0,0,0,0)
+file 68 bytes; read back 4 x 2, pixel 3,1 = 7, its palette's entry 7 = (210,0,0,255)
+refused: GL_IndexedSave: an index above 15 does not fit four bits.

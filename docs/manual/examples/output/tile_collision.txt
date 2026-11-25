@@ -1,0 +1,15 @@
+box on the floor: blocked 0, 0 cells
+box 1 pixel into the floor: blocked 1, 1 cells
+    cell 1,5 tile 0 kind 1 blocks 1 t 0.000
+box in the ledge: blocked 0, 1 cells
+    cell 3,2 tile 1 kind 2 blocks 0 t 0.000 normal 0,-1
+circle over the slope's empty half: blocked 0, 1 cells
+    cell 8,4 tile 2 kind 4 blocks 0 t 0.000
+circle in the slope's solid half: blocked 1, 1 cells
+    cell 8,4 tile 2 kind 4 blocks 1 t 0.000
+line down through the ledge to the floor: blocked 1, 2 cells
+    cell 3,2 tile 1 kind 2 blocks 0 t 0.337 normal 0,-1
+    cell 3,5 tile 0 kind 1 blocks 1 t 0.842
+layer origin with X 100, parallax 0.5, camera 40: 120.0, 0.0
+box on the scrolled layer: blocked 1, 1 cells
+    cell 1,5 tile 0 kind 1 blocks 1 t 0.000

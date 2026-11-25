@@ -2,6 +2,16 @@
 
 A PureBasic rendering and user-interface framework built on OpenGL. The engine uses a fixed-resolution framebuffer for game rendering, preserves aspect ratio when the window changes size, and maps input back into virtual-canvas coordinates.
 
+## Manual
+
+`docs/Neon Arcade Programmer's Manual.pdf` is the engine's manual: getting started, a guide to each module with a worked example, a reference of every public procedure, structure, constant and global, the file formats, and the known limits. It is built from `docs/manual/` (one Markdown file a chapter, and the engine's own source for every signature) with Python and PyMuPDF:
+
+```
+python docs/manual/compile_examples.py --run   # compile every program the manual prints
+python docs/manual/build_manual.py             # build the PDF
+python docs/manual/check_manual.py             # every public name documented, every example compiled, links resolve
+```
+
 ## Current features
 
 - OpenGL constants, extensions, feature flags, and procedure bindings

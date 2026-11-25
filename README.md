@@ -442,7 +442,7 @@ typefaces they are made from are now selected:
 Nothing changes for a program that never calls them: the selection starts as Segoe UI and Consolas, and fonts a
 host makes itself are never touched. Bold and italic of a face registered from one regular file are the system's
 own emboldened and slanted forms. `assets/fonts/FONTS.txt` lists the files and their licences;
-**`JetBrainsMono-Regular.ttf` is not in the repository yet** - until it is, `#NEON_FACES_OPEN` is refused and says so.
+a face set whose file is missing is refused and says so.
 
 ## The draw log (`GlUtilities.pbi`)
 

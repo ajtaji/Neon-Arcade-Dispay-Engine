@@ -19,7 +19,5 @@ JetBrainsMono-Regular.ttf family "JetBrains Mono" - stands for Consolas (the
   licence                 SIL Open Font License 1.1 (Copyright 2020 The
                           JetBrains Mono Project Authors); its text goes here as
                           JetBrainsMono-OFL.txt
-  NOT HERE YET            no copy of the face is on this machine at a written
-                          path, so the file and its licence text are to be
-                          added. Until they are, Neon_UseFaceSet
-                          (#NEON_FACES_OPEN) refuses and names the missing file.
+  source                  https://github.com/JetBrains/JetBrainsMono (fonts/ttf, OFL.txt)
+  sha256                  e6fd0d7e91550b3ed2b735d4312474362c4716edc4fc0577a0f61ed782d5aed1
